@@ -1,0 +1,75 @@
+"use client";
+
+import { Button } from "@/components/base/buttons/button";
+import { Checkbox } from "@/components/base/checkbox/checkbox";
+import { Form } from "@/components/base/form/form";
+import { Input, InputBase } from "@/components/base/input/input";
+import { InputGroup } from "@/components/base/input/input-group";
+import { NativeSelect } from "@/components/base/select/select-native";
+import { TextArea } from "@/components/base/textarea/textarea";
+import { countries } from "@/utils/countries";
+import { IMAGES } from "@/utils/demo-assets";
+
+const countryCodeOptions = countries.map((country) => ({ value: country.code, label: country.code }));
+
+/** Contact form on the start edge and a full-height photo on the end edge. */
+export const ContactFormAndImage01 = () => (
+    <section className="bg-primary py-16 md:pt-16 md:pb-24">
+        <div className="max-w-container mx-auto px-4 md:px-8">
+            <div className="grid gap-16 lg:grid-cols-2">
+                <div className="flex w-full flex-col gap-12 md:w-120 md:justify-self-center lg:py-11">
+                    <div className="flex flex-col">
+                        <h2 className="text-display-md text-primary font-semibold">Contact us</h2>
+                        <p className="text-tertiary mt-4 text-lg md:mt-5 md:text-xl">Our friendly team would love to hear from you.</p>
+                    </div>
+
+                    <Form className="flex flex-col gap-8">
+                        <div className="flex flex-col gap-6">
+                            <div className="flex flex-col gap-x-8 gap-y-6 md:flex-row">
+                                <Input isRequired size="lg" name="firstName" label="First name" placeholder="First name" wrapperClassName="flex-1" />
+                                <Input isRequired size="lg" name="lastName" label="Last name" placeholder="Last name" wrapperClassName="flex-1" />
+                            </div>
+
+                            <Input isRequired size="lg" type="email" name="email" label="Email" placeholder="you@company.com" />
+
+                            <InputGroup
+                                size="lg"
+                                label="Phone number"
+                                leadingAddon={<NativeSelect aria-label="Country code" defaultValue="US" options={countryCodeOptions} />}
+                            >
+                                <InputBase type="tel" name="phone" placeholder="+1 (000) 000-0000" />
+                            </InputGroup>
+
+                            <TextArea isRequired rows={4} name="message" label="Message" placeholder="Leave us a message..." />
+
+                            <Checkbox
+                                size="md"
+                                name="privacy"
+                                hint={
+                                    <span>
+                                        You agree to our friendly{" "}
+                                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid -- placeholder href for a marketing section */}
+                                        <a
+                                            href="#"
+                                            className="outline-focus-ring rounded-xs underline underline-offset-3 focus-visible:outline-2 focus-visible:outline-offset-2"
+                                        >
+                                            privacy policy.
+                                        </a>
+                                    </span>
+                                }
+                            />
+                        </div>
+
+                        <Button type="submit" size="xl">
+                            Send message
+                        </Button>
+                    </Form>
+                </div>
+
+                <div className="max-lg:hidden lg:h-200">
+                    <img src={IMAGES.landscape[2].src} alt="A Smartera customer smiling" className="size-full object-cover" />
+                </div>
+            </div>
+        </div>
+    </section>
+);

@@ -1,0 +1,31 @@
+// GENERATED FILE — do not edit by hand. Run `pnpm gen:variant-parts`.
+import { variantsA } from "./variants.a";
+
+export const variants = {
+    "testimonial-simple-centered-01": variantsA["testimonial-simple-centered-01"],
+    "testimonial-simple-left-aligned": variantsA["testimonial-simple-left-aligned"],
+    "testimonial-split-image-03": variantsA["testimonial-split-image-03"],
+    "testimonial-glassmorphic-cards-02": variantsA["testimonial-glassmorphic-cards-02"],
+    "testimonial-card": variantsA["testimonial-card"],
+    "testimonial-social-cards-02": variantsA["testimonial-social-cards-02"],
+    "testimonial-simple-centered-02-brand": variantsA["testimonial-simple-centered-02-brand"],
+    "testimonial-card-brand": variantsA["testimonial-card-brand"],
+    "testimonial-social-cards-02-brand": variantsA["testimonial-social-cards-02-brand"],
+    "testimonial-simple-centered-02": variantsA["testimonial-simple-centered-02"],
+    "testimonial-split-image-01": variantsA["testimonial-split-image-01"],
+    "testimonial-abstract-image": variantsA["testimonial-abstract-image"],
+    "testimonial-glassmorphic-cards-03": variantsA["testimonial-glassmorphic-cards-03"],
+    "testimonial-card-split-image": variantsA["testimonial-card-split-image"],
+    "testimonial-social-cards-03": variantsA["testimonial-social-cards-03"],
+    "testimonial-simple-centered-03-brand": variantsA["testimonial-simple-centered-03-brand"],
+    "testimonial-card-split-image-brand": variantsA["testimonial-card-split-image-brand"],
+    "testimonial-social-cards-03-brand": variantsA["testimonial-social-cards-03-brand"],
+    "testimonial-simple-centered-03": variantsA["testimonial-simple-centered-03"],
+    "testimonial-split-image-02": variantsA["testimonial-split-image-02"],
+    "testimonial-glassmorphic-cards-01": variantsA["testimonial-glassmorphic-cards-01"],
+    "testimonial-case-study-cards": variantsA["testimonial-case-study-cards"],
+    "testimonial-social-cards-01": variantsA["testimonial-social-cards-01"],
+    "testimonial-simple-centered-01-brand": variantsA["testimonial-simple-centered-01-brand"],
+    "testimonial-simple-left-aligned-brand": variantsA["testimonial-simple-left-aligned-brand"],
+    "testimonial-social-cards-01-brand": variantsA["testimonial-social-cards-01-brand"],
+} as const;

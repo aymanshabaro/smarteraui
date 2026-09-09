@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+    - name: Questions and ideas
+      url: https://github.com/aymanshabaro/smarteraui/discussions
+      about: Ask how to do something, share what you built, or float an idea before opening a feature request.
+    - name: Report a security vulnerability
+      url: https://github.com/aymanshabaro/smarteraui/blob/main/SECURITY.md
+      about: Please report vulnerabilities privately by email — do not open a public issue.
+    - name: Documentation
+      url: https://github.com/aymanshabaro/smarteraui/tree/main/docs
+      about: Installation, framework setup, theming, dark mode, RTL and the CLI. Run `pnpm dev` for the full component reference.
+    - name: Contributing guide
+      url: https://github.com/aymanshabaro/smarteraui/blob/main/CONTRIBUTING.md
+      about: Repo setup, component conventions, and how to get a PR merged.

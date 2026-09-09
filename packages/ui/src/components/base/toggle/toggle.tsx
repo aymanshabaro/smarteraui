@@ -1,0 +1,151 @@
+"use client";
+
+import type { ReactNode } from "react";
+import { Switch as AriaSwitch, type SwitchProps as AriaSwitchProps } from "react-aria-components";
+import { cx, sortCx } from "@/utils/cx";
+
+export interface ToggleBaseProps {
+    /** The size of the toggle. */
+    size?: "sm" | "md";
+    /** Renders a slimmer track without the resting inner shadow. */
+    slim?: boolean;
+    /** Additional CSS classes to apply to the root element. */
+    className?: string;
+    /** Whether the toggle is currently hovered. */
+    isHovered?: boolean;
+    /** Whether the toggle should show a visible focus ring. */
+    isFocusVisible?: boolean;
+    /** Whether the toggle is selected (on). */
+    isSelected?: boolean;
+    /** Whether the toggle is disabled. */
+    isDisabled?: boolean;
+}
+
+export const ToggleBase = ({ className, isHovered, isDisabled, isFocusVisible, isSelected, slim, size = "sm" }: ToggleBaseProps) => {
+    const trackStyles = sortCx({
+        default: {
+            sm: {
+                root: "h-5 w-9 p-0.5",
+                switch: cx("size-4", isSelected && "translate-x-4"),
+            },
+            md: {
+                root: "h-6 w-11 p-0.5",
+                switch: cx("size-5", isSelected && "translate-x-5"),
+            },
+        },
+        slim: {
+            sm: {
+                root: "h-4 w-8",
+                switch: cx("size-4", isSelected && "translate-x-4"),
+            },
+            md: {
+                root: "h-5 w-10",
+                switch: cx("size-5", isSelected && "translate-x-5"),
+            },
+        },
+    });
+
+    const classes = slim ? trackStyles.slim[size] : trackStyles.default[size];
+
+    return (
+        <div
+            className={cx(
+                "bg-tertiary ring-secondary outline-focus-ring cursor-pointer rounded-full ring-[0.5px] transition duration-150 ease-linear ring-inset",
+                isSelected && "bg-brand-solid",
+                isSelected && isHovered && "bg-brand-solid_hover",
+                isDisabled && "cursor-not-allowed opacity-50",
+                isFocusVisible && "outline-2 outline-offset-2",
+
+                slim && "ring-1",
+                slim && isSelected && "ring-transparent",
+                classes.root,
+                className,
+            )}
+        >
+            <div
+                style={{
+                    transition: "transform 0.15s ease-in-out, translate 0.15s ease-in-out, border-color 0.1s linear, background-color 0.1s linear",
+                }}
+                className={cx(
+                    "bg-fg-white rounded-full shadow-sm",
+
+                    slim && "shadow-xs",
+                    slim && "border-toggle-border border",
+                    slim && isSelected && "border-toggle-slim-border_pressed",
+                    slim && isSelected && isHovered && "border-toggle-slim-border_pressed-hover",
+
+                    classes.switch,
+                )}
+            />
+        </div>
+    );
+};
+ToggleBase.displayName = "ToggleBase";
+
+const styles = sortCx({
+    sm: {
+        root: "gap-2",
+        textWrapper: "",
+        label: "text-sm font-medium",
+        hint: "text-sm",
+    },
+    md: {
+        root: "gap-3",
+        textWrapper: "gap-0.5",
+        label: "text-md font-medium",
+        hint: "text-md",
+    },
+});
+
+export interface ToggleProps extends AriaSwitchProps {
+    /** The size of the toggle. */
+    size?: "sm" | "md";
+    /** The label rendered next to the toggle. */
+    label?: string;
+    /** A supporting hint rendered below the label. */
+    hint?: ReactNode;
+    /** Renders a slimmer track without the resting inner shadow. */
+    slim?: boolean;
+}
+
+export const Toggle = ({ label, hint, className, size = "sm", slim, ...ariaSwitchProps }: ToggleProps) => {
+    return (
+        <AriaSwitch
+            {...ariaSwitchProps}
+            className={(state) =>
+                cx(
+                    "relative flex w-max items-start",
+                    state.isDisabled && "cursor-not-allowed",
+                    styles[size].root,
+                    typeof className === "function" ? className(state) : className,
+                )
+            }
+        >
+            {({ isSelected, isDisabled, isFocusVisible, isHovered }) => (
+                <>
+                    <ToggleBase
+                        slim={slim}
+                        size={size}
+                        isHovered={isHovered}
+                        isDisabled={isDisabled}
+                        isFocusVisible={isFocusVisible}
+                        isSelected={isSelected}
+                        className={slim ? "mt-0.5" : ""}
+                    />
+
+                    {(label || hint) && (
+                        <div className={cx("flex flex-col", styles[size].textWrapper)}>
+                            {label && <p className={cx("text-secondary select-none", styles[size].label)}>{label}</p>}
+                            {hint && (
+                                <span role="presentation" className={cx("text-tertiary", styles[size].hint)} onClick={(event) => event.stopPropagation()}>
+                                    {hint}
+                                </span>
+                            )}
+                        </div>
+                    )}
+                </>
+            )}
+        </AriaSwitch>
+    );
+};
+Toggle.displayName = "Toggle";

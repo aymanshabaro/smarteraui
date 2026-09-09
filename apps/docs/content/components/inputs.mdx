@@ -1,0 +1,87 @@
+---
+title: Input field
+section: base
+description: Free and open-source React input field components built for modern applications and websites. These input fields are built using React Aria and styled with Tailwind CSS.
+metaTitle: Free React input field components | Smartera UI
+metaDescription: Free and open-source React input field components built for modern applications and websites. These input fields are built using React Aria and styled with Tailwind CSS.
+install: inputs
+source: packages/ui/src/components/base/input
+demoFile: inputs
+---
+
+<Preview id="input-example" title="Input example" height={348} demo="inputs:InputExample" />
+
+## Installation
+
+<Install slug="inputs" />
+
+## Input examples
+
+<Preview id="default" title="Default" height={348} demo="inputs:Default" />
+
+<Preview id="disabled" title="Disabled" height={348} demo="inputs:Disabled" />
+
+<Preview id="invalid" title="Invalid" height={348} demo="inputs:Invalid" />
+
+<Preview id="sizes" title="Sizes" height={594} demo="inputs:Sizes" />
+
+<Preview id="leading-icon" title="Leading icon" height={348} demo="inputs:LeadingIcon" />
+
+<Preview id="leading-dropdown" title="Leading dropdown" height={348} demo="inputs:LeadingDropdown" />
+
+<Preview id="trailing-dropdown" title="Trailing dropdown" height={348} demo="inputs:TrailingDropdown" />
+
+<Preview id="leading-text" title="Leading text" height={348} demo="inputs:LeadingText" />
+
+<Preview id="payment-input" title="Payment input" height={348} demo="inputs:PaymentInput" />
+
+<Preview id="trailing-button" title="Trailing button" height={348} demo="inputs:TrailingButton" />
+
+<Preview id="file-upload" title="File upload" height={346} demo="inputs:FileUpload" />
+
+<Preview id="password-input" title="Password input" height={348} demo="inputs:PasswordInput" />
+
+<Preview id="date-input" title="Date input" height={348} demo="inputs:DateInput" />
+
+<Preview id="number-input-horizontal" title="Number input horizontal" height={348} demo="inputs:NumberInputHorizontal" />
+
+<Preview id="number-input-vertical" title="Number input vertical" height={348} demo="inputs:NumberInputVertical" />
+
+<Preview id="tag-input" title="Tag input" height={348} demo="inputs:TagInput" />
+
+<Preview id="tag-input-outer" title="Tag input outer" height={354} demo="inputs:TagInputOuter" />
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            question: "How do I validate input fields?",
+            answer: "You can validate input fields by using the isInvalid prop to mark the field as invalid. Use the hint prop to display validation messages to the user. The component automatically shows an error icon when isInvalid is true.",
+        },
+        {
+            question: "Can I use custom icons in input fields?",
+            answer: "Yes, you can add custom icons to input fields using the icon prop, which accepts a React component. The icon should accept className and other HTML attributes for proper styling and will be positioned on the left side of the input.",
+        },
+        {
+            question: "What sizes are available for input fields?",
+            answer: 'Input fields support two sizes: "sm" (small) and "md" (medium). You can set the size using the size prop on the Input component. The default size is "sm".',
+        },
+        {
+            question: "How do I add tooltips and help text to inputs?",
+            answer: "You can add tooltips using the tooltip prop, which displays a help icon with a tooltip on hover. Use the hint prop to show persistent help text below the input field. Both can be used together for comprehensive user guidance.",
+        },
+        {
+            question: "Can I add buttons or dropdowns to input fields?",
+            answer: "Yes, you can use the InputGroup component to add buttons, dropdowns, and text elements to input fields. This unified component handles all input enhancements including action buttons, leading/trailing dropdowns, and text prefixes/suffixes.",
+        },
+        {
+            question: "How do I handle form submission with Input components?",
+            answer: "Input components work seamlessly with standard HTML forms and React Aria. Provide a name prop to each input for form data collection. You can use controlled components with value and onChange props or uncontrolled components with defaultValue.",
+        },
+        {
+            question: "How do I add keyboard shortcuts to inputs?",
+            answer: 'You can add keyboard shortcuts using the shortcut prop. Pass a string to display custom shortcut text, or pass true to show the default "⌘K" shortcut. The shortcut appears as a badge on the right side of the input.',
+        },
+    ]}
+/>

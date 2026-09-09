@@ -1,0 +1,47 @@
+---
+title: Image picker components
+section: application
+description: Powerful and customizable React image picker components built for modern applications and websites. These image pickers are built using React Aria and styled with Tailwind CSS.
+metaTitle: React image picker components | Smartera UI
+metaDescription: Powerful and customizable React image picker components built for modern applications and websites. These image picker components are built using React Aria and styled with Tailwind CSS.
+install: image-pickers
+source: packages/ui/src/components/application/image-picker
+demoFile: image-picker
+---
+
+<Preview id="image-picker-example" title="Image picker example" height={872} demo="image-picker:ImagePickerExample" />
+
+## Installation
+
+<Install slug="image-pickers" />
+
+## Image picker examples
+
+<Preview id="image-picker" title="Image picker" height={872} demo="image-picker:ImagePicker" />
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            q: "What image adjustments are available?",
+            a: "The image picker provides 7 adjustment sliders: exposure, contrast, saturation, temperature, tint, highlights, and shadows. Each slider ranges from -100 to 100, with 0 as the default neutral value.",
+        },
+        {
+            q: "What fill modes are supported?",
+            a: 'The image picker supports four fill modes: "fill" (stretches to fill), "fit" (scales to fit within bounds), "crop" (fills and crops overflow), and "tile" (repeats the image in a tile pattern).',
+        },
+        {
+            q: "How do I handle image uploads?",
+            a: "The image picker supports both click-to-upload and drag-and-drop file selection. Use the onImageChange callback on ImagePicker.Provider to receive the selected File object when a user uploads an image.",
+        },
+        {
+            q: "Can I rotate the image?",
+            a: "Yes, the image picker includes a rotation button that rotates the image 90 degrees clockwise on each click. The rotation is applied in real-time to the canvas preview.",
+        },
+        {
+            q: "Can I use the image picker sub-components independently?",
+            a: "Yes, the image picker uses a compound component pattern. You can use ImagePicker.FillModeSelect and ImagePicker.AdjustmentSliders independently within an ImagePicker.Provider wrapper to build custom layouts.",
+        },
+    ]}
+/>

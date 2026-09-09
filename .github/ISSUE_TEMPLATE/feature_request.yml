@@ -1,0 +1,96 @@
+name: Feature request
+description: Suggest a new component, a new prop, or an improvement
+title: "[feat]: "
+labels: ["enhancement", "needs triage"]
+body:
+    - type: markdown
+      attributes:
+          value: |
+              Thanks for the suggestion. Opening this before writing code saves you building something that then needs reworking.
+
+    - type: checkboxes
+      id: preflight
+      attributes:
+          label: Before you start
+          options:
+              - label: I searched the existing issues and this has not been requested.
+                required: true
+              - label: I checked the docs site (`pnpm dev`) and this does not already exist.
+                required: true
+
+    - type: dropdown
+      id: kind
+      attributes:
+          label: What kind of change is this?
+          options:
+              - A new component
+              - A new variant or example of an existing component
+              - A new prop or API change on an existing component
+              - Theming / tokens
+              - CLI
+              - Documentation
+              - Tooling / developer experience
+              - Other
+      validations:
+          required: true
+
+    - type: textarea
+      id: problem
+      attributes:
+          label: What problem does this solve?
+          description: Describe the situation you are in, not the solution you have in mind. What are you trying to build, and where does the library get in the way?
+          placeholder: |
+              I need a combobox that loads options asynchronously. Right now I have to fork Select and
+              re-implement the loading and empty states myself, which puts me out of sync with upstream fixes.
+      validations:
+          required: true
+
+    - type: textarea
+      id: proposal
+      attributes:
+          label: What would you like to see?
+          description: The API, the variants, the behaviour. Sketch it in code if that is easier.
+          render: tsx
+          placeholder: |
+              <ComboBox
+                  items={results}
+                  isLoading={isLoading}
+                  onInputChange={setQuery}
+                  emptyState="No matches"
+              />
+      validations:
+          required: true
+
+    - type: textarea
+      id: alternatives
+      attributes:
+          label: What have you tried instead?
+          description: Workarounds, other libraries, a local fork — and why they are not good enough.
+      validations:
+          required: false
+
+    - type: input
+      id: prior-art
+      attributes:
+          label: Prior art
+          description: A link to this pattern elsewhere — React Aria, another design system, a live product.
+          placeholder: https://react-spectrum.adobe.com/react-aria/ComboBox.html
+      validations:
+          required: false
+
+    - type: textarea
+      id: accessibility
+      attributes:
+          label: Accessibility considerations
+          description: |
+              Everything here is built on React Aria. Is there a React Aria primitive this should use? Any keyboard,
+              focus or screen-reader behaviour the proposal needs to get right?
+      validations:
+          required: false
+
+    - type: checkboxes
+      id: contribution
+      attributes:
+          label: Would you like to work on this?
+          options:
+              - label: I am willing to open a PR for this.

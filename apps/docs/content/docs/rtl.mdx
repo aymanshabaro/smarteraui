@@ -1,0 +1,168 @@
+---
+title: RTL support
+section: docs
+description: Build right-to-left interfaces with Smartera UI. Arabic, Hebrew, Persian, and other RTL languages are supported through CSS logical properties, not a separate theme.
+metaTitle: RTL support | Smartera UI
+metaDescription: Build right-to-left interfaces with Smartera UI React. Logical Tailwind utilities, mirrored icons, and RTL-aware React Aria components.
+---
+
+## Right-to-left support
+
+Smartera UI supports right-to-left languages — Arabic, Hebrew, Persian, Urdu — without a separate theme or component fork. Direction-aware behavior (arrow-key navigation, popover placement, date-picker field order) comes from React Aria and is complete; the styling layer gets there with CSS logical properties, and is mid-migration.
+
+> **Status.** React Aria's direction handling is complete. The style layer is not: across `packages/ui/src/components`, roughly 281 logical spacing utilities (`ms-*`, `me-*`, `ps-*`, `pe-*`, `start-*`, `end-*`) are in place against about 365 remaining physical ones (`ml-*`, `mr-*`, `pl-*`, `pr-*`, `left-*`, `right-*`), and 34 `text-start`/`text-end` against 36 `text-left`/`text-right`. Coverage is strongest in base components and weakest in marketing sections and page examples. If a component doesn't mirror correctly, that's a bug — [open an issue](https://github.com/aymanshabaro/smarteraui/issues).
+
+Try it live — this toggle flips only the panel below between `dir="ltr"` and `dir="rtl"`, nothing else on the page moves, because every class inside it is logical rather than physical:
+
+<div className="not-typography my-6">
+    <input type="checkbox" id="rtl-live-toggle" className="peer sr-only" />
+    <label
+        htmlFor="rtl-live-toggle"
+        className="border-primary bg-primary text-secondary hover:bg-primary_hover mb-3 flex w-fit cursor-pointer items-center gap-2 rounded-full border px-3 py-1.5 text-sm font-medium select-none"
+    >
+        <span className="border-primary bg-secondary peer-checked:bg-brand-solid peer-checked:border-brand-solid relative h-5 w-9 shrink-0 rounded-full border transition-colors">
+            <span className="bg-fg-white absolute top-0.5 left-0.5 size-4 rounded-full shadow-xs transition-transform peer-checked:translate-x-4" />
+        </span>
+        Toggle direction (LTR / RTL)
+    </label>
+    <div className="border-secondary bg-secondary_alt flex flex-col gap-3 rounded-xl border p-6 text-start [direction:ltr] peer-checked:[direction:rtl]">
+        <div className="flex items-center gap-3">
+            <span className="bg-brand-solid text-fg-white flex size-10 shrink-0 items-center justify-center rounded-full text-sm font-semibold">S</span>
+            <div>
+                <p className="text-primary m-0 text-sm font-semibold">Sana Al-Rashid</p>
+                <p className="text-tertiary m-0 text-sm">ps-3 avatar gap · text-start alignment</p>
+            </div>
+        </div>
+        <p className="text-tertiary m-0 text-sm">
+            This card only uses{" "}
+            <code className="bg-secondary text-tertiary ring-secondary rounded-md px-1.5 py-0.5 font-mono text-xs font-bold ring-1 ring-inset">{"ms-*"}</code>,{" "}
+            <code className="bg-secondary text-tertiary ring-secondary rounded-md px-1.5 py-0.5 font-mono text-xs font-bold ring-1 ring-inset">{"ps-*"}</code>,
+            and{" "}
+            <code className="bg-secondary text-tertiary ring-secondary rounded-md px-1.5 py-0.5 font-mono text-xs font-bold ring-1 ring-inset">text-start</code>
+            . Flip the switch above — nothing here needed a rewrite.
+        </p>
+    </div>
+</div>
+
+## How it works
+
+Logical properties describe layout relative to text direction (`start` / `end`) instead of a physical side (`left` / `right`). In a `dir="ltr"` document `margin-inline-start` resolves to the left; in `dir="rtl"` it resolves to the right — the same class, no conditional styling. Smartera UI's components are migrating to these Tailwind utilities everywhere spacing, alignment, or borders would otherwise assume a direction — see the status note above for how far that migration has gotten:
+
+| Physical    | Logical      | Resolves to (LTR)     | Resolves to (RTL)     |
+| ----------- | ------------ | --------------------- | --------------------- |
+| `ml-4`      | `ms-4`       | `margin-left: 1rem`   | `margin-right: 1rem`  |
+| `mr-4`      | `me-4`       | `margin-right: 1rem`  | `margin-left: 1rem`   |
+| `pl-4`      | `ps-4`       | `padding-left: 1rem`  | `padding-right: 1rem` |
+| `pr-4`      | `pe-4`       | `padding-right: 1rem` | `padding-left: 1rem`  |
+| `left-0`    | `start-0`    | `left: 0`             | `right: 0`            |
+| `right-0`   | `end-0`      | `right: 0`            | `left: 0`             |
+| `text-left` | `text-start` | left-aligned          | right-aligned         |
+
+Symmetrical utilities — `px-4`, `mx-4`, `p-4`, `m-4`, `gap-4` — apply to both sides already and need no logical equivalent.
+
+## Setting up RTL
+
+Add `dir="rtl"` to the `<html>` element (or any container) and wrap your app in React Aria's `I18nProvider` so every interactive component — dialogs, menus, date pickers, sliders — picks up the direction automatically:
+
+```tsx
+import { I18nProvider } from "react-aria-components";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+    return (
+        <html lang="ar" dir="rtl">
+            <body>
+                <I18nProvider locale="ar-AE">{children}</I18nProvider>
+            </body>
+        </html>
+    );
+}
+```
+
+`I18nProvider`'s `locale` drives number, date, and collation formatting; the `dir` attribute drives layout. Set them independently — an app can be RTL-laid-out while formatting numbers for a specific locale, or vice versa.
+
+## Migrating an LTR codebase
+
+There's no CLI codemod for this yet — converting physical-direction classes to their logical equivalents is a manual, project-wide find-and-replace: `ml-*` → `ms-*`, `mr-*` → `me-*`, `pl-*` → `ps-*`, `pr-*` → `pe-*`, `left-*` → `start-*`, `right-*` → `end-*`, `text-left` → `text-start`, `text-right` → `text-end`, `rounded-l-*` → `rounded-s-*`, `rounded-r-*` → `rounded-e-*`, `border-l` → `border-s`, `border-r` → `border-e`.
+
+It's safe to do incrementally: `ms-4` compiles to exactly `margin-left: 1rem` under `dir="ltr"`, so migrating a file at a time changes nothing until you actually flip a container to `dir="rtl"`.
+
+### What has no logical equivalent
+
+Some CSS has no logical equivalent — `transform: translateX()`, `transform: scaleX()`, keyframe-based slide animations. For those, add an `rtl:` variant alongside the original class rather than replacing it:
+
+```diff
+- <div className="slide-in-from-right-4" />
++ <div className="slide-in-from-right-4 rtl:slide-in-from-left-4" />
+```
+
+## Directional icons
+
+Icons that visually encode a direction — arrows, chevrons pointing to "next", the icon in a "back" button — need to flip in RTL. Icons that don't imply direction — a checkmark, a bell, a trash can — must not.
+
+### Setup
+
+Smartera UI marks direction-sensitive icons in `@smarteraui/icons` with a naming convention (`ArrowRight`, `ChevronRight`, `ArrowNarrowRight`, and their `Left` counterparts) so you know which ones to flip. Apply the flip with the `rtl:` variant directly on the icon:
+
+```tsx
+import { ArrowRight } from "@smarteraui/icons";
+
+<ArrowRight className="size-5 rtl:-scale-x-100" aria-hidden="true" />;
+```
+
+### Usage
+
+Because `Button`'s `iconTrailing` prop accepts a component reference, wrap the flip once in a small helper and reuse it everywhere a directional icon appears as a button icon:
+
+```tsx
+import { ArrowRight } from "@smarteraui/icons";
+import { cx } from "@/utils/cx";
+
+const DirectionalArrow = (props: React.ComponentProps<typeof ArrowRight>) => <ArrowRight {...props} className={cx("rtl:-scale-x-100", props.className)} />;
+
+<Button iconTrailing={DirectionalArrow}>Continue</Button>;
+```
+
+### Using a different icon library
+
+If you swap in your own icon set, apply the same rule: mirror any icon whose meaning depends on direction (arrows, chevrons that mean "forward"/"back", the icon in a breadcrumb separator) with `rtl:-scale-x-100`, and leave everything else untouched.
+
+### When NOT to flip
+
+Don't mirror icons whose meaning is independent of reading direction — a play button, a search glyph, a checkmark, a trash icon, brand logos, flags, or avatars. Flipping these makes them look wrong or, for a flag, factually incorrect. Text-containing icons (icons with embedded letters, like a "PDF" file badge) should also never be mirrored.
+
+## Testing
+
+Storybook currently only ships a light/dark theme toggle (`withThemeByClassName` in `.storybook/preview.tsx`) — there's no `direction` toolbar item yet, so the fastest way to check RTL while building is to toggle `dir` on `<html>` directly in devtools.
+
+Pay particular attention to sliders, breadcrumbs, carousels, date pickers, and drawers, where direction affects both layout and gesture direction. The project's accessibility tests (`pnpm test`) also catch the structural problems that tend to accompany a mis-mirrored layout.
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            question: "Do I need to change every ml- and pl- class?",
+            answer: "Only if you want RTL support. The logical equivalents (ms-, ps-) render identically in LTR mode, so migrating is safe and backwards-compatible — do it a file at a time with a project-wide find-and-replace.",
+        },
+        {
+            question: "What about px-4 and mx-4?",
+            answer: "Symmetrical utilities like px-4, mx-4, p-4, and m-4 apply to both sides and work correctly in RTL without any changes. Only single-side utilities (ml-, mr-, pl-, pr-) need migration.",
+        },
+        {
+            question: "Will RTL migration break my LTR layout?",
+            answer: 'No. Logical properties like ms-4 produce the exact same CSS as ml-4 in LTR mode (margin-inline-start: 1rem = margin-left: 1rem when dir="ltr"). The only difference is in RTL mode.',
+        },
+        {
+            question: "How do I handle animations in RTL?",
+            answer: "Slide animations like slide-in-from-right need an rtl: variant (rtl:slide-in-from-left) because CSS transforms don't have logical equivalents. Add it alongside the original class by hand — there's no automated codemod for this yet.",
+        },
+        {
+            question: "Do React Aria components support RTL?",
+            answer: "Yes. React Aria has built-in RTL support. Wrap your app with I18nProvider and all React Aria components (modals, popovers, date pickers, etc.) will render correctly in RTL.",
+        },
+        {
+            question: "Can I use RTL for just part of my page?",
+            answer: 'Yes. Add dir="rtl" to any container element. CSS logical properties inherit the direction from the nearest ancestor with a dir attribute. Wrap that section with I18nProvider for React Aria components within it.',
+        },
+    ]}
+/>

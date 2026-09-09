@@ -1,0 +1,99 @@
+---
+title: Introduction
+section: docs
+description: Smartera UI is a collection of React components built on React Aria and styled with Tailwind CSS. Copy the code, own it, and ship faster.
+metaTitle: Introduction | Smartera UI
+metaDescription: Smartera UI is a collection of open-source React components built with React Aria and Tailwind CSS. Copy-paste the code you need and own it.
+---
+
+## What is Smartera UI?
+
+Smartera UI is a library of production-ready React components — base components, application UI, and marketing sections — that you copy into your own
+project instead of installing as an opaque dependency. Every component ships as plain `.tsx` you can read, edit, and extend, styled entirely with Tailwind
+CSS utility classes and semantic design tokens.
+
+The base components are free and open-source under the MIT license, so you can use them in unlimited commercial projects. Application UI components,
+marketing sections, and full page examples are also included, giving you everything from a single badge to a complete dashboard shell.
+
+## Tech stack
+
+Smartera UI keeps its dependency surface small on purpose, so the components stay easy to read and cheap to maintain:
+
+- **React 19** — components use the latest APIs (`use`, the React Compiler-friendly patterns, and modern refs) without polyfills for older versions.
+- **Tailwind CSS v4.3** — every visual style is a utility class or a semantic CSS variable defined in `theme.css`; there is no separate CSS-in-JS layer.
+- **TypeScript v5.9** — every prop is typed and documented with a JSDoc comment that also powers the generated props tables on each component page.
+- **React Aria Components v1.20** — interactive components (menus, dialogs, comboboxes, tables, sliders) delegate behaviour, keyboard handling, and ARIA
+  wiring to React Aria, so you inherit accessible interaction patterns instead of re-implementing them.
+
+You own the code once it's in your project, so upgrading any of these is a normal dependency bump — nothing in the library is locked behind a build step
+or a proprietary runtime.
+
+## Accessibility
+
+Every component is built on top of React Aria, which supplies correct roles, keyboard interaction, and focus management out of the box. On top of that,
+Smartera UI adds:
+
+- A visible focus ring (`outline-focus-ring`) on every interactive element, tuned for both light and dark mode.
+- Semantic color tokens that meet WCAG 2.1 AA contrast ratios for text and UI boundaries in both themes.
+- Required labels for icon-only controls, live regions for toasts, and `aria-busy` on loading states.
+
+Because styling is driven by data attributes (`data-selected`, `data-focused`, `data-disabled`, …) rather than by re-implementing state in JavaScript, a
+component's visual states can't drift out of sync with what assistive technology actually reports.
+
+## How is this different from a library?
+
+Most component libraries publish a compiled package: you install it, import from it, and patch around its API when it doesn't match your design. Smartera
+UI works the other way around — the CLI (or a manual copy) places the component's source directly in your project.
+
+That means:
+
+- No wrapper API to learn beyond the props already documented on each component's page.
+- No version lock — a component you copied today doesn't change unless you pull an update yourself.
+- Full control over markup, styles, and behavior, because it's your file once it lands in your repo.
+
+## Next steps
+
+Head to [Installation](/docs/installation) to scaffold a new project or add Smartera UI to an existing one, or jump straight into a component you need:
+
+```bash
+npx smarteraui@latest add badges
+```
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            question: "What is Smartera UI?",
+            answer: "Smartera UI is a collection of open-source React components covering base components, application UI, and marketing sections. Components are built with React Aria Components v1.20 and TypeScript v5.9, and styled with Tailwind CSS v4.3. Rather than installing a compiled package, you copy the source into your project and own it from that point on.",
+        },
+        {
+            question: "Is Smartera UI free and open-source?",
+            answer: "Yes. The base components, application UI components, and marketing sections are open-source under the MIT license, which means you can use them in unlimited commercial projects at no cost.",
+        },
+        {
+            question: "What tech stack does Smartera UI use?",
+            answer: "Smartera UI components are built with React 19, Tailwind CSS v4.3, TypeScript v5.9, and React Aria Components v1.20. The dependency surface is kept minimal on purpose — you own the code, so there is nothing to wrestle with beyond your own project's setup.",
+        },
+        {
+            question: "What version of Tailwind CSS does Smartera UI use?",
+            answer: "Smartera UI is built on Tailwind CSS v4.3, using its CSS-first configuration (`@theme`) for the token system described in the Theming guide.",
+        },
+        {
+            question: "Do Smartera UI components work with React 19?",
+            answer: "Yes, all components are built against React 19 and are tested with the latest stable release, so you get full compatibility with current React features.",
+        },
+        {
+            question: "What version of TypeScript does Smartera UI use?",
+            answer: "Components are authored in TypeScript v5.9, with every public prop typed and documented so editors surface accurate autocomplete and docs.",
+        },
+        {
+            question: "Can I contribute to Smartera UI?",
+            answer: "Yes — Smartera UI is open-source. If you'd like to contribute a fix or a new component, open an issue or a pull request on the project's GitHub repository.",
+        },
+        {
+            question: "Where do I go next?",
+            answer: "Start with the Installation guide to scaffold a project with the CLI, then browse the component pages to copy in exactly what you need.",
+        },
+    ]}
+/>

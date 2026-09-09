@@ -1,0 +1,15 @@
+Smartera UI
+Copyright (c) 2026 Ayman Shabaro
+
+This product includes software derived from Untitled UI React
+(https://www.untitledui.com/react), Copyright (c) 2025 Untitled UI, which is
+distributed under the MIT License.
+
+Portions of the component library in `packages/ui/src/components` — component
+structure, class names and prop shapes — are derived from that project and
+remain subject to its licence. A verbatim copy is reproduced at:
+
+    LICENSES/untitledui-react-MIT.txt
+
+Everything else in this repository is licensed under the MIT License found in
+the `LICENSE` file at the root.

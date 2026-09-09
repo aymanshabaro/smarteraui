@@ -1,0 +1,49 @@
+---
+title: Context menu components
+section: base
+description: Free and open-source React context menu components built for modern applications and websites. Trigger these menus with a right-click, long-press, or the keyboard menu key, built using React Aria and styled with Tailwind CSS.
+metaTitle: Free React context menu components | Smartera UI
+metaDescription: Free and open-source React context menu components built for modern applications and websites. These context menu components are built using React Aria and styled with Tailwind CSS.
+install: context-menus
+source: packages/ui/src/components/base/dropdown
+demoFile: context-menus
+---
+
+<Preview id="context-menu-example" title="Context menu example" height={416} demo="context-menus:ContextMenuExample" />
+
+## Installation
+
+<Install slug="context-menus" />
+
+## Context menu examples
+
+<Preview id="simple" title="Simple" height={416} demo="context-menus:Simple" />
+
+<Preview id="advanced" title="Advanced" height={416} demo="context-menus:Advanced" />
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            q: "How do I turn a dropdown into a context menu?",
+            a: 'Set the trigger prop to "contextMenu" on Dropdown.Root. The first child becomes the target area that opens the menu on right-click (or long-press on touch devices), and the menu opens at the pointer position instead of anchored to a button.',
+        },
+        {
+            q: "What can I use as the trigger target?",
+            a: "The target must be a React Aria pressable element, so wrap your content in an AriaButton (or Pressable) from react-aria-components. React Aria attaches the right-click and long-press handlers to it and manages focus and keyboard access for you.",
+        },
+        {
+            q: "Are context menus keyboard accessible?",
+            a: "Yes. Because they are built on React Aria, users can open the menu with the context menu key (or Shift+F10) while the target is focused, navigate items with the arrow keys, select with Enter, and dismiss with Escape.",
+        },
+        {
+            q: "Can context menus have submenus?",
+            a: "Yes. Wrap a Dropdown.Item and a nested Dropdown.Popover in a SubmenuTrigger from react-aria-components, exactly as you would in a regular dropdown. See the advanced example above for nested submenus.",
+        },
+        {
+            q: "How do I add checkable options or keyboard shortcuts?",
+            a: 'Use selectionMode="multiple" (or "single") on a Dropdown.Section for checkable items, and pass the addon prop on a Dropdown.Item to show a keyboard shortcut such as ⌘C.',
+        },
+    ]}
+/>

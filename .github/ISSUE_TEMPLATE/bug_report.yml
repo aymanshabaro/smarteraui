@@ -1,0 +1,129 @@
+name: Bug report
+description: Something in Smartera UI does not work as documented
+title: "[bug]: "
+labels: ["bug", "needs triage"]
+body:
+    - type: markdown
+      attributes:
+          value: |
+              Thanks for filing a report. A minimal reproduction gets a bug fixed far faster than a description of it.
+
+              Please do not report security vulnerabilities here — see [SECURITY.md](https://github.com/aymanshabaro/smarteraui/blob/main/SECURITY.md).
+
+    - type: checkboxes
+      id: preflight
+      attributes:
+          label: Before you start
+          options:
+              - label: I searched the existing issues and this has not been reported.
+                required: true
+              - label: I am on the latest version of the affected package.
+                required: true
+
+    - type: textarea
+      id: what-happened
+      attributes:
+          label: What happened?
+          description: What went wrong, and what did you expect instead?
+          placeholder: |
+              The Select popover renders behind the modal overlay when it is opened inside a Drawer.
+              I expected it to render above, the way it does outside a Drawer.
+      validations:
+          required: true
+
+    - type: textarea
+      id: reproduction
+      attributes:
+          label: Reproduction
+          description: |
+              A link to a minimal repro (StackBlitz, CodeSandbox, a small repo) or the smallest component tree that shows the problem.
+          render: tsx
+          placeholder: |
+              import { Select } from "@smarteraui/ui/components/base/select/select";
+
+              export const Repro = () => (
+                  <Select items={[{ id: "1", label: "One" }]}>{/* … */}</Select>
+              );
+      validations:
+          required: true
+
+    - type: textarea
+      id: steps
+      attributes:
+          label: Steps to reproduce
+          placeholder: |
+              1. Render the component above
+              2. Open the drawer
+              3. Click the select
+              4. The popover is clipped
+      validations:
+          required: false
+
+    - type: dropdown
+      id: area
+      attributes:
+          label: Which part of the project?
+          options:
+              - "@smarteraui/ui — a component"
+              - "@smarteraui/ui — styles, tokens or theming"
+              - "smarteraui — the CLI"
+              - Documentation site
+              - Documentation content
+              - Other / not sure
+      validations:
+          required: true
+
+    - type: input
+      id: component
+      attributes:
+          label: Component
+          description: If it is a specific component, which one?
+          placeholder: base/select/select
+      validations:
+          required: false
+
+    - type: dropdown
+      id: framework
+      attributes:
+          label: Framework
+          options:
+              - Next.js (App Router)
+              - Next.js (Pages Router)
+              - Vite + React
+              - Remix / React Router
+              - Other
+              - Not applicable
+      validations:
+          required: true
+
+    - type: textarea
+      id: versions
+      attributes:
+          label: Versions
+          description: Output of `npx envinfo --system --npmPackages "{react,react-dom,next,vite,tailwindcss,@smarteraui/*,react-aria-components}" --binaries --browsers`
+          render: shell
+          placeholder: |
+              System: macOS 15.1
+              Binaries: Node 20.11.0, pnpm 9.12.0
+              npmPackages: @smarteraui/ui 0.1.0, react 19.0.0, tailwindcss 4.3.3
+      validations:
+          required: true
+
+    - type: checkboxes
+      id: conditions
+      attributes:
+          label: Does it only happen under certain conditions?
+          options:
+              - label: Only in dark mode
+              - label: Only in RTL (`dir="rtl"`)
+              - label: Only on mobile / small viewports
+              - label: Only in production builds
+              - label: Only with a keyboard or screen reader
+
+    - type: textarea
+      id: extra
+      attributes:
+          label: Anything else?
+          description: Screenshots, console errors, a recording — drop them here.
+      validations:
+          required: false

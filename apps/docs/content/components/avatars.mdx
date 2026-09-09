@@ -1,0 +1,85 @@
+---
+title: Avatar components
+section: base
+description: Free and open-source React avatar components built for modern applications and websites. These avatars are built using React Aria and styled with Tailwind CSS.
+metaTitle: Free React avatar components | Smartera UI
+metaDescription: Free and open-source React avatar components built for modern applications and websites. These avatar components are built using React Aria and styled with Tailwind CSS.
+install: avatars
+source: packages/ui/src/components/base/avatar
+demoFile: avatar
+---
+
+<Preview id="avatar-example" title="Avatar example" height={320} demo="avatar:AvatarExample" />
+
+## Installation
+
+<Install slug="avatars" />
+
+## Avatar examples
+
+<Preview id="avatar" title="Avatar" height={320} demo="avatar:Avatar" />
+
+### Border
+
+<Preview id="border-example" title="Border example" height={320} demo="avatar:BorderExample" />
+
+### Status indicator
+
+<Preview id="status-indicator-example" title="Status indicator example" height={416} demo="avatar:StatusIndicatorExample" />
+
+### Company logo
+
+<Preview id="company-logo-example" title="Company logo example" height={320} demo="avatar:CompanyLogoExample" />
+
+### Verified badge
+
+<Preview id="verified-badge-example" title="Verified badge example" height={320} demo="avatar:VerifiedBadgeExample" />
+
+### Placeholder
+
+<Preview id="placeholder-example" title="Placeholder example" height={320} demo="avatar:PlaceholderExample" />
+
+### Initials
+
+<Preview id="initials-example" title="Initials example" height={320} demo="avatar:InitialsExample" />
+
+### Label group
+
+<Preview id="label-group-example" title="Label group example" height={320} demo="avatar:LabelGroupExample" />
+
+### Group
+
+<Preview id="group-example" title="Group example" height={416} demo="avatar:GroupExample" />
+
+<Preview id="profile-photo" title="Profile photo" height={416} demo="avatar:ProfilePhoto" />
+
+### Profile photo placeholder
+
+<Preview id="profile-photo-placeholder-example" title="Profile photo placeholder example" height={416} demo="avatar:ProfilePhotoPlaceholderExample" />
+
+### Profile photo initials
+
+<Preview id="profile-photo-initials-example" title="Profile photo initials example" height={416} demo="avatar:ProfilePhotoInitialsExample" />
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            question: "How do I handle avatar images that fail to load?",
+            answer: "The Avatar component automatically handles image loading failures by displaying fallback content. You can customize this fallback behavior using the initials prop to show user initials, the placeholderIcon prop to display a custom icon, or the placeholder prop for any custom React element.",
+        },
+        {
+            question: "Can I display a user's online status with the avatar?",
+            answer: 'Yes, you can display a user\'s online status by using the status prop with values "online" or "offline". This will add a status indicator dot to the bottom-right corner of the avatar.',
+        },
+        {
+            question: "Can I add badges or indicators to avatars?",
+            answer: "Yes, you can add badges or indicators to avatars using the badge prop, which accepts React elements. This is useful for displaying company logos, verification status, or other important information. You can also use the verified prop to show a verification tick icon.",
+        },
+        {
+            question: "How do I make avatars different sizes?",
+            answer: 'You can control the size of avatars using the size prop, which accepts values "xs", "sm", "md", "lg", "xl", and "2xl". The default size is "md". This allows you to use appropriately sized avatars in different contexts of your application.',
+        },
+    ]}
+/>

@@ -1,0 +1,54 @@
+name: Deploy docs
+
+# Deploys apps/docs to Cloudflare Workers (worker `smarteraui-docs`, https://smarteraui.com)
+# via the OpenNext Cloudflare adapter.
+#
+# Required repository secrets (Settings → Secrets and variables → Actions → New repository secret):
+#   CLOUDFLARE_API_TOKEN   — API token with the "Edit Cloudflare Workers" template permissions
+#                            (Account: Workers Scripts:Edit, Account: Account Settings:Read,
+#                            User: Memberships:Read; add Zone: Workers Routes:Edit and
+#                            Zone: DNS:Edit once the smarteraui.com custom domains are enabled).
+#   CLOUDFLARE_ACCOUNT_ID  — the account ID from the Cloudflare dashboard sidebar.
+#
+# No other secrets are needed. See apps/docs/DEPLOYMENT.md.
+
+on:
+    push:
+        branches: [main]
+    workflow_dispatch:
+
+concurrency:
+    group: deploy-docs
+    cancel-in-progress: true
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: pnpm/action-setup@v4
+              with: { version: 9 }
+            # Node 22, not the 20 that ci.yml uses: wrangler 4 refuses to run on Node 20.
+            - uses: actions/setup-node@v4
+              with: { node-version: 22, cache: pnpm }
+
+            - run: pnpm install --frozen-lockfile
+
+            # Workspace packages the docs site reads at build time (@smarteraui/ui) and the
+            # component registry the /r/*.json routes are prerendered from.
+            - run: pnpm build:packages
+            - run: pnpm registry:build
+
+            # `next build` followed by the OpenNext transform into .open-next/.
+            - run: pnpm -F docs cf:build
+
+            - name: Deploy to Cloudflare Workers
+              uses: cloudflare/wrangler-action@v4
+              with:
+                  apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                  accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+                  workingDirectory: apps/docs
+                  packageManager: pnpm
+                  # `wrangler` is a devDependency of apps/docs, so the action reuses it
+                  # rather than installing a different version.
+                  command: deploy

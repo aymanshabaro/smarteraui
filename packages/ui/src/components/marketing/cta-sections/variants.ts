@@ -1,0 +1,36 @@
+// GENERATED FILE — do not edit by hand. Run `pnpm gen:variant-parts`.
+import { variantsA } from "./variants.a";
+import { variantsB } from "./variants.b";
+
+export const variants = {
+    "cta-simple-centered": variantsA["cta-simple-centered"],
+    "cta-simple-logos-02": variantsA["cta-simple-logos-02"],
+    "cta-split-image-03": variantsA["cta-split-image-03"],
+    "cta-split-image-quote-02": variantsA["cta-split-image-quote-02"],
+    "cta-iphone-mockup-01": variantsA["cta-iphone-mockup-01"],
+    "cta-iphone-mockup-04": variantsA["cta-iphone-mockup-04"],
+    "cta-screen-mockup-03": variantsA["cta-screen-mockup-03"],
+    "cta-card-horizontal": variantsA["cta-card-horizontal"],
+    "cta-simple-left-brand": variantsA["cta-simple-left-brand"],
+    "cta-card-horizontal-brand": variantsA["cta-card-horizontal-brand"],
+    "cta-simple-left": variantsA["cta-simple-left"],
+    "cta-split-image-01": variantsA["cta-split-image-01"],
+    "cta-split-image-04": variantsA["cta-split-image-04"],
+    "cta-split-image-quote-03": variantsA["cta-split-image-quote-03"],
+    "cta-iphone-mockup-02": variantsA["cta-iphone-mockup-02"],
+    "cta-screen-mockup-01": variantsB["cta-screen-mockup-01"],
+    "cta-screen-mockup-04": variantsB["cta-screen-mockup-04"],
+    "cta-card-vertical": variantsB["cta-card-vertical"],
+    "cta-simple-logos-01-brand": variantsB["cta-simple-logos-01-brand"],
+    "cta-card-vertical-brand": variantsB["cta-card-vertical-brand"],
+    "cta-simple-logos-01": variantsB["cta-simple-logos-01"],
+    "cta-split-image-02": variantsB["cta-split-image-02"],
+    "cta-split-image-quote-01": variantsB["cta-split-image-quote-01"],
+    "cta-split-image-quote-04": variantsB["cta-split-image-quote-04"],
+    "cta-iphone-mockup-03": variantsB["cta-iphone-mockup-03"],
+    "cta-screen-mockup-02": variantsB["cta-screen-mockup-02"],
+    "cta-abstract-images": variantsB["cta-abstract-images"],
+    "cta-simple-centered-brand": variantsB["cta-simple-centered-brand"],
+    "cta-simple-logos-02-brand": variantsB["cta-simple-logos-02-brand"],
+    "cta-abstract-images-brand": variantsB["cta-abstract-images-brand"],
+} as const;

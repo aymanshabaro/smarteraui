@@ -1,0 +1,45 @@
+---
+title: Lovable integration
+section: integrations
+description: Set up a Lovable project with Smartera UI in minutes — the package installs like any other npm dependency inside Lovable's Vite workspace.
+metaTitle: Lovable integration | Smartera UI
+metaDescription: Use Smartera UI inside Lovable — install the package, wire up the providers, and prompt Lovable to build screens from real components.
+---
+
+Lovable projects are ordinary Vite + React codebases under the hood, synced to a GitHub repo — so `@smarteraui/ui` installs and runs exactly the way it does in the [Vite integration guide](/integrations/vite), just from inside Lovable's own editor and chat.
+
+## Start using Smartera UI in Lovable
+
+Ask Lovable to add the dependency and wire up the providers, or do it yourself from the project's shell if you have one open:
+
+```text
+Install @smarteraui/ui, react-aria-components, and next-themes. Import
+@smarteraui/ui/styles/globals.css from src/index.css, add the @source
+line for node_modules/@smarteraui/ui, and wrap the app in ThemeProvider
+and RouterProvider from @smarteraui/ui/providers.
+```
+
+Once that's done, prompt Lovable for screens the same way you would any other feature: "build a settings page with a tabbed nav and a form" resolves to real Smartera UI components instead of Lovable generating its own markup from scratch, as long as the prompt mentions using the installed library.
+
+## Open examples in Lovable
+
+Every full-page example on this site has an **Open in Lovable** action that pre-fills a new Lovable project with a prompt describing the example and the components it needs, so Lovable installs the package and assembles the page in one pass.
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            question: "Does Lovable install @smarteraui/ui as a real dependency?",
+            answer: "Yes — Lovable projects are real Vite + React codebases, so the package installs from npm and behaves exactly as it does in a local Vite project.",
+        },
+        {
+            question: "Do I need the CLI inside Lovable?",
+            answer: "Not necessarily — Lovable's own chat can install the package and write the provider setup for you from a prompt. Use the CLI only if you've connected a shell or are working from a synced local clone.",
+        },
+        {
+            question: "Will Lovable keep using Smartera UI components after the first prompt?",
+            answer: 'Only if later prompts keep referencing the library, or your project\'s own instructions mention it. Repeating "use the installed Smartera UI components" in prompts keeps Lovable from reaching for its own generated markup instead.',
+        },
+    ]}
+/>

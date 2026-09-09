@@ -1,0 +1,85 @@
+---
+title: Upgrade guide
+section: docs
+description: How versioning works for Smartera UI, how to update the npm package, and how to update components you've copied into your project with the CLI.
+metaTitle: Upgrade guide | Smartera UI
+metaDescription: Understand semantic versioning for @smarteraui/ui, update the npm package, and pull component updates with the smarteraui CLI's diff and add commands.
+---
+
+Smartera UI is at `v0.1.0` and has not had a public release yet, so there is no migration history to document. This page explains how versioning works today and how you'll update once releases start shipping.
+
+## Versioning
+
+`@smarteraui/ui` and the `smarteraui` CLI are versioned and released independently, each following semantic versioning. Releases are managed with [Changesets](https://github.com/changesets/changesets): a change lands with a changeset describing its impact (patch, minor, or major), and publishing the release regenerates the changelog from those changesets.
+
+While the project is on `0.x`, any release may include a breaking change — semver doesn't promise stability below `1.0.0`. Once `@smarteraui/ui` reaches `1.0.0`, breaking changes will only ship in a major-version bump, and this page will gain a `## vX.Y.Z` section for each one, documenting exactly what changed and how to adapt.
+
+## Updating the npm package
+
+If your project depends on `@smarteraui/ui` as an npm package, update it the normal way:
+
+```bash
+npm install @smarteraui/ui@latest
+```
+
+Or your package manager's equivalent (`pnpm up @smarteraui/ui`, `yarn up @smarteraui/ui`). Check the package's published release notes before upgrading across a major version.
+
+## Updating components you've copied in
+
+The CLI copies component source directly into your project, so there's no dependency version to bump for those files — you update them by pulling in the current registry version. Start with `diff` to see what changed:
+
+```bash
+npx smarteraui@latest diff              # every installed component
+npx smarteraui@latest diff button       # just one
+```
+
+`diff` compares your local files against the current registry version and shows exactly what's different, so you can decide whether to merge the change by hand or take the upstream file as-is. To take it as-is, re-run `add` with `--overwrite`:
+
+```bash
+npx smarteraui@latest add button --overwrite
+```
+
+`--overwrite` replaces the local file entirely — it doesn't merge. Review the `diff` output first if you've customized the component, or you'll lose those edits.
+
+## What to expect from a future breaking change
+
+There's no `upgrade` or `migrate` command today, and this page won't describe one until it ships. `diff` and `add --overwrite` are the tools available now for pulling changes into components you've already copied in. When the first breaking change lands:
+
+- It will be documented here under a new `## vX.Y.Z` heading, naming the specific class, prop, or structural change and how to update your code.
+- `diff` will show you exactly which of your files are affected, since it always compares against the current registry content.
+- For any file you haven't customized, `add --overwrite` will bring it fully up to date in one step.
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            question: "Will an upgrade break my styles?",
+            answer: "There's nothing to upgrade yet — v0.1.0 hasn't had a public release. Once breaking changes start shipping, each one will be documented in a version section on this page with exactly what changed.",
+        },
+        {
+            question: "How do I roll back if something goes wrong?",
+            answer: "Components are files in your own project, so ordinary version control covers this: commit before running add --overwrite, and git checkout the file if you want the previous version back.",
+        },
+        {
+            question: "What about monorepos?",
+            answer: "Every CLI command accepts a global --cwd <dir> option, so run diff or add from the repo root with --cwd pointing at the package that holds your components.json.",
+        },
+        {
+            question: "What if I customized a component?",
+            answer: "Run diff first — it shows exactly what you've changed against the current registry version. add --overwrite replaces the file wholesale rather than merging, so use it only once you've reviewed the diff and are ready to lose local edits.",
+        },
+        {
+            question: "Do I need to update all components at once?",
+            answer: "No. diff and add both operate per component (or on everything installed, if you omit the name), so you can update one component at a time.",
+        },
+        {
+            question: "What if the CLI can't reach the registry?",
+            answer: "There's no offline fallback — init, add, and diff all need to reach a registry. If you're working from a clone of this repo, build the registry locally with pnpm registry:build and point the CLI at the output directory with --registry ./packages/registry/dist.",
+        },
+        {
+            question: "Can I pin an older version?",
+            answer: "components.json doesn't have a version field to pin — the CLI always resolves against whatever registry it's pointed at. Pin @smarteraui/ui itself in package.json the way you'd pin any npm dependency.",
+        },
+    ]}
+/>

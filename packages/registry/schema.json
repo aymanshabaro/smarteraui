@@ -1,0 +1,116 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://smarteraui.com/schema.json",
+    "title": "Smartera UI registry entry",
+    "description": "One component, example, util, hook or stylesheet as served from /r/<name>.json.",
+    "type": "object",
+    "required": [
+        "name",
+        "layer",
+        "type",
+        "title",
+        "files",
+        "registryDependencies",
+        "dependencies",
+        "cssVars",
+        "examples"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "name": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "layer": {
+            "type": "string",
+            "enum": [
+                "base",
+                "application",
+                "marketing",
+                "app-examples",
+                "marketing-examples",
+                "foundations",
+                "shared-assets",
+                "utils",
+                "hooks",
+                "styles"
+            ]
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "component",
+                "example",
+                "util",
+                "hook",
+                "style"
+            ]
+        },
+        "title": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "docs": {
+            "type": "string"
+        },
+        "files": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "path",
+                    "target",
+                    "type",
+                    "content"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                    "path": {
+                        "type": "string"
+                    },
+                    "target": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "component",
+                            "util",
+                            "hook",
+                            "style"
+                        ]
+                    },
+                    "content": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "registryDependencies": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "dependencies": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "cssVars": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "examples": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+---
+title: v0 integration
+section: integrations
+description: Hand a Smartera UI component to v0 and keep iterating on it there — the full source, styles object, and dependencies travel with it.
+metaTitle: v0 integration | Smartera UI
+metaDescription: Open any Smartera UI component or example in v0 with one click, or paste its source manually to keep iterating on layout inside v0's chat.
+---
+
+v0 works from source, not from a package import — so integrating Smartera UI with it means handing over the component's actual code rather than pointing at `@smarteraui/ui` as a dependency.
+
+## Start using Smartera UI in v0
+
+Every component page has an **Open in v0** action next to the code block. It sends v0 a prompt containing:
+
+- The component's full `.tsx` source, including its `styles = sortCx({...})` object.
+- Any sibling files it imports from the same folder (types, sub-components).
+- A note listing its npm dependencies (`react-aria-components`, `@smarteraui/icons`, …), so v0 knows what to install in the environment it spins up.
+
+v0 inlines all of that into a new chat, so what you see rendered there is the same component — the same classes, the same props — just detached from the package and editable in place.
+
+If you'd rather do it by hand: copy the component's source from its docs page, paste it into a v0 prompt, and describe what you want built around it. v0 treats pasted source the same way regardless of how it arrived.
+
+## Open examples in v0
+
+Full-page examples — a settings screen, a pricing section — work the same way, just with more files in the payload: every component the page composes travels along with it, so v0 has everything it needs to render the page correctly on the first try instead of guessing at missing imports.
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            question: "Does opening a component in v0 install @smarteraui/ui as a dependency?",
+            answer: "No — v0 receives the component's inlined source, not a package import. It's a starting point you can keep editing in v0's environment, fully detached from the library.",
+        },
+        {
+            question: "Will styling look the same in v0 as it does in the docs?",
+            answer: "Only if v0's project has the same design tokens loaded. Copy the relevant part of theme.css into v0's project alongside the component, or the semantic classes will fall back to Tailwind's defaults.",
+        },
+        {
+            question: "Can I open a component in v0 without a Smartera UI project set up?",
+            answer: "Yes — Open in v0 works straight from the docs site. You don't need the CLI or an existing project; v0 gives you a runnable environment on its own.",
+        },
+    ]}
+/>

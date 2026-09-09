@@ -1,0 +1,52 @@
+---
+title: Bolt.new integration
+section: integrations
+description: Scaffold a Bolt.new project with Smartera UI pre-installed, open individual examples in Bolt, or import an existing project by its GitHub URL.
+metaTitle: Bolt.new integration | Smartera UI
+metaDescription: Use Smartera UI inside Bolt.new — starter template, one-click example imports, and how to open an existing GitHub repo in Bolt.
+---
+
+Bolt.new runs a full Node environment in the browser, so it can install `@smarteraui/ui` from npm exactly like a local project — there's no source-inlining step the way there is for chat-based tools.
+
+## Start using Smartera UI in Bolt.new
+
+The fastest way in is our starter template, which arrives with the package installed, `globals.css` imported, and both providers wired up:
+
+```text
+https://bolt.new/~/github.com/smartera/starter-nextjs
+```
+
+Open that URL and Bolt clones the template into a fresh workspace. From there, prompt Bolt the same way you would any other project — "add a pricing section with a monthly/yearly toggle" resolves to `npx smarteraui@latest add` calls inside Bolt's terminal, since Bolt has shell access.
+
+## Open examples in Bolt.new
+
+Every full-page example on this site has an **Open in Bolt.new** action. It launches the starter template pre-loaded with a prompt describing the example, so Bolt installs the right components and assembles the page automatically instead of you describing it from scratch.
+
+## How to open existing projects in Bolt.new
+
+Already have a Smartera UI project on GitHub? Prefix the repo URL with `bolt.new/~/`:
+
+```text
+https://bolt.new/~/github.com/your-org/your-repo
+```
+
+Bolt clones the repository, installs dependencies, and gives you a running dev server in the same tab — useful for picking up a change mid-session on a machine that doesn't have your local environment.
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            question: "Does Bolt.new install @smarteraui/ui as a real dependency?",
+            answer: "Yes — Bolt runs a full Node environment, so it npm installs the package like any other project would. There's no source-inlining step involved.",
+        },
+        {
+            question: "Can I use the CLI inside Bolt.new?",
+            answer: "Yes. Bolt gives you a real terminal, so npx smarteraui@latest add works exactly as it does locally.",
+        },
+        {
+            question: "What if my repo isn't public?",
+            answer: "Bolt.new's GitHub import needs read access to the repository. Grant Bolt access through GitHub's OAuth flow when prompted, or make the repo public if that's not an option for your project.",
+        },
+    ]}
+/>

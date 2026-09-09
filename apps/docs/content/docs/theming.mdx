@@ -1,0 +1,103 @@
+---
+title: Theming
+section: docs
+description: Learn how to customize Smartera UI components effortlessly to make them your own.
+metaTitle: Theming | Smartera UI
+metaDescription: Re-brand Smartera UI by editing CSS variables. Learn the token layers — base palette, utility colors, and semantic tokens — and how to scope a theme to part of your app.
+---
+
+Every visual decision in Smartera UI — color, spacing, radius, shadow, type scale — is a CSS variable defined once in `theme.css` and consumed by
+utility classes. Components never hard-code a color or a size, so re-theming the whole library is a matter of editing variables, not hunting through
+component files.
+
+## Token layers
+
+The token system has three layers, each built on the one before it:
+
+1. **Base palette** — the raw `--color-brand-50` … `--color-brand-950` scale, plus Tailwind's built-in neutral/red/yellow/green/blue/… scales. This is
+   the **only** layer you touch for a re-brand.
+2. **Utility colors** — `--color-utility-{brand,gray,blue,indigo,purple,pink,orange,…}-{50…900}`, used by badges, tags, and charts that need a wider
+   palette than the semantic layer exposes.
+3. **Semantic tokens** — role-based variables like `--color-bg-primary`, `--color-text-secondary`, `--color-fg-brand-primary`, and
+   `--color-border-tertiary`, consumed directly by components as `bg-primary`, `text-secondary`, `text-fg-brand-primary`, `border-tertiary`. Semantic
+   tokens reference the base and utility layers via `var()`, so changing the brand palette cascades automatically — including into dark mode.
+
+| Prefix     | Role                 | Example utility                    |
+| ---------- | -------------------- | ---------------------------------- |
+| `text-*`   | Typography color     | `text-primary`, `text-tertiary`    |
+| `fg-*`     | Icon / graphic color | `text-fg-quaternary`               |
+| `bg-*`     | Surface color        | `bg-primary`, `bg-brand-solid`     |
+| `border-*` | Stroke color         | `border-secondary`, `ring-primary` |
+
+Never reach for a raw palette utility (`bg-neutral-100`, `text-purple-600`) inside a component — pick a semantic token by the role you need, not by the
+color it happens to render as today.
+
+## Editing the tokens
+
+The CLI doesn't generate a brand scale for you — `init` writes `theme.css` with the default palette (or fetches it from the registry), and re-theming
+is a matter of editing that file directly:
+
+```css
+/* theme.css */
+@theme {
+    --color-brand-25: #fcfaff;
+    --color-brand-50: #f9f5ff;
+    --color-brand-100: #f4ebff;
+    /* … 200 through 900 … */
+    --color-brand-950: #1a0966;
+}
+```
+
+Keep the contrast relationships that the semantic layer expects: `600` is the primary interactive color on a light background, `700` is its hover
+state, `50`/`100` are tints for subtle surfaces, and `300` supplies the default focus-ring tone. Do not edit the semantic mappings themselves (`bg-*`,
+`text-*`, `fg-*`, `border-*`) — they're already wired to cascade correctly.
+
+### Scoping a theme to part of your app
+
+Because every semantic token resolves through `var(--color-brand-*)`, you can re-theme a single subtree by overriding the brand variables on a wrapper
+element instead of forking components:
+
+```css
+.theme-productb {
+    --color-brand-50: #eff6ff;
+    --color-brand-600: #2563eb;
+    --color-brand-700: #1d4ed8;
+    /* …through 950 */
+}
+```
+
+```tsx
+<div className="theme-productb">
+    <Button color="primary">Uses the Product B brand</Button>
+</div>
+```
+
+Everything inside `.theme-productb` — buttons, badges, focus rings, links — resolves to the overridden scale, while the rest of the page keeps the
+default brand. This is the same mechanism dark mode uses (see [Dark mode](/docs/dark-mode)), just scoped to a class you choose instead of `.dark-mode`.
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            question: "Can I use custom colors instead of the predefined palettes?",
+            answer: "Yes — define your own brand scale by editing the CSS variables in theme.css. Make sure to provide every shade from 25 through 950 so components that rely on lighter or darker steps still look correct.",
+        },
+        {
+            question: "How do I change the brand color after initial setup?",
+            answer: "Edit the --color-brand-* variables in theme.css. You can swap in one of the predefined palettes or define an entirely custom scale — either way, every component that uses the brand color picks up the change automatically.",
+        },
+        {
+            question: "Do I need to restart my development server after changing the theme?",
+            answer: "Usually not — Tailwind's dev server picks up CSS variable changes on save. If your build pipeline caches CSS more aggressively, a rebuild will pick up the new values.",
+        },
+        {
+            question: "Can I have different themes for different parts of my application?",
+            answer: "Yes. Override the --color-brand-* variables on a wrapper class and apply that class to any subtree — see Scoping a theme above. Each scoped subtree resolves its own brand scale independently.",
+        },
+        {
+            question: "How do theme changes affect dark mode?",
+            answer: "Both modes read from the same brand scale, so a brand color change applies to light and dark mode simultaneously. The .dark-mode block in theme.css re-maps semantic tokens, not the brand palette itself, so your custom colors stay consistent across themes.",
+        },
+    ]}
+/>

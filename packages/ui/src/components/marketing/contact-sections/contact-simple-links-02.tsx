@@ -1,0 +1,57 @@
+import { MarkerPin01, MessageChatCircle, MessageSmileCircle, Phone } from "@smarteraui/icons";
+import { Button } from "@/components/base/buttons/button";
+import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
+
+const channels = [
+    {
+        icon: MessageSmileCircle,
+        title: "Chat to sales",
+        subtitle: "Speak to our friendly team.",
+        cta: "sales@smartera.com",
+        href: "mailto:sales@smartera.com",
+    },
+    {
+        icon: MessageChatCircle,
+        title: "Chat to support",
+        subtitle: "We're here to help.",
+        cta: "support@smartera.com",
+        href: "mailto:support@smartera.com",
+    },
+    {
+        icon: MarkerPin01,
+        title: "Visit us",
+        subtitle: "Visit our office HQ.",
+        cta: "100 Smith Street\nCollingwood VIC 3066 AU",
+        href: "https://maps.google.com/?q=100+Smith+Street+Collingwood+VIC+3066",
+    },
+    { icon: Phone, title: "Call us", subtitle: "Mon-Fri from 8am to 5pm.", cta: "+1 (555) 000-0000", href: "tel:+15550000000" },
+];
+
+/** Large heading over four contact cards, each led by a solid brand featured icon. */
+export const ContactSimpleLinks02 = () => (
+    <section className="bg-primary py-16 md:py-24">
+        <div className="max-w-container mx-auto px-4 md:px-8">
+            <div className="flex w-full max-w-3xl flex-col">
+                <span className="text-brand-secondary md:text-md text-sm font-semibold">Contact us</span>
+                <h2 className="text-display-md text-primary md:text-display-lg mt-3 font-semibold">We&apos;d love to hear from you</h2>
+                <p className="text-tertiary mt-4 text-lg md:mt-6 md:text-xl">Our friendly team is always here to chat.</p>
+            </div>
+
+            <div className="mt-16 md:mt-24">
+                <ul className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+                    {channels.map((channel) => (
+                        <li key={channel.title} className="bg-secondary flex h-full flex-col items-start p-6">
+                            <FeaturedIcon icon={channel.icon} size="lg" color="brand" theme="dark" />
+
+                            <h3 className="text-primary mt-12 text-lg font-semibold md:mt-16">{channel.title}</h3>
+                            <p className="text-md text-tertiary mt-1">{channel.subtitle}</p>
+                            <Button href={channel.href} color="link-color" size="lg" className="mt-4 whitespace-pre md:mt-5">
+                                {channel.cta}
+                            </Button>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+    </section>
+);

@@ -1,0 +1,71 @@
+---
+title: Credit card components
+section: base
+description: Free and open-source React credit card components built for modern applications and websites. These credit cards are built using React Aria and styled with Tailwind CSS.
+metaTitle: Free React credit card components | Smartera UI
+metaDescription: Free and open-source React credit card components built for modern applications and websites. These credit cards are built using React Aria and styled with Tailwind CSS.
+install: credit-cards
+source: packages/ui/src/components/shared-assets/credit-card
+demoFile: credit-card
+---
+
+<Preview id="credit-card-example" title="Credit card example" height={446} demo="credit-card:CreditCardExample" />
+
+## Installation
+
+<Install slug="credit-cards" />
+
+## Customization
+
+<Preview id="customization-example" title="Customization example" height={668} demo="credit-card:CustomizationExample" />
+
+## Sizes
+
+<Preview id="sizes-example" title="Sizes example" height={622} demo="credit-card:SizesExample" />
+
+## Credit card types
+
+<Preview id="transparent" title="Transparent" height={446} demo="credit-card:Transparent" />
+
+<Preview id="transparent-gradient" title="Transparent gradient" height={446} demo="credit-card:TransparentGradient" />
+
+<Preview id="brand-dark" title="Brand dark" height={446} demo="credit-card:BrandDark" />
+
+<Preview id="brand-light" title="Brand light" height={446} demo="credit-card:BrandLight" />
+
+<Preview id="gray-dark" title="Gray dark" height={446} demo="credit-card:GrayDark" />
+
+<Preview id="gray-light" title="Gray light" height={446} demo="credit-card:GrayLight" />
+
+<Preview id="transparent-strip" title="Transparent strip" height={446} demo="credit-card:TransparentStrip" />
+
+<Preview id="gray-strip" title="Gray strip" height={446} demo="credit-card:GrayStrip" />
+
+<Preview id="gradient-strip" title="Gradient strip" height={446} demo="credit-card:GradientStrip" />
+
+<Preview id="salmon-strip" title="Salmon strip" height={446} demo="credit-card:SalmonStrip" />
+
+<Preview id="gray-strip-vertical" title="Gray strip vertical" height={446} demo="credit-card:GrayStripVertical" />
+
+<Preview id="gradient-strip-vertical" title="Gradient strip vertical" height={446} demo="credit-card:GradientStripVertical" />
+
+<Preview id="salmon-strip-vertical" title="Salmon strip vertical" height={446} demo="credit-card:SalmonStripVertical" />
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            question: "How do I customize the card information?",
+            answer: "You can customize card information using props: company for the company name, cardNumber for the card number, cardHolder for the cardholder name, and cardExpiration for the expiration date. All props have sensible defaults if not provided.",
+        },
+        {
+            question: "How do I resize the credit card?",
+            answer: "You can resize the card using the width prop. The component automatically calculates the appropriate height to maintain the correct aspect ratio. The original dimensions are 316px × 190px.",
+        },
+        {
+            question: "Can I change the card network logo?",
+            answer: "Currently, the component displays Mastercard logos by default. The logo color automatically adjusts based on the card type - colored logos for light backgrounds and white logos for dark backgrounds.",
+        },
+    ]}
+/>

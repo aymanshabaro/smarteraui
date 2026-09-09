@@ -1,0 +1,65 @@
+---
+title: Multi-select components
+section: base
+description: Free and open-source React multi select components built for modern applications and websites. These multi select components are built using React Aria and styled with Tailwind CSS.
+metaTitle: Free React multi-select components | Smartera UI
+metaDescription: Free and open-source React multi-select components built for modern applications and websites. These multi-select components are built using React Aria and styled with Tailwind CSS.
+install: multi-select
+source: packages/ui/src/components/base/select
+demoFile: multi-select
+---
+
+<Preview id="multi-select-example" title="Multi-select example" height={348} demo="multi-select:MultiSelectExample" />
+
+## Installation
+
+<Install slug="multi-select" />
+
+## Multi-select examples
+
+<Preview id="default" title="Default" height={348} demo="multi-select:Default" />
+
+<Preview id="with-leading-icon" title="With leading icon" height={348} demo="multi-select:WithLeadingIcon" />
+
+<Preview id="disabled" title="Disabled" height={348} demo="multi-select:Disabled" />
+
+<Preview id="sizes" title="Sizes" height={594} demo="multi-select:Sizes" />
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            q: "What sizes are available for the multi-select?",
+            a: 'The multi-select supports three sizes: "sm" , "md" , and "lg" . The default size is "md" .',
+        },
+        {
+            q: "How do I disable the multi-select?",
+            a: "You can disable the multi-select by setting the isDisabled prop to true .",
+        },
+        {
+            q: "How do I add a select all option?",
+            a: 'Pass an onSelectAll callback to add a "Select all" action, and an onReset callback to add a "Reset" action. These appear as buttons in the dropdown footer. To hide the footer entirely, set showFooter={false} .',
+        },
+        {
+            q: "How do I display supporting text next to the selected count?",
+            a: 'Use the supportingText prop to show additional context next to the selected items count, such as "12 users" .',
+        },
+        {
+            q: "How do I hide the search input?",
+            a: "Set showSearch={false} to remove the search input from the popover. Use emptyStateTitle and emptyStateDescription to customize the empty state shown when the listbox has no items (no search results, or an empty items array).",
+        },
+        {
+            q: "How do I customize the selected count text?",
+            a: "Pass a selectedCountFormatter function — it receives the selected count and returns a ReactNode . Useful for pluralization or showing the selected items inline instead of just a number.",
+        },
+        {
+            q: "How do I control the selection?",
+            a: 'Pass selectedKeys and onSelectionChange for controlled state, or defaultSelectedKeys for uncontrolled. The selection value is a React Aria Selection — either a Set of item ids or the literal string "all" .',
+        },
+        {
+            q: "Is the multi-select accessible?",
+            a: "Yes. The multi-select is built on React Aria Components, which provides full keyboard navigation, screen reader support, and ARIA attributes out of the box.",
+        },
+    ]}
+/>

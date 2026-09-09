@@ -1,0 +1,47 @@
+---
+title: Gradient picker components
+section: application
+description: Powerful and customizable React gradient picker components built for modern applications and websites. These gradient pickers are built using React Aria and styled with Tailwind CSS.
+metaTitle: React gradient picker components | Smartera UI
+metaDescription: Powerful and customizable React gradient picker components built for modern applications and websites. These gradient picker components are built using React Aria and styled with Tailwind CSS.
+install: gradient-pickers
+source: packages/ui/src/components/application/gradient-picker
+demoFile: gradient-picker
+---
+
+<Preview id="gradient-picker-example" title="Gradient picker example" height={848} demo="gradient-picker:GradientPickerExample" />
+
+## Installation
+
+<Install slug="gradient-pickers" />
+
+## Gradient picker examples
+
+<Preview id="gradient-picker" title="Gradient picker" height={848} demo="gradient-picker:GradientPicker" />
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            question: "What gradient types are supported?",
+            answer: 'The gradient picker supports four gradient types: "linear", "radial", "angular" (conic), and "diamond". You can switch between types using the built-in type selector dropdown.',
+        },
+        {
+            question: "How do I add or remove gradient stops?",
+            answer: "You can add new stops by clicking on an empty area of the gradient slider, or by using the add button in the stop list. Stops can be removed by selecting a stop and pressing Delete/Backspace, or by clicking the remove button in the stop list. A minimum of 2 stops is always enforced.",
+        },
+        {
+            question: "Can I control the gradient angle?",
+            answer: "Yes, you can control the gradient angle by dragging the endpoints on the 2D gradient area, or programmatically via the defaultAngle prop on GradientPicker.Provider. The onAngleChange callback fires when the angle is modified.",
+        },
+        {
+            question: "Can I use the gradient picker sub-components independently?",
+            answer: "Yes, the gradient picker uses a compound component pattern. You can use GradientPicker.Area, GradientPicker.Slider, GradientPicker.StopList, GradientPicker.TypeSelect, and GradientPicker.Reverse independently within a GradientPicker.Provider wrapper.",
+        },
+        {
+            question: "How do I get the CSS gradient output?",
+            answer: "Use the onStopsChange callback on GradientPicker.Provider to receive updated gradient stops. The component also provides utility functions to convert stops into CSS gradient strings using the toGradientCSS() helper.",
+        },
+    ]}
+/>

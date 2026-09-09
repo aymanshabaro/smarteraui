@@ -1,0 +1,50 @@
+{
+    "name": "docs",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "cf:build": "opennextjs-cloudflare build",
+        "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+        "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+        "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+        "lint": "eslint app components lib",
+        "type-check": "tsc --noEmit",
+        "test": "echo \"no tests\""
+    },
+    "dependencies": {
+        "@smarteraui/icons": "npm:@untitledui/icons@^0.0.22",
+        "@smarteraui/ui": "workspace:*",
+        "@mdx-js/loader": "^3.1.0",
+        "@mdx-js/react": "^3.1.0",
+        "@next/mdx": "^15.1.0",
+        "next": "^15.1.0",
+        "next-themes": "^0.4.6",
+        "react": "^19.0.0",
+        "react-aria-components": "^1.20.0",
+        "react-dom": "^19.0.0",
+        "rehype-autolink-headings": "^7.1.0",
+        "rehype-slug": "^6.0.0",
+        "remark-frontmatter": "^5.0.0",
+        "remark-gfm": "^4.0.0",
+        "remark-mdx-frontmatter": "^5.0.0",
+        "shiki": "^1.24.0"
+    },
+    "devDependencies": {
+        "@opennextjs/cloudflare": "^1.20.6",
+        "@tailwindcss/postcss": "^4.3.3",
+        "@types/mdx": "^2.0.13",
+        "@types/react": "^19.2.17",
+        "@types/react-dom": "^19.2.3",
+        "flag-icons": "^7.5.0",
+        "postcss": "^8.5.21",
+        "tailwindcss": "^4.3.3",
+        "tailwindcss-animate": "^1.0.7",
+        "tailwindcss-react-aria-components": "^2.2.0",
+        "wrangler": "^4.130.0",
+        "@tailwindcss/typography": "^0.5.20",
+        "typescript": "^5.9.3"
+    }
+}

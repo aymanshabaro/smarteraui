@@ -1,0 +1,153 @@
+---
+title: Installation
+section: docs
+description: This guide walks through installing Smartera UI and getting a new or existing project set up quickly.
+metaTitle: Installation | Smartera UI
+metaDescription: Install Smartera UI with the CLI in Next.js, Vite, and AI builders, or set it up manually with theme.css, globals.css, and the cx utility.
+---
+
+## Frameworks
+
+The CLI detects your project and scaffolds the right files. Pick the framework you're using and run its init command from your project root.
+
+### Next.js
+
+```bash
+npx smarteraui@latest init --nextjs
+```
+
+### Vite
+
+```bash
+npx smarteraui@latest init --vite
+```
+
+### Bolt, v0, Lovable, Claude
+
+AI builders that can run shell commands can use the same CLI. Run the framework flag that matches the generated project (`--nextjs` or `--vite`), or leave it off and let `init` auto-detect from the project files:
+
+```bash
+npx smarteraui@latest init --nextjs
+```
+
+### Manual
+
+No CLI, no problem — see [Manual installation](#manual-installation) below for the exact files to create by hand.
+
+## Installation via CLI
+
+The CLI creates `theme.css`, updates `globals.css` with the required imports and custom variants, and adds the `cx` utility. It reads your existing
+`tsconfig.json` path alias rather than writing one — if none is declared, it warns you and tells you what to add. Once your project is initialized, add
+components one at a time:
+
+```bash
+npx smarteraui@latest add badges
+```
+
+Add as many components as you need — each command copies that component's source (and its dependencies) straight into your project:
+
+```bash
+npx smarteraui@latest add button-group avatar table
+```
+
+## Manual installation
+
+If you'd rather not run the CLI, set the project up by hand.
+
+**1. Install the dependencies**
+
+```bash
+npm install react-aria-components tailwind-merge tailwindcss-react-aria-components tailwindcss-animate @tailwindcss/typography
+```
+
+**2. Create `theme.css`**
+
+Add a `theme.css` file with your design tokens inside a Tailwind v4 `@theme` block — brand palette, semantic colors, typography scale, shadows, and
+breakpoints. This is the single file to edit when re-branding.
+
+```css
+/* theme.css */
+@theme {
+    --color-brand-50: #f5f8ff;
+    --color-brand-500: #2563eb;
+    --color-brand-600: #1d4ed8;
+    /* …the rest of the brand scale, plus semantic bg-*/text-*/fg-*/border-* tokens */
+}
+
+.dark-mode {
+    /* re-map the semantic tokens above for dark mode */
+}
+```
+
+**3. Update `globals.css`**
+
+Import Tailwind, your theme, and the typography stylesheet, register the plugins, and declare the `dark` custom variant:
+
+```css
+/* globals.css */
+@import "tailwindcss";
+@import "./theme.css";
+@import "./typography.css";
+
+@plugin "@tailwindcss/typography";
+@plugin "tailwindcss-react-aria-components";
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:where(.dark-mode, .dark-mode *));
+```
+
+**4. Add the `cx` utility**
+
+Every component merges its style object with `cx`, a thin wrapper around `tailwind-merge` that also understands the `display-*` text sizes:
+
+```ts
+// utils/cx.ts
+import { extendTailwindMerge } from "tailwind-merge";
+
+export const cx = extendTailwindMerge({
+    extend: { theme: { text: ["display-xs", "display-sm", "display-md", "display-lg", "display-xl", "display-2xl"] } },
+});
+```
+
+**5. Copy in a component**
+
+With the setup files in place, copy any component's source directly from its page into your project, adjusting import paths to match your aliases.
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            question: "What tech stack does Smartera UI use?",
+            answer: "Smartera UI components are built with React 19, Tailwind CSS v4.3, TypeScript v5.9, and React Aria Components v1.20. The dependency surface is kept minimal so you can focus on building instead of wrestling with third-party maintainers.",
+        },
+        {
+            question: "Do I need to install all components?",
+            answer: "No — install only what you need. You do need the core setup files (theme.css and globals.css) regardless. Add components individually with npx smarteraui@latest add [component-name], or copy the source for a single component manually.",
+        },
+        {
+            question: "Can I use Smartera UI with other UI libraries?",
+            answer: "Yes. Since components are built with Tailwind CSS utility classes, they coexist with most other libraries — just watch for class name conflicts and scope your CSS where needed.",
+        },
+        {
+            question: "Can I use Smartera UI with Vue, Svelte, or other frameworks?",
+            answer: "The components themselves are React-only, but the Tailwind tokens in theme.css are framework-agnostic. You can reuse the design tokens in any project that runs Tailwind CSS, even outside React.",
+        },
+        {
+            question: "How do I update components after installing them?",
+            answer: "If you installed with the CLI, re-run the add command with --overwrite: npx smarteraui@latest add badges --overwrite. If you copied a component manually, update its code by hand.",
+        },
+        {
+            question: "Are there any dependencies I need to install myself?",
+            answer: "Core components need React 19, TypeScript v5.9, and Tailwind CSS v4.3. Interactive components also use React Aria Components — the CLI installs any required dependency automatically when you add a component.",
+        },
+        {
+            question: "Can I customize the components after installation?",
+            answer: "Absolutely — once a component is copied into your project you own the code. Change Tailwind classes, edit the component directly, or adjust the tokens in theme.css to match your brand.",
+        },
+        {
+            question: "Can I use a different CSS framework?",
+            answer: "Smartera UI is built specifically for Tailwind CSS. Adapting components to another CSS framework is possible but would require rewriting every style object, so we recommend sticking with Tailwind for the best experience.",
+        },
+    ]}
+/>

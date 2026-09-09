@@ -1,0 +1,61 @@
+---
+title: Select components
+section: base
+description: Free and open-source React select components built for modern applications and websites. These select components are built using React Aria and styled with Tailwind CSS.
+metaTitle: Free React select components | Smartera UI
+metaDescription: Free and open-source React select components built for modern applications and websites. These select components are built using React Aria and styled with Tailwind CSS.
+install: select
+source: packages/ui/src/components/base/select
+demoFile: select
+---
+
+<Preview id="select-example" title="Select example" height={348} demo="select:SelectExample" />
+
+## Installation
+
+<Install slug="select" />
+
+## Select examples
+
+<Preview id="default" title="Default" height={348} demo="select:Default" />
+
+<Preview id="disabled" title="Disabled" height={348} demo="select:Disabled" />
+
+<Preview id="sizes" title="Sizes" height={594} demo="select:Sizes" />
+
+<Preview id="icon-leading" title="Icon leading" height={348} demo="select:IconLeading" />
+
+<Preview id="avatar-leading" title="Avatar leading" height={348} demo="select:AvatarLeading" />
+
+<Preview id="dot-leading" title="Dot leading" height={348} demo="select:DotLeading" />
+
+<Preview id="search" title="Search" height={348} demo="select:Search" />
+
+<Preview id="tags" title="Tags" height={348} demo="select:Tags" />
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            q: "What sizes are available for the select?",
+            a: 'The select supports three sizes: "sm" , "md" , and "lg" . The default size is "sm" .',
+        },
+        {
+            q: "How do I disable the select?",
+            a: "You can disable the select by setting the isDisabled prop to true .",
+        },
+        {
+            q: "Can I add a search to the select?",
+            a: "Yes. Use the Select.ComboBox compound component instead of Select to enable search/filtering of options.",
+        },
+        {
+            q: "How do I add icons or avatars to select items?",
+            a: "Pass icon for a leading icon or avatarUrl for a leading avatar on Select.Item . You can also pass icon on the Select component itself to show an icon in the trigger.",
+        },
+        {
+            q: "Is the select accessible?",
+            a: "Yes. The select is built on React Aria Components, which provides full keyboard navigation, screen reader support, and ARIA attributes out of the box.",
+        },
+    ]}
+/>

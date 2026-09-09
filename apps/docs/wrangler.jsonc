@@ -1,0 +1,38 @@
+/**
+ * Cloudflare Workers configuration for the Smartera UI documentation site.
+ *
+ * The site is built by the OpenNext Cloudflare adapter (`opennextjs-cloudflare build`),
+ * which emits the Worker entry at `.open-next/worker.js` and every static asset at
+ * `.open-next/assets`. See apps/docs/DEPLOYMENT.md for the full deploy runbook.
+ */
+{
+    "$schema": "node_modules/wrangler/config-schema.json",
+    "name": "smarteraui-docs",
+    "main": ".open-next/worker.js",
+    "compatibility_date": "2026-09-09",
+    // `nodejs_compat` is required by the adapter; `global_fetch_strictly_public` makes
+    // `fetch()` to the site's own domain go back out through the public internet, which is
+    // what Next.js expects when a server component fetches an absolute URL.
+    "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+    "assets": {
+        "directory": ".open-next/assets",
+        "binding": "ASSETS",
+    },
+    // Next-compatible image optimization, wired to Cloudflare Images by the adapter. The docs
+    // site uses plain <img>/SVG rather than next/image today, so nothing hits it — keep it so
+    // `/_next/image` works if a page ever starts using next/image.
+    "images": {
+        "binding": "IMAGES",
+    },
+    "observability": {
+        "enabled": true,
+    },
+
+    // Custom domains. Uncomment once the `smarteraui.com` zone exists in this Cloudflare
+    // account (Cloudflare dashboard → Add a site → move the nameservers) — `wrangler deploy`
+    // fails with "Could not find zone" if the routes are enabled before the zone is active.
+    // "routes": [
+    //     { "pattern": "smarteraui.com", "custom_domain": true },
+    //     { "pattern": "www.smarteraui.com", "custom_domain": true }
+    // ]
+}

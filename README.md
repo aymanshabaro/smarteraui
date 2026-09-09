@@ -1,0 +1,302 @@
+<div align="center">
+
+# Smartera UI
+
+**An open-source React 19 component library built on React Aria Components and Tailwind CSS v4.**
+
+[![CI](https://img.shields.io/github/actions/workflow/status/aymanshabaro/smarteraui/ci.yml?branch=main&label=CI&logo=github)](https://github.com/aymanshabaro/smarteraui/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/%40smarteraui%2Fui?logo=npm&label=%40smarteraui%2Fui)](https://www.npmjs.com/package/@smarteraui/ui)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](#license)
+
+</div>
+
+Smartera UI is a component library, a documentation site and a copy-in CLI in one repository. Components ship as readable
+TypeScript source rather than a compiled bundle, so you can install `@smarteraui/ui` as a normal dependency _or_ copy the
+files into your project with `npx smarteraui@latest add` and own them outright. Behaviour, keyboard handling and ARIA come
+from [React Aria Components](https://react-spectrum.adobe.com/react-aria/); styling is Tailwind CSS v4 utilities resolved
+through a semantic token layer, so re-branding the whole system means editing one file.
+
+The registry currently holds **797 entries**: **106 component groups** across seven layers (19 base, 32 application,
+18 marketing sections, 12 application page examples, 10 marketing page examples, 9 foundations, 6 shared assets),
+**679 section and page-example variants**, and the shared hooks, utils and styles they depend on.
+
+## Features
+
+- **Accessible by default.** Every interactive primitive — menus, dialogs, comboboxes, tables, sliders, date pickers —
+  delegates to React Aria Components. Focus management, keyboard navigation and ARIA wiring are inherited, not
+  re-implemented. Each component ships an `axe` smoke test that runs in CI.
+- **Tailwind CSS v4 tokens, no config file.** All design decisions live in `@theme` blocks in
+  [`packages/ui/src/styles/theme.css`](./packages/ui/src/styles/theme.css). There is no `tailwind.config.js`.
+- **Dark mode without `dark:` utilities.** A `.dark-mode` class anywhere in the ancestor chain re-maps every semantic
+  token. Components written against `bg-primary` / `text-secondary` are correct in both themes automatically.
+- **RTL support.** React Aria supplies direction-aware behaviour, and components use CSS logical properties (`ms-*`,
+  `ps-*`, `start-*`, `text-start`) so `dir="rtl"` flips the layout without a fork. The migration away from physical
+  utilities is still in progress in parts of the marketing layer — see [docs/rtl.md](./docs/rtl.md).
+- **TypeScript strict.** `strict` and `noUncheckedIndexedAccess` across the monorepo; every prop is typed and
+  JSDoc-documented, and `tsc --noEmit` runs in CI.
+- **Tree-shakeable source.** The package publishes `.tsx` with per-component subpath exports, so a bundler only ever
+  sees the components you import.
+- **Copy-in CLI.** `npx smarteraui@latest add button` writes the component's source into your project, resolves its
+  registry dependencies, rewrites `@/` imports to your alias and installs missing npm packages.
+
+## Quick start
+
+### Next.js (App Router)
+
+**1. Install**
+
+```bash
+pnpm add @smarteraui/ui
+# npm install @smarteraui/ui · yarn add @smarteraui/ui
+```
+
+**2. Import the stylesheet and let Tailwind scan the package**
+
+`@smarteraui/ui/styles/globals.css` already contains the Tailwind import, the token layer, typography and every plugin
+the components need. Tailwind v4 does not scan `node_modules` by default, so add one `@source` line:
+
+```css
+/* app/globals.css */
+@import "@smarteraui/ui/styles/globals.css";
+
+@source "../node_modules/@smarteraui/ui/src/**/*.{ts,tsx}";
+```
+
+**3. Transpile the package**
+
+Next.js compiles only your own source by default, and this package ships TSX:
+
+```ts
+// next.config.ts
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+    transpilePackages: ["@smarteraui/ui"],
+};
+
+export default nextConfig;
+```
+
+**4. Wrap the app in the providers**
+
+`ThemeProvider` maps `next-themes` onto the `.light-mode` / `.dark-mode` classes the tokens key off. `RouterProvider`
+hands React Aria the Next router so every component that accepts `href` performs a client-side transition. Both carry
+their own `"use client"` directive, so they can be rendered straight from a server layout:
+
+```tsx
+// app/layout.tsx
+import { RouterProvider, ThemeProvider } from "@smarteraui/ui/providers";
+import "./globals.css";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+    return (
+        <html lang="en" suppressHydrationWarning>
+            <body className="bg-primary text-primary antialiased">
+                <ThemeProvider>
+                    <RouterProvider>{children}</RouterProvider>
+                </ThemeProvider>
+            </body>
+        </html>
+    );
+}
+```
+
+`suppressHydrationWarning` is required: `next-themes` writes the theme class onto `<html>` before React hydrates.
+
+### React + Vite
+
+**1. Install**
+
+```bash
+pnpm add @smarteraui/ui
+pnpm add -D @tailwindcss/vite
+```
+
+**2. Register the Tailwind plugin**
+
+```ts
+// vite.config.ts
+import tailwindcss from "@tailwindcss/vite";
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+
+export default defineConfig({
+    plugins: [react(), tailwindcss()],
+});
+```
+
+**3. Import the stylesheet and let Tailwind scan the package**
+
+```css
+/* src/index.css */
+@import "@smarteraui/ui/styles/globals.css";
+
+@source "../node_modules/@smarteraui/ui/src/**/*.{ts,tsx}";
+```
+
+**4. Wrap the app in the providers**
+
+`ThemeProvider` is framework-agnostic and works as-is. `RouterProvider` from `@smarteraui/ui/providers` is Next-only —
+in Vite, use React Aria's own `RouterProvider` and hand it your router's navigate function:
+
+```tsx
+// src/main.tsx
+import { StrictMode } from "react";
+import { RouterProvider } from "react-aria-components";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter, useNavigate } from "react-router-dom";
+import { ThemeProvider } from "@smarteraui/ui/providers";
+import { App } from "./app";
+import "./index.css";
+
+const Providers = ({ children }: { children: React.ReactNode }) => {
+    const navigate = useNavigate();
+    return (
+        <ThemeProvider>
+            <RouterProvider navigate={navigate}>{children}</RouterProvider>
+        </ThemeProvider>
+    );
+};
+
+createRoot(document.getElementById("root")!).render(
+    <StrictMode>
+        <BrowserRouter>
+            <Providers>
+                <App />
+            </Providers>
+        </BrowserRouter>
+    </StrictMode>,
+);
+```
+
+With no router at all, drop `RouterProvider` entirely — every component still renders and works; `href` links just do a
+full page load.
+
+### Your first component
+
+```tsx
+import { Button } from "@smarteraui/ui/components/base/buttons/button";
+
+export const Example = () => (
+    <Button size="md" color="primary" onPress={() => console.log("pressed")}>
+        Get started
+    </Button>
+);
+```
+
+Import from the subpath (`@smarteraui/ui/components/<layer>/<group>/<file>`) so bundlers pull in only that component.
+The root barrel — `import { Button } from "@smarteraui/ui"` — re-exports everything and is handy while prototyping.
+
+Interactive components are React Aria based: use `onPress` rather than `onClick`, and `isDisabled` rather than
+`disabled`.
+
+### Or copy the components in
+
+Prefer to own the source? Skip the dependency and use the CLI:
+
+```bash
+npx smarteraui@latest init
+npx smarteraui@latest add button
+```
+
+`init` writes `components.json`, your theme file, the `cx` utility and the Tailwind `@source` line, and wires up
+`ThemeProvider`. `add` copies a component's files (plus everything it depends on) into your project. See
+[docs/cli.md](./docs/cli.md).
+
+## Theming
+
+Every colour, radius, shadow and type step is a CSS variable in
+[`packages/ui/src/styles/theme.css`](./packages/ui/src/styles/theme.css). The tokens are layered: a raw palette, a
+wider `--color-utility-*` set for charts and badges, and semantic tokens (`--color-bg-primary`, `--color-text-secondary`,
+`--color-border-tertiary`) that components consume as `bg-primary`, `text-secondary`, `border-tertiary`.
+
+A re-brand is one edit: replace the eleven `--color-brand-*` values.
+
+```css
+@theme {
+    --color-brand-50: rgb(249 245 255);
+    --color-brand-100: rgb(244 235 255);
+    --color-brand-200: rgb(233 215 254);
+    --color-brand-300: rgb(214 187 251);
+    --color-brand-400: rgb(182 146 246);
+    --color-brand-500: rgb(158 119 237);
+    --color-brand-600: rgb(127 86 217);
+    --color-brand-700: rgb(105 65 198);
+    --color-brand-800: rgb(83 56 158);
+    --color-brand-900: rgb(66 48 125);
+    --color-brand-950: rgb(44 28 95);
+}
+```
+
+Every semantic token references those through `var()`, so buttons, focus rings, links, selected states and charts follow
+in both light and dark mode. Full detail in [docs/theming.md](./docs/theming.md).
+
+## Project layout
+
+```
+apps/docs             documentation site — Next.js 15 App Router + MDX
+packages/ui           @smarteraui/ui — the component library
+  src/components      base/ application/ marketing/ app-examples/
+                      marketing-examples/ foundations/ shared-assets/
+  src/styles          globals.css · theme.css · typography.css
+  src/{hooks,utils,providers}
+packages/cli          smarteraui — the init/add CLI
+packages/registry     generated registry JSON consumed by the CLI and the docs site
+scripts               generators, screenshot and visual-diff tooling
+docs                  these guides
+```
+
+## Development
+
+Requires **Node 20+** and **pnpm 9**.
+
+```bash
+pnpm install
+pnpm dev            # docs site → http://localhost:3000
+pnpm storybook      # Storybook → http://localhost:6006
+pnpm test           # type-check + lint + prettier + vitest/axe across the workspace
+pnpm gen:all        # regenerate barrels, demos, variants, nav and the registry
+```
+
+There is no hosted documentation site yet — run `pnpm dev` and browse it locally at `http://localhost:3000`.
+
+Other useful commands:
+
+```bash
+pnpm type-check     # tsc --noEmit everywhere
+pnpm lint           # eslint
+pnpm prettier       # format the repo
+pnpm build          # build every package and the docs site
+pnpm docs:shot <slug>   # screenshot a docs page with Playwright
+pnpm docs:diff <slug>   # pixel-diff it against the stored reference
+```
+
+## Contributing
+
+Contributions are welcome. [CONTRIBUTING.md](./CONTRIBUTING.md) covers the setup, the component conventions that matter
+(kebab-case files, `Aria*` import aliases, semantic tokens only, the `styles = sortCx({})` pattern, and the demo, story,
+test and docs page every component ships with), how to run the checks, and the changeset-based release flow.
+[docs/contributing-components.md](./docs/contributing-components.md) walks through adding a component end to end.
+
+[ROADMAP.md](./ROADMAP.md) lists what is not built yet — an MCP server, full RTL coverage, visual regression baselines
+and a few others — so you can see where help is most useful.
+
+By participating you agree to abide by the [Code of Conduct](./CODE_OF_CONDUCT.md). Security issues should be reported
+privately — see [SECURITY.md](./SECURITY.md).
+
+## License
+
+Released under the **MIT License**. Use it in personal and commercial projects, without attribution.
+
+Every component, example, icon and page in this repository is included — there is no paid tier, no private
+registry and nothing held back behind an account.
+
+## Credits
+
+Some components are derived from [Untitled UI React](https://github.com/untitleduico/react), which is released
+under the MIT License. Its licence text is kept at
+[`LICENSES/untitledui-react-MIT.txt`](./LICENSES/untitledui-react-MIT.txt). Thanks to that project for the token system
+and the base component APIs this library builds on.
+
+Built on [React Aria Components](https://react-spectrum.adobe.com/react-aria/) and
+[Tailwind CSS](https://tailwindcss.com).

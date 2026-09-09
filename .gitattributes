@@ -1,0 +1,6 @@
+# Reference captures are binary-ish and huge — keep them out of diffs.
+docs/spec/reference/screenshots/** -diff -merge
+docs/spec/reference/thumbs/**      -diff -merge
+docs/spec/reference/html/**        -diff -merge linguist-generated
+docs/spec/reference/variants/**    -diff -merge linguist-generated
+docs/spec/reference/examples/**    -diff -merge linguist-generated

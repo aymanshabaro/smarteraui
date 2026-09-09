@@ -1,0 +1,65 @@
+---
+title: Tab components
+section: application
+description: Free and open-source React tab components built for modern applications and websites. These tabs are built using React Aria and styled with Tailwind CSS.
+metaTitle: Free React tab components | Smartera UI
+metaDescription: Free and open-source React tab components built for modern applications and websites. These tab components are built using React Aria and styled with Tailwind CSS.
+install: tabs
+source: packages/ui/src/components/application/tabs
+demoFile: tabs
+---
+
+<Preview id="tabs-example" title="Tabs example" height={320} demo="tabs:TabsExample" />
+
+## Installation
+
+<Install slug="tabs" />
+
+## Tabs examples
+
+<Preview id="button-brand-horizontal" title="Button brand horizontal" height={320} demo="tabs:ButtonBrandHorizontal" />
+
+<Preview id="button-gray-horizontal" title="Button gray horizontal" height={320} demo="tabs:ButtonGrayHorizontal" />
+
+<Preview id="button-border-horizontal" title="Button border horizontal" height={320} demo="tabs:ButtonBorderHorizontal" />
+
+<Preview id="button-minimal-horizontal" title="Button minimal horizontal" height={320} demo="tabs:ButtonMinimalHorizontal" />
+
+<Preview id="underline" title="Underline" height={320} demo="tabs:Underline" />
+
+<Preview id="button-brand-vertical" title="Button brand vertical" height={532} demo="tabs:ButtonBrandVertical" />
+
+<Preview id="button-gray-vertical" title="Button gray vertical" height={532} demo="tabs:ButtonGrayVertical" />
+
+<Preview id="button-border-vertical" title="Button border vertical" height={540} demo="tabs:ButtonBorderVertical" />
+
+<Preview id="button-minimal-vertical" title="Button minimal vertical" height={520} demo="tabs:ButtonMinimalVertical" />
+
+<Preview id="line" title="Line" height={472} demo="tabs:Line" />
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            question: "How do I handle tab selection programmatically?",
+            answer: "You can control tab selection using the selectedKey and onSelectionChange props on the Tabs component. This allows you to manage the selected tab state in your application logic and respond to tab changes.",
+        },
+        {
+            question: "Can I add badges to tabs?",
+            answer: "Yes, you can add badges to tabs using the badge prop on individual Tabs.Item components. The badge accepts numbers or strings and automatically adjusts its color based on the tab's selection state.",
+        },
+        {
+            question: "What sizes are available for tabs?",
+            answer: 'Tabs support two sizes: "sm" (small) and "md" (medium). You can set the size using the size prop on the Tabs.List component. The default size is "sm".',
+        },
+        {
+            question: "How do I make tabs take full width?",
+            answer: "You can make tabs take the full width of their container by setting the fullWidth prop to true on the Tabs.List component. This distributes the tabs evenly across the available space.",
+        },
+        {
+            question: "Are the tabs accessible?",
+            answer: "Yes, the tabs component is built with accessibility in mind using React Aria. It supports keyboard navigation (arrow keys to navigate, Enter/Space to select), proper ARIA attributes, focus management, and screen reader compatibility.",
+        },
+    ]}
+/>

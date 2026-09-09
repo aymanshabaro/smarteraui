@@ -1,0 +1,116 @@
+import { Check } from "@smarteraui/icons";
+import { Button } from "@/components/base/buttons/button";
+
+interface Plan {
+    name: string;
+    price: string;
+    note: string;
+    isPopular?: boolean;
+    features: string[];
+}
+
+const plans: Plan[] = [
+    {
+        name: "Basic plan",
+        price: "$10/mth",
+        note: "Billed annually.",
+        isPopular: true,
+        features: [
+            "Access to all basic features",
+            "Basic reporting and analytics",
+            "Up to 10 individual users",
+            "20 GB individual data",
+            "Basic chat and email support",
+        ],
+    },
+    {
+        name: "Business plan",
+        price: "$20/mth",
+        note: "Billed annually.",
+        features: [
+            "200+ integrations",
+            "Advanced reporting and analytics",
+            "Up to 20 individual users",
+            "40 GB individual data",
+            "Priority chat and email support",
+        ],
+    },
+    {
+        name: "Enterprise plan",
+        price: "$40/mth",
+        note: "Billed annually.",
+        features: [
+            "Advanced custom fields",
+            "Audit log and data history",
+            "Unlimited individual users",
+            "Unlimited individual data",
+            "Personalized + priority service",
+        ],
+    },
+];
+
+/** Decorative hand-drawn arrow pointing from the "Most popular!" label onto the featured card. */
+const CalloutArrow = () => (
+    <svg width="60" height="46" viewBox="0 0 60 46" fill="none" aria-hidden="true">
+        <path
+            d="M59 2.5C45.5 2.5 29.5 6.5 18.5 15.5C10.5 22 5 30.5 2.5 43"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path d="M2.5 43.5L1.5 33.5M2.5 43.5L11 38.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+/** Three plan cards with dual actions and a hand-drawn callout over the most popular plan. */
+export const PricingSimpleCallOut = () => (
+    <section className="bg-primary py-16 md:py-24">
+        <div className="max-w-container mx-auto px-4 md:px-8">
+            <div className="flex w-full max-w-3xl flex-col">
+                <p className="text-brand-secondary md:text-md text-sm font-semibold">Pricing</p>
+                <h2 className="text-display-md text-primary md:text-display-lg mt-3 font-semibold">Simple, transparent pricing</h2>
+                <p className="text-tertiary mt-4 text-lg md:mt-6 md:text-xl">We believe Smartera should be accessible to all companies, no matter the size.</p>
+            </div>
+
+            <div className="mt-16 grid w-full grid-cols-1 gap-4 md:mt-24 md:grid-cols-2 md:gap-8 xl:grid-cols-3">
+                {plans.map((plan) => (
+                    <div key={plan.name} className="bg-primary ring-secondary_alt relative flex flex-col rounded-2xl shadow-lg ring-1">
+                        {plan.isPopular && (
+                            <div className="absolute -top-6 right-2 md:-right-16">
+                                <div className="text-brand-secondary flex">
+                                    <CalloutArrow />
+                                    <span className="-mt-2 text-sm font-semibold">Most popular!</span>
+                                </div>
+                            </div>
+                        )}
+
+                        <div className="flex flex-col items-center px-6 pt-10 text-center md:px-8">
+                            <p className="text-display-md text-primary md:text-display-lg font-semibold">{plan.price}</p>
+                            <h3 className="text-primary mt-4 text-xl font-semibold">{plan.name}</h3>
+                            <p className="text-md text-tertiary mt-1">{plan.note}</p>
+                        </div>
+
+                        <ul className="flex flex-col gap-4 px-6 pt-8 pb-8 md:p-8 md:pb-10">
+                            {plan.features.map((feature) => (
+                                <li key={feature} className="flex gap-3">
+                                    <div className="bg-success-secondary text-featured-icon-light-fg-success flex size-6 shrink-0 items-center justify-center rounded-full">
+                                        <Check className="size-3.5" />
+                                    </div>
+                                    <span className="text-tertiary text-md">{feature}</span>
+                                </li>
+                            ))}
+                        </ul>
+
+                        <div className="mt-auto flex flex-col gap-3 px-6 pb-8 md:px-8">
+                            <Button size="xl">Get started</Button>
+                            <Button size="xl" color="secondary">
+                                Chat to sales
+                            </Button>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+);

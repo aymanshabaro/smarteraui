@@ -1,0 +1,51 @@
+---
+title: Tree view components
+section: application
+description: Powerful and customizable React tree view components built for modern applications. These tree views are built using React Aria and styled with Tailwind CSS.
+metaTitle: React tree view components | Smartera UI
+metaDescription: Powerful and customizable React tree view components built for modern applications and websites. These tree view components are built using React Aria and styled with Tailwind CSS.
+install: tree-views
+source: packages/ui/src/components/application/tree-view
+demoFile: tree-view
+---
+
+<Preview id="tree-view-example" title="Tree view example" height={946} demo="tree-view:TreeViewExample" />
+
+## Installation
+
+<Install slug="tree-views" />
+
+## Tree view examples
+
+<Preview id="simple-sm" title="Simple sm" height={946} demo="tree-view:SimpleSm" />
+
+<Preview id="simple-md" title="Simple md" height={1050} demo="tree-view:SimpleMd" />
+
+### Advanced
+
+<Preview id="advanced-sm" title="Advanced sm" height={946} demo="tree-view:AdvancedSm" />
+
+<Preview id="advanced-md" title="Advanced md" height={1050} demo="tree-view:AdvancedMd" />
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            question: "What sub-components make up a tree view?",
+            answer: "A tree view consists of TreeView (root container), TreeView.Item (a tree node that can contain children), and TreeView.ItemContent (the visible label and icon content of a node).",
+        },
+        {
+            question: "How do I enable multi-selection?",
+            answer: 'Pass selectionMode="multiple" to the TreeView component. Selected keys can be controlled with selectedKeys and onSelectionChange, or uncontrolled with defaultSelectedKeys. A node whose subtree is only partly selected renders an indeterminate checkbox.',
+        },
+        {
+            question: "How do I enable drag-and-drop reordering?",
+            answer: "Pass the isDraggable prop to TreeView and use the onReorder and onMove callbacks with React Aria's useTreeData hook to handle item repositioning.",
+        },
+        {
+            question: "What sizes are available?",
+            answer: "The tree view supports sm and md sizes via the size prop. The sm size is more compact, while md provides more spacing for readability. Set hasGuides to replace the plain indentation with connecting guide lines.",
+        },
+    ]}
+/>

@@ -1,0 +1,77 @@
+---
+title: Dropdown components
+section: base
+description: Free and open-source React dropdown components built for modern applications and websites. These dropdowns are built using React Aria and styled with Tailwind CSS.
+metaTitle: Free React dropdown components | Smartera UI
+metaDescription: Free and open-source React dropdown components built for modern applications and websites. These dropdown components are built using React Aria and styled with Tailwind CSS.
+install: dropdowns
+source: packages/ui/src/components/base/dropdown
+demoFile: dropdown
+---
+
+<Preview id="dropdown-example" title="Dropdown example" height={320} demo="dropdown:DropdownExample" />
+
+## Installation
+
+<Install slug="dropdowns" />
+
+## Dropdown examples
+
+<Preview id="button-simple" title="Button simple" height={320} demo="dropdown:ButtonSimple" />
+
+<Preview id="button-advanced" title="Button advanced" height={320} demo="dropdown:ButtonAdvanced" />
+
+<Preview id="button-link" title="Button link" height={320} demo="dropdown:ButtonLink" />
+
+<Preview id="icon-simple" title="Icon simple" height={320} demo="dropdown:IconSimple" />
+
+<Preview id="icon-advanced" title="Icon advanced" height={320} demo="dropdown:IconAdvanced" />
+
+<Preview id="search-simple" title="Search simple" height={320} demo="dropdown:SearchSimple" />
+
+<Preview id="search-advanced" title="Search advanced" height={320} demo="dropdown:SearchAdvanced" />
+
+<Preview id="integrations" title="Integrations" height={320} demo="dropdown:Integrations" />
+
+<Preview id="account-button" title="Account button" height={320} demo="dropdown:AccountButton" />
+
+<Preview id="avatar" title="Avatar" height={320} demo="dropdown:Avatar" />
+
+<Preview id="account-card-xs" title="Account card (xs)" height={320} demo="dropdown:AccountCardXs" />
+
+<Preview id="account-card-sm" title="Account card (sm)" height={320} demo="dropdown:AccountCardSm" />
+
+<Preview id="account-card-md" title="Account card (md)" height={320} demo="dropdown:AccountCardMd" />
+
+<Preview id="account-breadcrumb" title="Account breadcrumb" height={320} demo="dropdown:AccountBreadcrumb" />
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            q: "How do I position dropdowns relative to their trigger?",
+            a: 'You can control the position of dropdowns using the placement prop on the Dropdown.Popover component. It accepts values like "top", "bottom", "left", "right", and their variations (e.g., "top start", "bottom right"). The default placement is "bottom right".',
+        },
+        {
+            q: "Can I customize the appearance of dropdown items?",
+            a: "Yes, you can customize dropdown items using the className prop on Dropdown.Item components. You can also add icons using the icon prop, display addons (like keyboard shortcuts) with the addon prop, or create completely unstyled items using the unstyled prop.",
+        },
+        {
+            q: "How do I handle selection in dropdowns?",
+            a: "You can handle selection by using the onSelectionChange prop on the Dropdown.Menu component, which provides a callback function that receives the selected key. The dropdown uses single selection mode by default and disallows empty selection.",
+        },
+        {
+            q: "How do I organize dropdown items into sections?",
+            a: "You can organize dropdown items using Dropdown.Section components and separate them with Dropdown.Separator. You can also add section headers using Dropdown.SectionHeader to create well-organized dropdown menus.",
+        },
+        {
+            q: "How do I make dropdowns accessible?",
+            a: "The dropdown component is built with accessibility in mind using React Aria. It supports keyboard navigation (arrow keys to navigate, Enter to select, Escape to close), proper ARIA attributes, focus management, and screen reader compatibility.",
+        },
+        {
+            q: "Can I disable individual dropdown items?",
+            a: "Yes, you can disable individual dropdown items by setting the isDisabled prop to true on the Dropdown.Item component. Disabled items will have a different visual appearance and won't respond to user interactions.",
+        },
+    ]}
+/>

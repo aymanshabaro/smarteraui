@@ -1,0 +1,27 @@
+@import "@smarteraui/ui/styles/globals.css";
+
+/* Tailwind v4 must scan the library source for classes used by components. */
+@source "../../../packages/ui/src/**/*.{ts,tsx}";
+@source "../**/*.{ts,tsx,mdx}";
+
+/*
+ * Shiki emits both themes at once: github-light inline, github-dark as CSS variables.
+ * Any `.dark-mode` ancestor — the page theme or a single preview block — swaps the text
+ * colours; the surface itself stays on the surrounding `bg-primary`, as in the reference.
+ */
+.shiki,
+.shiki span {
+    background-color: transparent !important;
+}
+
+.dark-mode .shiki,
+.dark-mode .shiki span {
+    color: var(--shiki-dark) !important;
+}
+
+.docs-code .shiki {
+    padding: calc(var(--spacing) * 5);
+    font-size: var(--text-sm);
+    line-height: 24px;
+    font-weight: 500;
+}

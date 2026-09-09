@@ -1,0 +1,59 @@
+---
+title: Checkbox components
+section: base
+description: Free and open-source React checkbox components built for modern applications and websites. These checkboxes are built using React Aria and styled with Tailwind CSS.
+metaTitle: Free React checkbox components | Smartera UI
+metaDescription: Free and open-source React checkbox components built for modern applications and websites. These checkbox components are built using React Aria and styled with Tailwind CSS.
+install: checkboxes
+source: packages/ui/src/components/base/checkbox
+demoFile: checkbox
+---
+
+<Preview id="checkbox-example" title="Checkbox example" height={320} demo="checkbox:CheckboxExample" />
+
+## Installation
+
+<Install slug="checkboxes" />
+
+## Checkbox examples
+
+<Preview id="base" title="Base" height={320} demo="checkbox:Base" />
+
+<Preview id="with-label" title="With label" height={320} demo="checkbox:WithLabel" />
+
+<Preview id="with-label-and-hint" title="With label and hint" height={320} demo="checkbox:WithLabelAndHint" />
+
+<Preview id="disabled" title="Disabled" height={320} demo="checkbox:Disabled" />
+
+<Preview id="sizes" title="Sizes" height={378} demo="checkbox:Sizes" />
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            question: "How do I create a checkbox group?",
+            answer: "You can create a checkbox group by using multiple Checkbox components with the same name attribute. This allows users to select multiple options from a group. Each checkbox should have a unique value prop for proper form handling.",
+        },
+        {
+            question: "What sizes are available for checkboxes?",
+            answer: 'Checkboxes support two sizes: "sm" (small) and "md" (medium). You can set the size using the size prop on the Checkbox component. The default size is "sm".',
+        },
+        {
+            question: "How do I handle indeterminate state in checkboxes?",
+            answer: "You can set a checkbox to an indeterminate state by using the isIndeterminate prop. This is useful for parent checkboxes in hierarchical selections where some but not all child items are selected.",
+        },
+        {
+            question: "Can I add a description or hint text to checkboxes?",
+            answer: "Yes, you can add description or hint text to checkboxes using the hint prop. You can also add a main label using the label prop. Both props accept React nodes, allowing for rich content.",
+        },
+        {
+            question: "How do I control checkbox state?",
+            answer: "You can control checkbox state using the isSelected prop for controlled components, or defaultSelected for uncontrolled components. Use the onChange prop to handle state changes. You can also disable checkboxes with the isDisabled prop.",
+        },
+        {
+            question: "How do I make checkboxes accessible?",
+            answer: "The checkbox component is built with accessibility in mind using React Aria. It supports keyboard navigation (Space key to toggle), proper ARIA attributes, focus management, and screen reader compatibility. The component automatically handles focus indicators.",
+        },
+    ]}
+/>

@@ -1,0 +1,64 @@
+---
+title: Typography
+section: docs
+description: For long-form content like articles or documentation, use our typography styles to ensure consistent formatting. These styles extend the default @tailwindcss/typography plugin.
+metaTitle: Typography | Smartera UI
+metaDescription: Live specimens for every Smartera UI text size token and the .prose rich-text theme, built on @tailwindcss/typography.
+source: packages/ui/src/components/foundations/typography
+demoFile: typography
+---
+
+Smartera UI defines two related type systems. Interface text uses the size tokens in `theme.css` (`text-xs` through `text-display-2xl`) applied
+directly as Tailwind classes. Long-form content — articles, blog posts, changelogs, legal pages — uses the `.prose` class instead, which themes the
+`@tailwindcss/typography` plugin with the same semantic color tokens so rich text never looks out of step with the rest of the UI.
+
+## Installation
+
+`.prose` ships with the base setup — there's nothing extra to add once `globals.css` is in place (see [Installation](/docs/installation)):
+
+```css
+/* globals.css */
+@import "./typography.css";
+
+@plugin "@tailwindcss/typography";
+```
+
+`typography.css` overrides the plugin's default CSS variables (`--tw-prose-body`, `--tw-prose-headings`, `--tw-prose-quotes`, …) with Smartera UI's
+semantic tokens — body copy uses `text-tertiary`, headings use `text-primary`, quote borders use `fg-brand-primary_alt` — so a `.prose` block already
+matches your theme, including dark mode, with no extra classes.
+
+Wrap long-form HTML in `.prose`:
+
+```tsx
+<div className="prose">
+    <h2>Introduction</h2>
+    <p>Body copy styled automatically…</p>
+</div>
+```
+
+Two modifiers adjust how block quotes sit inside the flow — add them alongside `.prose`:
+
+- `.prose-centered-quote` — centers the quote text and removes the left border, for a quote used as a section's visual anchor.
+- `.prose-minimal-quote` — removes the left border but keeps quotes left-aligned, for a lighter-weight pull quote.
+
+Opt any element out of the theme with `not-prose`, and scale everything up on larger viewports with `md:prose-lg`.
+
+## Examples
+
+<Preview id="article-example" title="Article example" height={2165} demo="typography:ArticleExample" />
+
+<Preview id="headings" title="Headings" height={604} demo="typography:Headings" />
+
+<Preview id="images" title="Images" height={808} demo="typography:Images" />
+
+<Preview id="quote-default" title="Quote default" height={426} demo="typography:QuoteDefault" />
+
+<Preview id="quote-with-avatar" title="Quote with avatar" height={450} demo="typography:QuoteWithAvatar" />
+
+<Preview id="quote-centered" title="Quote centered" height={488} demo="typography:QuoteCentered" />
+
+<Preview id="quote-minimal" title="Quote minimal" height={426} demo="typography:QuoteMinimal" />
+
+<Preview id="inline-code" title="Inline code" height={320} demo="typography:InlineCode" />
+
+<Preview id="feature-text" title="Feature text" height={708} demo="typography:FeatureText" />

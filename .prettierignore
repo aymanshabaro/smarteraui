@@ -1,0 +1,16 @@
+node_modules
+.next
+dist
+storybook-static
+.turbo
+.shots
+docs/spec/**
+pnpm-lock.yaml
+apps/docs/public/**
+packages/registry/dist/**
+**/.gitkeep
+.open-next
+cloudflare-env.d.ts
+
+# Emitted by `pnpm registry:build` with its own formatting.
+packages/registry/schema.json

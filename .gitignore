@@ -1,0 +1,25 @@
+node_modules
+.next
+dist
+storybook-static
+.turbo
+.shots
+*.tsbuildinfo
+.DS_Store
+.env*
+!.env.example
+
+# Internal build specification and captured reference material.
+# Not redistributable — see LICENSES/ and NOTICE. Kept locally, never published.
+docs/spec/
+
+
+# Generated screenshots and thumbnails
+apps/docs/public/thumbs/
+
+# OpenNext Cloudflare build output (apps/docs)
+.open-next
+.wrangler
+cloudflare-env.d.ts
+.next-verify/
+.build-verify/

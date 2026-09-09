@@ -1,0 +1,77 @@
+---
+title: Color picker components
+section: application
+description: Powerful and customizable React color picker components built for modern applications and websites. These color pickers are built using React Aria and styled with Tailwind CSS.
+metaTitle: React color picker components | Smartera UI
+metaDescription: Powerful and customizable React color picker components built for modern applications and websites. These color picker components are built using React Aria and styled with Tailwind CSS.
+install: color-pickers
+source: packages/ui/src/components/application/color-picker
+demoFile: color-picker
+---
+
+<Preview id="color-picker-example" title="Color picker example" height={792} demo="color-picker:ColorPickerExample" />
+
+## Installation
+
+<Install slug="color-pickers" />
+
+## Color picker examples
+
+<Preview id="color-picker" title="Color picker" height={748} demo="color-picker:ColorPicker" />
+
+### Color swatch picker
+
+<Preview id="color-swatch-picker" title="Color swatch picker" height={520} demo="color-picker:ColorSwatchPicker" />
+
+<Preview id="saved-swatches-small" title="Saved swatches small" height={368} demo="color-picker:SavedSwatchesSmall" />
+
+<Preview id="saved-swatches-medium" title="Saved swatches medium" height={424} demo="color-picker:SavedSwatchesMedium" />
+
+### Brand swatches
+
+<Preview id="brand-swatches" title="Brand swatches" height={408} demo="color-picker:BrandSwatches" />
+
+<Preview id="gray-swatches" title="Gray swatches" height={380} demo="color-picker:GraySwatches" />
+
+### Minimal picker
+
+<Preview id="minimal-picker" title="Minimal picker" height={376} demo="color-picker:MinimalPicker" />
+
+### Hue slider
+
+<Preview id="hue-slider" title="Hue slider" height={320} demo="color-picker:HueSlider" />
+
+### Transparency slider
+
+<Preview id="transparency-slider" title="Transparency slider" height={320} demo="color-picker:TransparencySlider" />
+
+### Palette picker
+
+<Preview id="palette-picker" title="Palette picker" height={696} demo="color-picker:PalettePicker" />
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            question: "What color formats are supported?",
+            answer: 'The color picker supports multiple color formats including "hex", "rgb", "css" (rgba), "hsl", and "hsb". You can switch between formats using the built-in format selector dropdown.',
+        },
+        {
+            question: "Does the color picker support the EyeDropper API?",
+            answer: "Yes, the color picker includes an eye dropper button that uses the browser's EyeDropper API when available. This allows users to pick any color from their screen. The button is automatically hidden in browsers that don't support the API.",
+        },
+        {
+            question: "How do I use the color picker with saved colors?",
+            answer: "You can use the ColorPicker.SavedColors sub-component to display a grid of saved color swatches. Pass an array of CSS color strings to the colors prop, and use onSelect to handle color selection and onAdd to handle adding new colors.",
+        },
+        {
+            question: "Can I use the color picker sub-components independently?",
+            answer: "Yes, the color picker uses a compound component pattern. You can use individual sub-components like ColorPicker.Area, ColorPicker.HueSlider, ColorPicker.AlphaSlider, ColorPicker.ColorFormatSelect, and ColorPicker.ColorValueInput independently within a ColorPicker.Provider wrapper.",
+        },
+        {
+            question: "How do I control the selected color programmatically?",
+            answer: "Wrap your color picker components with ColorPicker.Provider and use the value prop for controlled mode or defaultValue for uncontrolled mode. Use the onChange callback to respond to color changes. You can also access state via the useColorPicker() hook.",
+        },
+    ]}
+/>

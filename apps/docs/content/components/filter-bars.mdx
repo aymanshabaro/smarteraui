@@ -1,0 +1,75 @@
+---
+title: Filter bar components
+section: application
+description: Powerful and customizable React filter bar components built for modern applications and websites. These filter bars are built using React Aria and styled with Tailwind CSS.
+metaTitle: React filter bar components | Smartera UI
+metaDescription: Powerful and customizable React filter bar components built for modern applications and websites. These filter bar components are built using React Aria and styled with Tailwind CSS.
+install: filter-bars
+source: packages/ui/src/components/application/filter-bar
+demoFile: filter-bars
+---
+
+<Preview id="filter-bar-example" title="Filter bar example" height={320} demo="filter-bars:FilterBarExample" />
+
+## Installation
+
+<Install slug="filter-bars" />
+
+## Filter bar examples
+
+<Preview id="simple" title="Simple" height={320} demo="filter-bars:Simple" />
+
+<Preview id="tabs-and-search" title="Tabs and search" height={320} demo="filter-bars:TabsAndSearch" />
+
+<Preview id="tabs-and-date-picker" title="Tabs and date picker" height={320} demo="filter-bars:TabsAndDatePicker" />
+
+<Preview id="date-filters" title="Date filters" height={320} demo="filter-bars:DateFilters" />
+
+<Preview id="dropdowns" title="Dropdowns" height={320} demo="filter-bars:Dropdowns" />
+
+<Preview id="dropdowns-and-date-picker" title="Dropdowns and date picker" height={320} demo="filter-bars:DropdownsAndDatePicker" />
+
+<Preview id="advanced-filter-inactive" title="Advanced filter inactive" height={320} demo="filter-bars:AdvancedFilterInactive" />
+
+<Preview id="advanced-filter-active" title="Advanced filter active" height={320} demo="filter-bars:AdvancedFilterActive" />
+
+## Filter dropdown menus
+
+<Preview id="filter-dropdown-empty-state" title="Filter dropdown empty state" height={320} demo="filter-bars:FilterDropdownEmptyState" />
+
+<Preview id="filter-dropdown-inactive" title="Filter dropdown inactive" height={320} demo="filter-bars:FilterDropdownInactive" />
+
+<Preview id="filter-dropdown-active" title="Filter dropdown active" height={320} demo="filter-bars:FilterDropdownActive" />
+
+## Filter slideout menus
+
+<Preview id="filters-advanced-empty-state-menu" title="Filters advanced empty state menu" height={960} demo="filter-bars:FiltersAdvancedEmptyStateMenu" />
+
+<Preview id="filters-advanced-active-menu" title="Filters advanced active menu" height={960} demo="filter-bars:FiltersAdvancedActiveMenu" />
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            question: "What sub-components make up a filter bar?",
+            answer: "A filter bar consists of FilterBar.Root (layout container), FilterBar.Content (left content area), FilterBar.Actions (right actions area), FilterBar.FilterRow (advanced filter row), and FilterBar.FilterIconButton (icon-only filter button).",
+        },
+        {
+            question: "How do I build an advanced filter?",
+            answer: "Use FilterBar.FilterRow components to create rows with field, operator, and value inputs. Each row accepts an onRemove callback for deletion. Combine with Select components for field and operator selection, and Input for value entry.",
+        },
+        {
+            question: "Can I combine tabs with filters?",
+            answer: "Yes, the filter bar is designed to work with other components like Tabs, Input, Select, and DateRangePicker. Place them inside FilterBar.Content for left-aligned elements or FilterBar.Actions for right-aligned actions.",
+        },
+        {
+            question: "Is the filter bar responsive?",
+            answer: "Yes, FilterBar.Content uses flexbox wrapping to handle responsive layouts. The demos include responsive breakpoints that adapt the layout for mobile and desktop viewports.",
+        },
+        {
+            question: "How do I add a search input to the filter bar?",
+            answer: "Place an Input component with a search icon inside FilterBar.Content. The filter bar layout will automatically handle spacing and alignment with other filter elements.",
+        },
+    ]}
+/>

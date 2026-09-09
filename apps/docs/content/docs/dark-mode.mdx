@@ -1,0 +1,124 @@
+---
+title: Dark mode
+section: docs
+description: Easily swap between light and dark modes with CSS variables.
+metaTitle: Dark mode | Smartera UI
+metaDescription: "Smartera UI ships class-based dark mode driven by CSS variables — no dark: utilities required. Learn the .dark-mode strategy, ThemeProvider, and section-scoped dark mode."
+---
+
+## Dark mode support
+
+Dark mode in Smartera UI is **class-based**, not media-query based. `globals.css` declares a custom variant:
+
+```css
+@custom-variant dark (&:where(.dark-mode, .dark-mode *));
+```
+
+so adding `.dark-mode` anywhere in the ancestor chain flips every semantic token defined in `theme.css`'s `.dark-mode { … }` block. A component written
+with semantic tokens — `bg-primary`, `text-primary`, `border-secondary` — is automatically correct in dark mode and needs **zero** `dark:` utilities of
+its own.
+
+Reach for an explicit `dark:` utility only for the rare case a token can't express — swapping an image asset, inverting a logo mark, or a gradient stop
+with no semantic equivalent — and leave a comment explaining why when you do.
+
+## How to switch to dark mode
+
+### Whole-app toggle
+
+Wrap your app in the `ThemeProvider`, which wraps `next-themes` and maps its light/dark values onto the `.light-mode`/`.dark-mode` classes:
+
+```tsx
+// app/layout.tsx
+import { ThemeProvider } from "@smarteraui/ui/providers";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+    return (
+        <html lang="en" suppressHydrationWarning>
+            <body>
+                <ThemeProvider>{children}</ThemeProvider>
+            </body>
+        </html>
+    );
+}
+```
+
+`ThemeProvider` exposes three states to your users — **Light**, **Dark**, and **System** — and injects a blocking script so there's no flash of the
+wrong theme on first paint. Read or change the current theme anywhere with the re-exported hook:
+
+```tsx
+import { useTheme } from "@smarteraui/ui/providers";
+
+const { theme, resolvedTheme, setTheme } = useTheme();
+```
+
+A minimal toggle button:
+
+```tsx
+"use client";
+import { Moon01, Sun } from "@smarteraui/icons";
+import { ButtonUtility } from "@smarteraui/ui/components/base/buttons/button-utility";
+import { useTheme } from "@smarteraui/ui/providers";
+
+export const ThemeToggle = () => {
+    const { resolvedTheme, setTheme } = useTheme();
+    return (
+        <ButtonUtility
+            aria-label="Toggle dark mode"
+            icon={resolvedTheme === "dark" ? Sun : Moon01}
+            onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+        />
+    );
+};
+```
+
+If you'd rather manage the class yourself — no `next-themes` — toggle `.dark-mode` on the root element directly and persist the choice:
+
+```ts
+const isDark = document.documentElement.classList.toggle("dark-mode");
+localStorage.setItem("theme", isDark ? "dark" : "light");
+```
+
+### Section-scoped dark mode
+
+Some sections should render permanently dark regardless of the page's theme — a dark footer, a dark call-to-action band. Put `.dark-mode` directly on
+that element instead of hardcoding colors:
+
+```tsx
+<section className="dark-mode bg-primary text-primary">
+    <Footer />
+</section>
+```
+
+Every component inside resolves its dark tokens without any prop drilling, because the `dark` custom variant matches `.dark-mode` at any depth in the
+ancestor chain — not just on `<html>`.
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            question: "How do I enable dark mode for my entire application?",
+            answer: 'Add the dark-mode class to your root HTML or body element — either directly, or by rendering ThemeProvider with theme set to "dark". This applies dark mode styles to every component within that container.',
+        },
+        {
+            question: "Can I have both light and dark mode components on the same page?",
+            answer: "Yes — apply the dark-mode or light-mode class to any specific container to mix and match appearances on the same page. This gives you fine-grained control, such as a dark footer on an otherwise light page.",
+        },
+        {
+            question: "How do I implement a dark mode toggle?",
+            answer: 'Use the useTheme hook from @smarteraui/ui/providers and call setTheme("dark" | "light" | "system"). If you\'re managing the class yourself, toggle .dark-mode on the root element with JavaScript and store the preference in localStorage so it persists across page loads.',
+        },
+        {
+            question: "Do I need to write separate styles for dark mode?",
+            answer: "No — Smartera UI handles dark mode through CSS variables, so semantic classes like bg-primary automatically resolve to the right value in both themes. You only need a dark: utility for the handful of things tokens can't express, like swapping an image.",
+        },
+        {
+            question: "Does dark mode affect performance?",
+            answer: "Barely — theme switching flips CSS variable values rather than duplicating stylesheets or re-rendering components, so it's effectively instantaneous.",
+        },
+        {
+            question: "How do I customize dark mode colors?",
+            answer: "Edit the .dark-mode block in theme.css. Each semantic color token has a light-mode value under :root and a dark-mode value under .dark-mode — update the one you want to change without touching the other.",
+        },
+    ]}
+/>

@@ -1,0 +1,231 @@
+---
+title: components.json
+section: integrations
+description: components.json is an optional configuration file for the Smartera UI CLI, used to customize import aliases and file paths for your project.
+metaTitle: components.json | Smartera UI
+metaDescription: Reference for every field in components.json — style, tsx, tailwind, aliases, and registry — and how the CLI resolves them against your tsconfig.
+---
+
+## Overview
+
+`components.json` tells `npx smarteraui@latest add` two things: where your Tailwind config and CSS files live, and which import alias each kind of file should use when it's copied into your project. The CLI only ever _reads_ this file — it never writes to it after `init` creates it.
+
+## Creating components.json
+
+`npx smarteraui@latest init` writes one for you, detected from your `tsconfig.json` and project structure. To create it by hand instead, add it at your project root:
+
+```json
+// components.json
+{
+    "$schema": "https://smarteraui.com/schema.json",
+    "style": "default",
+    "tsx": true,
+    "tailwind": {
+        "css": "app/globals.css",
+        "theme": "styles/theme.css",
+        "prefix": ""
+    },
+    "aliases": {
+        "components": "@/components",
+        "utils": "@/utils",
+        "ui": "@/components/base",
+        "hooks": "@/hooks"
+    },
+    "registry": "https://smarteraui.com/r"
+}
+```
+
+## Configuration options
+
+| Field             | Type      | Description                                                                           |
+| ----------------- | --------- | ------------------------------------------------------------------------------------- |
+| `$schema`         | `string`  | JSON Schema URL, used for editor autocomplete and validation.                         |
+| `style`           | `string`  | Reserved for future visual style presets. Currently always `"default"`.               |
+| `tsx`             | `boolean` | Whether the CLI writes `.tsx`/`.ts` files (`true`) or plain `.jsx`/`.js` (`false`).   |
+| `tailwind.css`    | `string`  | Path to the CSS file that imports Tailwind — where `init` appends the `@source` line. |
+| `tailwind.theme`  | `string`  | Path to the file that holds your `@theme` token block.                                |
+| `tailwind.prefix` | `string`  | Optional Tailwind class prefix, if your project namespaces its utility classes.       |
+| `aliases`         | `object`  | Import alias per file category — see below.                                           |
+| `registry`        | `string`  | Base URL or local directory the CLI fetches component and example JSON from.          |
+
+`registry` defaults to `https://smarteraui.com/r`, which goes live once the docs site deploys. Until then, point it at a locally built registry — see [the CLI's registry section](/docs/cli#pointing-at-another-registry).
+
+### aliases
+
+Every file the CLI copies belongs to one of four categories, each with its own alias:
+
+| Alias        | Used for                                        | Default             |
+| ------------ | ----------------------------------------------- | ------------------- |
+| `components` | Application, marketing, and example components  | `@/components`      |
+| `ui`         | Base components (buttons, inputs, badges, …)    | `@/components/base` |
+| `utils`      | Shared helpers like `cx` and `demo-assets`      | `@/utils`           |
+| `hooks`      | Hooks like `use-breakpoint` and `use-clipboard` | `@/hooks`           |
+
+### examples
+
+A project that keeps base components under `src/ui` instead of `src/components/base` only needs to override that one alias:
+
+```json
+{
+    "aliases": {
+        "components": "@/components",
+        "utils": "@/utils",
+        "ui": "@/ui",
+        "hooks": "@/hooks"
+    }
+}
+```
+
+## How aliases work
+
+### 1. Import statement transformation
+
+Every file in the registry imports its neighbors using the package's own `@/` alias — `import { cx } from "@/utils/cx"`. When the CLI copies a file into your project, it rewrites each of those imports to the alias configured in `components.json`, so `@/utils/cx` becomes `@workspace/utils/cx` if that's what you've configured, with no manual find-and-replace required.
+
+### 2. File path resolution
+
+Separately, the CLI needs to know _where on disk_ each alias actually points, so it can write the file to the right directory. It reads that mapping from your `tsconfig.json` (or `jsconfig.json`) `compilerOptions.paths` — the same paths your editor and bundler already use to resolve the alias at compile time.
+
+## Alias requirements
+
+### Why relative paths don't work
+
+An alias like `../../../components/ui` might resolve correctly from one file, but the CLI writes the same import into many files at different depths — a relative path that's correct in one place breaks in another. Aliases in `components.json` must be tsconfig path aliases, which resolve the same way regardless of which file imports them.
+
+### Correct setup
+
+Match your `components.json` aliases to real entries in `tsconfig.json`:
+
+```json
+// tsconfig.json
+{
+    "compilerOptions": {
+        "paths": {
+            "@/*": ["./src/*"]
+        }
+    }
+}
+```
+
+```json
+// components.json
+{
+    "aliases": {
+        "components": "@/components",
+        "utils": "@/utils",
+        "ui": "@/components/base",
+        "hooks": "@/hooks"
+    }
+}
+```
+
+If the CLI can't resolve an alias against your `tsconfig.json`, it stops before writing anything and tells you which alias is missing.
+
+## Example configurations
+
+### Standard Next.js project
+
+```json
+{
+    "$schema": "https://smarteraui.com/schema.json",
+    "style": "default",
+    "tsx": true,
+    "tailwind": {
+        "css": "app/globals.css",
+        "theme": "styles/theme.css",
+        "prefix": ""
+    },
+    "aliases": {
+        "components": "@/components",
+        "utils": "@/utils",
+        "ui": "@/components/base",
+        "hooks": "@/hooks"
+    },
+    "registry": "https://smarteraui.com/r"
+}
+```
+
+### Monorepo with shared UI package
+
+```json
+{
+    "$schema": "https://smarteraui.com/schema.json",
+    "style": "default",
+    "tsx": true,
+    "tailwind": {
+        "css": "../../apps/web/app/globals.css",
+        "theme": "styles/theme.css",
+        "prefix": ""
+    },
+    "aliases": {
+        "components": "@workspace/ui/components",
+        "utils": "@workspace/ui/utils",
+        "ui": "@workspace/ui/components/base",
+        "hooks": "@workspace/ui/hooks"
+    },
+    "registry": "https://smarteraui.com/r"
+}
+```
+
+Run this from `packages/ui`, so components land in the shared package rather than in the app that happens to run the command. See the [monorepo guide](/integrations/monorepo) for the matching `tsconfig.json` paths.
+
+### Vite project with custom alias
+
+```json
+{
+    "$schema": "https://smarteraui.com/schema.json",
+    "style": "default",
+    "tsx": true,
+    "tailwind": {
+        "css": "src/index.css",
+        "theme": "src/styles/theme.css",
+        "prefix": ""
+    },
+    "aliases": {
+        "components": "@/components",
+        "utils": "@/lib/utils",
+        "ui": "@/components/ui",
+        "hooks": "@/lib/hooks"
+    },
+    "registry": "https://smarteraui.com/r"
+}
+```
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            question: "Is components.json required?",
+            answer: "No, it's optional. The CLI auto-detects your project structure from tsconfig.json and prompts you for anything it can't figure out on its own.",
+        },
+        {
+            question: "Why aren't my custom aliases working?",
+            answer: "Check that every alias in components.json has a matching entry in tsconfig.json's compilerOptions.paths. The CLI resolves aliases through tsconfig-paths, so relative paths like ../../components/ are never valid here.",
+        },
+        {
+            question: "Can I use relative paths in aliases?",
+            answer: "No. Relative paths break as soon as the CLI writes the same import into a file at a different depth. Aliases must be tsconfig path mappings, which resolve consistently no matter where the importing file lives.",
+        },
+        {
+            question: "Where should I place components.json?",
+            answer: "At your project root, or in whichever directory you run the CLI from. In a monorepo, put it inside the package directory where you actually want components installed.",
+        },
+        {
+            question: "Does the CLI write to components.json?",
+            answer: "No. The CLI only reads it. init creates the file once; every later add or search call reads it but never modifies or regenerates it.",
+        },
+        {
+            question: "How do I configure aliases for a monorepo?",
+            answer: 'Add the path mapping to tsconfig.json first — for example @workspace/ui/*: ["./packages/ui/src/*"] — then reference that same alias from components.json. The monorepo integration guide walks through a complete example.',
+        },
+        {
+            question: "What's the difference between aliases and paths?",
+            answer: "Aliases are the import prefixes that appear in your code, like @/components. Paths are the real filesystem locations those prefixes resolve to. The CLI reads your tsconfig.json paths to translate one into the other.",
+        },
+        {
+            question: "Can I use different aliases for different component types?",
+            answer: "Yes — components, ui, utils, and hooks each resolve independently, so base components can live in one directory while application components live in another.",
+        },
+    ]}
+/>

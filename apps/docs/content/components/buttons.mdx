@@ -1,0 +1,88 @@
+---
+title: Button components
+section: base
+description: Free and open-source React button components built for modern applications and websites. These buttons are built using React Aria and styled with Tailwind CSS.
+metaTitle: Free React button components | Smartera UI
+metaDescription: Free and open-source React button components built for modern applications and websites. These button components are built using React Aria and styled with Tailwind CSS.
+install: buttons
+source: packages/ui/src/components/base/buttons
+demoFile: buttons
+---
+
+<Preview id="button-example" title="Button example" height={320} demo="buttons:ButtonExample" />
+
+## Installation
+
+<Install slug="buttons" />
+
+## Button examples
+
+<Preview id="primary-buttons" title="Primary buttons" height={320} demo="buttons:PrimaryButtons" />
+<Preview id="secondary-buttons" title="Secondary buttons" height={320} demo="buttons:SecondaryButtons" />
+<Preview id="tertiary-buttons" title="Tertiary buttons" height={320} demo="buttons:TertiaryButtons" />
+
+### Link color buttons
+
+<Preview id="link-color-buttons-example" title="Link color buttons example" height={320} demo="buttons:LinkColorButtonsExample" />
+<Preview id="link-gray-buttons" title="Link gray buttons" height={320} demo="buttons:LinkGrayButtons" />
+
+### Icon leading buttons
+
+<Preview id="icon-leading-buttons-example" title="Icon leading buttons example" height={464} demo="buttons:IconLeadingButtonsExample" />
+
+### Icon trailing buttons
+
+<Preview id="icon-trailing-buttons-example" title="Icon trailing buttons example" height={464} demo="buttons:IconTrailingButtonsExample" />
+
+### Icon only buttons
+
+<Preview id="icon-only-buttons-example" title="Icon only buttons example" height={464} demo="buttons:IconOnlyButtonsExample" />
+
+### Loading buttons
+
+<Preview id="loading-buttons-example" title="Loading buttons example" height={464} demo="buttons:LoadingButtonsExample" />
+
+### Disabled buttons
+
+<Preview id="disabled-buttons-example" title="Disabled buttons example" height={464} demo="buttons:DisabledButtonsExample" />
+
+### Primary buttons destructive
+
+<Preview id="primary-buttons-destructive-example" title="Primary buttons destructive example" height={320} demo="buttons:PrimaryButtonsDestructiveExample" />
+<Preview id="secondary-buttons-destructive" title="Secondary buttons destructive" height={320} demo="buttons:SecondaryButtonsDestructive" />
+<Preview id="tertiary-buttons-destructive" title="Tertiary buttons destructive" height={320} demo="buttons:TertiaryButtonsDestructive" />
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            question: "What colors are available for buttons?",
+            answer: 'Buttons support multiple color variants including "primary", "secondary", "tertiary", "primary-destructive", "secondary-destructive", "tertiary-destructive", "link-gray", "link-color", and "link-destructive". The default color is "primary".',
+        },
+        {
+            question: "What sizes are available for buttons?",
+            answer: 'Buttons support five sizes: "xs" (extra small), "sm" (small), "md" (medium), "lg" (large), and "xl" (extra large). You can set the size using the size prop, with "sm" being the default size.',
+        },
+        {
+            question: "Can I use custom icons with buttons?",
+            answer: "Yes, you can add icons using the iconLeading or iconTrailing props. These props accept either React components or React elements. Icons are automatically sized and styled to match the button size.",
+        },
+        {
+            question: "How do I disable a button?",
+            answer: "You can disable a button by setting the isDisabled prop to true. This will apply disabled styling, prevent user interaction, and disable any associated links or actions.",
+        },
+        {
+            question: "Can I use buttons for navigation?",
+            answer: "Yes, you can use buttons for navigation by providing an href prop. When an href is provided, the button renders as an anchor tag while maintaining button styling.",
+        },
+        {
+            question: "How do I handle loading states for buttons?",
+            answer: "You can handle loading states using the isLoading prop. When set to true, the button displays a loading spinner and becomes non-interactive. Use showTextWhileLoading to keep the button text visible during loading.",
+        },
+        {
+            question: "How do I make a button take the full width of its container?",
+            answer: "You can make a button take the full width by adding the w-full Tailwind class to the className prop. The button component accepts standard HTML attributes and Tailwind classes.",
+        },
+    ]}
+/>

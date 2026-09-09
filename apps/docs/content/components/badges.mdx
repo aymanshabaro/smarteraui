@@ -1,0 +1,97 @@
+---
+title: Badge components
+section: base
+description: Free and open-source React badge components built for modern applications and websites. These badges are built using React Aria and styled with Tailwind CSS.
+metaTitle: Free React badge components | Smartera UI
+metaDescription: Free and open-source React badge components built for modern applications and websites. These badge components are built using React Aria and styled with Tailwind CSS.
+install: badges
+source: packages/ui/src/components/base/badges
+demoFile: badges
+---
+
+<Preview id="badge-example" title="Badge example" height={320} demo="badges:BadgeExample" />
+
+## Installation
+
+<Install slug="badges" />
+
+## Badge examples
+
+<Preview id="pill-color" title="Pill color" height={768} demo="badges:PillColor" />
+
+<Preview id="color" title="Color" height={768} demo="badges:Color" />
+
+<Preview id="modern" title="Modern" height={320} demo="badges:Modern" />
+
+<Preview id="with-dot" title="With dot" height={768} demo="badges:WithDot" />
+
+<Preview id="with-dot-badge-color" title="With dot badge color" height={768} demo="badges:WithDotBadgeColor" />
+
+<Preview id="with-dot-badge-modern" title="With dot badge modern" height={768} demo="badges:WithDotBadgeModern" />
+
+<Preview id="with-flag" title="With flag" height={768} demo="badges:WithFlag" />
+
+<Preview id="with-flag-badge-color" title="With flag badge color" height={768} demo="badges:WithFlagBadgeColor" />
+
+<Preview id="with-flag-badge-modern" title="With flag badge modern" height={320} demo="badges:WithFlagBadgeModern" />
+
+<Preview id="with-avatar" title="With avatar" height={768} demo="badges:WithAvatar" />
+
+<Preview id="with-avatar-badge-color" title="With avatar badge color" height={768} demo="badges:WithAvatarBadgeColor" />
+
+<Preview id="with-avatar-badge-modern" title="With avatar badge modern" height={320} demo="badges:WithAvatarBadgeModern" />
+
+<Preview id="with-close-x" title="With close X" height={768} demo="badges:WithCloseX" />
+
+<Preview id="with-close-x-badge-color" title="With close X badge color" height={768} demo="badges:WithCloseXBadgeColor" />
+
+<Preview id="with-close-x-badge-modern" title="With close X badge modern" height={320} demo="badges:WithCloseXBadgeModern" />
+
+<Preview id="with-icon-leading" title="With icon leading" height={768} demo="badges:WithIconLeading" />
+
+<Preview id="color-with-icon-leading" title="Color with icon leading" height={768} demo="badges:ColorWithIconLeading" />
+
+<Preview id="modern-with-icon-leading" title="Modern with icon leading" height={768} demo="badges:ModernWithIconLeading" />
+
+<Preview id="with-icon-trailing" title="With icon trailing" height={768} demo="badges:WithIconTrailing" />
+
+<Preview id="color-with-icon-trailing" title="Color with icon trailing" height={768} demo="badges:ColorWithIconTrailing" />
+
+<Preview id="modern-with-icon-trailing" title="Modern with icon trailing" height={320} demo="badges:ModernWithIconTrailing" />
+
+<Preview id="with-icon-only" title="With icon only" height={768} demo="badges:WithIconOnly" />
+
+<Preview id="color-with-icon-only" title="Color with icon only" height={768} demo="badges:ColorWithIconOnly" />
+
+<Preview id="modern-with-icon-only" title="Modern with icon only" height={320} demo="badges:ModernWithIconOnly" />
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            q: "How do I customize the color of a badge?",
+            a: 'You can customize the badge color using the color prop. Available colors include "gray", "brand", "error", "warning", "success", "gray-blue", "blue-light", "blue", "indigo", "purple", "pink", and "orange". The default color is "gray".',
+        },
+        {
+            q: "What types of badges are available?",
+            a: 'There are three badge types: "pill-color" (rounded pill shape), "badge-color" (rounded rectangle), and "badge-modern" (modern style with shadow). You can set the type using the type prop, with "pill-color" being the default.',
+        },
+        {
+            q: "Can I add icons to badges?",
+            a: "Yes, you can add icons using BadgeWithIcon component with iconLeading and iconTrailing props, or use BadgeIcon for icon-only badges. You can also use BadgeWithDot to add a status dot indicator.",
+        },
+        {
+            q: "What sizes are available for badges?",
+            a: 'Badges support three sizes: "sm" (small), "md" (medium), and "lg" (large). You can set the size using the size prop, with "md" being the default size.',
+        },
+        {
+            q: "Can I add images or flags to badges?",
+            a: "Yes, you can use BadgeWithImage to add custom images using the imgSrc prop, or BadgeWithFlag to add country flags using the flag prop. These components support the same sizing and color options as regular badges.",
+        },
+        {
+            q: "How do I make badges interactive with buttons?",
+            a: "You can use BadgeWithButton to add interactive elements like close buttons. Use the onButtonClick prop to handle click events and buttonLabel for accessibility. The component automatically includes a close icon.",
+        },
+    ]}
+/>

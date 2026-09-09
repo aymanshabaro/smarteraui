@@ -1,0 +1,84 @@
+# Roadmap
+
+Smartera UI is at `0.1.0`. The component library, the documentation site, the registry and the CLI
+all work today. This page lists what is **not** built yet, so nothing in the docs promises something
+the code does not do.
+
+Each item links to where it would live. Issues and pull requests are welcome — see
+[CONTRIBUTING.md](./CONTRIBUTING.md).
+
+## Not built yet
+
+### MCP server
+
+An MCP server would let an AI coding assistant query the registry directly instead of shelling out
+to `npx smarteraui` for every lookup: `search_components`, `get_component`, `list_components`,
+`add_component`.
+
+Today the CLI is the supported path and covers the same ground — any assistant that can run shell
+commands can drive it. The pieces an MCP server would build on already exist in
+[`packages/registry`](./packages/registry) and
+[`packages/cli/src/commands`](./packages/cli/src/commands). It would live at `packages/mcp`.
+
+### `init` scaffolding a new project
+
+`smarteraui init` configures an **existing** project: it detects the framework, writes
+`components.json`, installs the token stylesheet and wires the theme provider. It does not scaffold
+a new project from a template. Use `create-next-app` or `create-vite` first, then run `init`.
+
+### A bundled build for non-bundling consumers
+
+The package ships **source TSX**, which is why Next.js consumers add `transpilePackages` and Vite
+consumers get it through their own pipeline. This keeps tree-shaking and Tailwind class detection
+simple, and it is what comparable Tailwind component libraries do.
+
+An optional `tsup` ESM build would help consumers whose bundler will not transpile a dependency.
+`packages/ui` currently has no `build` script.
+
+### Full RTL coverage
+
+Logical properties (`ms-*`, `pe-*`, `text-start`) are the house rule and new components follow it,
+but the port is incomplete: roughly **281** logical spacing utilities against **365** physical ones
+across `packages/ui/src/components`. Base components are in the better shape; the marketing sections
+and page examples are where most of the physical values remain.
+
+Storybook also has no direction toggle — [`.storybook/preview.tsx`](./.storybook/preview.tsx)
+registers only the light/dark theme switcher.
+
+### Visual regression testing
+
+`pnpm docs:shot` and `pnpm docs:diff` exist and work against a local run of the docs site, but there
+is no committed screenshot baseline and no CI job comparing against one, so visual changes are not
+caught automatically. The tooling is in [`scripts/shot.ts`](./scripts/shot.ts) and
+[`scripts/diff-shots.ts`](./scripts/diff-shots.ts).
+
+### Variant gallery thumbnails
+
+The variant galleries render a neutral placeholder card where a thumbnail is missing, which is
+currently every variant. `pnpm shots:thumbs` generates them into `apps/docs/public/thumbs/` by
+rendering each variant's preview route; they are not committed yet.
+
+### `cssVars` in the registry
+
+Every registry entry carries an empty `cssVars` array. The field is reserved for per-component CSS
+custom properties the CLI would merge into a consuming app's stylesheet. Components currently rely
+entirely on the shared token file, so nothing needs merging — the field exists for when that changes.
+
+### Hosted registry
+
+`smarteraui add` defaults to `https://smarteraui.com/r`, which serves once the documentation site is
+deployed. Until then, build the registry locally and point the CLI at it:
+
+```bash
+pnpm registry:build
+npx smarteraui add button --registry ./packages/registry/dist
+```
+
+## Not planned
+
+- **A paid or "PRO" tier.** Everything in this repository is MIT licensed. There is no paid icon
+  package, no gated component set and no account system. The CLI's `login` command exists only to
+  store a token for someone self-hosting a private registry.
+- **An `upgrade` or `migrate` command.** Copied-in components are yours to edit, so an automatic
+  rewrite would fight you. `smarteraui diff` shows what changed against the registry and
+  `smarteraui add --overwrite` takes the new version when you want it.
