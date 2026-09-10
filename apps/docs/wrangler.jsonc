@@ -28,15 +28,10 @@
         "enabled": true,
     },
 
-    // Until the properui.dev zone is active, the workers.dev subdomain is the only way to
-    // reach a deploy. Remove this once the custom-domain routes below are enabled.
-    "workers_dev": true,
-
-    // Custom domains. Re-enable once the `properui.dev` zone is active in this Cloudflare
-    // account — the domain is registered at Namecheap but still on its default nameservers,
-    // and `wrangler deploy` fails with "Could not find zone" until the move is done.
-    // "routes": [
-    //     { "pattern": "properui.dev", "custom_domain": true },
-    //     { "pattern": "www.properui.dev", "custom_domain": true }
-    // ]
+    // Custom domains. The `properui.dev` zone is active in this Cloudflare account, so
+    // `wrangler deploy` creates and maintains the DNS records for both hostnames itself.
+    "routes": [
+        { "pattern": "properui.dev", "custom_domain": true },
+        { "pattern": "www.properui.dev", "custom_domain": true },
+    ],
 }
