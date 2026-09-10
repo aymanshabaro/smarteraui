@@ -27,7 +27,6 @@ jobs:
         steps:
             - uses: actions/checkout@v4
             - uses: pnpm/action-setup@v4
-              with: { version: 9 }
             # Node 22, not the 20 that ci.yml uses: wrangler 4 refuses to run on Node 20.
             - uses: actions/setup-node@v4
               with: { node-version: 22, cache: pnpm }

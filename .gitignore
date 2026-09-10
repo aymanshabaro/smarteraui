@@ -23,3 +23,6 @@ apps/docs/public/thumbs/
 cloudflare-env.d.ts
 .next-verify/
 .build-verify/
+
+# Local editor / agent config
+.claude/
