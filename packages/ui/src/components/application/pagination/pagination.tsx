@@ -274,8 +274,8 @@ export const PaginationCardMinimal = ({
                 <div
                     className={cx(
                         "flex items-center gap-3",
-                        align === "right" && "order-first mr-auto",
-                        align === "left" && "order-last ml-auto flex-row-reverse",
+                        align === "right" && "order-first me-auto",
+                        align === "left" && "order-last ms-auto flex-row-reverse",
                     )}
                 >
                     <span className="text-fg-secondary text-sm font-medium">
@@ -409,7 +409,7 @@ export const PaginationCardAdvanced = ({
                     of {total}
                 </div>
 
-                <hr className={cx("border-primary mx-1 h-4 w-px border-l max-md:hidden", align === "center" && "hidden")} />
+                <hr className={cx("border-primary mx-1 h-4 w-px border-s max-md:hidden", align === "center" && "hidden")} />
 
                 <div className={cx("hidden items-center gap-2 md:flex", align === "center" && "order-last")}>
                     <span className="text-secondary text-sm font-medium whitespace-nowrap">Rows per page</span>
@@ -433,7 +433,7 @@ export const PaginationCardAdvanced = ({
                     </Select>
                 </div>
 
-                <div className={cx("flex flex-1 items-center gap-4 md:ml-auto md:justify-end", align === "center" && "md:justify-center")}>
+                <div className={cx("flex flex-1 items-center gap-4 md:ms-auto md:justify-end", align === "center" && "md:justify-center")}>
                     <div className="flex gap-2">
                         <Button
                             aria-label="Go to first page"

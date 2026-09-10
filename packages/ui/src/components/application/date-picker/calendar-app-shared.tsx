@@ -216,11 +216,11 @@ export const CalendarAppHeader = ({ monthAbbr, dayOfMonth, title, weekLabel, sub
                 <Button size="sm" color="tertiary" iconLeading={SearchLg} aria-label="Search" />
 
                 <div className="border-secondary flex items-center rounded-lg border">
-                    <Button slot={null} size="sm" color="tertiary" iconLeading={ChevronLeft} aria-label="Previous" className="rounded-r-none border-0" />
+                    <Button slot={null} size="sm" color="tertiary" iconLeading={ChevronLeft} aria-label="Previous" className="rounded-e-none border-0" />
                     <Button slot={null} size="sm" color="tertiary" className="border-secondary rounded-none border-x">
                         Today
                     </Button>
-                    <Button slot={null} size="sm" color="tertiary" iconLeading={ChevronRight} aria-label="Next" className="rounded-l-none border-0" />
+                    <Button slot={null} size="sm" color="tertiary" iconLeading={ChevronRight} aria-label="Next" className="rounded-s-none border-0" />
                 </div>
 
                 <ViewSwitcher defaultView={view} />
@@ -238,7 +238,7 @@ export const WeekStripNav = ({ selectedDay }: { selectedDay: number }) => {
     return (
         <div className="border-secondary grid grid-cols-7 border-b">
             {WEEK_DAYS.map((day, index) => (
-                <div key={day} className="border-secondary flex items-center justify-center gap-1.5 border-l py-3 first:border-l-0">
+                <div key={day} className="border-secondary flex items-center justify-center gap-1.5 border-s py-3 first:border-s-0">
                     <span className="text-tertiary text-sm font-medium">{WEEKDAYS_SHORT[index]}</span>
                     <span
                         className={cx(

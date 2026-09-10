@@ -52,7 +52,7 @@ export const DropdownAccountBreadcrumb = () => {
                             textValue={account.name}
                             className={(state) =>
                                 cx(
-                                    "outline-focus-ring hover:bg-primary_hover relative w-full cursor-pointer rounded-md px-2 py-2 text-left transition duration-100 ease-linear focus:z-10 focus-visible:outline-2 focus-visible:outline-offset-2",
+                                    "outline-focus-ring hover:bg-primary_hover relative w-full cursor-pointer rounded-md px-2 py-2 text-start transition duration-100 ease-linear focus:z-10 focus-visible:outline-2 focus-visible:outline-offset-2",
                                     state.isSelected && "bg-primary_hover",
                                 )
                             }

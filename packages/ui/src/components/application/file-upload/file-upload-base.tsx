@@ -295,7 +295,7 @@ export const FileListItemProgressBar = ({ name, size, progress, failed, type, fi
                         </div>
                     </div>
 
-                    <ButtonUtility color="tertiary" tooltip="Delete" icon={Trash01} size="xs" className="-mt-2 -mr-2 self-start" onClick={onDelete} />
+                    <ButtonUtility color="tertiary" tooltip="Delete" icon={Trash01} size="xs" className="-me-2 -mt-2 self-start" onClick={onDelete} />
                 </div>
 
                 {!failed && (
@@ -368,7 +368,7 @@ export const FileListItemProgressFill = ({ name, size, progress, failed, type, f
                     )}
                 </div>
 
-                <ButtonUtility color="tertiary" tooltip="Delete" icon={Trash01} size="xs" className="-mt-2 -mr-2 self-start" onClick={onDelete} />
+                <ButtonUtility color="tertiary" tooltip="Delete" icon={Trash01} size="xs" className="-me-2 -mt-2 self-start" onClick={onDelete} />
             </div>
         </motion.li>
     );

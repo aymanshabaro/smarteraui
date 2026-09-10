@@ -78,7 +78,7 @@ const ComboBoxValue = ({ size, shortcut, placeholder, shortcutClassName, icon: I
                 {inputValue && (
                     <span className={cx("absolute top-1/2 z-0 inline-flex w-full -translate-y-1/2 truncate", sizes[size].textContainer)} aria-hidden="true">
                         <p className={cx("text-primary font-medium", sizes[size].text)}>{first}</p>
-                        {last && <p className={cx("text-tertiary -ml-0.75", sizes[size].text)}>{last}</p>}
+                        {last && <p className={cx("text-tertiary -ms-0.75", sizes[size].text)}>{last}</p>}
                     </span>
                 )}
 
@@ -94,7 +94,7 @@ const ComboBoxValue = ({ size, shortcut, placeholder, shortcutClassName, icon: I
             {shortcut && (
                 <div
                     className={cx(
-                        "to-bg-primary absolute inset-y-0.5 right-0.5 z-10 hidden items-center rounded-r-[inherit] bg-linear-to-r from-transparent to-40% pl-8 md:flex",
+                        "to-bg-primary absolute inset-y-0.5 right-0.5 z-10 hidden items-center rounded-e-[inherit] bg-linear-to-r from-transparent to-40% ps-8 md:flex",
                         sizes[size].shortcut,
                         shortcutClassName,
                     )}

@@ -276,8 +276,8 @@ export const MessageChatMenu = () => {
                                     <p
                                         className={
                                             bubble.fromMe
-                                                ? "bg-brand-solid max-w-[80%] rounded-2xl rounded-tr-sm px-4 py-2.5 text-sm text-white"
-                                                : "bg-secondary text-secondary max-w-[80%] rounded-2xl rounded-tl-sm px-4 py-2.5 text-sm"
+                                                ? "bg-brand-solid max-w-[80%] rounded-2xl rounded-se-sm px-4 py-2.5 text-sm text-white"
+                                                : "bg-secondary text-secondary max-w-[80%] rounded-2xl rounded-ss-sm px-4 py-2.5 text-sm"
                                         }
                                     >
                                         {bubble.text}
@@ -519,7 +519,7 @@ export const FiltersMenu = () => (
                 <SlideoutMenu.Header onClose={close}>
                     <div className="flex items-center justify-between gap-2">
                         <DrawerTitle title="Filters" />
-                        <Button color="link-color" size="sm" className="mr-8">
+                        <Button color="link-color" size="sm" className="me-8">
                             Clear all
                         </Button>
                     </div>
@@ -765,7 +765,7 @@ export const ProjectDetailsMenu = () => (
                     <div className="flex items-center justify-between gap-2">
                         <DrawerTitle title="Project details" />
                         <Dropdown.Root>
-                            <Dropdown.DotsButton className="mr-8" />
+                            <Dropdown.DotsButton className="me-8" />
                             <Dropdown.Popover className="w-44">
                                 <Dropdown.Menu>
                                     <Dropdown.Item>Duplicate</Dropdown.Item>
@@ -903,7 +903,7 @@ export const NotificationsMenu = () => (
                 <SlideoutMenu.Header onClose={close}>
                     <div className="flex items-center justify-between gap-2">
                         <DrawerTitle title="Notifications" />
-                        <Button color="link-color" size="sm" className="mr-8">
+                        <Button color="link-color" size="sm" className="me-8">
                             Mark all as read
                         </Button>
                     </div>
@@ -1143,7 +1143,7 @@ export const AIAssistantMenu = () => (
                 </SlideoutMenu.Header>
                 <SlideoutMenu.Content>
                     <div className="flex justify-start">
-                        <p className="bg-secondary text-secondary max-w-[85%] rounded-2xl rounded-tl-sm px-4 py-2.5 text-sm">
+                        <p className="bg-secondary text-secondary max-w-[85%] rounded-2xl rounded-ss-sm px-4 py-2.5 text-sm">
                             Hi! I can help you summarize documents, draft replies or answer questions about this project. What would you like to do?
                         </p>
                     </div>
@@ -1184,7 +1184,7 @@ export const AIAssistantMessageMenu = () => (
                 <SlideoutMenu.Content>
                     <div className="flex items-start gap-3">
                         <FeaturedIcon icon={Stars02} color="brand" theme="gradient" size="sm" />
-                        <div className="bg-secondary text-secondary flex-1 rounded-2xl rounded-tl-sm px-4 py-3 text-sm">
+                        <div className="bg-secondary text-secondary flex-1 rounded-2xl rounded-ss-sm px-4 py-3 text-sm">
                             Here's a summary of the thread: the team agreed to ship the redesign on the 12th, pending final review from design and QA. Two open
                             questions remain about the onboarding flow.
                         </div>

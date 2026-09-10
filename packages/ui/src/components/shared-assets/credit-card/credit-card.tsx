@@ -186,10 +186,10 @@ export const CreditCard = ({
                 {/* Gradient diffusor */}
                 {type === "transparent-gradient" && (
                     <div className="absolute -top-4 -left-4 grid grid-cols-2 blur-3xl">
-                        <div className="size-20 rounded-tl-full bg-pink-500 opacity-30 mix-blend-normal" />
-                        <div className="size-20 rounded-tr-full bg-orange-500 opacity-50 mix-blend-normal" />
-                        <div className="size-20 rounded-bl-full bg-blue-500 opacity-30 mix-blend-normal" />
-                        <div className="size-20 rounded-br-full bg-green-500 opacity-30 mix-blend-normal" />
+                        <div className="size-20 rounded-ss-full bg-pink-500 opacity-30 mix-blend-normal" />
+                        <div className="size-20 rounded-se-full bg-orange-500 opacity-50 mix-blend-normal" />
+                        <div className="size-20 rounded-es-full bg-blue-500 opacity-30 mix-blend-normal" />
+                        <div className="size-20 rounded-ee-full bg-green-500 opacity-30 mix-blend-normal" />
                     </div>
                 )}
 
@@ -210,12 +210,7 @@ export const CreditCard = ({
                             >
                                 {cardHolder}
                             </p>
-                            <p
-                                className={cx(
-                                    "ml-auto text-right text-xs leading-[normal] font-semibold tracking-[0.6px] tabular-nums",
-                                    styles[type].footerText,
-                                )}
-                            >
+                            <p className={cx("ms-auto text-end text-xs leading-[normal] font-semibold tracking-[0.6px] tabular-nums", styles[type].footerText)}>
                                 {cardExpiration}
                             </p>
                         </div>

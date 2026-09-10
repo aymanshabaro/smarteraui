@@ -34,13 +34,13 @@ export const TableRowActionsDropdown = () => (
         <Dropdown.Popover className="w-min">
             <Dropdown.Menu>
                 <Dropdown.Item icon={Edit01}>
-                    <span className="pr-4">Edit</span>
+                    <span className="pe-4">Edit</span>
                 </Dropdown.Item>
                 <Dropdown.Item icon={Copy01}>
-                    <span className="pr-4">Copy link</span>
+                    <span className="pe-4">Copy link</span>
                 </Dropdown.Item>
                 <Dropdown.Item icon={Trash01}>
-                    <span className="pr-4">Delete</span>
+                    <span className="pe-4">Delete</span>
                 </Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown.Popover>
@@ -152,7 +152,7 @@ const TableHeader = <T extends object>({ columns, children, bordered = true, cla
             }
         >
             {selectionBehavior === "toggle" && (
-                <AriaColumn className={cx("relative py-2 pr-0 pl-4", size === "sm" ? "w-9 md:pl-5" : "w-11 md:pl-6")}>
+                <AriaColumn className={cx("relative py-2 ps-4 pe-0", size === "sm" ? "w-9 md:ps-5" : "w-11 md:ps-6")}>
                     {selectionMode === "multiple" && (
                         <div className="flex items-start">
                             <Checkbox slot="selection" size="md" />
@@ -183,7 +183,7 @@ const TableHead = ({ className, tooltip, label, children, ...props }: TableHeadP
             className={(state) =>
                 cx(
                     "focus-visible:ring-focus-ring focus-visible:ring-offset-bg-primary relative p-0 px-6 py-2 outline-hidden focus-visible:z-1 focus-visible:ring-2 focus-visible:ring-inset",
-                    selectionBehavior === "toggle" && "nth-2:pl-3",
+                    selectionBehavior === "toggle" && "nth-2:ps-3",
                     state.allowsSorting && "cursor-pointer",
                     typeof className === "function" ? className(state) : className,
                 )
@@ -251,7 +251,7 @@ const TableRow = <T extends object>({ columns, children, className, highlightSel
             }
         >
             {selectionBehavior === "toggle" && (
-                <AriaCell className={cx("relative py-2 pr-0 pl-4", size === "sm" ? "md:pl-5" : "md:pl-6")}>
+                <AriaCell className={cx("relative py-2 ps-4 pe-0", size === "sm" ? "md:ps-5" : "md:ps-6")}>
                     <div className="flex items-end">
                         <Checkbox slot="selection" size="md" />
                     </div>
@@ -286,7 +286,7 @@ const TableCell = ({ className, children, size: sizeProp, ...props }: TableCellP
                     size === "sm" && "px-5 py-3",
                     size === "md" && "px-6 py-4",
 
-                    selectionBehavior === "toggle" && "nth-2:pl-3",
+                    selectionBehavior === "toggle" && "nth-2:ps-3",
 
                     typeof className === "function" ? className(state) : className,
                 )

@@ -26,15 +26,15 @@ export const styles = sortCx({
 
     sizes: {
         sm: {
-            root: "gap-1.5 px-3.5 py-2 text-sm not-last:pr-[calc(calc(var(--spacing)*3.5)+1px)] first:rounded-l-lg last:rounded-r-lg data-icon-leading:pl-3 data-icon-only:px-2.5",
+            root: "gap-1.5 px-3.5 py-2 text-sm not-last:pe-[calc(calc(var(--spacing)*3.5)+1px)] first:rounded-s-lg last:rounded-e-lg data-icon-leading:ps-3 data-icon-only:px-2.5",
             icon: "size-5",
         },
         md: {
-            root: "gap-1.5 px-4 py-2.5 text-sm not-last:pr-[calc(calc(var(--spacing)*4)+1px)] first:rounded-l-lg last:rounded-r-lg data-icon-leading:pl-3.5 data-icon-only:px-3",
+            root: "gap-1.5 px-4 py-2.5 text-sm not-last:pe-[calc(calc(var(--spacing)*4)+1px)] first:rounded-s-lg last:rounded-e-lg data-icon-leading:ps-3.5 data-icon-only:px-3",
             icon: "size-5",
         },
         lg: {
-            root: "gap-2 px-4.5 py-2.5 text-md not-last:pr-[calc(calc(var(--spacing)*4.5)+1px)] first:rounded-l-lg last:rounded-r-lg data-icon-leading:pl-4 data-icon-only:px-3.5",
+            root: "gap-2 px-4.5 py-2.5 text-md not-last:pe-[calc(calc(var(--spacing)*4.5)+1px)] first:rounded-s-lg last:rounded-e-lg data-icon-leading:ps-4 data-icon-only:px-3.5",
             icon: "size-5",
         },
     },

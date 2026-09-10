@@ -287,7 +287,7 @@ const InnerTagSelect = ({ isDisabled, shortcut, shortcutClassName, placeholder, 
                         key={value.id}
                         className={cx(
                             "bg-primary ring-primary flex min-w-0 items-center rounded-md ring-1 ring-inset",
-                            size === "sm" ? "px-1 py-0.75" : "py-0.5 pr-1 pl-1.25",
+                            size === "sm" ? "px-1 py-0.75" : "py-0.5 ps-1.25 pe-1",
                         )}
                     >
                         <Avatar size="xs" alt={value?.label} src={value?.avatarUrl} className="size-4" />
@@ -295,7 +295,7 @@ const InnerTagSelect = ({ isDisabled, shortcut, shortcutClassName, placeholder, 
                         <p
                             className={cx(
                                 "text-secondary truncate font-medium whitespace-nowrap select-none",
-                                size === "sm" ? "ml-1 text-xs" : "ml-1.25 text-sm",
+                                size === "sm" ? "ms-1 text-xs" : "ms-1.25 text-sm",
                             )}
                         >
                             {tagSelectContext.valueFormatter ? tagSelectContext.valueFormatter(value) : value?.label}
@@ -304,7 +304,7 @@ const InnerTagSelect = ({ isDisabled, shortcut, shortcutClassName, placeholder, 
                         <TagCloseX
                             size={size === "sm" ? "sm" : "md"}
                             isDisabled={isDisabled}
-                            className="ml-0.75"
+                            className="ms-0.75"
                             // For workaround, onKeyDown is added to the button
                             onKeyDown={(event) => handleTagKeyDown(event, value.id)}
                             onPress={() => tagSelectContext.onRemove(new Set([value.id]))}
@@ -312,7 +312,7 @@ const InnerTagSelect = ({ isDisabled, shortcut, shortcutClassName, placeholder, 
                     </span>
                 ))}
 
-            <div className={cx("relative flex min-w-12 flex-1 flex-row items-center", !isSelectionEmpty && "ml-0.5", shortcut && "min-w-[30%]")}>
+            <div className={cx("relative flex min-w-12 flex-1 flex-row items-center", !isSelectionEmpty && "ms-0.5", shortcut && "min-w-[30%]")}>
                 <AriaInput
                     placeholder={placeholder}
                     onKeyDown={handleInputKeyDown}
@@ -327,7 +327,7 @@ const InnerTagSelect = ({ isDisabled, shortcut, shortcutClassName, placeholder, 
                     <div
                         aria-hidden="true"
                         className={cx(
-                            "to-bg-primary absolute inset-y-0.5 right-0.5 z-10 hidden items-center rounded-r-[inherit] bg-linear-to-r from-transparent to-40% pl-8 md:flex",
+                            "to-bg-primary absolute inset-y-0.5 right-0.5 z-10 hidden items-center rounded-e-[inherit] bg-linear-to-r from-transparent to-40% ps-8 md:flex",
                             shortcutClassName,
                             sizes[size].shortcut,
                         )}

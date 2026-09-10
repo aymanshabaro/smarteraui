@@ -113,7 +113,7 @@ export const IconSimple = () => (
                                 {plan.hint}
                             </AriaText>
                         </div>
-                        <CheckboxBase isSelected={isSelected} className="ml-auto" />
+                        <CheckboxBase isSelected={isSelected} className="ms-auto" />
                     </div>
                 )}
             </AriaRadio>
@@ -152,13 +152,13 @@ export const IconCard = () => (
                     <>
                         <div
                             className={cx(
-                                "flex items-center gap-3 rounded-t-xl p-3 pr-5 ring-inset",
+                                "flex items-center gap-3 rounded-t-xl p-3 pe-5 ring-inset",
                                 isSelected ? "ring-brand ring-2" : "ring-secondary ring-1",
                             )}
                         >
                             <FeaturedIcon color="gray" theme="modern" size="sm" icon={PLAN_ICONS[index]} />
-                            <span className="text-md text-secondary mr-1 font-semibold">{plan.label}</span>
-                            <CheckboxBase isSelected={isSelected} className="ml-auto" />
+                            <span className="text-md text-secondary me-1 font-semibold">{plan.label}</span>
+                            <CheckboxBase isSelected={isSelected} className="ms-auto" />
                         </div>
                         <div className="flex flex-col gap-1 rounded-b-lg p-4">
                             <div className="flex flex-col-reverse gap-4 sm:flex-row sm:items-start sm:justify-between sm:gap-1">
@@ -219,7 +219,7 @@ export const Avatar = () => (
                                 {person.role}
                             </AriaText>
                         </div>
-                        <CheckboxBase isSelected={isSelected} className="ml-auto" />
+                        <CheckboxBase isSelected={isSelected} className="ms-auto" />
                     </div>
                 )}
             </AriaRadio>
@@ -277,7 +277,7 @@ export const PaymentIcon = () => (
                                 </button>
                             </div>
                         </div>
-                        <CheckboxBase isSelected={isSelected} className="ml-auto" />
+                        <CheckboxBase isSelected={isSelected} className="ms-auto" />
                     </div>
                 )}
             </AriaRadio>

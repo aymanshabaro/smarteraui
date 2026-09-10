@@ -30,7 +30,7 @@ export const DropdownSearchField = ({ placeholder, icon: Icon, className }: Drop
 
         <AriaInput
             placeholder={placeholder}
-            className={cx("text-md text-primary placeholder:text-placeholder m-0 w-full bg-transparent py-2 outline-hidden", Icon ? "pr-3 pl-10" : "px-3")}
+            className={cx("text-md text-primary placeholder:text-placeholder m-0 w-full bg-transparent py-2 outline-hidden", Icon ? "ps-10 pe-3" : "px-3")}
         />
     </div>
 );

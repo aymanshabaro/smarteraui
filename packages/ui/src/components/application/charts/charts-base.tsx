@@ -53,7 +53,7 @@ export const ChartLegendContent = ({ reversed, payload, align, layout, className
             className={cx(
                 "flex",
                 layout === "vertical"
-                    ? `flex-col gap-1 pl-4 ${align === "center" ? "items-center" : align === "right" ? "items-start" : "items-start"}`
+                    ? `flex-col gap-1 ps-4 ${align === "center" ? "items-center" : align === "right" ? "items-start" : "items-start"}`
                     : `flex-row gap-3 ${align === "center" ? "justify-center" : align === "right" ? "justify-end" : "justify-start"}`,
                 className,
             )}

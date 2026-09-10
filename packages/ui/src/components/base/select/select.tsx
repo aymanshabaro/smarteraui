@@ -47,7 +47,7 @@ const SelectValue = ({ isOpen, isFocused, isDisabled, size, placeholder, icon, r
             <AriaSelectValue<SelectItemType>
                 className={(state) =>
                     cx(
-                        "flex h-max w-full items-center justify-start truncate text-left align-middle",
+                        "flex h-max w-full items-center justify-start truncate text-start align-middle",
 
                         sizes[size].root,
 
@@ -84,7 +84,7 @@ const SelectValue = ({ isOpen, isFocused, isDisabled, size, placeholder, icon, r
 
                             <ChevronDown
                                 aria-hidden="true"
-                                className={cx("text-fg-quaternary ml-auto shrink-0", size === "lg" ? "size-5" : "size-4 stroke-[2.25px]")}
+                                className={cx("text-fg-quaternary ms-auto shrink-0", size === "lg" ? "size-5" : "size-4 stroke-[2.25px]")}
                             />
                         </>
                     );

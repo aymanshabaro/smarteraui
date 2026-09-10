@@ -38,21 +38,21 @@ export const DropdownIntegration = () => {
                     <Dropdown.Separator />
 
                     <Dropdown.Section>
-                        <Dropdown.Item icon={() => <V0Icon grayscale className="mr-2 size-4 shrink-0" />}>Open in v0</Dropdown.Item>
-                        <Dropdown.Item icon={() => <ClaudeIcon grayscale className="mr-2 size-4 shrink-0" />}>Open in Claude</Dropdown.Item>
-                        <Dropdown.Item icon={() => <BoltIcon grayscale className="mr-2 size-4 shrink-0" />}>Open in Bolt</Dropdown.Item>
-                        <Dropdown.Item icon={() => <LovableIcon grayscale className="mr-2 size-4 shrink-0" />}>Open in Lovable</Dropdown.Item>
-                        <Dropdown.Item icon={() => <CursorIcon grayscale className="mr-2 size-4 shrink-0" />}>Open in Cursor</Dropdown.Item>
-                        <Dropdown.Item icon={() => <ChatGPTIcon grayscale className="mr-2 size-4 shrink-0" />}>Open in ChatGPT</Dropdown.Item>
-                        <Dropdown.Item icon={() => <PerplexityIcon grayscale className="mr-2 size-4 shrink-0" />}>Open in Perplexity</Dropdown.Item>
-                        <Dropdown.Item icon={() => <GeminiIcon grayscale className="mr-2 size-4 shrink-0" />}>Open in Gemini</Dropdown.Item>
+                        <Dropdown.Item icon={() => <V0Icon grayscale className="me-2 size-4 shrink-0" />}>Open in v0</Dropdown.Item>
+                        <Dropdown.Item icon={() => <ClaudeIcon grayscale className="me-2 size-4 shrink-0" />}>Open in Claude</Dropdown.Item>
+                        <Dropdown.Item icon={() => <BoltIcon grayscale className="me-2 size-4 shrink-0" />}>Open in Bolt</Dropdown.Item>
+                        <Dropdown.Item icon={() => <LovableIcon grayscale className="me-2 size-4 shrink-0" />}>Open in Lovable</Dropdown.Item>
+                        <Dropdown.Item icon={() => <CursorIcon grayscale className="me-2 size-4 shrink-0" />}>Open in Cursor</Dropdown.Item>
+                        <Dropdown.Item icon={() => <ChatGPTIcon grayscale className="me-2 size-4 shrink-0" />}>Open in ChatGPT</Dropdown.Item>
+                        <Dropdown.Item icon={() => <PerplexityIcon grayscale className="me-2 size-4 shrink-0" />}>Open in Perplexity</Dropdown.Item>
+                        <Dropdown.Item icon={() => <GeminiIcon grayscale className="me-2 size-4 shrink-0" />}>Open in Gemini</Dropdown.Item>
                     </Dropdown.Section>
 
                     <Dropdown.Separator />
 
                     <Dropdown.Section>
-                        <Dropdown.Item icon={() => <FigmaIcon grayscale className="mr-2 size-4 shrink-0" />}>Open in Figma</Dropdown.Item>
-                        <Dropdown.Item icon={() => <GitHubIcon grayscale className="mr-2 size-4 shrink-0" />}>Create GitHub Gist</Dropdown.Item>
+                        <Dropdown.Item icon={() => <FigmaIcon grayscale className="me-2 size-4 shrink-0" />}>Open in Figma</Dropdown.Item>
+                        <Dropdown.Item icon={() => <GitHubIcon grayscale className="me-2 size-4 shrink-0" />}>Create GitHub Gist</Dropdown.Item>
                     </Dropdown.Section>
                 </Dropdown.Menu>
             </Dropdown.Popover>

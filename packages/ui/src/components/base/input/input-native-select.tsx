@@ -20,11 +20,11 @@ interface DemoNativeSelectProps extends Omit<SelectHTMLAttributes<HTMLSelectElem
 
 const styles = {
     sm: {
-        root: "py-2 pl-3 text-sm",
+        root: "py-2 ps-3 text-sm",
         icon: "size-4 right-2.5 stroke-[2.25px]",
     },
     md: {
-        root: "py-2 pl-3 text-md",
+        root: "py-2 ps-3 text-md",
         icon: "size-4 stroke-[2.25px] right-3",
     },
     lg: {
@@ -63,11 +63,11 @@ export const DemoNativeSelect = ({ label, hint, options, className, selectClassN
                         // Styles for the select when `TextField` is disabled
                         "in-data-input-wrapper:group-disabled:pointer-events-none in-data-input-wrapper:group-disabled:cursor-not-allowed in-data-input-wrapper:group-disabled:bg-transparent",
                         // Common styles for sizes and border radius within `InputGroup`
-                        "in-data-input-wrapper:in-data-leading:rounded-r-none in-data-input-wrapper:in-data-trailing:rounded-l-none in-data-input-wrapper:in-data-[input-size=lg]:py-2.5 in-data-input-wrapper:in-data-[input-size=md]:py-2 in-data-input-wrapper:in-data-[input-size=md]:pl-3 in-data-input-wrapper:in-data-[input-size=sm]:text-sm",
+                        "in-data-input-wrapper:in-data-leading:rounded-e-none in-data-input-wrapper:in-data-trailing:rounded-s-none in-data-input-wrapper:in-data-[input-size=lg]:py-2.5 in-data-input-wrapper:in-data-[input-size=md]:py-2 in-data-input-wrapper:in-data-[input-size=md]:ps-3 in-data-input-wrapper:in-data-[input-size=sm]:text-sm",
                         // For "leading" dropdown within `InputGroup`
-                        "in-data-input-wrapper:in-data-leading:pr-4.5 in-data-input-wrapper:in-data-leading:in-data-[input-size=lg]:pl-3.5 in-data-input-wrapper:in-data-leading:in-data-[input-size=md]:pr-4.5 in-data-input-wrapper:in-data-leading:in-data-[input-size=md]:pl-3 in-data-input-wrapper:in-data-leading:in-data-[input-size=sm]:pr-3.5",
+                        "in-data-input-wrapper:in-data-leading:pe-4.5 in-data-input-wrapper:in-data-leading:in-data-[input-size=lg]:ps-3.5 in-data-input-wrapper:in-data-leading:in-data-[input-size=md]:ps-3 in-data-input-wrapper:in-data-leading:in-data-[input-size=md]:pe-4.5 in-data-input-wrapper:in-data-leading:in-data-[input-size=sm]:pe-3.5",
                         // For "trailing" dropdown within `InputGroup`
-                        "in-data-input-wrapper:in-data-trailing:in-data-[input-size=lg]:pr-8 in-data-input-wrapper:in-data-trailing:in-data-[input-size=md]:pr-7.5 in-data-input-wrapper:in-data-trailing:in-data-[input-size=sm]:pr-6.5",
+                        "in-data-input-wrapper:in-data-trailing:in-data-[input-size=lg]:pe-8 in-data-input-wrapper:in-data-trailing:in-data-[input-size=md]:pe-7.5 in-data-input-wrapper:in-data-trailing:in-data-[input-size=sm]:pe-6.5",
                         selectClassName,
                     )}
                 >

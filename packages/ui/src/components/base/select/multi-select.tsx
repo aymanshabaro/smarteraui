@@ -230,7 +230,7 @@ const MultiSelectRoot = ({
                     >
                         <span
                             className={cx(
-                                "flex w-full items-center truncate text-left",
+                                "flex w-full items-center truncate text-start",
                                 sizes[size].root,
                                 "*:data-icon:text-fg-quaternary *:data-icon:shrink-0",
                             )}
@@ -250,7 +250,7 @@ const MultiSelectRoot = ({
 
                             <ChevronDown
                                 aria-hidden="true"
-                                className={cx("text-fg-quaternary ml-auto shrink-0", size === "lg" ? "size-5" : "size-4 stroke-[2.25px]")}
+                                className={cx("text-fg-quaternary ms-auto shrink-0", size === "lg" ? "size-5" : "size-4 stroke-[2.25px]")}
                             />
                         </span>
                     </AriaButton>

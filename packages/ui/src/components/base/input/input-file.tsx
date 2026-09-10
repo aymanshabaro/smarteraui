@@ -106,7 +106,7 @@ export const InputFile = ({
                         placeholder={placeholder}
                         value={fileNames}
                         readOnly
-                        inputClassName={cx("cursor-pointer", isLoading && "pr-9")}
+                        inputClassName={cx("cursor-pointer", isLoading && "pe-9")}
                         wrapperClassName="cursor-pointer"
                         onClick={handleClick}
                     />

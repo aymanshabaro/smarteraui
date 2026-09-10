@@ -145,7 +145,7 @@ export const PaymentInput = ({
                             type,
                         }}
                         icon={card.icon}
-                        inputClassName={cx(size === "sm" && "pl-12", size === "md" && "pl-12.5", size === "lg" && "pl-13", inputClassName)}
+                        inputClassName={cx(size === "sm" && "ps-12", size === "md" && "ps-12.5", size === "lg" && "ps-13", inputClassName)}
                         iconClassName={cx("h-6 w-8.5", size === "sm" && "left-1.5", size === "md" && "left-2", size === "lg" && "left-2.5", iconClassName)}
                     />
 

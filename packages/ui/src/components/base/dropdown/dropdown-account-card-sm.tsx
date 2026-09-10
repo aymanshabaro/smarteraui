@@ -21,7 +21,7 @@ export const DropdownAccountCardSM = () => {
             <AriaButton
                 className={({ isPressed, isFocused }) =>
                     cx(
-                        "bg-primary_alt inset-ring-border-secondary outline-focus-ring relative flex w-42 cursor-pointer items-center gap-2 rounded-lg p-1.5 text-left inset-ring-1 outline-offset-2",
+                        "bg-primary_alt inset-ring-border-secondary outline-focus-ring relative flex w-42 cursor-pointer items-center gap-2 rounded-lg p-1.5 text-start inset-ring-1 outline-offset-2",
                         (isPressed || isFocused) && "outline-2",
                     )
                 }

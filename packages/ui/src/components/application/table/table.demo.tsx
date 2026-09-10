@@ -210,7 +210,7 @@ const CustomersTable = ({ alternating = false }: { alternating?: boolean }) => {
                                 <p className="text-primary text-sm font-medium">{item.aboutTitle}</p>
                                 <p className="text-tertiary text-sm">{item.aboutDescription}</p>
                             </Table.Cell>
-                            <Table.Cell className="pr-0 md:hidden xl:table-cell">
+                            <Table.Cell className="pe-0 md:hidden xl:table-cell">
                                 <div className="flex -space-x-1">
                                     {AVATARS.slice(0, 5).map((person) => (
                                         <Avatar key={person.username} className="ring-bg-primary ring-[1.5px]" size="xs" src={person.src} alt={person.name} />
@@ -402,7 +402,7 @@ export const NoVendorsFound = () => {
                 description="Keep track of vendor and their security ratings."
                 contentTrailing={
                     <>
-                        <div className="flex gap-3 md:pr-9">
+                        <div className="flex gap-3 md:pe-9">
                             <Button color="secondary" size="sm" iconLeading={UploadCloud02}>
                                 Import
                             </Button>
@@ -517,7 +517,7 @@ export const NoUsersFound = () => {
                 description="Keep track of vendor and their security ratings."
                 contentTrailing={
                     <>
-                        <div className="flex gap-3 md:pr-9">
+                        <div className="flex gap-3 md:pe-9">
                             <Button color="secondary" size="sm" iconLeading={UploadCloud02}>
                                 Import
                             </Button>

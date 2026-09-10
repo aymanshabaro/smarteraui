@@ -134,8 +134,8 @@ export const TablePaginationMinimal = ({ page = 1, total = 10, pageSize = 10, al
                 <div
                     className={cx(
                         "flex items-center gap-3",
-                        align === "right" && "order-first mr-auto",
-                        align === "left" && "order-last ml-auto flex-row-reverse",
+                        align === "right" && "order-first me-auto",
+                        align === "left" && "order-last ms-auto flex-row-reverse",
                     )}
                 >
                     <span className="text-fg-secondary text-sm font-medium">

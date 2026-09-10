@@ -98,7 +98,7 @@ export const DateTimePicker = () => {
                                 </div>
                                 {/* Not part of the reference `Select`-based mobile row (that primitive isn't ported yet) —
                                     this list is shown at every breakpoint instead. */}
-                                <div className="border-secondary relative flex min-h-0 w-50 flex-col gap-4 border-l">
+                                <div className="border-secondary relative flex min-h-0 w-50 flex-col gap-4 border-s">
                                     <div className="text-fg-secondary px-5 pt-6.5 text-center text-sm font-semibold">Available times</div>
                                     <div className="relative h-full w-full">
                                         <ul className="absolute inset-0 flex min-h-0 flex-col gap-1.5 overflow-y-auto mask-b-from-80% mask-b-to-98% px-5 pb-5">
@@ -197,7 +197,7 @@ export const RangeCalendarCard = () => {
     return (
         <AriaDateRangePicker aria-label="Range calendar card" value={value} onChange={setValue}>
             <AriaDialog className="bg-primary ring-secondary_alt flex rounded-2xl shadow-xl ring focus:outline-hidden">
-                <div className="border-secondary hidden w-38 flex-col gap-0.5 border-r border-solid p-3 lg:flex">
+                <div className="border-secondary hidden w-38 flex-col gap-0.5 border-e border-solid p-3 lg:flex">
                     {Object.values(presets).map((preset) => (
                         <RangePresetButton
                             key={preset.label}

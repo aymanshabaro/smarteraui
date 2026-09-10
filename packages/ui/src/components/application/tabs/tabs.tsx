@@ -51,7 +51,7 @@ const getTabStyles = ({ isFocusVisible, isSelected, isHovered }: AriaTabRenderPr
         (isSelected || isHovered) && "border-fg-brand-primary_alt text-brand-secondary *:data-icon:text-fg-brand-secondary_hover",
     ),
     line: cx(
-        "rounded-none border-l-2 border-transparent outline-focus-ring *:data-icon:text-fg-quaternary",
+        "rounded-none border-s-2 border-transparent outline-focus-ring *:data-icon:text-fg-quaternary",
         isFocusVisible && "outline-2 -outline-offset-2",
         (isSelected || isHovered) && "border-fg-brand-primary_alt text-brand-secondary *:data-icon:text-fg-brand-secondary_hover",
     ),
@@ -65,7 +65,7 @@ const sizes = {
         "button-border": "py-2 px-2.5",
         "button-minimal": "py-2 px-2.5",
         underline: "px-0.5 pb-2.5 pt-0",
-        line: "pl-2.5 pr-3 py-0.5",
+        line: "ps-2.5 pe-3 py-0.5",
     },
     md: {
         base: "text-md font-semibold gap-1.5 *:data-icon:size-5",
@@ -74,7 +74,7 @@ const sizes = {
         "button-border": "py-2.5 px-2.5",
         "button-minimal": "py-2.5 px-2.5",
         underline: "px-0.5 pb-2.5 pt-0",
-        line: "pr-3.5 pl-3 py-1",
+        line: "pe-3.5 ps-3 py-1",
     },
 };
 

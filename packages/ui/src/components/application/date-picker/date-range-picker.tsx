@@ -105,7 +105,7 @@ export const DateRangePicker = ({ value: valueProp, defaultValue, onChange, onAp
                 <AriaDialog aria-label="Date range picker" className="bg-primary ring-secondary_alt flex rounded-2xl shadow-xl ring focus:outline-hidden">
                     {({ close }) => (
                         <>
-                            <div className="border-secondary hidden w-38 flex-col gap-0.5 border-r border-solid p-3 lg:flex">
+                            <div className="border-secondary hidden w-38 flex-col gap-0.5 border-e border-solid p-3 lg:flex">
                                 {Object.values(presets).map((preset) => (
                                     <RangePresetButton
                                         key={preset.label}

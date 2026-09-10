@@ -95,28 +95,28 @@ const DropdownItem = ({ label, children, addon, icon: Icon, avatarUrl, unstyled,
                         !state.isDisabled && "group-hover:bg-primary_hover",
                         state.isFocused && "bg-primary_hover",
                         state.isFocusVisible && "outline-2 -outline-offset-2",
-                        state.hasSubmenu && "pr-1.5",
+                        state.hasSubmenu && "pe-1.5",
                     )}
                 >
-                    {state.selectionMode !== "none" && !avatarUrl && !Icon && <SelectionIndicator {...state} className="mr-2" />}
+                    {state.selectionMode !== "none" && !avatarUrl && !Icon && <SelectionIndicator {...state} className="me-2" />}
 
                     {avatarUrl && (
-                        <div className="mr-2 flex size-4 items-center justify-center">
+                        <div className="me-2 flex size-4 items-center justify-center">
                             <Avatar aria-hidden="true" size="xs" src={avatarUrl} alt={label} className="size-5" />
                         </div>
                     )}
 
-                    {Icon && <Icon aria-hidden="true" className="text-fg-quaternary mr-2 size-4 shrink-0 stroke-[2.25px]" />}
+                    {Icon && <Icon aria-hidden="true" className="text-fg-quaternary me-2 size-4 shrink-0 stroke-[2.25px]" />}
 
                     <span className={cx("text-secondary grow truncate text-sm font-semibold", state.isFocused && "text-secondary_hover")}>
                         {label || (typeof children === "function" ? children(state) : children)}
                     </span>
 
-                    {addon && <span className="text-quaternary ml-1 shrink-0 pr-1 text-xs font-medium">{addon}</span>}
+                    {addon && <span className="text-quaternary ms-1 shrink-0 pe-1 text-xs font-medium">{addon}</span>}
 
-                    {state.selectionMode !== "none" && (avatarUrl || Icon) && <SelectionIndicator {...state} className="ml-1" />}
+                    {state.selectionMode !== "none" && (avatarUrl || Icon) && <SelectionIndicator {...state} className="ms-1" />}
 
-                    {state.hasSubmenu && <ChevronRight aria-hidden="true" className="text-fg-quaternary ml-auto size-4 shrink-0 stroke-[2.25px]" />}
+                    {state.hasSubmenu && <ChevronRight aria-hidden="true" className="text-fg-quaternary ms-auto size-4 shrink-0 stroke-[2.25px]" />}
                 </div>
             )}
         </AriaMenuItem>

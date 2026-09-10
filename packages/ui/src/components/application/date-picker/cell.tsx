@@ -52,8 +52,8 @@ export const CalendarCell = ({ date, isHighlighted, showOutOfRangeDates = false,
 
                 return cx(
                     "relative size-10 focus:outline-hidden",
-                    isRoundedLeft && "rounded-l-full",
-                    isRoundedRight && "rounded-r-full",
+                    isRoundedLeft && "rounded-s-full",
+                    isRoundedRight && "rounded-e-full",
                     isInRange && isDisabled && "bg-secondary",
                     isSelected && isRangeCalendar && "bg-secondary",
                     isDisabled ? "pointer-events-none" : "cursor-pointer",

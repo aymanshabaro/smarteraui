@@ -374,7 +374,7 @@ const ColorPickerColorValueInput = ({ hasAlpha = true, label = "Hex color", clas
 
     return (
         <div className={cx("flex flex-1 shadow-xs", className)}>
-            <div className={cx(styles.common.fieldBox, "flex-1", hasAlpha ? "rounded-l-lg" : "rounded-lg")}>
+            <div className={cx(styles.common.fieldBox, "flex-1", hasAlpha ? "rounded-s-lg" : "rounded-lg")}>
                 {format === "hex" ? (
                     <AriaColorField aria-label={label} className="flex flex-1 items-center gap-2 px-2.5 py-2">
                         <AriaColorSwatch className={styles.common.fieldSwatch} />
@@ -386,7 +386,7 @@ const ColorPickerColorValueInput = ({ hasAlpha = true, label = "Hex color", clas
             </div>
 
             {hasAlpha && (
-                <div className={cx(styles.common.fieldBox, "-ms-px w-14 shrink-0 rounded-r-lg")}>
+                <div className={cx(styles.common.fieldBox, "-ms-px w-14 shrink-0 rounded-e-lg")}>
                     <AriaColorField channel="alpha" aria-label="Alpha" className="flex w-full items-center">
                         <AriaInput className={cx(styles.common.fieldInput, "px-2.5 py-2")} />
                     </AriaColorField>

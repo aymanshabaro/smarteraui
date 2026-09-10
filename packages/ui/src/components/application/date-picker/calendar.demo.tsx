@@ -24,7 +24,7 @@ const MonthCalendarView = () => (
 
         <div className="grid grid-cols-7">
             {WEEKDAYS_SHORT.map((day, index) => (
-                <div key={day} className={cx("border-secondary text-tertiary border-b py-2 text-center text-sm font-medium", index !== 0 && "border-l")}>
+                <div key={day} className={cx("border-secondary text-tertiary border-b py-2 text-center text-sm font-medium", index !== 0 && "border-s")}>
                     {day}
                 </div>
             ))}
@@ -42,7 +42,7 @@ const MonthCalendarView = () => (
                         key={cell.key}
                         className={cx(
                             "border-secondary flex flex-col gap-1 border-t p-2",
-                            index % 7 !== 0 && "border-l",
+                            index % 7 !== 0 && "border-s",
                             !cell.isCurrentMonth && "bg-secondary/40",
                         )}
                     >
@@ -85,9 +85,9 @@ export const CalendarWeekView = () => (
             <div className="grid grid-cols-[64px_repeat(7,1fr)]">
                 {HOURS.map((hour) => (
                     <Fragment key={hour}>
-                        <div className="border-secondary text-tertiary border-t px-2 py-4 text-right text-xs">{formatHourLabel(hour)}</div>
+                        <div className="border-secondary text-tertiary border-t px-2 py-4 text-end text-xs">{formatHourLabel(hour)}</div>
                         {WEEK_DAYS.map((day, index) => (
-                            <div key={`${hour}-${day}`} className={cx("border-secondary h-16 border-t", index !== 0 && "border-l")} />
+                            <div key={`${hour}-${day}`} className={cx("border-secondary h-16 border-t", index !== 0 && "border-s")} />
                         ))}
                     </Fragment>
                 ))}
@@ -108,15 +108,15 @@ export const CalendarDayView = () => (
                 <div className="grid grid-cols-[64px_1fr]">
                     {HOURS.map((hour) => (
                         <Fragment key={hour}>
-                            <div className="border-secondary text-tertiary border-t px-2 py-4 text-right text-xs">{formatHourLabel(hour)}</div>
-                            <div className="border-secondary h-16 border-t border-l" />
+                            <div className="border-secondary text-tertiary border-t px-2 py-4 text-end text-xs">{formatHourLabel(hour)}</div>
+                            <div className="border-secondary h-16 border-s border-t" />
                         </Fragment>
                     ))}
                 </div>
             </div>
         </div>
 
-        <div className="border-secondary hidden w-[340px] shrink-0 flex-col overflow-y-auto border-l lg:flex">
+        <div className="border-secondary hidden w-[340px] shrink-0 flex-col overflow-y-auto border-s lg:flex">
             <div className="p-4">
                 <Calendar highlightedDates={MINI_CALENDAR_HIGHLIGHTS} defaultValue={TODAY} defaultFocusedValue={TODAY}>
                     <></>

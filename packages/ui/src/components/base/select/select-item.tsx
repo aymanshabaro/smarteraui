@@ -13,21 +13,21 @@ import { SelectContext } from "./select-shared";
 
 const sizes = {
     sm: {
-        root: "p-2 pr-2.5 gap-2 *:data-icon:size-4 *:data-icon:stroke-[2.25px]",
+        root: "p-2 pe-2.5 gap-2 *:data-icon:size-4 *:data-icon:stroke-[2.25px]",
         text: "text-sm",
         textContainer: "gap-x-1.5",
         check: "size-4 stroke-[2.25px]",
         checkbox: "sm" as const,
     },
     md: {
-        root: "p-2 pr-2.5 gap-2 *:data-icon:size-5",
+        root: "p-2 pe-2.5 gap-2 *:data-icon:size-5",
         text: "text-md",
         textContainer: "gap-x-2",
         check: "size-5",
         checkbox: "sm" as const,
     },
     lg: {
-        root: "p-2.5 pl-2 gap-2 *:data-icon:size-5",
+        root: "p-2.5 ps-2 gap-2 *:data-icon:size-5",
         text: "text-md",
         textContainer: "gap-x-2",
         check: "size-5",
@@ -122,11 +122,11 @@ export const SelectItem = ({
                     </div>
 
                     {state.isSelected && selectionIndicator === "checkmark" && (
-                        <Check aria-hidden="true" className={cx("text-fg-brand-primary ml-auto", sizes[size].check)} />
+                        <Check aria-hidden="true" className={cx("text-fg-brand-primary ms-auto", sizes[size].check)} />
                     )}
 
                     {!isLeft && selectionIndicator === "checkbox" && (
-                        <CheckboxBase size={sizes[size].checkbox} isSelected={state.isSelected} isDisabled={state.isDisabled} className="ml-auto" />
+                        <CheckboxBase size={sizes[size].checkbox} isSelected={state.isSelected} isDisabled={state.isDisabled} className="ms-auto" />
                     )}
                 </div>
             )}

@@ -510,7 +510,7 @@ const GradientStopRow = ({ stop, index, isRemovable }: { stop: GradientStop; ind
 
             <div className="flex flex-1 items-center gap-1">
                 <div className="flex flex-1 shadow-xs">
-                    <div className={cx(styles.common.fieldBox, "flex-1 rounded-l-lg")}>
+                    <div className={cx(styles.common.fieldBox, "flex-1 rounded-s-lg")}>
                         <AriaColorField
                             aria-label={`Stop ${index + 1} color`}
                             value={stop.color}
@@ -522,7 +522,7 @@ const GradientStopRow = ({ stop, index, isRemovable }: { stop: GradientStop; ind
                         </AriaColorField>
                     </div>
 
-                    <div className={cx(styles.common.fieldBox, "-ms-px w-14 shrink-0 rounded-r-lg")}>
+                    <div className={cx(styles.common.fieldBox, "-ms-px w-14 shrink-0 rounded-e-lg")}>
                         <AriaColorField
                             channel="alpha"
                             aria-label={`Stop ${index + 1} alpha`}

@@ -30,28 +30,28 @@ const getSizeClasses = (
 ): Record<Align, Record<Size, { root?: string; addon?: string; icon?: string; dot?: string }>> => ({
     leading: {
         md: {
-            root: cx("py-1 pr-2 pl-1 text-xs font-medium", !text && !icon && "pr-1"),
-            addon: cx("px-2 py-0.5", theme === "modern" && "gap-1 px-1.5", text && "mr-2"),
-            icon: "ml-1 size-4",
+            root: cx("py-1 pe-2 ps-1 text-xs font-medium", !text && !icon && "pe-1"),
+            addon: cx("px-2 py-0.5", theme === "modern" && "gap-1 px-1.5", text && "me-2"),
+            icon: "ms-1 size-4",
         },
         lg: {
-            root: cx("py-1 pr-2 pl-1 text-sm font-medium", !text && !icon && "pr-1"),
-            addon: cx("px-2.5 py-0.5", theme === "modern" && "gap-1.5 px-2", text && "mr-2"),
-            icon: "ml-1 size-4",
+            root: cx("py-1 pe-2 ps-1 text-sm font-medium", !text && !icon && "pe-1"),
+            addon: cx("px-2.5 py-0.5", theme === "modern" && "gap-1.5 px-2", text && "me-2"),
+            icon: "ms-1 size-4",
         },
     },
     trailing: {
         md: {
-            root: cx("py-1 pr-1 pl-3 text-xs font-medium", theme === "modern" && "pl-2.5"),
-            addon: cx("py-0.5 pr-1.5 pl-2", theme === "modern" && "pr-1.5 pl-2", text && "ml-2"),
-            icon: "ml-0.5 size-3 stroke-[3px]",
-            dot: "mr-1.5",
+            root: cx("py-1 pe-1 ps-3 text-xs font-medium", theme === "modern" && "ps-2.5"),
+            addon: cx("py-0.5 pe-1.5 ps-2", theme === "modern" && "pe-1.5 ps-2", text && "ms-2"),
+            icon: "ms-0.5 size-3 stroke-[3px]",
+            dot: "me-1.5",
         },
         lg: {
-            root: "py-1 pr-1 pl-3 text-sm font-medium",
-            addon: cx("py-0.5 pr-2 pl-2.5", theme === "modern" && "pr-1.5 pl-2", text && "ml-2"),
-            icon: "ml-1 size-3 stroke-[3px]",
-            dot: "mr-2",
+            root: "py-1 pe-1 ps-3 text-sm font-medium",
+            addon: cx("py-0.5 pe-2 ps-2.5", theme === "modern" && "pe-1.5 ps-2", text && "ms-2"),
+            icon: "ms-1 size-3 stroke-[3px]",
+            dot: "me-2",
         },
     },
 });

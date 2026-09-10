@@ -6,7 +6,7 @@ import QRCodeStyling, { type Options as QRCodeStylingOptions } from "qr-code-sty
 import { cx } from "@/utils/cx";
 
 const QRCodeFrameHandle = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => (
-    <div {...props} className={cx("border-brand_alt size-3 rounded-tl border-t-2 border-l-2", className)} />
+    <div {...props} className={cx("border-brand_alt size-3 rounded-tl border-s-2 border-t-2", className)} />
 );
 
 export const GradientScan = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => (

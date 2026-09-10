@@ -20,7 +20,7 @@ export const DropdownAccountCardMD = () => {
             <AriaButton
                 className={({ isPressed, isFocusVisible }) =>
                     cx(
-                        "bg-primary_alt inset-ring-border-secondary outline-focus-ring relative w-60 cursor-pointer rounded-lg p-2 text-left inset-ring-1 outline-offset-2",
+                        "bg-primary_alt inset-ring-border-secondary outline-focus-ring relative w-60 cursor-pointer rounded-lg p-2 text-start inset-ring-1 outline-offset-2",
                         (isPressed || isFocusVisible) && "outline-2",
                     )
                 }

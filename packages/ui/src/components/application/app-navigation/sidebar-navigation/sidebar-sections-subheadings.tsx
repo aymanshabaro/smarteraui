@@ -67,7 +67,7 @@ export const SidebarNavigationSectionsSubheadings = ({ activeUrl = "/", items }:
             <MobileNavigationHeader>{content}</MobileNavigationHeader>
 
             {/* Desktop sidebar navigation */}
-            <div className="hidden lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:py-1 lg:pl-1">{content}</div>
+            <div className="hidden lg:fixed lg:inset-y-0 lg:start-0 lg:flex lg:py-1 lg:ps-1">{content}</div>
 
             {/* Placeholder to take up physical space because the real sidebar has `fixed` position. */}
             <div

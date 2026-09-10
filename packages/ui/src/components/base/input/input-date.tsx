@@ -74,22 +74,22 @@ export const InputDateBase = ({
 
     const sizes = sortCx({
         sm: {
-            root: cx("px-3 py-2 text-sm", hasTrailingIcon && "pr-9", hasLeadingIcon && "pl-8.5"),
+            root: cx("px-3 py-2 text-sm", hasTrailingIcon && "pe-9", hasLeadingIcon && "ps-8.5"),
             iconLeading: "left-3 size-4 stroke-[2.25px]",
             iconTrailing: "right-3",
-            shortcut: "pr-2.5",
+            shortcut: "pe-2.5",
         },
         md: {
-            root: cx("px-3 py-2 text-md", hasTrailingIcon && "pr-9", hasLeadingIcon && "pl-10"),
+            root: cx("px-3 py-2 text-md", hasTrailingIcon && "pe-9", hasLeadingIcon && "ps-10"),
             iconLeading: "left-3 size-5",
             iconTrailing: "right-3",
-            shortcut: "pr-2.5",
+            shortcut: "pe-2.5",
         },
         lg: {
-            root: cx("px-3.5 py-2.5 text-md", hasTrailingIcon && "pr-9.5", hasLeadingIcon && "pl-10.5"),
+            root: cx("px-3.5 py-2.5 text-md", hasTrailingIcon && "pe-9.5", hasLeadingIcon && "ps-10.5"),
             iconLeading: "left-3.5 size-5",
             iconTrailing: "right-3.5",
-            shortcut: "pr-3",
+            shortcut: "pe-3",
         },
     });
 
@@ -172,7 +172,7 @@ export const InputDateBase = ({
             {shortcut && (
                 <div
                     className={cx(
-                        "to-bg-primary pointer-events-none absolute inset-y-0.5 right-0.5 z-10 flex items-center rounded-r-[inherit] bg-linear-to-r from-transparent to-40% pl-8",
+                        "to-bg-primary pointer-events-none absolute inset-y-0.5 right-0.5 z-10 flex items-center rounded-e-[inherit] bg-linear-to-r from-transparent to-40% ps-8",
                         sizes[inputSize].shortcut,
                     )}
                 >
