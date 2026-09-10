@@ -79,12 +79,18 @@ export const PreviewFrame = ({ id, title, height, demoKey, previewPath, sourcePa
                             </AriaButton>
                             <AriaLink aria-label="Open in Bolt" href={boltUrl(pathname, title)} target="_blank" className={utilityButtonClasses()}>
                                 <BoltMark className="size-4" data-icon="true" />
+                                {/* A visible label; recognising the mark alone was the ask of every visitor. Narrow screens keep the icon-only bar. */}
+                                <span className="text-xs font-medium max-md:sr-only">Bolt</span>
                             </AriaLink>
                             <AriaLink aria-label="Open in StackBlitz" href={stackBlitzHref} target="_blank" className={utilityButtonClasses()}>
                                 <StackBlitzMark className="size-4" data-icon="true" />
+                                {/* A visible label; recognising the mark alone was the ask of every visitor. Narrow screens keep the icon-only bar. */}
+                                <span className="text-xs font-medium max-md:sr-only">StackBlitz</span>
                             </AriaLink>
                             <AriaLink aria-label="Open in v0" href={v0Url(pathname)} target="_blank" className={utilityButtonClasses()}>
                                 <V0Mark className="size-4" data-icon="true" />
+                                {/* A visible label; recognising the mark alone was the ask of every visitor. Narrow screens keep the icon-only bar. */}
+                                <span className="text-xs font-medium max-md:sr-only">v0</span>
                             </AriaLink>
                             <AriaLink aria-label="Open in new tab" href={previewPath} target="_blank" className={utilityButtonClasses()}>
                                 <Expand01 className="size-4" data-icon="true" />

@@ -21,10 +21,10 @@ export type SiteNavGroup = {
 };
 
 /** Fixed order of the Documentation group (spec § Global chrome). */
-const DOCS_ORDER = ["introduction", "installation", "theming", "dark-mode", "typography", "cli", "rtl", "upgrade", "icons"];
+const DOCS_ORDER = ["introduction", "installation", "theming", "dark-mode", "typography", "cli", "accessibility", "rtl", "upgrade", "icons"];
 
 /** Fixed order of the nested Integrations list. */
-const INTEGRATIONS_ORDER = ["nextjs", "vite", "v0", "bolt", "replit", "gemini", "claude", "lovable", "monorepo", "mcp", "components-json"];
+const INTEGRATIONS_ORDER = ["nextjs", "vite", "claude", "codex", "cursor", "lovable", "v0", "bolt", "replit", "gemini", "monorepo", "mcp", "components-json"];
 
 /** `section: app-examples` pages that belong to "Application UI examples". */
 const APP_EXAMPLE_SLUGS = ["dashboards", "dashboards-02", "settings-pages", "settings-pages-02", "informational-pages", "informational-pages-02"];
@@ -32,9 +32,11 @@ const APP_EXAMPLE_SLUGS = ["dashboards", "dashboards-02", "settings-pages", "set
 /** `section: app-examples` pages that belong to "Shared page examples". */
 const SHARED_EXAMPLE_SLUGS = ["log-in-pages", "sign-up-pages", "verification-pages", "forgot-password-pages", "404-sections", "email-templates"];
 
-/** Static links; these live outside the docs app, so they are not MDX pages. */
+/**
+ * Static links; these live outside the docs app, so they are not MDX pages. No Figma entry:
+ * there is no Figma file yet, and a link to figma.com's front page said otherwise.
+ */
 const RESOURCES: SiteNavItem[] = [
-    { title: "Figma files", href: "https://www.figma.com/", external: true },
     { title: "Icons", href: "/docs/icons" },
     { title: "File icons", href: "/docs/icons#file-icons" },
     { title: "Flag icons", href: "/docs/icons#flag-icons" },

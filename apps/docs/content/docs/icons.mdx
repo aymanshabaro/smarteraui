@@ -8,19 +8,19 @@ metaDescription: Install, import, and style Smartera UI Icons — 1,100+ line ic
 
 Smartera UI Icons are a clean, consistent, neutral icon library crafted for modern UI design, available as tree-shakeable React components under `@smarteraui/icons`. Every component spec in this library references icons by these exact export names, so the set you install here is the same one every component's `iconLeading` / `iconTrailing` prop expects.
 
-`@smarteraui/icons` is a published alias of [`@untitledui/icons`](https://www.npmjs.com/package/@untitledui/icons) — installing it gets you that package under the `@smarteraui/icons` name, so its README and its 1,100+ icons apply directly here.
+`@smarteraui/icons` is not a package on npm. It is the name the component source imports, resolved to [`@untitledui/icons`](https://www.npmjs.com/package/@untitledui/icons) (MIT) through an npm alias — so that package's README and its 1,100+ icons apply directly here, and the import name stays stable if the underlying package ever changes.
 
 ## Installation
 
 ```bash
-npm install @smarteraui/icons
+npm install @smarteraui/icons@npm:@untitledui/icons@^0.0.22
 ```
 
 ```bash
-pnpm add @smarteraui/icons
+pnpm add @smarteraui/icons@npm:@untitledui/icons@^0.0.22
 ```
 
-`@smarteraui/icons` is already listed as a dependency of `@smarteraui/ui`, so if you installed the component library you have it. Installing it directly only matters if you're using icons standalone, outside of any Smartera UI component.
+The `name@npm:real@range` form is an npm alias — npm, pnpm, yarn and bun all accept it — and it writes `"@smarteraui/icons": "npm:@untitledui/icons@^0.0.22"` into your `package.json`. `npx smarteraui@latest add` runs exactly this install for you whenever a component needs icons, and `@smarteraui/ui` already declares it, so if you installed the component library you have it. Installing it directly only matters if you're using icons standalone, outside of any Smartera UI component.
 
 ## Using Smartera UI Icons
 
@@ -85,7 +85,7 @@ Standalone, outside of any component, add `aria-hidden="true"` to decorative ico
     items={[
         {
             question: "What are Smartera UI Icons?",
-            answer: "Smartera UI Icons are a clean, consistent, and neutral icon library crafted specifically for modern UI design, distributed as tree-shakeable React components with instant npm access. The package is a published alias of @untitledui/icons.",
+            answer: "Smartera UI Icons are a clean, consistent, and neutral icon library crafted specifically for modern UI design, distributed as tree-shakeable React components with instant npm access. The name resolves to @untitledui/icons through an npm alias; there is no separate package to trust.",
         },
         {
             question: "Are Smartera UI Icons free?",

@@ -51,6 +51,23 @@ That means:
 - No version lock — a component you copied today doesn't change unless you pull an update yourself.
 - Full control over markup, styles, and behavior, because it's your file once it lands in your repo.
 
+## How things are counted
+
+The README and this site quote a handful of numbers about the library — 69, 106, 797, and so on. They all come from one generated
+file, `packages/registry/dist/stats.json` (written by `pnpm registry:build`), so the same four terms mean the same thing everywhere:
+
+- **Entry** — one item in the component registry, of any kind: a component, an example, a hook, a util, or a style.
+- **Group** — one registry item of type `component`, i.e. one folder under `packages/ui/src/components/<layer>`. This is reported two
+  ways: **published** groups count only the base, application, and marketing layers (currently 69, the components you can install);
+  **all** groups add foundations, shared assets, and the example-page layers (currently 106).
+- **Variant** — an `example` entry in the `marketing` layer: one section variant (a hero, a pricing table, a footer, and so on).
+- **Example** — an `example` entry in the `marketing-examples` or `app-examples` layer: a complete, assembled page rather than a
+  single section.
+
+Whenever you see a count with no scope attached, assume it means the published groups (69) — the number that matters when you're
+picking a component to install. A number described as "counting foundations, shared assets, and example groups" is the broader,
+all-layers total (106).
+
 ## Next steps
 
 Head to [Installation](/docs/installation) to scaffold a new project or add Smartera UI to an existing one, or jump straight into a component you need:

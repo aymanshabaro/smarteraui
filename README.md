@@ -24,14 +24,15 @@ handling and ARIA come from [React Aria Components](https://react-spectrum.adobe
 CSS v4 utilities resolved through a semantic token layer, so re-branding the whole system means editing one file — and a
 generated screen lands on the system rather than near it.
 
-The registry currently holds **797 entries**: **106 component groups** across seven layers (19 base, 32 application,
-18 marketing sections, 12 application page examples, 10 marketing page examples, 9 foundations, 6 shared assets),
-**679 section and page-example variants**, and the shared hooks, utils and styles they depend on.
+<!-- stats:start -->
+
+The registry currently holds **797 entries**: **69 published component groups** (**106** counting foundations, shared assets and example-page groups) across seven layers (19 base, 32 application, 18 marketing sections, 12 application page examples, 10 marketing page examples, 9 foundations, 6 shared assets), **446 section variants** and **233 full-page examples** (**679** composable variants total), and the shared hooks, utils and styles they depend on.
+<!-- stats:end -->
 
 ## Built for AI code generators
 
 Nothing here is specific to one assistant. The three surfaces below are plain HTTP and a shell command, so Claude Code,
-Codex, Cursor, Copilot, v0, Bolt and Lovable can all drive them.
+Codex, Cursor, v0, Bolt and Lovable can all drive them.
 
 | Surface             | URL                                                                      | What an assistant does with it                                                                                                                  |
 | ------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -62,7 +63,8 @@ server yet; it is on the [roadmap](./ROADMAP.md), and the CLI covers the same gr
 
 - **Accessible by default.** Every interactive primitive — menus, dialogs, comboboxes, tables, sliders, date pickers —
   delegates to React Aria Components. Focus management, keyboard navigation and ARIA wiring are inherited, not
-  re-implemented. Each component ships an `axe` smoke test that runs in CI.
+  re-implemented. Each component ships an `axe` smoke test that runs in CI — zero _detected_ violations across 118 automated suites; see
+  [the accessibility page](https://smarteraui.com/docs/accessibility) for what that does and does not cover.
 - **Tailwind CSS v4 tokens, no config file.** All design decisions live in `@theme` blocks in
   [`packages/ui/src/styles/theme.css`](./packages/ui/src/styles/theme.css). There is no `tailwind.config.js`.
 - **Dark mode without `dark:` utilities.** A `.dark-mode` class anywhere in the ancestor chain re-maps every semantic

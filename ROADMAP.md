@@ -64,16 +64,6 @@ Every registry entry carries an empty `cssVars` array. The field is reserved for
 custom properties the CLI would merge into a consuming app's stylesheet. Components currently rely
 entirely on the shared token file, so nothing needs merging — the field exists for when that changes.
 
-### Hosted registry
-
-`smarteraui add` defaults to `https://smarteraui.com/r`, which serves once the documentation site is
-deployed. Until then, build the registry locally and point the CLI at it:
-
-```bash
-pnpm registry:build
-npx smarteraui add button --registry ./packages/registry/dist
-```
-
 ## Not planned
 
 - **A paid or "PRO" tier.** Everything in this repository is MIT licensed. There is no paid icon

@@ -13,9 +13,6 @@ export const GITHUB_BRANCH = "main";
 /** The CLI package name used by every `npx … add <slug>` snippet. */
 export const CLI_PACKAGE = "smarteraui";
 
-/** Placeholder for the top-bar "Sign in" action until the product has real auth. */
-export const SIGN_IN_URL = process.env.NEXT_PUBLIC_SIGN_IN_URL ?? GITHUB_URL;
-
 export const absoluteUrl = (pathname: string) => `${SITE_URL}${pathname.startsWith("/") ? pathname : `/${pathname}`}`;
 
 /** Plain-markdown twin of a docs route (`/components/buttons` → `/components/buttons.md`). */

@@ -55,7 +55,7 @@ export const Dashboard13 = () => (
             footerItems={navFooterItems}
             featureCard={
                 <FeaturedCardUpgradeCTA
-                    title="Upgrade to PRO"
+                    title="Upgrade your plan"
                     badge="20% OFF"
                     description="Unlock 20+ integrations, 40 GB data, and advanced reporting."
                     confirmLabel="Upgrade now"

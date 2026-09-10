@@ -37,7 +37,7 @@ const faqs = [
     {
         id: "which-tools",
         question: "Which AI coding tools does it work with?",
-        answer: "Any of them. There is nothing tool-specific here — the surfaces are a public JSON registry at /r, a markdown index at /llms.txt and a CLI. Claude Code, Codex, Cursor, Copilot, v0, Bolt and Lovable can all either fetch a URL or run a shell command, which is all that is required.",
+        answer: "Any of them. There is nothing tool-specific here — the surfaces are a public JSON registry at /r, a markdown index at /llms.txt and a CLI. Claude Code, Codex, Cursor, v0, Bolt and Lovable each have a walkthrough under Integrations, and anything else that can fetch a URL or run a shell command works the same way.",
     },
     {
         id: "mcp",

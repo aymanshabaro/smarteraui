@@ -12,7 +12,7 @@ const metrics = [
     { value: String(REGISTRY_ENTRIES), label: "Registry entries an agent can fetch" },
     { value: String(COMPONENT_GROUPS), label: "Component groups" },
     { value: String(COMPOSABLE_VARIANTS), label: "Section and page variants to compose from" },
-    { value: "0", label: `Axe violations across ${TEST_SUITES} test suites` },
+    { value: "0", label: `Detected axe violations in ${TEST_SUITES} automated suites` },
 ];
 
 export const LandingMetrics = () => (

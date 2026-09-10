@@ -6,6 +6,7 @@ export const nav: NavGroup[] = [
     {
         title: "Documentation",
         items: [
+            { title: "Accessibility", href: "/docs/accessibility" },
             { title: "CLI tool", href: "/docs/cli" },
             { title: "Dark mode", href: "/docs/dark-mode" },
             { title: "Icons", href: "/docs/icons" },
@@ -22,7 +23,9 @@ export const nav: NavGroup[] = [
         items: [
             { title: "Bolt.new integration", href: "/integrations/bolt" },
             { title: "Claude Code integration", href: "/integrations/claude" },
+            { title: "Codex integration", href: "/integrations/codex" },
             { title: "components.json", href: "/integrations/components-json" },
+            { title: "Cursor integration", href: "/integrations/cursor" },
             { title: "Gemini integration", href: "/integrations/gemini" },
             { title: "Lovable integration", href: "/integrations/lovable" },
             { title: "MCP integration", href: "/integrations/mcp" },
@@ -71,6 +74,7 @@ export const nav: NavGroup[] = [
             { title: "Header navigation components", href: "/components/header-navigations" },
             { title: "Illustration components", href: "/components/illustrations" },
             { title: "Image picker components", href: "/components/image-pickers" },
+            { title: "Informational pages with header navigation", href: "/components/informational-pages-02" },
             { title: "Informational pages with sidebar navigation", href: "/components/informational-pages" },
             { title: "Inline CTA components", href: "/components/inline-ctas" },
             { title: "Input field", href: "/components/inputs" },
@@ -154,6 +158,7 @@ export const nav: NavGroup[] = [
             { title: "Header navigation components", href: "/components/header-navigations" },
             { title: "Illustration components", href: "/components/illustrations" },
             { title: "Image picker components", href: "/components/image-pickers" },
+            { title: "Informational pages with header navigation", href: "/components/informational-pages-02" },
             { title: "Informational pages with sidebar navigation", href: "/components/informational-pages" },
             { title: "Inline CTA components", href: "/components/inline-ctas" },
             { title: "Input field", href: "/components/inputs" },

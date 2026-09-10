@@ -686,6 +686,57 @@ const build = () => {
     };
     writeFileSync(path.join(OUT, "index.json"), `${JSON.stringify(index, null, 2)}\n`);
 
+    // ---- Stats --------------------------------------------------------------
+    // Single generated source for every count quoted in the README and the landing page
+    // (see apps/docs/components/landing/content.ts and README.md's `<!-- stats:start -->` block).
+    // The four terms below are the only vocabulary those consumers are allowed to use.
+
+    const groupCountByLayer = Object.fromEntries(
+        LAYERS.map((layer) => [layer, entries.filter((entry) => entry.type === "component" && entry.layer === layer).length]),
+    ) as Record<Layer, number>;
+
+    const publishedGroups = groupCountByLayer.base + groupCountByLayer.application + groupCountByLayer.marketing;
+    const allGroups = LAYERS.reduce((total, layer) => total + groupCountByLayer[layer], 0);
+
+    const variantCount = entries.filter((entry) => entry.type === "example" && entry.layer === "marketing").length;
+    const marketingPageExamples = entries.filter((entry) => entry.type === "example" && entry.layer === "marketing-examples").length;
+    const appPageExamples = entries.filter((entry) => entry.type === "example" && entry.layer === "app-examples").length;
+
+    const testSuiteFiles = walkFiles(SRC).filter((file) => /\.test\.tsx$/.test(file));
+    const axeSuiteCount = testSuiteFiles.filter((file) => /toHaveNoViolations/.test(readFileSync(file, "utf8"))).length;
+
+    const stats = {
+        definitions: {
+            entry: "One registry item of any type — component, example, hook, util or style. Every file written to packages/registry/dist/*.json.",
+            group: 'One registry item of type "component": one folder under packages/ui/src/components/<layer>. `groups.published` counts the base, application and marketing layers only; `groups.all` counts every layer, including foundations, shared-assets, app-examples and marketing-examples.',
+            variant: 'An "example" entry in the "marketing" layer — a single section variant.',
+            example: 'An "example" entry in the "marketing-examples" or "app-examples" layer — a complete page.',
+        },
+        entries: entries.length,
+        groups: {
+            published: publishedGroups,
+            all: allGroups,
+            byLayer: {
+                base: groupCountByLayer.base,
+                application: groupCountByLayer.application,
+                marketing: groupCountByLayer.marketing,
+                appExamples: groupCountByLayer["app-examples"],
+                marketingExamples: groupCountByLayer["marketing-examples"],
+                foundations: groupCountByLayer.foundations,
+                sharedAssets: groupCountByLayer["shared-assets"],
+            },
+        },
+        variants: variantCount,
+        examples: {
+            marketing: marketingPageExamples,
+            app: appPageExamples,
+            total: marketingPageExamples + appPageExamples,
+        },
+        testSuites: testSuiteFiles.length,
+        axeSuites: axeSuiteCount,
+    };
+    writeFileSync(path.join(OUT, "stats.json"), `${JSON.stringify(stats, null, 4)}\n`);
+
     // ---- Report -----------------------------------------------------------
 
     const components = entries.filter((entry) => entry.type === "component").length;

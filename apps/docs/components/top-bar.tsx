@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { cx } from "~/lib/cx";
-import { GITHUB_URL, SIGN_IN_URL } from "~/lib/site";
+import { GITHUB_URL } from "~/lib/site";
 import type { Crumb, SiteNavGroup } from "~/lib/site-nav";
 import { ChevronRight } from "@smarteraui/icons";
 import { GithubMark } from "./brand-icons";
@@ -67,11 +67,9 @@ export const TopBar = ({ crumbs, nav }: { crumbs: Crumb[]; nav: SiteNavGroup[] }
                     </a>
                 </div>
 
+                {/* One action. There is no account system, so nothing to sign in to. */}
                 <div className="flex gap-2.5">
-                    <a href={SIGN_IN_URL} className={buttonClasses("secondary")}>
-                        <span className="px-0.5">Sign in</span>
-                    </a>
-                    <Link href="/components" className={buttonClasses("primary")}>
+                    <Link href="/docs/installation" className={buttonClasses("primary")}>
                         <span className="px-0.5">Get started</span>
                     </Link>
                 </div>
