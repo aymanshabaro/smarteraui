@@ -14,10 +14,15 @@ curl https://smarteraui.com/llms.txt          # index of every docs page, as pla
 curl https://smarteraui.com/r/index.json      # every registry entry: name, layer, type, dependencies
 curl https://smarteraui.com/r/buttons.json    # one entry, including its real source
 npx smarteraui@latest add buttons date-picker # write the files into the project
+npx smarteraui@latest info --json             # this project's setup: framework, aliases, installed entries
+npx smarteraui@latest agent init              # install the Smartera UI Skill for Claude, Codex, Cursor and Lovable
 ```
 
 `add` resolves `registryDependencies`, rewrites `@/` imports to the alias in `components.json` and installs missing npm
-packages. Prefer it over hand-copying source out of a registry payload.
+packages. Prefer it over hand-copying source out of a registry payload. `info --json` is what to run before deciding
+anything — it reports whether `components.json` exists yet and what's already installed. `agent init` writes the
+portable Skill (`skills/smarteraui/SKILL.md`) into `.claude/skills/`, `.agents/skills/`, or `.cursor/rules/`, so every
+session after the first one gets this guidance automatically instead of relying on this file alone.
 
 ## Writing component code
 
@@ -66,7 +71,8 @@ pnpm build
 
 Do not document or generate code against these — they do not exist:
 
-- `smarteraui upgrade` / `smarteraui migrate`. The commands are `init`, `add`, `list`, `search`, `diff`, `login`.
+- `smarteraui upgrade` / `smarteraui migrate`. The commands are `init`, `add`, `list`, `search`, `diff`, `login`,
+  `info` and `agent init`.
 - A browser OAuth flow for `login`. It takes `--token`, or prompts you to paste one.
-- An MCP server. It is on the [roadmap](./ROADMAP.md); the CLI covers the same ground today.
+- An MCP server. It is on the [roadmap](./ROADMAP.md); the Skill and the CLI cover the same ground today.
 - A paid or PRO tier. Everything in this repository is MIT licensed.

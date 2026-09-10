@@ -1,0 +1,84 @@
+---
+title: shadcn CLI integration
+section: integrations
+description: Install any Smartera UI component with the shadcn CLI — configure the @smarteraui namespace once and run npx shadcn@latest add @smarteraui/<name>.
+metaTitle: shadcn CLI integration | Smartera UI
+metaDescription: Add Smartera UI components with npx shadcn@latest add @smarteraui/<name>. Namespace setup for components.json, the registry.json shadcn's MCP server reads, and known limits.
+---
+
+Every Smartera UI entry is also published in [shadcn's registry format](https://ui.shadcn.com/docs/registry) under a `@smarteraui` namespace, alongside our own [CLI](/docs/cli) and [`/r` registry](/integrations/components-json). Once the namespace is configured, `npx shadcn@latest add @smarteraui/<name>` copies source into your project exactly like `npx smarteraui@latest add <name>` does — same files, same dependency resolution — through a tool you may already have wired into your project or editor. It also means shadcn's own [MCP server](https://ui.shadcn.com/docs/registry/mcp) and Skill can discover and install Smartera UI components without any extra setup on your end.
+
+## Configure the namespace
+
+Add `@smarteraui` to the `registries` field of your project's `components.json`:
+
+```json
+// components.json
+{
+    "registries": {
+        "@smarteraui": "https://smarteraui.com/r/shadcn/{name}.json"
+    }
+}
+```
+
+Don't have a `components.json` yet? `npx shadcn@latest init` creates one; see [components.json](/integrations/components-json) for what the other fields mean. Once the namespace is set:
+
+```bash
+npx shadcn@latest add @smarteraui/buttons
+```
+
+resolves to `https://smarteraui.com/r/shadcn/buttons.json`, installs `react-aria-components` and any other npm dependencies it needs, and writes files under whatever `aliases.ui` / `aliases.lib` / `aliases.hooks` point to in your `components.json` — the same alias-driven placement shadcn uses for its own components, so the files land next to the rest of your project's UI rather than mirroring Smartera UI's internal `components/base/...` layout.
+
+## What's discoverable
+
+`https://smarteraui.com/r/shadcn/registry.json` is the index shadcn's CLI and MCP server read to see the whole catalog — every base component, application component, marketing section, page example, hook, and util Smartera UI ships, mapped to shadcn's vocabulary:
+
+| Smartera UI (native) | shadcn `type`    | Example                         |
+| -------------------- | ---------------- | ------------------------------- |
+| `component`          | `registry:ui`    | `buttons`, `avatars`            |
+| `example` (page)     | `registry:block` | `about-page-01`, `dashboard-01` |
+| `hook`               | `registry:hook`  | `use-breakpoint`                |
+| `util`               | `registry:lib`   | `cx`, `countries`               |
+| `style`              | `registry:style` | `styles` (theme tokens + CSS)   |
+
+Internal references translate too: a native `registryDependencies` entry like `"tooltip"` becomes `"@smarteraui/tooltip"`, so the CLI resolves transitive dependencies inside the `@smarteraui` namespace automatically — installing `about-page-01` pulls in every section it's built from (headers, footers, careers cards, and so on) the same way `npx smarteraui@latest add about-page-01` would.
+
+## The `@smarteraui/icons` dependency
+
+Smartera UI's icon set is `@smarteraui/icons`, an npm alias for [`@untitledui/icons`](https://www.npmjs.com/package/@untitledui/icons) (`"@smarteraui/icons": "npm:@untitledui/icons@^0.0.22"` in `packages/ui/package.json`). Components that use icons declare that exact alias spec in their shadcn `dependencies` array — e.g. `"@smarteraui/icons@npm:@untitledui/icons@^0.0.22"` — rather than the bare package name.
+
+This isn't a guess: it was verified against a real `npx shadcn@latest add @smarteraui/buttons` run against a locally-served copy of this registry. The CLI passed the alias spec straight through to the installed `package.json`:
+
+```json
+"dependencies": {
+    "@smarteraui/icons": "npm:@untitledui/icons@^0.0.22"
+}
+```
+
+which is exactly what you'd get running `npm install` or `pnpm add` with that spec by hand — shadcn doesn't parse or validate the string, it just hands it to your package manager.
+
+## Limits
+
+- **Styles have no good target.** shadcn's `target` placeholders cover `@components/`, `@ui/`, `@lib/`, and `@hooks/` — there's no equivalent for global CSS. The `styles` item (`registry:style`, theme tokens + `globals.css` + `typography.css`) installs, but without an explicit target it falls back to your `components` alias directory (e.g. `src/components/globals.css`), which is almost never where you want theme CSS. Use `npx smarteraui@latest init` for the initial theme setup instead, and reach for `npx shadcn@latest add @smarteraui/styles` only if you're comfortable moving the files afterward.
+- **`type: "registry:style"` here isn't a shadcn base style.** shadcn's own `registry:style` items (like `new-york`) are style _presets_ — they can extend `cssVars`/`css`/`tailwind` config directly. Smartera UI's `styles` entry is a files-only translation of our native `style` type; it doesn't participate in shadcn's style-extension mechanism.
+- **`registry.json` is a catalog, not a payload.** Item summaries there omit `files` (no inline source) by design, matching how shadcn's own root `registry.json` is structured and what its MCP server expects to read for discovery. Fetch the individual `@smarteraui/<name>.json` item for file content.
+- **The native registry is still the source of truth.** Fields like `layer`, `examples` (the demo-preview ids used on component docs pages), and per-file granularity beyond shadcn's five `registry:*` types don't have a shadcn equivalent and are dropped, aside from `layer` surviving as `meta.layer` for reference. If you're scripting against Smartera UI rather than using shadcn's CLI, prefer `/r/<name>.json` (see [components.json](/integrations/components-json)) — it's the format our own CLI and docs site are built on.
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            question: "Does this replace the smarteraui CLI?",
+            answer: "No. Both read the same component source and produce the same files; this just gives you a second entry point through a tool you may already have set up. Use whichever CLI is already in your workflow.",
+        },
+        {
+            question: "Do I need an API key or token?",
+            answer: "No. The @smarteraui shadcn registry is public and unauthenticated, same as /r.",
+        },
+        {
+            question: "Will shadcn rewrite the @/ imports in Smartera UI's source?",
+            answer: "Yes, the same way it rewrites imports for any registry item — it tracks where each file in the dependency graph lands and rewrites cross-file imports to match, based on your components.json aliases. This was confirmed in testing: installing buttons rewrote its internal @/utils/cx import to @/lib/cx to match a project configured with aliases.lib set to @/lib.",
+        },
+    ]}
+/>

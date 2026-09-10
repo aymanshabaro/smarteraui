@@ -1,9 +1,9 @@
 ---
 title: Cursor integration
 section: integrations
-description: Point Cursor at Smartera UI's registry with a project rule you write by hand, so Agent mode composes screens from real components instead of inventing markup.
+description: Point Cursor at Smartera UI's registry with a project rule installed in one command, so Agent mode composes screens from real components instead of inventing markup.
 metaTitle: Cursor integration | Smartera UI
-metaDescription: Use Smartera UI with Cursor — a ready-to-paste .mdc project rule and prompts that resolve to real components.
+metaDescription: Use Smartera UI with Cursor — install the Smartera UI rule with one command, and prompts that resolve to real components.
 ---
 
 Cursor's Agent mode runs shell commands directly in your terminal, so it can drive the `smarteraui` CLI the same way Claude Code or Codex can. The only setup is a project rule that tells it to reach for a real component before writing markup from scratch.
@@ -26,50 +26,17 @@ not sure exists before writing custom markup.
 
 Cursor will typically run `smarteraui search` or `smarteraui list` in its terminal to confirm component names, then `smarteraui add <name>` for each one it decides to use, and finally write the page around them.
 
-## Project rule (.cursor/rules)
+## Install the Smartera UI rule
 
-Smartera UI doesn't ship a Cursor-specific setup command — there's no `smarteraui agent init`. You write the rule yourself, once, as `.cursor/rules/smarteraui.mdc`. Cursor's rules system only recognizes `.mdc` files with frontmatter in that folder — a plain `.md` file is ignored:
+Rather than writing `.cursor/rules/smarteraui.mdc` by hand, install it with the [Smartera UI Skill](/docs/agents) command:
 
-```mdc
----
-alwaysApply: true
----
-
-# Smartera UI
-
-This project uses Smartera UI (`@smarteraui/ui`). Before writing any new
-UI markup:
-
-- Run `npx smarteraui@latest search "<what you need>"` to check whether
-  a component or full-page example already covers it.
-- Install matches with `npx smarteraui@latest add <name>` rather than
-  hand-rolling the equivalent markup.
-- Import installed components from `@/components/...` (or your
-  project's configured alias in `components.json`) and follow their
-  existing prop APIs — don't rename props to "clean them up".
-
-When writing or editing component code:
-
-- Use React Aria props, not DOM props: `onPress` not `onClick`,
-  `isDisabled` not `disabled`, `isSelected` not `checked`.
-- Use semantic tokens only: `bg-primary`, `text-tertiary`,
-  `border-secondary`, `bg-brand-solid`. Never a raw palette class
-  (`bg-purple-600`) or an arbitrary value (`bg-[#7f56d9]`).
-- Never use `dark:` utilities — a `.dark-mode` class on an ancestor
-  repoints every semantic token, so a component written against tokens
-  is already correct in both themes.
-- Use logical properties for anything directional: `ms-*`/`me-*` not
-  `ml-*`/`mr-*`, `ps-*`/`pe-*` not `pl-*`/`pr-*`, `start-*`/`end-*` not
-  `left-*`/`right-*`, `text-start` not `text-left`.
-- Use tokenised typography — `text-display-lg`, `text-md` — not raw
-  sizes like `text-4xl`.
-- Pass icons as component references: `<Button iconLeading={ArrowRight}>`,
-  not `<Button iconLeading={<ArrowRight />}>`.
-- Import from the component's subpath so bundlers keep only what's used,
-  e.g. `@smarteraui/ui/components/base/buttons/button`.
+```bash
+npx smarteraui@latest agent init --client cursor
 ```
 
-`alwaysApply: true` means Cursor includes this rule in every chat and every Agent mode session, not just when a matching file is open — which matters here, since the "search before you write markup" instruction applies to any file, not just component files. If you'd rather it only load when a `.tsx`/`.jsx` file is in context, drop `alwaysApply` and add a `globs` line instead; Cursor's own docs cover the other rule types (Auto Attached, Agent Requested, Manual).
+This writes `.cursor/rules/smarteraui.mdc` with `alwaysApply: true` frontmatter — Cursor's rules system only recognizes `.mdc` files with frontmatter in that folder, a plain `.md` file is ignored, so the CLI writes the correct format directly. The rule covers the same workflow as the Skill used by Claude Code and Codex: run `smarteraui info --json` before touching UI code, search the registry before writing markup, install matches with `add` rather than hand-rolling, and keep React Aria props, semantic tokens and RTL-safe logical properties in anything written by hand.
+
+`alwaysApply: true` means Cursor includes this rule in every chat and every Agent mode session, not just when a matching file is open — which matters here, since the "search before you write markup" instruction applies to any file, not just component files. If you'd rather it only load when a `.tsx`/`.jsx` file is in context, open the generated file, drop `alwaysApply`, and add a `globs` line instead; Cursor's own docs cover the other rule types (Auto Attached, Agent Requested, Manual). Re-running `agent init --client cursor` after a Skill update replaces the file, so keep any such manual edit in mind before re-running with `--overwrite`.
 
 ## FAQs
 
@@ -77,7 +44,7 @@ When writing or editing component code:
     items={[
         {
             question: "Does Cursor need a Skill file or an MCP server for this?",
-            answer: "No — neither exists for Smartera UI today. The .mdc rule above and Cursor's own terminal tool are enough; Agent mode can already run npx smarteraui@latest search and add.",
+            answer: "An MCP server doesn't exist for Smartera UI today, but a Skill file does, in the .mdc rule format Cursor reads — run npx smarteraui@latest agent init --client cursor to install it. Combined with Cursor's own terminal tool, that's enough; Agent mode can already run npx smarteraui@latest search and add.",
         },
         {
             question: "Why .mdc and not a plain .md file?",

@@ -284,6 +284,68 @@ function main(): void {
     check("Next.js App Router layout is wrapped", layout.includes("<ThemeProvider>") && layout.includes("</ThemeProvider>"));
     check("Next.js theme import added", layout.includes('import { ThemeProvider } from "@/providers/theme-provider";'));
 
+    // -------------------------------------------------------------- scenario 5
+    section("Scenario 5 — info --json");
+    const infoJson = run(app, ["info", "--json", "--registry", REGISTRY]);
+    const info = JSON.parse(infoJson.slice(infoJson.indexOf("{")));
+    check("info reports the detected framework", info.framework === "vite", String(info.framework));
+    check("info reports Tailwind v4", info.tailwindVersion === 4, String(info.tailwindVersion));
+    check("info reports the components.json aliases", info.config.aliases?.components === "@/components", JSON.stringify(info.config.aliases));
+    check("info reports the theme CSS path", info.config.theme === "src/styles/theme.css", String(info.config.theme));
+    check(
+        "info lists badges as an installed entry",
+        info.installed.some((entry: { name: string }) => entry.name === "badges"),
+        JSON.stringify(info.installed.map((entry: { name: string }) => entry.name)),
+    );
+
+    const infoHuman = run(app, ["info", "--registry", REGISTRY]);
+    check("info (human) reports the framework", infoHuman.includes("Framework"));
+    check("info (human) lists installed entries", infoHuman.includes("badges"));
+
+    // -------------------------------------------------------------- scenario 6
+    section("Scenario 6 — agent init");
+    const agentAll = run(app, ["agent", "init", "--client", "all", "--yes"]);
+    check("agent init installs for claude", existsSync(path.join(app, ".claude", "skills", "smarteraui", "SKILL.md")));
+    check("agent init installs for codex", existsSync(path.join(app, ".agents", "skills", "smarteraui", "SKILL.md")));
+    check("agent init installs for cursor", existsSync(path.join(app, ".cursor", "rules", "smarteraui.mdc")));
+    check("agent init prints the Lovable import URL", agentAll.includes("github.com/aymanshabaro/smarteraui/blob/main/skills/smarteraui/SKILL.md"));
+
+    const claudeSkill = readFileSync(path.join(app, ".claude", "skills", "smarteraui", "SKILL.md"), "utf8");
+    check("claude Skill has name frontmatter", claudeSkill.includes("name: smarteraui"));
+    const codexSkill = readFileSync(path.join(app, ".agents", "skills", "smarteraui", "SKILL.md"), "utf8");
+    check("codex Skill matches the claude Skill byte-for-byte", codexSkill === claudeSkill);
+
+    const claudeMd = readFileSync(path.join(app, "CLAUDE.md"), "utf8");
+    check("CLAUDE.md got a Smartera UI pointer", claudeMd.includes("smarteraui:skill:start") && claudeMd.includes(".claude/skills/smarteraui/SKILL.md"));
+    const agentsMd = readFileSync(path.join(app, "AGENTS.md"), "utf8");
+    check("AGENTS.md got a Smartera UI rules block", agentsMd.includes("smarteraui:agents:start") && agentsMd.includes(".agents/skills/smarteraui/SKILL.md"));
+    const cursorRule = readFileSync(path.join(app, ".cursor", "rules", "smarteraui.mdc"), "utf8");
+    check("cursor rule has alwaysApply: true", cursorRule.includes("alwaysApply: true"));
+
+    // Idempotency: re-running with a pre-existing CLAUDE.md/AGENTS.md must update the marked
+    // block in place, not duplicate it, and must never touch content outside the markers.
+    writeFileSync(path.join(app, "CLAUDE.md"), `# My project\n\nSome existing notes.\n\n${claudeMd}`);
+    run(app, ["agent", "init", "--client", "claude", "--yes"]);
+    const claudeMdAgain = readFileSync(path.join(app, "CLAUDE.md"), "utf8");
+    check("re-running agent init keeps pre-existing CLAUDE.md content", claudeMdAgain.includes("Some existing notes."));
+    check("re-running agent init does not duplicate the marked block", claudeMdAgain.split("smarteraui:skill:start").length === 2);
+
+    const agentLovable = run(app, ["agent", "init", "--client", "lovable", "--yes"]);
+    check("agent init --client lovable writes no local skill file for lovable itself", !agentLovable.includes(".claude/skills"));
+    check("agent init --client lovable points at the SKILL.md source", agentLovable.includes("skills/smarteraui/SKILL.md"));
+
+    section("Skill source of truth");
+
+    // The published CLI cannot read the monorepo, so agent-templates.ts carries a copy of
+    // skills/smarteraui/SKILL.md. Nothing stops an edit to one from missing the other.
+    const authored = readFileSync(path.join(REPO, "skills", "smarteraui", "SKILL.md"), "utf8").trim();
+    const skillWritten = readFileSync(path.join(app, ".claude", "skills", "smarteraui", "SKILL.md"), "utf8").trim();
+    check(
+        "the Skill `agent init` writes matches skills/smarteraui/SKILL.md",
+        skillWritten === authored,
+        `authored ${authored.length} chars, written ${skillWritten.length}`,
+    );
+
     console.log(`\n${failures === 0 ? "PASS" : "FAIL"} — ${checks - failures}/${checks} checks passed.`);
     if (failures > 0) process.exitCode = 1;
 }

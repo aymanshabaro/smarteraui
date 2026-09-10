@@ -26,27 +26,15 @@ not sure exists before writing custom markup.
 
 Claude will typically run `smarteraui search` or `smarteraui list` to confirm component names, then `smarteraui add <name>` for each one it decides to use, and finally write the page around them.
 
-## CLAUDE.md instructions
+## Install the Smartera UI Skill
 
-Add a short section to your project's `CLAUDE.md` so every session — not just the one where you type the prompt above — knows the convention:
+Rather than writing `CLAUDE.md` instructions by hand, install the [Smartera UI Skill](/docs/agents) once per project:
 
-```md
-## UI components
-
-This project uses Smartera UI (`@smarteraui/ui`). Before writing any new
-UI markup:
-
-1. Run `npx smarteraui@latest search "<what you need>"` to check whether
-   a component or full-page example already covers it.
-2. Install matches with `npx smarteraui@latest add <name>` rather than
-   hand-rolling the equivalent markup.
-3. Import installed components from `@/components/...` (or your
-   project's configured alias in `components.json`) and follow their
-   existing prop APIs — don't rename props to "clean them up".
-4. Only write new markup for something the registry genuinely doesn't
-   have, and keep it in the same style: Tailwind utility classes, no
-   inline styles, React Aria for anything interactive.
+```bash
+npx smarteraui@latest agent init --client claude
 ```
+
+This writes `.claude/skills/smarteraui/SKILL.md` — which Claude Code loads automatically for every session, not just the one where you happen to mention the library — and appends a short pointer to `CLAUDE.md` (creating the file if it doesn't exist yet). The Skill encodes the full workflow: run `smarteraui info --json` before touching UI code, search the registry before writing markup, prefer a full-page example for a whole screen, and keep semantic tokens, React Aria props and RTL-safe logical properties in anything written by hand. Re-running the command after a Skill update is safe — it replaces the installed file and the `CLAUDE.md` pointer in place.
 
 With that in place, Claude reaches for `smarteraui add` before improvising markup even on prompts that don't mention the library by name.
 
@@ -71,7 +59,7 @@ exists, the CLI is the supported path, and it is enough: Claude Code runs `smart
         },
         {
             question: "How do I stop Claude from writing custom markup instead of using the library?",
-            answer: 'Add the CLAUDE.md snippet above. Claude follows repository instructions closely, and an explicit "search before writing markup" rule is usually all it takes.',
+            answer: 'Run npx smarteraui@latest agent init --client claude. Claude follows repository instructions closely, and the installed Skill\'s explicit "search before writing markup" step is usually all it takes.',
         },
     ]}
 />

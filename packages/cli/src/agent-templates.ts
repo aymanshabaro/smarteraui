@@ -1,0 +1,130 @@
+/**
+ * Per-client file templates for `smarteraui agent init`.
+ *
+ * The Skill content itself (SKILL_MD) is generated from the single authored source at
+ * skills/smarteraui/SKILL.md in this repo. The published CLI package does not ship the
+ * monorepo's skills/ directory, so tsup cannot follow a runtime read at bundle time — this
+ * constant is a literal embed of that file's contents, kept byte-for-byte identical.
+ *
+ * TO REGENERATE after editing skills/smarteraui/SKILL.md, run from the repo root:
+ *
+ *   node -e "const fs=require('node:fs');console.log(JSON.stringify(fs.readFileSync('skills/smarteraui/SKILL.md','utf8')))"
+ *
+ * and replace the SKILL_MD string literal below with the output. (A build-time codegen step
+ * that does this automatically is worth adding once there is a prebuild hook in this
+ * package's tsup config; inlining keeps `tsup src/index.ts` a single-entry-point bundle today.)
+ *
+ * Spec: docs/spec/strategy/2026-09-plan.md §3 P1.1–P1.2.
+ */
+
+/** The canonical Skill, byte-for-byte identical to skills/smarteraui/SKILL.md in this repo. */
+export const SKILL_MD: string =
+    "---\nname: smarteraui\ndescription: Use when building or editing UI screens, pages, forms, or components in a project that uses (or could use) Smartera UI (@smarteraui/ui) — before writing any new JSX/TSX markup by hand. Covers checking the registry for an existing component or full-page example, inspecting the project's Smartera UI setup, installing with the CLI instead of hand-copying source, and the accessibility/token/RTL rules the installed code must keep. Trigger on \"build a settings page\", \"add a form\", \"make a dashboard\", \"add a button/modal/table\", or any request to create or modify UI in a React/Next.js/Vite project.\nlicense: MIT\n---\n\n# Smartera UI\n\nSmartera UI (`@smarteraui/ui`) is a registry of React Aria + Tailwind v4 components distributed as\nsource, not a runtime package you import blindly. The `smarteraui` CLI copies the files you ask for\ninto the project and rewrites their imports to fit. Follow these steps, in order, every time UI work\ncomes up.\n\n## 1. Inspect the project first\n\nBefore adding or writing anything, run:\n\n```bash\nnpx smarteraui@latest info --json\n```\n\nThis reports whether the project is already set up (framework, Tailwind version, `components.json`\naliases, theme CSS path, which registry entries are already installed, and the installed\n`@smarteraui/ui` / `smarteraui` versions). Read it before deciding anything else:\n\n- No `components.json` → run `npx smarteraui@latest init -y` first. Do not hand-write\n  `components.json`, `utils/cx.ts`, the theme token file, or the `ThemeProvider` wiring — `init`\n  generates all of it correctly for the detected framework.\n- `components.json` exists → note the `aliases.components` value (often `@/components`, sometimes a\n  project-specific prefix) and use it for every import you write by hand.\n- Tailwind is not v4 → `init` will refuse and print an upgrade path. Do not attempt to work around\n  this by writing v3-style config.\n\n## 2. Search before creating\n\nNever write a component's markup from memory or invent your own version of something the registry\nalready has. Check first:\n\n```bash\nnpx smarteraui@latest search \"<what you need>\"     # fuzzy match over names, titles, examples\nnpx smarteraui@latest list --layer base             # browse by layer: base, application, marketing\nnpx smarteraui@latest list --type example            # full-page examples specifically\n```\n\nOnly write custom markup when the search genuinely comes up empty. If it does, still build the\ncustom piece out of already-installed primitives and the same semantic tokens (below) rather than\none-off styling.\n\n## 3. Prefer whole examples for whole screens\n\n- Building a recognizable whole screen (a settings page, a pricing page, an onboarding flow, a\n  dashboard, an auth page)? Search `list --type example` / `search` for a matching full-page\n  example first and install it with `add example <name>`. Adapt copy and data to the request; don't\n  rebuild the layout from primitives when an example already covers it.\n- Building or fixing one isolated piece of behavior (a button variant, a single form field, a\n  tooltip)? Install the specific primitive(s) with `add <name>` instead of pulling in a whole\n  example.\n\n```bash\nnpx smarteraui@latest add example settings-01\nnpx smarteraui@latest add button input select\n```\n\n`add` resolves `registryDependencies` recursively (installing a component's own component\ndependencies), rewrites the library's internal `@/` imports to the project's configured alias, and\nreports missing npm packages to install — it does not silently run installs for you. A second `add`\nof the same name is a no-op unless you pass `--overwrite`; never pass `--overwrite` on top of a file\na human has since edited without checking `diff` first:\n\n```bash\nnpx smarteraui@latest diff <name>     # see local modifications before overwriting\n```\n\n## 4. Never mix component systems\n\nOnce a screen uses Smartera UI components, keep using Smartera UI components for the rest of that\nscreen — don't drop in a different UI library's `<Button>` or a hand-rolled equivalent alongside\ninstalled ones. If the project already has another design system in place, ask before introducing\nSmartera UI into it rather than mixing the two silently.\n\n## 5. Write code that matches the installed conventions\n\nEvery file `add` copies in already follows these rules. Any markup you write by hand — glue code, a\npage shell, a piece the registry doesn't have — must follow them too:\n\n- **React Aria props, not DOM props.** `onPress` not `onClick`, `isDisabled` not `disabled`,\n  `isSelected` not `checked`. These components wrap React Aria Components; a DOM prop is silently\n  ignored.\n- **Semantic tokens only — never a literal.** `bg-primary`, `text-tertiary`, `border-secondary`,\n  `bg-brand-solid`. Never a raw palette class (`bg-purple-600`) and never an arbitrary value\n  (`bg-[#7f56d9]`, `p-[13px]`). Typography is tokenised the same way: `text-display-lg`, `text-md`,\n  not `text-4xl`. The full token set lives in the project's theme CSS file (path reported by\n  `info --json`).\n- **No `dark:` utilities.** A `.dark-mode` class on an ancestor repoints every semantic token, so a\n  component written against tokens is already correct in both themes. A `dark:` utility is a bug,\n  not a stylistic choice.\n- **Logical properties for anything directional**, so `dir=\"rtl\"` keeps working: `ms-*`/`me-*` not\n  `ml-*`/`mr-*`, `ps-*`/`pe-*` not `pl-*`/`pr-*`, `start-*`/`end-*` not `left-*`/`right-*`,\n  `text-start` not `text-left`.\n- **Icons as component references.** `<Button iconLeading={ArrowRight}>`, not\n  `<Button iconLeading={<ArrowRight />}>` — the component applies its own sizing and the `data-icon`\n  attribute its styles target.\n- **Import from the component's subpath**, e.g. `@smarteraui/ui/components/base/buttons/button`, so\n  bundlers keep only what's used — never a barrel import of the whole library for one component.\n- **Preserve what's already there.** Keyboard interaction, focus order, ARIA attributes, and\n  responsive breakpoints on installed components are load-bearing. When adapting a copied file,\n  change content and composition, not the underlying interaction or accessibility behavior — and\n  don't remove a responsive class because a screenshot at one width looked fine without it.\n\n## 6. Verify after installing or editing\n\nBefore reporting the work as done, run whatever subset of these the project defines (check\n`package.json` scripts — names vary by project, but the checks are the same ones the registry's own\nCI runs):\n\n1. Type-check (`tsc --noEmit` or the project's `type-check`/`typecheck` script).\n2. Build (`next build`, `vite build`, or the project's `build` script) — catches broken imports from\n   alias rewriting.\n3. Targeted tests for anything touched, if the project has a test runner configured.\n\nIf a check fails because of something `add` did (a missing dependency it reported but that wasn't\ninstalled, for example), fix that before moving on — don't report success with a broken build.\n\n## 7. Report what happened\n\nEnd every piece of UI work with a short, concrete summary:\n\n- **Files added** — which components/examples were installed, and where (respecting `--path` or the\n  project's configured alias directory).\n- **Entries reused** — anything `info --json` or `diff` showed was already installed and left alone.\n- **Checks run** — which of type-check / build / tests were run, and whether they passed.\n\nThis is what lets a human (or the next session) trust the change without re-deriving it.\n";
+
+const markerStart = (id: string) => `<!-- smarteraui:${id}:start -->`;
+const markerEnd = (id: string) => `<!-- smarteraui:${id}:end -->`;
+
+/**
+ * Inserts `block` into `existing` between a pair of HTML-comment markers, replacing a previous
+ * insertion if one is already there. Used for every append-only edit `agent init` makes to a
+ * project's own CLAUDE.md / AGENTS.md, so it never clobbers the rest of the file and re-running
+ * the command is idempotent.
+ */
+export function upsertMarkedBlock(existing: string, id: string, block: string): string {
+    const start = markerStart(id);
+    const end = markerEnd(id);
+    const section = `${start}
+${block.trim()}
+${end}`;
+    const pattern = new RegExp(`${start}[\\s\\S]*?${end}`);
+
+    if (pattern.test(existing)) return existing.replace(pattern, section);
+    const separator =
+        existing.trim().length > 0
+            ? `${existing.replace(/\s+$/, "")}
+
+`
+            : "";
+    return `${separator}${section}
+`;
+}
+
+/** Short pointer appended to a project's CLAUDE.md — the Skill file itself carries the detail. */
+export const CLAUDE_MD_BLOCK = `## Smartera UI
+
+This project has the Smartera UI skill installed at \`.claude/skills/smarteraui/SKILL.md\`. Claude
+Code loads it automatically for UI work. Before writing new UI markup by hand: run
+\`npx smarteraui@latest info --json\`, search the registry with \`npx smarteraui@latest search\`,
+and prefer \`npx smarteraui@latest add\` (or \`add example <name>\` for a whole screen) over
+hand-rolling markup the registry already has.`;
+
+/** Rules block appended to a project's AGENTS.md for Codex. */
+export const AGENTS_MD_BLOCK = `## Smartera UI
+
+This project uses Smartera UI (\`@smarteraui/ui\`). Follow \`.agents/skills/smarteraui/SKILL.md\`
+for the full workflow before writing any new UI markup. In short:
+
+1. Run \`npx smarteraui@latest info --json\` to see what is already configured and installed.
+2. Search the registry (\`npx smarteraui@latest search "<what you need>"\`) before writing markup
+   by hand — prefer \`add example <name>\` for a whole screen, \`add <name>\` for one component.
+3. Keep semantic tokens (\`bg-primary\`, \`text-tertiary\`, ...), React Aria props (\`onPress\`,
+   \`isDisabled\`), and logical properties (\`ms-*\`/\`me-*\`, \`start-*\`/\`end-*\`) in anything
+   you write yourself — never a raw palette class, an arbitrary value, or a \`dark:\` utility.
+4. Run type-check and build after installing or editing components before calling the work done.`;
+
+/** `.cursor/rules/smarteraui.mdc` — Cursor only reads `.mdc` files with frontmatter, never SKILL.md. */
+export const CURSOR_RULE_MDC = `---
+alwaysApply: true
+---
+
+# Smartera UI
+
+This project uses Smartera UI (\`@smarteraui/ui\`). Before writing any new UI markup:
+
+- Run \`npx smarteraui@latest info --json\` to see the project's Smartera UI setup and what is
+  already installed.
+- Run \`npx smarteraui@latest search "<what you need>"\` to check whether a component or
+  full-page example already covers it.
+- Install matches with \`npx smarteraui@latest add <name>\` (or \`add example <name>\` for a whole
+  screen) rather than hand-rolling the equivalent markup.
+- Import installed components from \`@/components/...\` (or this project's configured alias in
+  \`components.json\`) and follow their existing prop APIs — don't rename props to "clean them up".
+- Never mix in another component library once a screen uses Smartera UI components.
+
+When writing or editing component code:
+
+- Use React Aria props, not DOM props: \`onPress\` not \`onClick\`, \`isDisabled\` not
+  \`disabled\`, \`isSelected\` not \`checked\`.
+- Use semantic tokens only: \`bg-primary\`, \`text-tertiary\`, \`border-secondary\`,
+  \`bg-brand-solid\`. Never a raw palette class (\`bg-purple-600\`) or an arbitrary value
+  (\`bg-[#7f56d9]\`).
+- Never use \`dark:\` utilities — a \`.dark-mode\` class on an ancestor repoints every semantic
+  token, so a component written against tokens is already correct in both themes.
+- Use logical properties for anything directional: \`ms-*\`/\`me-*\` not \`ml-*\`/\`mr-*\`,
+  \`ps-*\`/\`pe-*\` not \`pl-*\`/\`pr-*\`, \`start-*\`/\`end-*\` not \`left-*\`/\`right-*\`,
+  \`text-start\` not \`text-left\`.
+- Use tokenised typography — \`text-display-lg\`, \`text-md\` — not raw sizes like \`text-4xl\`.
+- Pass icons as component references: \`<Button iconLeading={ArrowRight}>\`, not
+  \`<Button iconLeading={<ArrowRight />}>\`.
+- Import from the component's subpath so bundlers keep only what's used, e.g.
+  \`@smarteraui/ui/components/base/buttons/button\`.
+- Run type-check and build after installing or editing components before calling the work done.
+`;
+
+/** GitHub blob URL Lovable's knowledge/instructions box can import. */
+export const LOVABLE_SKILL_URL = "https://github.com/aymanshabaro/smarteraui/blob/main/skills/smarteraui/SKILL.md";
+
+/** What `agent init --client lovable` prints — there is no local file Lovable itself reads. */
+export const LOVABLE_INSTRUCTIONS = `Lovable runs in the browser and does not read files from this
+checkout, so there is nothing to write locally. Instead:
+
+  1. Open your Lovable project's knowledge / custom instructions panel.
+  2. Paste this URL so Lovable can fetch the Skill's raw Markdown:
+       ${LOVABLE_SKILL_URL}
+  3. Or paste the Skill's content directly — copy it from that URL, or from
+     skills/smarteraui/SKILL.md if you have this repo checked out.
+
+Once added, prompt Lovable the same way you would Claude Code or Codex: describe the screen and
+mention using the installed Smartera UI components. Lovable will then follow the Skill's steps
+(check the registry, install with the CLI or npm, keep semantic tokens and React Aria props)
+instead of generating its own markup from scratch.`;

@@ -1,12 +1,12 @@
 ---
 title: Codex integration
 section: integrations
-description: Point Codex at Smartera UI's registry with an AGENTS.md you write by hand, so it composes screens from real components instead of inventing markup.
+description: Point Codex at Smartera UI's registry with the Smartera UI Skill, installed in one command, so it composes screens from real components instead of inventing markup.
 metaTitle: Codex integration | Smartera UI
-metaDescription: Use Smartera UI with Codex — an AGENTS.md you can paste in today, and prompts that resolve to real components.
+metaDescription: Use Smartera UI with Codex — install the Smartera UI Skill with one command, and prompts that resolve to real components.
 ---
 
-Codex runs shell commands directly in your terminal and reads `AGENTS.md` for project context, so pointing it at Smartera UI is mostly a matter of writing a good `AGENTS.md` — Codex will reach for `npx smarteraui@latest add` on its own once that file tells it to.
+Codex runs shell commands directly in your terminal and reads `AGENTS.md` for project context, so pointing it at Smartera UI is mostly a matter of installing the [Smartera UI Skill](/docs/agents) — Codex will reach for `npx smarteraui@latest add` on its own once that's in place.
 
 ## Prerequisites
 
@@ -26,46 +26,17 @@ not sure exists before writing custom markup.
 
 Codex will typically run `smarteraui search` or `smarteraui list` to confirm component names, then `smarteraui add <name>` for each one it decides to use, and finally write the page around them.
 
-## AGENTS.md instructions
+## Install the Smartera UI Skill
 
-Smartera UI doesn't ship a Codex-specific setup command — there's no `smarteraui agent init`. You write the `AGENTS.md` yourself, once, at your project root. Codex reads it automatically from then on, for every session:
+Rather than writing `AGENTS.md` by hand, install the [Smartera UI Skill](/docs/agents) once per project:
 
-```md
-## UI components
-
-This project uses Smartera UI (`@smarteraui/ui`). Before writing any new
-UI markup:
-
-1. Run `npx smarteraui@latest search "<what you need>"` to check whether
-   a component or full-page example already covers it.
-2. Install matches with `npx smarteraui@latest add <name>` rather than
-   hand-rolling the equivalent markup.
-3. Import installed components from `@/components/...` (or your
-   project's configured alias in `components.json`) and follow their
-   existing prop APIs — don't rename props to "clean them up".
-
-When writing or editing component code:
-
-- Use React Aria props, not DOM props: `onPress` not `onClick`,
-  `isDisabled` not `disabled`, `isSelected` not `checked`.
-- Use semantic tokens only: `bg-primary`, `text-tertiary`,
-  `border-secondary`, `bg-brand-solid`. Never a raw palette class
-  (`bg-purple-600`) or an arbitrary value (`bg-[#7f56d9]`).
-- Never use `dark:` utilities — a `.dark-mode` class on an ancestor
-  repoints every semantic token, so a component written against tokens
-  is already correct in both themes.
-- Use logical properties for anything directional: `ms-*`/`me-*` not
-  `ml-*`/`mr-*`, `ps-*`/`pe-*` not `pl-*`/`pr-*`, `start-*`/`end-*` not
-  `left-*`/`right-*`, `text-start` not `text-left`.
-- Use tokenised typography — `text-display-lg`, `text-md` — not raw
-  sizes like `text-4xl`.
-- Pass icons as component references: `<Button iconLeading={ArrowRight}>`,
-  not `<Button iconLeading={<ArrowRight />}>`.
-- Import from the component's subpath so bundlers keep only what's used,
-  e.g. `@smarteraui/ui/components/base/buttons/button`.
+```bash
+npx smarteraui@latest agent init --client codex
 ```
 
-If you already keep an `AGENTS.md`, add the section above to it rather than replacing the file — Codex concatenates every `AGENTS.md` it finds walking from your project root down to your current directory, and a file closer to where you're working can extend or override guidance from one higher up. A monorepo can put the snippet above once at the root and skip repeating it in every package.
+This writes `.agents/skills/smarteraui/SKILL.md` — the path Codex discovers skills from — and appends a rules block to `AGENTS.md` (creating the file if it doesn't exist yet), so the guidance is there even in a Codex session that isn't picking up `.agents/skills` yet. The Skill encodes the full workflow: run `smarteraui info --json` before touching UI code, search the registry before writing markup, prefer a full-page example for a whole screen, and keep React Aria props, semantic tokens and RTL-safe logical properties in anything written by hand.
+
+If you already keep an `AGENTS.md`, `agent init` appends its block between marker comments rather than replacing the file — Codex concatenates every `AGENTS.md` it finds walking from your project root down to your current directory, and a file closer to where you're working can extend or override guidance from one higher up. A monorepo can run the command once at the root and skip repeating it in every package. Re-running it after a Skill update is safe: it replaces the installed file and updates the marked `AGENTS.md` block in place, leaving the rest of the file untouched.
 
 ## FAQs
 
@@ -73,7 +44,7 @@ If you already keep an `AGENTS.md`, add the section above to it rather than repl
     items={[
         {
             question: "Does Codex need a Skill file or an MCP server for this?",
-            answer: "No — neither exists for Smartera UI today. Codex only needs the AGENTS.md snippet above and its own shell tool, which can already run npx smarteraui@latest search and add.",
+            answer: "An MCP server doesn't exist for Smartera UI today, but a Skill file does — run npx smarteraui@latest agent init --client codex to install it, alongside Codex's own shell tool which can already run npx smarteraui@latest search and add.",
         },
         {
             question: "Will Codex overwrite my customizations to an installed component?",
@@ -81,7 +52,7 @@ If you already keep an `AGENTS.md`, add the section above to it rather than repl
         },
         {
             question: "What if my project already has an AGENTS.md with other instructions?",
-            answer: "Append the UI components section to it. Codex reads one AGENTS.md per directory on the way down to your working directory and combines them, so there's no need for a separate file.",
+            answer: "agent init appends its rules block between marker comments rather than replacing the file. Codex reads one AGENTS.md per directory on the way down to your working directory and combines them, so there's no need for a separate file.",
         },
     ]}
 />

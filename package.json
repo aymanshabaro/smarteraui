@@ -34,7 +34,7 @@
         "gen:demo-assets": "tsx scripts/gen-demo-assets.ts",
         "gen:variants": "tsx scripts/gen-variants.ts",
         "gen:all": "pnpm gen:barrels && pnpm gen:demos && pnpm gen:variant-parts && pnpm gen:variants && pnpm gen:nav && pnpm registry:build && pnpm gen:stats",
-        "registry:build": "tsx packages/registry/src/build.ts",
+        "registry:build": "tsx packages/registry/src/build.ts && tsx packages/registry/src/shadcn.ts",
         "gen:stats": "tsx scripts/gen-stats-readme.ts",
         "docs:shot": "tsx scripts/shot.ts",
         "docs:diff": "tsx scripts/diff-shots.ts",

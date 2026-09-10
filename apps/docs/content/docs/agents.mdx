@@ -1,0 +1,106 @@
+---
+title: AI agents & the Smartera UI Skill
+section: docs
+description: One portable Skill for Claude Code, Codex, Cursor and Lovable, plus the two CLI commands that install it and let an agent inspect a project before it writes any UI code.
+metaTitle: AI agents & the Smartera UI Skill | Smartera UI
+metaDescription: Install the Smartera UI Skill for Claude Code, Codex, Cursor and Lovable with one command, and let an agent inspect a project's setup with `smarteraui info --json`.
+---
+
+Smartera UI ships one authored Skill — [`skills/smarteraui/SKILL.md`](https://github.com/aymanshabaro/smarteraui/blob/main/skills/smarteraui/SKILL.md) in the repo — that works across Claude Code, Codex, Cursor and Lovable. It encodes the same workflow every [integration page](/integrations/claude) already documents by hand: inspect the project, search the registry before writing markup, prefer a full-page example for a whole screen, keep semantic tokens and accessibility intact, verify before reporting done. Two CLI commands make that Skill installable and the project it targets inspectable.
+
+## `smarteraui agent init`
+
+Installs the Skill for one or more AI coding tools. Run it once per project, per tool:
+
+```bash
+npx smarteraui@latest agent init --client claude
+npx smarteraui@latest agent init --client codex
+npx smarteraui@latest agent init --client cursor
+npx smarteraui@latest agent init --client lovable
+```
+
+Or install for everything at once — this is also the default when `--client` is omitted:
+
+```bash
+npx smarteraui@latest agent init --client all
+```
+
+### What each client gets
+
+| Client          | Files written                                                                                       | Notes                                                                                                                                                                                                   |
+| --------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Claude Code** | `.claude/skills/smarteraui/SKILL.md` + a short pointer appended to `CLAUDE.md` (created if missing) | Claude Code loads project skills from `.claude/skills/` automatically — no further setup.                                                                                                               |
+| **Codex**       | `.agents/skills/smarteraui/SKILL.md` + a rules block appended to `AGENTS.md` (created if missing)   | Codex discovers skills under `.agents/skills/`, and reads `AGENTS.md` for every session regardless.                                                                                                     |
+| **Cursor**      | `.cursor/rules/smarteraui.mdc` (`alwaysApply: true`)                                                | Cursor's rules system only reads `.mdc` files with frontmatter from `.cursor/rules` — it does not read `SKILL.md` — so the same guidance is written as a Cursor rule instead.                           |
+| **Lovable**     | Nothing written locally                                                                             | Lovable runs in the browser with no access to this checkout. `agent init --client lovable` prints the Skill's public GitHub URL and what to paste into Lovable's knowledge / custom instructions panel. |
+
+`CLAUDE.md` and `AGENTS.md` are never overwritten wholesale — the block `agent init` adds lives between a pair of HTML comment markers, so re-running the command updates that section in place and leaves the rest of the file untouched. Running `agent init` again after an update to the Skill is always safe.
+
+### Command options
+
+| Option            | Description                                                                                                                                                                                                           |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--client <name>` | `claude`, `codex`, `cursor`, `lovable`, or `all` (default).                                                                                                                                                           |
+| `--overwrite`     | Replace the installed `SKILL.md` / rule file even if it already exists and differs — useful after editing the Skill upstream. Does not affect the `CLAUDE.md`/`AGENTS.md` marker block, which is always kept in sync. |
+| `-y, --yes`       | Accept every default; never prompt.                                                                                                                                                                                   |
+| `--cwd <path>`    | Run against a directory other than the current one.                                                                                                                                                                   |
+
+## `smarteraui info --json`
+
+Reports everything an agent needs before touching UI code: detected framework, TypeScript, Tailwind version, package manager, the `components.json` aliases and theme CSS path (when the project has been through `init`), which registry entries are already installed, and the installed versions of `@smarteraui/ui` and the `smarteraui` CLI itself.
+
+```bash
+npx smarteraui@latest info --json
+```
+
+```json
+{
+    "framework": "next-app",
+    "typescript": true,
+    "tailwindVersion": 4,
+    "packageManager": "pnpm",
+    "config": {
+        "present": true,
+        "aliases": { "components": "@/components", "utils": "@/utils", "ui": "@/components/base", "hooks": "@/hooks" },
+        "theme": "src/styles/theme.css",
+        "css": "src/app/globals.css",
+        "registry": "https://smarteraui.com/r"
+    },
+    "packages": {
+        "@smarteraui/ui": { "installed": null, "declared": null },
+        "smarteraui": { "installed": "0.1.0", "declared": null }
+    },
+    "installed": [{ "name": "badges", "layer": "base", "type": "component" }]
+}
+```
+
+`installed` is computed the same way `smarteraui diff` finds local components: every non-example entry in the registry index is checked against the project's files, and anything present is reported. Without `--json`, the same data prints as a short human-readable report instead — useful for a quick check from your own terminal, not just from an agent.
+
+### Command options
+
+| Option                | Description                                                                   |
+| --------------------- | ----------------------------------------------------------------------------- |
+| `--json`              | Print machine-readable JSON instead of the formatted report.                  |
+| `--registry <source>` | Registry directory or base URL for this run (see [`docs/cli.md`](/docs/cli)). |
+| `--cwd <path>`        | Run against a directory other than the current one.                           |
+
+The Skill itself tells an agent to run this before deciding anything — whether to run `init` first, which alias to use in hand-written imports, and which components are already installed and shouldn't be re-added.
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            question: "Do I need to run agent init for every project, or is it global?",
+            answer: "Per project. The Skill and its wiring (CLAUDE.md, AGENTS.md, the Cursor rule) live inside the project's own repository so they travel with it and apply to whoever else works on it.",
+        },
+        {
+            question: "What if the Claude Code and Codex Skill formats diverge in the future?",
+            answer: "Today both read the same SKILL.md shape (YAML frontmatter with name and description, then Markdown instructions), so agent init writes the identical file to both locations. If that changes, agent init is the seam where a client-specific wrapper would be generated from the same canonical source in skills/smarteraui/SKILL.md.",
+        },
+        {
+            question: "Does agent init install @smarteraui/ui or run smarteraui init?",
+            answer: "No — it only installs the Skill/rule files that tell an agent how to use the CLI. Run smarteraui init separately to configure the project itself.",
+        },
+    ]}
+/>

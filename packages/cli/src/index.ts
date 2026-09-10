@@ -5,7 +5,9 @@
  */
 import { Command } from "commander";
 import { runAdd } from "./commands/add.js";
+import { runAgentInit } from "./commands/agent.js";
 import { runDiff } from "./commands/diff.js";
+import { runInfo } from "./commands/info.js";
 import { runInit } from "./commands/init.js";
 import { runList } from "./commands/list.js";
 import { runLogin } from "./commands/login.js";
@@ -91,6 +93,25 @@ program
     .option("--registry <source>", REGISTRY_HELP)
     .option("-y, --yes", "accept every default; never prompt")
     .action(guard(async (component: string | undefined, options) => runDiff(component, { ...options, cwd: program.opts().cwd })));
+
+program
+    .command("agent")
+    .description("Manage the portable Smartera UI Skill for AI coding tools")
+    .addCommand(
+        new Command("init")
+            .description("Install the Smartera UI Skill for an AI coding tool: claude, codex, cursor, lovable, or all")
+            .option("--client <client>", "claude, codex, cursor, lovable, or all", "all")
+            .option("--overwrite", "replace the Skill file even if it already exists")
+            .option("-y, --yes", "accept every default; never prompt")
+            .action(guard(async (options) => runAgentInit({ ...options, cwd: program.opts().cwd }))),
+    );
+
+program
+    .command("info")
+    .description("Show this project's Smartera UI setup: framework, Tailwind, aliases and installed entries")
+    .option("--json", "print machine-readable JSON instead of a formatted report")
+    .option("--registry <source>", REGISTRY_HELP)
+    .action(guard(async (options) => runInfo({ ...options, cwd: program.opts().cwd })));
 
 program
     .command("login")

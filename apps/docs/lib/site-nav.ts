@@ -21,10 +21,38 @@ export type SiteNavGroup = {
 };
 
 /** Fixed order of the Documentation group (spec § Global chrome). */
-const DOCS_ORDER = ["introduction", "installation", "theming", "dark-mode", "typography", "cli", "accessibility", "quality", "rtl", "upgrade", "icons"];
+const DOCS_ORDER = [
+    "introduction",
+    "installation",
+    "theming",
+    "dark-mode",
+    "typography",
+    "cli",
+    "agents",
+    "accessibility",
+    "quality",
+    "rtl",
+    "upgrade",
+    "icons",
+];
 
 /** Fixed order of the nested Integrations list. */
-const INTEGRATIONS_ORDER = ["nextjs", "vite", "claude", "codex", "cursor", "lovable", "v0", "bolt", "replit", "gemini", "monorepo", "mcp", "components-json"];
+const INTEGRATIONS_ORDER = [
+    "nextjs",
+    "vite",
+    "claude",
+    "codex",
+    "cursor",
+    "lovable",
+    "v0",
+    "bolt",
+    "replit",
+    "gemini",
+    "shadcn",
+    "monorepo",
+    "mcp",
+    "components-json",
+];
 
 /** `section: app-examples` pages that belong to "Application UI examples". */
 const APP_EXAMPLE_SLUGS = ["dashboards", "dashboards-02", "settings-pages", "settings-pages-02", "informational-pages", "informational-pages-02"];
