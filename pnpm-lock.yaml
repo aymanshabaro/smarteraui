@@ -68,6 +68,9 @@ importers:
       prettier-plugin-tailwindcss:
         specifier: ^0.6.8
         version: 0.6.14(@trivago/prettier-plugin-sort-imports@6.0.2(prettier@3.9.6))(prettier@3.9.6)
+      sharp:
+        specifier: ^0.35.4
+        version: 0.35.4(@types/node@22.20.1)
       storybook:
         specifier: ^10.5.3
         version: 10.6.0(@types/react@19.2.18)(prettier@3.9.6)(react@19.2.8)
@@ -141,6 +144,9 @@ importers:
       '@opennextjs/cloudflare':
         specifier: ^1.20.6
         version: 1.20.6(next@15.5.25(@babel/core@7.29.7)(@types/node@22.20.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(wrangler@4.130.0)
+      '@properui/registry':
+        specifier: workspace:*
+        version: link:../../packages/registry
       '@tailwindcss/postcss':
         specifier: ^4.3.3
         version: 4.3.3
@@ -12715,7 +12721,6 @@ snapshots:
       '@img/sharp-win32-ia32': 0.35.4
       '@img/sharp-win32-x64': 0.35.4
       '@types/node': 22.20.1
-    optional: true
 
   shebang-command@2.0.0:
     dependencies:
