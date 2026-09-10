@@ -26,6 +26,29 @@ commands can drive it. The pieces an MCP server would build on already exist in
 `components.json`, installs the token stylesheet and wires the theme provider. It does not scaffold
 a new project from a template. Use `create-next-app` or `create-vite` first, then run `init`.
 
+### A bundled build for non-bundling consumers — attempted, not shipped
+
+The package ships **source TSX**, which is why Next.js consumers add `transpilePackages`. A `tsup`
+ESM build was built and measured three times; the numbers are recorded here so a fourth attempt
+starts from evidence rather than the same assumption.
+
+It does not solve the problem it was meant to solve. With `dist` in place, Next.js **still** needs
+`transpilePackages`: a Server Component import reaches `dist` but trips Next's RSC client-only
+check, and a Client Component import falls through to `src` and fails on this package's internal
+`@/*` alias. Only Vite subpath imports benefit, and Vite users already have a working path.
+
+The cost lands on everyone: the tarball goes from 0.93 MB to 7.6 MB, unpacked 5.9 MB to 42.1 MB,
+1,177 files to 5,362. `dist` is 45 MB, of which 27 MB is duplicated chunks — `tsup`'s DTS step runs
+in a worker capped near 4 GiB and OOMs on this tree, so the build is split into 47 independent
+invocations that cannot share a chunk graph. A full build takes about five hours.
+
+Two real defects surfaced while measuring, and fixing them is the more promising route:
+
+- [`providers/router-provider.tsx`](./packages/ui/src/providers/router-provider.tsx) imports
+  `next/navigation` unconditionally, so the root barrel breaks under Vite even from source.
+- The package's internal `@/*` alias resolves only through this workspace's tsconfig, which is what
+  stops Next.js consuming `src` directly.
+
 ### Full RTL coverage
 
 Every component in `packages/ui/src/components` now uses logical properties — zero physical

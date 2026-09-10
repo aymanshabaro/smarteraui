@@ -98,7 +98,6 @@
         "tailwindcss": "^4.3.3",
         "tailwindcss-animate": "^1.0.7",
         "tailwindcss-react-aria-components": "^2.2.0",
-        "tsup": "^8.5.1",
         "vitest": "^2.1.8",
         "vitest-axe": "^0.1.0"
     }
