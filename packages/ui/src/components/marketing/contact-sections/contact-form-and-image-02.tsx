@@ -25,7 +25,7 @@ const services = [
 export const ContactFormAndImage02 = () => (
     <section className="bg-primary grid grid-cols-1 lg:grid-cols-2">
         <div className="relative max-lg:hidden">
-            <img src={IMAGES.landscape[0].src} alt="The Proper team at work" className="absolute inset-0 h-full max-w-full object-cover" />
+            <img src={IMAGES.landscape[0].src} alt="The Proper UI team at work" className="absolute inset-0 h-full max-w-full object-cover" />
         </div>
 
         <div className="w-full px-4 py-16 md:px-8 md:py-24">

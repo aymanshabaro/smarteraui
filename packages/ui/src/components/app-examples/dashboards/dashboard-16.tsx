@@ -239,7 +239,7 @@ export const Dashboard16 = () => {
                     <div className="flex gap-4 overflow-x-auto pb-2">
                         {[0, 1, 2].map((index) => (
                             <div key={index} className="flex shrink-0 flex-col gap-3">
-                                <CreditCard type="brand-light" width={280} cardHolder={currentUser.name.toUpperCase()} company="Proper." />
+                                <CreditCard type="brand-light" width={280} cardHolder={currentUser.name.toUpperCase()} company="Proper UI." />
                                 <div className="flex items-center justify-between">
                                     <span className="text-tertiary text-sm font-medium">This month</span>
                                     <span className="text-primary text-sm font-medium">$1,240.40</span>

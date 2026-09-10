@@ -128,7 +128,7 @@ export const FooterLarge06 = () => {
                         {/* Absolutely positioned so the rule spans the row without adding a border box. */}
                         <div className="bg-border-secondary absolute top-0 left-0 h-px w-full" />
 
-                        <p className="text-quaternary text-sm">© 2077 Proper. All rights reserved.</p>
+                        <p className="text-quaternary text-sm">© 2077 Proper UI. All rights reserved.</p>
 
                         <ul className="flex gap-4">
                             {socialLinks.map(({ label, href, icon: Icon }) => (

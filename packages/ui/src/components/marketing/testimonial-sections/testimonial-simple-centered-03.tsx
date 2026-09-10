@@ -19,14 +19,14 @@ const reviews = [
     {
         id: "review-01",
         logo: LOGOS[0],
-        quote: "Proper has saved us thousands of hours of work. We're able to spin up projects and features faster.",
+        quote: "Proper UI has saved us thousands of hours of work. We're able to spin up projects and features faster.",
         author: AVATARS[0],
         role: "UX Designer",
     },
     {
         id: "review-02",
         logo: LOGOS[1],
-        quote: "We've been using Proper to kick start every new project and can't imagine working without it.",
+        quote: "We've been using Proper UI to kick start every new project and can't imagine working without it.",
         author: AVATARS[3],
         role: "Product Manager",
     },
@@ -40,14 +40,14 @@ const reviews = [
     {
         id: "review-04",
         logo: LOGOS[3],
-        quote: "We've really sped up our workflow using Proper and haven't looked back since.",
+        quote: "We've really sped up our workflow using Proper UI and haven't looked back since.",
         author: AVATARS[8],
         role: "Data Engineer",
     },
     {
         id: "review-05",
         logo: LOGOS[4],
-        quote: "Every project starts with Proper, and it's made a huge difference to our output.",
+        quote: "Every project starts with Proper UI, and it's made a huge difference to our output.",
         author: AVATARS[10],
         role: "Web Developer",
     },

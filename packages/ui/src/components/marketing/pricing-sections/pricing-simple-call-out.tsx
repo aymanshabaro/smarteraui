@@ -70,7 +70,7 @@ export const PricingSimpleCallOut = () => (
             <div className="flex w-full max-w-3xl flex-col">
                 <p className="text-brand-secondary md:text-md text-sm font-semibold">Pricing</p>
                 <h2 className="text-display-md text-primary md:text-display-lg mt-3 font-semibold">Simple, transparent pricing</h2>
-                <p className="text-tertiary mt-4 text-lg md:mt-6 md:text-xl">We believe Proper should be accessible to all companies, no matter the size.</p>
+                <p className="text-tertiary mt-4 text-lg md:mt-6 md:text-xl">We believe Proper UI should be accessible to all companies, no matter the size.</p>
             </div>
 
             <div className="mt-16 grid w-full grid-cols-1 gap-4 md:mt-24 md:grid-cols-2 md:gap-8 xl:grid-cols-3">

@@ -81,7 +81,7 @@ const rows: Row[] = [
     {
         icon: ChartBreakoutSquare,
         title: "Manage your team with reports",
-        subtitle: "Measure what matters with Proper's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
+        subtitle: "Measure what matters with Proper UI's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
         bullets: [
             "Filter, export, and drilldown on the data quickly",
             "Save, schedule, and automate reports to your inbox",

@@ -9,7 +9,7 @@ export const CtaCardHorizontalBrand = () => (
                     <span className="hidden md:inline">Start your 30-day free trial</span>
                     <span className="md:hidden">Start your free trial</span>
                 </h2>
-                <p className="text-tertiary_on-brand mt-4 text-lg md:mt-5 lg:text-xl">Join over 4,000+ startups already growing with Proper.</p>
+                <p className="text-tertiary_on-brand mt-4 text-lg md:mt-5 lg:text-xl">Join over 4,000+ startups already growing with Proper UI.</p>
 
                 <div className="mt-8 flex flex-col-reverse gap-3 self-stretch sm:flex-row sm:self-center">
                     <Button size="xl" color="secondary">

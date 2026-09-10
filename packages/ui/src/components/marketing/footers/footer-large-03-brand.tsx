@@ -91,7 +91,7 @@ export const FooterLarge03Brand = () => {
                     {/* The mark is always the light lockup on the solid brand background. */}
                     <ProperLogo className="dark-mode" />
 
-                    <p className="text-quaternary_on-brand text-sm">© 2077 Proper. All rights reserved.</p>
+                    <p className="text-quaternary_on-brand text-sm">© 2077 Proper UI. All rights reserved.</p>
                 </div>
             </div>
         </footer>

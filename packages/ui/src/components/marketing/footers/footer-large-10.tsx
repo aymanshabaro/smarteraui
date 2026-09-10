@@ -90,7 +90,7 @@ export const FooterLarge10 = () => (
             <div className="border-secondary flex flex-col justify-between border-b pb-8 md:pb-16 lg:flex-row">
                 <div className="max-w-3xl">
                     <h2 className="text-primary text-display-xs md:text-display-sm font-semibold">Start your 30-day free trial</h2>
-                    <p className="text-tertiary text-md mt-2 md:mt-4 md:text-xl">Join over 4,000+ startups already growing with Proper.</p>
+                    <p className="text-tertiary text-md mt-2 md:mt-4 md:text-xl">Join over 4,000+ startups already growing with Proper UI.</p>
                 </div>
                 <div className="mt-8 flex flex-col-reverse gap-3 self-stretch sm:flex-row sm:self-start lg:mt-0">
                     <Button size="xl" color="secondary">
@@ -139,7 +139,7 @@ export const FooterLarge10 = () => (
             </div>
 
             <div className="border-secondary mt-12 flex flex-col-reverse justify-between gap-6 border-t pt-8 md:mt-16 md:flex-row">
-                <p className="text-quaternary text-sm">© 2077 Proper. All rights reserved.</p>
+                <p className="text-quaternary text-sm">© 2077 Proper UI. All rights reserved.</p>
                 <ul className="flex gap-4">
                     {socials.map(({ label, href, icon: Icon }) => (
                         <li key={label}>

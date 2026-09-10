@@ -43,7 +43,7 @@ export const HeroCardMockup10 = () => (
                         Simple, transparent business credit cards
                     </h1>
                     <p className="text-tertiary mt-4 text-lg text-balance md:mt-6 md:text-xl">
-                        Mo money, no problems. Proper is a next-generation financial technology company in the process of reinventing banking. 30-day free
+                        Mo money, no problems. Proper UI is a next-generation financial technology company in the process of reinventing banking. 30-day free
                         trial.
                     </p>
                     <div className="mt-8 flex w-full flex-col-reverse items-stretch gap-3 md:mt-12 md:flex-row md:items-start">
@@ -68,7 +68,7 @@ export const HeroCardMockup10 = () => (
                         {cardRows.map((row, rowIndex) => (
                             <div key={rowIndex} className={row.indent ? "flex gap-4 ps-40" : "flex gap-4"}>
                                 {row.types.map((type, cardIndex) => (
-                                    <CreditCard key={cardIndex} type={type} company="Proper." cardHolder={AVATARS[1].name} />
+                                    <CreditCard key={cardIndex} type={type} company="Proper UI." cardHolder={AVATARS[1].name} />
                                 ))}
                             </div>
                         ))}

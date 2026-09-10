@@ -243,7 +243,7 @@ export const Dashboard12 = () => (
                         <Carousel.Content className="gap-5">
                             {cardTypes.map((type) => (
                                 <Carousel.Item key={type} className="basis-auto">
-                                    <CreditCard type={type} width={280} company="Proper." cardHolder={owner.name.toUpperCase()} />
+                                    <CreditCard type={type} width={280} company="Proper UI." cardHolder={owner.name.toUpperCase()} />
                                 </Carousel.Item>
                             ))}
                         </Carousel.Content>

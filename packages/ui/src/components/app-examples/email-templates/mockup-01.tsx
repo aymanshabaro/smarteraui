@@ -52,7 +52,7 @@ export const Mockup01 = () => (
 
             <div className="bg-primary px-6 py-8">
                 <div className={styles.mockupFrame}>
-                    <img src={IMAGES.landscape[0].src} alt="The Proper dashboard on a laptop" className="aspect-video w-full object-cover" />
+                    <img src={IMAGES.landscape[0].src} alt="The Proper UI dashboard on a laptop" className="aspect-video w-full object-cover" />
                 </div>
 
                 <h1 className="text-primary text-display-xs mt-8 font-semibold">Introducing Proper UI</h1>
@@ -77,7 +77,7 @@ export const Mockup01 = () => (
 
             <div className="bg-primary px-6 py-8">
                 <p className="text-primary md:text-md text-sm font-semibold">Download the app</p>
-                <p className="text-tertiary mt-2 text-sm">Get the most of Proper by installing our new mobile app.</p>
+                <p className="text-tertiary mt-2 text-sm">Get the most of Proper UI by installing our new mobile app.</p>
 
                 <div className="mt-6 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
                     <AppStoreButton href="https://www.apple.com/app-store/" size="md" />

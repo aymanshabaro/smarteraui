@@ -8,7 +8,7 @@ export const HeaderLeft = () => (
             <div className="flex w-full max-w-3xl flex-col">
                 <span className="text-brand-secondary md:text-md text-sm font-semibold">About us</span>
                 <h1 className="text-display-md text-primary md:text-display-lg mt-3 font-semibold">About the company</h1>
-                <p className="text-tertiary mt-4 text-lg md:mt-6 md:text-xl">Learn more about the company and the world-class team behind Proper.</p>
+                <p className="text-tertiary mt-4 text-lg md:mt-6 md:text-xl">Learn more about the company and the world-class team behind Proper UI.</p>
             </div>
         </div>
     </section>

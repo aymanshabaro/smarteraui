@@ -157,7 +157,7 @@ export const FooterLarge05 = () => (
 
             <div className="border-secondary mt-12 flex flex-col justify-between gap-6 border-t pt-8 md:mt-16 md:flex-row md:items-center">
                 <ProperLogo className="h-7 w-min" />
-                <p className="text-quaternary text-sm">© 2077 Proper. All rights reserved.</p>
+                <p className="text-quaternary text-sm">© 2077 Proper UI. All rights reserved.</p>
             </div>
         </div>
     </footer>

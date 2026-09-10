@@ -131,7 +131,7 @@ export const FooterLarge06Brand = () => {
                         {/* Absolutely positioned so the rule spans the row without adding a border box. */}
                         <div className="bg-border-brand_alt absolute top-0 left-0 h-px w-full" />
 
-                        <p className="text-quaternary_on-brand text-sm">© 2077 Proper. All rights reserved.</p>
+                        <p className="text-quaternary_on-brand text-sm">© 2077 Proper UI. All rights reserved.</p>
 
                         <ul className="flex gap-4">
                             {socialLinks.map(({ label, href, icon: Icon }) => (

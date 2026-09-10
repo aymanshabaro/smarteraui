@@ -50,7 +50,7 @@ export const NewsletterScreenMockup04 = () => (
                             <div className="bg-utility-neutral-50 ring-utility-neutral-200 relative size-full overflow-hidden rounded-[6.77px] ring-[0.56px] md:rounded-[15.16px] md:ring-[1.26px]">
                                 <img
                                     src={IMAGES.landscape[0].src}
-                                    alt="Dashboard mockup showing the Proper application interface"
+                                    alt="Dashboard mockup showing the Proper UI application interface"
                                     className="size-full object-cover object-left-top"
                                 />
                             </div>

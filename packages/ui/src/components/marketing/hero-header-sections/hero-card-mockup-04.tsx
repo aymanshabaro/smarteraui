@@ -33,7 +33,7 @@ const CardBloom = () => (
 const StackedCard = ({ cardHolder, className }: { cardHolder: string; className?: string }) => (
     <div className={cx("relative overflow-hidden rounded-2xl", className)}>
         <CardBloom />
-        <CreditCard type="transparent" company="Proper." cardHolder={cardHolder} />
+        <CreditCard type="transparent" company="Proper UI." cardHolder={cardHolder} />
     </div>
 );
 
@@ -64,7 +64,7 @@ export const HeroCardMockup04 = () => (
                         No more business banking headaches
                     </h1>
                     <p className="text-tertiary mt-4 max-w-120 text-lg text-balance md:mt-6 md:text-xl">
-                        Proper is a next-gen financial technology company in the process of reinventing banking.
+                        Proper UI is a next-gen financial technology company in the process of reinventing banking.
                     </p>
 
                     <div className="mt-8 flex w-full flex-col-reverse items-stretch gap-3 md:mt-12 md:flex-row md:items-start">

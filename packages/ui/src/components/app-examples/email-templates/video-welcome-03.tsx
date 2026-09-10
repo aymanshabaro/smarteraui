@@ -55,7 +55,7 @@ export const VideoWelcome03 = () => (
                 <h1 className="text-primary text-display-xs mt-12 text-center font-semibold">Welcome to Proper UI!</h1>
 
                 <p className="text-tertiary text-md mt-4 text-center md:text-lg">
-                    Hi Olivia, thanks for checking out Proper. Here are a few tips to help you get up and running as soon as possible. If you have any
+                    Hi Olivia, thanks for checking out Proper UI. Here are a few tips to help you get up and running as soon as possible. If you have any
                     questions, just reply to this email—we&apos;ll be happy to hear from you!
                 </p>
 

@@ -69,7 +69,7 @@ export const HeroCardMockup06 = () => (
                                 style={fanTransform(card)}
                                 className="absolute origin-right [transform:var(--transform-mobile)] md:[transform:var(--transform-desktop)]"
                             >
-                                <CreditCard type="transparent-gradient" company="Proper." cardHolder={card.holder} cardExpiration="06/28" />
+                                <CreditCard type="transparent-gradient" company="Proper UI." cardHolder={card.holder} cardExpiration="06/28" />
                             </div>
                         ))}
                     </div>

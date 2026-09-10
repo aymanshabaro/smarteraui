@@ -39,7 +39,7 @@ const groups: { title: string; features: Feature[] }[] = [
             { name: "Individual data", hint: "Storage available to each member of your team.", values: ["20 GB", "40 GB", "Unlimited"] },
             { name: "Support", hint: "Chat and email support from our team.", values: [true, true, true] },
             { name: "Automated workflows", hint: "Trigger actions automatically when your data changes.", values: [false, true, true] },
-            { name: "200+ integrations", hint: "Connect Proper to the tools your team already uses.", values: [false, true, true] },
+            { name: "200+ integrations", hint: "Connect Proper UI to the tools your team already uses.", values: [false, true, true] },
         ],
     },
     {

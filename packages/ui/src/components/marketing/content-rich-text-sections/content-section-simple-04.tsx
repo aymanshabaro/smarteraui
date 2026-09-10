@@ -9,7 +9,7 @@ export const ContentSectionSimple04 = () => (
                         describing what they see when they get there.
                     </p>
                     <p>
-                        Proper connects to the tools you already run and builds a single event model on top of them. Activation, retention and revenue are
+                        Proper UI connects to the tools you already run and builds a single event model on top of them. Activation, retention and revenue are
                         defined once, reviewed by the whole team, and then used everywhere — dashboards, alerts and the weekly report all read from the same
                         definitions.
                     </p>
@@ -21,7 +21,7 @@ export const ContentSectionSimple04 = () => (
 
                 <div className="prose md:prose-lg">
                     <p>
-                        Getting there takes about an afternoon. You point Proper at a warehouse or a product database, confirm the three or four events that
+                        Getting there takes about an afternoon. You point Proper UI at a warehouse or a product database, confirm the three or four events that
                         actually matter to your business, and the rest of the model is generated from what it finds.
                     </p>
                     <ul>

@@ -70,14 +70,14 @@ export const Dashboard14 = () => (
                                 type="brand-dark"
                                 width={260}
                                 cardHolder={currentUser.name.toUpperCase()}
-                                company="Proper."
+                                company="Proper UI."
                                 className="absolute start-0 top-2 -rotate-6"
                             />
                             <CreditCard
                                 type="transparent-gradient"
                                 width={260}
                                 cardHolder={currentUser.name.toUpperCase()}
-                                company="Proper."
+                                company="Proper UI."
                                 className="absolute start-8 top-6"
                             />
                         </div>

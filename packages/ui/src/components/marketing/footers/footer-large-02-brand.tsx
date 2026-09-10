@@ -131,7 +131,7 @@ export const FooterLarge02Brand = () => (
 
             <div className="max-w-container mx-auto px-4 md:px-8">
                 <div className="flex flex-col-reverse justify-between gap-6 md:flex-row">
-                    <p className="text-quaternary_on-brand text-sm">© 2077 Proper. All rights reserved.</p>
+                    <p className="text-quaternary_on-brand text-sm">© 2077 Proper UI. All rights reserved.</p>
                     <ul className="flex gap-4">
                         {socials.map(({ label, href, icon: Icon }) => (
                             <li key={label}>

@@ -18,7 +18,7 @@ export const FooterSmall04Brand = () => (
                 </Form>
             </div>
 
-            <p className="text-quaternary_on-brand mt-8 text-sm md:mt-16 md:text-end">© 2077 Proper. All rights reserved.</p>
+            <p className="text-quaternary_on-brand mt-8 text-sm md:mt-16 md:text-end">© 2077 Proper UI. All rights reserved.</p>
         </div>
     </footer>
 );

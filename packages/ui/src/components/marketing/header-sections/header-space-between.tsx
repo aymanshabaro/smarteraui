@@ -10,7 +10,7 @@ export const HeaderSpaceBetween = () => (
             <div className="flex flex-col gap-x-16 lg:flex-row">
                 <h1 className="text-display-md text-primary md:text-display-lg flex-1 font-semibold">About the company</h1>
                 <p className="text-tertiary mt-4 w-full text-lg md:mt-6 md:text-xl lg:mt-3 lg:max-w-120">
-                    Learn more about the company and the world-class team behind Proper.
+                    Learn more about the company and the world-class team behind Proper UI.
                 </p>
             </div>
         </div>

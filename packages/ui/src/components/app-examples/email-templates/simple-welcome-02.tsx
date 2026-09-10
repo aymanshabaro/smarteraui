@@ -17,9 +17,9 @@ const styles = sortCx({
 });
 
 const resources = [
-    { label: "Proper changelog →", href: "/changelog", description: "Weekly new updates and improvements to Proper." },
+    { label: "Proper UI changelog →", href: "/changelog", description: "Weekly new updates and improvements to Proper UI." },
     { label: "Follow us on X →", href: "https://x.com/", description: "Stay up-to-date with the latest announcements and jobs." },
-    { label: "Why we're building Proper →", href: "/about", description: "Proper is a new standard of design system and UI kit." },
+    { label: "Why we're building Proper UI →", href: "/about", description: "Proper UI is a new standard of design system and UI kit." },
 ];
 
 const socials = [
@@ -42,8 +42,8 @@ export const SimpleWelcome02 = () => (
                 <h1 className="text-primary text-display-xs mt-12 font-semibold">Welcome to Proper UI</h1>
 
                 <p className="text-tertiary md:text-md mt-4 text-sm">
-                    We&apos;re excited to welcome you to Proper and we&apos;re even more excited about what we&apos;ve got planned. You&apos;re already on your
-                    way to creating beautiful visual products.
+                    We&apos;re excited to welcome you to Proper UI and we&apos;re even more excited about what we&apos;ve got planned. You&apos;re already on
+                    your way to creating beautiful visual products.
                     <br />
                     <br />
                     Whether you&apos;re here for your brand, for a cause, or just for fun—welcome! If there&apos;s anything you need, we&apos;ll be here every

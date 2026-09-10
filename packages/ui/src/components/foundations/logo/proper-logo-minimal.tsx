@@ -4,7 +4,7 @@ import type { SVGProps } from "react";
 import { cx } from "@/utils/cx";
 
 /**
- * The standalone Proper mark: a rounded square containing a stylised "S".
+ * The standalone Proper UI mark: a rounded square containing a stylised "S".
  * Uses `fill-current`/`text-fg-primary` so it adapts to dark mode automatically.
  */
 export const ProperLogoMinimal = (props: SVGProps<SVGSVGElement>) => {

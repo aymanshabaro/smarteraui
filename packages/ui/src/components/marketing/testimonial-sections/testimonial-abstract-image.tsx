@@ -17,12 +17,12 @@ const styles = sortCx({
 
 const reviews = [
     {
-        quote: "We've really sped up our workflow using Proper and haven't looked back.",
+        quote: "We've really sped up our workflow using Proper UI and haven't looked back.",
         author: AVATARS[6],
         role: `Project Manager, ${LOGOS[4].name}`,
     },
     {
-        quote: "Every project starts with Proper which has 10x'd our output while keeping quality top-notch.",
+        quote: "Every project starts with Proper UI which has 10x'd our output while keeping quality top-notch.",
         author: AVATARS[3],
         role: `Design Engineer, ${LOGOS[2].name}`,
     },

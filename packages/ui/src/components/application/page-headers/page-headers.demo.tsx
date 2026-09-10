@@ -41,7 +41,7 @@ const BannerAvatarHeader = () => (
             <PageHeader.Avatar src={profile.src} alt="" />
             <PageHeader.Heading>
                 <PageHeader.Title>{profile.name}</PageHeader.Title>
-                <PageHeader.Description>Product designer, Proper — {profile.email}</PageHeader.Description>
+                <PageHeader.Description>Product designer, Proper UI — {profile.email}</PageHeader.Description>
             </PageHeader.Heading>
             <PageHeader.Actions>
                 <Button size="md" color="secondary" iconLeading={Mail01}>
@@ -93,7 +93,7 @@ export const Avatar = () => (
             <PageHeader.Avatar src={profile.src} alt="" />
             <PageHeader.Heading>
                 <PageHeader.Title>{profile.name}</PageHeader.Title>
-                <PageHeader.Description>Product designer, Proper — {profile.email}</PageHeader.Description>
+                <PageHeader.Description>Product designer, Proper UI — {profile.email}</PageHeader.Description>
             </PageHeader.Heading>
             <PageHeader.Actions>
                 <Button size="md" color="secondary" iconLeading={Mail01}>
@@ -165,7 +165,7 @@ export const BannerAvatarCentered = () => (
             <PageHeader.Avatar src={profile.src} alt="" />
             <PageHeader.Heading>
                 <PageHeader.Title>{profile.name}</PageHeader.Title>
-                <PageHeader.Description>Product designer, Proper — {profile.email}</PageHeader.Description>
+                <PageHeader.Description>Product designer, Proper UI — {profile.email}</PageHeader.Description>
             </PageHeader.Heading>
             <PageHeader.Actions>
                 <Button size="md" color="secondary" iconLeading={Mail01}>

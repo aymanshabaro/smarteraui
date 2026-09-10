@@ -24,7 +24,7 @@ export const ContentSectionRichText01 = () => (
                 <div className="prose md:prose-lg mx-auto">
                     <p className="lead">
                         A good review does two things at once: it shows the work, and it shows the thinking behind the work. Most decks only manage the first.
-                        Here is the structure we use at Proper to do both without doubling the length.
+                        Here is the structure we use at Proper UI to do both without doubling the length.
                     </p>
 
                     <hr />
@@ -52,7 +52,7 @@ export const ContentSectionRichText01 = () => (
                             <span>
                                 Image from the {/* eslint-disable-next-line jsx-a11y/anchor-is-valid -- placeholder href for a marketing section */}
                                 <a href="#" className={styles.proseLink}>
-                                    Proper brand library
+                                    Proper UI brand library
                                 </a>
                             </span>
                         </figcaption>
@@ -112,7 +112,7 @@ export const ContentSectionRichText01 = () => (
                             <span>
                                 Image from the {/* eslint-disable-next-line jsx-a11y/anchor-is-valid -- placeholder href for a marketing section */}
                                 <a href="#" className={styles.proseLink}>
-                                    Proper brand library
+                                    Proper UI brand library
                                 </a>
                             </span>
                         </figcaption>
@@ -146,7 +146,7 @@ export const ContentSectionRichText01 = () => (
                         <Avatar size="lg" className="md:size-14" src={author.src} alt={author.name} />
                         <div>
                             <p className="text-md text-primary font-semibold md:text-lg">{author.name}</p>
-                            <p className="text-md text-tertiary">Product Designer, Proper</p>
+                            <p className="text-md text-tertiary">Product Designer, Proper UI</p>
                         </div>
                     </div>
 

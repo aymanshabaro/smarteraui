@@ -19,12 +19,12 @@ const styles = sortCx({
 const caseStudies = [
     {
         logo: LOGOS[0],
-        quote: "Proper has saved us thousands of hours of work. We're able to spin up projects faster.",
+        quote: "Proper UI has saved us thousands of hours of work. We're able to spin up projects faster.",
         background: "bg-utility-brand-600",
     },
     {
         logo: LOGOS[1],
-        quote: "We've been using Proper to kick start every new project and can't work without it.",
+        quote: "We've been using Proper UI to kick start every new project and can't work without it.",
         background: "bg-utility-green-600",
     },
     {
@@ -34,7 +34,7 @@ const caseStudies = [
     },
     {
         logo: LOGOS[3],
-        quote: "Proper has saved us thousands of hours of work. We're able to spin up projects faster.",
+        quote: "Proper UI has saved us thousands of hours of work. We're able to spin up projects faster.",
         background: "bg-utility-indigo-600",
     },
 ] as const;

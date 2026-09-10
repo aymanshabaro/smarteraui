@@ -13,7 +13,7 @@ import type { Testimonial } from "./base-components/testimonial-overlay";
 import { TestimonialOverlay } from "./base-components/testimonial-overlay";
 
 const firstTestimonial: Testimonial = {
-    quote: "Proper has saved us thousands of hours of work. We're able to spin up projects faster and take on more clients.",
+    quote: "Proper UI has saved us thousands of hours of work. We're able to spin up projects faster and take on more clients.",
     name: "Orlando Diggs",
     role: "Product Manager, Hourglass",
     company: "Web Design Agency",

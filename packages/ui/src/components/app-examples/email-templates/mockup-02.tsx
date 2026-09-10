@@ -39,7 +39,7 @@ export const Mockup02 = () => (
                 <h1 className="text-primary text-display-xs mt-8 text-center font-semibold">Welcome to Proper UI!</h1>
 
                 <p className="text-tertiary text-md mt-4 text-center md:text-lg">
-                    Hi Olivia, thanks for checking out Proper. Get the most of Proper by installing our new mobile app.
+                    Hi Olivia, thanks for checking out Proper UI. Get the most of Proper UI by installing our new mobile app.
                 </p>
 
                 <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">

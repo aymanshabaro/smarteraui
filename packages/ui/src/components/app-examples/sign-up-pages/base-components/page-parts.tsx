@@ -29,7 +29,7 @@ export interface SupportFooterProps {
 /** The copyright / support address footer pinned to the bottom of the form column. */
 export const SupportFooter = ({ onBrand, className }: SupportFooterProps) => (
     <footer className={cx("flex justify-between", className)}>
-        <p className={cx("text-sm", onBrand ? "text-tertiary_on-brand" : "text-tertiary")}>© Proper 2077</p>
+        <p className={cx("text-sm", onBrand ? "text-tertiary_on-brand" : "text-tertiary")}>© Proper UI 2077</p>
         <a
             href="mailto:help@proper.example"
             className={cx(

@@ -4,7 +4,7 @@ export const ContentSectionRichText02 = () => (
         <div className="max-w-container mx-auto px-4 md:px-8">
             <div className="prose md:prose-lg mx-auto md:max-w-180">
                 <p>
-                    Your privacy matters to us at Proper. This policy explains what we collect when you use our website and products, why we collect it, and
+                    Your privacy matters to us at Proper UI. This policy explains what we collect when you use our website and products, why we collect it, and
                     what you can ask us to do with it.
                 </p>
                 <p>

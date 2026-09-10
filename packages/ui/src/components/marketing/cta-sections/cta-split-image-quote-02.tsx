@@ -19,7 +19,7 @@ const styles = sortCx({
 
 const reviews = [
     {
-        quote: "Proper has saved us thousands of hours of work. We're able to spin up projects faster.",
+        quote: "Proper UI has saved us thousands of hours of work. We're able to spin up projects faster.",
         name: AVATARS[2].name,
         company: "Web Design Agency",
         role: `PM, ${LOGOS[5].name}`,
@@ -46,7 +46,7 @@ export const CtaSplitImageQuote02 = () => {
             <div className="max-w-container mx-auto grid w-full grid-cols-1 gap-x-16 gap-y-12 px-4 md:px-8 lg:grid-cols-2 lg:items-center">
                 <div className="flex max-w-3xl flex-col items-start">
                     <h2 className="text-display-sm text-primary md:text-display-md lg:text-display-lg font-semibold">
-                        Join 4,000+ startups growing with Proper
+                        Join 4,000+ startups growing with Proper UI
                     </h2>
                     <p className="text-tertiary mt-4 text-lg md:mt-6 md:text-xl">Start your 30-day free trial today.</p>
 

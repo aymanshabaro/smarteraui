@@ -109,7 +109,7 @@ export const Dashboard15 = () => (
                                 key={card.holder}
                                 type={card.type}
                                 width={230}
-                                company="Proper."
+                                company="Proper UI."
                                 cardHolder={card.holder}
                                 className={`absolute ${card.offset}`}
                             />

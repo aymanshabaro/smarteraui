@@ -23,7 +23,7 @@ export const FooterLarge13 = () => (
             <div className="flex flex-col md:items-center md:text-center">
                 <ProperLogoMinimal className="origin-center scale-[1.2] drop-shadow" />
                 <h2 className="text-primary text-display-xs md:text-display-sm mt-8 font-semibold md:mt-12">Let&apos;s get started on something great</h2>
-                <p className="text-tertiary text-md mt-2 md:mt-4 md:text-xl">Join over 4,000+ startups already growing with Proper.</p>
+                <p className="text-tertiary text-md mt-2 md:mt-4 md:text-xl">Join over 4,000+ startups already growing with Proper UI.</p>
                 <div className="mt-8 flex flex-col-reverse gap-3 md:mt-12 md:flex-row">
                     <Button size="xl" color="secondary" iconLeading={PlayCircle}>
                         View demo
@@ -33,7 +33,7 @@ export const FooterLarge13 = () => (
             </div>
 
             <div className="border-secondary mt-12 flex flex-col-reverse justify-between gap-4 border-t pt-8 md:mt-16 md:flex-row md:gap-6">
-                <p className="text-quaternary text-sm">© 2077 Proper. All rights reserved.</p>
+                <p className="text-quaternary text-sm">© 2077 Proper UI. All rights reserved.</p>
                 <ul className="flex gap-3">
                     {legalLinks.map((link) => (
                         <li key={link.label}>

@@ -13,17 +13,17 @@ import { SupportFooter } from "./base-components/page-parts";
 
 const quotes = [
     {
-        quote: "Proper has saved us thousands of hours of work. We're able to spin up projects and features much faster.",
+        quote: "Proper UI has saved us thousands of hours of work. We're able to spin up projects and features much faster.",
         author: avatar(2),
         role: "Product Designer, Sisyphus",
     },
     {
-        quote: "Everything our team ships now starts from Proper. The handover between design and code finally disappeared.",
+        quote: "Everything our team ships now starts from Proper UI. The handover between design and code finally disappeared.",
         author: avatar(5),
         role: "Head of Design, Circooles",
     },
     {
-        quote: "We replaced three tools with Proper and shipped our redesign a full quarter ahead of schedule.",
+        quote: "We replaced three tools with Proper UI and shipped our redesign a full quarter ahead of schedule.",
         author: avatar(8),
         role: "Engineering Lead, Catalog",
     },

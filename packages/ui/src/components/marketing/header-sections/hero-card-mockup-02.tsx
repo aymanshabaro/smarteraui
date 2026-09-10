@@ -46,7 +46,7 @@ export const HeroCardMockup02 = () => (
                         No more business banking headaches
                     </h1>
                     <p className="text-tertiary mt-4 max-w-120 text-lg text-balance md:mt-6 md:text-xl">
-                        Proper is a next-gen financial technology company in the process of reinventing banking.
+                        Proper UI is a next-gen financial technology company in the process of reinventing banking.
                     </p>
 
                     <div className="mt-8 flex w-full flex-col-reverse items-stretch gap-3 md:mt-12 md:flex-row md:items-start">
@@ -60,10 +60,10 @@ export const HeroCardMockup02 = () => (
                 <div className="bg-quaternary relative -mx-4 flex h-80 items-center justify-center md:mx-0 md:h-120 lg:h-full lg:min-h-160">
                     <div className="-translate-x-0.5 -space-y-[106px] md:translate-x-[9px] md:-translate-y-px md:-space-y-16 lg:-space-y-8">
                         <div className={cx(cardScale, "z-1")} style={{ transform: "scale(var(--scale)) rotate(60deg) translate(38px, -53px)" }}>
-                            <CreditCard type="transparent" company="Proper." cardHolder={AVATARS[0].name} />
+                            <CreditCard type="transparent" company="Proper UI." cardHolder={AVATARS[0].name} />
                         </div>
                         <div className={cx(cardScale, "z-0")} style={{ transform: "scale(var(--scale)) rotate(30deg) translate(-23px, 24px)" }}>
-                            <CreditCard type="brand-dark" company="Proper." cardHolder={AVATARS[1].name} />
+                            <CreditCard type="brand-dark" company="Proper UI." cardHolder={AVATARS[1].name} />
                         </div>
                     </div>
                 </div>

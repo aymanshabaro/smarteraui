@@ -15,7 +15,7 @@ export const HeaderSpaceBetweenSearch = () => (
             <div className="grid grid-cols-[minmax(auto,768px)] gap-x-16 lg:grid-cols-[1fr_480px]">
                 <h1 className="text-display-md text-primary md:text-display-lg font-semibold">Support centre</h1>
                 <p className="text-tertiary mt-4 text-lg md:mt-6 md:text-xl lg:mt-3 lg:h-0">
-                    Get help and support or learn how to use the newest features in Proper.
+                    Get help and support or learn how to use the newest features in Proper UI.
                 </p>
 
                 <div className="mt-8 w-full sm:mt-8 sm:w-80">

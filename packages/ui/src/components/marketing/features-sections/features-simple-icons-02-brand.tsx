@@ -24,7 +24,7 @@ const features: { icon: FC<{ className?: string }>; title: string; subtitle: str
     {
         icon: ChartBreakoutSquare,
         title: "Manage your team with reports",
-        subtitle: "Measure what matters with Proper's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
+        subtitle: "Measure what matters with Proper UI's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
     },
     {
         icon: MessageChatCircle,

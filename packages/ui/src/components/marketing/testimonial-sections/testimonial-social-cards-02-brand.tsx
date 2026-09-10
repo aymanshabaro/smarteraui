@@ -7,12 +7,12 @@ import { RatingStars } from "@/components/foundations/rating/rating-stars";
 import { AVATARS } from "@/utils/demo-assets";
 
 const reviews = [
-    { author: AVATARS[6], quote: "We've been using Proper to kick start every new project and can't imagine working without it." },
-    { author: AVATARS[9], quote: "From concept to completion, Proper helps us deliver outstanding designs faster than ever." },
-    { author: AVATARS[11], quote: "Every project starts with Proper which has 10x'd our output. It saves us time while keeping the quality top-notch." },
-    { author: AVATARS[2], quote: "Proper has quickly become our go-to resource for every design project. The results are consistently amazing." },
-    { author: AVATARS[7], quote: "Proper offers exactly what we need to get started quickly. It's helped us cut down on design time significantly!" },
-    { author: AVATARS[3], quote: "Proper offers everything we need to get started on UI projects quickly. We go from zero to one, insanely fast." },
+    { author: AVATARS[6], quote: "We've been using Proper UI to kick start every new project and can't imagine working without it." },
+    { author: AVATARS[9], quote: "From concept to completion, Proper UI helps us deliver outstanding designs faster than ever." },
+    { author: AVATARS[11], quote: "Every project starts with Proper UI which has 10x'd our output. It saves us time while keeping the quality top-notch." },
+    { author: AVATARS[2], quote: "Proper UI has quickly become our go-to resource for every design project. The results are consistently amazing." },
+    { author: AVATARS[7], quote: "Proper UI offers exactly what we need to get started quickly. It's helped us cut down on design time significantly!" },
+    { author: AVATARS[3], quote: "Proper UI offers everything we need to get started on UI projects quickly. We go from zero to one, insanely fast." },
 ] as const;
 
 /** The wall of love on the brand-colored section background, with linked social handles. */

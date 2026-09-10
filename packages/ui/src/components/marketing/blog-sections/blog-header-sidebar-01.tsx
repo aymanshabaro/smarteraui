@@ -180,7 +180,7 @@ export const BlogHeaderSidebar01 = () => (
             <div className="max-w-container mx-auto px-4 md:px-8">
                 <div className="flex w-full max-w-3xl flex-col">
                     <span className="text-brand-secondary md:text-md text-sm font-semibold">Resources</span>
-                    <h2 className="text-display-md text-primary md:text-display-lg mt-3 font-semibold">Proper blog</h2>
+                    <h2 className="text-display-md text-primary md:text-display-lg mt-3 font-semibold">Proper UI blog</h2>
                     <p className="text-tertiary mt-4 text-lg md:mt-6 md:text-xl">Tool and strategies modern teams need to help their companies grow.</p>
 
                     <form className="mt-8 grid grid-cols-1 items-start gap-4 self-stretch sm:mt-12 sm:grid-cols-[335px_max-content]">

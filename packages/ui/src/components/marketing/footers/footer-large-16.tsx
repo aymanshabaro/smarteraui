@@ -43,7 +43,7 @@ export const FooterLarge16 = () => (
                     </Button>
                 </Form>
 
-                <p className="text-quaternary text-sm">© 2077 Proper. All rights reserved.</p>
+                <p className="text-quaternary text-sm">© 2077 Proper UI. All rights reserved.</p>
             </div>
         </div>
     </footer>

@@ -5,7 +5,7 @@ import { ProperLogoMinimal } from "@properui/ui/components/foundations/logo/prop
  * The landing-page lockup.
  *
  * Copied from `foundations/logo/proper-logo` and adapted for the product name — the library
- * ships the "Proper" company wordmark, while this site is "Proper UI". Markup and classes
+ * ships the "Proper UI" company wordmark, while this site is "Proper UI". Markup and classes
  * are otherwise identical to the foundations component.
  */
 export const LandingLogo = ({ className }: { className?: string }) => (

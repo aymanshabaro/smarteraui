@@ -14,7 +14,7 @@ export const SignupSplitMockupQuote = () => (
             <figure className="flex max-w-3xl flex-col gap-6">
                 <blockquote>
                     <p className="text-display-sm text-primary font-medium">
-                        Few things make me feel more powerful than setting up automations in Proper to make my life easier and more efficient.
+                        Few things make me feel more powerful than setting up automations in Proper UI to make my life easier and more efficient.
                     </p>
                 </blockquote>
 
@@ -29,7 +29,7 @@ export const SignupSplitMockupQuote = () => (
             </figure>
 
             <div className="relative">
-                <ScreenMockup src={IMAGES.landscape[2].src} alt="Proper dashboard" className="absolute start-0 top-0 h-170.5" imageClassName="h-full" />
+                <ScreenMockup src={IMAGES.landscape[2].src} alt="Proper UI dashboard" className="absolute start-0 top-0 h-170.5" imageClassName="h-full" />
             </div>
         </div>
     </section>

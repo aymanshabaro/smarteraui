@@ -67,7 +67,7 @@ export const ContactFormAndImage01 = () => (
                 </div>
 
                 <div className="max-lg:hidden lg:h-200">
-                    <img src={IMAGES.landscape[2].src} alt="A Proper customer smiling" className="size-full object-cover" />
+                    <img src={IMAGES.landscape[2].src} alt="A Proper UI customer smiling" className="size-full object-cover" />
                 </div>
             </div>
         </div>

@@ -31,7 +31,7 @@ const reviews: GlassReview[] = [
         role: `COO, ${LOGOS[2].name}`,
         industry: "Web Development Agency",
         portrait: IMAGES.square[1],
-        quote: "We've really sped up our workflow using Proper.",
+        quote: "We've really sped up our workflow using Proper UI.",
     },
     { name: AVATARS[8].name, role: `Designer, ${LOGOS[3].name}`, industry: "UX Agency", portrait: IMAGES.square[2] },
     { name: AVATARS[1].name, role: `PM, ${LOGOS[1].name}`, industry: "Machine Learning", portrait: IMAGES.square[3] },

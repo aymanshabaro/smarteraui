@@ -56,7 +56,7 @@ export const HeroScreenMockup06 = () => (
                 <div className="relative lg:h-full lg:min-h-177">
                     <img
                         src={IMAGES.landscape[3].src}
-                        alt="Proper dashboard shown on a laptop"
+                        alt="Proper UI dashboard shown on a laptop"
                         className="inset-0 h-auto w-full max-w-none rounded-xl object-cover md:h-90 md:w-auto lg:absolute lg:h-full lg:object-left"
                     />
                 </div>

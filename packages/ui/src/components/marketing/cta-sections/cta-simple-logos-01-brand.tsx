@@ -9,7 +9,7 @@ export const CtaSimpleLogos01Brand = () => (
             <div className="grid grid-cols-1 items-start lg:grid-cols-[1fr_max-content] lg:gap-x-8">
                 <div className="max-w-3xl">
                     <h2 className="text-display-sm text-primary_on-brand md:text-display-md font-semibold">Start your 30-day free trial</h2>
-                    <p className="text-tertiary_on-brand mt-4 text-lg md:mt-5 md:text-xl">Join over 4,000+ startups already growing with Proper.</p>
+                    <p className="text-tertiary_on-brand mt-4 text-lg md:mt-5 md:text-xl">Join over 4,000+ startups already growing with Proper UI.</p>
                 </div>
 
                 <div className="mt-8 flex flex-col-reverse justify-start gap-3 sm:flex-row lg:mt-0">

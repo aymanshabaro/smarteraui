@@ -78,7 +78,7 @@ export const Informational04 = () => (
                         <Breadcrumbs type="text" aria-label="Breadcrumbs">
                             <Breadcrumbs.Item href="/" icon={HomeLine} aria-label="Home" />
                             <Breadcrumbs.Item href="/dashboard">Dashboard</Breadcrumbs.Item>
-                            <Breadcrumbs.Item href="/dashboard/proper">Proper</Breadcrumbs.Item>
+                            <Breadcrumbs.Item href="/dashboard/proper">Proper UI</Breadcrumbs.Item>
                             <Breadcrumbs.Item href="/dashboard/orders">Orders</Breadcrumbs.Item>
                         </Breadcrumbs>
                     </div>

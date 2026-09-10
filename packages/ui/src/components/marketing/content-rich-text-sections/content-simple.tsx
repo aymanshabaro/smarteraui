@@ -11,7 +11,8 @@ export const ContentSimple = () => (
                     <span className="text-brand-secondary md:text-md text-sm font-semibold">Current as of 20 Jan 2027</span>
                     <h2 className="text-display-md text-primary md:text-display-lg mt-3 font-semibold">Privacy Policy</h2>
                     <p className="text-tertiary mt-4 text-lg md:mt-6 md:text-xl">
-                        Your privacy is important to us at Proper. We respect your privacy regarding any information we may collect from you across our website.
+                        Your privacy is important to us at Proper UI. We respect your privacy regarding any information we may collect from you across our
+                        website.
                     </p>
 
                     <Tabs.List aria-label="Policy version" size="md" type="button-border" className="mt-8 w-full md:mt-12 md:w-auto [&_[role=tab]]:flex-1">
@@ -25,8 +26,8 @@ export const ContentSimple = () => (
         <Tabs.Panel id="legal" className="max-w-container mx-auto px-4 pb-24 md:px-8">
             <div className="prose md:prose-lg mx-auto md:max-w-180">
                 <p>
-                    This policy explains what Proper collects when you use our website and products, why we collect it, and what you can ask us to do with it.
-                    It applies to proper.example and to every product served from it.
+                    This policy explains what Proper UI collects when you use our website and products, why we collect it, and what you can ask us to do with
+                    it. It applies to proper.example and to every product served from it.
                 </p>
                 <p>
                     If we change how we handle your information we will update this page and say what changed at the top. Continued use of the service after

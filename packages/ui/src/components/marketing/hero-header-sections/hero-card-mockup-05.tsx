@@ -54,10 +54,10 @@ export const HeroCardMockup05 = () => (
                 <div className="flex h-53 items-center justify-center md:h-100 md:items-end">
                     <div className="flex">
                         <div className="[transform:scale(0.79)_translate(131px,11px)_rotate(30deg)] md:[transform:scale(1.77)_translate(12px,2px)_rotate(30deg)]">
-                            <CreditCard type="brand-dark" company="Proper." cardHolder={AVATARS[1].name} />
+                            <CreditCard type="brand-dark" company="Proper UI." cardHolder={AVATARS[1].name} />
                         </div>
                         <div className="[transform:scale(0.79)_translate(-98px,-1px)_rotate(30deg)] md:[transform:scale(1.77)_translate(5px,-11px)_rotate(30deg)]">
-                            <CreditCard type="brand-dark" company="Proper." cardHolder={AVATARS[0].name} />
+                            <CreditCard type="brand-dark" company="Proper UI." cardHolder={AVATARS[0].name} />
                         </div>
                     </div>
                 </div>

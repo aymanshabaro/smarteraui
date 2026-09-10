@@ -25,7 +25,7 @@ const tabs = [
     {
         id: "reports",
         title: "Manage your team with reports",
-        subtitle: "Measure what matters with Proper's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
+        subtitle: "Measure what matters with Proper UI's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
         holders: [AVATARS[8].name, AVATARS[9].name, AVATARS[10].name, AVATARS[11].name],
     },
 ];
@@ -77,7 +77,7 @@ export const FeaturesTabsMockup11 = () => (
                         <div className="-space-y-[146px] md:-translate-x-2 md:translate-y-3.5 md:-space-y-[126px]">
                             {tab.holders.map((holder, index) => (
                                 <div key={holder} className={cx(cardTransform, index === 0 ? "z-4" : index === 1 ? "z-3" : index === 2 ? "z-2" : "z-1")}>
-                                    <CreditCard type={cardTypes[index]} company="Proper." cardHolder={holder} />
+                                    <CreditCard type={cardTypes[index]} company="Proper UI." cardHolder={holder} />
                                 </div>
                             ))}
                             <div className={cx(cardTransform, "z-0")}>

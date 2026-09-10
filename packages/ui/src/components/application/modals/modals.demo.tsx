@@ -723,7 +723,7 @@ export const PasswordPrompt = () => (
 
 export const CenteredPhoto = () => (
     <ModalPanel className="overflow-hidden">
-        <Dialog aria-label="New in Proper">
+        <Dialog aria-label="New in Proper UI">
             <div className="relative">
                 <img src={IMAGES.landscape[0].src} alt="" className="h-45 w-full object-cover" />
                 <CloseButton size="sm" theme="dark" slot={null} className="absolute end-3 top-3" />
@@ -836,7 +836,7 @@ export const PaymentDetailsWithImage = () => (
             </div>
             <div className="flex flex-col gap-1 px-4 pt-4 sm:px-6 sm:pt-6">
                 <h2 className="text-primary text-md font-semibold sm:text-lg">Confirm your purchase</h2>
-                <p className="text-tertiary text-sm">Proper Pro, billed annually at $120 per seat.</p>
+                <p className="text-tertiary text-sm">Proper UI Pro, billed annually at $120 per seat.</p>
             </div>
             <ModalBody>
                 <Input isRequired label="Name on card" placeholder={avatar(0).name} />
@@ -1556,7 +1556,7 @@ export const Integration = () => (
                         </li>
                     ))}
                 </ul>
-                <p className="text-tertiary text-sm">Proper will be able to read file names, thumbnails and comments. You can disconnect at any time.</p>
+                <p className="text-tertiary text-sm">Proper UI will be able to read file names, thumbnails and comments. You can disconnect at any time.</p>
             </ModalBody>
             <ModalFooter>
                 <Button size="lg" color="secondary">

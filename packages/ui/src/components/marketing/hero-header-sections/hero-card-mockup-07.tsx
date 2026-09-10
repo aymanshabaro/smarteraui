@@ -44,7 +44,7 @@ const CardBloom = () => (
 const StackedCard = ({ cardHolder, className }: { cardHolder: string; className?: string }) => (
     <div className={cx("relative overflow-hidden rounded-2xl", className)}>
         <CardBloom />
-        <CreditCard type="transparent" company="Proper." cardHolder={cardHolder} />
+        <CreditCard type="transparent" company="Proper UI." cardHolder={cardHolder} />
     </div>
 );
 

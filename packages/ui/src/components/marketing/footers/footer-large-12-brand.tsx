@@ -124,7 +124,7 @@ export const FooterLarge12Brand = () => {
                 </div>
 
                 <div className="border-brand_alt mt-12 flex flex-col-reverse justify-between gap-6 border-t pt-8 md:mt-16 md:flex-row">
-                    <p className="text-quaternary_on-brand text-sm">© 2077 Proper. All rights reserved.</p>
+                    <p className="text-quaternary_on-brand text-sm">© 2077 Proper UI. All rights reserved.</p>
 
                     <ul className="flex gap-4">
                         {socialLinks.map(({ label, href, icon: Icon }) => (

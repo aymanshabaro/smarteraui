@@ -64,7 +64,7 @@ export const HeroCardMockup01 = () => (
 
                     <h1 className="text-display-md text-primary md:text-display-lg lg:text-display-xl mt-4 font-semibold">No more banking headaches</h1>
                     <p className="text-tertiary mt-4 max-w-3xl text-lg text-balance md:mt-6 md:text-xl">
-                        Mo money, no problems. Proper is a next-generation financial technology company in the process of reinventing banking. 30-day free
+                        Mo money, no problems. Proper UI is a next-generation financial technology company in the process of reinventing banking. 30-day free
                         trial.
                     </p>
 
@@ -86,7 +86,7 @@ export const HeroCardMockup01 = () => (
                                 style={card.transform}
                                 className="[transform:var(--transform-mobile)] md:[transform:var(--transform-desktop)]"
                             >
-                                <CreditCard company="Proper." type={card.type} cardHolder={card.holder} />
+                                <CreditCard company="Proper UI." type={card.type} cardHolder={card.holder} />
                             </div>
                         ))}
                     </div>

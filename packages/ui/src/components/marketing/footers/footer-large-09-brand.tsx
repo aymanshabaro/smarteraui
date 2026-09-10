@@ -63,7 +63,7 @@ export const FooterLarge09Brand = () => {
             <div className="max-w-container mx-auto px-4 md:px-8">
                 <div className="flex flex-col justify-center text-center">
                     <h2 className="text-display-xs text-primary_on-brand md:text-display-sm font-semibold">Let's get started on something great</h2>
-                    <p className="text-md text-tertiary_on-brand mt-2 md:mt-4 md:text-xl">Join over 4,000+ startups already growing with Proper.</p>
+                    <p className="text-md text-tertiary_on-brand mt-2 md:mt-4 md:text-xl">Join over 4,000+ startups already growing with Proper UI.</p>
 
                     <div className="mt-8 flex flex-col-reverse gap-3 self-stretch md:mt-12 md:flex-row md:self-center">
                         {/* The secondary button loses its ring on the brand background. */}
@@ -105,7 +105,7 @@ export const FooterLarge09Brand = () => {
                     {/* The mark is always the light lockup on the solid brand background. */}
                     <ProperLogo className="dark-mode" />
 
-                    <p className="text-quaternary_on-brand text-sm">© 2077 Proper. All rights reserved.</p>
+                    <p className="text-quaternary_on-brand text-sm">© 2077 Proper UI. All rights reserved.</p>
                 </div>
             </div>
         </footer>

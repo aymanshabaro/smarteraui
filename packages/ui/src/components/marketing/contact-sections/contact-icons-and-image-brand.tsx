@@ -36,7 +36,11 @@ export const ContactIconsAndImageBrand = () => (
 
         <div className="-mt-16 pb-16 md:-mt-24 md:pb-24">
             <div className="max-w-container mx-auto px-4 md:px-8">
-                <img src={IMAGES.landscape[4].src} alt="Two team members talking in the Proper office" className="h-60 w-full object-cover md:h-120 lg:h-140" />
+                <img
+                    src={IMAGES.landscape[4].src}
+                    alt="Two team members talking in the Proper UI office"
+                    className="h-60 w-full object-cover md:h-120 lg:h-140"
+                />
             </div>
         </div>
     </section>

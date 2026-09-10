@@ -5,7 +5,7 @@ import { cx } from "@/utils/cx";
 import { ProperLogoMinimal } from "./proper-logo-minimal";
 
 /**
- * The full Proper lockup: the minimal mark followed by the "Proper" wordmark.
+ * The full Proper UI lockup: the minimal mark followed by the "Proper UI" wordmark.
  * Adapts to dark mode via semantic tokens (`text-fg-primary`).
  */
 export const ProperLogo = (props: HTMLAttributes<HTMLOrSVGElement>) => {
@@ -15,7 +15,7 @@ export const ProperLogo = (props: HTMLAttributes<HTMLOrSVGElement>) => {
             <ProperLogoMinimal className="aspect-square h-full w-auto shrink-0" />
 
             {/* Wordmark */}
-            <span className="text-fg-primary text-lg font-semibold whitespace-nowrap select-none">Proper</span>
+            <span className="text-fg-primary text-lg font-semibold whitespace-nowrap select-none">Proper UI</span>
         </div>
     );
 };

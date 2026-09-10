@@ -86,7 +86,7 @@ export const HeroIphoneMockup04 = () => (
                         Growth performance tracking made easy
                     </h1>
                     <p className="text-tertiary mt-4 max-w-lg text-lg text-balance md:mt-6 md:text-xl">
-                        Designed by creators, for creators. Proper gives you the guidance, data and innovation you need to sell more and grow your digital
+                        Designed by creators, for creators. Proper UI gives you the guidance, data and innovation you need to sell more and grow your digital
                         business.
                     </p>
 

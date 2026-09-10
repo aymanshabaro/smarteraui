@@ -90,7 +90,7 @@ export const Settings19 = () => (
 
                             <div className="flex w-max flex-col gap-4">
                                 <Checkbox defaultSelected name="newsAndUpdates" label="News and updates" hint="News about product and feature updates." />
-                                <Checkbox defaultSelected name="tipsAndTutorials" label="Tips and tutorials" hint="Tips on getting more out of Proper." />
+                                <Checkbox defaultSelected name="tipsAndTutorials" label="Tips and tutorials" hint="Tips on getting more out of Proper UI." />
                                 <Checkbox
                                     name="userResearch"
                                     label="User research"

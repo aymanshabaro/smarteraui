@@ -28,7 +28,7 @@ export const StepSidebarVersion = () => (
             </div>
 
             <footer className="mt-auto flex items-center justify-between p-8">
-                <p className="text-tertiary text-sm">© Proper 2077</p>
+                <p className="text-tertiary text-sm">© Proper UI 2077</p>
                 <span className="flex items-center justify-center gap-2">
                     <Mail01 aria-hidden="true" className="text-fg-quaternary size-4" />
                     <p className="text-tertiary text-sm">help@proper.example</p>

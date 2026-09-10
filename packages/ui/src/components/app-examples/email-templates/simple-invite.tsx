@@ -31,7 +31,7 @@ export const SimpleInvite = () => (
                     Hi Olivia,
                     <br />
                     <br />
-                    Lana has invited you to join the team on <span className="font-semibold">Proper</span>.
+                    Lana has invited you to join the team on <span className="font-semibold">Proper UI</span>.
                 </p>
 
                 <Button href="/invites/accept" size="lg" className="my-6">

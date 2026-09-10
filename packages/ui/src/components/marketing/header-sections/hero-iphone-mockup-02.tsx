@@ -29,7 +29,7 @@ export const HeroIphoneMockup02 = () => (
                 <div className="flex w-full max-w-3xl flex-1 flex-col">
                     <h1 className="text-display-md text-primary md:text-display-lg lg:text-display-xl font-semibold">#1 paid ads tracking app for marketers</h1>
                     <p className="text-tertiary mt-4 max-w-120 text-lg text-balance md:mt-6 md:text-xl">
-                        Designed by marketers, for marketers. Proper gives you the guidance, data and innovation you need to become a better marketer.
+                        Designed by marketers, for marketers. Proper UI gives you the guidance, data and innovation you need to become a better marketer.
                     </p>
 
                     <div className="mt-8 flex gap-3 md:mt-12">

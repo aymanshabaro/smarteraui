@@ -84,7 +84,7 @@ export const LoginSplitMockupQuote = () => (
             <figure className="flex max-w-3xl flex-col gap-6">
                 <blockquote>
                     <p className="text-display-sm text-primary font-medium">
-                        Few things make me feel more powerful than setting up automations in Proper to make my life easier and more efficient.
+                        Few things make me feel more powerful than setting up automations in Proper UI to make my life easier and more efficient.
                     </p>
                 </blockquote>
 

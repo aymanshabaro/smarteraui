@@ -13,19 +13,19 @@ const columns = [
         reviews: [
             {
                 logo: LOGOS[0],
-                quote: "Proper has been a lifesaver for our team—everything we need is right at our fingertips, and it helps us jump right into new design projects.",
+                quote: "Proper UI has been a lifesaver for our team—everything we need is right at our fingertips, and it helps us jump right into new design projects.",
                 author: AVATARS[0],
                 role: `Product Designer, ${LOGOS[0].name}`,
             },
             {
                 logo: LOGOS[1],
-                quote: "We love Proper! It's made the design process super streamlined.",
+                quote: "We love Proper UI! It's made the design process super streamlined.",
                 author: AVATARS[1],
                 role: `UI Designer, ${LOGOS[1].name}`,
             },
             {
                 logo: LOGOS[2],
-                quote: "Starting projects used to feel daunting, but Proper simplifies everything. We've used it for both small and large projects, and it never disappoints.",
+                quote: "Starting projects used to feel daunting, but Proper UI simplifies everything. We've used it for both small and large projects, and it never disappoints.",
                 author: AVATARS[2],
                 role: `Founder, ${LOGOS[2].name}`,
             },
@@ -36,19 +36,19 @@ const columns = [
         reviews: [
             {
                 logo: LOGOS[3],
-                quote: "Proper is our secret weapon for staying ahead of deadlines. It gives us everything we need to get started quickly.",
+                quote: "Proper UI is our secret weapon for staying ahead of deadlines. It gives us everything we need to get started quickly.",
                 author: AVATARS[3],
                 role: `UX Designer, ${LOGOS[3].name}`,
             },
             {
                 logo: LOGOS[4],
-                quote: "Proper is hands down the best design library we've used. It has literally everything we need to get started for any possible project.",
+                quote: "Proper UI is hands down the best design library we've used. It has literally everything we need to get started for any possible project.",
                 author: AVATARS[4],
                 role: `Web Designer, ${LOGOS[4].name}`,
             },
             {
                 logo: LOGOS[5],
-                quote: "With Proper, we can focus more on design and less on the tedious setup work. Best money ever spent.",
+                quote: "With Proper UI, we can focus more on design and less on the tedious setup work. Best money ever spent.",
                 author: AVATARS[5],
                 role: `CTO, ${LOGOS[5].name}`,
             },
@@ -59,19 +59,19 @@ const columns = [
         reviews: [
             {
                 logo: LOGOS[0],
-                quote: "Our workflow has improved dramatically since we started using Proper and it's become an integral part of our workflow. It's easy to use, and the resources are top-notch. I recommend it to everyone!",
+                quote: "Our workflow has improved dramatically since we started using Proper UI and it's become an integral part of our workflow. It's easy to use, and the resources are top-notch. I recommend it to everyone!",
                 author: AVATARS[6],
                 role: `Project Lead, ${LOGOS[0].name}`,
             },
             {
                 logo: LOGOS[1],
-                quote: "Proper is an absolute game-changer for our projects. We can't imagine going back to how we used to work without it.",
+                quote: "Proper UI is an absolute game-changer for our projects. We can't imagine going back to how we used to work without it.",
                 author: AVATARS[7],
                 role: `UI/UX Designer, ${LOGOS[1].name}`,
             },
             {
                 logo: LOGOS[2],
-                quote: "Proper has been a real time-saver for us. It's organized, efficient, and keeps us moving forward with every project.",
+                quote: "Proper UI has been a real time-saver for us. It's organized, efficient, and keeps us moving forward with every project.",
                 author: AVATARS[8],
                 role: `Product Designer, ${LOGOS[2].name}`,
             },

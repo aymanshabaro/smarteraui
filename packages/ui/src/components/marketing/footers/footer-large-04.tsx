@@ -119,7 +119,7 @@ export const FooterLarge04 = () => (
             </div>
 
             <div className="border-secondary mt-12 flex flex-col-reverse justify-between gap-4 border-t pt-8 md:mt-16 md:flex-row md:gap-6">
-                <p className="text-quaternary text-sm">© 2077 Proper. All rights reserved.</p>
+                <p className="text-quaternary text-sm">© 2077 Proper UI. All rights reserved.</p>
                 <ul className="flex gap-3">
                     {legalLinks.map((link) => (
                         <li key={link.label}>

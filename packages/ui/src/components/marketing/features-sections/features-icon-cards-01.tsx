@@ -17,7 +17,7 @@ const features = [
     },
     {
         title: "Manage your team",
-        subtitle: "Measure what matters with Proper's easy-to-use reports. You can filter, export, and drilldown on the data.",
+        subtitle: "Measure what matters with Proper UI's easy-to-use reports. You can filter, export, and drilldown on the data.",
         icon: ChartBreakoutSquare,
     },
     {

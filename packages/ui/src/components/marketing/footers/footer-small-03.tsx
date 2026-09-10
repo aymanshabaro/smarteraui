@@ -34,7 +34,7 @@ export const FooterSmall03 = () => (
 
                 <ProperLogo className="order-first h-7 w-min shrink-0 lg:order-none" />
 
-                <p className="text-quaternary mt-6 text-sm lg:mt-0 lg:w-full lg:max-w-xs lg:text-end">© 2077 Proper. All rights reserved.</p>
+                <p className="text-quaternary mt-6 text-sm lg:mt-0 lg:w-full lg:max-w-xs lg:text-end">© 2077 Proper UI. All rights reserved.</p>
             </div>
         </div>
     </footer>

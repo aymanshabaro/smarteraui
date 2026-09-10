@@ -30,7 +30,7 @@ export const FooterSmall01 = () => (
                 </ul>
 
                 <p className="text-quaternary mt-12 text-sm lg:mt-0 lg:w-40 lg:text-end">
-                    © 2077 Proper
+                    © 2077 Proper UI
                     <span className="ms-1 md:hidden">All rights reserved.</span>
                 </p>
             </div>

@@ -46,7 +46,7 @@ export const HeroScreenMockup03 = () => (
                 <div className="mx-auto w-full max-w-3xl">
                     <img
                         src={IMAGES.landscape[2].src}
-                        alt="Proper dashboard mockup"
+                        alt="Proper UI dashboard mockup"
                         className="ring-screen-mockup-border md:shadow-3xl mx-auto aspect-3/2 w-full rounded object-cover object-top shadow-xl ring-4 md:rounded-xl"
                     />
                 </div>

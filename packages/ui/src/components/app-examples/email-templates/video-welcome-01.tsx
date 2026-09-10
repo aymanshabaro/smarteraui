@@ -37,7 +37,7 @@ export const VideoWelcome01 = () => (
                     Hi Olivia,
                     <br />
                     <br />
-                    Welcome to Proper! You&apos;re already on your way to creating beautiful visual products.
+                    Welcome to Proper UI! You&apos;re already on your way to creating beautiful visual products.
                     <br />
                     <br />
                     We&apos;ve created a quick intro video to get you up and running as soon as possible. If you have any questions,{" "}
@@ -73,7 +73,7 @@ export const VideoWelcome01 = () => (
 
             <div className="bg-primary px-6 py-8 text-center">
                 <p className="text-primary md:text-md text-sm font-semibold">Download the app</p>
-                <p className="text-tertiary mt-2 text-sm">Get the most of Proper by installing our new mobile app.</p>
+                <p className="text-tertiary mt-2 text-sm">Get the most of Proper UI by installing our new mobile app.</p>
 
                 <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                     <AppStoreButton href="https://www.apple.com/app-store/" size="md" />
@@ -91,8 +91,8 @@ export const VideoWelcome01 = () => (
                 </ul>
 
                 <p className="text-tertiary mt-8 text-sm">
-                    Proper is committed to sustainable building. This email was sent with 200% carbon offset. If you&apos;d prefer to not receive these emails,
-                    please{" "}
+                    Proper UI is committed to sustainable building. This email was sent with 200% carbon offset. If you&apos;d prefer to not receive these
+                    emails, please{" "}
                     <a href="/unsubscribe" className={styles.inlineLink}>
                         unsubscribe
                     </a>

@@ -13,14 +13,14 @@ import { AVATARS, IMAGES, LOGOS } from "@/utils/demo-assets";
 
 const reviews = [
     {
-        quote: "Proper has saved us thousands of hours of work. We're able to spin up projects faster and take on more clients.",
+        quote: "Proper UI has saved us thousands of hours of work. We're able to spin up projects faster and take on more clients.",
         author: AVATARS[10],
         role: `Product Manager, ${LOGOS[5].name}`,
         industry: "Web Design Agency",
         portrait: IMAGES.square[1],
     },
     {
-        quote: "We've been using Proper to kick start every new project and can't imagine working without it. It's incredible.",
+        quote: "We've been using Proper UI to kick start every new project and can't imagine working without it. It's incredible.",
         author: AVATARS[3],
         role: `Founder, ${LOGOS[3].name}`,
         industry: "Web Development Agency",

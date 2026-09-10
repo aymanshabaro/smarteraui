@@ -131,7 +131,7 @@ export const FooterLarge05Brand = () => (
 
             <div className="border-brand_alt mt-12 flex flex-col justify-between gap-6 border-t pt-8 md:mt-16 md:flex-row md:items-center">
                 <ProperLogo className="dark-mode" />
-                <p className="text-quaternary_on-brand text-sm">© 2077 Proper. All rights reserved.</p>
+                <p className="text-quaternary_on-brand text-sm">© 2077 Proper UI. All rights reserved.</p>
             </div>
         </div>
     </footer>

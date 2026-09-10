@@ -53,7 +53,7 @@ export const HeroCardMockup03 = () => (
 
                     <h1 className="text-display-md text-primary md:text-display-lg lg:text-display-xl mt-4 font-semibold">No more banking headaches</h1>
                     <p className="text-tertiary mt-4 max-w-3xl text-lg text-balance md:mt-6 md:text-xl">
-                        Mo money, no problems. Proper is a next-generation financial technology company in the process of reinventing{" "}
+                        Mo money, no problems. Proper UI is a next-generation financial technology company in the process of reinventing{" "}
                         <span className="max-md:hidden">banking. 30-day free trial.</span>
                     </p>
 
@@ -80,7 +80,7 @@ export const HeroCardMockup03 = () => (
                                     } as CSSProperties
                                 }
                             >
-                                <CreditCard type="transparent-gradient" company="Proper." cardHolder={card.holder} />
+                                <CreditCard type="transparent-gradient" company="Proper UI." cardHolder={card.holder} />
                             </div>
                         ))}
                     </div>

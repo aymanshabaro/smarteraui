@@ -70,7 +70,7 @@ export const ContentLargeImage01 = () => (
                             <span>
                                 Image from the {/* eslint-disable-next-line jsx-a11y/anchor-is-valid -- placeholder href for a marketing section */}
                                 <a href="#" className={styles.proseLink}>
-                                    Proper brand library
+                                    Proper UI brand library
                                 </a>
                             </span>
                         </figcaption>
@@ -130,7 +130,7 @@ export const ContentLargeImage01 = () => (
                             <span>
                                 Image from the {/* eslint-disable-next-line jsx-a11y/anchor-is-valid -- placeholder href for a marketing section */}
                                 <a href="#" className={styles.proseLink}>
-                                    Proper brand library
+                                    Proper UI brand library
                                 </a>
                             </span>
                         </figcaption>
@@ -164,7 +164,7 @@ export const ContentLargeImage01 = () => (
                         <Avatar size="lg" className="md:size-14" src={author.src} alt={author.name} />
                         <div>
                             <p className="text-md text-primary font-semibold md:text-lg">{author.name}</p>
-                            <p className="text-md text-tertiary">Product Designer, Proper</p>
+                            <p className="text-md text-tertiary">Product Designer, Proper UI</p>
                         </div>
                     </div>
 

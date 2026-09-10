@@ -34,7 +34,7 @@ export const NotFoundScreenMockup = () => (
                         <div className="bg-utility-neutral-50 ring-utility-neutral-200 relative overflow-hidden rounded-[6.77px] ring-[0.56px] md:rounded-[20.21px] md:ring-[1.68px]">
                             <img
                                 src={IMAGES.landscape[5].src}
-                                alt="Dashboard mockup showing the Proper application interface"
+                                alt="Dashboard mockup showing the Proper UI application interface"
                                 className="object-cover object-left-top lg:max-h-168.5 lg:max-w-none"
                             />
                         </div>

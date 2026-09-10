@@ -58,7 +58,7 @@ export const FooterLarge08Brand = () => (
             </div>
 
             <div className="border-brand_alt mt-12 flex flex-col-reverse justify-between gap-4 border-t pt-8 md:mt-16 md:flex-row md:gap-6">
-                <p className="text-quaternary_on-brand text-sm">© 2077 Proper. All rights reserved.</p>
+                <p className="text-quaternary_on-brand text-sm">© 2077 Proper UI. All rights reserved.</p>
                 <ul className="flex gap-3">
                     {legalLinks.map((link) => (
                         <li key={link.label}>

@@ -125,7 +125,7 @@ export const Dashboard13 = () => (
                             <ul className="flex flex-col gap-5 md:flex-row">
                                 {cards.map((card) => (
                                     <li key={card.type} className="flex flex-1 flex-col gap-4">
-                                        <CreditCard type={card.type} width={260} company="Proper." cardHolder={owner.name.toUpperCase()} />
+                                        <CreditCard type={card.type} width={260} company="Proper UI." cardHolder={owner.name.toUpperCase()} />
 
                                         <div className="flex flex-col gap-2">
                                             <div className="flex justify-between gap-4">

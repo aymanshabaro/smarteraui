@@ -62,7 +62,7 @@ export const FooterLarge07 = () => (
             </div>
 
             <div className="border-secondary mt-12 flex flex-col-reverse justify-between gap-6 border-t pt-8 md:mt-16 md:flex-row">
-                <p className="text-quaternary text-sm">© 2077 Proper. All rights reserved.</p>
+                <p className="text-quaternary text-sm">© 2077 Proper UI. All rights reserved.</p>
                 <ul className="flex gap-4">
                     {socials.map(({ label, href, icon: Icon }) => (
                         <li key={label}>

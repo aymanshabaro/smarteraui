@@ -78,7 +78,7 @@ export const CardHeaderWithAvatarAndBadge = () => (
             divider
             title={AVATARS[0].name}
             badge="Admin"
-            description="Owner of the Proper workspace since March 2024."
+            description="Owner of the Proper UI workspace since March 2024."
             avatar={<Avatar size="lg" src={AVATARS[0].src} alt={AVATARS[0].alt} status="online" />}
             actions={
                 <>

@@ -12,7 +12,7 @@ export const ContentSectionSimple02 = () => (
                 <div className="prose md:prose-lg mt-10 hidden md:block">
                     <hr />
                     <p>
-                        Proper started as an internal billing service for a two-sided rental business. The problem was never the payments — it was everything
+                        Proper UI started as an internal billing service for a two-sided rental business. The problem was never the payments — it was everything
                         that had to be true before a payment could happen safely.
                     </p>
                     <p>

@@ -84,7 +84,7 @@ export const ContentLargeImage03 = () => (
                             <span>
                                 Image from the {/* eslint-disable-next-line jsx-a11y/anchor-is-valid -- placeholder href for a marketing section */}
                                 <a href="#" className={styles.proseLink}>
-                                    Proper brand library
+                                    Proper UI brand library
                                 </a>
                             </span>
                         </figcaption>
@@ -147,7 +147,7 @@ export const ContentLargeImage03 = () => (
                             <span>
                                 Image from the {/* eslint-disable-next-line jsx-a11y/anchor-is-valid -- placeholder href for a marketing section */}
                                 <a href="#" className={styles.proseLink}>
-                                    Proper brand library
+                                    Proper UI brand library
                                 </a>
                             </span>
                         </figcaption>

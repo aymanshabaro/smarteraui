@@ -107,7 +107,7 @@ export const HeroAbstractAngles01 = () => (
                             size="lg"
                             src={VIDEO_SRC}
                             poster={VIDEO_POSTER.src}
-                            label="Proper product tour"
+                            label="Proper UI product tour"
                             className="shadow-3xl rounded-xl md:max-w-240"
                         />
                     </div>

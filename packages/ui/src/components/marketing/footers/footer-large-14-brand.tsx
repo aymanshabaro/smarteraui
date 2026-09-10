@@ -84,10 +84,10 @@ export const FooterLarge14Brand = () => (
 
             <div className="border-brand_alt mt-12 flex flex-col gap-y-8 border-t pt-8 md:mt-16 md:flex-row md:items-end md:justify-between">
                 <div className="max-w-3xl">
-                    <p className="text-primary_on-brand text-lg font-semibold">Move faster with Proper</p>
+                    <p className="text-primary_on-brand text-lg font-semibold">Move faster with Proper UI</p>
                     <p className="text-tertiary_on-brand text-md mt-1">Save countless hours of design and ship great looking designs faster.</p>
                 </div>
-                <p className="text-quaternary_on-brand text-sm">© 2077 Proper. All rights reserved.</p>
+                <p className="text-quaternary_on-brand text-sm">© 2077 Proper UI. All rights reserved.</p>
             </div>
         </div>
     </footer>

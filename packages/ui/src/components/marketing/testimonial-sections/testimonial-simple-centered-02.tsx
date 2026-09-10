@@ -3,7 +3,7 @@ import { AVATARS, LOGOS } from "@/utils/demo-assets";
 
 const review = {
     logo: LOGOS[2],
-    quote: "We've been using Proper to kick start every new project and can't imagine working without it.",
+    quote: "We've been using Proper UI to kick start every new project and can't imagine working without it.",
     author: AVATARS[11],
     role: `Product Manager, ${LOGOS[2].name}`,
 };

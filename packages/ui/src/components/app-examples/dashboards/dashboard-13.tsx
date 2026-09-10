@@ -142,7 +142,7 @@ export const Dashboard13 = () => (
                             <div className="flex flex-wrap gap-6">
                                 {cards.map((card, index) => (
                                     <div key={index} className="flex min-w-[240px] flex-1 flex-col gap-3">
-                                        <CreditCard type="brand-dark" width={260} cardHolder={card.holder} company="Proper." />
+                                        <CreditCard type="brand-dark" width={260} cardHolder={card.holder} company="Proper UI." />
                                         <div className="flex items-center justify-between gap-2">
                                             <span className="text-tertiary text-sm font-medium">Spending this month</span>
                                             <span className="text-primary text-sm font-medium">{card.spend}</span>

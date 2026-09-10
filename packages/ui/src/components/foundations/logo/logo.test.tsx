@@ -6,7 +6,7 @@ import { ProperLogoMinimal } from "./proper-logo-minimal";
 describe("ProperLogo", () => {
     it("renders and has no a11y violations", async () => {
         const { container } = render(<ProperLogo />);
-        expect(container.textContent).toContain("Proper");
+        expect(container.textContent).toContain("Proper UI");
         expect(await axe(container)).toHaveNoViolations();
     });
 

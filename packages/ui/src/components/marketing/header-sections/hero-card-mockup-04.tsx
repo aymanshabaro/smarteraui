@@ -48,7 +48,7 @@ export const HeroCardMockup04 = () => (
                         No more business banking headaches
                     </h1>
                     <p className="text-tertiary mt-4 max-w-120 text-lg text-balance md:mt-6 md:text-xl">
-                        Proper is a next-gen financial technology company in the process of reinventing banking.
+                        Proper UI is a next-gen financial technology company in the process of reinventing banking.
                     </p>
 
                     <div className="mt-8 flex w-full flex-col-reverse items-stretch gap-3 md:mt-12 md:flex-row md:items-start">
@@ -63,18 +63,18 @@ export const HeroCardMockup04 = () => (
                     <div className="translate-x-[34px] translate-y-[3px] -space-y-[116.5px] md:translate-x-[53px] md:translate-y-[37px] md:-space-y-[83px]">
                         <div className="relative z-3 translate-y-[22px] rotate-[29.9deg]">
                             <div style={tilt} className="[--scale:1.365] md:[--scale:2.1]">
-                                <CreditCard company="Proper." type="transparent-gradient" cardHolder={AVATARS[2].name} />
+                                <CreditCard company="Proper UI." type="transparent-gradient" cardHolder={AVATARS[2].name} />
                             </div>
                         </div>
 
                         <div className="relative z-2 translate-y-[10px] rotate-[14.8deg]">
                             <div style={tilt} className="[--scale:1.365] md:[--scale:2.099]">
-                                <CreditCard company="Proper." type="transparent-gradient" cardHolder={AVATARS[0].name} />
+                                <CreditCard company="Proper UI." type="transparent-gradient" cardHolder={AVATARS[0].name} />
                             </div>
                         </div>
 
                         <div style={tilt} className="relative z-1 [--scale:1.365] md:[--scale:2.1]">
-                            <CreditCard company="Proper." type="transparent-gradient" cardHolder={AVATARS[1].name} />
+                            <CreditCard company="Proper UI." type="transparent-gradient" cardHolder={AVATARS[1].name} />
                         </div>
                     </div>
                 </div>

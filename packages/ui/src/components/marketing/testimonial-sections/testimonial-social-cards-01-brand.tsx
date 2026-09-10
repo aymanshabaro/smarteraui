@@ -5,25 +5,25 @@ import { AVATARS, LOGOS } from "@/utils/demo-assets";
 const reviews = [
     {
         logo: LOGOS[0],
-        quote: "We've been using Proper to kick start every new project and can't imagine working without it.",
+        quote: "We've been using Proper UI to kick start every new project and can't imagine working without it.",
         author: AVATARS[6],
         role: `Project Manager, ${LOGOS[0].name}`,
     },
     {
         logo: LOGOS[1],
-        quote: "Proper has become an essential part of our design process. It speeds up our workflow and ensures every project starts with a solid foundation.",
+        quote: "Proper UI has become an essential part of our design process. It speeds up our workflow and ensures every project starts with a solid foundation.",
         author: AVATARS[4],
         role: `COO, ${LOGOS[1].name}`,
     },
     {
         logo: LOGOS[2],
-        quote: "Every project starts with Proper, and it's made a huge difference in our output. It's a game-changer for our design team.",
+        quote: "Every project starts with Proper UI, and it's made a huge difference in our output. It's a game-changer for our design team.",
         author: AVATARS[7],
         role: `Designer, ${LOGOS[2].name}`,
     },
     {
         logo: LOGOS[3],
-        quote: "Using Proper has streamlined our entire design process. It's an invaluable part of our studio!",
+        quote: "Using Proper UI has streamlined our entire design process. It's an invaluable part of our studio!",
         author: AVATARS[9],
         role: `Design Engineer, ${LOGOS[3].name}`,
     },

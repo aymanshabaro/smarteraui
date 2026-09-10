@@ -48,7 +48,7 @@ export const CtaSplitImageQuote03 = () => {
             <div className="flex w-full lg:justify-start lg:py-24">
                 <div className="flex max-w-3xl flex-col items-start px-4 md:px-8 lg:max-w-(--breakpoint-sm) lg:ps-18">
                     <h2 className="text-display-sm text-primary md:text-display-md lg:text-display-lg font-semibold">
-                        Join 4,000+ startups growing with Proper
+                        Join 4,000+ startups growing with Proper UI
                     </h2>
 
                     <ul className="mt-8 flex flex-col gap-4 md:gap-5 md:ps-4">

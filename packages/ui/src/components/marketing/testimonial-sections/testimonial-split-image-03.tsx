@@ -23,7 +23,7 @@ const reviews = [
         portrait: IMAGES.square[2],
     },
     {
-        quote: "From concept to completion, Proper helps us deliver outstanding designs faster than ever.",
+        quote: "From concept to completion, Proper UI helps us deliver outstanding designs faster than ever.",
         author: AVATARS[1],
         role: `UX Designer, ${LOGOS[2].name}`,
         portrait: IMAGES.square[3],

@@ -7,7 +7,7 @@ export const CtaSimpleLeft = () => (
             <div className="flex flex-col justify-between lg:flex-row">
                 <div className="max-w-3xl">
                     <h2 className="text-display-sm text-primary md:text-display-md font-semibold">Start your free trial</h2>
-                    <p className="text-tertiary mt-4 text-lg md:mt-5 md:text-xl">Join over 4,000+ startups already growing with Proper.</p>
+                    <p className="text-tertiary mt-4 text-lg md:mt-5 md:text-xl">Join over 4,000+ startups already growing with Proper UI.</p>
                 </div>
 
                 <div className="mt-8 flex flex-col-reverse gap-3 self-stretch sm:flex-row sm:self-start lg:mt-0">

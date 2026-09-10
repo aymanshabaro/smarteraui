@@ -18,7 +18,7 @@ const benefits: { icon: FC<{ className?: string }>; title: string; description: 
     {
         icon: PresentationChart01,
         title: "Manage your team with reports",
-        description: "Measure what matters with Proper's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
+        description: "Measure what matters with Proper UI's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
     },
 ];
 

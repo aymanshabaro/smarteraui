@@ -78,7 +78,7 @@ export const HeroCardMockup05 = () => (
                                 style={card.transform}
                                 className="[transform:var(--transform-mobile)] md:[transform:var(--transform-desktop)]"
                             >
-                                <CreditCard type="brand-dark" company="Proper." cardHolder={card.cardHolder} />
+                                <CreditCard type="brand-dark" company="Proper UI." cardHolder={card.cardHolder} />
                             </div>
                         ))}
                     </div>

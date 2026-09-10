@@ -104,7 +104,7 @@ export const Dashboard15 = () => {
                                         key={person.username}
                                         type="brand-dark"
                                         width={220}
-                                        company="Proper."
+                                        company="Proper UI."
                                         cardHolder={person.name.toUpperCase()}
                                         className={cx("absolute -rotate-12", cardOffsets[index])}
                                     />

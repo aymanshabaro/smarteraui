@@ -72,7 +72,7 @@ export const HeroCardMockup06 = () => (
                                     } as CSSProperties
                                 }
                             >
-                                <CreditCard type="transparent-gradient" company="Proper." cardHolder={card.holder} />
+                                <CreditCard type="transparent-gradient" company="Proper UI." cardHolder={card.holder} />
                             </div>
                         ))}
                     </div>

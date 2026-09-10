@@ -58,7 +58,7 @@ export const HeroCardMockup08 = () => (
                         Simple, transparent business credit cards
                     </h1>
                     <p className="text-tertiary mt-4 text-lg text-balance md:mt-6 md:text-xl">
-                        Mo money, no problems. Proper is a next-generation financial technology company in the process of reinventing banking. 30-day free
+                        Mo money, no problems. Proper UI is a next-generation financial technology company in the process of reinventing banking. 30-day free
                         trial.
                     </p>
 
@@ -87,7 +87,7 @@ export const HeroCardMockup08 = () => (
             <div className="max-w-container relative mt-16 w-full px-4 md:mx-auto md:px-8">
                 <img
                     src={IMAGES.landscape[7].src}
-                    alt="Proper business credit cards"
+                    alt="Proper UI business credit cards"
                     className="h-68 w-full overflow-hidden rounded-2xl object-cover md:h-120"
                 />
             </div>

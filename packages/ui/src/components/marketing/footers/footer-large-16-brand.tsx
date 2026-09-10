@@ -46,7 +46,7 @@ export const FooterLarge16Brand = () => {
                         </Button>
                     </Form>
 
-                    <p className="text-quaternary_on-brand text-sm">© 2077 Proper. All rights reserved.</p>
+                    <p className="text-quaternary_on-brand text-sm">© 2077 Proper UI. All rights reserved.</p>
                 </div>
             </div>
         </footer>

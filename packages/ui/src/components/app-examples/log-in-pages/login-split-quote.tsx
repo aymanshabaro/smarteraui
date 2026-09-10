@@ -21,7 +21,7 @@ export const LoginSplitQuote = () => (
 
             <figure className="flex flex-col gap-8 px-20 text-center">
                 <blockquote className="text-display-sm text-primary font-medium">
-                    We&apos;ve been using Proper to kick start every new project and can&apos;t imagine working without it.
+                    We&apos;ve been using Proper UI to kick start every new project and can&apos;t imagine working without it.
                 </blockquote>
 
                 <figcaption className="flex flex-col items-center gap-8">

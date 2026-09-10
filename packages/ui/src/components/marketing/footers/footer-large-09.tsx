@@ -58,7 +58,7 @@ export const FooterLarge09 = () => {
             <div className="max-w-container mx-auto px-4 md:px-8">
                 <div className="flex flex-col justify-center text-center">
                     <h2 className="text-display-xs text-primary md:text-display-sm font-semibold">Let's get started on something great</h2>
-                    <p className="text-md text-tertiary mt-2 md:mt-4 md:text-xl">Join over 4,000+ startups already growing with Proper.</p>
+                    <p className="text-md text-tertiary mt-2 md:mt-4 md:text-xl">Join over 4,000+ startups already growing with Proper UI.</p>
 
                     <div className="mt-8 flex flex-col-reverse gap-3 self-stretch md:mt-12 md:flex-row md:self-center">
                         <Button size="xl" color="secondary">
@@ -104,7 +104,7 @@ export const FooterLarge09 = () => {
                 <div className="border-secondary mt-12 flex flex-col justify-between gap-6 border-t pt-8 md:mt-16 md:flex-row md:items-center">
                     <ProperLogo className="h-7 w-min" />
 
-                    <p className="text-quaternary text-sm">© 2077 Proper. All rights reserved.</p>
+                    <p className="text-quaternary text-sm">© 2077 Proper UI. All rights reserved.</p>
                 </div>
             </div>
         </footer>
