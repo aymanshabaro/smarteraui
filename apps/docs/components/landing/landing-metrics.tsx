@@ -1,4 +1,4 @@
-import { COMPONENT_GROUPS, PAGE_EXAMPLES, SECTION_VARIANTS, TEST_SUITES } from "./content";
+import { COMPONENT_GROUPS, COMPOSABLE_VARIANTS, REGISTRY_ENTRIES, TEST_SUITES } from "./content";
 
 /**
  * Metrics band.
@@ -9,10 +9,10 @@ import { COMPONENT_GROUPS, PAGE_EXAMPLES, SECTION_VARIANTS, TEST_SUITES } from "
  */
 
 const metrics = [
+    { value: String(REGISTRY_ENTRIES), label: "Registry entries an agent can fetch" },
     { value: String(COMPONENT_GROUPS), label: "Component groups" },
-    { value: String(SECTION_VARIANTS), label: "Marketing section variants" },
-    { value: String(PAGE_EXAMPLES), label: "Full page examples" },
-    { value: "0", label: `Axe violations in ${TEST_SUITES} test suites` },
+    { value: String(COMPOSABLE_VARIANTS), label: "Section and page variants to compose from" },
+    { value: "0", label: `Axe violations across ${TEST_SUITES} test suites` },
 ];
 
 export const LandingMetrics = () => (

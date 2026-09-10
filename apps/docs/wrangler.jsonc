@@ -28,11 +28,11 @@
         "enabled": true,
     },
 
-    // Custom domains. Uncomment once the `smarteraui.com` zone exists in this Cloudflare
-    // account (Cloudflare dashboard → Add a site → move the nameservers) — `wrangler deploy`
-    // fails with "Could not find zone" if the routes are enabled before the zone is active.
-    // "routes": [
-    //     { "pattern": "smarteraui.com", "custom_domain": true },
-    //     { "pattern": "www.smarteraui.com", "custom_domain": true }
-    // ]
+    // Custom domains. The `smarteraui.com` zone is active in this Cloudflare account —
+    // Namecheap points the domain at Cloudflare's nameservers — so `wrangler deploy` creates
+    // and maintains the DNS records for both hostnames itself.
+    "routes": [
+        { "pattern": "smarteraui.com", "custom_domain": true },
+        { "pattern": "www.smarteraui.com", "custom_domain": true },
+    ],
 }

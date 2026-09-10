@@ -35,6 +35,21 @@ const styles = sortCx({
 
 const faqs = [
     {
+        id: "which-tools",
+        question: "Which AI coding tools does it work with?",
+        answer: "Any of them. There is nothing tool-specific here — the surfaces are a public JSON registry at /r, a markdown index at /llms.txt and a CLI. Claude Code, Codex, Cursor, Copilot, v0, Bolt and Lovable can all either fetch a URL or run a shell command, which is all that is required.",
+    },
+    {
+        id: "mcp",
+        question: "Is there an MCP server?",
+        answer: "Not yet — it is on the roadmap, and the page describing it says so plainly rather than pretending otherwise. Today an assistant drives the CLI in its shell tool and reads the registry JSON directly, which covers the same ground: search, inspect, install.",
+    },
+    {
+        id: "generated-accessible",
+        question: "So AI-generated screens are automatically accessible?",
+        answer: "The primitives are: behaviour comes from React Aria and every component group ships an axe smoke test that runs in CI. Composition is still yours to review — a model can nest landmarks badly or skip a heading level with perfectly accessible building blocks. This removes a whole class of mistakes, not the need to look.",
+    },
+    {
         id: "licence",
         question: "What licence is it under?",
         answer: "MIT, copyright 2026 Ayman Shabaro. Use it in commercial products, fork it, redistribute it — the only obligation is keeping the licence notice. Parts of the component library are derived from Untitled UI React, which is MIT too; that notice ships in the repository's LICENSES folder.",
@@ -63,7 +78,9 @@ export const LandingFaq = () => (
                 <h2 id="faq" className="text-display-sm text-primary md:text-display-md font-semibold">
                     Frequently asked questions
                 </h2>
-                <p className="text-tertiary mt-4 text-lg md:mt-5 md:text-xl">Licensing, framework support and what you are actually getting.</p>
+                <p className="text-tertiary mt-4 text-lg md:mt-5 md:text-xl">
+                    Assistant support, licensing, framework support and what you are actually getting.
+                </p>
             </div>
 
             <div className="mx-auto mt-12 max-w-3xl md:mt-16">

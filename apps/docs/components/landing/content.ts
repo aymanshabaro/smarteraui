@@ -11,9 +11,23 @@
  *       pages: n('marketing-examples','example')+n('app-examples','example'),
  *     })"
  *
+ *   node -e "console.log(require('./packages/registry/dist/index.json').components.length)"  # registry entries
+ *
  *   find packages/ui/src/components -name '*.test.tsx' | wc -l   # test suites
  *   grep -rl toHaveNoViolations packages/ui/src/components | wc -l  # …all of which run axe
  */
+
+/** Canonical origin. The registry and `/llms.txt` below are the URLs an agent is pointed at. */
+export const SITE_ORIGIN = "https://smarteraui.com";
+
+/** Where the CLI resolves components from by default, and what an agent can fetch directly. */
+export const REGISTRY_URL = `${SITE_ORIGIN}/r`;
+
+/** The index an LLM crawls to find the plain-markdown twin of every documentation page. */
+export const LLMS_TXT_URL = `${SITE_ORIGIN}/llms.txt`;
+
+/** Every entry in `packages/registry/dist/index.json` — components, examples, hooks, utils and styles. */
+export const REGISTRY_ENTRIES = 797;
 
 /** Public repository. Deliberately local to the landing page: `~/lib/site` still points at the docs org. */
 export const REPO_URL = "https://github.com/aymanshabaro/smarteraui";
@@ -43,3 +57,6 @@ export const PAGE_EXAMPLES = MARKETING_PAGE_EXAMPLES + APP_PAGE_EXAMPLES;
 
 /** Vitest suites under `packages/ui/src/components`; every one of them asserts zero axe violations. */
 export const TEST_SUITES = 118;
+
+/** Section variants and full page examples together — everything an agent can compose a screen from. */
+export const COMPOSABLE_VARIANTS = SECTION_VARIANTS + PAGE_EXAMPLES;

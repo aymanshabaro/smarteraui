@@ -2,7 +2,9 @@
 
 # Smartera UI
 
-**An open-source React 19 component library built on React Aria Components and Tailwind CSS v4.**
+**The open-source React 19 component library built for AI-generated code.**
+
+[smarteraui.com](https://smarteraui.com) · [Documentation](https://smarteraui.com/docs/installation) · [Components](https://smarteraui.com/components) · [llms.txt](https://smarteraui.com/llms.txt)
 
 [![CI](https://img.shields.io/github/actions/workflow/status/aymanshabaro/smarteraui/ci.yml?branch=main&label=CI&logo=github)](https://github.com/aymanshabaro/smarteraui/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/%40smarteraui%2Fui?logo=npm&label=%40smarteraui%2Fui)](https://www.npmjs.com/package/@smarteraui/ui)
@@ -10,15 +12,51 @@
 
 </div>
 
-Smartera UI is a component library, a documentation site and a copy-in CLI in one repository. Components ship as readable
-TypeScript source rather than a compiled bundle, so you can install `@smarteraui/ui` as a normal dependency _or_ copy the
-files into your project with `npx smarteraui@latest add` and own them outright. Behaviour, keyboard handling and ARIA come
-from [React Aria Components](https://react-spectrum.adobe.com/react-aria/); styling is Tailwind CSS v4 utilities resolved
-through a semantic token layer, so re-branding the whole system means editing one file.
+Smartera UI is a component library, a documentation site and a copy-in CLI in one repository, designed for the way UI
+code gets written now — by a coding agent, at speed. A model writing UI from memory invents class names, props and markup
+that look plausible and do not compile. This library is readable by machines on purpose: a public JSON registry your
+assistant fetches real source from, a plain-markdown mirror of every documentation page indexed at
+[`/llms.txt`](https://smarteraui.com/llms.txt), and a CLI that writes the files into your project.
+
+Components ship as readable TypeScript source rather than a compiled bundle, so you can install `@smarteraui/ui` as a
+normal dependency _or_ copy the files in with `npx smarteraui@latest add` and own them outright. Behaviour, keyboard
+handling and ARIA come from [React Aria Components](https://react-spectrum.adobe.com/react-aria/); styling is Tailwind
+CSS v4 utilities resolved through a semantic token layer, so re-branding the whole system means editing one file — and a
+generated screen lands on the system rather than near it.
 
 The registry currently holds **797 entries**: **106 component groups** across seven layers (19 base, 32 application,
 18 marketing sections, 12 application page examples, 10 marketing page examples, 9 foundations, 6 shared assets),
 **679 section and page-example variants**, and the shared hooks, utils and styles they depend on.
+
+## Built for AI code generators
+
+Nothing here is specific to one assistant. The three surfaces below are plain HTTP and a shell command, so Claude Code,
+Codex, Cursor, Copilot, v0, Bolt and Lovable can all drive them.
+
+| Surface             | URL                                                                      | What an assistant does with it                                                                                                                  |
+| ------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Markdown docs index | [`/llms.txt`](https://smarteraui.com/llms.txt)                           | Finds the plain-markdown twin of every page, so it reads the same reference you do without parsing rendered HTML.                               |
+| Component registry  | [`/r/index.json`](https://smarteraui.com/r/index.json), `/r/<name>.json` | Fetches a component's real source, props, npm dependencies and registry dependencies — 797 entries.                                             |
+| Config schema       | [`/schema.json`](https://smarteraui.com/schema.json)                     | Validates and autocompletes the `components.json` that `init` writes.                                                                           |
+| CLI                 | `npx smarteraui@latest add <component>`                                  | Writes the `.tsx` into the project, resolves the dependency chain, rewrites `@/` imports to the configured alias and installs missing packages. |
+
+Why generated code comes out better against this library specifically:
+
+- **A closed vocabulary.** Components only ever name semantic tokens (`bg-primary`, `text-tertiary`, `bg-brand-solid`),
+  so a model has a small named set to choose from instead of the open set of arbitrary Tailwind values.
+- **A wrong prop fails the build.** `strict` and `noUncheckedIndexedAccess` across the monorepo mean a hallucinated prop
+  is a compile error the agent can read and fix, not a silent runtime shrug.
+- **Accessibility it never had to know about.** React Aria supplies focus management, keyboard navigation and ARIA, so
+  generated markup inherits them whether or not the prompt mentioned accessibility.
+- **Dark mode and RTL by construction.** One `.dark-mode` class repoints every token and spacing uses logical properties,
+  so there are no `dark:` utilities to forget on half the elements and no second stylesheet to hand-write.
+- **679 named variants to compose from.** Asked for a pricing page, an assistant reaches for an existing file instead of
+  inventing three hundred lines of layout.
+- **You review a diff.** The CLI writes plain `.tsx` you own — there is no opaque wrapper between the generated code and
+  what renders.
+
+[`AGENTS.md`](./AGENTS.md) holds the conventions an assistant working in this repository should follow. There is no MCP
+server yet; it is on the [roadmap](./ROADMAP.md), and the CLI covers the same ground today.
 
 ## Features
 
@@ -258,7 +296,8 @@ pnpm test           # type-check + lint + prettier + vitest/axe across the works
 pnpm gen:all        # regenerate barrels, demos, variants, nav and the registry
 ```
 
-There is no hosted documentation site yet — run `pnpm dev` and browse it locally at `http://localhost:3000`.
+The documentation site is hosted at [smarteraui.com](https://smarteraui.com). `pnpm dev` serves the same site locally
+at `http://localhost:3000`.
 
 Other useful commands:
 

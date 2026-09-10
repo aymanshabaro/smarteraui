@@ -12,10 +12,10 @@ export const LandingCta = () => (
         <div className="max-w-container mx-auto px-4 md:px-8">
             <div className="bg-brand-section flex flex-col items-center rounded-2xl px-6 py-10 text-center lg:p-16">
                 <h2 id="get-started" className="text-display-sm text-primary_on-brand xl:text-display-md font-semibold text-balance">
-                    Your next screen is already half built
+                    Your next screen is one prompt away
                 </h2>
                 <p className="text-tertiary_on-brand mt-4 text-lg text-balance md:mt-5 lg:text-xl">
-                    Install the package, or let the CLI copy the source in. Either way you can read every line of it.
+                    Install the package, or let your agent copy the source in. Either way you can read every line it wrote.
                 </p>
                 <p className="text-secondary_on-brand mt-6 font-mono text-sm md:text-base">{INSTALL_COMMAND}</p>
 

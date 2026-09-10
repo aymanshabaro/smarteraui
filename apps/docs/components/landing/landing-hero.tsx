@@ -29,19 +29,20 @@ export const LandingHero = () => (
                         className="outline-focus-ring rounded-[10px] focus-visible:outline-2 focus-visible:outline-offset-2"
                     >
                         <BadgeGroup size="lg" color="brand" theme="modern" addonText="MIT licensed" className="hidden md:flex">
-                            Free and open source, forever
+                            Built for AI-generated code
                         </BadgeGroup>
                         <BadgeGroup size="md" color="brand" theme="modern" addonText="MIT licensed" className="md:hidden">
-                            Free and open source
+                            Built for AI-generated code
                         </BadgeGroup>
                     </a>
 
                     <h1 className="text-display-md text-primary md:text-display-lg lg:text-display-xl mt-4 font-semibold text-balance">
-                        Accessible React components, ready on arrival
+                        Vibecode the UI. Ship code you would merge.
                     </h1>
                     <p className="text-tertiary mt-4 max-w-3xl text-lg text-balance md:mt-6 md:text-xl">
-                        Smartera UI is an open-source component library built on React Aria Components and Tailwind CSS v4, shipped as readable TSX under the
-                        MIT licence. Accessibility, dark mode and right-to-left are already handled.
+                        Smartera UI is an open-source React component library designed for the way code gets written now — by an agent, at speed. Your assistant
+                        fetches real source from a machine-readable registry instead of recalling it, and accessibility, dark mode and right-to-left come from
+                        the token layer rather than the prompt.
                     </p>
 
                     <div className="mt-8 flex w-full flex-col-reverse items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center md:mt-10">
