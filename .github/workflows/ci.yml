@@ -41,7 +41,11 @@ jobs:
               with: { node-version: 20, cache: pnpm }
             - run: pnpm install --frozen-lockfile
             - run: pnpm exec playwright install --with-deps chromium
-            - run: pnpm -F docs build
+            # Through turbo, not `pnpm -F docs build`: the landing page imports
+            # packages/registry/dist/stats.json, and only the task graph knows to build the
+            # registry first. Running next build directly fails with "Can't resolve
+            # ../../../../packages/registry/dist/stats.json" on a clean checkout.
+            - run: pnpm exec turbo run build --filter=docs...
             - run: pnpm -F docs start &
             - run: npx wait-on@8 http://localhost:3000 --timeout 60000
             - run: pnpm visual:check
