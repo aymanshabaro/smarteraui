@@ -37,13 +37,10 @@ An optional `tsup` ESM build would help consumers whose bundler will not transpi
 
 ### Full RTL coverage
 
-Logical properties (`ms-*`, `pe-*`, `text-start`) are the house rule and new components follow it,
-but the port is incomplete: roughly **281** logical spacing utilities against **365** physical ones
-across `packages/ui/src/components`. Base components are in the better shape; the marketing sections
-and page examples are where most of the physical values remain.
-
-Storybook also has no direction toggle — [`.storybook/preview.tsx`](./.storybook/preview.tsx)
-registers only the light/dark theme switcher.
+Every component in `packages/ui/src/components` now uses logical properties — zero physical
+directional utilities remain. What is still missing is _verification_: no RTL snapshot exists, and
+[`.storybook/preview.tsx`](./.storybook/preview.tsx) registers only the light/dark theme switcher,
+so there is no direction toggle to eyeball a component in.
 
 ### Visual regression testing
 
