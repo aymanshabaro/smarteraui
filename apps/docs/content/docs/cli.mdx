@@ -13,7 +13,7 @@ The `properui` CLI copies component source into an existing project, shadcn-styl
 There's nothing to install ahead of time — every command runs through `npx` (or your package manager's equivalent), which always fetches the latest version:
 
 ```bash
-npx properui@latest init
+npx @properui/cli@latest init
 ```
 
 Or with your preferred package manager: `pnpm dlx properui@latest init`, `yarn dlx properui@latest init`, `bunx properui@latest init`.
@@ -25,7 +25,7 @@ Requires Node 20+.
 `init` configures an **existing** project — it does not scaffold a new one, so run it from the directory that already holds your `package.json`. It reads your `tsconfig.json` for an existing path alias, detects Next.js App Router vs Pages Router vs Vite vs Remix vs plain React, checks your Tailwind version (v3 projects are stopped with upgrade instructions — Proper UI requires Tailwind v4), and confirms your package manager from the lockfile. It then writes `components.json`, copies the theme token file (from the registry when reachable, a placeholder otherwise), creates `utils/cx.ts`, adds the Tailwind `@source` scan line and theme import to your global stylesheet, and wraps your app entry point (`app/layout.tsx`, `pages/_app.tsx`, or `main.tsx`) in `ThemeProvider`. For Vite specifically, it also writes the `@` alias into both halves Vite needs — a `paths` entry in `tsconfig.app.json`/`tsconfig.json` and a matching `resolve.alias` in `vite.config` — since Vite has no built-in tsconfig-paths support and `vite build`/`tsc -b` fail on `@/...` imports without both. It does not install any npm packages itself — `add` is what installs a component's dependencies.
 
 ```bash
-npx properui@latest init
+npx @properui/cli@latest init
 ```
 
 ### Command options
@@ -45,19 +45,19 @@ npx properui@latest init
 `add` resolves a component and its `registryDependencies` recursively, copies the source files into your project, rewrites `@/` imports to your configured alias, and installs any missing npm packages.
 
 ```bash
-npx properui@latest add button
+npx @properui/cli@latest add button
 ```
 
 Add multiple components in one call:
 
 ```bash
-npx properui@latest add button input select
+npx @properui/cli@latest add button input select
 ```
 
 If a component depends on another component internally — `badge-groups` depends on `badges`, for example — the CLI pulls in the whole dependency chain, so you never end up with a broken import.
 
 ```bash
-npx properui@latest add badge-groups
+npx @properui/cli@latest add badge-groups
 ```
 
 The dependency tree above installs `badges` and `dot-icon` alongside `badge-groups` because those are its `registryDependencies`.
@@ -65,13 +65,13 @@ The dependency tree above installs `badges` and `dot-icon` alongside `badge-grou
 Install every component at once:
 
 ```bash
-npx properui@latest add --all
+npx @properui/cli@latest add --all
 ```
 
 Customize the installation directory:
 
 ```bash
-npx properui@latest add button --path src/components/ui
+npx @properui/cli@latest add button --path src/components/ui
 ```
 
 Typing a name that doesn't exist gets a suggestion rather than a bare failure — the CLI runs a fuzzy match against the registry index and prints the closest names.
@@ -90,7 +90,7 @@ Typing a name that doesn't exist gets a suggestion rather than a bare failure �
 `--dry-run` before `--all` is a good habit:
 
 ```bash
-npx properui@latest add --all --dry-run
+npx @properui/cli@latest add --all --dry-run
 ```
 
 ## List command
@@ -98,10 +98,10 @@ npx properui@latest add --all --dry-run
 `list` prints the registry’s index — every component and example with its layer and description:
 
 ```bash
-npx properui@latest list
-npx properui@latest list --layer base
-npx properui@latest list --type component
-npx properui@latest list --json
+npx @properui/cli@latest list
+npx @properui/cli@latest list --layer base
+npx @properui/cli@latest list --type component
+npx @properui/cli@latest list --json
 ```
 
 ### Command options
@@ -117,8 +117,8 @@ npx properui@latest list --json
 `search` runs a local fuzzy match over component names, descriptions, and example names — a scored subsequence match, not a network call or an AI model. It rewards contiguous, early, and whole-word matches, so `"date picker"` still finds `date-picker`, but it only ranks results that are actually a subsequence of the query; it can't reason about what a component looks like or means.
 
 ```bash
-npx properui@latest search "pricing"
-npx properui@latest search "empty state" --limit 5
+npx @properui/cli@latest search "pricing"
+npx @properui/cli@latest search "empty state" --limit 5
 ```
 
 Each line of output shows the matched name, its layer, its title, and how many examples reference it, sorted by score.
@@ -135,8 +135,8 @@ Each line of output shows the matched name, its layer, its title, and how many e
 `diff` compares the files already in your project against the current registry version, so you can see what you've changed (or what's out of date) before pulling an update:
 
 ```bash
-npx properui@latest diff              # every installed component
-npx properui@latest diff button       # just one
+npx @properui/cli@latest diff              # every installed component
+npx @properui/cli@latest diff button       # just one
 ```
 
 Requires `components.json`, so run `init` first.
@@ -146,11 +146,11 @@ Requires `components.json`, so run `init` first.
 `add example` installs a complete, functional page — a dashboard, a settings screen, a marketing landing page — along with every component and dependency it uses.
 
 ```bash
-npx properui@latest add example settings-01
+npx @properui/cli@latest add example settings-01
 ```
 
 ```bash
-npx properui@latest add example hero-split-image-01
+npx @properui/cli@latest add example hero-split-image-01
 ```
 
 Once an example is installed, it's your code: modify, delete, or extend it however your project needs. The CLI never re-writes an example file after it's on disk unless you pass `--overwrite`.
@@ -158,7 +158,7 @@ Once an example is installed, it's your code: modify, delete, or extend it howev
 Not sure of the exact name? List them first:
 
 ```bash
-npx properui@latest list --type example
+npx @properui/cli@latest list --type example
 ```
 
 `add example` accepts the same options as `add` (`--overwrite`, `--path`, `--dry-run`, `--registry`, `-y/--yes`); there's no separate flag to skip an example's dependencies.
@@ -168,8 +168,8 @@ npx properui@latest list --type example
 `login` stores a registry token at `~/.properui/auth.json`. It's only needed for a **private** registry — the public one is anonymous, and `add` works without ever logging in.
 
 ```bash
-npx properui@latest login
-npx properui@latest login --token <token>
+npx @properui/cli@latest login
+npx @properui/cli@latest login --token <token>
 ```
 
 Run with no `--token` in an interactive terminal and it prompts you to paste one (after pointing you at `<registry>/account/tokens` to create it). The token is reused by every later command on the same machine — you only need to do this once.
@@ -195,8 +195,8 @@ The hosted registry at `https://properui.dev/r` goes live when the docs site dep
 
 ```bash
 pnpm registry:build
-npx properui@latest add button --registry ./packages/registry/dist
-# or: REGISTRY_URL=./packages/registry/dist npx properui@latest add button
+npx @properui/cli@latest add button --registry ./packages/registry/dist
+# or: REGISTRY_URL=./packages/registry/dist npx @properui/cli@latest add button
 ```
 
 ## Usage examples
@@ -204,23 +204,23 @@ npx properui@latest add button --registry ./packages/registry/dist
 Configure an existing Next.js project and add a handful of base components:
 
 ```bash
-npx properui@latest init --nextjs
-npx properui@latest add button input select badges avatar
+npx @properui/cli@latest init --nextjs
+npx @properui/cli@latest add button input select badges avatar
 ```
 
 Configure an existing Vite app, then preview what an `add --all` would do before committing to it:
 
 ```bash
-npx properui@latest init --vite
-npx properui@latest add --all --dry-run
+npx @properui/cli@latest init --vite
+npx @properui/cli@latest add --all --dry-run
 ```
 
 Search for a layout, install it, and overwrite it later once you've pulled in an update:
 
 ```bash
-npx properui@latest search "hero split image"
-npx properui@latest add example hero-split-image-01
-npx properui@latest add example hero-split-image-01 --overwrite
+npx @properui/cli@latest search "hero split image"
+npx @properui/cli@latest add example hero-split-image-01
+npx @properui/cli@latest add example hero-split-image-01 --overwrite
 ```
 
 ## Troubleshooting
@@ -243,7 +243,7 @@ npx properui@latest add example hero-split-image-01 --overwrite
         },
         {
             question: "What is the login command for, then?",
-            answer: "Only for a private registry of your own. Run npx properui@latest login and paste a token when prompted, or pass --token directly — for example in CI. The token is saved to ~/.properui/auth.json and reused by every later command on the same machine; delete that file to log out.",
+            answer: "Only for a private registry of your own. Run npx @properui/cli@latest login and paste a token when prompted, or pass --token directly — for example in CI. The token is saved to ~/.properui/auth.json and reused by every later command on the same machine; delete that file to log out.",
         },
         {
             question: "Can I use the CLI with an existing project?",
@@ -275,7 +275,7 @@ npx properui@latest add example hero-split-image-01 --overwrite
         },
         {
             question: "Can I customize the installation directory?",
-            answer: "Yes, you can use the --path flag to specify where components should be installed. For example: npx properui@latest add button --path src/components/ui.",
+            answer: "Yes, you can use the --path flag to specify where components should be installed. For example: npx @properui/cli@latest add button --path src/components/ui.",
         },
         {
             question: "What if I mistype a component name?",
@@ -283,7 +283,7 @@ npx properui@latest add example hero-split-image-01 --overwrite
         },
         {
             question: "How do I update components to the latest version?",
-            answer: "You can re-run the add command with the --overwrite flag to update components to their latest versions: npx properui@latest add button --overwrite.",
+            answer: "You can re-run the add command with the --overwrite flag to update components to their latest versions: npx @properui/cli@latest add button --overwrite.",
         },
     ]}
 />

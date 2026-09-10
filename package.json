@@ -20,7 +20,7 @@
     "scripts": {
         "dev": "turbo run dev --filter=docs",
         "build": "turbo run build",
-        "build:packages": "turbo run build --filter=@properui/ui --filter=properui",
+        "build:packages": "turbo run build --filter=@properui/ui --filter=@properui/cli",
         "test": "turbo run test",
         "lint": "turbo run lint",
         "type-check": "turbo run type-check",
@@ -38,6 +38,8 @@
         "gen:stats": "tsx scripts/gen-stats-readme.ts",
         "docs:shot": "tsx scripts/shot.ts",
         "docs:diff": "tsx scripts/diff-shots.ts",
+        "visual:baseline": "tsx scripts/visual-baseline.ts",
+        "visual:check": "tsx scripts/visual-check.ts",
         "shots:thumbs": "tsx scripts/thumbs.ts",
         "check:assets": "tsx scripts/check-no-external-images.ts",
         "test:clean-room": "tsx scripts/clean-room.ts",

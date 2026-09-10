@@ -19,7 +19,7 @@ assistant fetches real source from, a plain-markdown mirror of every documentati
 [`/llms.txt`](https://properui.dev/llms.txt), and a CLI that writes the files into your project.
 
 Components ship as readable TypeScript source rather than a compiled bundle, so you can install `@properui/ui` as a
-normal dependency _or_ copy the files in with `npx properui@latest add` and own them outright. Behaviour, keyboard
+normal dependency _or_ copy the files in with `npx @properui/cli@latest add` and own them outright. Behaviour, keyboard
 handling and ARIA come from [React Aria Components](https://react-spectrum.adobe.com/react-aria/); styling is Tailwind
 CSS v4 utilities resolved through a semantic token layer, so re-branding the whole system means editing one file — and a
 generated screen lands on the system rather than near it.
@@ -39,7 +39,7 @@ Codex, Cursor, v0, Bolt and Lovable can all drive them.
 | Markdown docs index | [`/llms.txt`](https://properui.dev/llms.txt)                           | Finds the plain-markdown twin of every page, so it reads the same reference you do without parsing rendered HTML.                               |
 | Component registry  | [`/r/index.json`](https://properui.dev/r/index.json), `/r/<name>.json` | Fetches a component's real source, props, npm dependencies and registry dependencies — 797 entries.                                             |
 | Config schema       | [`/schema.json`](https://properui.dev/schema.json)                     | Validates and autocompletes the `components.json` that `init` writes.                                                                           |
-| CLI                 | `npx properui@latest add <component>`                                  | Writes the `.tsx` into the project, resolves the dependency chain, rewrites `@/` imports to the configured alias and installs missing packages. |
+| CLI                 | `npx @properui/cli@latest add <component>`                             | Writes the `.tsx` into the project, resolves the dependency chain, rewrites `@/` imports to the configured alias and installs missing packages. |
 
 Why generated code comes out better against this library specifically:
 
@@ -76,7 +76,7 @@ server yet; it is on the [roadmap](./ROADMAP.md), and the CLI covers the same gr
   JSDoc-documented, and `tsc --noEmit` runs in CI.
 - **Tree-shakeable source.** The package publishes `.tsx` with per-component subpath exports, so a bundler only ever
   sees the components you import.
-- **Copy-in CLI.** `npx properui@latest add button` writes the component's source into your project, resolves its
+- **Copy-in CLI.** `npx @properui/cli@latest add button` writes the component's source into your project, resolves its
   registry dependencies, rewrites `@/` imports to your alias and installs missing npm packages.
 
 ## Quick start
@@ -235,8 +235,8 @@ Interactive components are React Aria based: use `onPress` rather than `onClick`
 Prefer to own the source? Skip the dependency and use the CLI:
 
 ```bash
-npx properui@latest init
-npx properui@latest add button
+npx @properui/cli@latest init
+npx @properui/cli@latest add button
 ```
 
 `init` writes `components.json`, your theme file, the `cx` utility and the Tailwind `@source` line, and wires up

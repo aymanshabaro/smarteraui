@@ -4,8 +4,8 @@
 through `npx` — there is nothing to install:
 
 ```bash
-npx properui@latest init
-npx properui@latest add button
+npx @properui/cli@latest init
+npx @properui/cli@latest add button
 ```
 
 Or `pnpm dlx properui@latest …`, `yarn dlx properui@latest …`, `bunx properui@latest …`.
@@ -29,7 +29,7 @@ Every command accepts `--registry <source>`, `-y, --yes` and the global `--cwd <
 ## `init`
 
 ```bash
-npx properui@latest init
+npx @properui/cli@latest init
 ```
 
 Detects your framework (Next.js App Router, Next.js Pages Router, Vite, plain React), whether you use TypeScript, whether
@@ -82,8 +82,8 @@ source permanently.
 ## `add`
 
 ```bash
-npx properui@latest add button
-npx properui@latest add button input select table
+npx @properui/cli@latest add button
+npx @properui/cli@latest add button input select table
 ```
 
 For each component the CLI resolves its registry dependencies, copies every file to the target derived from your
@@ -103,13 +103,13 @@ a broken import.
 `--dry-run` before `--all` is a good habit:
 
 ```bash
-npx properui@latest add --all --dry-run
+npx @properui/cli@latest add --all --dry-run
 ```
 
 ### Page examples
 
 ```bash
-npx properui@latest add example about-page-01
+npx @properui/cli@latest add example about-page-01
 ```
 
 An example is a complete page — a dashboard, a settings screen, a marketing landing page — and its registry entry lists
@@ -119,16 +119,16 @@ never rewrites it unless you pass `--overwrite`.
 Not sure of a name? List them:
 
 ```bash
-npx properui@latest list --type example --layer marketing-examples
+npx @properui/cli@latest list --type example --layer marketing-examples
 ```
 
 ## `list`
 
 ```bash
-npx properui@latest list
-npx properui@latest list --layer base
-npx properui@latest list --type component
-npx properui@latest list --json
+npx @properui/cli@latest list
+npx @properui/cli@latest list --layer base
+npx @properui/cli@latest list --type component
+npx @properui/cli@latest list --json
 ```
 
 | Option        | Description                                                                                                                          |
@@ -142,8 +142,8 @@ npx properui@latest list --json
 Fuzzy match over component names, descriptions and example names:
 
 ```bash
-npx properui@latest search "pricing"
-npx properui@latest search "empty state" --limit 5
+npx @properui/cli@latest search "pricing"
+npx @properui/cli@latest search "empty state" --limit 5
 ```
 
 | Option        | Description                    |
@@ -156,8 +156,8 @@ Compare the files in your project against the registry version, so you can see w
 update:
 
 ```bash
-npx properui@latest diff              # every installed component
-npx properui@latest diff button       # just one
+npx @properui/cli@latest diff              # every installed component
+npx @properui/cli@latest diff button       # just one
 ```
 
 Requires `components.json`, so run `init` first.
@@ -167,8 +167,8 @@ Requires `components.json`, so run `init` first.
 Only needed for a **private** registry — the public one is anonymous, and `add` works without ever logging in.
 
 ```bash
-npx properui@latest login
-npx properui@latest login --token <token>
+npx @properui/cli@latest login
+npx @properui/cli@latest login --token <token>
 ```
 
 The token is stored at `~/.properui/auth.json` and reused by later commands on the same machine.
@@ -188,8 +188,8 @@ output directory:
 
 ```bash
 pnpm registry:build
-npx properui@latest add button --registry ./packages/registry/dist
-# or: REGISTRY_URL=./packages/registry/dist npx properui@latest add button
+npx @properui/cli@latest add button --registry ./packages/registry/dist
+# or: REGISTRY_URL=./packages/registry/dist npx @properui/cli@latest add button
 ```
 
 ## Troubleshooting

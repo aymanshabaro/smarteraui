@@ -13,9 +13,9 @@ Do not write a Proper UI component from memory. Fetch it.
 curl https://properui.dev/llms.txt          # index of every docs page, as plain markdown
 curl https://properui.dev/r/index.json      # every registry entry: name, layer, type, dependencies
 curl https://properui.dev/r/buttons.json    # one entry, including its real source
-npx properui@latest add buttons date-picker # write the files into the project
-npx properui@latest info --json             # this project's setup: framework, aliases, installed entries
-npx properui@latest agent init              # install the Proper UI Skill for Claude, Codex, Cursor and Lovable
+npx @properui/cli@latest add buttons date-picker # write the files into the project
+npx @properui/cli@latest info --json             # this project's setup: framework, aliases, installed entries
+npx @properui/cli@latest agent init              # install the Proper UI Skill for Claude, Codex, Cursor and Lovable
 ```
 
 `add` resolves `registryDependencies`, rewrites `@/` imports to the alias in `components.json` and installs missing npm

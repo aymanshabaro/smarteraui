@@ -13,7 +13,7 @@ Vite has no framework-specific router or server/client split to work around, whi
 Run this from the root of your Vite project:
 
 ```bash
-npx properui@latest init --vite
+npx @properui/cli@latest init --vite
 ```
 
 It detects your Tailwind version, `src/` layout, and package manager, then writes `components.json`, the theme token file, `utils/cx.ts`, adds the Tailwind imports and `@source` line to your CSS file, and wraps your app entry in `ThemeProvider`. It doesn't install npm packages, touch `vite.config.ts`, or add `RouterProvider` — set those up yourself as shown below.
@@ -146,7 +146,7 @@ export const ThemeToggleButton = () => {
     items={[
         {
             question: "How do I integrate Proper UI with a Vite project?",
-            answer: "Run npx properui@latest init --vite for a full setup, or install @tailwindcss/vite and @properui/ui yourself and import globals.css from your entry stylesheet. Tailwind v4's Vite plugin replaces the old PostCSS config entirely.",
+            answer: "Run npx @properui/cli@latest init --vite for a full setup, or install @tailwindcss/vite and @properui/ui yourself and import globals.css from your entry stylesheet. Tailwind v4's Vite plugin replaces the old PostCSS config entirely.",
         },
         {
             question: "How do I set up the @/ alias in Vite for cleaner imports?",

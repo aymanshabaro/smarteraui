@@ -90,5 +90,5 @@ export async function runDiff(component: string | undefined, options: DiffOption
         return;
     }
     log.warn(`${modified} file${modified === 1 ? "" : "s"} differ from the registry.`);
-    log.info(`Take the registry version with: npx properui add ${component ?? "<component>"} --overwrite`);
+    log.info(`Take the registry version with: npx @properui/cli add ${component ?? "<component>"} --overwrite`);
 }

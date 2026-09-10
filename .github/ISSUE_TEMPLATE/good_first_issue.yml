@@ -1,0 +1,72 @@
+name: Good first issue
+description: Publish one scoped, verifiable task for a newcomer (maintainers, or anyone seeding one from GOOD-FIRST-ISSUES.md)
+title: "[good first issue]: "
+labels: ["good first issue", "help wanted"]
+body:
+    - type: markdown
+      attributes:
+          value: |
+              Use this when opening a task meant for someone's first PR — including the ones seeded in
+              [`.github/GOOD-FIRST-ISSUES.md`](https://github.com/properui/properui/blob/main/.github/GOOD-FIRST-ISSUES.md).
+              The goal is that someone who has never seen this repo can read the issue and know exactly
+              what to change and how to check it worked, without asking a clarifying question first.
+
+    - type: input
+      id: source
+      attributes:
+          label: Source
+          description: If this comes from the seeded list, which entry? Otherwise, how did you find it?
+          placeholder: GOOD-FIRST-ISSUES.md #23 — icon-set foundations manifests
+      validations:
+          required: false
+
+    - type: textarea
+      id: context
+      attributes:
+          label: Context
+          description: 2-4 sentences. What exists today, what's missing, and why it matters. Link to the exact code you looked at.
+          placeholder: |
+              `packages/registry/manifest/foundations/` doesn't exist yet, so the `rating` entry in the
+              built registry has no `intent`/`avoid_when` fields — confirmed by grepping
+              packages/registry/dist/index.json. Every base and application entry already has one.
+      validations:
+          required: true
+
+    - type: textarea
+      id: files
+      attributes:
+          label: Exact file(s) to change
+          description: Paths, not descriptions. Say which are new and which are edits.
+          placeholder: |
+              New: packages/registry/manifest/foundations/rating.json
+      validations:
+          required: true
+
+    - type: textarea
+      id: verify
+      attributes:
+          label: How to verify
+          description: The exact command(s) a reviewer (or CI) can run to confirm this is done and correct.
+          placeholder: |
+              pnpm registry:build && grep -A5 '"name": "rating"' packages/registry/dist/index.json
+              pnpm exec prettier --check packages/registry/manifest/foundations/rating.json
+      validations:
+          required: true
+
+    - type: dropdown
+      id: size
+      attributes:
+          label: Estimated size
+          options:
+              - Small (under an hour — one file, one clear pattern to copy)
+              - Medium (a few hours — new files following an existing sibling as a template)
+              - Larger (a first PR, but expect a review round-trip)
+      validations:
+          required: true
+
+    - type: checkboxes
+      id: contribution
+      attributes:
+          label: Claiming this
+          options:
+              - label: I'd like to work on this — comment below before starting so it isn't duplicated.

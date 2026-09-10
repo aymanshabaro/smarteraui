@@ -14,7 +14,7 @@ export const THEME_CSS_PLACEHOLDER = `/*
  * The full token set could not be downloaded (the registry was unreachable), so this file
  * only carries enough tokens to keep Tailwind compiling. Replace it with the real theme:
  *
- *   npx properui add styles --overwrite
+ *   npx @properui/cli add styles --overwrite
  *
  * Spec: docs/theming.md
  */

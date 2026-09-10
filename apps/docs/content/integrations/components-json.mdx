@@ -8,11 +8,11 @@ metaDescription: Reference for every field in components.json — style, tsx, ta
 
 ## Overview
 
-`components.json` tells `npx properui@latest add` two things: where your Tailwind config and CSS files live, and which import alias each kind of file should use when it's copied into your project. The CLI only ever _reads_ this file — it never writes to it after `init` creates it.
+`components.json` tells `npx @properui/cli@latest add` two things: where your Tailwind config and CSS files live, and which import alias each kind of file should use when it's copied into your project. The CLI only ever _reads_ this file — it never writes to it after `init` creates it.
 
 ## Creating components.json
 
-`npx properui@latest init` writes one for you, detected from your `tsconfig.json` and project structure. To create it by hand instead, add it at your project root:
+`npx @properui/cli@latest init` writes one for you, detected from your `tsconfig.json` and project structure. To create it by hand instead, add it at your project root:
 
 ```json
 // components.json

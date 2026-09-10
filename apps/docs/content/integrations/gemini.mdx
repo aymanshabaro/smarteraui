@@ -10,7 +10,7 @@ Gemini CLI and Gemini-based coding agents can run shell commands the same way Cl
 
 ## Prerequisites
 
-- A project already scaffolded with `npx properui@latest init` — Gemini works best once `components.json` exists.
+- A project already scaffolded with `npx @properui/cli@latest init` — Gemini works best once `components.json` exists.
 - Gemini CLI installed and authenticated (`gemini` on your `PATH`), or a Gemini-based agent with shell access.
 - Optional: the `properui-mcp` server, covered below, for tool-based access instead of shelling out to `npx`.
 
@@ -19,7 +19,7 @@ Gemini CLI and Gemini-based coding agents can run shell commands the same way Cl
 ```text
 Build a settings page with a page header, a tabbed navigation between
 "General" and "Billing", and a form with labeled inputs. Use Proper UI
-components — check `npx properui@latest search` for anything you're
+components — check `npx @properui/cli@latest search` for anything you're
 not sure exists before writing custom markup.
 ```
 
@@ -35,9 +35,9 @@ Add a short section to your project's `GEMINI.md` so this convention holds acros
 This project uses Proper UI (`@properui/ui`). Before writing any new
 UI markup:
 
-1. Run `npx properui@latest search "<what you need>"` to check whether
+1. Run `npx @properui/cli@latest search "<what you need>"` to check whether
    a component or full-page example already covers it.
-2. Install matches with `npx properui@latest add <name>` rather than
+2. Install matches with `npx @properui/cli@latest add <name>` rather than
    hand-rolling the equivalent markup.
 3. Import installed components from `@/components/...` (or your
    project's configured alias in `components.json`) and follow their
@@ -70,7 +70,7 @@ The [MCP integration guide](/integrations/mcp) covers authentication options and
     items={[
         {
             question: "Does Gemini need the MCP server, or is the CLI enough?",
-            answer: "The CLI is enough on its own — Gemini's shell tool can run npx properui@latest search and add directly. The MCP server just avoids spawning a fresh process for every lookup.",
+            answer: "The CLI is enough on its own — Gemini's shell tool can run npx @properui/cli@latest search and add directly. The MCP server just avoids spawning a fresh process for every lookup.",
         },
         {
             question: "Is the setup different from the Claude Code integration?",

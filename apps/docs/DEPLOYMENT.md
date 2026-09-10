@@ -119,7 +119,7 @@ Sanity checks after the first deploy:
 curl -sI  https://properui.dev/                  # 200
 curl -s   https://properui.dev/robots.txt        # sitemap points at properui.dev
 curl -s   https://properui.dev/r/index.json | head
-npx properui@latest list                         # CLI resolves the public registry
+npx @properui/cli@latest list                         # CLI resolves the public registry
 ```
 
 ## 5. Rolling back

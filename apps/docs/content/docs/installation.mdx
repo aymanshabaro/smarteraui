@@ -13,13 +13,13 @@ The CLI detects your project and scaffolds the right files. Pick the framework y
 ### Next.js
 
 ```bash
-npx properui@latest init --nextjs
+npx @properui/cli@latest init --nextjs
 ```
 
 ### Vite
 
 ```bash
-npx properui@latest init --vite
+npx @properui/cli@latest init --vite
 ```
 
 ### Bolt, v0, Lovable, Claude
@@ -27,7 +27,7 @@ npx properui@latest init --vite
 AI builders that can run shell commands can use the same CLI. Run the framework flag that matches the generated project (`--nextjs` or `--vite`), or leave it off and let `init` auto-detect from the project files:
 
 ```bash
-npx properui@latest init --nextjs
+npx @properui/cli@latest init --nextjs
 ```
 
 ### Manual
@@ -42,13 +42,13 @@ resolve `@/...` imports and has no built-in tsconfig-paths support. For every ot
 writing one — if none is declared, it warns you and tells you what to add. Once your project is initialized, add components one at a time:
 
 ```bash
-npx properui@latest add badges
+npx @properui/cli@latest add badges
 ```
 
 Add as many components as you need — each command copies that component's source (and its dependencies) straight into your project:
 
 ```bash
-npx properui@latest add button-group avatar table
+npx @properui/cli@latest add button-group avatar table
 ```
 
 ## Manual installation
@@ -124,7 +124,7 @@ With the setup files in place, copy any component's source directly from its pag
         },
         {
             question: "Do I need to install all components?",
-            answer: "No — install only what you need. You do need the core setup files (theme.css and globals.css) regardless. Add components individually with npx properui@latest add [component-name], or copy the source for a single component manually.",
+            answer: "No — install only what you need. You do need the core setup files (theme.css and globals.css) regardless. Add components individually with npx @properui/cli@latest add [component-name], or copy the source for a single component manually.",
         },
         {
             question: "Can I use Proper UI with other UI libraries?",
@@ -136,7 +136,7 @@ With the setup files in place, copy any component's source directly from its pag
         },
         {
             question: "How do I update components after installing them?",
-            answer: "If you installed with the CLI, re-run the add command with --overwrite: npx properui@latest add badges --overwrite. If you copied a component manually, update its code by hand.",
+            answer: "If you installed with the CLI, re-run the add command with --overwrite: npx @properui/cli@latest add badges --overwrite. If you copied a component manually, update its code by hand.",
         },
         {
             question: "Are there any dependencies I need to install myself?",

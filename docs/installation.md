@@ -3,7 +3,7 @@
 Proper UI can be consumed two ways. Both are supported; pick whichever suits the project.
 
 1. **As a package.** `pnpm add @properui/ui` and import components from their subpaths. Upgrades are a version bump.
-2. **As copied-in source.** `npx properui@latest add <component>` writes the component's `.tsx` into your repo. You own
+2. **As copied-in source.** `npx @properui/cli@latest add <component>` writes the component's `.tsx` into your repo. You own
    the code from that point; there is nothing to upgrade unless you ask for it.
 
 Either way the styling setup is the same, because the package ships its stylesheet and token file as source.
@@ -64,7 +64,7 @@ keeps bundles smallest.
 The CLI copies source into your project instead of adding a dependency.
 
 ```bash
-npx properui@latest init
+npx @properui/cli@latest init
 ```
 
 `init` detects your framework, TypeScript setup, `src/` directory, path alias, Tailwind version and package manager,
@@ -75,8 +75,8 @@ your entry point, and `-y` to accept every default.
 Then add components one at a time:
 
 ```bash
-npx properui@latest add button
-npx properui@latest add button input select table
+npx @properui/cli@latest add button
+npx @properui/cli@latest add button input select table
 ```
 
 Dependencies are resolved for you — `add badge-groups` also pulls in `badges` and `dot-icon`, because those are its

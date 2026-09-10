@@ -12,7 +12,7 @@ pnpm add -D @tailwindcss/vite
 Or let the CLI do it:
 
 ```bash
-npx properui@latest init --vite
+npx @properui/cli@latest init --vite
 ```
 
 ## 1. Register the Tailwind plugin

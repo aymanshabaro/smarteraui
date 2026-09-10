@@ -1,5 +1,5 @@
 {
-    "name": "properui",
+    "name": "@properui/cli",
     "version": "0.1.0",
     "description": "CLI that copies Proper UI components into your React or Next.js project, shadcn-style.",
     "keywords": [

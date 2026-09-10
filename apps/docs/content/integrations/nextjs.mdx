@@ -13,7 +13,7 @@ Proper UI ships as a regular npm workspace package, so a Next.js app consumes it
 The fastest path is the CLI. Run it from the root of your Next.js project:
 
 ```bash
-npx properui@latest init --nextjs
+npx @properui/cli@latest init --nextjs
 ```
 
 It detects App Router vs Pages Router and whether you use a `src/` directory automatically — `--nextjs` only overrides framework detection, it doesn't scaffold a new project. The CLI writes `app/globals.css` (or `styles/globals.css` for a Pages Router project), adds the Tailwind `@source` line so the package's classes get scanned, sets `transpilePackages` in `next.config.ts`, and wires up `ThemeProvider` in your root layout — it does not add `RouterProvider` for you, since that depends on which router you're using (see below). You're ready to add components once it's done.
@@ -170,7 +170,7 @@ export const ThemeToggleButton = () => {
     items={[
         {
             question: "How do I integrate Proper UI with a Next.js project?",
-            answer: "Run npx properui@latest init --nextjs for a complete setup, or install @properui/ui yourself and import its globals.css from your own stylesheet. Tailwind v4 needs no config file — everything is imported directly in CSS.",
+            answer: "Run npx @properui/cli@latest init --nextjs for a complete setup, or install @properui/ui yourself and import its globals.css from your own stylesheet. Tailwind v4 needs no config file — everything is imported directly in CSS.",
         },
         {
             question: "Does Proper UI support both App Router and Pages Router?",

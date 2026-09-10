@@ -31,7 +31,7 @@ The metrics are defined precisely in [`rubric.md`](./rubric.md): compile success
 Read [`scripts/run.md`](./scripts/run.md) for the full protocol. In short:
 
 1. Scaffold a fresh app (Next.js 15 + Tailwind v4 — see `baseline/README.md` for the exact versions to pin).
-2. Install either Proper UI (`npx properui@latest init`) or the shadcn/ui baseline, per `baseline/README.md`.
+2. Install either Proper UI (`npx @properui/cli@latest init`) or the shadcn/ui baseline, per `baseline/README.md`.
 3. Paste one task prompt from `tasks/` into your agent verbatim. Do not edit it, do not add hints the other condition didn't get.
 4. Save the full transcript (prompts, tool calls, and diffs) alongside your run.
 5. Build the app. Record whether it compiled without manual edits.

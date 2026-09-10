@@ -28,3 +28,23 @@ jobs:
               with: { node-version: 20, cache: pnpm }
             - run: pnpm install --frozen-lockfile
             - run: pnpm test:clean-room
+    # Compares a curated ~25-route sample of the docs site (tests/visual/routes.ts) against the
+    # committed baseline (tests/visual/baseline/). Needs the docs site built and served on
+    # localhost:3000 first — scripts/visual-check.ts talks to it over HTTP like scripts/shot.ts does.
+    visual:
+        runs-on: ubuntu-latest
+        timeout-minutes: 20
+        steps:
+            - uses: actions/checkout@v4
+            - uses: pnpm/action-setup@v4
+            - uses: actions/setup-node@v4
+              with: { node-version: 20, cache: pnpm }
+            - run: pnpm install --frozen-lockfile
+            - run: pnpm exec playwright install --with-deps chromium
+            - run: pnpm -F docs build
+            - run: pnpm -F docs start &
+            - run: npx wait-on@8 http://localhost:3000 --timeout 60000
+            - run: pnpm visual:check
+            - if: failure()
+              uses: actions/upload-artifact@v4
+              with: { name: visual-diff, path: tests/visual/.diff/ }

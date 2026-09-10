@@ -42,7 +42,7 @@ const features = [
     {
         title: "The agent edits files you own",
         subtitle:
-            "npx properui@latest add <component> writes plain .tsx into your project. There is no opaque wrapper between the generated code and the thing on screen, so a review is just reading a diff.",
+            "npx @properui/cli@latest add <component> writes plain .tsx into your project. There is no opaque wrapper between the generated code and the thing on screen, so a review is just reading a diff.",
         icon: Terminal,
         cta: "CLI reference",
         href: "/docs/cli",

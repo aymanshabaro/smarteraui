@@ -34,7 +34,7 @@ const TAILWIND_V3_MESSAGE = [
     "  1. npx @tailwindcss/upgrade@latest",
     "  2. Replace tailwind.config.js content with the v4 CSS-first setup:",
     '       @import "tailwindcss";',
-    "  3. Re-run: npx properui init",
+    "  3. Re-run: npx @properui/cli init",
     "",
     "Upgrade guide: https://tailwindcss.com/docs/upgrade-guide",
 ].join("\n");
@@ -411,7 +411,7 @@ export async function runInit(options: InitOptions): Promise<void> {
         return;
     }
 
-    log.success("Project configured. Next: npx properui add button badges");
+    log.success("Project configured. Next: npx @properui/cli add button badges");
 }
 
 function statusLabel(status: WriteResult["status"]): string {

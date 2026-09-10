@@ -25,7 +25,7 @@ const code = [
     `curl ${REGISTRY_URL}/buttons.json`,
     "",
     "# 3. write the files into the project",
-    "npx properui@latest add buttons date-picker",
+    "npx @properui/cli@latest add buttons date-picker",
 ].join("\n");
 
 const bullets = [

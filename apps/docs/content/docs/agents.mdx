@@ -13,16 +13,16 @@ Proper UI ships one authored Skill — [`skills/properui/SKILL.md`](https://gith
 Installs the Skill for one or more AI coding tools. Run it once per project, per tool:
 
 ```bash
-npx properui@latest agent init --client claude
-npx properui@latest agent init --client codex
-npx properui@latest agent init --client cursor
-npx properui@latest agent init --client lovable
+npx @properui/cli@latest agent init --client claude
+npx @properui/cli@latest agent init --client codex
+npx @properui/cli@latest agent init --client cursor
+npx @properui/cli@latest agent init --client lovable
 ```
 
 Or install for everything at once — this is also the default when `--client` is omitted:
 
 ```bash
-npx properui@latest agent init --client all
+npx @properui/cli@latest agent init --client all
 ```
 
 ### What each client gets
@@ -50,7 +50,7 @@ npx properui@latest agent init --client all
 Reports everything an agent needs before touching UI code: detected framework, TypeScript, Tailwind version, package manager, the `components.json` aliases and theme CSS path (when the project has been through `init`), which registry entries are already installed, and the installed versions of `@properui/ui` and the `properui` CLI itself.
 
 ```bash
-npx properui@latest info --json
+npx @properui/cli@latest info --json
 ```
 
 ```json

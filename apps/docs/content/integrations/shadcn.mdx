@@ -6,7 +6,7 @@ metaTitle: shadcn CLI integration | Proper UI
 metaDescription: Add Proper UI components with npx shadcn@latest add @properui/<name>. Namespace setup for components.json, the registry.json shadcn's MCP server reads, and known limits.
 ---
 
-Every Proper UI entry is also published in [shadcn's registry format](https://ui.shadcn.com/docs/registry) under a `@properui` namespace, alongside our own [CLI](/docs/cli) and [`/r` registry](/integrations/components-json). Once the namespace is configured, `npx shadcn@latest add @properui/<name>` copies source into your project exactly like `npx properui@latest add <name>` does — same files, same dependency resolution — through a tool you may already have wired into your project or editor. It also means shadcn's own [MCP server](https://ui.shadcn.com/docs/registry/mcp) and Skill can discover and install Proper UI components without any extra setup on your end.
+Every Proper UI entry is also published in [shadcn's registry format](https://ui.shadcn.com/docs/registry) under a `@properui` namespace, alongside our own [CLI](/docs/cli) and [`/r` registry](/integrations/components-json). Once the namespace is configured, `npx shadcn@latest add @properui/<name>` copies source into your project exactly like `npx @properui/cli@latest add <name>` does — same files, same dependency resolution — through a tool you may already have wired into your project or editor. It also means shadcn's own [MCP server](https://ui.shadcn.com/docs/registry/mcp) and Skill can discover and install Proper UI components without any extra setup on your end.
 
 ## Configure the namespace
 
@@ -41,7 +41,7 @@ resolves to `https://properui.dev/r/shadcn/buttons.json`, installs `react-aria-c
 | `util`             | `registry:lib`   | `cx`, `countries`               |
 | `style`            | `registry:style` | `styles` (theme tokens + CSS)   |
 
-Internal references translate too: a native `registryDependencies` entry like `"tooltip"` becomes `"@properui/tooltip"`, so the CLI resolves transitive dependencies inside the `@properui` namespace automatically — installing `about-page-01` pulls in every section it's built from (headers, footers, careers cards, and so on) the same way `npx properui@latest add about-page-01` would.
+Internal references translate too: a native `registryDependencies` entry like `"tooltip"` becomes `"@properui/tooltip"`, so the CLI resolves transitive dependencies inside the `@properui` namespace automatically — installing `about-page-01` pulls in every section it's built from (headers, footers, careers cards, and so on) the same way `npx @properui/cli@latest add about-page-01` would.
 
 ## The `@properui/icons` dependency
 
@@ -59,7 +59,7 @@ which is exactly what you'd get running `npm install` or `pnpm add` with that sp
 
 ## Limits
 
-- **Styles have no good target.** shadcn's `target` placeholders cover `@components/`, `@ui/`, `@lib/`, and `@hooks/` — there's no equivalent for global CSS. The `styles` item (`registry:style`, theme tokens + `globals.css` + `typography.css`) installs, but without an explicit target it falls back to your `components` alias directory (e.g. `src/components/globals.css`), which is almost never where you want theme CSS. Use `npx properui@latest init` for the initial theme setup instead, and reach for `npx shadcn@latest add @properui/styles` only if you're comfortable moving the files afterward.
+- **Styles have no good target.** shadcn's `target` placeholders cover `@components/`, `@ui/`, `@lib/`, and `@hooks/` — there's no equivalent for global CSS. The `styles` item (`registry:style`, theme tokens + `globals.css` + `typography.css`) installs, but without an explicit target it falls back to your `components` alias directory (e.g. `src/components/globals.css`), which is almost never where you want theme CSS. Use `npx @properui/cli@latest init` for the initial theme setup instead, and reach for `npx shadcn@latest add @properui/styles` only if you're comfortable moving the files afterward.
 - **`type: "registry:style"` here isn't a shadcn base style.** shadcn's own `registry:style` items (like `new-york`) are style _presets_ — they can extend `cssVars`/`css`/`tailwind` config directly. Proper UI's `styles` entry is a files-only translation of our native `style` type; it doesn't participate in shadcn's style-extension mechanism.
 - **`registry.json` is a catalog, not a payload.** Item summaries there omit `files` (no inline source) by design, matching how shadcn's own root `registry.json` is structured and what its MCP server expects to read for discovery. Fetch the individual `@properui/<name>.json` item for file content.
 - **The native registry is still the source of truth.** Fields like `layer`, `examples` (the demo-preview ids used on component docs pages), and per-file granularity beyond shadcn's five `registry:*` types don't have a shadcn equivalent and are dropped, aside from `layer` surviving as `meta.layer` for reference. If you're scripting against Proper UI rather than using shadcn's CLI, prefer `/r/<name>.json` (see [components.json](/integrations/components-json)) — it's the format our own CLI and docs site are built on.

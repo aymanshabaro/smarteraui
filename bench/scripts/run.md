@@ -8,7 +8,7 @@ Run this once per **(task, library condition, tool)** triple — e.g. Task 01, P
 
 Scaffold a new project. Never reuse a project from a previous run — leftover files, installed dependencies, or agent memory from an earlier task will contaminate the result.
 
-- **Proper UI condition:** follow the quickstart in the docs (`npx create-next-app@latest`, matching versions in `../baseline/README.md`, then `npx properui@latest init`).
+- **Proper UI condition:** follow the quickstart in the docs (`npx create-next-app@latest`, matching versions in `../baseline/README.md`, then `npx @properui/cli@latest init`).
 - **shadcn/ui condition:** follow `../baseline/README.md` exactly.
 
 Confirm the app runs (`pnpm dev`) and builds (`pnpm build`) empty, before the agent touches it. If the empty scaffold doesn't build, fix that first — a build failure caused by scaffolding, not by the agent, would corrupt the compile-success metric.
@@ -17,7 +17,7 @@ Confirm the app runs (`pnpm dev`) and builds (`pnpm build`) empty, before the ag
 
 Give the agent whatever setup step the library documents for that tool, and nothing more:
 
-- **Proper UI:** `npx properui@latest agent init --client claude` (or `--client codex`), which writes the Skill file and its pointer (`CLAUDE.md` or `AGENTS.md`) into the project.
+- **Proper UI:** `npx @properui/cli@latest agent init --client claude` (or `--client codex`), which writes the Skill file and its pointer (`CLAUDE.md` or `AGENTS.md`) into the project.
 - **shadcn/ui:** whatever `npx shadcn@latest init` itself sets up. No hand-authored `CLAUDE.md`/`AGENTS.md` beyond that.
 
 Start a fresh agent session/conversation in the project directory. Do not carry over context from a previous task's session.

@@ -49,5 +49,5 @@ export async function runList(options: ListOptions): Promise<void> {
         log.plain(`  ${kleur.bold(entry.name.padEnd(width))}  ${kleur.dim(entry.layer.padEnd(18))}  ${truncate(entry.description, 72)}`);
     }
     log.plain();
-    log.info("Add one with: npx properui add <name>");
+    log.info("Add one with: npx @properui/cli add <name>");
 }

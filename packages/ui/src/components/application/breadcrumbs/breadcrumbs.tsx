@@ -66,8 +66,12 @@ const dividerIcons = {
 /** The visual treatment shared by every item of a breadcrumb trail. */
 export type BreadcrumbsType = keyof typeof styles.types;
 
-/** The icon rendered between two breadcrumb items. */
-export type BreadcrumbsDivider = keyof typeof dividerIcons;
+/**
+ * The icon rendered between two breadcrumb items. Spelled out as a literal union (instead of
+ * `keyof typeof dividerIcons`) so declaration emit doesn't need to name each icon component's
+ * own unexported `Props` type (TS4023) — keep this in sync with `dividerIcons`'s keys.
+ */
+export type BreadcrumbsDivider = "chevron" | "slash";
 
 /** A single entry of a breadcrumb dropdown menu. */
 export interface BreadcrumbsMenuItem {

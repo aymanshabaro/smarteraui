@@ -13,8 +13,8 @@ long-term support branches yet.
 | `properui` CLI | < 0.1   | :x:                |
 
 If you copied components into your project with the CLI, you own that code — a fix released here does not reach you
-automatically. Re-run `npx properui@latest add <component> --overwrite` to pull it in, and use
-`npx properui@latest diff` first to see what you would overwrite.
+automatically. Re-run `npx @properui/cli@latest add <component> --overwrite` to pull it in, and use
+`npx @properui/cli@latest diff` first to see what you would overwrite.
 
 Once 1.0 ships, this table will move to supporting the current major and the previous one.
 

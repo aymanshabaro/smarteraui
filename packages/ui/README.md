@@ -27,8 +27,8 @@ Peer dependencies: `react` ^19, `react-dom` ^19, `tailwindcss` ^4.3. `next` ^15.
 Prefer to own the code instead of depending on the package? The CLI copies components straight into your project, shadcn-style:
 
 ```bash
-npx properui@latest init
-npx properui@latest add button input select
+npx @properui/cli@latest init
+npx @properui/cli@latest add button input select
 ```
 
 ## Setup — Next.js (App Router)

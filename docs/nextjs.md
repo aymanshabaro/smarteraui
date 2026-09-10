@@ -12,7 +12,7 @@ pnpm add @properui/ui
 Or let the CLI do the wiring:
 
 ```bash
-npx properui@latest init --nextjs
+npx @properui/cli@latest init --nextjs
 ```
 
 ## 1. Stylesheet

@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
-import type { CSSProperties, HTMLAttributes, ReactNode } from "react";
+import type { CSSProperties, FC, HTMLAttributes, ReactNode } from "react";
 import { cx } from "@/utils/cx";
 import {
     defaultFontFamily,
@@ -278,10 +278,41 @@ const TextEditorHint = ({ className, children }: TextEditorHintProps) => {
 };
 
 /**
+ * Mirrors `ToolbarItemProps` from `./text-editor-toolbar` (intentionally not exported there — it
+ * is that module's own private prop shape). Duplicated here only so the assembled `TextEditor.*`
+ * members below have a type declaration emit can name (TS4023 otherwise); it carries no runtime
+ * behavior of its own.
+ */
+interface ToolbarButtonProps {
+    className?: string;
+    isDisabled?: boolean;
+}
+
+/**
  * A dependency-free rich text editor built on a `contenteditable` region and
  * React Aria toolbar primitives.
  */
-export const TextEditor = Object.assign(TextEditorRoot, {
+export const TextEditor: typeof TextEditorRoot & {
+    Toolbar: typeof TextEditorToolbar;
+    SelectionToolbar: typeof TextEditorSelectionToolbar;
+    Group: typeof TextEditorGroup;
+    Separator: typeof TextEditorSeparator;
+    Content: typeof TextEditorContent;
+    Hint: typeof TextEditorHint;
+    Bold: FC<ToolbarButtonProps>;
+    Italic: FC<ToolbarButtonProps>;
+    Underline: FC<ToolbarButtonProps>;
+    TextColor: FC<ToolbarButtonProps>;
+    AlignLeft: FC<ToolbarButtonProps>;
+    AlignCenter: FC<ToolbarButtonProps>;
+    AlignRight: FC<ToolbarButtonProps>;
+    BulletList: FC<ToolbarButtonProps>;
+    Link: FC<ToolbarButtonProps>;
+    Image: typeof TextEditorImage;
+    Generate: typeof TextEditorGenerate;
+    FontFamily: FC<ToolbarButtonProps>;
+    FontSize: FC<ToolbarButtonProps>;
+} = Object.assign(TextEditorRoot, {
     Toolbar: TextEditorToolbar,
     SelectionToolbar: TextEditorSelectionToolbar,
     Group: TextEditorGroup,

@@ -12,3 +12,6 @@ contact_links:
     - name: Contributing guide
       url: https://github.com/properui/properui/blob/main/CONTRIBUTING.md
       about: Repo setup, component conventions, and how to get a PR merged.
+    - name: Looking for a first task?
+      url: https://github.com/properui/properui/blob/main/.github/GOOD-FIRST-ISSUES.md
+      about: A seeded list of scoped, verifiable tasks — missing manifests, missing test coverage, small docs fixes.

@@ -9,8 +9,8 @@ It copies component **source** into your project (shadcn-style) instead of addin
 No install needed:
 
 ```bash
-npx properui@latest init
-npx properui@latest add button
+npx @properui/cli@latest init
+npx @properui/cli@latest add button
 ```
 
 Or add it to the project: `pnpm add -D properui`.
@@ -24,12 +24,12 @@ Global flags: `--cwd <dir>` runs against another directory; every command accept
 Configures the current project: detects the framework, TypeScript vs JavaScript, a `src/` folder, the import alias from `tsconfig.json` paths, the Tailwind version and the package manager — then writes `components.json`, `styles/theme.css`, the `cx` utility, the Tailwind `@source` scan line and a `ThemeProvider` in the app entry point.
 
 ```bash
-npx properui@latest init              # auto-detect everything
-npx properui@latest init --nextjs     # force the Next.js layout
-npx properui@latest init --vite       # force the Vite layout
-npx properui@latest init --manual     # write the files, leave the entry point alone
-npx properui@latest init --overwrite  # replace components.json and existing files
-npx properui@latest init --yes        # non-interactive (CI)
+npx @properui/cli@latest init              # auto-detect everything
+npx @properui/cli@latest init --nextjs     # force the Next.js layout
+npx @properui/cli@latest init --vite       # force the Vite layout
+npx @properui/cli@latest init --manual     # write the files, leave the entry point alone
+npx @properui/cli@latest init --overwrite  # replace components.json and existing files
+npx @properui/cli@latest init --yes        # non-interactive (CI)
 ```
 
 `components.json` — read by every other command:
@@ -50,12 +50,12 @@ npx properui@latest init --yes        # non-interactive (CI)
 Resolves each component plus its registry dependencies recursively, copies the files to the targets from `components.json`, rewrites `@/` imports to your alias, installs any missing npm packages and prints exactly what changed. Running it twice without `--overwrite` reports no changes.
 
 ```bash
-npx properui add button                     # one component
-npx properui add button input select table  # several at once
-npx properui add table --overwrite          # replace files that already exist
-npx properui add table --dry-run            # print the plan, write nothing
-npx properui add badges --path src/ui       # ignore the alias, write here
-npx properui add --all                      # every component in the registry
+npx @properui/cli add button                     # one component
+npx @properui/cli add button input select table  # several at once
+npx @properui/cli add table --overwrite          # replace files that already exist
+npx @properui/cli add table --dry-run            # print the plan, write nothing
+npx @properui/cli add badges --path src/ui       # ignore the alias, write here
+npx @properui/cli add --all                      # every component in the registry
 ```
 
 Unknown names are matched fuzzily, so a typo comes back as a suggestion rather than a stack trace.
@@ -65,8 +65,8 @@ Unknown names are matched fuzzily, so a typo comes back as a suggestion rather t
 Adds a whole page example — a dashboard, a settings page, a login screen, a pricing section — together with every component it uses.
 
 ```bash
-npx properui add example settings-01
-npx properui add example hero-split-image-01
+npx @properui/cli add example settings-01
+npx @properui/cli add example hero-split-image-01
 ```
 
 ## `list`
@@ -74,10 +74,10 @@ npx properui add example hero-split-image-01
 Lists what the registry holds, with layer and description.
 
 ```bash
-npx properui list
-npx properui list --layer base          # base · application · marketing · …
-npx properui list --type example        # component · example · util · hook · style
-npx properui list --json                # raw index rows, for scripts
+npx @properui/cli list
+npx @properui/cli list --layer base          # base · application · marketing · …
+npx @properui/cli list --type example        # component · example · util · hook · style
+npx @properui/cli list --json                # raw index rows, for scripts
 ```
 
 ## `search`
@@ -85,8 +85,8 @@ npx properui list --json                # raw index rows, for scripts
 Fuzzy search over component names, descriptions and example names.
 
 ```bash
-npx properui search "date"
-npx properui search "empty state" --limit 5
+npx @properui/cli search "date"
+npx @properui/cli search "empty state" --limit 5
 ```
 
 ## `diff`
@@ -94,8 +94,8 @@ npx properui search "empty state" --limit 5
 Shows how the files in your project differ from the registry version — the upgrade path once you have edited copied-in code.
 
 ```bash
-npx properui diff            # everything already installed
-npx properui diff button     # just this component
+npx @properui/cli diff            # everything already installed
+npx @properui/cli diff button     # just this component
 ```
 
 ## `login`
@@ -103,8 +103,8 @@ npx properui diff button     # just this component
 Only needed for a private registry; the public one is anonymous. Stores the token at `~/.properui/auth.json`.
 
 ```bash
-npx properui login
-npx properui login --token <token>   # non-interactive
+npx @properui/cli login
+npx @properui/cli login --token <token>   # non-interactive
 ```
 
 ## License

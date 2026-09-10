@@ -145,7 +145,7 @@ function printHuman(snapshot: ProjectSnapshot): void {
     log.plain();
 
     if (!snapshot.config.present) {
-        log.warn(`No ${snapshot.config.file} found. Run \`npx properui@latest init\` before installing components.`);
+        log.warn(`No ${snapshot.config.file} found. Run \`npx @properui/cli@latest init\` before installing components.`);
         return;
     }
 

@@ -78,17 +78,17 @@ Every one of the **118** component test suites in `packages/ui/src/components` r
 
 ## Visual quality
 
-Screenshot tooling exists (`scripts/shot.ts`, run as `pnpm docs:shot <slug>` or `pnpm docs:shot --all`) and pixel-diffing against a reference set exists (`scripts/diff-shots.ts`, run as `pnpm docs:diff`), but **no baseline screenshot set is committed to the repository, and no CI job runs the comparison** — visual regressions are not caught automatically today.
+Screenshot tooling exists (`scripts/shot.ts`, run as `pnpm docs:shot <slug>` or `pnpm docs:shot --all`) and pixel-diffing against a reference set exists (`scripts/diff-shots.ts`, run as `pnpm docs:diff`) for one-off parity checks against a local run of the docs site.
 
-The viewport matrix `docs:shot` proposes to capture, once a baseline is committed, is what the script already renders:
+Alongside those, a curated visual regression baseline is committed and checked on every PR: `pnpm visual:baseline` (`scripts/visual-baseline.ts`) captures ~25 routes spanning docs, integrations, base components, application examples and marketing pages — not the full ~1,720-page surface — into `tests/visual/baseline/`, and `pnpm visual:check` (`scripts/visual-check.ts`) re-captures and diffs against it, exiting non-zero past the threshold. The `visual` job in `.github/workflows/ci.yml` runs the check against a built, served docs site on every PR. See [`tests/visual/routes.ts`](https://github.com/properui/properui/blob/main/tests/visual/routes.ts) for the exact route list.
 
-| Dimension | Values                                                                      |
-| --------- | --------------------------------------------------------------------------- |
-| Viewport  | 1600×1000 (the only size `scripts/shot.ts` currently renders)               |
-| Theme     | Light, dark (toggled via the `dark-mode` class)                             |
-| Direction | LTR only — no RTL snapshot yet; see [Known limitations](#known-limitations) |
+| Dimension | Values                                                                                                                                                                                        |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Viewport  | 1280×800 desktop and 390×844 mobile (`tests/visual/routes.ts`) — separate from `scripts/shot.ts`'s own 1600×1000                                                                              |
+| Theme     | Light, dark (toggled via the `dark-mode` class)                                                                                                                                               |
+| Direction | LTR everywhere, plus `dir="rtl"` on a handful of routes (a form-heavy page, a dashboard, a marketing hero) — see [Known limitations](#known-limitations) for the scope of RTL coverage itself |
 
-`scripts/diff-shots.ts` treats anything above roughly 8% differing pixels, or a size mismatch, as a layout regression worth flagging (`CHECK` in its report); smaller deltas are expected content differences (copy, photos, brand hue) and marked `ok`. Until a baseline is committed under `docs/spec/reference/screenshots`, this comparison has nothing to run against — no visual regression, in any theme or viewport, is currently caught by CI.
+`scripts/visual-check.ts` treats anything above roughly 8% differing pixels, or a size mismatch, as a layout regression (`CHECK` in its output, with a diff image written to the gitignored `tests/visual/.diff/`); smaller deltas are expected content differences and marked `ok`. `scripts/diff-shots.ts` uses the same ~8% cutoff for its own ad hoc, full-site comparisons, which still have no committed baseline under `docs/spec/reference/screenshots`.
 
 ## Agent compatibility
 

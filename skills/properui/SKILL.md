@@ -16,14 +16,14 @@ comes up.
 Before adding or writing anything, run:
 
 ```bash
-npx properui@latest info --json
+npx @properui/cli@latest info --json
 ```
 
 This reports whether the project is already set up (framework, Tailwind version, `components.json`
 aliases, theme CSS path, which registry entries are already installed, and the installed
 `@properui/ui` / `properui` versions). Read it before deciding anything else:
 
-- No `components.json` → run `npx properui@latest init -y` first. Do not hand-write
+- No `components.json` → run `npx @properui/cli@latest init -y` first. Do not hand-write
   `components.json`, `utils/cx.ts`, the theme token file, or the `ThemeProvider` wiring — `init`
   generates all of it correctly for the detected framework.
 - `components.json` exists → note the `aliases.components` value (often `@/components`, sometimes a
@@ -37,9 +37,9 @@ Never write a component's markup from memory or invent your own version of somet
 already has. Check first:
 
 ```bash
-npx properui@latest search "<what you need>"     # fuzzy match over names, titles, examples
-npx properui@latest list --layer base             # browse by layer: base, application, marketing
-npx properui@latest list --type example            # full-page examples specifically
+npx @properui/cli@latest search "<what you need>"     # fuzzy match over names, titles, examples
+npx @properui/cli@latest list --layer base             # browse by layer: base, application, marketing
+npx @properui/cli@latest list --type example            # full-page examples specifically
 ```
 
 Only write custom markup when the search genuinely comes up empty. If it does, still build the
@@ -57,8 +57,8 @@ one-off styling.
   example.
 
 ```bash
-npx properui@latest add example settings-01
-npx properui@latest add button input select
+npx @properui/cli@latest add example settings-01
+npx @properui/cli@latest add button input select
 ```
 
 `add` resolves `registryDependencies` recursively (installing a component's own component
@@ -68,7 +68,7 @@ of the same name is a no-op unless you pass `--overwrite`; never pass `--overwri
 a human has since edited without checking `diff` first:
 
 ```bash
-npx properui@latest diff <name>     # see local modifications before overwriting
+npx @properui/cli@latest diff <name>     # see local modifications before overwriting
 ```
 
 ## 4. Never mix component systems

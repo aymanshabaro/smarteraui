@@ -12,7 +12,7 @@ Each item links to where it would live. Issues and pull requests are welcome —
 ### MCP server
 
 An MCP server would let an AI coding assistant query the registry directly instead of shelling out
-to `npx properui` for every lookup: `search_components`, `get_component`, `list_components`,
+to `npx @properui/cli` for every lookup: `search_components`, `get_component`, `list_components`,
 `add_component`.
 
 Today the CLI is the supported path and covers the same ground — any assistant that can run shell
@@ -26,28 +26,23 @@ commands can drive it. The pieces an MCP server would build on already exist in
 `components.json`, installs the token stylesheet and wires the theme provider. It does not scaffold
 a new project from a template. Use `create-next-app` or `create-vite` first, then run `init`.
 
-### A bundled build for non-bundling consumers
-
-The package ships **source TSX**, which is why Next.js consumers add `transpilePackages` and Vite
-consumers get it through their own pipeline. This keeps tree-shaking and Tailwind class detection
-simple, and it is what comparable Tailwind component libraries do.
-
-An optional `tsup` ESM build would help consumers whose bundler will not transpile a dependency.
-`packages/ui` currently has no `build` script.
-
 ### Full RTL coverage
 
 Every component in `packages/ui/src/components` now uses logical properties — zero physical
-directional utilities remain. What is still missing is _verification_: no RTL snapshot exists, and
-[`.storybook/preview.tsx`](./.storybook/preview.tsx) registers only the light/dark theme switcher,
-so there is no direction toggle to eyeball a component in.
+directional utilities remain. [`.storybook/preview.tsx`](./.storybook/preview.tsx) now registers a
+direction (LTR/RTL) toolbar toggle alongside the light/dark theme switcher, and the committed visual
+baseline (below) includes `dir="rtl"` captures of a form-heavy page, a dashboard and a marketing
+hero, so a physical-property regression is caught the same way a layout regression is.
 
 ### Visual regression testing
 
-`pnpm docs:shot` and `pnpm docs:diff` exist and work against a local run of the docs site, but there
-is no committed screenshot baseline and no CI job comparing against one, so visual changes are not
-caught automatically. The tooling is in [`scripts/shot.ts`](./scripts/shot.ts) and
-[`scripts/diff-shots.ts`](./scripts/diff-shots.ts).
+`pnpm docs:shot` and `pnpm docs:diff` exist and work against a local run of the docs site for
+one-off parity checks. Alongside them, a curated ~25-route visual regression baseline is now
+committed under [`tests/visual/baseline/`](./tests/visual/baseline/) (light/dark, two viewports, a
+handful of RTL passes — see [`tests/visual/routes.ts`](./tests/visual/routes.ts)) and compared on
+every PR by the `visual` job in `.github/workflows/ci.yml`, via
+[`scripts/visual-baseline.ts`](./scripts/visual-baseline.ts) and
+[`scripts/visual-check.ts`](./scripts/visual-check.ts).
 
 ### Variant gallery thumbnails
 

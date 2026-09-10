@@ -29,14 +29,14 @@ Or your package manager's equivalent (`pnpm up @properui/ui`, `yarn up @properui
 The CLI copies component source directly into your project, so there's no dependency version to bump for those files — you update them by pulling in the current registry version. Start with `diff` to see what changed:
 
 ```bash
-npx properui@latest diff              # every installed component
-npx properui@latest diff button       # just one
+npx @properui/cli@latest diff              # every installed component
+npx @properui/cli@latest diff button       # just one
 ```
 
 `diff` compares your local files against the current registry version and shows exactly what's different, so you can decide whether to merge the change by hand or take the upstream file as-is. To take it as-is, re-run `add` with `--overwrite`:
 
 ```bash
-npx properui@latest add button --overwrite
+npx @properui/cli@latest add button --overwrite
 ```
 
 `--overwrite` replaces the local file entirely — it doesn't merge. Review the `diff` output first if you've customized the component, or you'll lose those edits.
