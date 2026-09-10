@@ -55,8 +55,18 @@ export const ROUTES: CaptureRoute[] = [
 export const BASELINE_DIR = "tests/visual/baseline";
 export const DIFF_DIR = "tests/visual/.diff";
 
-/** Diff threshold: keep in step with scripts/diff-shots.ts's own ~8% layout-regression cutoff. */
-export const DIFF_THRESHOLD_PCT = 8;
+/**
+ * Diff threshold. The baseline is captured on Linux (mcr.microsoft.com/playwright, matching the
+ * ubuntu-latest runner CI serves from — see tests/visual/README.md) specifically so this number
+ * can be tight: same-platform Linux-vs-Linux reruns of all 106 captures measured 0.00% differing
+ * pixels across the board (no exceptions). The old 8% figure dated from a macOS-captured baseline
+ * checked in CI on Linux, where font rasterisation alone produced 2.8-9.42% noise on every single
+ * capture — a threshold sized to tolerate platform mismatch, not to catch regressions. 1% keeps a
+ * small margin for incidental rendering jitter (font hinting, animation timing) while catching
+ * anything resembling a real layout change, which the 0.00% baseline suggests will read far higher
+ * than 1% anyway.
+ */
+export const DIFF_THRESHOLD_PCT = 1;
 export const PIXELMATCH_THRESHOLD = 0.2;
 
 export const WEBP_QUALITY = 72;

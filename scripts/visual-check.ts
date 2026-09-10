@@ -31,6 +31,25 @@ const passesFor = (rtlCapable: boolean | undefined): Pass[] => {
 
 const fileName = (viewport: ViewportName, pass: Pass) => `${viewport}-${pass.theme}${pass.rtl ? "-rtl" : ""}.webp`;
 
+// Same guard as scripts/visual-baseline.ts: a non-200 response or a rendered error page must fail
+// the whole run loudly, not get pixel-diffed against the baseline and reported as an ordinary
+// "CHECK" — that would mask an infra failure as a visual regression.
+const ERROR_PAGE_MARKERS = [/application error: a client-side exception has occurred/i, /this page could not be found/i];
+
+const assertRealPage = async (page: import("playwright").Page, response: import("playwright").Response | null, slug: string, route: string) => {
+    if (!response) {
+        throw new Error(`${slug}: navigation to ${route} produced no response`);
+    }
+    if (!response.ok()) {
+        throw new Error(`${slug}: ${route} returned HTTP ${response.status()} ${response.statusText()}`);
+    }
+    const bodyText = await page.evaluate(() => document.body.innerText);
+    const marker = ERROR_PAGE_MARKERS.find((re) => re.test(bodyText));
+    if (marker) {
+        throw new Error(`${slug}: ${route} rendered an error page (matched ${marker})`);
+    }
+};
+
 type Row = { name: string; verdict: "ok" | "CHECK" | "MISSING"; detail: string };
 
 const run = async () => {
@@ -44,7 +63,8 @@ const run = async () => {
         for (const [viewportName, viewport] of Object.entries(VIEWPORTS) as [ViewportName, { width: number; height: number }][]) {
             const ctx = await browser.newContext({ viewport, deviceScaleFactor: 1 });
             const page = await ctx.newPage();
-            await page.goto(BASE + r.route, { waitUntil: "networkidle" });
+            const response = await page.goto(BASE + r.route, { waitUntil: "networkidle" });
+            await assertRealPage(page, response, r.slug, r.route);
 
             for (const pass of passesFor(r.rtl)) {
                 const name = `${r.slug}/${fileName(viewportName, pass)}`;
@@ -116,4 +136,7 @@ const run = async () => {
     }
 };
 
-run();
+run().catch((err) => {
+    console.error(err instanceof Error ? err.message : err);
+    process.exit(1);
+});

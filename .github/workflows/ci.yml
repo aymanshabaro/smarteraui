@@ -31,6 +31,12 @@ jobs:
     # Compares a curated ~25-route sample of the docs site (tests/visual/routes.ts) against the
     # committed baseline (tests/visual/baseline/). Needs the docs site built and served on
     # localhost:3000 first — scripts/visual-check.ts talks to it over HTTP like scripts/shot.ts does.
+    #
+    # tests/visual/baseline/ is captured on Linux only (see tests/visual/README.md) — it must match
+    # this runner's OS or every capture reports platform font-rendering noise, not real diffs. If
+    # this job starts failing across many/all routes at once (rather than one specific route you
+    # just changed), the baseline was probably captured on macOS by mistake; regenerate it with the
+    # documented Docker command in tests/visual/README.md, don't raise the threshold to compensate.
     visual:
         runs-on: ubuntu-latest
         timeout-minutes: 20
