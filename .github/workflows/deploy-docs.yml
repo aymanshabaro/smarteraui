@@ -41,13 +41,13 @@ jobs:
             # `next build` followed by the OpenNext transform into .open-next/.
             - run: pnpm -F docs cf:build
 
+            # `opennextjs-cloudflare deploy`, not `wrangler deploy`: it runs populateCache
+            # first, which copies the prerendered pages and /r/*.json payloads into
+            # .open-next/assets/cdn-cgi/_next_cache. Next.js resolves a prerendered route
+            # through the incremental cache, so a bare `wrangler deploy` ships a site where
+            # every route but `/` answers 404.
             - name: Deploy to Cloudflare Workers
-              uses: cloudflare/wrangler-action@v4
-              with:
-                  apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-                  accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-                  workingDirectory: apps/docs
-                  packageManager: pnpm
-                  # `wrangler` is a devDependency of apps/docs, so the action reuses it
-                  # rather than installing a different version.
-                  command: deploy
+              run: pnpm -F docs cf:deploy
+              env:
+                  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                  CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
