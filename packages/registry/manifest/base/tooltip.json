@@ -1,0 +1,12 @@
+{
+    "intent": "Reveal a short supplementary hint for a control on hover or focus, without adding it to the tab order.",
+    "avoid_when": [
+        "the content is essential to complete the task — tooltips aren't reliably reachable on touch, so put essential info in visible text instead",
+        "the content is longer than a short phrase (use a popover or dialog)"
+    ],
+    "composes_with": ["buttons", "input", "badges", "gradient-picker"],
+    "a11y_contract": [
+        "built on React Aria Tooltip/TooltipTrigger — shows on hover and keyboard focus of the trigger and is associated with it via `aria-describedby` automatically"
+    ],
+    "requires_data": ["a focusable/hoverable trigger element and short hint text"]
+}

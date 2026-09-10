@@ -1,0 +1,10 @@
+{
+    "intent": "Reveal supplementary content or a secondary task in a panel that slides in from a screen edge, without leaving the current page.",
+    "avoid_when": ["the task must fully block the underlying page and be centered (use modals)"],
+    "composes_with": ["buttons", "form", "table"],
+    "a11y_contract": [
+        "built on React Aria Modal/Dialog/ModalOverlay for focus trapping and Escape-to-close; the panel carries a default aria-label (\"Slideout menu\") — override it to describe the actual content"
+    ],
+    "responsive_contract": ["horizontal padding increases from the md breakpoint up"],
+    "requires_data": ["panel content; a trigger element to open it"]
+}

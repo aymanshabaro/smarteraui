@@ -1,0 +1,12 @@
+{
+    "intent": "Prompt the user toward one specific action inline within page content (e.g. an upsell or feature callout banner).",
+    "avoid_when": ["the message needs to interrupt the current task (use modals)", "it's a page-level status message (use alerts)"],
+    "composes_with": ["buttons"],
+    "a11y_contract": [
+        "the decorative media overlay and feature icon are aria-hidden; heading, body copy and the action button need their own accessible text as usual"
+    ],
+    "responsive_contract": [
+        "stacks media above content on narrow screens and switches to a side-by-side row with a fixed-width media panel from the sm breakpoint (640px) up"
+    ],
+    "requires_data": ["a heading, short body copy, and a primary action"]
+}

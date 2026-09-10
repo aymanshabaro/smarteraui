@@ -1,0 +1,10 @@
+{
+    "intent": "Let a user add files via drag-and-drop or a file picker, with per-file progress and a list of what's been added.",
+    "avoid_when": ["a single, simple file-select trigger is enough with no drop zone or progress UI (use file-upload-trigger)"],
+    "composes_with": ["file-upload-trigger", "progress-indicators", "image-picker"],
+    "a11y_contract": [
+        "each in-progress file row exposes `role=\"progressbar\"` with aria-valuenow/min/max and an aria-label naming the file (\"<name> upload progress\")"
+    ],
+    "responsive_contract": ["secondary metadata/actions in the file row hide below the md breakpoint to fit narrow layouts"],
+    "requires_data": ["accepted file types/size limits; an onUpload-style handler; the current list of files and their progress"]
+}

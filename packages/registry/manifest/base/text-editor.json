@@ -1,0 +1,11 @@
+{
+    "intent": "Let a user compose formatted rich text (bold, lists, links, images, color) rather than a single plain string.",
+    "avoid_when": ["plain, unformatted text is all that's needed (use textarea)"],
+    "composes_with": ["form", "messaging", "code-snippet"],
+    "a11y_contract": [
+        "the editable region gets `aria-multiline=\"true\"` and a default aria-label of \"Text editor\" (override via the aria-label prop); the toolbar and each toolbar group carry their own default aria-labels (\"Text formatting\" / \"Selection formatting\") so screen readers can identify each control cluster",
+        "decorative separators between toolbar groups are aria-hidden"
+    ],
+    "responsive_contract": ["the toolbar's color-swatch and font-size controls narrow below the md breakpoint"],
+    "requires_data": ["initial content, and an onChange-style handler if the value should be controlled"]
+}

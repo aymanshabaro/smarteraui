@@ -1,0 +1,11 @@
+{
+    "intent": "Collect a single line of free-text, numeric, date, tag, or payment-card value in a form.",
+    "avoid_when": ["the value is chosen from a fixed list (use select)", "multi-line free text is expected (use textarea)"],
+    "composes_with": ["form", "label", "hint-text", "input-group"],
+    "a11y_contract": [
+        "built on React Aria TextField/Input — associates the visible `label` with the field and wires validation state automatically; without a visible label it falls back to an aria-label built from `placeholder`",
+        "the password-visibility toggle and the \"more information\" tooltip icon button ship their own aria-labels",
+        "pin-input labels each digit slot individually (\"Enter digit N of M\") so screen reader users get positional context"
+    ],
+    "requires_data": ["a `label` (or at minimum a placeholder) so the field has an accessible name"]
+}

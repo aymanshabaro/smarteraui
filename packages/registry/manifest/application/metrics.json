@@ -1,0 +1,12 @@
+{
+    "intent": "Display a single key number (with optional trend/comparison and a small chart) as a dashboard summary card.",
+    "avoid_when": ["the full underlying dataset needs to be explored (use charts or table)"],
+    "composes_with": ["charts", "card-headers", "badges"],
+    "a11y_contract": [
+        "purely presentational — trend color coding is decorative only, so pair it with visible text (e.g. a badge or \"+12%\" label) rather than color alone"
+    ],
+    "responsive_contract": [
+        "grid gaps and internal padding increase at the md breakpoint; footer content switches from stacked to a horizontal row at md; the large value's font size steps up at lg"
+    ],
+    "requires_data": ["a label, a formatted value, and optionally a comparison value/trend direction"]
+}

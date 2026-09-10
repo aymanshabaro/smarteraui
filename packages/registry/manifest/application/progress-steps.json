@@ -1,0 +1,9 @@
+{
+    "intent": "Show a user's position within a fixed, ordered multi-step process (checkout, onboarding, setup wizard).",
+    "avoid_when": ["progress is a single continuous percentage rather than discrete named steps (use progress-indicators)"],
+    "composes_with": ["form", "modals"],
+    "a11y_contract": [
+        "wrapped in `<nav aria-label=\"Progress\">` (overridable); only the current step is marked `aria-current=\"step\"`; connector lines between steps are aria-hidden"
+    ],
+    "requires_data": ["an ordered list of steps with label and status (complete/current/upcoming)"]
+}

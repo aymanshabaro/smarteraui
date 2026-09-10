@@ -1,0 +1,9 @@
+{
+    "intent": "Let a user choose a color via a saturation/hue field, hex/RGB/HSL text entry, alpha slider, or the OS eyedropper.",
+    "avoid_when": ["only a small fixed palette needs choosing from (use a simple swatch list instead)"],
+    "composes_with": ["gradient-picker", "form"],
+    "a11y_contract": [
+        "every input surface (hex field, channel fields, alpha field, eyedropper button) requires and receives an aria-label via the component's `label` prop"
+    ],
+    "requires_data": ["a controlled color value and onChange handler; a `label` describing what the color applies to"]
+}

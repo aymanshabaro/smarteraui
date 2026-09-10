@@ -1,0 +1,9 @@
+{
+    "intent": "Display a block of source code — optionally across multiple named files/tabs — with copy-to-clipboard and syntax formatting.",
+    "avoid_when": ["the text isn't code (use a plain text block)"],
+    "composes_with": ["buttons"],
+    "a11y_contract": [
+        "the code region is `role=\"region\"` with a default aria-label of \"Code snippet\" (override it when several snippets appear on one page); the line-number gutter is aria-hidden; the copy button ships its own aria-label (\"Copy\")"
+    ],
+    "requires_data": ["the code string, or, for the tabbed variant, a list of {label, code} items"]
+}

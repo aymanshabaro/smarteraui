@@ -1,0 +1,15 @@
+{
+    "intent": "Surface an important, page-level or inline message the user should notice (success, warning, error, info) without blocking interaction.",
+    "avoid_when": [
+        "the message requires the user to respond before continuing (use modals)",
+        "the message is transient and unrelated to page content (use notifications)"
+    ],
+    "composes_with": ["buttons", "badges"],
+    "a11y_contract": [
+        "the root element carries `role=\"alert\"`, so assistive tech announces it as soon as it mounts — reserve it for messages that genuinely need immediate announcement"
+    ],
+    "responsive_contract": [
+        "stacks vertically on narrow screens and switches to a horizontal row, with the action/close control trailing, from the sm breakpoint (640px) up"
+    ],
+    "requires_data": ["a short message; optional action button or link"]
+}

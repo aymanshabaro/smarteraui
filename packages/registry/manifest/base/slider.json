@@ -1,0 +1,9 @@
+{
+    "intent": "Pick a numeric value (or range) by dragging a handle along a track.",
+    "avoid_when": ["exact numeric entry matters more than a quick visual adjustment (use a numeric input)"],
+    "composes_with": ["form", "video-player", "gradient-picker"],
+    "a11y_contract": [
+        "built on React Aria Slider — arrow-key value adjustment and aria-valuenow/min/max come for free; the component renders a visually-hidden default label only when the caller has not already supplied aria-label/aria-labelledby, to avoid failing the axe \"form elements must have labels\" rule"
+    ],
+    "requires_data": ["an accessible name (aria-label/aria-labelledby) unless a visible label is provided separately"]
+}

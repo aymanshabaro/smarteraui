@@ -1,0 +1,9 @@
+{
+    "intent": "Let a user browse through a set of slides one (or a few) at a time via next/previous controls or dot indicators.",
+    "avoid_when": ["all items should be visible/scannable at once (use a grid or list)", "the content is a single linear document (use normal scrolling)"],
+    "composes_with": ["buttons", "video-player"],
+    "a11y_contract": [
+        "the root is `role=\"region\" aria-roledescription=\"carousel\"`; each slide is `role=\"group\" aria-roledescription=\"slide\"`; next/previous and dot-indicator controls ship default aria-labels, and the active dot is marked `aria-current`"
+    ],
+    "requires_data": ["an ordered list of slide contents"]
+}

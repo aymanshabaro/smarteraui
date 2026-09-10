@@ -111,6 +111,45 @@
             "items": {
                 "type": "string"
             }
+        },
+        "intent": {
+            "type": "string"
+        },
+        "avoid_when": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "composes_with": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "a11y_contract": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "responsive_contract": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "token_contract": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "requires_data": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
         }
     }
 }

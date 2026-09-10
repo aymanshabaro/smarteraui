@@ -1,0 +1,9 @@
+{
+    "intent": "Let a user build a CSS gradient by positioning color stops and an angle.",
+    "avoid_when": ["a single flat color is all that's needed (use color-picker)"],
+    "composes_with": ["color-picker", "form"],
+    "a11y_contract": [
+        "the angle handle and each color stop are custom `role=\"slider\"` elements (React Aria has no built-in 2D-angle primitive) with aria-valuemin/max/now, and the angle additionally sets aria-valuetext in degrees; every stop and handle gets a positional aria-label (e.g. \"Stop 2 position\") generated automatically from its index"
+    ],
+    "requires_data": ["a controlled list of color stops and an angle value"]
+}

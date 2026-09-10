@@ -1,0 +1,10 @@
+{
+    "intent": "Trigger a single primary action — submit, navigate, confirm, or run a command.",
+    "avoid_when": ["toggling a persistent on/off state (use toggle)", "navigating within a large set of peer destinations (use tabs or app-navigation)"],
+    "composes_with": ["button-group", "modals", "page-headers", "card-headers", "empty-state"],
+    "a11y_contract": [
+        "built on React Aria Button/Link — keyboard activation (Enter/Space), disabled state and correct role come for free",
+        "icon-only buttons (ButtonUtility, CloseButton, social/app-store icon buttons) need an aria-label from the caller; CloseButton and the app-store icon buttons ship a sensible default but it should be overridden when the action's meaning changes"
+    ],
+    "requires_data": ["visible label text, or an aria-label when icon-only"]
+}

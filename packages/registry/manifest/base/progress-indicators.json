@@ -1,0 +1,9 @@
+{
+    "intent": "Show how far a determinate, ongoing process (upload, multi-step task, loading) has progressed.",
+    "avoid_when": ["the process has no known end point or percentage (use loading-indicator)"],
+    "composes_with": ["file-upload", "progress-steps", "metrics"],
+    "a11y_contract": [
+        "renders `role=\"progressbar\"` with aria-valuenow/min/max wired to the value/min/max props automatically; a default aria-label of \"Progress\" applies unless the caller supplies `label`"
+    ],
+    "requires_data": ["a numeric `value` (and optionally min/max) representing real progress"]
+}

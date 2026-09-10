@@ -18,6 +18,8 @@ const SRC = path.join(UI_SRC, "components");
 const CONTENT = path.join(REPO, "apps", "docs", "content");
 const OUT = path.join(REPO, "packages", "registry", "dist");
 const SCHEMA_FILE = path.join(REPO, "packages", "registry", "schema.json");
+const MANIFEST_DIR = path.join(REPO, "packages", "registry", "manifest");
+const THEME_FILE = path.join(UI_SRC, "styles", "theme.css");
 
 /** Layers walked by the build, in the order they appear in the index. */
 const LAYERS = ["base", "application", "marketing", "app-examples", "marketing-examples", "foundations", "shared-assets"] as const;
@@ -45,7 +47,23 @@ type RegistryFile = {
     content: string;
 };
 
-type RegistryEntry = {
+/**
+ * Semantic manifest fields (AGENT-BRIEF: registry metadata) — hand-authored for the base and
+ * application layers in `packages/registry/manifest/<layer>/<name>.json`, all optional so
+ * existing entries stay valid. `token_contract` is never hand-authored: it is always derived
+ * from the entry's own source below. `composes_with` falls back to a derived value (from
+ * `registryDependencies`) for every entry that has no manifest file.
+ */
+type SemanticManifest = {
+    intent?: string;
+    avoid_when?: string[];
+    composes_with?: string[];
+    a11y_contract?: string[];
+    responsive_contract?: string[];
+    requires_data?: string[];
+};
+
+type RegistryEntry = SemanticManifest & {
     name: string;
     layer: string;
     type: EntryType;
@@ -57,6 +75,7 @@ type RegistryEntry = {
     cssVars: string[];
     examples: string[];
     docs?: string;
+    token_contract?: string[];
 };
 
 // ---------------------------------------------------------------------------
@@ -224,6 +243,95 @@ const readDocsPages = (): Map<string, DocsPage> => {
     for (const { install, page } of parsed) if (install && !pages.has(install)) pages.set(install, page);
     for (const { sourceFolder, page } of parsed) if (sourceFolder && !pages.has(sourceFolder)) pages.set(sourceFolder, page);
     return pages;
+};
+
+// ---------------------------------------------------------------------------
+// Semantic manifests (hand-authored intent/avoid_when/composes_with/a11y_contract/
+// responsive_contract/requires_data) + derived token_contract.
+// ---------------------------------------------------------------------------
+
+/** `packages/registry/manifest/<layer>/<name>.json`, keyed by `<layer>/<name>`. */
+const readManifests = (): Map<string, SemanticManifest> => {
+    const manifests = new Map<string, SemanticManifest>();
+    for (const layer of listDir(MANIFEST_DIR)) {
+        const layerDir = path.join(MANIFEST_DIR, layer);
+        if (!isDir(layerDir)) continue;
+        for (const file of listDir(layerDir)) {
+            if (!file.endsWith(".json")) continue;
+            const manifest = JSON.parse(readFileSync(path.join(layerDir, file), "utf8")) as SemanticManifest;
+            manifests.set(`${layer}/${file.replace(/\.json$/, "")}`, manifest);
+        }
+    }
+    return manifests;
+};
+
+/**
+ * The exact `bg-*`/`text-*`/`border-*` class names the design system recognises as semantic
+ * tokens, read from `packages/ui/src/styles/theme.css` — never guessed. Tailwind v4 resolves
+ * `bg-<x>` first against the `--background-color-<x>` namespace and falls back to the generic
+ * `--color-<x>` namespace (same for `text-color`/`border-color`); this mirrors that lookup order
+ * so a class only counts as a token here if it would actually resolve to one at runtime.
+ *
+ * The generic `--color-*` namespace also holds the raw palette scale (`--color-brand-500`, etc.)
+ * that components can reach directly, bypassing the semantic layer — `bg-brand-700` is valid CSS
+ * but not a semantic token, so those raw-palette entries are excluded from the fallback.
+ */
+type TokenNamespaces = { bg: Set<string>; text: Set<string>; border: Set<string> };
+
+const RAW_PALETTE_SHADE =
+    /^(brand|neutral|gray|grey|red|orange|yellow|green|blue|indigo|purple|pink|sky|slate|teal|cyan|lime|rose|fuchsia|violet|amber|emerald)-\d{2,3}(_alt)?$/;
+const BARE_PALETTE_KEYWORD = new Set(["white", "black", "transparent", "current", "inherit", "alpha-white", "alpha-black"]);
+
+const readTokenNamespaces = (): TokenNamespaces => {
+    const css = existsSync(THEME_FILE) ? readFileSync(THEME_FILE, "utf8") : "";
+
+    const keysIn = (namespace: string) =>
+        [...css.matchAll(new RegExp(`--${namespace}-([a-zA-Z0-9_-]+):`, "g"))].flatMap((match) => (match[1] ? [match[1]] : []));
+
+    const genericColor = keysIn("color").filter((key) => !RAW_PALETTE_SHADE.test(key) && !BARE_PALETTE_KEYWORD.has(key));
+
+    return {
+        bg: new Set([...keysIn("background-color"), ...genericColor]),
+        text: new Set([...keysIn("text-color"), ...genericColor]),
+        border: new Set([...keysIn("border-color"), ...genericColor]),
+    };
+};
+
+/** Every semantic `bg-*`/`text-*`/`border-*` class actually referenced in the entry's own files. */
+const deriveTokenContract = (files: RegistryFile[], tokens: TokenNamespaces): string[] => {
+    const found = new Set<string>();
+    for (const file of files) {
+        for (const match of file.content.matchAll(/\b(bg|text|border)-([a-zA-Z][a-zA-Z0-9_-]*)/g)) {
+            const prefix = match[1];
+            const suffix = match[2];
+            if (!prefix || !suffix) continue;
+            const namespace = prefix === "bg" ? tokens.bg : prefix === "text" ? tokens.text : tokens.border;
+            if (namespace.has(suffix)) found.add(`${prefix}-${suffix}`);
+        }
+    }
+    return unique([...found]);
+};
+
+/**
+ * Merges the hand-authored manifest (when one exists for `layer/name`) and the derived
+ * `token_contract` into an entry. Entries without a manifest still get a `composes_with`,
+ * derived from `registryDependencies`, so every entry reports what it's typically used with.
+ */
+const withSemantics = (entry: RegistryEntry, manifests: Map<string, SemanticManifest>, tokens: TokenNamespaces): RegistryEntry => {
+    const manifest = manifests.get(`${entry.layer}/${entry.name}`);
+    const tokenContract = deriveTokenContract(entry.files, tokens);
+    const composesWith = manifest?.composes_with ?? (entry.registryDependencies.length > 0 ? entry.registryDependencies : undefined);
+
+    return {
+        ...entry,
+        ...(manifest?.intent ? { intent: manifest.intent } : {}),
+        ...(manifest?.avoid_when?.length ? { avoid_when: manifest.avoid_when } : {}),
+        ...(composesWith?.length ? { composes_with: composesWith } : {}),
+        ...(manifest?.a11y_contract?.length ? { a11y_contract: manifest.a11y_contract } : {}),
+        ...(manifest?.responsive_contract?.length ? { responsive_contract: manifest.responsive_contract } : {}),
+        ...(manifest?.requires_data?.length ? { requires_data: manifest.requires_data } : {}),
+        ...(tokenContract.length > 0 ? { token_contract: tokenContract } : {}),
+    };
 };
 
 // ---------------------------------------------------------------------------
@@ -432,6 +540,18 @@ const SCHEMA: Schema & { $schema: string; $id: string; title: string; descriptio
         dependencies: { type: "array", items: { type: "string" } },
         cssVars: { type: "array", items: { type: "string" } },
         examples: { type: "array", items: { type: "string" } },
+        // Semantic manifest (AGENT-BRIEF: registry metadata) — all optional, so existing entries
+        // stay valid. `intent`/`avoid_when`/`a11y_contract`/`responsive_contract`/`requires_data`
+        // are hand-authored (base + application layers only); `composes_with` is hand-authored
+        // where a manifest exists and otherwise derived from `registryDependencies`;
+        // `token_contract` is always derived from the entry's own source.
+        intent: { type: "string" },
+        avoid_when: { type: "array", items: { type: "string" } },
+        composes_with: { type: "array", items: { type: "string" } },
+        a11y_contract: { type: "array", items: { type: "string" } },
+        responsive_contract: { type: "array", items: { type: "string" } },
+        token_contract: { type: "array", items: { type: "string" } },
+        requires_data: { type: "array", items: { type: "string" } },
     },
 };
 
@@ -649,6 +769,17 @@ const build = () => {
             derived,
         );
     }
+
+    // ---- Semantic manifest merge --------------------------------------------
+    // Hand-authored intent/avoid_when/composes_with/a11y_contract/responsive_contract/requires_data
+    // for the base and application layers, plus a derived token_contract (every entry) and a
+    // derived composes_with fallback (every entry without its own manifest).
+
+    const manifests = readManifests();
+    const tokenNamespaces = readTokenNamespaces();
+    const withMetadata = entries.map((entry) => withSemantics(entry, manifests, tokenNamespaces));
+    entries.length = 0;
+    entries.push(...withMetadata);
 
     // ---- Validation -------------------------------------------------------
 

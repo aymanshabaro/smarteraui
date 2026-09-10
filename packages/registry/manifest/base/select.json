@@ -1,0 +1,13 @@
+{
+    "intent": "Choose one (or, in the multi-select/tag-select variants, several) values from a list too long to show as visible options.",
+    "avoid_when": [
+        "there are only 2-4 options that could stay visible (use radio-buttons or button-group)",
+        "free-text entry with suggestions is the goal without a fixed option set"
+    ],
+    "composes_with": ["form", "tags", "avatar"],
+    "a11y_contract": [
+        "built on React Aria Select/ComboBox/ListBox — keyboard navigation, type-ahead and selected-state semantics come for free; falls back to an aria-label built from `placeholder` when no visible label is supplied",
+        "the multi-select search field and options listbox each carry their own default aria-label (\"Search\", \"Options\") when otherwise unlabelled"
+    ],
+    "requires_data": ["a list of options with stable keys and visible labels"]
+}

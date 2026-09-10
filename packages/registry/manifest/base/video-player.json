@@ -1,0 +1,9 @@
+{
+    "intent": "Play a single video with custom playback controls (play/pause, seek, volume, speed, fullscreen).",
+    "avoid_when": ["embedding a video with no custom controls is enough (use a plain <video> element or provider embed)"],
+    "composes_with": ["modals", "carousel"],
+    "a11y_contract": [
+        "every icon-only control (play/pause, mute, seek, playback speed, fullscreen) has an explicit aria-label reflecting current state (e.g. \"Pause\" vs \"Play\", current playback speed); the seek and volume sliders are built on React Aria Slider so keyboard operation comes for free"
+    ],
+    "requires_data": ["a video `src`; a `label` describing the video content for the control region"]
+}

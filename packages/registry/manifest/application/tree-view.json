@@ -1,0 +1,9 @@
+{
+    "intent": "Show and let a user navigate a nested, expandable hierarchy (file trees, nested categories, org structures).",
+    "avoid_when": ["the data is flat with no parent/child relationship (use table or a plain list)"],
+    "composes_with": ["dropdown", "checkbox"],
+    "a11y_contract": [
+        "renders as an ARIA grid (`role=\"row\"`/`role=\"gridcell\"`) with `aria-level` reflecting nesting depth, and requires an explicit aria-label from the caller (no default) describing the tree's contents; expand/collapse chevrons and guide lines are aria-hidden"
+    ],
+    "requires_data": ["a nested list of items with id, label, and children"]
+}

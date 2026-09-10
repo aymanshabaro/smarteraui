@@ -1,0 +1,9 @@
+{
+    "intent": "Let a user narrow a list or table by combining multiple filter conditions, opened from a compact trigger row.",
+    "avoid_when": ["there's only one filter dimension (use a plain select or search input)"],
+    "composes_with": ["select", "date-picker", "tags", "table"],
+    "a11y_contract": [
+        "each filter trigger button receives its label via the caller-supplied `label` prop, passed through as aria-label; the filter popover/dialog requires and uses a `dialogLabel`"
+    ],
+    "requires_data": ["a set of filter definitions (field, operator, value) and their current state"]
+}

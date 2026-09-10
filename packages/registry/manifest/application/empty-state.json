@@ -1,0 +1,7 @@
+{
+    "intent": "Explain that a list or section has no content yet, and point the user to the action that would populate it.",
+    "avoid_when": ["data is still loading (use loading-indicator)", "the absence of data is itself an error (use alerts)"],
+    "composes_with": ["buttons"],
+    "a11y_contract": ["the decorative illustration/icon is aria-hidden by default since it's supplementary to the visible heading and body text"],
+    "requires_data": ["a heading and short explanatory text; optional primary action button"]
+}

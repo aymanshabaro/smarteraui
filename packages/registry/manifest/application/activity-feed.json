@@ -1,0 +1,10 @@
+{
+    "intent": "Show a reverse-chronological log of events/actions (comments, status changes, uploads) tied to an item.",
+    "avoid_when": ["the data is a two-way conversation (use messaging)", "real-time chat semantics are needed"],
+    "composes_with": ["avatar", "badges", "content-divider"],
+    "a11y_contract": [
+        "caller should pass an aria-label describing the feed's purpose to the root component",
+        "the unread indicator is exposed to assistive tech via `role=\"img\" aria-label=\"Unread\"`; decorative connector lines are aria-hidden"
+    ],
+    "requires_data": ["a list of feed items with actor, action text and timestamp"]
+}

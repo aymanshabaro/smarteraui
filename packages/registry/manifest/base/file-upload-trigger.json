@@ -1,0 +1,9 @@
+{
+    "intent": "Wrap any pressable element so activating it opens the OS file picker (or camera), without building a custom `<input type=\"file\">`.",
+    "avoid_when": ["a drag-and-drop drop zone with per-file progress UI is needed (use file-upload)"],
+    "composes_with": ["buttons", "image-picker", "file-upload"],
+    "a11y_contract": [
+        "clones its single child and wires the native file input — the child must already be an accessible, focusable trigger (e.g. a Button); this component adds no label of its own"
+    ],
+    "requires_data": ["a single pressable child element to act as the trigger; an onSelect handler to receive the chosen FileList"]
+}

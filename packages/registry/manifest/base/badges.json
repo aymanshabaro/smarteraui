@@ -1,0 +1,13 @@
+{
+    "intent": "Label an item with a short status, category, or count using a color-coded tag.",
+    "avoid_when": [
+        "interactive filtering or removable multi-select input (use tags)",
+        "the sole indicator of a critical state — color alone should never be the only signal"
+    ],
+    "composes_with": ["badge-groups", "table", "avatar", "tabs"],
+    "a11y_contract": [
+        "decorative dot/leading/trailing icons are marked aria-hidden by the component",
+        "the close/remove button on a removable badge takes its aria-label from the caller-supplied `buttonLabel` — set it or the control announces nothing useful"
+    ],
+    "requires_data": ["a short text label; the color prop conveys meaning only visually, not to assistive tech"]
+}

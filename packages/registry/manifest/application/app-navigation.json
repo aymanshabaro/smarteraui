@@ -1,0 +1,15 @@
+{
+    "intent": "Provide the persistent primary navigation shell (header bar or sidebar) for a signed-in application.",
+    "avoid_when": [
+        "marketing/landing page navigation (use a marketing header component instead)",
+        "a small, local set of destinations within one page (use tabs or breadcrumbs)"
+    ],
+    "composes_with": ["dropdown", "avatar", "input", "badges", "notifications"],
+    "a11y_contract": [
+        "primary and secondary navigation are wrapped in `<nav aria-label=\"Main\">` / `<nav aria-label=\"Secondary\">`; the active nav item gets `aria-current=\"page\"` automatically; the search field ships its own aria-label"
+    ],
+    "responsive_contract": [
+        "secondary/sidebar navigation collapses below the lg breakpoint, and horizontal padding narrows below md — mobile is expected to move navigation behind a trigger (e.g. slideout-menus)"
+    ],
+    "requires_data": ["a list of nav items with label, href/action, and current-page state"]
+}

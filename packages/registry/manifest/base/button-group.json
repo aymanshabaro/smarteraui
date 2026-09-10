@@ -1,0 +1,13 @@
+{
+    "intent": "Let a user pick one option from a small, always-visible set of mutually exclusive actions (e.g. list/grid view toggle).",
+    "avoid_when": [
+        "more than ~5 options, or options that need scrolling (use tabs or select)",
+        "multiple simultaneous selections are allowed (this is single-select by default)"
+    ],
+    "composes_with": ["buttons", "tabs"],
+    "a11y_contract": [
+        "built on React Aria ToggleButtonGroup/ToggleButton — roving-tabindex keyboard navigation and aria-pressed/selection state come for free",
+        "icon-only items still need an accessible name from the caller (visible text or aria-label)"
+    ],
+    "requires_data": ["2+ ButtonGroupItem children with distinguishable labels or icons"]
+}

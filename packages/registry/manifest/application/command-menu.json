@@ -1,0 +1,9 @@
+{
+    "intent": "Give power users a keyboard-first, searchable palette of actions/destinations (⌘K-style).",
+    "avoid_when": ["the action set is small enough for a regular dropdown or visible toolbar"],
+    "composes_with": ["dropdown", "avatar", "badges"],
+    "a11y_contract": [
+        "the dialog and search field ship default aria-labels (\"Command menu\", \"Search\"); the results listbox defaults to aria-label \"Suggestions\" unless the caller supplies aria-label/aria-labelledby"
+    ],
+    "requires_data": ["a searchable list of items with label and action; typically opened via a global keyboard shortcut the host app wires up"]
+}

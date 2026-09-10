@@ -1,0 +1,12 @@
+{
+    "intent": "Provide the top-of-page title, description and primary actions for a full application page.",
+    "avoid_when": ["heading a card or panel rather than the whole page (use card-headers)"],
+    "composes_with": ["breadcrumbs", "tabs", "buttons", "badges"],
+    "a11y_contract": [
+        "purely presentational layout — heading semantics (e.g. using an actual heading element) and action button labels remain the caller's responsibility"
+    ],
+    "responsive_contract": [
+        "title and actions stack vertically below the md breakpoint and become a wrapped horizontal row at md and above; the title's font size steps up at md"
+    ],
+    "requires_data": ["a page title; optional description, breadcrumbs, tabs and action buttons"]
+}

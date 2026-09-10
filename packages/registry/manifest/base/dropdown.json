@@ -1,0 +1,13 @@
+{
+    "intent": "Show a menu of actions or a compact set of choices anchored to a trigger, without leaving the page.",
+    "avoid_when": [
+        "the option list is long and needs search/filtering as a form field (use select or command-menu)",
+        "the trigger must always display the current value inline (use select)"
+    ],
+    "composes_with": ["buttons", "avatar", "badges", "table", "app-navigation"],
+    "a11y_contract": [
+        "built on React Aria Menu/SubmenuTrigger — keyboard navigation (arrow keys, type-ahead, Escape to close) and focus management come for free",
+        "icon-only trigger variants ship a default aria-label (e.g. \"Open menu\"); override it when the trigger's purpose isn't generic"
+    ],
+    "requires_data": ["one or more MenuItem entries with a visible label; icon and avatar are optional decoration"]
+}

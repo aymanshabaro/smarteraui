@@ -1,0 +1,8 @@
+{
+    "intent": "Provide a consistent title/description/actions header for a card or panel section.",
+    "avoid_when": ["heading a full page (use page-headers)"],
+    "composes_with": ["buttons", "badges", "table", "metrics"],
+    "a11y_contract": ["purely presentational layout — heading level and accessible names for any action buttons remain the caller's responsibility"],
+    "responsive_contract": ["stacks title and actions vertically on narrow screens and switches to a horizontal row at the md breakpoint"],
+    "requires_data": ["a title; optional description and action buttons"]
+}

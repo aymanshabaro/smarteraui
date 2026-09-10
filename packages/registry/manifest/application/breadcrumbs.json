@@ -1,0 +1,10 @@
+{
+    "intent": "Show the user's location in a hierarchy and let them navigate to an ancestor page.",
+    "avoid_when": ["there is only one level of navigation (omit entirely rather than show a single crumb)"],
+    "composes_with": ["dropdown", "app-navigation"],
+    "a11y_contract": [
+        "wraps items in `<nav aria-label=\"Breadcrumb\">` (overridable) via React Aria Breadcrumbs — the current page is marked programmatically; a collapsed \"…\" menu item ships a default aria-label (\"See all breadcrumb items\")"
+    ],
+    "responsive_contract": ["the gap between crumbs narrows below the md breakpoint"],
+    "requires_data": ["an ordered list of crumb items with label and href; the last item represents the current page"]
+}

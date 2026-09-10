@@ -1,0 +1,12 @@
+{
+    "intent": "Let a user move between pages of a large list or table, by page number, next/previous, or page size.",
+    "avoid_when": ["the full set is small enough to show at once", "infinite scroll better fits the content type"],
+    "composes_with": ["table", "card-headers"],
+    "a11y_contract": [
+        "wrapped in `<nav aria-label=\"Pagination\">`; every page control carries an explicit aria-label (\"Page N\", \"Go to next/previous/first/last page\") and the current page is marked `aria-current=\"page\"`; decorative ellipsis is aria-hidden"
+    ],
+    "responsive_contract": [
+        "switches between a compact (prev/next only) layout and the full numbered control across the md breakpoint — one variant is hidden and the other shown depending on viewport"
+    ],
+    "requires_data": ["total item/page count, current page, and a page-change handler"]
+}

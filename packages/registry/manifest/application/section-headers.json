@@ -1,0 +1,8 @@
+{
+    "intent": "Introduce a page section with a title, optional description, and section-level actions.",
+    "avoid_when": ["heading the entire page (use page-headers)"],
+    "composes_with": ["buttons", "badges", "tabs"],
+    "a11y_contract": ["purely presentational layout — heading level remains the caller's responsibility"],
+    "responsive_contract": ["stacks vertically on narrow screens and becomes a horizontal row from the sm/md breakpoints"],
+    "requires_data": ["a section title; optional description and actions"]
+}

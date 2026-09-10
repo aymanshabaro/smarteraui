@@ -1,0 +1,13 @@
+{
+    "intent": "Show transient, non-blocking status messages (toasts) or a notification-center panel summarizing recent alerts.",
+    "avoid_when": [
+        "the message must block further interaction (use modals)",
+        "the message needs guaranteed immediate announcement (use alerts, which set role=\"alert\")"
+    ],
+    "composes_with": ["buttons", "avatar"],
+    "a11y_contract": ["progress-style notifications expose `role=\"progressbar\"` with aria-valuenow wired to real progress"],
+    "responsive_contract": [
+        "padding and ring styling are added only from the md breakpoint up; a secondary element toggles between block/hidden across that same breakpoint"
+    ],
+    "requires_data": ["a message, optional icon/avatar and action; the provider variant needs to be mounted once at the app root"]
+}

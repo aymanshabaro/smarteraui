@@ -1,0 +1,10 @@
+{
+    "intent": "Render a conversation thread (messages, attachments, voice notes, typing indicator) and a composer for replying.",
+    "avoid_when": ["the data is a one-directional activity log rather than a two-way conversation (use activity-feed)"],
+    "composes_with": ["avatar", "buttons", "input", "textarea"],
+    "a11y_contract": [
+        "the message list defaults to `<ol aria-label=\"Conversation\">`; every icon-only composer/action button (send, attach, tool buttons) requires and receives an aria-label from the caller; the typing indicator uses `role=\"status\"` and its animated dots are aria-hidden and respect `motion-reduce`"
+    ],
+    "responsive_contract": ["message content reserves extra trailing space at the lg breakpoint to avoid crowding the scrollbar/edge"],
+    "requires_data": ["a list of messages with sender, content and timestamp; the composer needs a submit handler"]
+}

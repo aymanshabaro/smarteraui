@@ -1,0 +1,7 @@
+{
+    "intent": "Let a user select or replace a single image via drag-and-drop or a file dialog, with a live preview.",
+    "avoid_when": ["multiple files or non-image files need to be accepted (use file-upload)"],
+    "composes_with": ["file-upload-trigger", "avatar"],
+    "a11y_contract": ["the drop target carries an aria-label (\"Drop image to upload\"); the preview overlay and decoration icons are aria-hidden"],
+    "requires_data": ["the current image src/preview and an onChange-style handler"]
+}

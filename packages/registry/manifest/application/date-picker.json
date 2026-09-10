@@ -1,0 +1,10 @@
+{
+    "intent": "Let a user pick a single date or a date range from a calendar, typically for scheduling or filtering.",
+    "avoid_when": ["a free-text date is acceptable (use input's date variant)", "only a small closed set of date choices exists (use select)"],
+    "composes_with": ["form", "input"],
+    "a11y_contract": [
+        "built on React Aria DatePicker/RangeCalendar/Calendar — full arrow-key grid navigation, `role=\"application\"` on the calendar root, and date-cell selection semantics come for free; the trigger and dialog ship default aria-labels (\"Date picker\"/\"Date range picker\")"
+    ],
+    "responsive_contract": ["the date-range picker's two calendars sit side by side from the md/lg breakpoints up and stack on narrower screens"],
+    "requires_data": ["a controlled date/date-range value and onChange handler"]
+}

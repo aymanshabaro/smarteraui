@@ -1,0 +1,7 @@
+{
+    "intent": "Visually separate sections of content with a line, optionally carrying a short label or icon.",
+    "avoid_when": [
+        "the separation needs to be a real landmark/heading boundary for assistive tech, not just visual (use a heading or semantic sectioning element)"
+    ],
+    "a11y_contract": ["the divider line(s) are aria-hidden since they carry no semantic meaning; any label text renders as normal visible text"]
+}

@@ -1,0 +1,8 @@
+{
+    "intent": "Communicate that content is being fetched or a background action is in progress, with no determinate percentage.",
+    "avoid_when": ["real progress can be reported (use progress-indicators, which is more informative)"],
+    "composes_with": ["empty-state", "table"],
+    "a11y_contract": [
+        "the root carries `role=\"status\" aria-live=\"polite\"` with a default aria-label of \"Loading\" (override via the `label` prop) so assistive tech announces the state change without stealing focus; the spinner graphic itself is aria-hidden"
+    ]
+}

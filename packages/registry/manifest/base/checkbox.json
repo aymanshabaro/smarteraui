@@ -1,0 +1,10 @@
+{
+    "intent": "Capture a single independent on/off or tri-state choice within a form.",
+    "avoid_when": ["choosing exactly one option from a mutually exclusive set (use radio-buttons)", "an immediate, form-free settings toggle (use toggle)"],
+    "composes_with": ["form", "input", "table"],
+    "a11y_contract": [
+        "built on React Aria Checkbox — keyboard toggling (Space), checked/indeterminate/disabled state and `role=\"checkbox\"` come for free",
+        "the visible label passed as children is associated with the control automatically; an icon-only checkbox still needs its own aria-label"
+    ],
+    "requires_data": ["a visible label describing what is being agreed to or selected"]
+}

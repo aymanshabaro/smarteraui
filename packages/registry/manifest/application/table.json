@@ -1,0 +1,12 @@
+{
+    "intent": "Display structured, multi-column data a user can scan, sort, and act on row by row.",
+    "avoid_when": ["there's only one or two data points to show (use metrics)", "the data isn't naturally tabular (use a list or card layout)"],
+    "composes_with": ["checkbox", "badges", "avatar", "pagination", "loading-indicator", "empty-state"],
+    "a11y_contract": [
+        "built on React Aria Table/Row/Column/Cell — sort state, selection, and keyboard grid navigation come for free; icon-only header/cell actions still need an aria-label, which the caller supplies via each column's tooltip/label prop"
+    ],
+    "responsive_contract": [
+        "horizontal cell padding steps up at the md breakpoint; the pagination footer switches between compact and full layouts across md, matching the standalone pagination component"
+    ],
+    "requires_data": ["column definitions and row data with stable keys"]
+}
