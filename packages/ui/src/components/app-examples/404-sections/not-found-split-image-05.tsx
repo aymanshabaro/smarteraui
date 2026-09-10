@@ -36,7 +36,7 @@ export const NotFoundSplitImage05 = () => (
 
                 <ul className="grid w-full grid-cols-1 gap-6">
                     {links.map((link) => (
-                        <li key={link.title} className="flex flex-col items-start gap-1 text-left">
+                        <li key={link.title} className="flex flex-col items-start gap-1 text-start">
                             <Button href="#" size="xl" color="link-color" iconTrailing={ArrowRight}>
                                 {link.title}
                             </Button>

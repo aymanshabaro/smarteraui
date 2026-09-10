@@ -21,7 +21,7 @@ export type SiteNavGroup = {
 };
 
 /** Fixed order of the Documentation group (spec § Global chrome). */
-const DOCS_ORDER = ["introduction", "installation", "theming", "dark-mode", "typography", "cli", "accessibility", "rtl", "upgrade", "icons"];
+const DOCS_ORDER = ["introduction", "installation", "theming", "dark-mode", "typography", "cli", "accessibility", "quality", "rtl", "upgrade", "icons"];
 
 /** Fixed order of the nested Integrations list. */
 const INTEGRATIONS_ORDER = ["nextjs", "vite", "claude", "codex", "cursor", "lovable", "v0", "bolt", "replit", "gemini", "monorepo", "mcp", "components-json"];

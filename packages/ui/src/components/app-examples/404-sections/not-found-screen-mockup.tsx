@@ -8,7 +8,7 @@ import { IMAGES } from "@/utils/demo-assets";
 export const NotFoundScreenMockup = () => (
     <section className="bg-primary flex min-h-screen items-start justify-center py-16 md:items-center md:pb-24 lg:overflow-hidden lg:px-20">
         <div className="relative mx-auto flex w-full flex-col items-center justify-center gap-16 px-4 md:px-8 lg:flex-row">
-            <div className="flex w-full max-w-140 flex-col items-start gap-8 text-center md:gap-12 md:text-left">
+            <div className="flex w-full max-w-140 flex-col items-start gap-8 text-center md:gap-12 md:text-start">
                 <div className="flex flex-col gap-4 md:gap-6">
                     <div className="flex flex-col gap-3">
                         <p className="text-brand-secondary text-md font-semibold">404 error</p>
@@ -27,7 +27,7 @@ export const NotFoundScreenMockup = () => (
                 </div>
             </div>
 
-            <div className="lg:-mr-100">
+            <div className="lg:-me-100">
                 {/* Screen mockup bezel: outer frame, inner shadow ring, then the screen itself. */}
                 <div className="bg-primary ring-utility-neutral-300 rounded-[9.03px] p-[0.9px] shadow-lg ring-[0.56px] ring-inset md:rounded-[26.95px] md:p-[3.5px] md:ring-[1.68px]">
                     <div className="bg-primary shadow-modern-mockup-inner-md md:shadow-modern-mockup-inner-lg rounded-[7.9px] p-0.5 md:rounded-[23.58px] md:p-1">

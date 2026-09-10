@@ -68,14 +68,14 @@ export const HeroCardMockup10 = () => (
 
                 <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-x-0 bottom-0 overflow-hidden sm:pl-[30vw] md:inset-x-8 md:rounded-2xl md:pl-0"
+                    className="pointer-events-none absolute inset-x-0 bottom-0 overflow-hidden sm:pl-[30vw] md:inset-x-8 md:rounded-2xl md:ps-0"
                 >
                     <div
                         style={wallTransform}
                         className="flex w-max [transform:var(--transform-mobile)] flex-col gap-4 md:[transform:var(--transform-desktop)]"
                     >
                         {rows.map((row, rowIndex) => (
-                            <div key={rowIndex} className={cx("flex gap-4", row.indent && "pl-40")}>
+                            <div key={rowIndex} className={cx("flex gap-4", row.indent && "ps-40")}>
                                 {row.cards.map((type, cardIndex) => (
                                     <CreditCard key={cardIndex} company="Smartera." type={type} cardHolder={AVATARS[1].name} />
                                 ))}

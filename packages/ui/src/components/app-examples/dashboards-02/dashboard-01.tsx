@@ -109,7 +109,7 @@ export const Dashboard01 = () => (
                                 <button
                                     key={action.title}
                                     type="button"
-                                    className="bg-primary ring-secondary outline-focus-ring hover:bg-primary_hover flex flex-1 gap-3 rounded-xl p-4 text-left shadow-xs ring-1 ring-inset focus-visible:outline-2 focus-visible:outline-offset-2 md:min-w-80"
+                                    className="bg-primary ring-secondary outline-focus-ring hover:bg-primary_hover flex flex-1 gap-3 rounded-xl p-4 text-start shadow-xs ring-1 ring-inset focus-visible:outline-2 focus-visible:outline-offset-2 md:min-w-80"
                                 >
                                     <FeaturedIcon className="max-lg:hidden" size="lg" theme="dark" color="brand" icon={action.icon} />
                                     <FeaturedIcon className="lg:hidden" size="md" theme="dark" color="brand" icon={action.icon} />

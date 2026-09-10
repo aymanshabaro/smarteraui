@@ -25,7 +25,7 @@ export const MetricsSimpleCenteredTextBrand = () => (
                 <dl className="flex w-full flex-col justify-center gap-8 md:max-w-3xl md:flex-row md:gap-4 md:self-center">
                     {metrics.map((metric, index) => (
                         <Fragment key={metric.label}>
-                            {index > 0 && <div aria-hidden="true" className="border-brand_alt hidden border-l md:block" />}
+                            {index > 0 && <div aria-hidden="true" className="border-brand_alt hidden border-s md:block" />}
 
                             <div className="flex flex-1 flex-col-reverse gap-3 text-center">
                                 <dt className="text-tertiary_on-brand text-lg font-semibold">{metric.label}</dt>

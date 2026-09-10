@@ -85,7 +85,7 @@ export const FooterLarge09 = () => {
                                                 className="max-h-5"
                                                 iconTrailing={
                                                     item.badge ? (
-                                                        <Badge type="modern" size="sm" className="ml-1">
+                                                        <Badge type="modern" size="sm" className="ms-1">
                                                             {item.badge}
                                                         </Badge>
                                                     ) : undefined

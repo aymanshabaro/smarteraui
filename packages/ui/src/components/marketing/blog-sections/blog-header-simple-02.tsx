@@ -137,7 +137,7 @@ export const BlogHeaderSimple02 = () => (
 
                             <div className="flex flex-col gap-5">
                                 <div className="flex flex-col items-start gap-3">
-                                    <BadgeGroup color="brand" addonText="Design" iconTrailing={null} className="pr-3">
+                                    <BadgeGroup color="brand" addonText="Design" iconTrailing={null} className="pe-3">
                                         8 min read
                                     </BadgeGroup>
 

@@ -56,7 +56,7 @@ export const FeaturesIconsAndMockup06 = () => (
                     ))}
                 </ul>
 
-                <div className="bg-tertiary relative -mx-4 flex h-80 items-center justify-center md:mr-0 md:h-120 lg:h-160">
+                <div className="bg-tertiary relative -mx-4 flex h-80 items-center justify-center md:me-0 md:h-120 lg:h-160">
                     <div className="-translate-x-0.5 -space-y-[106px] md:translate-x-0 md:-space-y-16 lg:-space-y-8">
                         <div className="relative z-1 [transform:scale(var(--scale))_rotate(60deg)_translate(38px,-53px)] [--scale:0.84] md:[--scale:1.3] lg:[--scale:1.57]">
                             <CreditCard type="transparent-gradient" company="Smartera." cardHolder={AVATARS[0].name} />

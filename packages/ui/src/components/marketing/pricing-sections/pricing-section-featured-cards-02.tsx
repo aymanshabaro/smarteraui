@@ -57,7 +57,7 @@ export const PricingSectionFeaturedCards02 = () => (
                     <p className="text-tertiary mt-4 text-lg md:mt-5">Simple, transparent pricing that grows with you. Try any plan free for 30 days.</p>
                 </div>
 
-                <div className="grid w-full grid-cols-1 items-start gap-4 md:-ml-2 md:grid-cols-2 md:gap-8">
+                <div className="grid w-full grid-cols-1 items-start gap-4 md:-ms-2 md:grid-cols-2 md:gap-8">
                     {plans.map((plan) => (
                         <div key={plan.name} className="bg-primary ring-secondary_alt relative flex flex-col rounded-2xl shadow-lg ring-1">
                             {plan.isPopular && (

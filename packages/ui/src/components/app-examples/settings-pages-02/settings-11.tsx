@@ -58,10 +58,10 @@ const PlanRadio = ({ id, name, price, description, badge }: { id: string; name: 
     >
         {({ isSelected }) => (
             <>
-                <span className={cx("flex items-center gap-3 rounded-t-xl p-3 pr-5 ring-inset", isSelected ? "ring-brand ring-2" : "ring-secondary ring-1")}>
+                <span className={cx("flex items-center gap-3 rounded-t-xl p-3 pe-5 ring-inset", isSelected ? "ring-brand ring-2" : "ring-secondary ring-1")}>
                     <FeaturedIcon size="sm" theme="modern" color="gray" icon={Zap} />
-                    <span className="text-secondary text-md mr-1 font-semibold">{name}</span>
-                    <CheckboxBase isSelected={isSelected} className="ml-auto" />
+                    <span className="text-secondary text-md me-1 font-semibold">{name}</span>
+                    <CheckboxBase isSelected={isSelected} className="ms-auto" />
                 </span>
 
                 <span className="flex flex-col gap-1 rounded-b-lg p-4">

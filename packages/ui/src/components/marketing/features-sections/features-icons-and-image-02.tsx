@@ -55,7 +55,7 @@ export const FeaturesIconsAndImage02 = () => (
                     ))}
                 </ul>
 
-                <div className="h-60 md:-ml-4 md:h-140">
+                <div className="h-60 md:-ms-4 md:h-140">
                     <img src={IMAGES.landscape[3].src} alt={IMAGES.landscape[3].alt} className="size-full object-cover" />
                 </div>
             </div>

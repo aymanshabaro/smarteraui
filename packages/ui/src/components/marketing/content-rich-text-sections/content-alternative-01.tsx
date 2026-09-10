@@ -23,7 +23,7 @@ export const ContentAlternative01 = () => (
 
             <div className="flex flex-col justify-center gap-16 pt-16 lg:gap-32 lg:pt-32">
                 <div className="flex flex-col items-start">
-                    <BadgeGroup theme="modern" color="brand" addonText="12 Jan 2027" iconTrailing={null} className="pr-3">
+                    <BadgeGroup theme="modern" color="brand" addonText="12 Jan 2027" iconTrailing={null} className="pe-3">
                         Customer Success
                     </BadgeGroup>
 

@@ -26,7 +26,7 @@ export const HeroScreenMockup08 = () => (
 
         <section className="relative overflow-hidden py-16 md:pb-24">
             <div className="max-w-container mx-auto grid grid-cols-1 items-center justify-items-center gap-16 px-4 md:px-8 lg:grid-cols-2 lg:justify-items-start lg:gap-8">
-                <div className="flex w-full max-w-3xl flex-col items-center text-center lg:items-start lg:text-left">
+                <div className="flex w-full max-w-3xl flex-col items-center text-center lg:items-start lg:text-start">
                     <a href="/careers" className="outline-focus-ring rounded-[10px] focus-visible:outline-2 focus-visible:outline-offset-2">
                         <BadgeGroup className="hidden md:flex" size="lg" color="brand" theme="modern" addonText="We're hiring!">
                             Join our remote team

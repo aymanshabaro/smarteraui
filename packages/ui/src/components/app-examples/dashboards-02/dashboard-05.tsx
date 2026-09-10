@@ -141,7 +141,7 @@ export const Dashboard05 = () => {
                     <div className="max-w-container mx-auto w-full px-0 lg:px-8">
                         <div className="overflow-x-auto">
                             <Table aria-label="Recently active users" selectionMode="multiple" selectedKeys={selectedKeys} onSelectionChange={setSelectedKeys}>
-                                <Table.Header className="bg-secondary lg:[&>tr>th]:bg-secondary lg:bg-transparent lg:[&>tr>th:first-of-type]:rounded-l-xl lg:[&>tr>th:last-of-type]:rounded-r-xl">
+                                <Table.Header className="bg-secondary lg:[&>tr>th]:bg-secondary lg:bg-transparent lg:[&>tr>th:first-of-type]:rounded-s-xl lg:[&>tr>th:last-of-type]:rounded-e-xl">
                                     <Table.Head
                                         id="name"
                                         label={selectedCount > 0 ? `${selectedCount} selected` : "Name"}

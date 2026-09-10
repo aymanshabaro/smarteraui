@@ -8,7 +8,7 @@ import { Illustration } from "@/components/shared-assets/illustrations";
 export const NotFoundIllustration01 = () => (
     <section className="bg-primary grid min-h-screen flex-1 py-16 md:py-24">
         <div className="max-w-container mx-auto grid h-full grid-cols-1 items-center gap-8 px-4 md:grid-cols-2 md:px-8">
-            <div className="flex h-full flex-1 flex-col items-start gap-8 md:justify-center md:gap-12 md:pr-8">
+            <div className="flex h-full flex-1 flex-col items-start gap-8 md:justify-center md:gap-12 md:pe-8">
                 <div className="md:hidden">
                     <Illustration type="cloud" size="sm">
                         <SearchLg aria-hidden="true" className="size-6" />

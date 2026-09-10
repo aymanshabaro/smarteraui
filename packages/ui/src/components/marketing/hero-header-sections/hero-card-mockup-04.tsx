@@ -22,10 +22,10 @@ const navItems: MarketingNavItemType[] = [
 /** The blurred four-colour bloom that shines through the frosted cards. */
 const CardBloom = () => (
     <div aria-hidden="true" className="absolute -top-4 -left-4 z-0 grid grid-cols-2 blur-3xl">
-        <div className="bg-utility-pink-500 size-20 rounded-tl-full opacity-30" />
-        <div className="bg-utility-orange-500 size-20 rounded-tr-full opacity-50" />
-        <div className="bg-utility-blue-500 size-20 rounded-bl-full opacity-30" />
-        <div className="bg-utility-green-500 size-20 rounded-br-full opacity-30" />
+        <div className="bg-utility-pink-500 size-20 rounded-ss-full opacity-30" />
+        <div className="bg-utility-orange-500 size-20 rounded-se-full opacity-50" />
+        <div className="bg-utility-blue-500 size-20 rounded-es-full opacity-30" />
+        <div className="bg-utility-green-500 size-20 rounded-ee-full opacity-30" />
     </div>
 );
 

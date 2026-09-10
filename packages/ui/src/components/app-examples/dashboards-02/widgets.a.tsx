@@ -107,10 +107,10 @@ export const PanelMenu = () => (
         <Dropdown.Popover className="w-min">
             <Dropdown.Menu>
                 <Dropdown.Item icon={Edit01}>
-                    <span className="pr-4">Edit</span>
+                    <span className="pe-4">Edit</span>
                 </Dropdown.Item>
                 <Dropdown.Item icon={Trash01}>
-                    <span className="pr-4">Remove</span>
+                    <span className="pe-4">Remove</span>
                 </Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown.Popover>

@@ -51,7 +51,7 @@ export const CtaSplitImageQuote01 = () => {
                         Join 4,000+ startups growing with Smartera
                     </h2>
 
-                    <ul className="mt-8 flex flex-col gap-4 md:gap-5 md:pl-4">
+                    <ul className="mt-8 flex flex-col gap-4 md:gap-5 md:ps-4">
                         {benefits.map((benefit) => (
                             <li key={benefit} className="flex gap-3">
                                 <CheckCircle aria-hidden="true" className="text-fg-brand-primary size-7 shrink-0" />

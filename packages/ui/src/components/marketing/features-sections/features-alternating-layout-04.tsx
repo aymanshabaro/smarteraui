@@ -53,11 +53,11 @@ export const FeaturesAlternatingLayout04 = () => (
 
                 return (
                     <div key={feature.title} className="grid grid-cols-1 gap-10 md:gap-20 lg:grid-cols-2 lg:gap-0">
-                        <div className={cx("flex-1 self-center lg:py-24", isReversed ? "lg:order-last lg:pr-8 lg:pl-24" : "lg:pr-24 lg:pl-12")}>
+                        <div className={cx("flex-1 self-center lg:py-24", isReversed ? "lg:order-last lg:ps-24 lg:pe-8" : "lg:ps-12 lg:pe-24")}>
                             <FeaturedIcon icon={feature.icon} size="lg" color="brand" theme="light" />
                             <h2 className="text-display-xs text-primary md:text-display-sm mt-5 font-semibold">{feature.title}</h2>
                             <p className="text-md text-tertiary mt-2 md:mt-4 md:text-lg">{feature.subtitle}</p>
-                            <ul className="mt-8 flex flex-col gap-4 pl-2 md:gap-5 md:pl-4">
+                            <ul className="mt-8 flex flex-col gap-4 ps-2 md:gap-5 md:ps-4">
                                 {feature.bullets.map((bullet) => (
                                     <li key={bullet} className="flex gap-3">
                                         <span className="bg-brand-primary text-featured-icon-light-fg-brand flex size-7 shrink-0 items-center justify-center rounded-full">

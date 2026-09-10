@@ -37,7 +37,7 @@ export const NotFoundSimple04 = () => (
             <div className="mx-auto w-full">
                 <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-8 md:grid-cols-3">
                     {links.map((link) => (
-                        <li key={link.title} className="bg-secondary flex flex-col gap-8 p-5 text-left md:gap-12 md:p-6">
+                        <li key={link.title} className="bg-secondary flex flex-col gap-8 p-5 text-start md:gap-12 md:p-6">
                             <link.icon aria-hidden="true" className="text-icon-fg-brand size-6" />
 
                             <div className="flex flex-col items-start gap-4 md:gap-5">

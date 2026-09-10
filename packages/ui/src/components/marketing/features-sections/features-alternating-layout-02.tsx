@@ -69,7 +69,7 @@ export const FeaturesAlternatingLayout02 = () => (
                             </div>
                         </div>
 
-                        <div className="bg-tertiary relative -ml-4 w-screen px-4 py-6 md:ml-0 md:h-140 md:w-auto md:rounded-3xl md:p-10 lg:h-100">
+                        <div className="bg-tertiary relative -ms-4 w-screen px-4 py-6 md:ms-0 md:h-140 md:w-auto md:rounded-3xl md:p-10 lg:h-100">
                             <div className="relative flex h-full w-full">
                                 <img
                                     src={feature.image.src}

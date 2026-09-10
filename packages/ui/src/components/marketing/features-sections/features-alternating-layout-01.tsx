@@ -58,7 +58,7 @@ export const FeaturesAlternatingLayout01 = () => (
                             <FeaturedIcon icon={feature.icon} size="lg" color="brand" theme="light" />
                             <h2 className="text-display-xs text-primary md:text-display-sm mt-5 font-semibold">{feature.title}</h2>
                             <p className="text-md text-tertiary mt-2 md:mt-4 md:text-lg">{feature.subtitle}</p>
-                            <ul className="mt-8 flex flex-col gap-4 pl-2 md:gap-5 md:pl-4">
+                            <ul className="mt-8 flex flex-col gap-4 ps-2 md:gap-5 md:ps-4">
                                 {feature.bullets.map((bullet) => (
                                     <li key={bullet} className="flex gap-3">
                                         <CheckCircle aria-hidden="true" className="text-fg-brand-primary size-7 shrink-0" />

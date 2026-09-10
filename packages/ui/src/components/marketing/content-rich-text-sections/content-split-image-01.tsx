@@ -37,7 +37,7 @@ export const ContentSplitImage01 = () => (
     <div className="bg-primary">
         <div className="max-w-container relative mx-auto flex flex-col items-center px-4 py-16 md:flex-row md:px-8 md:pt-16 md:pb-24">
             <div className="flex max-w-180 flex-col items-start md:absolute">
-                <BadgeGroup color="brand" addonText="Design" iconTrailing={null} className="pr-3">
+                <BadgeGroup color="brand" addonText="Design" iconTrailing={null} className="pe-3">
                     8 min read
                 </BadgeGroup>
 

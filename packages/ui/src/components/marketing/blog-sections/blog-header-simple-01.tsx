@@ -225,7 +225,7 @@ export const BlogHeaderSimple01 = () => (
         <main className="max-w-container mx-auto flex w-full flex-col gap-12 px-4 pb-16 md:gap-16 md:px-8 md:pb-24">
             <Tabs defaultSelectedKey="all" className="gap-12 md:gap-16">
                 <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-                    <div className="-mx-4 -my-1 flex w-full overflow-auto px-4 py-1 md:-ml-8 md:pl-8">
+                    <div className="-mx-4 -my-1 flex w-full overflow-auto px-4 py-1 md:-ms-8 md:ps-8">
                         <TabList type="button-minimal" size="md" aria-label="Blog categories">
                             {categories.map((category) => (
                                 <Tab key={category.id} id={category.id} label={category.label} />

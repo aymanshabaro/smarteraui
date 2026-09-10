@@ -145,10 +145,10 @@ export const Settings20 = () => (
                         <div className="bg-primary flex w-full flex-col overflow-hidden rounded-xl shadow-xs sm:flex-row">
                             <div className="relative h-50 w-full sm:h-auto sm:w-60">
                                 <img src={IMAGES.landscape[4].src} alt="" className="absolute inset-0 size-full object-cover" />
-                                <div className="absolute inset-0 size-full rounded-t-xl border border-black/10 sm:rounded-l-xl sm:rounded-tr-none" />
+                                <div className="absolute inset-0 size-full rounded-t-xl border border-black/10 sm:rounded-s-xl sm:rounded-se-none" />
                             </div>
 
-                            <div className="border-secondary flex-1 rounded-b-xl border border-t-0 px-4 py-5 sm:rounded-r-xl sm:rounded-bl-none sm:border-t sm:border-l-0 sm:p-6">
+                            <div className="border-secondary flex-1 rounded-b-xl border border-t-0 px-4 py-5 sm:rounded-e-xl sm:rounded-es-none sm:border-s-0 sm:border-t sm:p-6">
                                 <div className="flex flex-col">
                                     <h3 className="text-primary text-md font-semibold">We've just released a new update!</h3>
                                     <p className="text-tertiary mt-0.5 text-sm">Check out the all new dashboard view. Pages and now load faster.</p>

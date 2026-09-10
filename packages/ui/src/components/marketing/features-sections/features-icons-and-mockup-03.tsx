@@ -56,7 +56,7 @@ export const FeaturesIconsAndMockup03 = () => (
                     ))}
                 </ul>
 
-                <div className="relative flex h-90 w-full justify-center md:h-120 lg:-ml-4 lg:h-140 lg:overflow-y-clip">
+                <div className="relative flex h-90 w-full justify-center md:h-120 lg:-ms-4 lg:h-140 lg:overflow-y-clip">
                     <IPhoneMockup
                         image={IMAGES.square[0].src}
                         className="drop-shadow-iphone-mockup absolute top-16 left-1/2 hidden w-78.5 -translate-x-3/4 md:block lg:left-0 lg:translate-x-0"

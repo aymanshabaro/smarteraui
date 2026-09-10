@@ -8,7 +8,7 @@ import { IMAGES } from "@/utils/demo-assets";
 export const NewsletterIphoneMockup01 = () => (
     <section className="bg-primary overflow-hidden pt-16 md:py-24">
         <div className="max-w-container relative mx-auto grid w-full grid-cols-1 gap-16 px-4 md:px-8 lg:grid-cols-2 lg:items-center">
-            <div className="z-20 flex flex-col items-start md:max-w-xl md:pr-18">
+            <div className="z-20 flex flex-col items-start md:max-w-xl md:pe-18">
                 <h2 className="text-display-sm text-primary md:text-display-md lg:text-display-lg font-semibold">Be the first to know when we launch</h2>
                 <p className="text-tertiary mt-4 text-lg md:mt-6 md:text-xl">
                     We&apos;re still building. Subscribe for updates and 20% off when we launch. <span className="max-md:hidden">No spam, we promise!</span>

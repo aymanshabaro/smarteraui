@@ -49,7 +49,7 @@ export const HeroSplitImage05 = () => (
                     <img
                         src={IMAGES.landscape[1].src}
                         alt={IMAGES.landscape[1].alt}
-                        className="inset-0 h-60 w-full rounded-tr-[32px] rounded-bl-[32px] object-cover md:h-110 md:rounded-tr-[64px] md:rounded-bl-[64px] lg:h-full"
+                        className="inset-0 h-60 w-full rounded-se-[32px] rounded-es-[32px] object-cover md:h-110 md:rounded-se-[64px] md:rounded-es-[64px] lg:h-full"
                     />
                 </div>
             </div>

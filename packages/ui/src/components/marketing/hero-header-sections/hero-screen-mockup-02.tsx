@@ -24,7 +24,7 @@ export const HeroScreenMockup02 = () => (
 
         <section className="relative overflow-hidden py-16 md:py-24">
             <div className="max-w-container mx-auto grid grid-cols-1 items-center justify-items-center gap-16 px-4 md:px-8 lg:grid-cols-2 lg:justify-items-start lg:gap-16">
-                <div className="flex max-w-3xl flex-col items-center text-center lg:items-start lg:text-left">
+                <div className="flex max-w-3xl flex-col items-center text-center lg:items-start lg:text-start">
                     <h1 className="text-display-md text-primary md:text-display-lg lg:text-display-xl font-semibold">Beautiful analytics to grow smarter</h1>
                     <p className="text-tertiary mt-4 max-w-lg text-lg text-balance md:mt-6 md:text-xl">
                         Powerful, self-serve product and growth analytics to help you convert, engage, and retain more users.

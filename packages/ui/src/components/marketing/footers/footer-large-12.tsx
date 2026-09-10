@@ -12,7 +12,7 @@ const styles = sortCx({
     columnTitle: "text-quaternary text-sm font-semibold",
     socialLink:
         "text-fg-quaternary outline-focus-ring hover:text-fg-quaternary_hover flex rounded-xs transition duration-100 ease-linear focus-visible:outline-2 focus-visible:outline-offset-2",
-    companyAvatar: "-ml-1 size-6 rounded-full object-cover ring-[1.5px] ring-white outline-[0.5px] -outline-offset-[0.5px] outline-black/16 first:ml-0",
+    companyAvatar: "-ms-1 size-6 rounded-full object-cover ring-[1.5px] ring-white outline-[0.5px] -outline-offset-[0.5px] outline-black/16 first:ms-0",
 });
 
 const columns = [
@@ -96,7 +96,7 @@ export const FooterLarge12 = () => {
                         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid -- placeholder href for a marketing section */}
                         <a
                             href="#"
-                            className="bg-primary_alt ring-secondary_alt hover:bg-primary_hover flex w-max items-center gap-3 rounded-full py-1.5 pr-2 pl-1.5 shadow-xs ring-1 transition duration-100 ease-linear"
+                            className="bg-primary_alt ring-secondary_alt hover:bg-primary_hover flex w-max items-center gap-3 rounded-full py-1.5 ps-1.5 pe-2 shadow-xs ring-1 transition duration-100 ease-linear"
                         >
                             <div className="flex items-start">
                                 {companies.map((company) => (
@@ -129,7 +129,7 @@ export const FooterLarge12 = () => {
                                                     className="max-h-5"
                                                     iconTrailing={
                                                         item.badge ? (
-                                                            <Badge type="modern" size="sm" className="ml-1">
+                                                            <Badge type="modern" size="sm" className="ms-1">
                                                                 {item.badge}
                                                             </Badge>
                                                         ) : undefined

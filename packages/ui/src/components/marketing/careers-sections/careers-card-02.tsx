@@ -86,7 +86,7 @@ export const CareersCard02 = () => {
 
                     <div className="flex flex-col gap-8 md:gap-6">
                         <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-[1fr_240px] md:self-end">
-                            <p className="text-md text-tertiary hidden text-right font-medium whitespace-nowrap md:block">Filter by location</p>
+                            <p className="text-md text-tertiary hidden text-end font-medium whitespace-nowrap md:block">Filter by location</p>
 
                             <Select
                                 aria-label="Filter by location"

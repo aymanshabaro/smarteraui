@@ -116,7 +116,7 @@ export const BlogSectionCarouselLayout01 = () => (
             </div>
 
             <Carousel.Root className="mt-12 md:mt-16">
-                <Carousel.Content overflowHidden={false} className="gap-6 pr-4 md:gap-8 md:pr-8">
+                <Carousel.Content overflowHidden={false} className="gap-6 pe-4 md:gap-8 md:pe-8">
                     {posts.map((post) => (
                         <Carousel.Item key={post.title} className="max-w-xs md:max-w-96">
                             <article className="flex flex-col gap-4">

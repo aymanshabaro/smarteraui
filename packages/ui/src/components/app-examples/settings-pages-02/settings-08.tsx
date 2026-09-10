@@ -95,7 +95,7 @@ export const Settings08 = () => (
                                         <Table.Body items={members}>
                                             {(member) => (
                                                 <Table.Row id={member.id}>
-                                                    <Table.Cell className="max-md:pl-4">
+                                                    <Table.Cell className="max-md:ps-4">
                                                         <div className="flex w-max items-center gap-3">
                                                             <Avatar size="md" src={member.src} initials={member.initials} alt="" />
                                                             <p className="text-primary text-sm font-medium whitespace-nowrap lg:whitespace-normal">

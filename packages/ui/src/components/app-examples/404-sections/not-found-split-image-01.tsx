@@ -48,7 +48,7 @@ export const NotFoundSplitImage01 = () => (
             </div>
         </div>
 
-        <div className="h-60 w-full px-4 md:h-95 md:px-8 lg:h-full lg:py-6 lg:pr-6 lg:pl-0">
+        <div className="h-60 w-full px-4 md:h-95 md:px-8 lg:h-full lg:py-6 lg:ps-0 lg:pe-6">
             <div className="relative flex h-full flex-1">
                 <img
                     src={IMAGES.landscape[0].src}

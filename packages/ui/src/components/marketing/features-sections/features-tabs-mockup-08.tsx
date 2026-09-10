@@ -46,7 +46,7 @@ export const FeaturesTabsMockup08 = () => (
                             id={tab.id}
                             className={({ isSelected }) =>
                                 cx(
-                                    "outline-focus-ring hover:border-brand relative flex cursor-pointer flex-col items-start gap-4 border-l-4 py-4 pl-5 transition duration-100 ease-linear focus-visible:outline-2 focus-visible:outline-offset-2",
+                                    "outline-focus-ring hover:border-brand relative flex cursor-pointer flex-col items-start gap-4 border-s-4 py-4 ps-5 transition duration-100 ease-linear focus-visible:outline-2 focus-visible:outline-offset-2",
                                     isSelected ? "border-brand" : "border-tertiary",
                                 )
                             }
@@ -64,7 +64,7 @@ export const FeaturesTabsMockup08 = () => (
                 </AriaTabList>
 
                 {tabs.map((tab) => (
-                    <AriaTabPanel key={tab.id} id={tab.id} className="lg:-ml-4 lg:h-128">
+                    <AriaTabPanel key={tab.id} id={tab.id} className="lg:-ms-4 lg:h-128">
                         <div className="w-full lg:w-max lg:max-w-5xl">
                             <ScreenMockup size="md">
                                 <img src={tab.image.src} alt={tab.image.alt} className="size-full object-cover object-left-top" />

@@ -35,7 +35,7 @@ export const HeroColorCard04 = () => (
         <section className="relative overflow-hidden pb-16 md:pt-8 md:pb-24">
             <div className="max-w-container mx-auto md:px-8">
                 <div className="bg-brand-section grid w-full grid-cols-1 items-center overflow-hidden px-4 pt-16 pb-24 md:rounded-3xl md:px-8 md:pb-40 lg:grid-cols-2 lg:gap-16 lg:pt-0 lg:pb-0">
-                    <div className="flex flex-col items-center text-center lg:block lg:ps-8 lg:text-left">
+                    <div className="flex flex-col items-center text-center lg:block lg:ps-8 lg:text-start">
                         <h1 className="text-display-md text-primary_on-brand md:text-display-lg lg:text-display-2xl max-w-3xl font-semibold">
                             Grow your users.
                             <br className="md:hidden" /> <span className="text-secondary_on-brand">Smarter.</span>

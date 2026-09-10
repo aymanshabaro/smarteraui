@@ -6,7 +6,7 @@ import { LOGOS } from "@/utils/demo-assets";
 const logos = [...LOGOS, ...LOGOS.slice(0, 4)];
 
 const styles = sortCx({
-    track: "animate-marquee flex w-auto max-w-none shrink-0 justify-center gap-5 pl-5 motion-reduce:animate-none md:gap-6 md:pl-6",
+    track: "animate-marquee flex w-auto max-w-none shrink-0 justify-center gap-5 ps-5 motion-reduce:animate-none md:gap-6 md:ps-6",
     // The second row scrolls the other way and is offset so the two rows never line up.
     trackReverse: "direction-reverse [animation-delay:-3s] motion-reduce:-translate-x-1/2",
     // `dark:invert` is a documented asset swap: the placeholder wordmarks ship as a single mono set

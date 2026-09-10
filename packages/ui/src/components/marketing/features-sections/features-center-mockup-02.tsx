@@ -50,7 +50,7 @@ export const FeaturesCenterMockup02 = () => (
                 <div className="relative hidden w-full items-center justify-center md:flex md:h-139.5">
                     <div className="relative flex items-center">
                         <IPhoneMockup image={IMAGES.square[0].src} className="drop-shadow-iphone-mockup relative z-10 w-71" />
-                        <ScreenMockup size="md" className="-ml-24 h-100 w-160 lg:w-208">
+                        <ScreenMockup size="md" className="-ms-24 h-100 w-160 lg:w-208">
                             <img src={IMAGES.landscape[0].src} alt={IMAGES.landscape[0].alt} className="size-full object-cover object-left-top" />
                         </ScreenMockup>
                     </div>

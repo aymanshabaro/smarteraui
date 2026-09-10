@@ -11,7 +11,7 @@ export const NotFoundSplitImage03 = () => (
     <section className="bg-primary relative flex flex-col gap-16 py-16 lg:grid lg:min-h-screen lg:grid-cols-2 lg:items-center lg:gap-0 lg:py-0">
         <div className="flex h-full lg:py-24">
             <div className="flex w-full items-center justify-center px-4 md:px-8">
-                <div className="flex flex-col items-start gap-8 md:gap-12 lg:pr-8">
+                <div className="flex flex-col items-start gap-8 md:gap-12 lg:pe-8">
                     <div className="flex max-w-132 flex-col gap-4 md:gap-6">
                         <h1 className="text-display-md text-primary md:text-display-lg lg:text-display-xl font-semibold">
                             Uh oh, we can&apos;t find that page...

@@ -11,7 +11,7 @@ const styles = sortCx({
     columnTitle: "text-quaternary_on-brand text-sm font-semibold",
     navLink: "max-h-5 text-footer-button-fg hover:text-footer-button-fg_hover",
     // The badge sits on the solid brand fill, where the neutral badge tokens have no contrast.
-    badge: "ml-1 rounded-md bg-white/10 px-1.5 py-0.5 text-xs font-medium text-white ring-1 ring-white/30 ring-inset",
+    badge: "ms-1 rounded-md bg-white/10 px-1.5 py-0.5 text-xs font-medium text-white ring-1 ring-white/30 ring-inset",
     socialLink:
         "text-icon-fg-brand_on-brand outline-focus-ring hover:text-fg-quaternary_hover flex rounded-xs transition duration-100 ease-linear focus-visible:outline-2 focus-visible:outline-offset-2",
 });

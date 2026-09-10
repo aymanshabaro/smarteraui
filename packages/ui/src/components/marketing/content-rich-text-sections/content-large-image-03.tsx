@@ -27,7 +27,7 @@ export const ContentLargeImage03 = () => (
     <div className="bg-primary">
         <div className="max-w-container mx-auto px-4 py-16 md:px-8 md:py-24">
             <div className="w-full max-w-3xl">
-                <BadgeGroup color="brand" addonText="Leadership" iconTrailing={null} className="pr-3">
+                <BadgeGroup color="brand" addonText="Leadership" iconTrailing={null} className="pe-3">
                     8 min read
                 </BadgeGroup>
 

@@ -73,7 +73,7 @@ export const NotFoundSimple06 = () => (
                     {links.map((link) => (
                         <li
                             key={link.title}
-                            className="border-secondary flex flex-col gap-4 border-t pt-5 text-left last:border-b last:pb-5 md:flex-row md:gap-5"
+                            className="border-secondary flex flex-col gap-4 border-t pt-5 text-start last:border-b last:pb-5 md:flex-row md:gap-5"
                         >
                             <FeaturedIcon icon={link.icon} size="lg" theme="modern" color="gray" className="hidden md:flex" />
                             <FeaturedIcon icon={link.icon} size="md" theme="modern" color="gray" className="md:hidden" />

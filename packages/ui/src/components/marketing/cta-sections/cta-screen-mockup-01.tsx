@@ -11,7 +11,7 @@ export const CtaScreenMockup01 = () => (
             <div className="flex w-full max-w-3xl flex-col">
                 <h2 className="text-display-sm text-primary md:text-display-lg font-semibold">Join 4,000+ startups growing with Smartera</h2>
 
-                <ul className="mt-8 flex flex-col gap-4 pl-2 md:gap-5 md:pl-4">
+                <ul className="mt-8 flex flex-col gap-4 ps-2 md:gap-5 md:ps-4">
                     {benefits.map((benefit) => (
                         <li key={benefit} className="flex gap-3">
                             <CheckCircle aria-hidden="true" className="text-fg-brand-primary size-7 shrink-0" />

@@ -55,10 +55,10 @@ export const FeaturesIconsAndMockup01 = () => (
                 </ul>
 
                 {/* Desktop: phone overlapping the desktop screen */}
-                <div className="relative -ml-4 hidden w-screen md:ml-0 lg:flex lg:h-128 lg:w-full">
+                <div className="relative -ms-4 hidden w-screen md:ms-0 lg:flex lg:h-128 lg:w-full">
                     <div className="absolute -top-5 flex items-center">
                         <IPhoneMockup image={IMAGES.square[1].src} className="drop-shadow-iphone-mockup relative z-10 w-71" />
-                        <ScreenMockup size="md" className="-ml-24 h-100 w-200 max-w-none">
+                        <ScreenMockup size="md" className="-ms-24 h-100 w-200 max-w-none">
                             <img src={IMAGES.landscape[1].src} alt={IMAGES.landscape[1].alt} className="size-full object-cover object-left-top" />
                         </ScreenMockup>
                     </div>

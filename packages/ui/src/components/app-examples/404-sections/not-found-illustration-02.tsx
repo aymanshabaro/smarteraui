@@ -52,7 +52,7 @@ const Numerals404 = ({ className }: { className?: string }) => (
 export const NotFoundIllustration02 = () => (
     <section className="bg-primary grid flex-1 py-16 md:min-h-screen md:py-24">
         <div className="max-w-container mx-auto grid w-full grid-cols-1 items-start gap-8 px-4 md:items-center md:px-8 lg:grid-cols-2">
-            <div className="mx-auto flex max-w-3xl flex-col items-start gap-8 md:gap-12 md:pr-8">
+            <div className="mx-auto flex max-w-3xl flex-col items-start gap-8 md:gap-12 md:pe-8">
                 <Numerals404 className="text-bg-tertiary w-[282px] lg:hidden" />
 
                 <div className="flex flex-col gap-4 md:gap-6">

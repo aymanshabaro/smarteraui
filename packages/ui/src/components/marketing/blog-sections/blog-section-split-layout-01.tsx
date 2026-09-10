@@ -61,7 +61,7 @@ export const BlogSectionSplitLayout01 = () => (
 
                             <div className="flex flex-col gap-5">
                                 <div className="flex flex-col items-start gap-3">
-                                    <BadgeGroup color="brand" addonText={post.category} iconTrailing={null} className="pr-3">
+                                    <BadgeGroup color="brand" addonText={post.category} iconTrailing={null} className="pe-3">
                                         {post.readingTime}
                                     </BadgeGroup>
 

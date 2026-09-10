@@ -46,7 +46,7 @@ export const PricingSectionFeaturedCards03 = () => (
                     <p className="text-tertiary mt-4 text-lg md:mt-5">Simple, transparent pricing that grows with you. Try any plan free for 30 days.</p>
                 </div>
 
-                <div className="grid w-full grid-cols-1 items-start gap-12 md:-ml-2 md:grid-cols-2 md:gap-8">
+                <div className="grid w-full grid-cols-1 items-start gap-12 md:-ms-2 md:grid-cols-2 md:gap-8">
                     {plans.map((plan) => (
                         <div key={plan.name} className="bg-secondary relative flex flex-col rounded-2xl">
                             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">

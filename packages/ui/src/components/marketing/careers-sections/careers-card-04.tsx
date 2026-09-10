@@ -126,7 +126,7 @@ export const CareersCard04 = () => {
 
                     <div>
                         <div className="grid grid-cols-1 items-center gap-4 lg:grid-cols-[1fr_240px]">
-                            <p className="text-md text-tertiary hidden text-right font-medium whitespace-nowrap md:block">Location:</p>
+                            <p className="text-md text-tertiary hidden text-end font-medium whitespace-nowrap md:block">Location:</p>
 
                             <Select
                                 aria-label="Location"

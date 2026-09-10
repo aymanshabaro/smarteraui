@@ -82,7 +82,7 @@ const FeatureHint = ({ feature }: { feature: Feature }) => (
             aria-label={`More information about ${feature.name}`}
             className="text-fg-quaternary hover:text-fg-quaternary_hover focus:text-fg-quaternary_hover cursor-pointer transition duration-100"
         >
-            <HelpCircle className="ml-1 inline-block size-4" />
+            <HelpCircle className="ms-1 inline-block size-4" />
         </TooltipTrigger>
     </Tooltip>
 );
@@ -100,7 +100,7 @@ const MobileValue = ({ value }: { value: FeatureValue }) => {
         </>
     ) : (
         <>
-            <Minus className="text-fg-quaternary ml-auto size-5" />
+            <Minus className="text-fg-quaternary ms-auto size-5" />
             <span className="sr-only">No</span>
         </>
     );
@@ -148,7 +148,7 @@ export const PricingLargeTable02 = () => (
         </div>
 
         <div className="max-w-container mx-auto h-14 w-full px-4 md:px-8">
-            <div className="h-14 w-full px-4 md:pr-0">
+            <div className="h-14 w-full px-4 md:pe-0">
                 <Slider
                     aria-label="Number of users"
                     minValue={1}
@@ -179,7 +179,7 @@ export const PricingLargeTable02 = () => (
 
                         {groups.map((group, groupIndex) => (
                             <table key={group.title} className="mb-8 w-full last:mb-0">
-                                <caption className={cx("text-brand-secondary px-4 pb-4 text-left text-sm font-semibold", groupIndex === 0 && "sr-only")}>
+                                <caption className={cx("text-brand-secondary px-4 pb-4 text-start text-sm font-semibold", groupIndex === 0 && "sr-only")}>
                                     {group.title}
                                 </caption>
                                 <thead>
@@ -195,11 +195,11 @@ export const PricingLargeTable02 = () => (
                                 <tbody>
                                     {group.features.map((feature, index) => (
                                         <tr key={feature.name} className={cx(index % 2 === 0 && "bg-secondary_alt")}>
-                                            <th className="text-primary flex py-4.5 pl-4 text-left text-sm font-medium" scope="row">
+                                            <th className="text-primary flex py-4.5 ps-4 text-start text-sm font-medium" scope="row">
                                                 {feature.name}
                                             </th>
-                                            <td className="py-4.5 pr-4">
-                                                <div className="flex items-center justify-end text-right">
+                                            <td className="py-4.5 pe-4">
+                                                <div className="flex items-center justify-end text-end">
                                                     <MobileValue value={valueFor(feature, planIndex)} />
                                                 </div>
                                             </td>
@@ -267,7 +267,7 @@ export const PricingLargeTable02 = () => (
                                 <tr className={cx(groupIndex === 0 && "sr-only")}>
                                     <th
                                         scope="colgroup"
-                                        className={cx("text-brand-secondary px-6 pb-4 text-left text-sm font-semibold", groupIndex === 0 ? "pt-0" : "pt-10")}
+                                        className={cx("text-brand-secondary px-6 pb-4 text-start text-sm font-semibold", groupIndex === 0 ? "pt-0" : "pt-10")}
                                     >
                                         {group.title}
                                     </th>
@@ -278,7 +278,7 @@ export const PricingLargeTable02 = () => (
 
                                 {group.features.map((feature, index) => (
                                     <tr key={feature.name} className={cx(index % 2 === 0 && "bg-secondary_alt")}>
-                                        <th className="text-primary px-6 py-5.5 text-left text-sm font-medium" scope="row">
+                                        <th className="text-primary px-6 py-5.5 text-start text-sm font-medium" scope="row">
                                             {feature.name}
                                             <FeatureHint feature={feature} />
                                         </th>

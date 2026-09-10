@@ -62,7 +62,7 @@ export const PricingSectionFeaturedCards04 = () => (
                     ))}
                 </ul>
 
-                <div className="bg-primary ring-secondary_alt flex flex-col overflow-hidden rounded-2xl shadow-lg ring-1 md:-ml-4">
+                <div className="bg-primary ring-secondary_alt flex flex-col overflow-hidden rounded-2xl shadow-lg ring-1 md:-ms-4">
                     <div className="flex flex-col-reverse gap-4 px-6 pt-6 pb-8 md:flex-row md:justify-between md:gap-8 md:px-8 md:pt-8 md:pb-6">
                         <div className="flex flex-col gap-1">
                             <div className="flex items-center gap-2">

@@ -75,7 +75,7 @@ const FeatureHint = ({ feature }: { feature: Feature }) => (
             aria-label={`More information about ${feature.name}`}
             className="text-fg-quaternary hover:text-fg-quaternary_hover focus:text-fg-quaternary_hover cursor-pointer transition duration-100"
         >
-            <HelpCircle className="ml-1 inline-block size-4" />
+            <HelpCircle className="ms-1 inline-block size-4" />
         </TooltipTrigger>
     </Tooltip>
 );
@@ -93,7 +93,7 @@ const MobileValue = ({ value }: { value: FeatureValue }) => {
         </>
     ) : (
         <>
-            <Minus className="text-fg-quaternary ml-auto size-5" />
+            <Minus className="text-fg-quaternary ms-auto size-5" />
             <span className="sr-only">No</span>
         </>
     );
@@ -152,7 +152,7 @@ export const PricingLargeTable01 = () => (
                             </h3>
                             <p className="mt-4">
                                 <span className="text-display-lg text-primary font-semibold">${plan.price}</span>
-                                <span className="text-md text-tertiary ml-1.5 pb-2 font-medium">per month</span>
+                                <span className="text-md text-tertiary ms-1.5 pb-2 font-medium">per month</span>
                             </p>
                             <p className="text-tertiary mt-4 text-sm">{plan.description}</p>
 
@@ -163,7 +163,7 @@ export const PricingLargeTable01 = () => (
 
                         {groups.map((group) => (
                             <table key={group.title} className="mb-8 w-full last:mb-0">
-                                <caption className="text-brand-secondary px-4 pb-4 text-left text-sm font-semibold">{group.title}</caption>
+                                <caption className="text-brand-secondary px-4 pb-4 text-start text-sm font-semibold">{group.title}</caption>
                                 <thead>
                                     <tr>
                                         <th className="sr-only" scope="col">
@@ -177,11 +177,11 @@ export const PricingLargeTable01 = () => (
                                 <tbody>
                                     {group.features.map((feature, index) => (
                                         <tr key={feature.name} className={cx(index % 2 === 0 && "bg-secondary_alt")}>
-                                            <th className="text-primary flex py-4.5 pl-4 text-left text-sm font-medium" scope="row">
+                                            <th className="text-primary flex py-4.5 ps-4 text-start text-sm font-medium" scope="row">
                                                 {feature.name}
                                             </th>
-                                            <td className="py-4.5 pr-4">
-                                                <div className="flex items-center justify-end text-right">
+                                            <td className="py-4.5 pe-4">
+                                                <div className="flex items-center justify-end text-end">
                                                     <MobileValue value={valueFor(feature, planIndex)} />
                                                 </div>
                                             </td>
@@ -211,7 +211,7 @@ export const PricingLargeTable01 = () => (
                                 <span className="sr-only">Feature by plans</span>
                             </th>
                             {plans.map((plan) => (
-                                <th key={plan.name} className="text-primary w-1/4 px-6 pt-0 pb-4 text-left text-xl font-semibold" scope="col">
+                                <th key={plan.name} className="text-primary w-1/4 px-6 pt-0 pb-4 text-start text-xl font-semibold" scope="col">
                                     <p className="inline-flex items-center gap-2">
                                         {plan.name}
                                         {plan.isPopular && <Badge color="brand">Popular</Badge>}
@@ -231,7 +231,7 @@ export const PricingLargeTable01 = () => (
                                         <div className="flex flex-col">
                                             <p>
                                                 <span className="text-display-lg text-primary font-semibold">${plan.price}</span>
-                                                <span className="text-md text-tertiary ml-1.5 pb-2 font-medium">per month</span>
+                                                <span className="text-md text-tertiary ms-1.5 pb-2 font-medium">per month</span>
                                             </p>
                                             <p className="text-tertiary mt-4 text-sm">{plan.description}</p>
                                         </div>
@@ -251,7 +251,7 @@ export const PricingLargeTable01 = () => (
                             <Fragment key={group.title}>
                                 <tr>
                                     <th
-                                        className={cx("text-brand-secondary px-6 pb-4 text-left text-sm font-semibold", groupIndex === 0 ? "pt-0" : "pt-10")}
+                                        className={cx("text-brand-secondary px-6 pb-4 text-start text-sm font-semibold", groupIndex === 0 ? "pt-0" : "pt-10")}
                                         colSpan={4}
                                         scope="colgroup"
                                     >
@@ -267,7 +267,7 @@ export const PricingLargeTable01 = () => (
                                             index === group.features.length - 1 && "border-secondary border-b",
                                         )}
                                     >
-                                        <th className="text-primary px-6 py-5.5 text-left text-sm font-medium" scope="row">
+                                        <th className="text-primary px-6 py-5.5 text-start text-sm font-medium" scope="row">
                                             {feature.name}
                                             <FeatureHint feature={feature} />
                                         </th>
