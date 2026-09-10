@@ -20,7 +20,7 @@ import {
     TableHeader as AriaTableHeader,
     useTableOptions as AriaUseTableOptions,
 } from "react-aria-components";
-import { ArrowDown, ChevronSelectorVertical, Copy01, Edit01, HelpCircle, Trash01 } from "@smarteraui/icons";
+import { ArrowDown, ChevronSelectorVertical, Copy01, Edit01, HelpCircle, Trash01 } from "@properui/icons";
 import { Badge } from "@/components/base/badges/badges";
 import { Checkbox } from "@/components/base/checkbox/checkbox";
 import { Dropdown } from "@/components/base/dropdown/dropdown";

@@ -1,7 +1,7 @@
 "use client";
 
 import { RadioGroup as AriaRadioGroup } from "react-aria-components";
-import { DownloadCloud02, Plus } from "@smarteraui/icons";
+import { DownloadCloud02, Plus } from "@properui/icons";
 import { FeaturedCardQRCode } from "@/components/application/app-navigation/base-components/featured-cards";
 import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
@@ -66,7 +66,7 @@ export const Settings15 = () => (
                 <FeaturedCardQRCode
                     title="Verify this device"
                     description="Open the app and scan the QR code below to verify this device."
-                    value="https://smartera.com/verify/4060020"
+                    value="https://proper.example/verify/4060020"
                     className="hidden md:flex"
                     onDismiss={noop}
                 />

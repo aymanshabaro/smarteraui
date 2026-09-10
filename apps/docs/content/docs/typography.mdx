@@ -2,13 +2,13 @@
 title: Typography
 section: docs
 description: For long-form content like articles or documentation, use our typography styles to ensure consistent formatting. These styles extend the default @tailwindcss/typography plugin.
-metaTitle: Typography | Smartera UI
-metaDescription: Live specimens for every Smartera UI text size token and the .prose rich-text theme, built on @tailwindcss/typography.
+metaTitle: Typography | Proper UI
+metaDescription: Live specimens for every Proper UI text size token and the .prose rich-text theme, built on @tailwindcss/typography.
 source: packages/ui/src/components/foundations/typography
 demoFile: typography
 ---
 
-Smartera UI defines two related type systems. Interface text uses the size tokens in `theme.css` (`text-xs` through `text-display-2xl`) applied
+Proper UI defines two related type systems. Interface text uses the size tokens in `theme.css` (`text-xs` through `text-display-2xl`) applied
 directly as Tailwind classes. Long-form content — articles, blog posts, changelogs, legal pages — uses the `.prose` class instead, which themes the
 `@tailwindcss/typography` plugin with the same semantic color tokens so rich text never looks out of step with the rest of the UI.
 
@@ -23,7 +23,7 @@ directly as Tailwind classes. Long-form content — articles, blog posts, change
 @plugin "@tailwindcss/typography";
 ```
 
-`typography.css` overrides the plugin's default CSS variables (`--tw-prose-body`, `--tw-prose-headings`, `--tw-prose-quotes`, …) with Smartera UI's
+`typography.css` overrides the plugin's default CSS variables (`--tw-prose-body`, `--tw-prose-headings`, `--tw-prose-quotes`, …) with Proper UI's
 semantic tokens — body copy uses `text-tertiary`, headings use `text-primary`, quote borders use `fg-brand-primary_alt` — so a `.prose` block already
 matches your theme, including dark mode, with no extra classes.
 

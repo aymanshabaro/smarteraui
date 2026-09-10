@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowNext, ArrowPrevious } from "@smarteraui/icons";
+import { ArrowNext, ArrowPrevious } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { RatingStars } from "@/components/foundations/rating/rating-stars";
 import { sortCx } from "@/utils/cx";
@@ -16,7 +16,7 @@ const styles = sortCx({
 
 const reviews = [
     {
-        quote: "Smartera has saved us thousands of hours of work. We're able to spin up projects and features faster.",
+        quote: "Proper has saved us thousands of hours of work. We're able to spin up projects and features faster.",
         author: AVATARS[9],
         company: LOGOS[5].name,
         role: `PM, ${LOGOS[5].name}`,
@@ -24,7 +24,7 @@ const reviews = [
         portrait: IMAGES.square[1],
     },
     {
-        quote: "Using Smartera has streamlined our entire design process. It's an invaluable part of our studio.",
+        quote: "Using Proper has streamlined our entire design process. It's an invaluable part of our studio.",
         author: AVATARS[7],
         company: LOGOS[4].name,
         role: `Design Lead, ${LOGOS[4].name}`,

@@ -1,7 +1,7 @@
 "use client";
 
 import type { FC } from "react";
-import { BarChartSquare02, ClockRewind, HomeLine, LayoutAlt01, LinkExternal01, Plus, Rows01, Settings01, Star01, Users01 } from "@smarteraui/icons";
+import { BarChartSquare02, ClockRewind, HomeLine, LayoutAlt01, LinkExternal01, Plus, Rows01, Settings01, Star01, Users01 } from "@properui/icons";
 import type { NavItemType } from "@/components/application/app-navigation/config";
 import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
 import { Avatar } from "@/components/base/avatar/avatar";
@@ -37,8 +37,8 @@ const footerItems: (NavItemType & { icon: FC<{ className?: string }> })[] = [
 const designer = avatar(2);
 
 const links = [
-    { label: "Website", value: "lanasteiner.com", href: "https://www.smartera.com" },
-    { label: "Portfolio", value: designer.username, href: "https://www.smartera.com" },
+    { label: "Website", value: "lanasteiner.com", href: "https://www.proper.example" },
+    { label: "Portfolio", value: designer.username, href: "https://www.proper.example" },
     { label: "Email", value: designer.email, href: `mailto:${designer.email}` },
 ];
 

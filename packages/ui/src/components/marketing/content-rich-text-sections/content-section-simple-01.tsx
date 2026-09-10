@@ -1,6 +1,6 @@
 "use client";
 
-import { ChartBreakoutSquare } from "@smarteraui/icons";
+import { ChartBreakoutSquare } from "@properui/icons";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 
 /** A headline column paired with a rich-text column, introduced by a featured icon. */
@@ -27,7 +27,7 @@ export const ContentSectionSimple01 = () => (
                     <h2>How we can help</h2>
 
                     <p>
-                        Smartera connects to the tools you already run and builds a single event model on top of them. Activation, retention and revenue are
+                        Proper connects to the tools you already run and builds a single event model on top of them. Activation, retention and revenue are
                         defined once, reviewed by the whole team, and then used everywhere — dashboards, alerts and the weekly report all read from the same
                         definitions.
                     </p>

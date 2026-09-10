@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, ArrowUp, Plus } from "@smarteraui/icons";
+import { ArrowRight, ArrowUp, Plus } from "@properui/icons";
 import { avatar } from "@/utils/demo-assets";
 import type { BadgeColors } from "./badge-types";
 import { Badge, BadgeIcon, BadgeWithButton, BadgeWithDot, BadgeWithFlag, BadgeWithIcon, BadgeWithImage, filledColors } from "./badges";

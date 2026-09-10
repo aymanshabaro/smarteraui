@@ -5,14 +5,14 @@ Vite has no server/client split and no framework router to work around, which ma
 ## Install
 
 ```bash
-pnpm add @smarteraui/ui
+pnpm add @properui/ui
 pnpm add -D @tailwindcss/vite
 ```
 
 Or let the CLI do it:
 
 ```bash
-npx smarteraui@latest init --vite
+npx properui@latest init --vite
 ```
 
 ## 1. Register the Tailwind plugin
@@ -50,12 +50,12 @@ you plan to copy components in. Mirror it in `tsconfig.json` so the editor and `
 
 ```css
 /* src/index.css */
-@import "@smarteraui/ui/styles/globals.css";
+@import "@properui/ui/styles/globals.css";
 
-@source "../node_modules/@smarteraui/ui/src/**/*.{ts,tsx}";
+@source "../node_modules/@properui/ui/src/**/*.{ts,tsx}";
 ```
 
-`@smarteraui/ui/styles/globals.css` already imports Tailwind, the tokens, the typography scale and the plugins. The
+`@properui/ui/styles/globals.css` already imports Tailwind, the tokens, the typography scale and the plugins. The
 `@source` line is what makes Tailwind scan the package — Tailwind v4 skips `node_modules` by default, and without it the
 components render unstyled. From `src/index.css` the path to your project's `node_modules` is `../node_modules`.
 
@@ -69,9 +69,9 @@ import "./index.css";
 ## 3. Providers
 
 **`ThemeProvider`** is framework-agnostic — `next-themes` needs only `localStorage` and a `document`, both of which a
-Vite SPA has. Import it from `@smarteraui/ui/providers` and use it as-is.
+Vite SPA has. Import it from `@properui/ui/providers` and use it as-is.
 
-**`RouterProvider`** from `@smarteraui/ui/providers` is Next-only: it reads `useRouter` from `next/navigation`. In Vite,
+**`RouterProvider`** from `@properui/ui/providers` is Next-only: it reads `useRouter` from `next/navigation`. In Vite,
 use React Aria's own `RouterProvider` and hand it your router's navigate function, so components that accept `href` do a
 client-side transition:
 
@@ -81,7 +81,7 @@ import { StrictMode } from "react";
 import { RouterProvider } from "react-aria-components";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, useNavigate } from "react-router-dom";
-import { ThemeProvider } from "@smarteraui/ui/providers";
+import { ThemeProvider } from "@properui/ui/providers";
 import { App } from "./app";
 import "./index.css";
 
@@ -112,7 +112,7 @@ just do a full page load.
 ## 4. Use a component
 
 ```tsx
-import { Button } from "@smarteraui/ui/components/base/buttons/button";
+import { Button } from "@properui/ui/components/base/buttons/button";
 
 export const App = () => <Button size="md">Get started</Button>;
 ```
@@ -123,9 +123,9 @@ React Aria components take `onPress` rather than `onClick`, and `isDisabled` rat
 
 ```tsx
 // src/components/theme-toggle.tsx
-import { Moon01, Sun } from "@smarteraui/icons";
-import { ButtonUtility } from "@smarteraui/ui/components/base/buttons/button-utility";
-import { useTheme } from "@smarteraui/ui/providers";
+import { Moon01, Sun } from "@properui/icons";
+import { ButtonUtility } from "@properui/ui/components/base/buttons/button-utility";
+import { useTheme } from "@properui/ui/providers";
 
 export const ThemeToggle = () => {
     const { resolvedTheme, setTheme } = useTheme();

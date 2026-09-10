@@ -1,6 +1,6 @@
 "use client";
 
-import { DownloadCloud02, Edit01, Plus, Trash01 } from "@smarteraui/icons";
+import { DownloadCloud02, Edit01, Plus, Trash01 } from "@properui/icons";
 import { Table, TableCard } from "@/components/application/table/table";
 import { TablePaginationNumbered } from "@/components/application/table/table-pagination";
 import { Tabs } from "@/components/application/tabs/tabs";

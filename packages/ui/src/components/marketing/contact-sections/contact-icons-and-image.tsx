@@ -1,4 +1,4 @@
-import { MarkerPin01 } from "@smarteraui/icons";
+import { MarkerPin01 } from "@properui/icons";
 import { IMAGES } from "@/utils/demo-assets";
 
 const offices = [
@@ -35,11 +35,7 @@ export const ContactIconsAndImage = () => (
 
         <section className="-mt-16 pb-16 md:-mt-24 md:pb-24">
             <div className="max-w-container mx-auto px-4 md:px-8">
-                <img
-                    src={IMAGES.landscape[2].src}
-                    alt="The Smartera team discussing a topic"
-                    className="shadow-3xl h-60 w-full object-cover md:h-120 lg:h-140"
-                />
+                <img src={IMAGES.landscape[2].src} alt="The Proper team discussing a topic" className="shadow-3xl h-60 w-full object-cover md:h-120 lg:h-140" />
             </div>
         </section>
     </div>

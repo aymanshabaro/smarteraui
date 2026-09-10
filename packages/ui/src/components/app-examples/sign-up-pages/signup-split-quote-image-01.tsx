@@ -7,7 +7,7 @@ import type { Testimonial } from "./base-components/testimonial-overlay";
 import { TestimonialOverlay } from "./base-components/testimonial-overlay";
 
 const firstTestimonial: Testimonial = {
-    quote: "We've been using Smartera to kick start every new project and can't imagine working without it. It's incredible.",
+    quote: "We've been using Proper to kick start every new project and can't imagine working without it. It's incredible.",
     name: "Candice Wu",
     role: "Lead Designer, Layers",
     company: "Web Development Agency",
@@ -22,7 +22,7 @@ const testimonials: Testimonial[] = [
         company: "Analytics Platform",
     },
     {
-        quote: "Smartera paid for itself in the first sprint. Every screen we ship starts from one of its page examples.",
+        quote: "Proper paid for itself in the first sprint. Every screen we ship starts from one of its page examples.",
         name: "Kate Morrison",
         role: "Founder, Catalog",
         company: "Product Studio",

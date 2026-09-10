@@ -1,8 +1,8 @@
 "use client";
 
-import { ArrowRight, Code01, Image01, Keyboard01, LayoutAlt01, Moon01, Palette, SwitchHorizontal01, Terminal, Type01 } from "@smarteraui/icons";
-import { Button } from "@smarteraui/ui/components/base/buttons/button";
-import { FeaturedIcon } from "@smarteraui/ui/components/foundations/featured-icon/featured-icon";
+import { ArrowRight, Code01, Image01, Keyboard01, LayoutAlt01, Moon01, Palette, SwitchHorizontal01, Terminal, Type01 } from "@properui/icons";
+import { Button } from "@properui/ui/components/base/buttons/button";
+import { FeaturedIcon } from "@properui/ui/components/foundations/featured-icon/featured-icon";
 
 /**
  * Features grid.
@@ -42,7 +42,7 @@ const features = [
     {
         title: "The agent edits files you own",
         subtitle:
-            "npx smarteraui@latest add <component> writes plain .tsx into your project. There is no opaque wrapper between the generated code and the thing on screen, so a review is just reading a diff.",
+            "npx properui@latest add <component> writes plain .tsx into your project. There is no opaque wrapper between the generated code and the thing on screen, so a review is just reading a diff.",
         icon: Terminal,
         cta: "CLI reference",
         href: "/docs/cli",

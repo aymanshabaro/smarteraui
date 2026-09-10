@@ -40,9 +40,9 @@ describe("Avatar", () => {
 
 describe("AvatarLabelGroup", () => {
     it("renders the title and subtitle", () => {
-        const { getByText } = render(<AvatarLabelGroup size="md" alt="Olivia Rhye" title="Olivia Rhye" subtitle="olivia@smartera.com" />);
+        const { getByText } = render(<AvatarLabelGroup size="md" alt="Olivia Rhye" title="Olivia Rhye" subtitle="olivia@proper.example" />);
         expect(getByText("Olivia Rhye")).toBeInTheDocument();
-        expect(getByText("olivia@smartera.com")).toBeInTheDocument();
+        expect(getByText("olivia@proper.example")).toBeInTheDocument();
     });
 });
 

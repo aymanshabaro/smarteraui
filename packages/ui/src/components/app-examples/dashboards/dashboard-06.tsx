@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Edit01, Plus, SearchLg, Trash01, UploadCloud02 } from "@smarteraui/icons";
+import { Edit01, Plus, SearchLg, Trash01, UploadCloud02 } from "@properui/icons";
 import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
 import { Table, TableCard } from "@/components/application/table/table";
 import { customers } from "@/components/application/table/table-data";

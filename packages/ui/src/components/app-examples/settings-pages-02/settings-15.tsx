@@ -1,7 +1,7 @@
 "use client";
 
 import { Radio as AriaRadio } from "react-aria-components";
-import { DownloadCloud01, DownloadCloud02, Mail01, Plus } from "@smarteraui/icons";
+import { DownloadCloud01, DownloadCloud02, Mail01, Plus } from "@properui/icons";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
 import { Table, TableCard } from "@/components/application/table/table";
 import { Avatar } from "@/components/base/avatar/avatar";
@@ -103,7 +103,7 @@ export const Settings15 = () => (
                                 </RadioGroup>
 
                                 <div className="ps-6">
-                                    <InputBase type="email" name="email" icon={Mail01} aria-label="Email address" defaultValue="billing@smartera.com" />
+                                    <InputBase type="email" name="email" icon={Mail01} aria-label="Email address" defaultValue="billing@proper.example" />
                                 </div>
                             </div>
                         </div>

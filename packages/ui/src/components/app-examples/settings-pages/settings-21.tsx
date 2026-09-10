@@ -1,6 +1,6 @@
 "use client";
 
-import { Plus } from "@smarteraui/icons";
+import { Plus } from "@properui/icons";
 import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
 import { Avatar } from "@/components/base/avatar/avatar";

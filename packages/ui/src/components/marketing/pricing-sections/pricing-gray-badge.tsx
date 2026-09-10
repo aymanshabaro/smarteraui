@@ -1,4 +1,4 @@
-import { CheckCircle } from "@smarteraui/icons";
+import { CheckCircle } from "@properui/icons";
 import { Badge } from "@/components/base/badges/badges";
 import { Button } from "@/components/base/buttons/button";
 
@@ -57,7 +57,7 @@ export const PricingGrayBadge = () => (
                     <p className="text-brand-secondary md:text-md text-sm font-semibold">Pricing</p>
                     <h2 className="text-display-md text-primary md:text-display-lg mt-3 font-semibold">Simple, transparent pricing</h2>
                     <p className="text-tertiary mt-4 text-lg md:mt-6 md:text-xl">
-                        We believe Smartera should be accessible to all companies, no matter the size.
+                        We believe Proper should be accessible to all companies, no matter the size.
                     </p>
 
                     <div className="mt-8 flex flex-col-reverse gap-3 self-stretch sm:flex-row sm:self-center md:mt-12">

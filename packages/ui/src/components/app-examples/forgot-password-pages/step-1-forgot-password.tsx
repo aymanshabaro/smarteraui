@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, Key01 } from "@smarteraui/icons";
+import { ArrowLeft, Key01 } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";

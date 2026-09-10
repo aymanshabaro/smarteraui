@@ -1,4 +1,4 @@
-# @smarteraui/ui
+# @properui/ui
 
 An accessible React 19 component library: base primitives, application patterns, marketing sections and whole page examples, built on [React Aria Components](https://react-spectrum.adobe.com/react-aria/) and [Tailwind CSS v4](https://tailwindcss.com), typed with strict TypeScript.
 
@@ -18,17 +18,17 @@ src/hooks  src/utils  src/providers  src/styles
 ## Install
 
 ```bash
-pnpm add @smarteraui/ui
-# or: npm install @smarteraui/ui / yarn add @smarteraui/ui
+pnpm add @properui/ui
+# or: npm install @properui/ui / yarn add @properui/ui
 ```
 
-Peer dependencies: `react` ^19, `react-dom` ^19, `tailwindcss` ^4.3. `next` ^15.1 is an **optional** peer — only `@smarteraui/ui/providers/router-provider` needs it.
+Peer dependencies: `react` ^19, `react-dom` ^19, `tailwindcss` ^4.3. `next` ^15.1 is an **optional** peer — only `@properui/ui/providers/router-provider` needs it.
 
 Prefer to own the code instead of depending on the package? The CLI copies components straight into your project, shadcn-style:
 
 ```bash
-npx smarteraui@latest init
-npx smarteraui@latest add button input select
+npx properui@latest init
+npx properui@latest add button input select
 ```
 
 ## Setup — Next.js (App Router)
@@ -40,7 +40,7 @@ npx smarteraui@latest add button input select
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-    transpilePackages: ["@smarteraui/ui"],
+    transpilePackages: ["@properui/ui"],
 };
 
 export default nextConfig;
@@ -49,8 +49,8 @@ export default nextConfig;
 **2. Import the styles and let Tailwind scan the package** in `app/globals.css`:
 
 ```css
-@import "@smarteraui/ui/styles/globals.css";
-@source "../node_modules/@smarteraui/ui/src/**/*.{ts,tsx}";
+@import "@properui/ui/styles/globals.css";
+@source "../node_modules/@properui/ui/src/**/*.{ts,tsx}";
 ```
 
 `globals.css` pulls in Tailwind, the design tokens (`theme.css`), the typography layer and the plugins the components rely on. Adjust the `@source` path so it resolves to `node_modules` from that CSS file (in a monorepo it is usually `../../node_modules/...`).
@@ -59,7 +59,7 @@ export default nextConfig;
 
 ```tsx
 // app/layout.tsx
-import { RouterProvider, ThemeProvider } from "@smarteraui/ui/providers";
+import { RouterProvider, ThemeProvider } from "@properui/ui/providers";
 import "./globals.css";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -80,7 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 ## Setup — Vite
 
 ```bash
-pnpm add @smarteraui/ui @tailwindcss/vite
+pnpm add @properui/ui @tailwindcss/vite
 ```
 
 ```ts
@@ -93,20 +93,20 @@ export default defineConfig({
     plugins: [react(), tailwindcss()],
     // Only needed if you render on the server: keeps the TSX source in the
     // build pipeline instead of externalising it.
-    ssr: { noExternal: ["@smarteraui/ui"] },
+    ssr: { noExternal: ["@properui/ui"] },
 });
 ```
 
 ```css
 /* src/index.css */
-@import "@smarteraui/ui/styles/globals.css";
-@source "../node_modules/@smarteraui/ui/src/**/*.{ts,tsx}";
+@import "@properui/ui/styles/globals.css";
+@source "../node_modules/@properui/ui/src/**/*.{ts,tsx}";
 ```
 
 ```tsx
 // src/main.tsx
 import { createRoot } from "react-dom/client";
-import { ThemeProvider } from "@smarteraui/ui/providers";
+import { ThemeProvider } from "@properui/ui/providers";
 import App from "./App";
 import "./index.css";
 
@@ -124,9 +124,9 @@ createRoot(document.getElementById("root")!).render(
 Import from the root barrel, or from a subpath if you want only what you use:
 
 ```tsx
-import { Button } from "@smarteraui/ui/components/base/buttons/button";
+import { Button } from "@properui/ui/components/base/buttons/button";
 
-// or: import { Button } from "@smarteraui/ui";
+// or: import { Button } from "@properui/ui";
 
 export function SaveBar() {
     return (
@@ -149,7 +149,7 @@ Interactive components are React Aria based, so use `onPress` rather than `onCli
 The design tokens live in [`src/styles/theme.css`](./src/styles/theme.css) as a Tailwind v4 `@theme` block. Re-branding means overriding the eleven `--color-brand-*` steps in your own CSS after the import — every semantic token (`bg-brand-solid`, `text-brand-secondary`, …) cascades from them, in light and dark:
 
 ```css
-@import "@smarteraui/ui/styles/globals.css";
+@import "@properui/ui/styles/globals.css";
 
 @theme {
     --color-brand-500: rgb(56 189 248);
@@ -159,7 +159,7 @@ The design tokens live in [`src/styles/theme.css`](./src/styles/theme.css) as a 
 }
 ```
 
-Dark mode is class-based (`.dark-mode` on `<html>`), driven by `ThemeProvider` (built on `next-themes`); `useTheme` is re-exported from `@smarteraui/ui/providers` for a theme toggle.
+Dark mode is class-based (`.dark-mode` on `<html>`), driven by `ThemeProvider` (built on `next-themes`); `useTheme` is re-exported from `@properui/ui/providers` for a theme toggle.
 
 ## License
 

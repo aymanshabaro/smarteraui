@@ -1,7 +1,7 @@
 import { Button } from "@/components/base/buttons/button";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 
 /**
  * A small footer that pairs the logo with an inline newsletter subscribe form and drops the
@@ -12,7 +12,7 @@ export const FooterSmall04 = () => {
         <footer className="bg-primary py-12">
             <div className="max-w-container mx-auto px-4 md:px-8">
                 <div className="flex flex-col items-start justify-between gap-y-12 md:flex-row">
-                    <SmarteraLogo className="h-7 w-min shrink-0" />
+                    <ProperLogo className="h-7 w-min shrink-0" />
 
                     <Form className="flex w-full flex-col gap-4 sm:flex-row md:max-w-100">
                         <Input isRequired size="lg" name="email" type="email" placeholder="Enter your email" wrapperClassName="flex-1" />
@@ -22,7 +22,7 @@ export const FooterSmall04 = () => {
                     </Form>
                 </div>
 
-                <p className="text-quaternary mt-8 text-sm md:mt-16 md:text-end">© 2077 Smartera. All rights reserved.</p>
+                <p className="text-quaternary mt-8 text-sm md:mt-16 md:text-end">© 2077 Proper. All rights reserved.</p>
             </div>
         </footer>
     );

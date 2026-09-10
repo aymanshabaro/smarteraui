@@ -1,7 +1,7 @@
 "use client";
 
 import { Tab as AriaTab, TabList as AriaTabList, TabPanel as AriaTabPanel, Tabs as AriaTabs } from "react-aria-components";
-import { ArrowRight } from "@smarteraui/icons";
+import { ArrowRight } from "@properui/icons";
 import { cx } from "@/utils/cx";
 import { IMAGES } from "@/utils/demo-assets";
 import { ScreenMockup } from "./mockups.a";
@@ -22,7 +22,7 @@ const tabs = [
     {
         id: "reports",
         title: "Manage your team with reports",
-        subtitle: "Measure what matters with Smartera's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
+        subtitle: "Measure what matters with Proper's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
         image: IMAGES.landscape[2],
     },
 ];

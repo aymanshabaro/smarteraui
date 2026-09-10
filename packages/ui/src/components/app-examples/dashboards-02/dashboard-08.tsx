@@ -1,6 +1,6 @@
 "use client";
 
-import { DownloadCloud01, FilterLines, LayoutAlt01, SearchLg } from "@smarteraui/icons";
+import { DownloadCloud01, FilterLines, LayoutAlt01, SearchLg } from "@properui/icons";
 import { PaginationCardMinimal } from "@/components/application/pagination/pagination";
 import { TableCard } from "@/components/application/table/table";
 import { Button } from "@/components/base/buttons/button";

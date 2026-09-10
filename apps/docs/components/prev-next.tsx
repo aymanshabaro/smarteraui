@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { cx } from "~/lib/cx";
 import type { NavSiblings } from "~/lib/site-nav";
-import { ArrowLeft, ArrowRight } from "@smarteraui/icons";
+import { ArrowLeft, ArrowRight } from "@properui/icons";
 import { buttonClasses } from "./primitives";
 
 /** Prev / next footer, derived from the sidebar order by lib/site-nav.ts. */

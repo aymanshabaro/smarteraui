@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "@smarteraui/icons";
+import { ArrowUpRight } from "@properui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { Button } from "@/components/base/buttons/button";
 import { IMAGES, avatar } from "@/utils/demo-assets";

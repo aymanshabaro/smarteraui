@@ -27,7 +27,7 @@ import {
     Share04,
     Underline01,
     Users01,
-} from "@smarteraui/icons";
+} from "@properui/icons";
 import type { NavItemType } from "@/components/application/app-navigation/config";
 import { SidebarNavigationSectionsSubheadings } from "@/components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings";
 import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
@@ -75,7 +75,7 @@ const navItems: Array<{ label: string; items: NavItemType[] }> = [
         ],
     },
     {
-        label: "Smartera UI",
+        label: "Proper UI",
         items: [
             { label: "Reporting", href: "/reporting", icon: PieChart03 },
             {
@@ -352,7 +352,7 @@ export const Informational19 = () => (
                                 </li>
                                 <li className="text-tertiary flex gap-2 text-sm">
                                     <Link01 aria-hidden="true" className="text-fg-quaternary size-5 shrink-0" />
-                                    smartera.com
+                                    proper.example
                                 </li>
                             </ul>
 

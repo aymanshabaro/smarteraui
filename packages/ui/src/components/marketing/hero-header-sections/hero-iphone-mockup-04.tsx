@@ -1,6 +1,6 @@
 "use client";
 
-import { PlayCircle } from "@smarteraui/icons";
+import { PlayCircle } from "@properui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { Button } from "@/components/base/buttons/button";
 import { RatingStars } from "@/components/foundations/rating/rating-stars";
@@ -47,7 +47,7 @@ export const HeroIphoneMockup04 = () => (
                         Growth performance tracking made easy
                     </h1>
                     <p className="text-tertiary mt-4 max-w-lg text-lg text-balance md:mt-6 md:text-xl">
-                        Designed by creators, for creators. Smartera gives you the guidance, data and innovation you need to sell more and grow your digital
+                        Designed by creators, for creators. Proper gives you the guidance, data and innovation you need to sell more and grow your digital
                         business.
                     </p>
 

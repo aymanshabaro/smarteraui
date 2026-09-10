@@ -1,7 +1,7 @@
 "use client";
 
 import { type FC, type ReactNode, useState } from "react";
-import { User01 } from "@smarteraui/icons";
+import { User01 } from "@properui/icons";
 import { cx, sortCx } from "@/utils/cx";
 import { AvatarOnlineIndicator, VerifiedTick } from "./base-components";
 import { AvatarCount } from "./base-components/avatar-count";

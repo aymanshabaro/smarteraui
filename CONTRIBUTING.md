@@ -1,4 +1,4 @@
-# Contributing to Smartera UI
+# Contributing to Proper UI
 
 Thanks for taking the time. This guide covers setting the repo up, the conventions that matter when you touch a
 component, and how a change gets from your machine to a release.
@@ -11,8 +11,8 @@ Please read the [Code of Conduct](./CODE_OF_CONDUCT.md) first. Security issues g
 **Requirements:** Node 20+ and pnpm 9.
 
 ```bash
-git clone https://github.com/aymanshabaro/smarteraui.git
-cd smarteraui
+git clone https://github.com/properui/properui.git
+cd properui
 pnpm install
 ```
 
@@ -31,14 +31,14 @@ isolation, and gives you a light/dark toolbar toggle.
 
 ```
 apps/docs             Next.js 15 App Router docs site (MDX content in apps/docs/content)
-packages/ui           @smarteraui/ui — the component library
+packages/ui           @properui/ui — the component library
   src/components      base/ application/ marketing/ app-examples/
                       marketing-examples/ foundations/ shared-assets/ internal/
   src/styles          globals.css · theme.css · typography.css
   src/hooks           use-breakpoint, use-clipboard, use-resize-observer, use-active-item
   src/utils           cx, demo-assets, countries, timezones, …
   src/providers       ThemeProvider, RouterProvider
-packages/cli          smarteraui — the init/add CLI
+packages/cli          properui — the init/add CLI
 packages/registry     build script + generated registry JSON the CLI consumes
 scripts               generators (barrels, demos, nav, variants) and screenshot tooling
 .storybook            Storybook config
@@ -203,8 +203,8 @@ Maintainers may push small fixups to your branch rather than round-tripping on n
 
 ## Reporting bugs and asking for features
 
-Use the issue templates — [bug report](https://github.com/aymanshabaro/smarteraui/issues/new?template=bug_report.yml) or
-[feature request](https://github.com/aymanshabaro/smarteraui/issues/new?template=feature_request.yml). A minimal
+Use the issue templates — [bug report](https://github.com/properui/properui/issues/new?template=bug_report.yml) or
+[feature request](https://github.com/properui/properui/issues/new?template=feature_request.yml). A minimal
 reproduction (a StackBlitz, or the smallest component tree that shows it) gets a bug fixed far faster than a
 description.
 

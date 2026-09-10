@@ -1,5 +1,5 @@
 /**
- * Token storage for private registries — `~/.smarteraui/auth.json`.
+ * Token storage for private registries — `~/.properui/auth.json`.
  * Spec: docs/cli.md (`login`).
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -12,7 +12,7 @@ export interface AuthFile {
     createdAt?: string;
 }
 
-export const authDir = () => path.join(homedir(), ".smarteraui");
+export const authDir = () => path.join(homedir(), ".properui");
 export const authFile = () => path.join(authDir(), "auth.json");
 
 export function readAuth(): AuthFile | null {
@@ -26,7 +26,7 @@ export function readAuth(): AuthFile | null {
     }
 }
 
-export const readAuthToken = (): string | null => process.env.SMARTERAUI_TOKEN ?? readAuth()?.token ?? null;
+export const readAuthToken = (): string | null => process.env.PROPERUI_TOKEN ?? readAuth()?.token ?? null;
 
 export function writeAuth(auth: AuthFile): string {
     mkdirSync(authDir(), { recursive: true, mode: 0o700 });

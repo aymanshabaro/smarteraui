@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { Selection as AriaSelection } from "react-aria-components";
 import { SubmenuTrigger as AriaSubmenuTrigger } from "react-aria-components";
-import { ArrowNarrowLeft, ArrowNarrowRight, Code02, Copy01, Cube01, Download01, Edit04, RefreshCcw02, Scissors01, Star01 } from "@smarteraui/icons";
+import { ArrowNarrowLeft, ArrowNarrowRight, Code02, Copy01, Cube01, Download01, Edit04, RefreshCcw02, Scissors01, Star01 } from "@properui/icons";
 import { Dropdown } from "@/components/base/dropdown/dropdown";
 import { cx } from "@/utils/cx";
 import { avatar } from "@/utils/demo-assets";

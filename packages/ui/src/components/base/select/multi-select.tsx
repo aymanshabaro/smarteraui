@@ -14,7 +14,7 @@ import {
     Popover as AriaPopover,
     SearchField as AriaSearchField,
 } from "react-aria-components";
-import { ChevronDown, SearchLg } from "@smarteraui/icons";
+import { ChevronDown, SearchLg } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { HintText } from "@/components/base/input/hint-text";
 import { Label } from "@/components/base/input/label";

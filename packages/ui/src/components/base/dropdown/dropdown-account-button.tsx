@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { Selection as AriaSelection } from "react-aria-components";
 import { SubmenuTrigger as AriaSubmenuTrigger } from "react-aria-components";
-import { ChevronDown, HelpCircle, LogOut01, Moon01, Plus, Settings01, User01 } from "@smarteraui/icons";
+import { ChevronDown, HelpCircle, LogOut01, Moon01, Plus, Settings01, User01 } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { Dropdown } from "@/components/base/dropdown/dropdown";
 import { avatar } from "@/utils/demo-assets";

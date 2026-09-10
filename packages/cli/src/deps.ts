@@ -9,13 +9,13 @@ const ASSUMED = new Set(["react", "react-dom", "next"]);
 
 /**
  * Packages the component source imports under a name that is not (yet) on npm, mapped to
- * the spec that actually installs them. `@smarteraui/icons` is how every component imports
+ * the spec that actually installs them. `@properui/icons` is how every component imports
  * its icons, but the published package is `@untitledui/icons` (MIT); an alias install puts
  * it in the project's package.json under the name the source expects. npm, pnpm, yarn and
  * bun all accept `name@npm:real@range`.
  */
 const INSTALL_SPECS: Record<string, string> = {
-    "@smarteraui/icons": "@smarteraui/icons@npm:@untitledui/icons@^0.0.22",
+    "@properui/icons": "@properui/icons@npm:@untitledui/icons@^0.0.22",
 };
 
 /** The argument handed to the package manager for a dependency name. */

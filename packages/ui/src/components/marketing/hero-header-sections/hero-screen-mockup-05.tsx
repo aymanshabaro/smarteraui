@@ -1,6 +1,6 @@
 "use client";
 
-import { PlayCircle } from "@smarteraui/icons";
+import { PlayCircle } from "@properui/icons";
 import { BadgeGroup } from "@/components/base/badges/badge-groups";
 import { Button } from "@/components/base/buttons/button";
 import { FloatingSimpleWithFooter } from "@/components/marketing/header-navigations/floating-simple-with-footer";

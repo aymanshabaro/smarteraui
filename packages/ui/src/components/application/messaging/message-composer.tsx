@@ -2,7 +2,7 @@
 
 import type { FC, FormEvent } from "react";
 import { Button as AriaButton } from "react-aria-components";
-import { ChevronDown, Send01 } from "@smarteraui/icons";
+import { ChevronDown, Send01 } from "@properui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { Button } from "@/components/base/buttons/button";
 import { ButtonUtility } from "@/components/base/buttons/button-utility";

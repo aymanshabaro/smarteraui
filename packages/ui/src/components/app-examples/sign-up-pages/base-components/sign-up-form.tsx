@@ -2,7 +2,7 @@
 
 // TODO(orchestrator): candidate for components/internal — the log in / forgot password page
 // examples build the same credential form from the same primitives.
-import { CheckCircle } from "@smarteraui/icons";
+import { CheckCircle } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { SocialButton } from "@/components/base/buttons/social-button";
 import { Form } from "@/components/base/form/form";

@@ -1,7 +1,7 @@
 "use client";
 
 import type { FC, ReactNode } from "react";
-import { PlayCircle } from "@smarteraui/icons";
+import { PlayCircle } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 import { cx, sortCx } from "@/utils/cx";

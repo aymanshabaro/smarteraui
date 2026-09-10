@@ -1,7 +1,7 @@
 "use client";
 
 import type { FC, SVGProps } from "react";
-import { ArrowRight } from "@smarteraui/icons";
+import { ArrowRight } from "@properui/icons";
 import { Badge } from "@/components/base/badges/badges";
 import { Button } from "@/components/base/buttons/button";
 import { ClaudeIcon, FigmaIcon, GitHubIcon, NextjsIcon, ReactIcon, TailwindCSSIcon } from "@/components/foundations/integration-icons";

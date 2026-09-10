@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button as AriaButton } from "react-aria-components";
-import { ArrowNext, ArrowPrevious } from "@smarteraui/icons";
+import { ArrowNext, ArrowPrevious } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { RatingStars } from "@/components/foundations/rating/rating-stars";
 import { sortCx } from "@/utils/cx";
@@ -19,7 +19,7 @@ const styles = sortCx({
 
 const reviews = [
     {
-        quote: "We've really sped up our workflow using Smartera.",
+        quote: "We've really sped up our workflow using Proper.",
         name: AVATARS[9].name,
         company: "Web Design Agency",
         role: `PM, ${LOGOS[5].name}`,
@@ -46,7 +46,7 @@ export const CtaSplitImageQuote04 = () => {
             <div className="max-w-container mx-auto grid w-full grid-cols-1 gap-x-16 gap-y-12 px-4 md:px-8 lg:grid-cols-2 lg:items-center">
                 <div className="flex max-w-3xl flex-col items-start">
                     <h2 className="text-display-sm text-primary md:text-display-md lg:text-display-lg font-semibold">
-                        Join 4,000+ startups growing with Smartera
+                        Join 4,000+ startups growing with Proper
                     </h2>
                     <p className="text-tertiary mt-4 text-lg md:mt-6 md:text-xl">Start your 30-day free trial today.</p>
 

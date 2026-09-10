@@ -1,7 +1,7 @@
 "use client";
 
 import { Radio as AriaRadio } from "react-aria-components";
-import { DownloadCloud01, DownloadCloud02, SearchLg, Zap } from "@smarteraui/icons";
+import { DownloadCloud01, DownloadCloud02, SearchLg, Zap } from "@properui/icons";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
 import { Table, TableCard } from "@/components/application/table/table";
 import { BadgeWithDot } from "@/components/base/badges/badges";
@@ -118,10 +118,10 @@ export const Settings12 = () => (
                                 <>
                                     Please reach out to our friendly team via{" "}
                                     <a
-                                        href="mailto:billing@smartera.com"
+                                        href="mailto:billing@proper.example"
                                         className="outline-focus-ring text-brand-secondary rounded-xs font-medium focus-visible:outline-2 focus-visible:outline-offset-2"
                                     >
-                                        billing@smartera.com
+                                        billing@proper.example
                                     </a>{" "}
                                     with questions.
                                 </>

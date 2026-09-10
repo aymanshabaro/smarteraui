@@ -1,26 +1,26 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowNext, ArrowPrevious } from "@smarteraui/icons";
+import { ArrowNext, ArrowPrevious } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { SocialButton } from "@/components/base/buttons/social-button";
 import { Checkbox } from "@/components/base/checkbox/checkbox";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogoMinimal } from "@/components/foundations/logo/smartera-logo-minimal";
+import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
 import { RatingStars } from "@/components/foundations/rating/rating-stars";
 import { AVATARS, IMAGES, LOGOS } from "@/utils/demo-assets";
 
 const reviews = [
     {
-        quote: "Smartera has saved us thousands of hours of work. We're able to spin up projects faster and take on more clients.",
+        quote: "Proper has saved us thousands of hours of work. We're able to spin up projects faster and take on more clients.",
         author: AVATARS[10],
         role: `Product Manager, ${LOGOS[5].name}`,
         industry: "Web Design Agency",
         portrait: IMAGES.square[1],
     },
     {
-        quote: "We've been using Smartera to kick start every new project and can't imagine working without it. It's incredible.",
+        quote: "We've been using Proper to kick start every new project and can't imagine working without it. It's incredible.",
         author: AVATARS[3],
         role: `Founder, ${LOGOS[3].name}`,
         industry: "Web Development Agency",
@@ -43,7 +43,7 @@ export const LoginSplitQuoteImage03 = () => {
             <div className="relative flex justify-center px-4 py-12 md:items-center md:px-8">
                 <div className="flex w-full flex-col gap-8 sm:max-w-90">
                     <div className="flex flex-col items-center justify-center gap-6">
-                        <SmarteraLogoMinimal className="size-8 origin-center scale-[1.2]" />
+                        <ProperLogoMinimal className="size-8 origin-center scale-[1.2]" />
 
                         <div className="flex flex-col gap-2 text-center md:gap-3">
                             <h1 className="text-primary md:text-display-xs text-xl font-semibold">Welcome back</h1>

@@ -1,4 +1,4 @@
-import { SmarteraLogoMinimal } from "@/components/foundations/logo/smartera-logo-minimal";
+import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
 import { IMAGES } from "@/utils/demo-assets";
 import { LogInPrompt, SocialProofRow } from "./base-components/page-parts";
 import { SignUpForm } from "./base-components/sign-up-form";
@@ -9,7 +9,7 @@ export const SignupSplitImageBackground = () => (
         <div className="bg-primary flex w-full justify-center px-4 py-12 md:items-center">
             <div className="flex max-w-90 flex-1 flex-col gap-8">
                 <div className="flex flex-col gap-6 md:gap-8">
-                    <SmarteraLogoMinimal className="size-8" />
+                    <ProperLogoMinimal className="size-8" />
 
                     <div className="flex flex-col gap-2 md:gap-3">
                         <h1 className="text-primary md:text-display-xs text-xl font-semibold">Sign up</h1>
@@ -30,7 +30,7 @@ export const SignupSplitImageBackground = () => (
 
             <div className="z-10 flex h-max max-w-160 flex-col gap-12">
                 <div className="dark-mode">
-                    <SmarteraLogoMinimal className="size-20" />
+                    <ProperLogoMinimal className="size-20" />
                 </div>
 
                 <div className="flex flex-col gap-6">

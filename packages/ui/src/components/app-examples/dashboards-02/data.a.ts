@@ -226,13 +226,13 @@ export interface PageRow {
 
 /** "Pages and screens" rows used by the site-traffic dashboard. */
 export const sitePages: PageRow[] = [
-    { page: "smartera.com", sessions: "4,288", avgTime: "1m 24s", share: 62.4, percent: "62.4%" },
-    { page: "smartera.com/free-icons", sessions: "582", avgTime: "1m 8s", share: 8.2, percent: "8.2%" },
-    { page: "smartera.com/icons", sessions: "464", avgTime: "1m 12s", share: 7.6, percent: "7.6%" },
-    { page: "smartera.com/components", sessions: "446", avgTime: "2m 22s", share: 7.2, percent: "7.2%" },
-    { page: "smartera.com/pricing", sessions: "382", avgTime: "48s", share: 7.0, percent: "7.0%" },
-    { page: "smartera.com/faqs", sessions: "326", avgTime: "56s", share: 6.4, percent: "6.4%" },
-    { page: "smartera.com/blog", sessions: "262", avgTime: "1m 14s", share: 5.4, percent: "5.4%" },
+    { page: "proper.example", sessions: "4,288", avgTime: "1m 24s", share: 62.4, percent: "62.4%" },
+    { page: "proper.example/free-icons", sessions: "582", avgTime: "1m 8s", share: 8.2, percent: "8.2%" },
+    { page: "proper.example/icons", sessions: "464", avgTime: "1m 12s", share: 7.6, percent: "7.6%" },
+    { page: "proper.example/components", sessions: "446", avgTime: "2m 22s", share: 7.2, percent: "7.2%" },
+    { page: "proper.example/pricing", sessions: "382", avgTime: "48s", share: 7.0, percent: "7.0%" },
+    { page: "proper.example/faqs", sessions: "326", avgTime: "56s", share: 6.4, percent: "6.4%" },
+    { page: "proper.example/blog", sessions: "262", avgTime: "1m 14s", share: 5.4, percent: "5.4%" },
 ];
 
 export interface FanRow {

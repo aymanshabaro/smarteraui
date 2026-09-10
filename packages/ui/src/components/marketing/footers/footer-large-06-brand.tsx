@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { Button } from "@/components/base/buttons/button";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { RatingBadge } from "@/components/foundations/rating/rating-badge";
 import { AngelList, Dribbble, Facebook, GitHub, Layers, LinkedIn, X } from "@/components/foundations/social-icons";
 import { sortCx } from "@/utils/cx";
@@ -93,7 +93,7 @@ export const FooterLarge06Brand = () => {
                     <div className="flex flex-col gap-8 md:gap-16 xl:flex-row">
                         <div className="flex flex-col gap-6 md:w-80 md:gap-8">
                             {/* The mark is always the light lockup on the solid brand background. */}
-                            <SmarteraLogo className="dark-mode" />
+                            <ProperLogo className="dark-mode" />
 
                             <p className="text-tertiary_on-brand text-md">Design amazing digital experiences that create more happy in the world.</p>
 
@@ -131,7 +131,7 @@ export const FooterLarge06Brand = () => {
                         {/* Absolutely positioned so the rule spans the row without adding a border box. */}
                         <div className="bg-border-brand_alt absolute top-0 left-0 h-px w-full" />
 
-                        <p className="text-quaternary_on-brand text-sm">© 2077 Smartera. All rights reserved.</p>
+                        <p className="text-quaternary_on-brand text-sm">© 2077 Proper. All rights reserved.</p>
 
                         <ul className="flex gap-4">
                             {socialLinks.map(({ label, href, icon: Icon }) => (

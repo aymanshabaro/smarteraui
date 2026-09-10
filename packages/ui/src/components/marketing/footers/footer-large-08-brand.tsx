@@ -1,7 +1,7 @@
 import { Button } from "@/components/base/buttons/button";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { sortCx } from "@/utils/cx";
 
 const styles = sortCx({
@@ -31,7 +31,7 @@ export const FooterLarge08Brand = () => (
         <div className="max-w-container mx-auto px-4 md:px-8">
             <div className="flex flex-col justify-between gap-x-8 gap-y-12 lg:flex-row">
                 <div className="flex flex-col gap-8 md:items-start">
-                    <SmarteraLogo className="dark-mode" />
+                    <ProperLogo className="dark-mode" />
 
                     <nav>
                         <ul className="grid grid-cols-2 gap-x-8 gap-y-3 sm:grid-cols-[repeat(6,max-content)]">
@@ -58,7 +58,7 @@ export const FooterLarge08Brand = () => (
             </div>
 
             <div className="border-brand_alt mt-12 flex flex-col-reverse justify-between gap-4 border-t pt-8 md:mt-16 md:flex-row md:gap-6">
-                <p className="text-quaternary_on-brand text-sm">© 2077 Smartera. All rights reserved.</p>
+                <p className="text-quaternary_on-brand text-sm">© 2077 Proper. All rights reserved.</p>
                 <ul className="flex gap-3">
                     {legalLinks.map((link) => (
                         <li key={link.label}>

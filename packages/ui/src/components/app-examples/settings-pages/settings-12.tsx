@@ -1,7 +1,7 @@
 "use client";
 
 import { RadioGroup as AriaRadioGroup } from "react-aria-components";
-import { DownloadCloud02, Edit01, Zap, ZapFast } from "@smarteraui/icons";
+import { DownloadCloud02, Edit01, Zap, ZapFast } from "@properui/icons";
 import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
 import { Table } from "@/components/application/table/table";
@@ -85,8 +85,8 @@ export const Settings12 = () => (
                         hint={
                             <>
                                 Please reach out to our friendly team via{" "}
-                                <Button color="link-color" size="sm" href="mailto:billing@smartera.com">
-                                    billing@smartera.com
+                                <Button color="link-color" size="sm" href="mailto:billing@proper.example">
+                                    billing@proper.example
                                 </Button>{" "}
                                 with questions.
                             </>

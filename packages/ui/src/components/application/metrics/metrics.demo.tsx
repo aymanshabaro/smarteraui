@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { Settings01 } from "@smarteraui/icons";
+import { Settings01 } from "@properui/icons";
 import {
     MetricChart01,
     MetricChart02,

@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { CheckCircle } from "@smarteraui/icons";
+import { CheckCircle } from "@properui/icons";
 import { Tab, TabList, TabPanel, Tabs } from "@/components/application/tabs/tabs";
 import { Badge } from "@/components/base/badges/badges";
 import { Button } from "@/components/base/buttons/button";
@@ -78,7 +78,7 @@ export const PricingDualAction = () => (
             <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
                 <span className="text-brand-secondary md:text-md text-sm font-semibold">Pricing</span>
                 <h2 className="text-display-md text-primary md:text-display-lg mt-3 font-semibold">Simple, transparent pricing</h2>
-                <p className="text-tertiary mt-4 text-lg md:mt-6 md:text-xl">We believe Smartera should be accessible to all companies, no matter the size.</p>
+                <p className="text-tertiary mt-4 text-lg md:mt-6 md:text-xl">We believe Proper should be accessible to all companies, no matter the size.</p>
 
                 <Tabs defaultSelectedKey="monthly" className="w-full md:w-auto">
                     <TabList type="button-border" size="md" aria-label="Billing period" className="mt-8 w-full md:mt-12 md:w-auto [&_[role=tab]]:flex-1">

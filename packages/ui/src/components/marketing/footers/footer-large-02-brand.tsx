@@ -1,5 +1,5 @@
 import { Button } from "@/components/base/buttons/button";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { RatingBadge } from "@/components/foundations/rating/rating-badge";
 import { AngelList, Dribbble, Facebook, GitHub, Layers, LinkedIn, X } from "@/components/foundations/social-icons";
 import { sortCx } from "@/utils/cx";
@@ -92,7 +92,7 @@ export const FooterLarge02Brand = () => (
             <div className="max-w-container mx-auto px-4 md:px-8">
                 <div className="flex flex-col gap-12 md:gap-16 xl:flex-row">
                     <div className="flex flex-col gap-6 md:w-80 md:gap-6">
-                        <SmarteraLogo className="dark-mode" />
+                        <ProperLogo className="dark-mode" />
                         <p className="text-tertiary_on-brand text-md">Design amazing digital experiences that create more happy in the world.</p>
                         <RatingBadge theme="light" className="origin-top-left scale-[0.78]" />
                     </div>
@@ -131,7 +131,7 @@ export const FooterLarge02Brand = () => (
 
             <div className="max-w-container mx-auto px-4 md:px-8">
                 <div className="flex flex-col-reverse justify-between gap-6 md:flex-row">
-                    <p className="text-quaternary_on-brand text-sm">© 2077 Smartera. All rights reserved.</p>
+                    <p className="text-quaternary_on-brand text-sm">© 2077 Proper. All rights reserved.</p>
                     <ul className="flex gap-4">
                         {socials.map(({ label, href, icon: Icon }) => (
                             <li key={label}>

@@ -1,7 +1,7 @@
 "use client";
 
 import type { FC } from "react";
-import { ChartBreakoutCircle, DownloadCloud01, PlayCircle, Stars02, Zap } from "@smarteraui/icons";
+import { ChartBreakoutCircle, DownloadCloud01, PlayCircle, Stars02, Zap } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 

@@ -18,8 +18,8 @@ export const HeaderCenteredEmail = () => (
         <div className="max-w-container mx-auto px-4 md:px-8">
             <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
                 <span className="text-brand-secondary md:text-md text-sm font-semibold">Resources</span>
-                <h1 className="text-display-md text-primary md:text-display-lg mt-3 font-semibold">Smartera blog</h1>
-                <p className="text-tertiary mt-4 text-lg md:mt-6 md:text-xl">The latest industry news, technologies and resources from the Smartera team.</p>
+                <h1 className="text-display-md text-primary md:text-display-lg mt-3 font-semibold">Proper blog</h1>
+                <p className="text-tertiary mt-4 text-lg md:mt-6 md:text-xl">The latest industry news, technologies and resources from the Proper team.</p>
 
                 <Form className="mt-8 flex w-full flex-col gap-4 sm:mt-12 sm:max-w-120 sm:flex-row">
                     <Input

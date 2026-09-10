@@ -1,7 +1,7 @@
 "use client";
 
 import type { CSSProperties } from "react";
-import { PlayCircle } from "@smarteraui/icons";
+import { PlayCircle } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
 import { BackgroundPattern } from "@/components/shared-assets/background-patterns";
@@ -69,7 +69,7 @@ export const HeroCardMockup06 = () => (
                                 style={fanTransform(card)}
                                 className="absolute origin-right [transform:var(--transform-mobile)] md:[transform:var(--transform-desktop)]"
                             >
-                                <CreditCard type="transparent-gradient" company="Smartera." cardHolder={card.holder} cardExpiration="06/28" />
+                                <CreditCard type="transparent-gradient" company="Proper." cardHolder={card.holder} cardExpiration="06/28" />
                             </div>
                         ))}
                     </div>

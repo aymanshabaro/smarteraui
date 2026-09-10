@@ -52,7 +52,7 @@ const VARIANT_PREFIX = String.raw`(?:[\w-]+:)*`;
 const NOT_WORD_BEFORE = String.raw`(?<![\w-])`;
 
 /**
- * Deliberate exclusion: Smart Era UI's own `utility-*` color family (e.g.
+ * Deliberate exclusion: Proper UI's own `utility-*` color family (e.g.
  * `bg-utility-blue-50`, `text-utility-blue-700`) is a sanctioned semantic-adjacent token
  * family that appears verbatim in shipped component source (see
  * packages/ui/src/components/base/badges/badges.tsx). An agent that copies those classes

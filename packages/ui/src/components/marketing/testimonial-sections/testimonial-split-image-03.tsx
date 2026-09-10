@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowNext, ArrowPrevious } from "@smarteraui/icons";
+import { ArrowNext, ArrowPrevious } from "@properui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { Button } from "@/components/base/buttons/button";
 import { RatingStars } from "@/components/foundations/rating/rating-stars";
@@ -23,7 +23,7 @@ const reviews = [
         portrait: IMAGES.square[2],
     },
     {
-        quote: "From concept to completion, Smartera helps us deliver outstanding designs faster than ever.",
+        quote: "From concept to completion, Proper helps us deliver outstanding designs faster than ever.",
         author: AVATARS[1],
         role: `UX Designer, ${LOGOS[2].name}`,
         portrait: IMAGES.square[3],

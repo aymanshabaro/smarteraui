@@ -1,6 +1,6 @@
 /**
  * Emits the native registry (packages/registry/dist/*.json, written by build.ts) as
- * shadcn-format registry files, so `npx shadcn@latest add @smarteraui/<name>` works and
+ * shadcn-format registry files, so `npx shadcn@latest add @properui/<name>` works and
  * shadcn's own MCP server / Skill can discover this catalog.
  *
  * Field mapping is verified against (2026-09):
@@ -32,8 +32,8 @@ const DIST = path.join(REPO, "packages", "registry", "dist");
 const OUT = path.join(DIST, "shadcn");
 const UI_PACKAGE_JSON = path.join(REPO, "packages", "ui", "package.json");
 
-const REGISTRY_NAME = "smarteraui";
-const REGISTRY_HOMEPAGE = "https://smarteraui.com";
+const REGISTRY_NAME = "properui";
+const REGISTRY_HOMEPAGE = "https://properui.dev";
 /** Matches apps/docs/app/r/shadcn/[name]/route.ts. */
 const REGISTRY_URL_TEMPLATE = `${REGISTRY_HOMEPAGE}/r/shadcn/{name}.json`;
 
@@ -117,7 +117,7 @@ const FILE_TYPE_MAP: Record<NativeFileType, ShadcnType> = {
  * shadcn's documented `target` placeholders (`@components/`, `@ui/`, `@lib/`, `@hooks/`) resolve
  * against the *consumer's own* `components.json` aliases, independent of our internal folder
  * layout — so files are re-targeted flat (by basename) under the matching alias instead of
- * reproducing `components/base/buttons/...`, which is Smartera UI's own tiering, not shadcn's.
+ * reproducing `components/base/buttons/...`, which is Proper UI's own tiering, not shadcn's.
  * There's no `@styles` placeholder, so style files fall back to their native `path` (see the
  * "Limits" section on the integration page).
  */
@@ -132,7 +132,7 @@ const TARGET_PREFIX: Partial<Record<ShadcnType, string>> = {
 // ---------------------------------------------------------------------------
 
 /**
- * `packages/ui/package.json` pins `@smarteraui/icons` to `npm:@untitledui/icons@^0.0.22` (an
+ * `packages/ui/package.json` pins `@properui/icons` to `npm:@untitledui/icons@^0.0.22` (an
  * npm/pnpm alias install). shadcn's `dependencies` field passes each string straight through to
  * the consumer's package manager `add`/`install` command, and both npm and pnpm accept an alias
  * spec as a single argument, so the full spec — not the bare name — is what has to travel.
@@ -146,7 +146,7 @@ for (const [name, spec] of Object.entries(uiPackageJson.dependencies ?? {})) {
 
 const toShadcnDependency = (name: string): string => ALIAS_SPECS.get(name) ?? name;
 
-/** `cx` → `@smarteraui/cx` — how a namespaced consumer (`components.json` → `@smarteraui`) resolves internal names. */
+/** `cx` → `@properui/cx` — how a namespaced consumer (`components.json` → `@properui`) resolves internal names. */
 const toShadcnRegistryDependency = (name: string): string => `@${REGISTRY_NAME}/${name}`;
 
 // ---------------------------------------------------------------------------

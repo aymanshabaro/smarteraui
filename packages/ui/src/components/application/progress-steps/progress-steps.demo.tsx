@@ -1,6 +1,6 @@
 "use client";
 
-import { Flag05, Stars02, User01, UsersPlus } from "@smarteraui/icons";
+import { Flag05, Stars02, User01, UsersPlus } from "@properui/icons";
 import { type ProgressStepItem, type ProgressStepStatus, ProgressSteps } from "@/components/application/progress-steps/progress-steps";
 
 const titles = ["Your details", "Company details", "Invite your team", "Add your socials"];

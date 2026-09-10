@@ -1,7 +1,7 @@
 "use client";
 
 import type { FC } from "react";
-import { ArrowRight, ChartBreakoutSquare, Command, MessageChatCircle, MessageHeartCircle, MessageSmileCircle, Zap } from "@smarteraui/icons";
+import { ArrowRight, ChartBreakoutSquare, Command, MessageChatCircle, MessageHeartCircle, MessageSmileCircle, Zap } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 import { sortCx } from "@/utils/cx";
@@ -26,7 +26,7 @@ const features: { icon: FC<{ className?: string }>; title: string; subtitle: str
     {
         icon: ChartBreakoutSquare,
         title: "Manage your team with reports",
-        subtitle: "Measure what matters with Smartera's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
+        subtitle: "Measure what matters with Proper's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
     },
     {
         icon: MessageChatCircle,

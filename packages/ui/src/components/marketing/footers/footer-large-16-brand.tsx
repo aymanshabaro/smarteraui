@@ -1,7 +1,7 @@
 import { Button } from "@/components/base/buttons/button";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { sortCx } from "@/utils/cx";
 
 const styles = sortCx({
@@ -20,7 +20,7 @@ export const FooterLarge16Brand = () => {
             <div className="max-w-container mx-auto px-4 md:px-8">
                 <div className="flex flex-col gap-8 md:items-center">
                     {/* The mark is always the light lockup on the solid brand background. */}
-                    <SmarteraLogo className="dark-mode" />
+                    <ProperLogo className="dark-mode" />
 
                     <nav>
                         <ul className="grid grid-cols-2 gap-x-8 gap-y-3 sm:grid-cols-[repeat(6,max-content)]">
@@ -46,7 +46,7 @@ export const FooterLarge16Brand = () => {
                         </Button>
                     </Form>
 
-                    <p className="text-quaternary_on-brand text-sm">© 2077 Smartera. All rights reserved.</p>
+                    <p className="text-quaternary_on-brand text-sm">© 2077 Proper. All rights reserved.</p>
                 </div>
             </div>
         </footer>

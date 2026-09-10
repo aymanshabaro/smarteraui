@@ -18,7 +18,7 @@ import {
     User01,
     Users01,
     UsersPlus,
-} from "@smarteraui/icons";
+} from "@properui/icons";
 import { FeaturedCardImage } from "@/components/application/app-navigation/base-components/featured-cards";
 import type { NavItemType } from "@/components/application/app-navigation/config";
 import { SidebarNavigationDualTier } from "@/components/application/app-navigation/sidebar-navigation/sidebar-dual-tier";
@@ -243,10 +243,10 @@ export const Informational05 = () => (
                             <p className="text-tertiary text-sm">
                                 Please reach out to our friendly team via{" "}
                                 <a
-                                    href="mailto:billing@smartera.com"
+                                    href="mailto:billing@proper.example"
                                     className="outline-focus-ring rounded-xs underline underline-offset-3 focus-visible:outline-2 focus-visible:outline-offset-2"
                                 >
-                                    billing@smartera.com
+                                    billing@proper.example
                                 </a>{" "}
                                 with questions.
                             </p>

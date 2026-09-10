@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail01, Plus } from "@smarteraui/icons";
+import { Mail01, Plus } from "@properui/icons";
 import { Table, TableCard } from "@/components/application/table/table";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { Button } from "@/components/base/buttons/button";

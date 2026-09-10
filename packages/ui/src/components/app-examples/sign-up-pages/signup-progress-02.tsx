@@ -1,7 +1,7 @@
 "use client";
 
 import { ProgressSteps } from "@/components/application/progress-steps/progress-steps";
-import { SmarteraLogoMinimal } from "@/components/foundations/logo/smartera-logo-minimal";
+import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
 import { useBreakpoint } from "@/hooks/use-breakpoint";
 import { SetPasswordForm } from "./base-components/sign-up-form";
 import { signUpSteps } from "./base-components/steps";
@@ -14,7 +14,7 @@ export const SignupProgress02 = () => {
         <section className="bg-primary flex min-h-screen flex-col items-center justify-between gap-12 overflow-hidden px-4 py-12 md:px-8 md:pt-24 md:pb-16">
             <div className="mx-auto flex w-full flex-col gap-8 sm:max-w-90">
                 <div className="flex flex-col items-center gap-6 text-center md:gap-8">
-                    <SmarteraLogoMinimal className="relative size-8" />
+                    <ProperLogoMinimal className="relative size-8" />
 
                     <div className="z-10 flex flex-col gap-2 md:gap-3">
                         <h1 className="text-primary md:text-display-xs text-xl font-semibold">Choose a password</h1>

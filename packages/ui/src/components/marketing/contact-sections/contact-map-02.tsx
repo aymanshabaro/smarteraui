@@ -58,8 +58,8 @@ const MARKERS = [
 ];
 
 const channels = [
-    { title: "Support", subtitle: "Our friendly team is here to help.", cta: "support@smartera.com", href: "mailto:support@smartera.com" },
-    { title: "Sales", subtitle: "Questions or queries? Get in touch!", cta: "sales@smartera.com", href: "mailto:sales@smartera.com" },
+    { title: "Support", subtitle: "Our friendly team is here to help.", cta: "support@proper.example", href: "mailto:support@proper.example" },
+    { title: "Sales", subtitle: "Questions or queries? Get in touch!", cta: "sales@proper.example", href: "mailto:sales@proper.example" },
     { title: "Phone", subtitle: "Mon-Fri from 8am to 5pm.", cta: "+1 (555) 000-0000", href: "tel:+15550000000" },
 ];
 

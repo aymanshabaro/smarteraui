@@ -1,6 +1,6 @@
 // TODO(orchestrator): candidate for components/internal — every authentication page example
 // repeats these three fragments.
-import { Mail01 } from "@smarteraui/icons";
+import { Mail01 } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { RatingStars } from "@/components/foundations/rating/rating-stars";
 import { cx } from "@/utils/cx";
@@ -29,16 +29,16 @@ export interface SupportFooterProps {
 /** The copyright / support address footer pinned to the bottom of the form column. */
 export const SupportFooter = ({ onBrand, className }: SupportFooterProps) => (
     <footer className={cx("flex justify-between", className)}>
-        <p className={cx("text-sm", onBrand ? "text-tertiary_on-brand" : "text-tertiary")}>© Smartera 2077</p>
+        <p className={cx("text-sm", onBrand ? "text-tertiary_on-brand" : "text-tertiary")}>© Proper 2077</p>
         <a
-            href="mailto:help@smartera.com"
+            href="mailto:help@proper.example"
             className={cx(
                 "outline-focus-ring flex items-center gap-2 rounded text-sm focus-visible:outline-2 focus-visible:outline-offset-2",
                 onBrand ? "text-tertiary_on-brand" : "text-tertiary",
             )}
         >
             <Mail01 aria-hidden="true" className={cx("size-4", onBrand ? "text-tertiary_on-brand" : "text-fg-quaternary")} />
-            help@smartera.com
+            help@proper.example
         </a>
     </footer>
 );

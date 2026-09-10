@@ -1,7 +1,7 @@
 "use client";
 
 import type { Placement as AriaPlacement } from "react-aria-components";
-import { HelpCircle } from "@smarteraui/icons";
+import { HelpCircle } from "@properui/icons";
 import { Tooltip, TooltipTrigger } from "@/components/base/tooltip/tooltip";
 
 const PLACEMENTS: { label: string; value: AriaPlacement }[] = [

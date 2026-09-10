@@ -1,4 +1,4 @@
-import { File02, Heart, SlashCircle01, SwitchHorizontal01 } from "@smarteraui/icons";
+import { File02, Heart, SlashCircle01, SwitchHorizontal01 } from "@properui/icons";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 import { sortCx } from "@/utils/cx";
 import { IMAGES } from "@/utils/demo-assets";

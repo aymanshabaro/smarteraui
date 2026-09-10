@@ -10,7 +10,7 @@
 import registryStats from "../../../../packages/registry/dist/stats.json";
 
 /** Canonical origin. The registry and `/llms.txt` below are the URLs an agent is pointed at. */
-export const SITE_ORIGIN = "https://smarteraui.com";
+export const SITE_ORIGIN = "https://properui.dev";
 
 /** Where the CLI resolves components from by default, and what an agent can fetch directly. */
 export const REGISTRY_URL = `${SITE_ORIGIN}/r`;
@@ -22,10 +22,10 @@ export const LLMS_TXT_URL = `${SITE_ORIGIN}/llms.txt`;
 export const REGISTRY_ENTRIES = registryStats.entries;
 
 /** Public repository. Deliberately local to the landing page: `~/lib/site` still points at the docs org. */
-export const REPO_URL = "https://github.com/aymanshabaro/smarteraui";
+export const REPO_URL = "https://github.com/properui/properui";
 
 /** The npm package the install snippet adds. */
-export const PACKAGE_NAME = "@smarteraui/ui";
+export const PACKAGE_NAME = "@properui/ui";
 
 export const INSTALL_COMMAND = `npm i ${PACKAGE_NAME}`;
 

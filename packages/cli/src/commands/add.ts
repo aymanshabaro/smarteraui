@@ -1,5 +1,5 @@
 /**
- * `smarteraui add <component...>` and `smarteraui add example <name>`.
+ * `properui add <component...>` and `properui add example <name>`.
  *
  * Resolves each component plus its `registryDependencies` recursively, copies the files to
  * the targets from components.json, rewrites `@/` imports to the project alias, installs
@@ -41,7 +41,7 @@ export async function runAdd(names: string[], options: AddOptions): Promise<void
     const cwd = path.resolve(options.cwd ?? process.cwd());
     const config = readConfig(cwd);
     if (!config) {
-        log.error(`No ${path.relative(cwd, configPath(cwd)) || "components.json"} found. Run \`smarteraui init\` first.`);
+        log.error(`No ${path.relative(cwd, configPath(cwd)) || "components.json"} found. Run \`properui init\` first.`);
         process.exitCode = 1;
         return;
     }
@@ -54,7 +54,7 @@ export async function runAdd(names: string[], options: AddOptions): Promise<void
     const registry = new Registry(resolveRegistrySource(options.registry, config.registry));
 
     if (!options.all && requested.length === 0) {
-        log.error(exampleMode ? "Which example? e.g. `smarteraui add example settings-01`" : "Nothing to add. Pass component names or --all.");
+        log.error(exampleMode ? "Which example? e.g. `properui add example settings-01`" : "Nothing to add. Pass component names or --all.");
         process.exitCode = 1;
         return;
     }

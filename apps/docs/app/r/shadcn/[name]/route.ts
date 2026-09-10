@@ -3,12 +3,12 @@ import path from "node:path";
 import { repoRoot } from "~/lib/content";
 
 /**
- * The shadcn-format mirror of `https://smarteraui.com/r/<name>.json` — served at
- * `https://smarteraui.com/r/shadcn/<name>.json`, plus `https://smarteraui.com/r/shadcn/registry.json`
+ * The shadcn-format mirror of `https://properui.dev/r/<name>.json` — served at
+ * `https://properui.dev/r/shadcn/<name>.json`, plus `https://properui.dev/r/shadcn/registry.json`
  * (the index shadcn's own MCP server reads to discover this namespace's items, per
  * https://ui.shadcn.com/docs/registry/mcp). This is what a consumer's `components.json` points
- * the `@smarteraui` namespace at (see /integrations/shadcn) so `npx shadcn@latest add
- * @smarteraui/<name>` resolves here instead of `/r/<name>.json`.
+ * the `@properui` namespace at (see /integrations/shadcn) so `npx shadcn@latest add
+ * @properui/<name>` resolves here instead of `/r/<name>.json`.
  *
  * The payloads are the files `pnpm registry:build` writes to `packages/registry/dist/shadcn`
  * (via `src/shadcn.ts`, which translates the native registry — the one this route's sibling,

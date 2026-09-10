@@ -1,6 +1,6 @@
 "use client";
 
-import { DownloadCloud01, HomeLine, PiggyBank01, RefreshCcw01, SearchLg, Umbrella03 } from "@smarteraui/icons";
+import { DownloadCloud01, HomeLine, PiggyBank01, RefreshCcw01, SearchLg, Umbrella03 } from "@properui/icons";
 import { MetricChangeIndicator } from "@/components/application/metrics/metrics-base";
 import { PaginationDot } from "@/components/application/pagination/pagination-dot";
 import { Table } from "@/components/application/table/table";
@@ -58,7 +58,7 @@ export const Dashboard16 = () => (
             <DashboardSection className="gap-8 lg:flex-row lg:gap-10">
                 <div className="flex w-full flex-col gap-6 lg:w-80 lg:shrink-0">
                     <div className="bg-brand-solid flex flex-col gap-5 rounded-xl p-4">
-                        <CreditCard type="transparent" width={280} company="Smartera." cardHolder={owner.name.toUpperCase()} />
+                        <CreditCard type="transparent" width={280} company="Proper." cardHolder={owner.name.toUpperCase()} />
 
                         <div className="flex flex-col gap-2">
                             <div className="flex justify-between gap-4 text-sm font-medium text-white">

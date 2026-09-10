@@ -1,5 +1,5 @@
 // Fixture: no token-compliance violations expected.
-// Uses only semantic tokens, spacing/layout utilities, and Smart Era UI's sanctioned
+// Uses only semantic tokens, spacing/layout utilities, and Proper UI's sanctioned
 // `utility-*` color family (see rubric.md, metric 3, for why that family is excluded
 // from the raw-palette rule).
 

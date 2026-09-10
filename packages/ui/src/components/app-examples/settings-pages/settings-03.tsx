@@ -60,7 +60,7 @@ export const Settings03 = () => (
                                     isRequired
                                     label="Username"
                                     className={hideLabelOnDesktop}
-                                    leadingAddon={<InputGroup.Prefix>smartera.com/</InputGroup.Prefix>}
+                                    leadingAddon={<InputGroup.Prefix>proper.example/</InputGroup.Prefix>}
                                 >
                                     <InputBase placeholder="olivia" defaultValue="olivia" />
                                 </InputGroup>
@@ -75,7 +75,7 @@ export const Settings03 = () => (
                                     className={hideLabelOnDesktop}
                                     leadingAddon={<InputGroup.Prefix>https://</InputGroup.Prefix>}
                                 >
-                                    <InputBase placeholder="www.smartera.com" defaultValue="www.smartera.com" />
+                                    <InputBase placeholder="www.proper.example" defaultValue="www.proper.example" />
                                 </InputGroup>
                             </SettingsFormRow>
 
@@ -119,7 +119,7 @@ export const Settings03 = () => (
                                 label="Alternative contact email"
                                 hint="Enter an alternative email if you'd like to be contacted via a different email."
                             >
-                                <Input type="email" label="Alternative contact email" placeholder="olivia@smartera.com" className={hideLabelOnDesktop} />
+                                <Input type="email" label="Alternative contact email" placeholder="olivia@proper.example" className={hideLabelOnDesktop} />
                             </SettingsFormRow>
                         </div>
 

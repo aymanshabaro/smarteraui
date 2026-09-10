@@ -1,9 +1,9 @@
 "use client";
 
 import type { CSSProperties } from "react";
-import { SearchLg } from "@smarteraui/icons";
+import { SearchLg } from "@properui/icons";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { MobileNavigationHeader } from "../base-components/mobile-header";
 import { NavAccountCard } from "../base-components/nav-account-card";
 import { NavList } from "../base-components/nav-list";
@@ -30,7 +30,7 @@ export const SidebarNavigationSectionDividers = ({ activeUrl, items }: SidebarNa
             className="bg-primary ring-secondary flex h-full w-full max-w-full flex-col justify-between overflow-auto pt-4 shadow-xs ring-inset lg:w-(--width) lg:rounded-xl lg:pt-5 lg:ring-1"
         >
             <div className="flex flex-col gap-5 px-4 lg:px-5">
-                <SmarteraLogo className="h-6" />
+                <ProperLogo className="h-6" />
 
                 {/* Mobile search input */}
                 <Input size="md" aria-label="Search" placeholder="Search" icon={SearchLg} className="md:hidden" />

@@ -1,7 +1,7 @@
 "use client";
 
 import type { FC, HTMLAttributes, ReactNode } from "react";
-import { CheckCircle } from "@smarteraui/icons";
+import { CheckCircle } from "@properui/icons";
 import { cx, sortCx } from "@/utils/cx";
 
 export const styles = sortCx({

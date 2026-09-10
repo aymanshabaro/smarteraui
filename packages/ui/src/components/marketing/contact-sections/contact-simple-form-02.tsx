@@ -18,7 +18,7 @@ export const ContactSimpleForm02 = () => (
         <div className="max-w-container mx-auto px-4 md:px-8">
             <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
                 <div className="max-lg:hidden lg:h-192">
-                    <img src={IMAGES.square[0].src} alt="A member of the Smartera team" className="size-full object-cover" />
+                    <img src={IMAGES.square[0].src} alt="A member of the Proper team" className="size-full object-cover" />
                 </div>
 
                 <div className="flex items-center justify-center">

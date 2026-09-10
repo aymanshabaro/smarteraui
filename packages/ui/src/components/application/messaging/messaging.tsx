@@ -4,7 +4,7 @@ import type { ComponentProps, ReactNode } from "react";
 import { createContext, useContext } from "react";
 import { FileIcon } from "@untitledui/file-icons";
 import { Button as AriaButton } from "react-aria-components";
-import { Link03 } from "@smarteraui/icons";
+import { Link03 } from "@properui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { cx, sortCx } from "@/utils/cx";
 import type { MessageActionItem } from "./message-actions";

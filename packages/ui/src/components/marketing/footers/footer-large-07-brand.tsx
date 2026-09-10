@@ -1,6 +1,6 @@
 import { AppStoreButton, GooglePlayButton } from "@/components/base/buttons/app-store-buttons-outline";
 import { Button } from "@/components/base/buttons/button";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { AngelList, Dribbble, Facebook, GitHub, Layers, LinkedIn, X } from "@/components/foundations/social-icons";
 import { sortCx } from "@/utils/cx";
 
@@ -34,7 +34,7 @@ export const FooterLarge07Brand = () => {
                     <div className="flex flex-col gap-8 md:items-start">
                         <div className="flex w-full flex-col gap-6 md:max-w-xs md:gap-8">
                             {/* The mark is always the light lockup on the solid brand background. */}
-                            <SmarteraLogo className="dark-mode" />
+                            <ProperLogo className="dark-mode" />
 
                             <p className="text-tertiary_on-brand text-md">Design amazing digital experiences that create more happy in the world.</p>
                         </div>
@@ -64,7 +64,7 @@ export const FooterLarge07Brand = () => {
                 </div>
 
                 <div className="border-brand_alt mt-12 flex flex-col-reverse justify-between gap-6 border-t pt-8 md:mt-16 md:flex-row">
-                    <p className="text-quaternary_on-brand text-sm">© 2077 Smartera. All rights reserved.</p>
+                    <p className="text-quaternary_on-brand text-sm">© 2077 Proper. All rights reserved.</p>
 
                     <ul className="flex gap-4">
                         {socialLinks.map(({ label, href, icon: Icon }) => (

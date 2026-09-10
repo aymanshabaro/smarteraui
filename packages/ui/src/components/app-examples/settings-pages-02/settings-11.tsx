@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 import { Radio as AriaRadio } from "react-aria-components";
-import { DownloadCloud01, DownloadCloud02, Zap } from "@smarteraui/icons";
+import { DownloadCloud01, DownloadCloud02, Zap } from "@properui/icons";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
 import { Table, TableCard } from "@/components/application/table/table";
 import { BadgeWithDot } from "@/components/base/badges/badges";

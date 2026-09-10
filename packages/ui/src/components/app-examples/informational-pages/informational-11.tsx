@@ -22,7 +22,7 @@ import {
     SearchLg,
     Settings01,
     Stars02,
-} from "@smarteraui/icons";
+} from "@properui/icons";
 import { FeaturedCardFreeTrialCTA } from "@/components/application/app-navigation/base-components/featured-cards";
 import type { NavItemType } from "@/components/application/app-navigation/config";
 import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
@@ -69,7 +69,7 @@ const footerItems: NavItemType[] = [
             </BadgeWithDot>
         ),
     },
-    { label: "Open in browser", href: "https://smartera.example.com/", icon: LayoutAlt01 },
+    { label: "Open in browser", href: "https://proper.example.com/", icon: LayoutAlt01 },
 ];
 
 const bubbleActions = [
@@ -245,9 +245,9 @@ export const Informational11 = () => (
             >
                 <Message name={activeChat.name} avatarSrc={activeChat.src} status="online" time="Thursday 11:40am" dateTime="2027-01-21T11:40">
                     <Message.Bubble actions={bubbleActions}>
-                        <Message.LinkPreview src={preview.src} alt="Smartera UI link preview" />
-                        <a href="https://www.smartera.com" target="_blank" rel="noopener noreferrer">
-                            https://www.smartera.com
+                        <Message.LinkPreview src={preview.src} alt="Proper UI link preview" />
+                        <a href="https://www.proper.example" target="_blank" rel="noopener noreferrer">
+                            https://www.proper.example
                         </a>
                     </Message.Bubble>
                 </Message>

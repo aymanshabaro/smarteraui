@@ -1,9 +1,9 @@
 ---
 title: Vite integration
 section: integrations
-description: Set up a Vite + React project with Smartera UI in minutes — the Tailwind Vite plugin, path aliases, and provider wiring included.
-metaTitle: Vite integration | Smartera UI
-metaDescription: Install Smartera UI in a Vite project with the CLI or by hand. Configure @tailwindcss/vite, the @/ alias, and RouterProvider + ThemeProvider.
+description: Set up a Vite + React project with Proper UI in minutes — the Tailwind Vite plugin, path aliases, and provider wiring included.
+metaTitle: Vite integration | Proper UI
+metaDescription: Install Proper UI in a Vite project with the CLI or by hand. Configure @tailwindcss/vite, the @/ alias, and RouterProvider + ThemeProvider.
 ---
 
 Vite has no framework-specific router or server/client split to work around, which makes it the simplest target to wire up by hand — but the CLI still saves you the boilerplate.
@@ -13,7 +13,7 @@ Vite has no framework-specific router or server/client split to work around, whi
 Run this from the root of your Vite project:
 
 ```bash
-npx smarteraui@latest init --vite
+npx properui@latest init --vite
 ```
 
 It detects your Tailwind version, `src/` layout, and package manager, then writes `components.json`, the theme token file, `utils/cx.ts`, adds the Tailwind imports and `@source` line to your CSS file, and wraps your app entry in `ThemeProvider`. It doesn't install npm packages, touch `vite.config.ts`, or add `RouterProvider` — set those up yourself as shown below.
@@ -23,7 +23,7 @@ It detects your Tailwind version, `src/` layout, and package manager, then write
 **1. Install the package and the Tailwind Vite plugin**
 
 ```bash
-npm install @smarteraui/ui react-aria-components next-themes
+npm install @properui/ui react-aria-components next-themes
 npm install -D @tailwindcss/vite
 ```
 
@@ -61,25 +61,25 @@ Match the alias in `tsconfig.json` so your editor and type-checker resolve it to
 
 **3. Import the stylesheet**
 
-`@smarteraui/ui/styles/globals.css` already bundles the Tailwind import, the design tokens, typography, and every plugin the components need — you only add one `@source` line so Tailwind's scanner also reads the package's own class names:
+`@properui/ui/styles/globals.css` already bundles the Tailwind import, the design tokens, typography, and every plugin the components need — you only add one `@source` line so Tailwind's scanner also reads the package's own class names:
 
 ```css
 /* src/index.css */
-@import "@smarteraui/ui/styles/globals.css";
+@import "@properui/ui/styles/globals.css";
 
-@source "../node_modules/@smarteraui/ui/src/**/*.{ts,tsx}";
+@source "../node_modules/@properui/ui/src/**/*.{ts,tsx}";
 ```
 
 **4. Wire up the providers**
 
-`@smarteraui/ui/providers` only exports a Next.js-flavored `RouterProvider` (it reads `useRouter` from `next/navigation` internally), so it doesn't work in Vite. Use React Aria's own `RouterProvider` from `react-aria-components` instead, and hand it your router's navigate function — `useNavigate` if you're using `react-router`:
+`@properui/ui/providers` only exports a Next.js-flavored `RouterProvider` (it reads `useRouter` from `next/navigation` internally), so it doesn't work in Vite. Use React Aria's own `RouterProvider` from `react-aria-components` instead, and hand it your router's navigate function — `useNavigate` if you're using `react-router`:
 
 ```tsx
 // src/providers.tsx
 import type { ReactNode } from "react";
 import { RouterProvider } from "react-aria-components";
 import { useNavigate } from "react-router-dom";
-import { ThemeProvider } from "@smarteraui/ui/providers";
+import { ThemeProvider } from "@properui/ui/providers";
 
 export const Providers = ({ children }: { children: ReactNode }) => {
     const navigate = useNavigate();
@@ -114,12 +114,12 @@ createRoot(document.getElementById("root")!).render(
 
 No router at all? Drop `RouterProvider` entirely. Every component still renders and behaves correctly — `href` links just do a full page load instead of a client-side transition.
 
-## Using Smartera UI components
+## Using Proper UI components
 
 Import a component from its subpath, the same one the CLI writes when you run `add`:
 
 ```tsx
-import { Button } from "@smarteraui/ui/components/base/buttons/button";
+import { Button } from "@properui/ui/components/base/buttons/button";
 
 export const App = () => <Button size="md">Get started</Button>;
 ```
@@ -131,7 +131,7 @@ export const App = () => <Button size="md">Get started</Button>;
 ```tsx
 // src/components/theme-toggle-button.tsx
 import { useTheme } from "next-themes";
-import { Button } from "@smarteraui/ui/components/base/buttons/button";
+import { Button } from "@properui/ui/components/base/buttons/button";
 
 export const ThemeToggleButton = () => {
     const { resolvedTheme, setTheme } = useTheme();
@@ -145,24 +145,24 @@ export const ThemeToggleButton = () => {
 <FAQs
     items={[
         {
-            question: "How do I integrate Smartera UI with a Vite project?",
-            answer: "Run npx smarteraui@latest init --vite for a full setup, or install @tailwindcss/vite and @smarteraui/ui yourself and import globals.css from your entry stylesheet. Tailwind v4's Vite plugin replaces the old PostCSS config entirely.",
+            question: "How do I integrate Proper UI with a Vite project?",
+            answer: "Run npx properui@latest init --vite for a full setup, or install @tailwindcss/vite and @properui/ui yourself and import globals.css from your entry stylesheet. Tailwind v4's Vite plugin replaces the old PostCSS config entirely.",
         },
         {
             question: "How do I set up the @/ alias in Vite for cleaner imports?",
             answer: "Add a resolve.alias entry in vite.config.ts mapping @ to ./src, then mirror it under compilerOptions.paths in tsconfig.json so your editor and tsc agree. That lets you write @/components/... instead of relative paths.",
         },
         {
-            question: "Does Smartera UI work with Vite's hot module replacement?",
+            question: "Does Proper UI work with Vite's hot module replacement?",
             answer: "Yes. Components are ordinary React function components, so HMR swaps them in place and preserves state exactly like it does for your own code.",
         },
         {
-            question: "Do I need a router to use Smartera UI in Vite?",
+            question: "Do I need a router to use Proper UI in Vite?",
             answer: "No — drop react-aria-components' RouterProvider entirely if you don't have a router. Every component still renders and functions correctly; href links just do a full page load instead of a client-side transition.",
         },
         {
             question: "How does Tailwind CSS v4 work with Vite?",
-            answer: "Through the @tailwindcss/vite plugin, which is faster than the previous PostCSS-based setup. Your CSS just imports Smartera UI's globals.css directly — no tailwind.config.js and no separate PostCSS pipeline to maintain.",
+            answer: "Through the @tailwindcss/vite plugin, which is faster than the previous PostCSS-based setup. Your CSS just imports Proper UI's globals.css directly — no tailwind.config.js and no separate PostCSS pipeline to maintain.",
         },
     ]}
 />

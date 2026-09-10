@@ -1,14 +1,14 @@
 # CLI
 
-`smarteraui` copies component source into your project, shadcn-style: you get the `.tsx` files, not a dependency. Run it
+`properui` copies component source into your project, shadcn-style: you get the `.tsx` files, not a dependency. Run it
 through `npx` — there is nothing to install:
 
 ```bash
-npx smarteraui@latest init
-npx smarteraui@latest add button
+npx properui@latest init
+npx properui@latest add button
 ```
 
-Or `pnpm dlx smarteraui@latest …`, `yarn dlx smarteraui@latest …`, `bunx smarteraui@latest …`.
+Or `pnpm dlx properui@latest …`, `yarn dlx properui@latest …`, `bunx properui@latest …`.
 
 Requires Node 20+.
 
@@ -29,7 +29,7 @@ Every command accepts `--registry <source>`, `-y, --yes` and the global `--cwd <
 ## `init`
 
 ```bash
-npx smarteraui@latest init
+npx properui@latest init
 ```
 
 Detects your framework (Next.js App Router, Next.js Pages Router, Vite, plain React), whether you use TypeScript, whether
@@ -58,7 +58,7 @@ Written by `init`, read by every other command:
 
 ```json
 {
-    "$schema": "https://ui.smartera.dev/schema.json",
+    "$schema": "https://properui.dev/schema.json",
     "style": "default",
     "tsx": true,
     "tailwind": {
@@ -72,7 +72,7 @@ Written by `init`, read by every other command:
         "ui": "@/components/base",
         "hooks": "@/hooks"
     },
-    "registry": "https://ui.smartera.dev/r"
+    "registry": "https://properui.dev/r"
 }
 ```
 
@@ -82,8 +82,8 @@ source permanently.
 ## `add`
 
 ```bash
-npx smarteraui@latest add button
-npx smarteraui@latest add button input select table
+npx properui@latest add button
+npx properui@latest add button input select table
 ```
 
 For each component the CLI resolves its registry dependencies, copies every file to the target derived from your
@@ -103,13 +103,13 @@ a broken import.
 `--dry-run` before `--all` is a good habit:
 
 ```bash
-npx smarteraui@latest add --all --dry-run
+npx properui@latest add --all --dry-run
 ```
 
 ### Page examples
 
 ```bash
-npx smarteraui@latest add example about-page-01
+npx properui@latest add example about-page-01
 ```
 
 An example is a complete page — a dashboard, a settings screen, a marketing landing page — and its registry entry lists
@@ -119,16 +119,16 @@ never rewrites it unless you pass `--overwrite`.
 Not sure of a name? List them:
 
 ```bash
-npx smarteraui@latest list --type example --layer marketing-examples
+npx properui@latest list --type example --layer marketing-examples
 ```
 
 ## `list`
 
 ```bash
-npx smarteraui@latest list
-npx smarteraui@latest list --layer base
-npx smarteraui@latest list --type component
-npx smarteraui@latest list --json
+npx properui@latest list
+npx properui@latest list --layer base
+npx properui@latest list --type component
+npx properui@latest list --json
 ```
 
 | Option        | Description                                                                                                                          |
@@ -142,8 +142,8 @@ npx smarteraui@latest list --json
 Fuzzy match over component names, descriptions and example names:
 
 ```bash
-npx smarteraui@latest search "pricing"
-npx smarteraui@latest search "empty state" --limit 5
+npx properui@latest search "pricing"
+npx properui@latest search "empty state" --limit 5
 ```
 
 | Option        | Description                    |
@@ -156,8 +156,8 @@ Compare the files in your project against the registry version, so you can see w
 update:
 
 ```bash
-npx smarteraui@latest diff              # every installed component
-npx smarteraui@latest diff button       # just one
+npx properui@latest diff              # every installed component
+npx properui@latest diff button       # just one
 ```
 
 Requires `components.json`, so run `init` first.
@@ -167,11 +167,11 @@ Requires `components.json`, so run `init` first.
 Only needed for a **private** registry — the public one is anonymous, and `add` works without ever logging in.
 
 ```bash
-npx smarteraui@latest login
-npx smarteraui@latest login --token <token>
+npx properui@latest login
+npx properui@latest login --token <token>
 ```
 
-The token is stored at `~/.smarteraui/auth.json` and reused by later commands on the same machine.
+The token is stored at `~/.properui/auth.json` and reused by later commands on the same machine.
 
 ## Pointing at another registry
 
@@ -188,8 +188,8 @@ output directory:
 
 ```bash
 pnpm registry:build
-npx smarteraui@latest add button --registry ./packages/registry/dist
-# or: REGISTRY_URL=./packages/registry/dist npx smarteraui@latest add button
+npx properui@latest add button --registry ./packages/registry/dist
+# or: REGISTRY_URL=./packages/registry/dist npx properui@latest add button
 ```
 
 ## Troubleshooting
@@ -202,4 +202,4 @@ tsconfig path and re-run `init --overwrite`.
 **A component installed but renders unstyled.** Your stylesheet is missing the `@source` line for the directory the
 components landed in. See [installation.md](./installation.md).
 
-**Debugging.** Set `SMARTERAUI_DEBUG=1` to get a full stack trace instead of a single error line.
+**Debugging.** Set `PROPERUI_DEBUG=1` to get a full stack trace instead of a single error line.

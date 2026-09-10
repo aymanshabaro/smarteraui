@@ -3,9 +3,9 @@ import path from "node:path";
 import { repoRoot } from "~/lib/content";
 
 /**
- * `https://smarteraui.com/schema.json` — the JSON Schema for a project's `components.json`.
+ * `https://properui.dev/schema.json` — the JSON Schema for a project's `components.json`.
  *
- * `smarteraui init` writes this URL into the `$schema` field of every `components.json` it
+ * `properui init` writes this URL into the `$schema` field of every `components.json` it
  * creates (see `CONFIG_SCHEMA_URL` in packages/cli/src/config.ts), so editors can validate and
  * autocomplete the file. The payload is `packages/registry/schema.json`, read at build time and
  * served verbatim — prerendered, so on Cloudflare Workers it is a plain static asset.

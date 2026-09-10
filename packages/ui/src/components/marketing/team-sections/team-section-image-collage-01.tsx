@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "@smarteraui/icons";
+import { ArrowUpRight } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { Dribbble, LinkedIn, X } from "@/components/foundations/social-icons";
 import { cx, sortCx } from "@/utils/cx";

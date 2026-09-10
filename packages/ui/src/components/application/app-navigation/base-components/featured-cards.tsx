@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { AlertCircle, CheckCircle, ChevronRight, Copy01, Link01, MessageChatCircle, Zap } from "@smarteraui/icons";
+import { AlertCircle, CheckCircle, ChevronRight, Copy01, Link01, MessageChatCircle, Zap } from "@properui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { AvatarAddButton } from "@/components/base/avatar/base-components/avatar-add-button";
 import { Badge, BadgeWithDot } from "@/components/base/badges/badges";

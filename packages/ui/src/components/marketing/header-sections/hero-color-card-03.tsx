@@ -105,7 +105,7 @@ export const HeroColorCard03 = () => (
                         <div aria-hidden="true" className="md:shadow-3xl absolute inset-x-4 inset-y-0 h-full shadow-xl md:inset-x-7" />
                         <img
                             src={IMAGES.landscape[6].src}
-                            alt="Smartera dashboard mockup"
+                            alt="Proper dashboard mockup"
                             className="relative rounded object-cover md:rounded-[10px] lg:max-w-3xl"
                         />
                     </div>

@@ -17,7 +17,7 @@ import {
 
 const emailUpdates = [
     { id: "news", label: "News and updates", hint: "News about product and feature updates.", defaultSelected: true },
-    { id: "tips", label: "Tips and tutorials", hint: "Tips on getting more out of Smartera.", defaultSelected: true },
+    { id: "tips", label: "Tips and tutorials", hint: "Tips on getting more out of Proper.", defaultSelected: true },
     {
         id: "research",
         label: "User research",

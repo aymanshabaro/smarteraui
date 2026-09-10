@@ -1,13 +1,13 @@
 "use client";
 
-import { ArrowLeft, Flag05, Key01, Mail01, Passcode, Stars02, User01 } from "@smarteraui/icons";
+import { ArrowLeft, Flag05, Key01, Mail01, Passcode, Stars02, User01 } from "@properui/icons";
 import { PaginationDot } from "@/components/application/pagination/pagination-dot";
 import { type ProgressStepItem, ProgressSteps } from "@/components/application/progress-steps/progress-steps";
 import { Button } from "@/components/base/buttons/button";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 
 /** The onboarding checklist shown beside the reset form; the password step is the one in progress. */
 const steps: ProgressStepItem[] = [
@@ -22,16 +22,16 @@ export const StepSidebarVersion = () => (
     <section className="bg-primary grid min-h-screen grid-cols-1 overflow-hidden md:grid-cols-[384px_1fr]">
         <div className="bg-secondary hidden flex-1 flex-col md:flex">
             <div className="flex flex-col gap-16 px-8 pt-8">
-                <SmarteraLogo />
+                <ProperLogo />
 
                 <ProgressSteps items={steps} type="featured-icon" orientation="vertical" connector="solid" aria-label="Account setup progress" />
             </div>
 
             <footer className="mt-auto flex items-center justify-between p-8">
-                <p className="text-tertiary text-sm">© Smartera 2077</p>
+                <p className="text-tertiary text-sm">© Proper 2077</p>
                 <span className="flex items-center justify-center gap-2">
                     <Mail01 aria-hidden="true" className="text-fg-quaternary size-4" />
-                    <p className="text-tertiary text-sm">help@smartera.com</p>
+                    <p className="text-tertiary text-sm">help@proper.example</p>
                 </span>
             </footer>
         </div>

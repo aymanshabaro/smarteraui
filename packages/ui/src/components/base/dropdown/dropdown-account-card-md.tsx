@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { Selection as AriaSelection } from "react-aria-components";
 import { Button as AriaButton, SubmenuTrigger as AriaSubmenuTrigger } from "react-aria-components";
-import { ChevronSelectorVertical, HelpCircle, LogOut01, Moon01, Plus, Settings01, User01 } from "@smarteraui/icons";
+import { ChevronSelectorVertical, HelpCircle, LogOut01, Moon01, Plus, Settings01, User01 } from "@properui/icons";
 import { Dropdown } from "@/components/base/dropdown/dropdown";
 import { cx } from "@/utils/cx";
 import { LOGOS, avatar } from "@/utils/demo-assets";
@@ -87,7 +87,7 @@ export const DropdownAccountCardMD = () => {
                     </AriaSubmenuTrigger>
                 </Dropdown.Menu>
                 <div className="border-secondary flex justify-between border-t px-4 py-3">
-                    <span className="text-quaternary truncate text-sm">&copy; Smartera UI</span>
+                    <span className="text-quaternary truncate text-sm">&copy; Proper UI</span>
                     <span className="text-quaternary text-sm">v12.6.8</span>
                 </div>
             </Dropdown.Popover>

@@ -1,5 +1,5 @@
 import { AppStoreButton, GooglePlayButton } from "@/components/base/buttons/app-store-buttons";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { IPhoneMockup } from "@/components/shared-assets/mockups/iphone-mockup";
 import { sortCx } from "@/utils/cx";
 import { IMAGES } from "@/utils/demo-assets";
@@ -25,7 +25,7 @@ export const Mockup02 = () => (
     <section className={styles.shell}>
         <div className={styles.container}>
             <div className="bg-primary flex justify-center p-6">
-                <SmarteraLogo className="h-6" />
+                <ProperLogo className="h-6" />
             </div>
 
             <div className="bg-primary px-6 py-8">
@@ -36,10 +36,10 @@ export const Mockup02 = () => (
                     </div>
                 </div>
 
-                <h1 className="text-primary text-display-xs mt-8 text-center font-semibold">Welcome to Smartera UI!</h1>
+                <h1 className="text-primary text-display-xs mt-8 text-center font-semibold">Welcome to Proper UI!</h1>
 
                 <p className="text-tertiary text-md mt-4 text-center md:text-lg">
-                    Hi Olivia, thanks for checking out Smartera. Get the most of Smartera by installing our new mobile app.
+                    Hi Olivia, thanks for checking out Proper. Get the most of Proper by installing our new mobile app.
                 </p>
 
                 <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
@@ -75,7 +75,7 @@ export const Mockup02 = () => (
                 </ul>
 
                 <p className="text-tertiary mt-8 text-center text-sm">
-                    © 2077 Smartera UI
+                    © 2077 Proper UI
                     <br />
                     100 Smith Street, Collingwood VIC 3066
                 </p>

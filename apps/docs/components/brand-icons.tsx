@@ -1,4 +1,4 @@
-/** Third-party marks that are not part of `@smarteraui/icons`. */
+/** Third-party marks that are not part of `@properui/icons`. */
 
 export const GithubMark = ({ className }: { className?: string }) => (
     <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" className={className}>

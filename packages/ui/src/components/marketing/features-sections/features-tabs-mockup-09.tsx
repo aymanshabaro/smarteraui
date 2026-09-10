@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight } from "@smarteraui/icons";
+import { ArrowRight } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { IPhoneMockup } from "@/components/shared-assets/mockups/iphone-mockup";
 import { cx, sortCx } from "@/utils/cx";
@@ -23,7 +23,7 @@ const features = [
     },
     {
         title: "Manage your team with reports",
-        subtitle: "Measure what matters with Smartera's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
+        subtitle: "Measure what matters with Proper's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
     },
 ];
 

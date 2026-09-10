@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, ArrowRight, BookOpen01, CodeSquare02, MessageChatCircle, SearchLg } from "@smarteraui/icons";
+import { ArrowLeft, ArrowRight, BookOpen01, CodeSquare02, MessageChatCircle, SearchLg } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 import { BackgroundPattern } from "@/components/shared-assets/background-patterns";

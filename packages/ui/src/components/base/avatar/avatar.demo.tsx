@@ -1,6 +1,6 @@
 "use client";
 
-import { User01 } from "@smarteraui/icons";
+import { User01 } from "@properui/icons";
 import { LOGOS, avatar } from "@/utils/demo-assets";
 import { Avatar as AvatarComponent } from "./avatar";
 import { AvatarLabelGroup } from "./avatar-label-group";

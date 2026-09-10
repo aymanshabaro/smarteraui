@@ -1,7 +1,7 @@
 "use client";
 
 import type { FC } from "react";
-import { ArrowLeft, BarChartSquare02, CheckDone01, Edit05, HomeLine, PieChart03, Rows01, Share04, Users01, UsersPlus } from "@smarteraui/icons";
+import { ArrowLeft, BarChartSquare02, CheckDone01, Edit05, HomeLine, PieChart03, Rows01, Share04, Users01, UsersPlus } from "@properui/icons";
 import { ActivityFeed } from "@/components/application/activity-feed/activity-feed";
 import type { NavItemType } from "@/components/application/app-navigation/config";
 import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";

@@ -1,4 +1,4 @@
-import { Clock, CurrencyDollarCircle } from "@smarteraui/icons";
+import { Clock, CurrencyDollarCircle } from "@properui/icons";
 import { Badge, BadgeWithDot, BadgeWithFlag } from "@/components/base/badges/badges";
 import { sortCx } from "@/utils/cx";
 import { IMAGES } from "@/utils/demo-assets";

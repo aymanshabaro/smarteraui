@@ -1,6 +1,6 @@
 "use client";
 
-import { DownloadCloud01, Plus } from "@smarteraui/icons";
+import { DownloadCloud01, Plus } from "@properui/icons";
 import { ActivityFeed } from "@/components/application/activity-feed/activity-feed";
 import { FileUpload } from "@/components/application/file-upload/file-upload-base";
 import { Table } from "@/components/application/table/table";
@@ -109,7 +109,7 @@ export const Dashboard15 = () => (
                                 key={card.holder}
                                 type={card.type}
                                 width={230}
-                                company="Smartera."
+                                company="Proper."
                                 cardHolder={card.holder}
                                 className={`absolute ${card.offset}`}
                             />

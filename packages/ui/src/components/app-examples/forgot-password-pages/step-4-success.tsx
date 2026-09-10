@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, CheckCircle } from "@smarteraui/icons";
+import { ArrowLeft, CheckCircle } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 

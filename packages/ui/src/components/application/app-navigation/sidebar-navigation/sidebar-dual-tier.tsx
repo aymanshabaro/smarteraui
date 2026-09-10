@@ -3,9 +3,9 @@
 import type { CSSProperties, ReactNode } from "react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { SearchLg } from "@smarteraui/icons";
+import { SearchLg } from "@properui/icons";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { cx } from "@/utils/cx";
 import { MobileNavigationHeader } from "../base-components/mobile-header";
 import { NavAccountCard, type NavAccountType } from "../base-components/nav-account-card";
@@ -62,7 +62,7 @@ export const SidebarNavigationDualTier = ({
                 )}
             >
                 <div className="flex flex-col gap-5 px-4 lg:px-5">
-                    <SmarteraLogo className="h-6" />
+                    <ProperLogo className="h-6" />
 
                     {/* Mobile search input */}
                     <Input size="md" aria-label="Search" placeholder="Search" icon={SearchLg} className="md:hidden" />

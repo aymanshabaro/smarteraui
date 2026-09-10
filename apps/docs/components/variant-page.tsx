@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { VariantEntry } from "~/lib/variants";
-import { ArrowLeft, Expand01 } from "@smarteraui/icons";
+import { ArrowLeft, Expand01 } from "@properui/icons";
 import { utilityButtonClasses } from "./primitives";
 import { ThemeToggle } from "./theme-toggle";
 

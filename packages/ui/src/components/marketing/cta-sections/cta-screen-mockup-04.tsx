@@ -7,7 +7,7 @@ export const CtaScreenMockup04 = () => (
         <div className="max-w-container mx-auto px-4 md:px-8">
             <div className="bg-secondary grid grid-cols-1 overflow-hidden rounded-3xl lg:grid-cols-2 lg:items-center">
                 <div className="flex flex-1 flex-col px-6 pt-10 pb-12 sm:p-12 lg:p-16">
-                    <h2 className="text-display-sm text-primary xl:text-display-md font-semibold">Join 4,000+ startups growing with Smartera</h2>
+                    <h2 className="text-display-sm text-primary xl:text-display-md font-semibold">Join 4,000+ startups growing with Proper</h2>
                     <p className="text-tertiary mt-4 text-lg md:mt-5 lg:text-xl">Start your 30-day free trial today.</p>
 
                     <div className="mt-8 flex w-full flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-start md:mt-12">
@@ -25,7 +25,7 @@ export const CtaScreenMockup04 = () => (
                             <div className="bg-utility-neutral-50 ring-utility-neutral-200 relative size-full overflow-hidden rounded-[6.77px] ring-[0.56px] md:rounded-[15.16px] md:ring-[1.26px]">
                                 <img
                                     src={IMAGES.landscape[5].src}
-                                    alt="Dashboard mockup showing the Smartera application interface"
+                                    alt="Dashboard mockup showing the Proper application interface"
                                     className="size-full object-cover object-left-top"
                                 />
                             </div>

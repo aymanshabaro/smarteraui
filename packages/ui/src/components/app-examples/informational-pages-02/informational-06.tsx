@@ -1,6 +1,6 @@
 "use client";
 
-import { DownloadCloud01, Monitor04, SearchLg, UserCheck01, UserPlus01 } from "@smarteraui/icons";
+import { DownloadCloud01, Monitor04, SearchLg, UserCheck01, UserPlus01 } from "@properui/icons";
 import { MetricChangeIndicator } from "@/components/application/metrics/metrics-base";
 import { Table, TableCard } from "@/components/application/table/table";
 import { customers } from "@/components/application/table/table-data";

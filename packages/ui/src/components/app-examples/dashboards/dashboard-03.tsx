@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { Key } from "react-aria";
-import { SearchLg } from "@smarteraui/icons";
+import { SearchLg } from "@properui/icons";
 import { SidebarNavigationSectionsSubheadings } from "@/components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings";
 import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
 import { MetricSimple } from "@/components/application/metrics/metrics";

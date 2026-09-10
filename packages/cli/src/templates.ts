@@ -9,12 +9,12 @@
 
 /** Used only when the registry is unreachable; the real 800-line token set lives in the registry. */
 export const THEME_CSS_PLACEHOLDER = `/*
- * Smartera UI theme tokens — PLACEHOLDER.
+ * Proper UI theme tokens — PLACEHOLDER.
  *
  * The full token set could not be downloaded (the registry was unreachable), so this file
  * only carries enough tokens to keep Tailwind compiling. Replace it with the real theme:
  *
- *   npx smarteraui add styles --overwrite
+ *   npx properui add styles --overwrite
  *
  * Spec: docs/theming.md
  */
@@ -101,7 +101,7 @@ interface ThemeContextValue {
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
-const STORAGE_KEY = "smarteraui-theme";
+const STORAGE_KEY = "properui-theme";
 
 const systemTheme = (): "light" | "dark" =>
     typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
@@ -164,7 +164,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
  */
 const ThemeContext = createContext(null);
 
-const STORAGE_KEY = "smarteraui-theme";
+const STORAGE_KEY = "properui-theme";
 
 const systemTheme = () => (typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
 

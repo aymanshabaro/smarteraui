@@ -1,7 +1,7 @@
 "use client";
 
 import type { FC, ReactNode } from "react";
-import { Bell01, CreditCard01, LogOut01, Plus, SearchLg, Settings01, Share01, Star01, User01, UserPlus01 } from "@smarteraui/icons";
+import { Bell01, CreditCard01, LogOut01, Plus, SearchLg, Settings01, Share01, Star01, User01, UserPlus01 } from "@properui/icons";
 import { CommandMenu } from "@/components/application/command-menu/command-menu";
 import { Badge } from "@/components/base/badges/badges";
 import { Button } from "@/components/base/buttons/button";

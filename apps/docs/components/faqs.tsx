@@ -1,7 +1,7 @@
 "use client";
 
 import { Button as AriaButton, Disclosure as AriaDisclosure, DisclosurePanel as AriaDisclosurePanel } from "react-aria-components";
-import { ChevronDown } from "@smarteraui/icons";
+import { ChevronDown } from "@properui/icons";
 
 /**
  * `<FAQs items={[{ question, answer }]} />` — the accordion at the bottom of a

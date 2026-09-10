@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef } from "react";
 import { useFocusManager } from "react-aria";
 import type { DialogProps as AriaDialogProps, PopoverProps as AriaPopoverProps } from "react-aria-components";
 import { Button as AriaButton, Dialog as AriaDialog, DialogTrigger as AriaDialogTrigger, Popover as AriaPopover } from "react-aria-components";
-import { BookOpen01, ChevronSelectorVertical, LogOut01, Plus, Settings01, User01 } from "@smarteraui/icons";
+import { BookOpen01, ChevronSelectorVertical, LogOut01, Plus, Settings01, User01 } from "@properui/icons";
 import { AvatarLabelGroup } from "@/components/base/avatar/avatar-label-group";
 import { Button } from "@/components/base/buttons/button";
 import { RadioButtonBase } from "@/components/base/radio-buttons/radio-buttons";

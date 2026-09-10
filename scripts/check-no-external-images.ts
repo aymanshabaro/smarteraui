@@ -27,7 +27,7 @@ for (const root of ROOTS) {
     }
 }
 if (bad) {
-    console.error(`\n${bad} external asset reference(s). Use @smarteraui/ui/utils/demo-assets instead.`);
+    console.error(`\n${bad} external asset reference(s). Use @properui/ui/utils/demo-assets instead.`);
     process.exit(1);
 }
 console.log("check:assets — clean");

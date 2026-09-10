@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "@smarteraui/icons";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "@properui/icons";
 import { Carousel } from "@/components/application/carousel/carousel-base";
 import { Badge } from "@/components/base/badges/badges";
 import { Button } from "@/components/base/buttons/button";

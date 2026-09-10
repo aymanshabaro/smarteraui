@@ -98,10 +98,10 @@ importers:
       '@next/mdx':
         specifier: ^15.1.0
         version: 15.5.25(@mdx-js/loader@3.1.1)(@mdx-js/react@3.1.1(@types/react@19.2.18)(react@19.2.8))
-      '@smarteraui/icons':
+      '@properui/icons':
         specifier: npm:@untitledui/icons@^0.0.22
         version: '@untitledui/icons@0.0.22(react@19.2.8)'
-      '@smarteraui/ui':
+      '@properui/ui':
         specifier: workspace:*
         version: link:../../packages/ui
       next:
@@ -217,15 +217,15 @@ importers:
       '@internationalized/date':
         specifier: ^3.12.3
         version: 3.12.4
+      '@properui/icons':
+        specifier: npm:@untitledui/icons@^0.0.22
+        version: '@untitledui/icons@0.0.22(react@19.2.8)'
       '@react-aria/utils':
         specifier: ^3.34.1
         version: 3.34.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@react-stately/utils':
         specifier: ^3.12.1
         version: 3.12.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
-      '@smarteraui/icons':
-        specifier: npm:@untitledui/icons@^0.0.22
-        version: '@untitledui/icons@0.0.22(react@19.2.8)'
       '@untitledui/file-icons':
         specifier: ^0.0.9
         version: 0.0.9(react@19.2.8)

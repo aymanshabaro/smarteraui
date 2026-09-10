@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { Check, LayersTwo01, Zap } from "@smarteraui/icons";
+import { Check, LayersTwo01, Zap } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 

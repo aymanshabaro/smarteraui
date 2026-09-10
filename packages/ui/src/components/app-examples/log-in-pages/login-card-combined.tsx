@@ -3,14 +3,14 @@ import { SocialButton } from "@/components/base/buttons/social-button";
 import { Checkbox } from "@/components/base/checkbox/checkbox";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogoMinimal } from "@/components/foundations/logo/smartera-logo-minimal";
+import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
 
 /** Welcome-back card that keeps the heading, unlabelled fields and footer inside one raised panel. */
 export const LoginCardCombined = () => (
     <section className="bg-primary sm:bg-secondary min-h-screen px-4 py-12 md:px-8 md:pt-24">
         <div className="bg-primary flex w-full flex-col gap-6 sm:mx-auto sm:max-w-110 sm:rounded-2xl sm:px-10 sm:py-8 sm:shadow-sm">
             <div className="flex flex-col items-center gap-6 text-center">
-                <SmarteraLogoMinimal className="size-8 origin-center scale-[1.2]" />
+                <ProperLogoMinimal className="size-8 origin-center scale-[1.2]" />
 
                 <div className="flex flex-col gap-2 md:gap-3">
                     <h1 className="text-primary md:text-display-xs text-xl font-semibold">Welcome back</h1>

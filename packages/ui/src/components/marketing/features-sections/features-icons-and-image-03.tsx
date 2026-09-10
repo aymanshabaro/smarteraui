@@ -1,4 +1,4 @@
-import { MessageChatCircle, Zap } from "@smarteraui/icons";
+import { MessageChatCircle, Zap } from "@properui/icons";
 import { VideoPlayer } from "@/components/base/video-player/video-player";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 import { VIDEO_POSTER, VIDEO_SRC } from "@/utils/demo-assets";

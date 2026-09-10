@@ -1,33 +1,33 @@
 ---
 title: Lovable integration
 section: integrations
-description: Set up a Lovable project with Smartera UI in minutes — the package installs like any other npm dependency inside Lovable's Vite workspace.
-metaTitle: Lovable integration | Smartera UI
-metaDescription: Use Smartera UI inside Lovable — install the package, wire up the providers, and prompt Lovable to build screens from real components.
+description: Set up a Lovable project with Proper UI in minutes — the package installs like any other npm dependency inside Lovable's Vite workspace.
+metaTitle: Lovable integration | Proper UI
+metaDescription: Use Proper UI inside Lovable — install the package, wire up the providers, and prompt Lovable to build screens from real components.
 ---
 
-Lovable projects are ordinary Vite + React codebases under the hood, synced to a GitHub repo — so `@smarteraui/ui` installs and runs exactly the way it does in the [Vite integration guide](/integrations/vite), just from inside Lovable's own editor and chat.
+Lovable projects are ordinary Vite + React codebases under the hood, synced to a GitHub repo — so `@properui/ui` installs and runs exactly the way it does in the [Vite integration guide](/integrations/vite), just from inside Lovable's own editor and chat.
 
-## Install the Smartera UI Skill
+## Install the Proper UI Skill
 
 Lovable runs in the browser with no access to your local checkout, so there's no file for a CLI to write into a Lovable project directly. Instead, run the same `agent init` command every other tool uses and it prints what to paste:
 
 ```bash
-npx smarteraui@latest agent init --client lovable
+npx properui@latest agent init --client lovable
 ```
 
-This prints the public GitHub URL of the [Smartera UI Skill](/docs/agents) — `skills/smarteraui/SKILL.md` — and instructions to paste it into Lovable's knowledge / custom instructions panel. Once it's in there, Lovable follows the same workflow the Skill gives Claude Code and Codex: check the registry before generating markup, install with npm or the CLI (if you have a shell open), and keep semantic tokens and React Aria props in whatever it writes.
+This prints the public GitHub URL of the [Proper UI Skill](/docs/agents) — `skills/properui/SKILL.md` — and instructions to paste it into Lovable's knowledge / custom instructions panel. Once it's in there, Lovable follows the same workflow the Skill gives Claude Code and Codex: check the registry before generating markup, install with npm or the CLI (if you have a shell open), and keep semantic tokens and React Aria props in whatever it writes.
 
 If you'd rather set the project up yourself first, ask Lovable to add the dependency and wire up the providers, or do it yourself from the project's shell if you have one open:
 
 ```text
-Install @smarteraui/ui, react-aria-components, and next-themes. Import
-@smarteraui/ui/styles/globals.css from src/index.css, add the @source
-line for node_modules/@smarteraui/ui, and wrap the app in ThemeProvider
-and RouterProvider from @smarteraui/ui/providers.
+Install @properui/ui, react-aria-components, and next-themes. Import
+@properui/ui/styles/globals.css from src/index.css, add the @source
+line for node_modules/@properui/ui, and wrap the app in ThemeProvider
+and RouterProvider from @properui/ui/providers.
 ```
 
-Once that's done, prompt Lovable for screens the same way you would any other feature: "build a settings page with a tabbed nav and a form" resolves to real Smartera UI components instead of Lovable generating its own markup from scratch, as long as the prompt mentions using the installed library (or the Skill is pasted into its instructions, per above).
+Once that's done, prompt Lovable for screens the same way you would any other feature: "build a settings page with a tabbed nav and a form" resolves to real Proper UI components instead of Lovable generating its own markup from scratch, as long as the prompt mentions using the installed library (or the Skill is pasted into its instructions, per above).
 
 ## Open examples in Lovable
 
@@ -38,7 +38,7 @@ Every full-page example on this site has an **Open in Lovable** action that pre-
 <FAQs
     items={[
         {
-            question: "Does Lovable install @smarteraui/ui as a real dependency?",
+            question: "Does Lovable install @properui/ui as a real dependency?",
             answer: "Yes — Lovable projects are real Vite + React codebases, so the package installs from npm and behaves exactly as it does in a local Vite project.",
         },
         {
@@ -46,8 +46,8 @@ Every full-page example on this site has an **Open in Lovable** action that pre-
             answer: "Not necessarily — Lovable's own chat can install the package and write the provider setup for you from a prompt. Use the CLI only if you've connected a shell or are working from a synced local clone.",
         },
         {
-            question: "Will Lovable keep using Smartera UI components after the first prompt?",
-            answer: 'Only if later prompts keep referencing the library, or your project\'s own instructions mention it. Repeating "use the installed Smartera UI components" in prompts keeps Lovable from reaching for its own generated markup instead.',
+            question: "Will Lovable keep using Proper UI components after the first prompt?",
+            answer: 'Only if later prompts keep referencing the library, or your project\'s own instructions mention it. Repeating "use the installed Proper UI components" in prompts keeps Lovable from reaching for its own generated markup instead.',
         },
     ]}
 />

@@ -1,6 +1,6 @@
 "use client";
 
-import { SearchLg } from "@smarteraui/icons";
+import { SearchLg } from "@properui/icons";
 import { SidebarNavigationSectionDividers } from "@/components/application/app-navigation/sidebar-navigation/sidebar-section-dividers";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
 import { Avatar } from "@/components/base/avatar/avatar";

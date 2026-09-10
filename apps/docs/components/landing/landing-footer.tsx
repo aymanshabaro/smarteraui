@@ -1,4 +1,4 @@
-import { Button } from "@smarteraui/ui/components/base/buttons/button";
+import { Button } from "@properui/ui/components/base/buttons/button";
 import { REPO_URL } from "./content";
 import { LandingLogo } from "./landing-logo";
 

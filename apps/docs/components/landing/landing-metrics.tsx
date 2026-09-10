@@ -19,7 +19,7 @@ export const LandingMetrics = () => (
     <section aria-labelledby="by-the-numbers" className="bg-primary py-16 md:py-24">
         <div className="max-w-container mx-auto px-4 md:px-8">
             <h2 id="by-the-numbers" className="sr-only">
-                Smartera UI by the numbers
+                Proper UI by the numbers
             </h2>
             <dl className="border-secondary grid gap-x-4 gap-y-8 md:grid-cols-2 md:border-y md:py-16 lg:grid-cols-4">
                 {metrics.map((metric) => (

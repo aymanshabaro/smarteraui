@@ -4,7 +4,7 @@ import { Fragment, useMemo, useState } from "react";
 import type { Key } from "react-aria";
 import type { TabsProps as AriaTabsProps } from "react-aria-components";
 import { Tab as AriaTab, TabList as AriaTabList, TabPanel as AriaTabPanel, Tabs as AriaTabs } from "react-aria-components";
-import { Check, Copy01 } from "@smarteraui/icons";
+import { Check, Copy01 } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { ButtonUtility } from "@/components/base/buttons/button-utility";
 import { useClipboard } from "@/hooks/use-clipboard";

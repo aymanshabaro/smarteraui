@@ -1,4 +1,4 @@
-import { Clock, MarkerPin01 } from "@smarteraui/icons";
+import { Clock, MarkerPin01 } from "@properui/icons";
 import { sortCx } from "@/utils/cx";
 import { IMAGES } from "@/utils/demo-assets";
 

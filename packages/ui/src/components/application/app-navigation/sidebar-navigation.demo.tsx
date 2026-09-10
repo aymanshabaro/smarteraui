@@ -30,7 +30,7 @@ import {
     UserSquare,
     Users01,
     UsersPlus,
-} from "@smarteraui/icons";
+} from "@properui/icons";
 import {
     FeaturedCardCookiePreferences,
     FeaturedCardCurrentProjects,
@@ -223,7 +223,7 @@ const navItemsWithDividers: (NavItemType | NavItemDividerType)[] = [
     },
     {
         label: "Open in browser",
-        href: "https://smartera.example.com/",
+        href: "https://proper.example.com/",
         icon: LayoutAlt01,
     },
 ];
@@ -255,7 +255,7 @@ const navItemsWithSectionsSubheadings: Array<{ label: string; items: NavItemType
         ],
     },
     {
-        label: "Smartera UI",
+        label: "Proper UI",
         items: [
             { label: "Reporting", href: "#", icon: PieChart03 },
             {
@@ -300,7 +300,7 @@ const footerItemsSimple: NavItemType[] = [
     },
     {
         label: "Open in browser",
-        href: "https://smartera.example.com/",
+        href: "https://proper.example.com/",
         icon: LayoutAlt01,
     },
 ];
@@ -423,7 +423,7 @@ export const ReferralLink = () => (
         <FeaturedCardReferralLink
             title="Refer a friend"
             description="Earn 50% back for 12 months when someone uses your link."
-            referralLink="smartera.ui/4060020"
+            referralLink="properui.dev/4060020"
             onDismiss={noop}
             onCopy={noop}
         />
@@ -525,7 +525,7 @@ export const QRCode = () => (
         <FeaturedCardQRCode
             title="Verify this device"
             description="Open the app and scan the QR code below to verify this device."
-            value="https://smartera.example.com/verify/4060020"
+            value="https://proper.example.com/verify/4060020"
             onDismiss={noop}
         />
     </CardPreview>

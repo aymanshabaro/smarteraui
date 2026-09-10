@@ -1,6 +1,6 @@
 "use client";
 
-import { Edit01 } from "@smarteraui/icons";
+import { Edit01 } from "@properui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { Button } from "@/components/base/buttons/button";
 import { ButtonUtility } from "@/components/base/buttons/button-utility";

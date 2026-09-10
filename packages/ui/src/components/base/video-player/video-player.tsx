@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { Button as AriaButton, Slider as AriaSlider, SliderThumb as AriaSliderThumb, SliderTrack as AriaSliderTrack } from "react-aria-components";
-import { Expand01, Minimize01, VolumeMax, VolumeX } from "@smarteraui/icons";
+import { Expand01, Minimize01, VolumeMax, VolumeX } from "@properui/icons";
 import { cx, sortCx } from "@/utils/cx";
 import { formatTime, useVideoPlayer } from "./use-video-player";
 import { MultiplyGlyph, PauseGlyph, PlayGlyph } from "./video-player-icons";

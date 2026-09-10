@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { ArrowUpRight, Copy01, Plus } from "@smarteraui/icons";
+import { ArrowUpRight, Copy01, Plus } from "@properui/icons";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
 import { Tabs } from "@/components/application/tabs/tabs";
 import { Avatar } from "@/components/base/avatar/avatar";
@@ -54,13 +54,13 @@ const DetailsCard = ({ className }: { className?: string }) => (
             </DetailLink>
 
             <DetailLink label="Website">
-                <Button color="link-color" size="lg" href="https://smartera.com" iconTrailing={ArrowUpRight}>
-                    smartera.com
+                <Button color="link-color" size="lg" href="https://proper.example" iconTrailing={ArrowUpRight}>
+                    proper.example
                 </Button>
             </DetailLink>
 
             <DetailLink label="Portfolio">
-                <Button color="link-color" size="lg" href="https://smartera.com/portfolio" iconTrailing={ArrowUpRight}>
+                <Button color="link-color" size="lg" href="https://proper.example/portfolio" iconTrailing={ArrowUpRight}>
                     {designer.username}
                 </Button>
             </DetailLink>
@@ -79,7 +79,7 @@ const DetailsCard = ({ className }: { className?: string }) => (
                     </Button>
                 }
             >
-                <InputBase defaultValue={`smartera.com/designers/${designer.username.replace("@", "")}`} />
+                <InputBase defaultValue={`proper.example/designers/${designer.username.replace("@", "")}`} />
             </InputGroup>
         </div>
     </div>

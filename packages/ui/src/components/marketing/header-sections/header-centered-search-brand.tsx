@@ -1,6 +1,6 @@
 "use client";
 
-import { SearchLg } from "@smarteraui/icons";
+import { SearchLg } from "@properui/icons";
 import { Input } from "@/components/base/input/input";
 
 /**
@@ -14,7 +14,7 @@ export const HeaderCenteredSearchBrand = () => (
                 <span className="text-secondary_on-brand md:text-md text-sm font-semibold">Resources</span>
                 <h1 className="text-display-md text-primary_on-brand md:text-display-lg mt-3 font-semibold">Support centre</h1>
                 <p className="text-tertiary_on-brand mt-4 text-lg md:mt-6 md:text-xl">
-                    Get help and support or learn how to use the newest features in Smartera.
+                    Get help and support or learn how to use the newest features in Proper.
                 </p>
 
                 <div className="mt-8 w-full sm:mt-12 sm:w-80">

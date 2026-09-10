@@ -12,8 +12,8 @@ import {
 import { cx } from "~/lib/cx";
 import { boltUrl, stackBlitzUrl, v0Url } from "~/lib/external";
 import { CLI_PACKAGE } from "~/lib/site";
-import { Check, Expand01, Moon01, Terminal } from "@smarteraui/icons";
-import { useClipboard } from "@smarteraui/ui/hooks/use-clipboard";
+import { Check, Expand01, Moon01, Terminal } from "@properui/icons";
+import { useClipboard } from "@properui/ui/hooks/use-clipboard";
 import { BoltMark, StackBlitzMark, V0Mark } from "./brand-icons";
 import { CodeBlock } from "./code-block";
 import { CopyMenu } from "./copy-menu";

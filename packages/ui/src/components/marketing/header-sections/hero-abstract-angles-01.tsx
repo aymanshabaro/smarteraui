@@ -1,6 +1,6 @@
 "use client";
 
-import { PlayCircle } from "@smarteraui/icons";
+import { PlayCircle } from "@properui/icons";
 import { BadgeGroup } from "@/components/base/badges/badge-groups";
 import { Button } from "@/components/base/buttons/button";
 import { VideoPlayer } from "@/components/base/video-player/video-player";
@@ -107,7 +107,7 @@ export const HeroAbstractAngles01 = () => (
                             size="lg"
                             src={VIDEO_SRC}
                             poster={VIDEO_POSTER.src}
-                            label="Smartera product tour"
+                            label="Proper product tour"
                             className="shadow-3xl rounded-xl md:max-w-240"
                         />
                     </div>

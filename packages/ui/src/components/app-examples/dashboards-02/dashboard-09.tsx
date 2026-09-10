@@ -1,6 +1,6 @@
 "use client";
 
-import { DownloadCloud01, LayoutAlt01, Plus, SearchLg, UploadCloud02, Zap } from "@smarteraui/icons";
+import { DownloadCloud01, LayoutAlt01, Plus, SearchLg, UploadCloud02, Zap } from "@properui/icons";
 import { MetricChangeIndicator } from "@/components/application/metrics/metrics-base";
 import { PaginationCardMinimal } from "@/components/application/pagination/pagination";
 import { TableCard } from "@/components/application/table/table";

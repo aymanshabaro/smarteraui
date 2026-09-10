@@ -1,6 +1,6 @@
 /**
- * `smarteraui info [--json]` — everything an agent (or a human) needs to know about this
- * project's Smartera UI setup before touching UI code: framework, Tailwind version,
+ * `properui info [--json]` — everything an agent (or a human) needs to know about this
+ * project's Proper UI setup before touching UI code: framework, Tailwind version,
  * `components.json` aliases, the theme CSS path, which registry entries are already
  * installed, and the installed package versions.
  *
@@ -52,8 +52,8 @@ export interface ProjectSnapshot {
         registry: string | null;
     };
     packages: {
-        "@smarteraui/ui": PackageVersions;
-        smarteraui: PackageVersions;
+        "@properui/ui": PackageVersions;
+        properui: PackageVersions;
     };
     registrySource: string;
     registryReachable: boolean;
@@ -119,8 +119,8 @@ export async function collectSnapshot(options: InfoOptions): Promise<ProjectSnap
             registry: config?.registry ?? null,
         },
         packages: {
-            "@smarteraui/ui": packageVersions(cwd, "@smarteraui/ui", deps),
-            smarteraui: packageVersions(cwd, "smarteraui", deps),
+            "@properui/ui": packageVersions(cwd, "@properui/ui", deps),
+            properui: packageVersions(cwd, "properui", deps),
         },
         registrySource,
         registryReachable,
@@ -135,17 +135,17 @@ function formatVersions(versions: PackageVersions): string {
 }
 
 function printHuman(snapshot: ProjectSnapshot): void {
-    log.title("Smartera UI project info");
+    log.title("Proper UI project info");
     log.step(`Framework           ${snapshot.framework}`);
     log.step(`Language            ${snapshot.typescript ? "TypeScript" : "JavaScript"}`);
     log.step(`Tailwind            ${snapshot.tailwindVersion ? `v${snapshot.tailwindVersion}` : "not installed"}`);
     log.step(`Package manager     ${snapshot.packageManager}`);
-    log.step(`@smarteraui/ui      ${formatVersions(snapshot.packages["@smarteraui/ui"])}`);
-    log.step(`smarteraui (CLI)    ${formatVersions(snapshot.packages.smarteraui)}`);
+    log.step(`@properui/ui      ${formatVersions(snapshot.packages["@properui/ui"])}`);
+    log.step(`properui (CLI)    ${formatVersions(snapshot.packages.properui)}`);
     log.plain();
 
     if (!snapshot.config.present) {
-        log.warn(`No ${snapshot.config.file} found. Run \`npx smarteraui@latest init\` before installing components.`);
+        log.warn(`No ${snapshot.config.file} found. Run \`npx properui@latest init\` before installing components.`);
         return;
     }
 

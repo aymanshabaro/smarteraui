@@ -6,14 +6,14 @@ import { Button } from "@/components/base/buttons/button";
 import { SocialButton } from "@/components/base/buttons/social-button";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogoMinimal } from "@/components/foundations/logo/smartera-logo-minimal";
+import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
 import { IMAGES } from "@/utils/demo-assets";
 import { LogInPrompt } from "./base-components/page-parts";
 import type { Testimonial } from "./base-components/testimonial-overlay";
 import { TestimonialOverlay } from "./base-components/testimonial-overlay";
 
 const firstTestimonial: Testimonial = {
-    quote: "Smartera has saved us thousands of hours of work. We're able to spin up projects faster and take on more clients.",
+    quote: "Proper has saved us thousands of hours of work. We're able to spin up projects faster and take on more clients.",
     name: "Orlando Diggs",
     role: "Product Manager, Hourglass",
     company: "Web Design Agency",
@@ -44,7 +44,7 @@ export const SignupSplitQuoteImage02 = () => {
             <div className="bg-primary flex flex-1 justify-center px-4 py-12 md:items-center md:px-8">
                 <div className="flex w-full flex-col gap-8 sm:max-w-90">
                     <div className="flex flex-col items-center justify-center gap-6 text-center">
-                        <SmarteraLogoMinimal className="size-8" />
+                        <ProperLogoMinimal className="size-8" />
 
                         <div className="flex flex-col gap-2 md:gap-3">
                             <h1 className="text-primary md:text-display-xs text-xl font-semibold">Create an account</h1>

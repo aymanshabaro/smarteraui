@@ -1,7 +1,7 @@
 "use client";
 
 import { type SelectHTMLAttributes, useId } from "react";
-import { ChevronDown } from "@smarteraui/icons";
+import { ChevronDown } from "@properui/icons";
 import { HintText } from "@/components/base/input/hint-text";
 import { Label } from "@/components/base/input/label";
 import { cx } from "@/utils/cx";

@@ -1,11 +1,11 @@
 "use client";
 
-import { ChevronLeft, ChevronRight } from "@smarteraui/icons";
+import { ChevronLeft, ChevronRight } from "@properui/icons";
 import { Carousel, useCarousel } from "@/components/application/carousel/carousel-base";
 import { PaginationDot } from "@/components/application/pagination/pagination-dot";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { Button } from "@/components/base/buttons/button";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { RatingStars } from "@/components/foundations/rating/rating-stars";
 import { avatar } from "@/utils/demo-assets";
 import { SignUpFormColumn } from "./base-components/form-column";
@@ -13,17 +13,17 @@ import { SupportFooter } from "./base-components/page-parts";
 
 const quotes = [
     {
-        quote: "Smartera has saved us thousands of hours of work. We're able to spin up projects and features much faster.",
+        quote: "Proper has saved us thousands of hours of work. We're able to spin up projects and features much faster.",
         author: avatar(2),
         role: "Product Designer, Sisyphus",
     },
     {
-        quote: "Everything our team ships now starts from Smartera. The handover between design and code finally disappeared.",
+        quote: "Everything our team ships now starts from Proper. The handover between design and code finally disappeared.",
         author: avatar(5),
         role: "Head of Design, Circooles",
     },
     {
-        quote: "We replaced three tools with Smartera and shipped our redesign a full quarter ahead of schedule.",
+        quote: "We replaced three tools with Proper and shipped our redesign a full quarter ahead of schedule.",
         author: avatar(8),
         role: "Engineering Lead, Catalog",
     },
@@ -57,7 +57,7 @@ export const SignupSplitQuoteCarousel = () => (
     <section className="bg-primary grid min-h-screen grid-cols-1 lg:grid-cols-2">
         <div className="bg-secondary relative hidden flex-1 flex-col items-center justify-center self-stretch overflow-hidden lg:flex">
             <header className="absolute start-8 top-8">
-                <SmarteraLogo />
+                <ProperLogo />
             </header>
 
             <Carousel.Root className="w-full">

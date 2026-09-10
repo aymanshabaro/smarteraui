@@ -1,9 +1,9 @@
 "use client";
 
-import { CheckCircle, Palette } from "@smarteraui/icons";
-import { type CodeLine, CodeSnippet } from "@smarteraui/ui/components/application/code-snippet/code-snippet";
-import { Button } from "@smarteraui/ui/components/base/buttons/button";
-import { FeaturedIcon } from "@smarteraui/ui/components/foundations/featured-icon/featured-icon";
+import { CheckCircle, Palette } from "@properui/icons";
+import { type CodeLine, CodeSnippet } from "@properui/ui/components/application/code-snippet/code-snippet";
+import { Button } from "@properui/ui/components/base/buttons/button";
+import { FeaturedIcon } from "@properui/ui/components/foundations/featured-icon/featured-icon";
 
 /**
  * "Re-brand in one file".
@@ -67,8 +67,8 @@ export const LandingTheming = () => (
                     Re-brand the whole system in one file
                 </h2>
                 <p className="text-md text-tertiary mt-2 md:mt-4 md:text-lg">
-                    Smartera UI ships one brand ramp of eleven steps. Change those eleven values in <code className="font-mono text-sm">theme.css</code> and
-                    every component in the library follows — because components only ever name semantic tokens, never a palette class.
+                    Proper UI ships one brand ramp of eleven steps. Change those eleven values in <code className="font-mono text-sm">theme.css</code> and every
+                    component in the library follows — because components only ever name semantic tokens, never a palette class.
                 </p>
                 <ul className="mt-8 flex flex-col gap-4 ps-2 md:gap-5 md:ps-4">
                     {bullets.map((bullet) => (

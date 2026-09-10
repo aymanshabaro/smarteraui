@@ -2,7 +2,7 @@ import { Badge } from "@/components/base/badges/badges";
 import { Button } from "@/components/base/buttons/button";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { RatingBadge } from "@/components/foundations/rating/rating-badge";
 import { AngelList, Dribbble, Facebook, GitHub, Layers, LinkedIn, X } from "@/components/foundations/social-icons";
 import { sortCx } from "@/utils/cx";
@@ -84,7 +84,7 @@ export const FooterLarge06 = () => {
                 <div className="max-w-container mx-auto px-4 md:px-8">
                     <div className="flex flex-col gap-8 md:gap-16 xl:flex-row">
                         <div className="flex flex-col items-start gap-6 md:w-80">
-                            <SmarteraLogo className="h-7 w-min shrink-0" />
+                            <ProperLogo className="h-7 w-min shrink-0" />
 
                             <p className="text-tertiary text-md">Design amazing digital experiences that create more happy in the world.</p>
 
@@ -128,7 +128,7 @@ export const FooterLarge06 = () => {
                         {/* Absolutely positioned so the rule spans the row without adding a border box. */}
                         <div className="bg-border-secondary absolute top-0 left-0 h-px w-full" />
 
-                        <p className="text-quaternary text-sm">© 2077 Smartera. All rights reserved.</p>
+                        <p className="text-quaternary text-sm">© 2077 Proper. All rights reserved.</p>
 
                         <ul className="flex gap-4">
                             {socialLinks.map(({ label, href, icon: Icon }) => (

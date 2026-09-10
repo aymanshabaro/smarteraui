@@ -12,7 +12,7 @@ import {
     Rows01,
     SearchLg,
     Users01,
-} from "@smarteraui/icons";
+} from "@properui/icons";
 import type { NavItemType } from "@/components/application/app-navigation/config";
 import { SidebarNavigationSectionsSubheadings } from "@/components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings";
 import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
@@ -60,7 +60,7 @@ const navItems: Array<{ label: string; items: NavItemType[] }> = [
         ],
     },
     {
-        label: "Smartera UI",
+        label: "Proper UI",
         items: [
             { label: "Reporting", href: "/reporting", icon: PieChart03 },
             {
@@ -105,7 +105,7 @@ export const Informational10 = () => (
                     <div className="max-lg:hidden">
                         <Breadcrumbs type="text" aria-label="Breadcrumbs">
                             <Breadcrumbs.Item href="/" icon={HomeLine} aria-label="Home" />
-                            <Breadcrumbs.Item href="/">Smartera UI</Breadcrumbs.Item>
+                            <Breadcrumbs.Item href="/">Proper UI</Breadcrumbs.Item>
                             <Breadcrumbs.Item href="/calendar">Calendar</Breadcrumbs.Item>
                         </Breadcrumbs>
                     </div>
@@ -180,7 +180,7 @@ export const Informational10 = () => (
                             yesCount={5}
                             awaitingCount={1}
                             description="Sienna is inviting you to a scheduled video meeting about the new dashboard."
-                            meetingUrl="https://meet.smartera.com/product-demo"
+                            meetingUrl="https://meet.proper.example/product-demo"
                         />
                     </div>
                 </div>

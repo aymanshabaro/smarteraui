@@ -17,7 +17,7 @@ import {
     Settings01,
     Share04,
     Users01,
-} from "@smarteraui/icons";
+} from "@properui/icons";
 import { FeaturedCardEventCTA } from "@/components/application/app-navigation/base-components/featured-cards";
 import type { NavItemType } from "@/components/application/app-navigation/config";
 import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
@@ -45,7 +45,7 @@ const navItems: NavItemType[] = [
 const footerItems: NavItemType[] = [
     { label: "Support", href: "/support", icon: MessageChatCircle },
     { label: "Settings", href: "/settings", icon: Settings01 },
-    { label: "Open in browser", href: "https://smartera.example.com/", icon: LayoutAlt01 },
+    { label: "Open in browser", href: "https://proper.example.com/", icon: LayoutAlt01 },
 ];
 
 const tabs = [

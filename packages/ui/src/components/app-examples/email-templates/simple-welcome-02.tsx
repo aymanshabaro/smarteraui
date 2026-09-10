@@ -1,5 +1,5 @@
 import { Button } from "@/components/base/buttons/button";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { Facebook, Instagram, X } from "@/components/foundations/social-icons";
 import { sortCx } from "@/utils/cx";
 import { IMAGES } from "@/utils/demo-assets";
@@ -17,9 +17,9 @@ const styles = sortCx({
 });
 
 const resources = [
-    { label: "Smartera changelog →", href: "/changelog", description: "Weekly new updates and improvements to Smartera." },
+    { label: "Proper changelog →", href: "/changelog", description: "Weekly new updates and improvements to Proper." },
     { label: "Follow us on X →", href: "https://x.com/", description: "Stay up-to-date with the latest announcements and jobs." },
-    { label: "Why we're building Smartera →", href: "/about", description: "Smartera is a new standard of design system and UI kit." },
+    { label: "Why we're building Proper →", href: "/about", description: "Proper is a new standard of design system and UI kit." },
 ];
 
 const socials = [
@@ -33,17 +33,17 @@ export const SimpleWelcome02 = () => (
     <section className={styles.shell}>
         <div className={styles.container}>
             <div className="bg-primary p-6">
-                <SmarteraLogo className="h-7 md:h-8" />
+                <ProperLogo className="h-7 md:h-8" />
             </div>
 
             <div className="px-6 py-8">
                 <img src={IMAGES.landscape[5].src} alt="" className="aspect-video w-full object-cover" />
 
-                <h1 className="text-primary text-display-xs mt-12 font-semibold">Welcome to Smartera UI</h1>
+                <h1 className="text-primary text-display-xs mt-12 font-semibold">Welcome to Proper UI</h1>
 
                 <p className="text-tertiary md:text-md mt-4 text-sm">
-                    We&apos;re excited to welcome you to Smartera and we&apos;re even more excited about what we&apos;ve got planned. You&apos;re already on
-                    your way to creating beautiful visual products.
+                    We&apos;re excited to welcome you to Proper and we&apos;re even more excited about what we&apos;ve got planned. You&apos;re already on your
+                    way to creating beautiful visual products.
                     <br />
                     <br />
                     Whether you&apos;re here for your brand, for a cause, or just for fun—welcome! If there&apos;s anything you need, we&apos;ll be here every
@@ -65,8 +65,8 @@ export const SimpleWelcome02 = () => (
 
                 <p className="text-tertiary md:text-md text-sm">
                     Thanks for signing up. If you have any questions, send us a message at{" "}
-                    <a href="mailto:hi@smartera.com" className={styles.inlineLink}>
-                        hi@smartera.com
+                    <a href="mailto:hi@proper.example" className={styles.inlineLink}>
+                        hi@proper.example
                     </a>{" "}
                     or on{" "}
                     <a href="https://x.com/" className={styles.inlineLink}>
@@ -85,8 +85,8 @@ export const SimpleWelcome02 = () => (
             <div className="bg-primary px-6 py-8">
                 <p className="text-tertiary text-sm">
                     This email was sent to{" "}
-                    <a href="mailto:olivia@smartera.com" className={styles.inlineLink}>
-                        olivia@smartera.com
+                    <a href="mailto:olivia@proper.example" className={styles.inlineLink}>
+                        olivia@proper.example
                     </a>
                     . If you&apos;d rather not receive this kind of email, you can{" "}
                     <a href="/unsubscribe" className={styles.inlineLink}>
@@ -98,10 +98,10 @@ export const SimpleWelcome02 = () => (
                     </a>
                     .
                 </p>
-                <p className="text-tertiary mt-5 text-sm">© 2077 Smartera UI, 100 Smith Street, Collingwood VIC 3066</p>
+                <p className="text-tertiary mt-5 text-sm">© 2077 Proper UI, 100 Smith Street, Collingwood VIC 3066</p>
 
                 <div className="mt-12 flex items-center justify-between gap-4">
-                    <SmarteraLogo className="h-6" />
+                    <ProperLogo className="h-6" />
 
                     <ul className="flex items-center gap-4">
                         {socials.map(({ label, href, icon: Icon }) => (

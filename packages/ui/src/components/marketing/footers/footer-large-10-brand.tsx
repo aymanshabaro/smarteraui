@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Button } from "@/components/base/buttons/button";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { AngelList, Dribbble, Facebook, GitHub, Layers, LinkedIn, X } from "@/components/foundations/social-icons";
 import { sortCx } from "@/utils/cx";
 
@@ -66,7 +66,7 @@ export const FooterLarge10Brand = () => {
                 <div className="border-brand_alt flex flex-col justify-between border-b pb-8 md:pb-16 lg:flex-row">
                     <div className="max-w-3xl">
                         <h2 className="text-display-xs text-primary_on-brand md:text-display-sm font-semibold">Start your 30-day free trial</h2>
-                        <p className="text-md text-tertiary_on-brand mt-2 md:mt-4 md:text-xl">Join over 4,000+ startups already growing with Smartera.</p>
+                        <p className="text-md text-tertiary_on-brand mt-2 md:mt-4 md:text-xl">Join over 4,000+ startups already growing with Proper.</p>
                     </div>
 
                     <div className="mt-8 flex flex-col-reverse gap-3 self-stretch sm:flex-row sm:self-start lg:mt-0">
@@ -81,7 +81,7 @@ export const FooterLarge10Brand = () => {
                 <div className="mt-12 flex flex-col gap-12 md:mt-16 md:gap-16 xl:flex-row">
                     <div className="flex flex-col gap-6 md:w-80 md:gap-8">
                         {/* The mark is always the light lockup on the solid brand background. */}
-                        <SmarteraLogo className="dark-mode" />
+                        <ProperLogo className="dark-mode" />
 
                         <p className="text-tertiary_on-brand text-md">Design amazing digital experiences that create more happy in the world.</p>
                     </div>
@@ -115,7 +115,7 @@ export const FooterLarge10Brand = () => {
                 </div>
 
                 <div className="border-brand_alt mt-12 flex flex-col-reverse justify-between gap-6 border-t pt-8 md:mt-16 md:flex-row">
-                    <p className="text-quaternary_on-brand text-sm">© 2077 Smartera. All rights reserved.</p>
+                    <p className="text-quaternary_on-brand text-sm">© 2077 Proper. All rights reserved.</p>
 
                     <ul className="flex gap-4">
                         {socialLinks.map(({ label, href, icon: Icon }) => (

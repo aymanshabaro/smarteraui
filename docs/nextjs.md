@@ -1,18 +1,18 @@
 # Next.js
 
-Smartera UI is developed against Next.js 15 with the App Router — the documentation site in this repo is exactly that
+Proper UI is developed against Next.js 15 with the App Router — the documentation site in this repo is exactly that
 setup, so [`apps/docs`](../apps/docs) is a working reference for everything below.
 
 ## Install
 
 ```bash
-pnpm add @smarteraui/ui
+pnpm add @properui/ui
 ```
 
 Or let the CLI do the wiring:
 
 ```bash
-npx smarteraui@latest init --nextjs
+npx properui@latest init --nextjs
 ```
 
 ## 1. Stylesheet
@@ -23,9 +23,9 @@ Import it from your global stylesheet and add the `@source` line so Tailwind v4 
 
 ```css
 /* app/globals.css */
-@import "@smarteraui/ui/styles/globals.css";
+@import "@properui/ui/styles/globals.css";
 
-@source "../node_modules/@smarteraui/ui/src/**/*.{ts,tsx}";
+@source "../node_modules/@properui/ui/src/**/*.{ts,tsx}";
 ```
 
 The relative path is from the stylesheet to your project's `node_modules` — from `app/globals.css` in a standard
@@ -33,7 +33,7 @@ project that is `../node_modules`; from `src/app/globals.css` it is `../../node_
 
 ## 2. `transpilePackages`
 
-`@smarteraui/ui` publishes TypeScript source. Next.js only compiles your own code by default, so tell it to compile the
+`@properui/ui` publishes TypeScript source. Next.js only compiles your own code by default, so tell it to compile the
 package too:
 
 ```ts
@@ -41,13 +41,13 @@ package too:
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-    transpilePackages: ["@smarteraui/ui"],
+    transpilePackages: ["@properui/ui"],
 };
 
 export default nextConfig;
 ```
 
-If you import icons heavily, `experimental.optimizePackageImports: ["@smarteraui/icons"]` is worth adding as well —
+If you import icons heavily, `experimental.optimizePackageImports: ["@properui/icons"]` is worth adding as well —
 that is what the docs site uses.
 
 ## 3. Providers (App Router)
@@ -65,7 +65,7 @@ creating a client boundary of your own:
 
 ```tsx
 // app/layout.tsx
-import { RouterProvider, ThemeProvider } from "@smarteraui/ui/providers";
+import { RouterProvider, ThemeProvider } from "@properui/ui/providers";
 import "./globals.css";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -103,7 +103,7 @@ directly with `next/router`:
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { RouterProvider } from "react-aria-components";
-import { ThemeProvider } from "@smarteraui/ui/providers";
+import { ThemeProvider } from "@properui/ui/providers";
 import "../styles/globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -153,7 +153,7 @@ form controller:
 
 ```tsx
 // app/page.tsx — a server component
-import { Button } from "@smarteraui/ui/components/base/buttons/button";
+import { Button } from "@properui/ui/components/base/buttons/button";
 
 export default function Page() {
     return <Button href="/dashboard">Open dashboard</Button>;
@@ -165,7 +165,7 @@ export default function Page() {
 "use client";
 
 import { useState } from "react";
-import { Button } from "@smarteraui/ui/components/base/buttons/button";
+import { Button } from "@properui/ui/components/base/buttons/button";
 
 export const Counter = () => {
     const [n, setN] = useState(0);

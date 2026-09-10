@@ -23,7 +23,7 @@ import {
     TrendUp02,
     Users01,
     Zap,
-} from "@smarteraui/icons";
+} from "@properui/icons";
 import { BadgeWithDot } from "@/components/base/badges/badges";
 import { IMAGES } from "@/utils/demo-assets";
 import type { NavMenuLinkType } from "./nav-menu";
@@ -39,7 +39,7 @@ const newBadge = <span className="bg-primary text-secondary ring-primary rounded
 /** The five-entry "Resources" menu used by the simple dropdowns. */
 export const resourcesItems: NavMenuLinkType[] = [
     { label: "Blogs", href: "/blog", icon: BookOpen01, description: "The latest industry new and guides curated by our expert team." },
-    { label: "Customer stories", href: "/customers", icon: Stars01, description: "Learn how our customers are using Smartera UI to 10x their growth." },
+    { label: "Customer stories", href: "/customers", icon: Stars01, description: "Learn how our customers are using Proper UI to 10x their growth." },
     { label: "Video tutorials", href: "/tutorials", icon: PlayCircle, description: "Get up and running on our newest features and in-depth guides." },
     { label: "Documentation", href: "/docs", icon: FileCode01, description: "In-depth articles on our tools and technologies to empower teams." },
     { label: "Help and support", href: "/support", icon: LifeBuoy01, description: "Need help with something? Our expert team is here to help 24/7." },
@@ -48,7 +48,7 @@ export const resourcesItems: NavMenuLinkType[] = [
 /** The four-entry variant of the resources menu. */
 export const resourcesItemsShort: NavMenuLinkType[] = [
     { label: "Blog", href: "/blog", icon: BookOpen01, description: "The latest industry new and guides curated by our expert team." },
-    { label: "Customer stories", href: "/customers", icon: Stars01, description: "Learn how our customers are using Smartera UI to 10x their growth." },
+    { label: "Customer stories", href: "/customers", icon: Stars01, description: "Learn how our customers are using Proper UI to 10x their growth." },
     { label: "Video tutorials", href: "/tutorials", icon: PlayCircle, description: "Get up and running on our newest features and in-depth guides." },
     { label: "Documentation", href: "/docs", icon: FileCode01, description: "In-depth articles on our tools and technologies to empower teams." },
 ];

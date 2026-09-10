@@ -1,6 +1,6 @@
 "use client";
 
-import { Plus, SearchLg, UploadCloud02 } from "@smarteraui/icons";
+import { Plus, SearchLg, UploadCloud02 } from "@properui/icons";
 import { PaginationCardMinimal } from "@/components/application/pagination/pagination";
 import { Table, TableCard } from "@/components/application/table/table";
 import { customers } from "@/components/application/table/table-data";

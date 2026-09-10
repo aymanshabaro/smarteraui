@@ -23,7 +23,7 @@ import {
     SliderTrack as AriaSliderTrack,
     TextField as AriaTextField,
 } from "react-aria-components";
-import { Dropper, Plus } from "@smarteraui/icons";
+import { Dropper, Plus } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { Select } from "@/components/base/select/select";
 import { cx, sortCx } from "@/utils/cx";

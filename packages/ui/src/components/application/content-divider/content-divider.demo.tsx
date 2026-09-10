@@ -1,7 +1,7 @@
 "use client";
 
 import type { HTMLAttributes } from "react";
-import { ArrowLeft, ArrowRight, Plus } from "@smarteraui/icons";
+import { ArrowLeft, ArrowRight, Plus } from "@properui/icons";
 import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";
 import { Button } from "@/components/base/buttons/button";
 import { cx } from "@/utils/cx";

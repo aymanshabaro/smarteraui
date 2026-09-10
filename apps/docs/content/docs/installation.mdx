@@ -1,9 +1,9 @@
 ---
 title: Installation
 section: docs
-description: This guide walks through installing Smartera UI and getting a new or existing project set up quickly.
-metaTitle: Installation | Smartera UI
-metaDescription: Install Smartera UI with the CLI in Next.js, Vite, and AI builders, or set it up manually with theme.css, globals.css, and the cx utility.
+description: This guide walks through installing Proper UI and getting a new or existing project set up quickly.
+metaTitle: Installation | Proper UI
+metaDescription: Install Proper UI with the CLI in Next.js, Vite, and AI builders, or set it up manually with theme.css, globals.css, and the cx utility.
 ---
 
 ## Frameworks
@@ -13,13 +13,13 @@ The CLI detects your project and scaffolds the right files. Pick the framework y
 ### Next.js
 
 ```bash
-npx smarteraui@latest init --nextjs
+npx properui@latest init --nextjs
 ```
 
 ### Vite
 
 ```bash
-npx smarteraui@latest init --vite
+npx properui@latest init --vite
 ```
 
 ### Bolt, v0, Lovable, Claude
@@ -27,7 +27,7 @@ npx smarteraui@latest init --vite
 AI builders that can run shell commands can use the same CLI. Run the framework flag that matches the generated project (`--nextjs` or `--vite`), or leave it off and let `init` auto-detect from the project files:
 
 ```bash
-npx smarteraui@latest init --nextjs
+npx properui@latest init --nextjs
 ```
 
 ### Manual
@@ -42,13 +42,13 @@ resolve `@/...` imports and has no built-in tsconfig-paths support. For every ot
 writing one — if none is declared, it warns you and tells you what to add. Once your project is initialized, add components one at a time:
 
 ```bash
-npx smarteraui@latest add badges
+npx properui@latest add badges
 ```
 
 Add as many components as you need — each command copies that component's source (and its dependencies) straight into your project:
 
 ```bash
-npx smarteraui@latest add button-group avatar table
+npx properui@latest add button-group avatar table
 ```
 
 ## Manual installation
@@ -119,24 +119,24 @@ With the setup files in place, copy any component's source directly from its pag
 <FAQs
     items={[
         {
-            question: "What tech stack does Smartera UI use?",
-            answer: "Smartera UI components are built with React 19, Tailwind CSS v4.3, TypeScript v5.9, and React Aria Components v1.20. The dependency surface is kept minimal so you can focus on building instead of wrestling with third-party maintainers.",
+            question: "What tech stack does Proper UI use?",
+            answer: "Proper UI components are built with React 19, Tailwind CSS v4.3, TypeScript v5.9, and React Aria Components v1.20. The dependency surface is kept minimal so you can focus on building instead of wrestling with third-party maintainers.",
         },
         {
             question: "Do I need to install all components?",
-            answer: "No — install only what you need. You do need the core setup files (theme.css and globals.css) regardless. Add components individually with npx smarteraui@latest add [component-name], or copy the source for a single component manually.",
+            answer: "No — install only what you need. You do need the core setup files (theme.css and globals.css) regardless. Add components individually with npx properui@latest add [component-name], or copy the source for a single component manually.",
         },
         {
-            question: "Can I use Smartera UI with other UI libraries?",
+            question: "Can I use Proper UI with other UI libraries?",
             answer: "Yes. Since components are built with Tailwind CSS utility classes, they coexist with most other libraries — just watch for class name conflicts and scope your CSS where needed.",
         },
         {
-            question: "Can I use Smartera UI with Vue, Svelte, or other frameworks?",
+            question: "Can I use Proper UI with Vue, Svelte, or other frameworks?",
             answer: "The components themselves are React-only, but the Tailwind tokens in theme.css are framework-agnostic. You can reuse the design tokens in any project that runs Tailwind CSS, even outside React.",
         },
         {
             question: "How do I update components after installing them?",
-            answer: "If you installed with the CLI, re-run the add command with --overwrite: npx smarteraui@latest add badges --overwrite. If you copied a component manually, update its code by hand.",
+            answer: "If you installed with the CLI, re-run the add command with --overwrite: npx properui@latest add badges --overwrite. If you copied a component manually, update its code by hand.",
         },
         {
             question: "Are there any dependencies I need to install myself?",
@@ -148,7 +148,7 @@ With the setup files in place, copy any component's source directly from its pag
         },
         {
             question: "Can I use a different CSS framework?",
-            answer: "Smartera UI is built specifically for Tailwind CSS. Adapting components to another CSS framework is possible but would require rewriting every style object, so we recommend sticking with Tailwind for the best experience.",
+            answer: "Proper UI is built specifically for Tailwind CSS. Adapting components to another CSS framework is possible but would require rewriting every style object, so we recommend sticking with Tailwind for the best experience.",
         },
     ]}
 />

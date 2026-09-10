@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, ChartBreakoutSquare, MessageChatCircle, Zap } from "@smarteraui/icons";
+import { ArrowRight, ChartBreakoutSquare, MessageChatCircle, Zap } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 import { CreditCard } from "@/components/shared-assets/credit-card/credit-card";
@@ -19,7 +19,7 @@ const features = [
     },
     {
         title: "Manage your team with reports",
-        subtitle: "Measure what matters with Smartera's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
+        subtitle: "Measure what matters with Proper's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
         icon: ChartBreakoutSquare,
     },
 ];
@@ -59,10 +59,10 @@ export const FeaturesIconsAndMockup06 = () => (
                 <div className="bg-tertiary relative -mx-4 flex h-80 items-center justify-center md:me-0 md:h-120 lg:h-160">
                     <div className="-translate-x-0.5 -space-y-[106px] md:translate-x-0 md:-space-y-16 lg:-space-y-8">
                         <div className="relative z-1 [transform:scale(var(--scale))_rotate(60deg)_translate(38px,-53px)] [--scale:0.84] md:[--scale:1.3] lg:[--scale:1.57]">
-                            <CreditCard type="transparent-gradient" company="Smartera." cardHolder={AVATARS[0].name} />
+                            <CreditCard type="transparent-gradient" company="Proper." cardHolder={AVATARS[0].name} />
                         </div>
                         <div className="relative z-0 [transform:scale(var(--scale))_rotate(30deg)_translate(-23px,24px)] [--scale:0.84] md:[--scale:1.3] lg:[--scale:1.57]">
-                            <CreditCard type="brand-dark" company="Smartera." cardHolder={AVATARS[1].name} />
+                            <CreditCard type="brand-dark" company="Proper." cardHolder={AVATARS[1].name} />
                         </div>
                     </div>
                 </div>

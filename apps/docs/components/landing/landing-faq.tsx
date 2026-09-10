@@ -8,10 +8,10 @@ import {
     Heading as AriaHeading,
 } from "react-aria-components";
 import { GithubMark } from "~/components/brand-icons";
-import { MinusCircle, PlusCircle } from "@smarteraui/icons";
-import { Button } from "@smarteraui/ui/components/base/buttons/button";
-import { FeaturedIcon } from "@smarteraui/ui/components/foundations/featured-icon/featured-icon";
-import { sortCx } from "@smarteraui/ui/utils/cx";
+import { MinusCircle, PlusCircle } from "@properui/icons";
+import { Button } from "@properui/ui/components/base/buttons/button";
+import { FeaturedIcon } from "@properui/ui/components/foundations/featured-icon/featured-icon";
+import { sortCx } from "@properui/ui/utils/cx";
 import { REPO_URL } from "./content";
 
 /**
@@ -67,7 +67,7 @@ const faqs = [
     {
         id: "vs-css-framework",
         question: "How is this different from a CSS framework?",
-        answer: "A CSS framework hands you class names; you still write the keyboard handling, the focus traps and the ARIA. Smartera UI hands you behaviour — every interactive component is a React Aria Component, so those come with it. Tailwind is how the components are painted, not what they are.",
+        answer: "A CSS framework hands you class names; you still write the keyboard handling, the focus traps and the ARIA. Proper UI hands you behaviour — every interactive component is a React Aria Component, so those come with it. Tailwind is how the components are painted, not what they are.",
     },
 ] as const;
 

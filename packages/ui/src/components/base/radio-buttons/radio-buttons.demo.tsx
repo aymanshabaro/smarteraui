@@ -1,7 +1,7 @@
 "use client";
 
 import { Radio as AriaRadio, Text as AriaText } from "react-aria-components";
-import { Bank, BarChartSquare01, LayersThree01, Package, Zap } from "@smarteraui/icons";
+import { Bank, BarChartSquare01, LayersThree01, Package, Zap } from "@properui/icons";
 import { Avatar as AvatarPrimitive } from "@/components/base/avatar/avatar";
 import { CheckboxBase } from "@/components/base/checkbox/checkbox";
 import { RadioButtonBase, RadioButton as RadioButtonPrimitive, RadioGroup } from "@/components/base/radio-buttons/radio-buttons";

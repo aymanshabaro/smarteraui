@@ -1,6 +1,6 @@
 "use client";
 
-import { Bell01, Download01, Edit01, FilterLines, Plus, SearchLg, Settings01, Zap } from "@smarteraui/icons";
+import { Bell01, Download01, Edit01, FilterLines, Plus, SearchLg, Settings01, Zap } from "@properui/icons";
 import { NavButton } from "@/components/application/app-navigation/base-components/nav-button";
 import { HeaderNavigationBase } from "@/components/application/app-navigation/header-navigation";
 import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";

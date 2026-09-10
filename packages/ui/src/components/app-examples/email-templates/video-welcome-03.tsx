@@ -1,8 +1,8 @@
 "use client";
 
-import { Maximize01, Play, PlayCircle, VolumeMax } from "@smarteraui/icons";
+import { Maximize01, Play, PlayCircle, VolumeMax } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { PlayButtonIcon } from "@/components/foundations/play-button-icon";
 import { sortCx } from "@/utils/cx";
 import { IMAGES } from "@/utils/demo-assets";
@@ -29,7 +29,7 @@ export const VideoWelcome03 = () => (
     <section className={styles.shell}>
         <div className={styles.container}>
             <div className="bg-primary p-6">
-                <SmarteraLogo className="h-7 md:h-8" />
+                <ProperLogo className="h-7 md:h-8" />
             </div>
 
             <div className="bg-primary px-6 py-8">
@@ -52,10 +52,10 @@ export const VideoWelcome03 = () => (
                     </div>
                 </a>
 
-                <h1 className="text-primary text-display-xs mt-12 text-center font-semibold">Welcome to Smartera UI!</h1>
+                <h1 className="text-primary text-display-xs mt-12 text-center font-semibold">Welcome to Proper UI!</h1>
 
                 <p className="text-tertiary text-md mt-4 text-center md:text-lg">
-                    Hi Olivia, thanks for checking out Smartera. Here are a few tips to help you get up and running as soon as possible. If you have any
+                    Hi Olivia, thanks for checking out Proper. Here are a few tips to help you get up and running as soon as possible. If you have any
                     questions, just reply to this email—we&apos;ll be happy to hear from you!
                 </p>
 
@@ -92,7 +92,7 @@ export const VideoWelcome03 = () => (
                 </ul>
 
                 <p className="text-tertiary mt-8 text-center text-sm">
-                    © 2077 Smartera UI
+                    © 2077 Proper UI
                     <br />
                     100 Smith Street, Collingwood VIC 3066
                 </p>

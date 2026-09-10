@@ -4,7 +4,7 @@ import type { FC, ReactNode, Ref, RefAttributes } from "react";
 import { isValidElement } from "react";
 import type { SelectProps as AriaSelectProps } from "react-aria-components";
 import { Button as AriaButton, ListBox as AriaListBox, Select as AriaSelect, SelectValue as AriaSelectValue } from "react-aria-components";
-import { ChevronDown } from "@smarteraui/icons";
+import { ChevronDown } from "@properui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { HintText } from "@/components/base/input/hint-text";
 import { Label } from "@/components/base/input/label";

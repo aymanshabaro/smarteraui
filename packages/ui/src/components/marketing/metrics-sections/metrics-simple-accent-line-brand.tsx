@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, ZapFast } from "@smarteraui/icons";
+import { ArrowRight, ZapFast } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 

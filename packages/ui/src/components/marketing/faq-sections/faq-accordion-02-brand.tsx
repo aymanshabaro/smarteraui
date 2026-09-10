@@ -7,7 +7,7 @@ import {
     DisclosurePanel as AriaDisclosurePanel,
     Heading as AriaHeading,
 } from "react-aria-components";
-import { MinusCircle, PlusCircle } from "@smarteraui/icons";
+import { MinusCircle, PlusCircle } from "@properui/icons";
 import { cx, sortCx } from "@/utils/cx";
 
 const styles = sortCx({
@@ -49,7 +49,7 @@ const faqs = [
     {
         id: "account-email",
         question: "How do I change my account email?",
-        answer: "You can change the email address associated with your account by going to smartera.com/account from a laptop or desktop.",
+        answer: "You can change the email address associated with your account by going to proper.example/account from a laptop or desktop.",
     },
 ] as const;
 

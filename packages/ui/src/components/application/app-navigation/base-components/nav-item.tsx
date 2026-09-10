@@ -2,7 +2,7 @@
 
 import type { FC, HTMLAttributes, MouseEventHandler, ReactNode } from "react";
 import { Link as AriaLink } from "react-aria-components";
-import { ChevronDown, Share04 } from "@smarteraui/icons";
+import { ChevronDown, Share04 } from "@properui/icons";
 import { Badge } from "@/components/base/badges/badges";
 import { cx, sortCx } from "@/utils/cx";
 

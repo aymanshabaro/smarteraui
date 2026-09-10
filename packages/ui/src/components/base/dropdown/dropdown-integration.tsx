@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, Copy01, TerminalSquare } from "@smarteraui/icons";
+import { ChevronDown, Copy01, TerminalSquare } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { Dropdown } from "@/components/base/dropdown/dropdown";
 import {

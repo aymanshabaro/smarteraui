@@ -1,6 +1,6 @@
 "use client";
 
-import { Link03, Plus, SearchLg, UsersPlus } from "@smarteraui/icons";
+import { Link03, Plus, SearchLg, UsersPlus } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { AVATARS, LOGOS } from "@/utils/demo-assets";
 import { EmptyState } from "./empty-state";

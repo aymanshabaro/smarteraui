@@ -1,5 +1,5 @@
 import type { FC, ReactNode } from "react";
-import { ChartBreakoutSquare, CheckCircle, MessageSmileCircle, Zap } from "@smarteraui/icons";
+import { ChartBreakoutSquare, CheckCircle, MessageSmileCircle, Zap } from "@properui/icons";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 import { IPhoneMockup } from "@/components/shared-assets/mockups/iphone-mockup";
 import { cx, sortCx } from "@/utils/cx";
@@ -81,7 +81,7 @@ const rows: Row[] = [
     {
         icon: ChartBreakoutSquare,
         title: "Manage your team with reports",
-        subtitle: "Measure what matters with Smartera's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
+        subtitle: "Measure what matters with Proper's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
         bullets: [
             "Filter, export, and drilldown on the data quickly",
             "Save, schedule, and automate reports to your inbox",

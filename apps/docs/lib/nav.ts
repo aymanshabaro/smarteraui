@@ -7,7 +7,7 @@ export const nav: NavGroup[] = [
         title: "Documentation",
         items: [
             { title: "Accessibility", href: "/docs/accessibility" },
-            { title: "AI agents & the Smartera UI Skill", href: "/docs/agents" },
+            { title: "AI agents & the Proper UI Skill", href: "/docs/agents" },
             { title: "CLI tool", href: "/docs/cli" },
             { title: "Dark mode", href: "/docs/dark-mode" },
             { title: "Icons", href: "/docs/icons" },

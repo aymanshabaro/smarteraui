@@ -3,7 +3,7 @@
 import { TextEditor } from "./text-editor";
 
 const paragraphs = [
-    "Smartera UI ships every component as readable source that you can paste straight into your own repository. Nothing is hidden behind a runtime, so the markup you review in the documentation is exactly the markup that renders in production, right down to the last utility class.",
+    "Proper UI ships every component as readable source that you can paste straight into your own repository. Nothing is hidden behind a runtime, so the markup you review in the documentation is exactly the markup that renders in production, right down to the last utility class.",
     "Each component is built on React Aria primitives, styled with semantic Tailwind tokens, and verified against the same accessibility checks in both light and dark mode before it ever ships.",
     "That means you can restyle a button, swap the brand ramp, or fork an entire section without fighting a wrapper library. Read the code, keep the parts you need, and delete the rest — the design system is yours from the moment you install it, and every example on this page is a real component that you can copy today.",
 ];
@@ -14,7 +14,7 @@ const sampleContent = paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join(
 const selectionSampleContent =
     "<p>Select any run of text inside this editor and a formatting toolbar appears directly above it, anchored to the selection so the controls stay within reach of the caret.</p>";
 
-/** Total plain-text length of `sampleContent` is 780, so the hint reads "964 characters left". */
+/** The hint counts down from this against the plain-text length of `sampleContent`. */
 const characterBudget = 1744;
 
 const CompactToolbar = () => (

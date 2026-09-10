@@ -1,6 +1,6 @@
 "use client";
 
-import { SearchLg } from "@smarteraui/icons";
+import { SearchLg } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { Input } from "@/components/base/input/input";
 import { CtaAbstractImages } from "@/components/marketing/cta-sections/cta-abstract-images";
@@ -42,7 +42,7 @@ export const FaqPage06 = () => (
             <div className="max-w-container mx-auto px-4 md:px-8">
                 <div className="bg-secondary flex flex-col items-center rounded-2xl px-6 py-10 text-center lg:p-16">
                     <h2 className="text-display-sm text-primary xl:text-display-md font-semibold">Still have questions?</h2>
-                    <p className="text-tertiary mt-4 text-lg md:mt-5 lg:text-xl">Join over 4,000+ startups already growing with Smartera.</p>
+                    <p className="text-tertiary mt-4 text-lg md:mt-5 lg:text-xl">Join over 4,000+ startups already growing with Proper.</p>
 
                     <div className="mt-8 flex flex-col-reverse gap-3 self-stretch sm:flex-row sm:self-center">
                         <Button size="xl" color="secondary">

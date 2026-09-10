@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { FileIcon } from "@untitledui/file-icons";
 import type { Key } from "react-aria";
-import { DownloadCloud02, Edit01, Plus, SearchLg } from "@smarteraui/icons";
+import { DownloadCloud02, Edit01, Plus, SearchLg } from "@properui/icons";
 import { SidebarNavigationSectionsSubheadings } from "@/components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings";
 import { FileUploadDropZone } from "@/components/application/file-upload/file-upload-base";
 import { Table } from "@/components/application/table/table";
@@ -104,7 +104,7 @@ export const Dashboard15 = () => {
                                         key={person.username}
                                         type="brand-dark"
                                         width={220}
-                                        company="Smartera."
+                                        company="Proper."
                                         cardHolder={person.name.toUpperCase()}
                                         className={cx("absolute -rotate-12", cardOffsets[index])}
                                     />

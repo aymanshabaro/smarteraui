@@ -1,11 +1,11 @@
 /**
- * `smarteraui agent init --client claude|codex|cursor|lovable|all` — installs the portable
- * Smartera UI Skill for one or more AI coding tools.
+ * `properui agent init --client claude|codex|cursor|lovable|all` — installs the portable
+ * Proper UI Skill for one or more AI coding tools.
  *
- * claude  → .claude/skills/smarteraui/SKILL.md + a short pointer appended to CLAUDE.md
- * codex   → .agents/skills/smarteraui/SKILL.md + a rules block appended to AGENTS.md
- * cursor  → .cursor/rules/smarteraui.mdc (alwaysApply: true) — Cursor does not read SKILL.md
- * lovable → prints the public GitHub URL of skills/smarteraui/SKILL.md and what to paste
+ * claude  → .claude/skills/properui/SKILL.md + a short pointer appended to CLAUDE.md
+ * codex   → .agents/skills/properui/SKILL.md + a rules block appended to AGENTS.md
+ * cursor  → .cursor/rules/properui.mdc (alwaysApply: true) — Cursor does not read SKILL.md
+ * lovable → prints the public GitHub URL of skills/properui/SKILL.md and what to paste
  *
  * CLAUDE.md/AGENTS.md are never clobbered: the block is inserted between marker comments and
  * replaced in place on a second run, so `agent init` is idempotent. See docs/cli.md and
@@ -57,7 +57,7 @@ function statusLabel(status: WriteResult["status"]): string {
 }
 
 function installClaude(cwd: string, writeOptions: WriteFileOptions): void {
-    const skill = writeSourceFile(path.join(cwd, ".claude", "skills", "smarteraui", "SKILL.md"), SKILL_MD, writeOptions);
+    const skill = writeSourceFile(path.join(cwd, ".claude", "skills", "properui", "SKILL.md"), SKILL_MD, writeOptions);
     log.step(`${statusLabel(skill.status)} ${skill.relative}`);
 
     const claudeMd = upsertProjectFile(path.join(cwd, "CLAUDE.md"), "skill", CLAUDE_MD_BLOCK, writeOptions.dryRun);
@@ -65,7 +65,7 @@ function installClaude(cwd: string, writeOptions: WriteFileOptions): void {
 }
 
 function installCodex(cwd: string, writeOptions: WriteFileOptions): void {
-    const skill = writeSourceFile(path.join(cwd, ".agents", "skills", "smarteraui", "SKILL.md"), SKILL_MD, writeOptions);
+    const skill = writeSourceFile(path.join(cwd, ".agents", "skills", "properui", "SKILL.md"), SKILL_MD, writeOptions);
     log.step(`${statusLabel(skill.status)} ${skill.relative}`);
 
     const agentsMd = upsertProjectFile(path.join(cwd, "AGENTS.md"), "agents", AGENTS_MD_BLOCK, writeOptions.dryRun);
@@ -73,7 +73,7 @@ function installCodex(cwd: string, writeOptions: WriteFileOptions): void {
 }
 
 function installCursor(cwd: string, writeOptions: WriteFileOptions): void {
-    const rule = writeSourceFile(path.join(cwd, ".cursor", "rules", "smarteraui.mdc"), CURSOR_RULE_MDC, writeOptions);
+    const rule = writeSourceFile(path.join(cwd, ".cursor", "rules", "properui.mdc"), CURSOR_RULE_MDC, writeOptions);
     log.step(`${statusLabel(rule.status)} ${rule.relative}`);
 }
 
@@ -91,7 +91,7 @@ export async function runAgentInit(options: AgentInitOptions): Promise<void> {
     const clients = resolveClients(options.client);
     const writeOptions: WriteFileOptions = { cwd, overwrite: Boolean(options.overwrite), dryRun: false };
 
-    log.title(`Installing the Smartera UI skill for ${clients.length > 1 ? clients.join(", ") : clients[0]}`);
+    log.title(`Installing the Proper UI skill for ${clients.length > 1 ? clients.join(", ") : clients[0]}`);
 
     for (const client of clients) {
         log.plain();

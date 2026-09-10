@@ -2,7 +2,7 @@
 
 ## Prompt
 
-Paste this verbatim into the agent, in a fresh project with either Smart Era UI or the shadcn/ui baseline already installed (see `../baseline/README.md`).
+Paste this verbatim into the agent, in a fresh project with either Proper UI or the shadcn/ui baseline already installed (see `../baseline/README.md`).
 
 > Build a multi-step onboarding flow for a new user signing up, with three steps: (1) account details — name, email, password, (2) workspace preferences — workspace name and a choice of plan (Free, Team, or Business), (3) a confirmation step summarizing what they entered with a "Get started" button. Show the user's progress through the steps. They should be able to go back to a previous step to change something. The flow should work on mobile, tablet, and desktop, and should be fully usable from the keyboard.
 

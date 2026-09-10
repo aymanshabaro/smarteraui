@@ -3,8 +3,8 @@ import path from "node:path";
 import { repoRoot } from "~/lib/content";
 
 /**
- * Public registry endpoint — `https://smarteraui.com/r/<name>.json` plus the
- * `https://smarteraui.com/r/index.json` catalogue. This is what the `smarteraui` CLI talks
+ * Public registry endpoint — `https://properui.dev/r/<name>.json` plus the
+ * `https://properui.dev/r/index.json` catalogue. This is what the `properui` CLI talks
  * to when no `--registry` flag, `REGISTRY_URL` or `components.json` override is set
  * (see `DEFAULT_REGISTRY_URL` in packages/cli/src/registry.ts).
  *

@@ -1,7 +1,7 @@
 "use client";
 
 import type { CSSProperties, FC } from "react";
-import { Check, LayersThree01, LayersTwo01, Zap } from "@smarteraui/icons";
+import { Check, LayersThree01, LayersTwo01, Zap } from "@properui/icons";
 import { Badge } from "@/components/base/badges/badges";
 import { Button } from "@/components/base/buttons/button";
 import { Toggle } from "@/components/base/toggle/toggle";

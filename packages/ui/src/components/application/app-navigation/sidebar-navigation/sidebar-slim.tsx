@@ -4,11 +4,11 @@ import type { FC } from "react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Button as AriaButton, DialogTrigger as AriaDialogTrigger, Popover as AriaPopover } from "react-aria-components";
-import { DotsVertical, LifeBuoy01, Settings01 } from "@smarteraui/icons";
+import { DotsVertical, LifeBuoy01, Settings01 } from "@properui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
-import { SmarteraLogoMinimal } from "@/components/foundations/logo/smartera-logo-minimal";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
+import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
 import { cx } from "@/utils/cx";
 import { avatar } from "@/utils/demo-assets";
 import { MobileNavigationHeader } from "../base-components/mobile-header";
@@ -61,7 +61,7 @@ export const SidebarNavigationSlim = ({ activeUrl, items, footerItems = [], hide
                 )}
             >
                 <div className="flex justify-center px-3">
-                    <SmarteraLogoMinimal className="size-6" />
+                    <ProperLogoMinimal className="size-6" />
                 </div>
 
                 <ul className="mt-5 flex flex-col gap-0.5 px-3.5">
@@ -191,7 +191,7 @@ export const SidebarNavigationSlim = ({ activeUrl, items, footerItems = [], hide
                     className="group bg-primary flex h-full max-h-full w-full max-w-full flex-col justify-between overflow-y-auto pt-4"
                 >
                     <div className="px-4">
-                        <SmarteraLogo className="h-6" />
+                        <ProperLogo className="h-6" />
                     </div>
 
                     <NavList items={items} />

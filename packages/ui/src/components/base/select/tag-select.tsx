@@ -13,7 +13,7 @@ import {
     type ListData as AriaListData,
     useListData as AriaUseListData,
 } from "react-aria-components";
-import { SearchLg } from "@smarteraui/icons";
+import { SearchLg } from "@properui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
 import type { IconComponentType } from "@/components/base/badges/badge-types";
 import { HintText } from "@/components/base/input/hint-text";

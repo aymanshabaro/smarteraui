@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowNext, ArrowPrevious } from "@smarteraui/icons";
+import { ArrowNext, ArrowPrevious } from "@properui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { Button } from "@/components/base/buttons/button";
 import { RatingStars } from "@/components/foundations/rating/rating-stars";
@@ -17,12 +17,12 @@ const styles = sortCx({
 
 const reviews = [
     {
-        quote: "We've really sped up our workflow using Smartera and haven't looked back.",
+        quote: "We've really sped up our workflow using Proper and haven't looked back.",
         author: AVATARS[6],
         role: `Project Manager, ${LOGOS[4].name}`,
     },
     {
-        quote: "Every project starts with Smartera which has 10x'd our output while keeping quality top-notch.",
+        quote: "Every project starts with Proper which has 10x'd our output while keeping quality top-notch.",
         author: AVATARS[3],
         role: `Design Engineer, ${LOGOS[2].name}`,
     },

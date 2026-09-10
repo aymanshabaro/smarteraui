@@ -28,7 +28,7 @@ const faqs = [
     },
     {
         question: "How do I change my account email?",
-        answer: "You can change the email address associated with your account by going to smartera.com/account from a laptop or desktop.",
+        answer: "You can change the email address associated with your account by going to proper.example/account from a laptop or desktop.",
     },
 ] as const;
 

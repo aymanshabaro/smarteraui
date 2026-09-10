@@ -1,4 +1,4 @@
-import { Camera01 } from "@smarteraui/icons";
+import { Camera01 } from "@properui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { AVATARS, IMAGES } from "@/utils/demo-assets";
 
@@ -70,7 +70,7 @@ export const ArticleExample = () => (
             <img src={IMAGES.landscape[3].src} alt="" />
             <figcaption>
                 <Camera01 aria-hidden="true" className="text-utility-neutral-400 size-4" />
-                <span>Image courtesy of the Smartera demo library</span>
+                <span>Image courtesy of the Proper demo library</span>
             </figcaption>
         </figure>
         <p>
@@ -115,7 +115,7 @@ export const Images = () => (
             <img src={IMAGES.landscape[3].src} alt="" />
             <figcaption>
                 <Camera01 aria-hidden="true" className="text-utility-neutral-400 size-4" />
-                <span>Image courtesy of the Smartera demo library</span>
+                <span>Image courtesy of the Proper demo library</span>
             </figcaption>
         </figure>
         <p>

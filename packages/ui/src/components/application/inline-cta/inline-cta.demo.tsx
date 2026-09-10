@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 import { FileIcon } from "@untitledui/file-icons";
-import { LayersTwo02, Mail01 } from "@smarteraui/icons";
+import { LayersTwo02, Mail01 } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
@@ -63,7 +63,7 @@ export const EmailField = () => (
                         size="md"
                         icon={Mail01}
                         label="Subscribe to updates"
-                        placeholder="you@smartera.com"
+                        placeholder="you@proper.example"
                     />
                 </div>
                 <Button type="submit" color="primary" size="md">
@@ -150,7 +150,7 @@ export const PaymentMethod = () => (
 
                     <div className="flex items-center gap-1.5">
                         <Mail01 aria-hidden="true" className="text-fg-quaternary size-4" />
-                        <span className="text-tertiary text-sm">billing@smartera.com</span>
+                        <span className="text-tertiary text-sm">billing@proper.example</span>
                     </div>
                 </div>
             </InlineCTA.Panel>

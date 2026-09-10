@@ -7,7 +7,7 @@ import {
     DisclosurePanel as AriaDisclosurePanel,
     Heading as AriaHeading,
 } from "react-aria-components";
-import { MinusCircle, PlusCircle, SearchLg } from "@smarteraui/icons";
+import { MinusCircle, PlusCircle, SearchLg } from "@properui/icons";
 import { Input } from "@/components/base/input/input";
 import { ContentSectionSplitImage02 } from "@/components/marketing/content-rich-text-sections/content-section-split-image-02";
 import { CtaSplitImage03 } from "@/components/marketing/cta-sections/cta-split-image-03";
@@ -56,7 +56,7 @@ const faqs = [
     {
         id: "account-email",
         question: "How do I change my account email?",
-        answer: "You can change the email address associated with your account by going to smartera.com/account from a laptop or desktop.",
+        answer: "You can change the email address associated with your account by going to proper.example/account from a laptop or desktop.",
     },
 ] as const;
 

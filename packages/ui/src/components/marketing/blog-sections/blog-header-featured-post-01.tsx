@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight } from "@smarteraui/icons";
+import { ArrowUpRight } from "@properui/icons";
 import { PaginationPageDefault } from "@/components/application/pagination/pagination";
 import { Tab, TabList, TabPanel, Tabs } from "@/components/application/tabs/tabs";
 import { Avatar } from "@/components/base/avatar/avatar";

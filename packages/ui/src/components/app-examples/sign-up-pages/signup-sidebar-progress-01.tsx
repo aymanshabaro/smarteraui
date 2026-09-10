@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Building07, Passcode, Stars02, User01 } from "@smarteraui/icons";
+import { Building07, Passcode, Stars02, User01 } from "@properui/icons";
 import { PaginationDot } from "@/components/application/pagination/pagination-dot";
 import type { ProgressStepItem } from "@/components/application/progress-steps/progress-steps";
 import { ProgressSteps } from "@/components/application/progress-steps/progress-steps";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { SupportFooter } from "./base-components/page-parts";
 import { SetPasswordForm } from "./base-components/sign-up-form";
 
@@ -25,7 +25,7 @@ export const SignupSidebarProgress01 = () => {
         <section className="bg-primary grid min-h-screen grid-cols-1 lg:grid-cols-[384px_1fr]">
             <div className="bg-secondary hidden max-w-96 flex-1 flex-col justify-between gap-20 lg:flex">
                 <div className="flex flex-col gap-16 px-8 pt-8">
-                    <SmarteraLogo />
+                    <ProperLogo />
 
                     <ProgressSteps items={steps} type="featured-icon" orientation="vertical" aria-label="Sign up progress" />
                 </div>

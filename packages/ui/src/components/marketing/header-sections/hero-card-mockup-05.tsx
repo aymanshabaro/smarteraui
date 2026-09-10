@@ -1,6 +1,6 @@
 "use client";
 
-import { PlayCircle } from "@smarteraui/icons";
+import { PlayCircle } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import type { MarketingNavItemType } from "@/components/marketing/header-navigations/base-components/header";
 import { MarketingHeader } from "@/components/marketing/header-navigations/base-components/header";
@@ -78,7 +78,7 @@ export const HeroCardMockup05 = () => (
                                 style={card.transform}
                                 className="[transform:var(--transform-mobile)] md:[transform:var(--transform-desktop)]"
                             >
-                                <CreditCard type="brand-dark" company="Smartera." cardHolder={card.cardHolder} />
+                                <CreditCard type="brand-dark" company="Proper." cardHolder={card.cardHolder} />
                             </div>
                         ))}
                     </div>

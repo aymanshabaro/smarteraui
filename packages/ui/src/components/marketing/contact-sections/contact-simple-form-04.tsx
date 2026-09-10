@@ -1,6 +1,6 @@
 "use client";
 
-import { MarkerPin01, MessageChatCircle, Phone } from "@smarteraui/icons";
+import { MarkerPin01, MessageChatCircle, Phone } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { Checkbox } from "@/components/base/checkbox/checkbox";
 import { Form } from "@/components/base/form/form";
@@ -18,8 +18,8 @@ const channels = [
         icon: MessageChatCircle,
         title: "Chat to us",
         subtitle: "Our friendly team is here to help.",
-        cta: "hi@smartera.com",
-        href: "mailto:hi@smartera.com",
+        cta: "hi@proper.example",
+        href: "mailto:hi@proper.example",
     },
     {
         icon: MarkerPin01,

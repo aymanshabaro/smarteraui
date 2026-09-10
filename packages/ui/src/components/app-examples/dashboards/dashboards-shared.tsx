@@ -51,7 +51,7 @@ import {
     Star01,
     Users01,
     UsersPlus,
-} from "@smarteraui/icons";
+} from "@properui/icons";
 import type { NavItemDividerType, NavItemType } from "@/components/application/app-navigation/config";
 import { ChartTooltipContent } from "@/components/application/charts/charts-base";
 import { Tabs } from "@/components/application/tabs/tabs";
@@ -104,7 +104,7 @@ export const navItemsWithFolders: (NavItemType | NavItemDividerType)[] = [
             </BadgeWithDot>
         ),
     },
-    { label: "Open in browser", href: "https://smartera.example.com/", icon: LayoutAlt01 },
+    { label: "Open in browser", href: "https://proper.example.com/", icon: LayoutAlt01 },
 ];
 
 /** Deep two-tier nav used by the dual-tier and slim sidebars. */
@@ -179,7 +179,7 @@ export const navSectionsSubheadings: Array<{ label: string; items: NavItemType[]
         ],
     },
     {
-        label: "Smartera UI",
+        label: "Proper UI",
         items: [
             { label: "Reporting", href: "/reporting", icon: PieChart03 },
             {

@@ -4,10 +4,10 @@ import type { SVGProps } from "react";
 import { cx } from "@/utils/cx";
 
 /**
- * The standalone Smartera mark: a rounded square containing a stylised "S".
+ * The standalone Proper mark: a rounded square containing a stylised "S".
  * Uses `fill-current`/`text-fg-primary` so it adapts to dark mode automatically.
  */
-export const SmarteraLogoMinimal = (props: SVGProps<SVGSVGElement>) => {
+export const ProperLogoMinimal = (props: SVGProps<SVGSVGElement>) => {
     return (
         <svg viewBox="0 0 32 32" fill="none" {...props} className={cx("size-8", props.className)}>
             <rect width="32" height="32" rx="9" className="text-fg-primary fill-current" />

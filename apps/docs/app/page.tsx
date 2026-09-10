@@ -13,10 +13,10 @@ import { SITE_NAME } from "~/lib/site";
 
 const TITLE = `${SITE_NAME} — the React component library built for AI-generated code`;
 const DESCRIPTION =
-    "Smartera UI is an open-source React component library designed for AI code generation: a machine-readable registry your agent fetches source from, a markdown docs mirror at /llms.txt, and a CLI that writes real TSX into your project. Built on React Aria Components and Tailwind CSS v4, MIT licensed.";
+    "Proper UI is an open-source React component library designed for AI code generation: a machine-readable registry your agent fetches source from, a markdown docs mirror at /llms.txt, and a CLI that writes real TSX into your project. Built on React Aria Components and Tailwind CSS v4, MIT licensed.";
 
 /** Canonical origin for the marketing site, which is not the docs origin in `~/lib/site`. */
-const CANONICAL = "https://smarteraui.com";
+const CANONICAL = "https://properui.dev";
 
 export const metadata: Metadata = {
     // Set here rather than in the shared layout: this route is the only one that lives on the

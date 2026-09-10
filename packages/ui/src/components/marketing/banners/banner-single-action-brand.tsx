@@ -1,6 +1,6 @@
 "use client";
 
-import { Stars02 } from "@smarteraui/icons";
+import { Stars02 } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { CloseButton } from "@/components/base/buttons/close-button";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";

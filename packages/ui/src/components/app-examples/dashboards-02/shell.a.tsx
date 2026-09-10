@@ -3,7 +3,7 @@
 // TODO(orchestrator): candidate for components/internal — the page shell shared by every
 // `dashboards-02` variant (header navigation config + `<main>` container recipe).
 import type { ReactNode } from "react";
-import { Bell01, SearchLg, Settings01, Zap } from "@smarteraui/icons";
+import { Bell01, SearchLg, Settings01, Zap } from "@properui/icons";
 import { NavButton } from "@/components/application/app-navigation/base-components/nav-button";
 import { HeaderNavigationBase } from "@/components/application/app-navigation/header-navigation";
 import { Button } from "@/components/base/buttons/button";

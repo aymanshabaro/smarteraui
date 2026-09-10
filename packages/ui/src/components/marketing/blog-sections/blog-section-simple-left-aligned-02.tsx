@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight } from "@smarteraui/icons";
+import { ArrowUpRight } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { IMAGES, avatar } from "@/utils/demo-assets";
 

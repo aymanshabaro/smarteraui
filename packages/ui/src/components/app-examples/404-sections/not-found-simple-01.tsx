@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft } from "@smarteraui/icons";
+import { ArrowLeft } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 
 /** A left-aligned 404 with an eyebrow, headline and a pair of actions. */

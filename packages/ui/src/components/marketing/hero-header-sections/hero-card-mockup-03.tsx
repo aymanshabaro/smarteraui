@@ -1,7 +1,7 @@
 "use client";
 
 import type { CSSProperties } from "react";
-import { PlayCircle } from "@smarteraui/icons";
+import { PlayCircle } from "@properui/icons";
 import { BadgeGroup } from "@/components/base/badges/badge-groups";
 import { Button } from "@/components/base/buttons/button";
 import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
@@ -46,7 +46,7 @@ export const HeroCardMockup03 = () => (
 
                     <h1 className="text-display-md text-primary md:text-display-lg lg:text-display-xl mt-4 font-semibold">No more banking headaches</h1>
                     <p className="text-tertiary mt-4 max-w-3xl text-lg text-balance md:mt-6 md:text-xl">
-                        Mo money, no problems. Smartera is a next-generation financial technology company in the process of reinventing
+                        Mo money, no problems. Proper is a next-generation financial technology company in the process of reinventing
                         <span className="max-md:hidden"> banking. 30-day free trial.</span>
                     </p>
 
@@ -68,7 +68,7 @@ export const HeroCardMockup03 = () => (
                                 style={fanTransform(card)}
                                 className="absolute origin-right [transform:var(--transform-mobile)] md:[transform:var(--transform-desktop)]"
                             >
-                                <CreditCard type="transparent-gradient" company="Smartera." cardHolder={card.holder} cardExpiration="06/28" />
+                                <CreditCard type="transparent-gradient" company="Proper." cardHolder={card.holder} cardExpiration="06/28" />
                             </div>
                         ))}
                     </div>

@@ -1,9 +1,9 @@
-import { ChevronRight } from "@smarteraui/icons";
+import { ChevronRight } from "@properui/icons";
 import { Badge } from "@/components/base/badges/badges";
 import { Button } from "@/components/base/buttons/button";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { sortCx } from "@/utils/cx";
 import { LOGOS } from "@/utils/demo-assets";
 
@@ -156,8 +156,8 @@ export const FooterLarge05 = () => (
             </nav>
 
             <div className="border-secondary mt-12 flex flex-col justify-between gap-6 border-t pt-8 md:mt-16 md:flex-row md:items-center">
-                <SmarteraLogo className="h-7 w-min" />
-                <p className="text-quaternary text-sm">© 2077 Smartera. All rights reserved.</p>
+                <ProperLogo className="h-7 w-min" />
+                <p className="text-quaternary text-sm">© 2077 Proper. All rights reserved.</p>
             </div>
         </div>
     </footer>

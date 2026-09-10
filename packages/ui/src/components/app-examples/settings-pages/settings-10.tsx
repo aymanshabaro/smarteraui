@@ -1,6 +1,6 @@
 "use client";
 
-import { DownloadCloud02, Plus } from "@smarteraui/icons";
+import { DownloadCloud02, Plus } from "@properui/icons";
 import { FeaturedCardOnboardingSteps } from "@/components/application/app-navigation/base-components/featured-cards";
 import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
 import { Table, TableCard } from "@/components/application/table/table";

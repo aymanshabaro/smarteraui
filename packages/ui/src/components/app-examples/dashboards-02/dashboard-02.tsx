@@ -1,6 +1,6 @@
 "use client";
 
-import { FilterLines, SearchLg, SwitchHorizontal01 } from "@smarteraui/icons";
+import { FilterLines, SearchLg, SwitchHorizontal01 } from "@properui/icons";
 import { MetricChart03 } from "@/components/application/metrics/metrics";
 import { PaginationCardMinimal } from "@/components/application/pagination/pagination";
 import { Table, TableCard } from "@/components/application/table/table";

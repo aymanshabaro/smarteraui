@@ -1,7 +1,7 @@
 "use client";
 
 import type { SVGProps } from "react";
-import { PlayCircle } from "@smarteraui/icons";
+import { PlayCircle } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import type { MarketingNavItemType } from "@/components/marketing/header-navigations/base-components/header";
 import { MarketingHeader } from "@/components/marketing/header-navigations/base-components/header";
@@ -29,10 +29,10 @@ const GeometricShapes = (props: SVGProps<SVGSVGElement>) => {
     return (
         <svg viewBox="0 0 480 480" fill="none" aria-hidden="true" {...props}>
             <defs>
-                <pattern id="smartera-geo-stripes-v" width="8" height="8" patternUnits="userSpaceOnUse">
+                <pattern id="proper-geo-stripes-v" width="8" height="8" patternUnits="userSpaceOnUse">
                     <rect width="4" height="8" className="fill-utility-brand-400" />
                 </pattern>
-                <pattern id="smartera-geo-stripes-h" width="8" height="8" patternUnits="userSpaceOnUse">
+                <pattern id="proper-geo-stripes-h" width="8" height="8" patternUnits="userSpaceOnUse">
                     <rect width="8" height="4" className="fill-utility-brand-400" />
                 </pattern>
             </defs>
@@ -41,14 +41,14 @@ const GeometricShapes = (props: SVGProps<SVGSVGElement>) => {
             <path d="M0 0h120v0a60 60 0 0 1-120 0z" className="fill-utility-brand-500" transform={`translate(${cell(0, 0).x} ${cell(0, 0).y})`} />
             <path d="M0 120a60 60 0 0 1 120 0z" className="fill-utility-brand-500" transform={`translate(${cell(0, 0).x} ${cell(0, 0).y})`} />
             <path d="M60 0a60 60 0 0 1 0 120z" className="fill-utility-brand-500" transform={`translate(${cell(1, 0).x} ${cell(1, 0).y})`} />
-            <path d="M60 0a60 60 0 0 0 0 120z" fill="url(#smartera-geo-stripes-v)" transform={`translate(${cell(1, 0).x} ${cell(1, 0).y})`} />
+            <path d="M60 0a60 60 0 0 0 0 120z" fill="url(#proper-geo-stripes-v)" transform={`translate(${cell(1, 0).x} ${cell(1, 0).y})`} />
             <circle cx="60" cy="60" r="60" className="fill-utility-brand-300" transform={`translate(${cell(2, 0).x} ${cell(2, 0).y})`} />
-            <circle cx="60" cy="60" r="36" fill="url(#smartera-geo-stripes-v)" transform={`translate(${cell(2, 0).x} ${cell(2, 0).y})`} />
+            <circle cx="60" cy="60" r="36" fill="url(#proper-geo-stripes-v)" transform={`translate(${cell(2, 0).x} ${cell(2, 0).y})`} />
             <rect width="120" height="120" className="fill-utility-brand-700" transform={`translate(${cell(3, 0).x} ${cell(3, 0).y})`} />
             <path d="M20 20h80v80z" className="fill-utility-brand-50" transform={`translate(${cell(3, 0).x} ${cell(3, 0).y})`} />
 
             {/* Row 2 */}
-            <rect width="120" height="60" fill="url(#smartera-geo-stripes-v)" transform={`translate(${cell(0, 1).x} ${cell(0, 1).y})`} />
+            <rect width="120" height="60" fill="url(#proper-geo-stripes-v)" transform={`translate(${cell(0, 1).x} ${cell(0, 1).y})`} />
             <path d="M0 60a60 60 0 0 0 120 0z" className="fill-utility-brand-700" transform={`translate(${cell(0, 1).x} ${cell(0, 1).y})`} />
             <path
                 d="M120 0a120 120 0 0 1-120 120A120 120 0 0 1 120 0z"
@@ -57,7 +57,7 @@ const GeometricShapes = (props: SVGProps<SVGSVGElement>) => {
             />
             <path
                 d="M0 0a120 120 0 0 1 120 120A120 120 0 0 1 0 0z"
-                fill="url(#smartera-geo-stripes-h)"
+                fill="url(#proper-geo-stripes-h)"
                 transform={`translate(${cell(2, 1).x} ${cell(2, 1).y})`}
             />
             <path d="M0 0a120 120 0 0 1 120 120H0z" className="fill-utility-brand-300" transform={`translate(${cell(3, 1).x} ${cell(3, 1).y})`} />
@@ -72,11 +72,11 @@ const GeometricShapes = (props: SVGProps<SVGSVGElement>) => {
             <path d="M60 0h60L60 60z" className="fill-utility-brand-300" transform={`translate(${cell(1, 2).x} ${cell(1, 2).y})`} />
             <path d="M0 60h60v60z" className="fill-utility-brand-300" transform={`translate(${cell(1, 2).x} ${cell(1, 2).y})`} />
             <circle cx="60" cy="60" r="52" className="fill-utility-brand-800" transform={`translate(${cell(2, 2).x} ${cell(2, 2).y})`} />
-            <rect width="120" height="120" fill="url(#smartera-geo-stripes-v)" transform={`translate(${cell(3, 2).x} ${cell(3, 2).y})`} />
+            <rect width="120" height="120" fill="url(#proper-geo-stripes-v)" transform={`translate(${cell(3, 2).x} ${cell(3, 2).y})`} />
             <rect x="28" y="28" width="64" height="64" className="fill-utility-brand-700" transform={`translate(${cell(3, 2).x} ${cell(3, 2).y})`} />
 
             {/* Row 4 */}
-            <circle cx="60" cy="60" r="60" fill="url(#smartera-geo-stripes-v)" transform={`translate(${cell(0, 3).x} ${cell(0, 3).y})`} />
+            <circle cx="60" cy="60" r="60" fill="url(#proper-geo-stripes-v)" transform={`translate(${cell(0, 3).x} ${cell(0, 3).y})`} />
             <circle cx="60" cy="60" r="30" className="fill-utility-brand-300" transform={`translate(${cell(0, 3).x} ${cell(0, 3).y})`} />
             <path d="M0 0h120v120z" className="fill-utility-brand-500" transform={`translate(${cell(1, 3).x} ${cell(1, 3).y})`} />
             <path d="M120 0a120 120 0 0 1-120 120V0z" className="fill-utility-brand-600" transform={`translate(${cell(2, 3).x} ${cell(2, 3).y})`} />

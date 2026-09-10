@@ -1,4 +1,4 @@
-import { MarkerPin01, MessageChatCircle, Phone } from "@smarteraui/icons";
+import { MarkerPin01, MessageChatCircle, Phone } from "@properui/icons";
 import { Badge } from "@/components/base/badges/badges";
 import { Button } from "@/components/base/buttons/button";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
@@ -9,8 +9,8 @@ const cards = [
         icon: MessageChatCircle,
         title: "Chat to sales",
         subtitle: "Speak to our friendly team.",
-        cta: "sales@smartera.com",
-        href: "mailto:sales@smartera.com",
+        cta: "sales@proper.example",
+        href: "mailto:sales@proper.example",
     },
     {
         icon: MarkerPin01,

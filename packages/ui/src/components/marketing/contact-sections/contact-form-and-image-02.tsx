@@ -25,7 +25,7 @@ const services = [
 export const ContactFormAndImage02 = () => (
     <section className="bg-primary grid grid-cols-1 lg:grid-cols-2">
         <div className="relative max-lg:hidden">
-            <img src={IMAGES.landscape[0].src} alt="The Smartera team at work" className="absolute inset-0 h-full max-w-full object-cover" />
+            <img src={IMAGES.landscape[0].src} alt="The Proper team at work" className="absolute inset-0 h-full max-w-full object-cover" />
         </div>
 
         <div className="w-full px-4 py-16 md:px-8 md:py-24">
@@ -33,8 +33,8 @@ export const ContactFormAndImage02 = () => (
                 <h2 className="text-display-md text-primary md:text-display-lg font-semibold">Let&apos;s level up your brand, together</h2>
                 <p className="text-tertiary mt-4 text-lg whitespace-pre-line md:mt-6 md:text-xl">
                     You can reach us anytime via{" "}
-                    <Button href="mailto:hi@smartera.com" color="link-color" size="xl" className="text-lg font-medium md:text-xl">
-                        hi@smartera.com
+                    <Button href="mailto:hi@proper.example" color="link-color" size="xl" className="text-lg font-medium md:text-xl">
+                        hi@proper.example
                     </Button>
                 </p>
 

@@ -1,4 +1,4 @@
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { AngelList, Dribbble, Facebook, GitHub, Layers, LinkedIn, X } from "@/components/foundations/social-icons";
 import { sortCx } from "@/utils/cx";
 
@@ -32,9 +32,9 @@ export const FooterSmall03 = () => (
                     ))}
                 </ul>
 
-                <SmarteraLogo className="order-first h-7 w-min shrink-0 lg:order-none" />
+                <ProperLogo className="order-first h-7 w-min shrink-0 lg:order-none" />
 
-                <p className="text-quaternary mt-6 text-sm lg:mt-0 lg:w-full lg:max-w-xs lg:text-end">© 2077 Smartera. All rights reserved.</p>
+                <p className="text-quaternary mt-6 text-sm lg:mt-0 lg:w-full lg:max-w-xs lg:text-end">© 2077 Proper. All rights reserved.</p>
             </div>
         </div>
     </footer>

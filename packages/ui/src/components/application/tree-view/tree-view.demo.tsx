@@ -1,7 +1,7 @@
 "use client";
 
 import type { FC, ReactNode } from "react";
-import { File04, Folder, Paperclip } from "@smarteraui/icons";
+import { File04, Folder, Paperclip } from "@properui/icons";
 import { TreeView, type TreeViewSize } from "@/components/application/tree-view/tree-view";
 
 interface TreeNode {

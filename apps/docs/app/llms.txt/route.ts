@@ -30,7 +30,7 @@ export function GET() {
         `- Component entry: \`${absoluteUrl("/r")}/<name>.json\` — includes the component's source.`,
         `- [components.json schema](${absoluteUrl("/schema.json")}).`,
         `- Semantic manifest: entries also carry optional \`intent\`, \`avoid_when\`, \`composes_with\`, \`a11y_contract\`, \`responsive_contract\`, \`token_contract\` and \`requires_data\` fields for choosing a component, not just installing it — see [Registry metadata for agents](${absoluteUrl(markdownUrl("/docs/registry-metadata"))}).`,
-        "- CLI: `npx smarteraui@latest add <component>` writes the files and resolves dependencies.",
+        "- CLI: `npx properui@latest add <component>` writes the files and resolves dependencies.",
         "",
         "## Pages",
         "",

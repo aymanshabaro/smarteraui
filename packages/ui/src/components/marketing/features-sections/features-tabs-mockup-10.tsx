@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight } from "@smarteraui/icons";
+import { ArrowRight } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { CreditCard } from "@/components/shared-assets/credit-card/credit-card";
 import { cx, sortCx } from "@/utils/cx";
@@ -24,7 +24,7 @@ const features = [
     },
     {
         title: "Manage your team with reports",
-        subtitle: "Measure what matters with Smartera's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
+        subtitle: "Measure what matters with Proper's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
     },
 ];
 
@@ -61,10 +61,10 @@ export const FeaturesTabsMockup10 = () => (
                 <div className="bg-tertiary relative -mx-4 flex h-80 items-center justify-center md:me-0 md:h-120 lg:h-160" aria-hidden="true">
                     <div className="-space-y-[106px] md:-space-y-16 lg:-space-y-8">
                         <div className={cx(styles.card, "z-1")} style={{ transform: "scale(var(--scale)) rotate(60deg) translate(38px, -53px)" }}>
-                            <CreditCard type="transparent" company="Smartera" cardHolder={AVATARS[0].name} />
+                            <CreditCard type="transparent" company="Proper" cardHolder={AVATARS[0].name} />
                         </div>
                         <div className={cx(styles.card, "z-0")} style={{ transform: "scale(var(--scale)) rotate(30deg) translate(-23px, 24px)" }}>
-                            <CreditCard type="brand-dark" company="Smartera" cardHolder={AVATARS[1].name} />
+                            <CreditCard type="brand-dark" company="Proper" cardHolder={AVATARS[1].name} />
                         </div>
                     </div>
                 </div>

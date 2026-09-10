@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { Plus } from "@smarteraui/icons";
+import { Plus } from "@properui/icons";
 import { CardHeader } from "@/components/application/card-headers/card-headers";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { Button } from "@/components/base/buttons/button";
@@ -78,7 +78,7 @@ export const CardHeaderWithAvatarAndBadge = () => (
             divider
             title={AVATARS[0].name}
             badge="Admin"
-            description="Owner of the Smartera workspace since March 2024."
+            description="Owner of the Proper workspace since March 2024."
             avatar={<Avatar size="lg" src={AVATARS[0].src} alt={AVATARS[0].alt} status="online" />}
             actions={
                 <>

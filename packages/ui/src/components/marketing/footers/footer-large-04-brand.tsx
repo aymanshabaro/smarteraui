@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { Button } from "@/components/base/buttons/button";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { sortCx } from "@/utils/cx";
 
 const styles = sortCx({
@@ -49,7 +49,7 @@ export const FooterLarge04Brand = () => {
                 <div className="flex flex-col gap-12 md:gap-16 xl:flex-row">
                     <div className="flex w-full flex-col gap-6 md:max-w-xs">
                         {/* The mark is always the light lockup on the solid brand background. */}
-                        <SmarteraLogo className="dark-mode" />
+                        <ProperLogo className="dark-mode" />
 
                         <p className="text-tertiary_on-brand text-md">Design amazing digital experiences that create more happy in the world.</p>
                     </div>
@@ -95,7 +95,7 @@ export const FooterLarge04Brand = () => {
                 </div>
 
                 <div className="border-brand_alt mt-12 flex flex-col-reverse justify-between gap-4 border-t pt-8 md:mt-16 md:flex-row md:gap-6">
-                    <p className="text-quaternary_on-brand text-sm">© 2077 Smartera. All rights reserved.</p>
+                    <p className="text-quaternary_on-brand text-sm">© 2077 Proper. All rights reserved.</p>
 
                     <ul className="flex gap-3">
                         {legalItems.map((item) => (

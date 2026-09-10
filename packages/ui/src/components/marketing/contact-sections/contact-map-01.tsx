@@ -1,4 +1,4 @@
-import { MarkerPin01 } from "@smarteraui/icons";
+import { MarkerPin01 } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 
 const locations = [

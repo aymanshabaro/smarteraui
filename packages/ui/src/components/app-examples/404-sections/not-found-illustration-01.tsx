@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, SearchLg } from "@smarteraui/icons";
+import { ArrowLeft, SearchLg } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { Illustration } from "@/components/shared-assets/illustrations";
 

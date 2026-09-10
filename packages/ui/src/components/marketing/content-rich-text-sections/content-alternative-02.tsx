@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowNext, ArrowPrevious } from "@smarteraui/icons";
+import { ArrowNext, ArrowPrevious } from "@properui/icons";
 import { Carousel } from "@/components/application/carousel/carousel-base";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { Badge } from "@/components/base/badges/badges";
@@ -75,7 +75,7 @@ export const ContentAlternative02 = () => (
                             <span>
                                 Image from the {/* eslint-disable-next-line jsx-a11y/anchor-is-valid -- placeholder href for a marketing section */}
                                 <a href="#" className={styles.proseLink}>
-                                    Smartera brand library
+                                    Proper brand library
                                 </a>
                             </span>
                         </figcaption>
@@ -134,7 +134,7 @@ export const ContentAlternative02 = () => (
                             <span>
                                 Image from the {/* eslint-disable-next-line jsx-a11y/anchor-is-valid -- placeholder href for a marketing section */}
                                 <a href="#" className={styles.proseLink}>
-                                    Smartera brand library
+                                    Proper brand library
                                 </a>
                             </span>
                         </figcaption>

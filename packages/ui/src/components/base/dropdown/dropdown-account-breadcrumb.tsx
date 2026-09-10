@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button as AriaButton, MenuItem as AriaMenuItem } from "react-aria-components";
-import { ChevronSelectorVertical } from "@smarteraui/icons";
+import { ChevronSelectorVertical } from "@properui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { Dropdown } from "@/components/base/dropdown/dropdown";
 import { cx } from "@/utils/cx";

@@ -1,7 +1,7 @@
 "use client";
 
 import type { ComponentProps, FC, HTMLAttributes, ReactNode } from "react";
-import { AlertCircle, AlertTriangle, CheckCircle } from "@smarteraui/icons";
+import { AlertCircle, AlertTriangle, CheckCircle } from "@properui/icons";
 import { CloseButton } from "@/components/base/buttons/close-button";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 import { cx, sortCx } from "@/utils/cx";

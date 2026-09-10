@@ -21,7 +21,7 @@ import {
     UserSquare,
     Users01,
     UsersPlus,
-} from "@smarteraui/icons";
+} from "@properui/icons";
 import type { NavItemType } from "@/components/application/app-navigation/config";
 import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
 import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";

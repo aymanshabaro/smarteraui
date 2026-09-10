@@ -1,25 +1,25 @@
 <div align="center">
 
-# Smartera UI
+# Proper UI
 
 **The open-source React 19 component library built for AI-generated code.**
 
-[smarteraui.com](https://smarteraui.com) · [Documentation](https://smarteraui.com/docs/installation) · [Components](https://smarteraui.com/components) · [llms.txt](https://smarteraui.com/llms.txt)
+[properui.dev](https://properui.dev) · [Documentation](https://properui.dev/docs/installation) · [Components](https://properui.dev/components) · [llms.txt](https://properui.dev/llms.txt)
 
-[![CI](https://img.shields.io/github/actions/workflow/status/aymanshabaro/smarteraui/ci.yml?branch=main&label=CI&logo=github)](https://github.com/aymanshabaro/smarteraui/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/%40smarteraui%2Fui?logo=npm&label=%40smarteraui%2Fui)](https://www.npmjs.com/package/@smarteraui/ui)
+[![CI](https://img.shields.io/github/actions/workflow/status/properui/properui/ci.yml?branch=main&label=CI&logo=github)](https://github.com/properui/properui/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/%40properui%2Fui?logo=npm&label=%40properui%2Fui)](https://www.npmjs.com/package/@properui/ui)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](#license)
 
 </div>
 
-Smartera UI is a component library, a documentation site and a copy-in CLI in one repository, designed for the way UI
+Proper UI is a component library, a documentation site and a copy-in CLI in one repository, designed for the way UI
 code gets written now — by a coding agent, at speed. A model writing UI from memory invents class names, props and markup
 that look plausible and do not compile. This library is readable by machines on purpose: a public JSON registry your
 assistant fetches real source from, a plain-markdown mirror of every documentation page indexed at
-[`/llms.txt`](https://smarteraui.com/llms.txt), and a CLI that writes the files into your project.
+[`/llms.txt`](https://properui.dev/llms.txt), and a CLI that writes the files into your project.
 
-Components ship as readable TypeScript source rather than a compiled bundle, so you can install `@smarteraui/ui` as a
-normal dependency _or_ copy the files in with `npx smarteraui@latest add` and own them outright. Behaviour, keyboard
+Components ship as readable TypeScript source rather than a compiled bundle, so you can install `@properui/ui` as a
+normal dependency _or_ copy the files in with `npx properui@latest add` and own them outright. Behaviour, keyboard
 handling and ARIA come from [React Aria Components](https://react-spectrum.adobe.com/react-aria/); styling is Tailwind
 CSS v4 utilities resolved through a semantic token layer, so re-branding the whole system means editing one file — and a
 generated screen lands on the system rather than near it.
@@ -34,12 +34,12 @@ The registry currently holds **797 entries**: **69 published component groups** 
 Nothing here is specific to one assistant. The three surfaces below are plain HTTP and a shell command, so Claude Code,
 Codex, Cursor, v0, Bolt and Lovable can all drive them.
 
-| Surface             | URL                                                                      | What an assistant does with it                                                                                                                  |
-| ------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| Markdown docs index | [`/llms.txt`](https://smarteraui.com/llms.txt)                           | Finds the plain-markdown twin of every page, so it reads the same reference you do without parsing rendered HTML.                               |
-| Component registry  | [`/r/index.json`](https://smarteraui.com/r/index.json), `/r/<name>.json` | Fetches a component's real source, props, npm dependencies and registry dependencies — 797 entries.                                             |
-| Config schema       | [`/schema.json`](https://smarteraui.com/schema.json)                     | Validates and autocompletes the `components.json` that `init` writes.                                                                           |
-| CLI                 | `npx smarteraui@latest add <component>`                                  | Writes the `.tsx` into the project, resolves the dependency chain, rewrites `@/` imports to the configured alias and installs missing packages. |
+| Surface             | URL                                                                    | What an assistant does with it                                                                                                                  |
+| ------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Markdown docs index | [`/llms.txt`](https://properui.dev/llms.txt)                           | Finds the plain-markdown twin of every page, so it reads the same reference you do without parsing rendered HTML.                               |
+| Component registry  | [`/r/index.json`](https://properui.dev/r/index.json), `/r/<name>.json` | Fetches a component's real source, props, npm dependencies and registry dependencies — 797 entries.                                             |
+| Config schema       | [`/schema.json`](https://properui.dev/schema.json)                     | Validates and autocompletes the `components.json` that `init` writes.                                                                           |
+| CLI                 | `npx properui@latest add <component>`                                  | Writes the `.tsx` into the project, resolves the dependency chain, rewrites `@/` imports to the configured alias and installs missing packages. |
 
 Why generated code comes out better against this library specifically:
 
@@ -64,7 +64,7 @@ server yet; it is on the [roadmap](./ROADMAP.md), and the CLI covers the same gr
 - **Accessible by default.** Every interactive primitive — menus, dialogs, comboboxes, tables, sliders, date pickers —
   delegates to React Aria Components. Focus management, keyboard navigation and ARIA wiring are inherited, not
   re-implemented. Each component ships an `axe` smoke test that runs in CI — zero _detected_ violations across 118 automated suites; see
-  [the accessibility page](https://smarteraui.com/docs/accessibility) for what that does and does not cover.
+  [the accessibility page](https://properui.dev/docs/accessibility) for what that does and does not cover.
 - **Tailwind CSS v4 tokens, no config file.** All design decisions live in `@theme` blocks in
   [`packages/ui/src/styles/theme.css`](./packages/ui/src/styles/theme.css). There is no `tailwind.config.js`.
 - **Dark mode without `dark:` utilities.** A `.dark-mode` class anywhere in the ancestor chain re-maps every semantic
@@ -76,7 +76,7 @@ server yet; it is on the [roadmap](./ROADMAP.md), and the CLI covers the same gr
   JSDoc-documented, and `tsc --noEmit` runs in CI.
 - **Tree-shakeable source.** The package publishes `.tsx` with per-component subpath exports, so a bundler only ever
   sees the components you import.
-- **Copy-in CLI.** `npx smarteraui@latest add button` writes the component's source into your project, resolves its
+- **Copy-in CLI.** `npx properui@latest add button` writes the component's source into your project, resolves its
   registry dependencies, rewrites `@/` imports to your alias and installs missing npm packages.
 
 ## Quick start
@@ -86,20 +86,20 @@ server yet; it is on the [roadmap](./ROADMAP.md), and the CLI covers the same gr
 **1. Install**
 
 ```bash
-pnpm add @smarteraui/ui
-# npm install @smarteraui/ui · yarn add @smarteraui/ui
+pnpm add @properui/ui
+# npm install @properui/ui · yarn add @properui/ui
 ```
 
 **2. Import the stylesheet and let Tailwind scan the package**
 
-`@smarteraui/ui/styles/globals.css` already contains the Tailwind import, the token layer, typography and every plugin
+`@properui/ui/styles/globals.css` already contains the Tailwind import, the token layer, typography and every plugin
 the components need. Tailwind v4 does not scan `node_modules` by default, so add one `@source` line:
 
 ```css
 /* app/globals.css */
-@import "@smarteraui/ui/styles/globals.css";
+@import "@properui/ui/styles/globals.css";
 
-@source "../node_modules/@smarteraui/ui/src/**/*.{ts,tsx}";
+@source "../node_modules/@properui/ui/src/**/*.{ts,tsx}";
 ```
 
 **3. Transpile the package**
@@ -111,7 +111,7 @@ Next.js compiles only your own source by default, and this package ships TSX:
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-    transpilePackages: ["@smarteraui/ui"],
+    transpilePackages: ["@properui/ui"],
 };
 
 export default nextConfig;
@@ -125,7 +125,7 @@ their own `"use client"` directive, so they can be rendered straight from a serv
 
 ```tsx
 // app/layout.tsx
-import { RouterProvider, ThemeProvider } from "@smarteraui/ui/providers";
+import { RouterProvider, ThemeProvider } from "@properui/ui/providers";
 import "./globals.css";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -148,7 +148,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 **1. Install**
 
 ```bash
-pnpm add @smarteraui/ui
+pnpm add @properui/ui
 pnpm add -D @tailwindcss/vite
 ```
 
@@ -169,14 +169,14 @@ export default defineConfig({
 
 ```css
 /* src/index.css */
-@import "@smarteraui/ui/styles/globals.css";
+@import "@properui/ui/styles/globals.css";
 
-@source "../node_modules/@smarteraui/ui/src/**/*.{ts,tsx}";
+@source "../node_modules/@properui/ui/src/**/*.{ts,tsx}";
 ```
 
 **4. Wrap the app in the providers**
 
-`ThemeProvider` is framework-agnostic and works as-is. `RouterProvider` from `@smarteraui/ui/providers` is Next-only —
+`ThemeProvider` is framework-agnostic and works as-is. `RouterProvider` from `@properui/ui/providers` is Next-only —
 in Vite, use React Aria's own `RouterProvider` and hand it your router's navigate function:
 
 ```tsx
@@ -185,7 +185,7 @@ import { StrictMode } from "react";
 import { RouterProvider } from "react-aria-components";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, useNavigate } from "react-router-dom";
-import { ThemeProvider } from "@smarteraui/ui/providers";
+import { ThemeProvider } from "@properui/ui/providers";
 import { App } from "./app";
 import "./index.css";
 
@@ -215,7 +215,7 @@ full page load.
 ### Your first component
 
 ```tsx
-import { Button } from "@smarteraui/ui/components/base/buttons/button";
+import { Button } from "@properui/ui/components/base/buttons/button";
 
 export const Example = () => (
     <Button size="md" color="primary" onPress={() => console.log("pressed")}>
@@ -224,8 +224,8 @@ export const Example = () => (
 );
 ```
 
-Import from the subpath (`@smarteraui/ui/components/<layer>/<group>/<file>`) so bundlers pull in only that component.
-The root barrel — `import { Button } from "@smarteraui/ui"` — re-exports everything and is handy while prototyping.
+Import from the subpath (`@properui/ui/components/<layer>/<group>/<file>`) so bundlers pull in only that component.
+The root barrel — `import { Button } from "@properui/ui"` — re-exports everything and is handy while prototyping.
 
 Interactive components are React Aria based: use `onPress` rather than `onClick`, and `isDisabled` rather than
 `disabled`.
@@ -235,8 +235,8 @@ Interactive components are React Aria based: use `onPress` rather than `onClick`
 Prefer to own the source? Skip the dependency and use the CLI:
 
 ```bash
-npx smarteraui@latest init
-npx smarteraui@latest add button
+npx properui@latest init
+npx properui@latest add button
 ```
 
 `init` writes `components.json`, your theme file, the `cx` utility and the Tailwind `@source` line, and wires up
@@ -275,12 +275,12 @@ in both light and dark mode. Full detail in [docs/theming.md](./docs/theming.md)
 
 ```
 apps/docs             documentation site — Next.js 15 App Router + MDX
-packages/ui           @smarteraui/ui — the component library
+packages/ui           @properui/ui — the component library
   src/components      base/ application/ marketing/ app-examples/
                       marketing-examples/ foundations/ shared-assets/
   src/styles          globals.css · theme.css · typography.css
   src/{hooks,utils,providers}
-packages/cli          smarteraui — the init/add CLI
+packages/cli          properui — the init/add CLI
 packages/registry     generated registry JSON consumed by the CLI and the docs site
 scripts               generators, screenshot and visual-diff tooling
 docs                  these guides
@@ -298,7 +298,7 @@ pnpm test           # type-check + lint + prettier + vitest/axe across the works
 pnpm gen:all        # regenerate barrels, demos, variants, nav and the registry
 ```
 
-The documentation site is hosted at [smarteraui.com](https://smarteraui.com). `pnpm dev` serves the same site locally
+The documentation site is hosted at [properui.dev](https://properui.dev). `pnpm dev` serves the same site locally
 at `http://localhost:3000`.
 
 Other useful commands:

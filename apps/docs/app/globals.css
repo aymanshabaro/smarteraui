@@ -1,4 +1,4 @@
-@import "@smarteraui/ui/styles/globals.css";
+@import "@properui/ui/styles/globals.css";
 
 /* Tailwind v4 must scan the library source for classes used by components. */
 @source "../../../packages/ui/src/**/*.{ts,tsx}";

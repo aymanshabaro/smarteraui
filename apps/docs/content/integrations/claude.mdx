@@ -1,49 +1,49 @@
 ---
 title: Claude Code integration
 section: integrations
-description: Point Claude Code at Smartera UI's registry and CLAUDE.md conventions so it composes screens from real components instead of inventing markup.
-metaTitle: Claude Code integration | Smartera UI
-metaDescription: Use Smartera UI with Claude Code — recommended project instructions and prompts that resolve to real components.
+description: Point Claude Code at Proper UI's registry and CLAUDE.md conventions so it composes screens from real components instead of inventing markup.
+metaTitle: Claude Code integration | Proper UI
+metaDescription: Use Proper UI with Claude Code — recommended project instructions and prompts that resolve to real components.
 ---
 
-Claude Code already runs shell commands, so it can drive the `smarteraui` CLI directly — the only setup is giving it enough context to reach for a real component instead of writing one from scratch.
+Claude Code already runs shell commands, so it can drive the `properui` CLI directly — the only setup is giving it enough context to reach for a real component instead of writing one from scratch.
 
 ## Prerequisites
 
-- A project already scaffolded with `npx smarteraui@latest init` — Claude works best once `components.json` exists.
+- A project already scaffolded with `npx properui@latest init` — Claude works best once `components.json` exists.
 - Claude Code installed and authenticated (`claude` on your `PATH`).
 
-## Start using Smartera UI with Claude
+## Start using Proper UI with Claude
 
 Describe what you're building in plain language and let Claude choose the components:
 
 ```text
 Build a settings page with a page header, a tabbed navigation between
-"General" and "Billing", and a form with labeled inputs. Use Smartera UI
-components — check `npx smarteraui@latest search` for anything you're
+"General" and "Billing", and a form with labeled inputs. Use Proper UI
+components — check `npx properui@latest search` for anything you're
 not sure exists before writing custom markup.
 ```
 
-Claude will typically run `smarteraui search` or `smarteraui list` to confirm component names, then `smarteraui add <name>` for each one it decides to use, and finally write the page around them.
+Claude will typically run `properui search` or `properui list` to confirm component names, then `properui add <name>` for each one it decides to use, and finally write the page around them.
 
-## Install the Smartera UI Skill
+## Install the Proper UI Skill
 
-Rather than writing `CLAUDE.md` instructions by hand, install the [Smartera UI Skill](/docs/agents) once per project:
+Rather than writing `CLAUDE.md` instructions by hand, install the [Proper UI Skill](/docs/agents) once per project:
 
 ```bash
-npx smarteraui@latest agent init --client claude
+npx properui@latest agent init --client claude
 ```
 
-This writes `.claude/skills/smarteraui/SKILL.md` — which Claude Code loads automatically for every session, not just the one where you happen to mention the library — and appends a short pointer to `CLAUDE.md` (creating the file if it doesn't exist yet). The Skill encodes the full workflow: run `smarteraui info --json` before touching UI code, search the registry before writing markup, prefer a full-page example for a whole screen, and keep semantic tokens, React Aria props and RTL-safe logical properties in anything written by hand. Re-running the command after a Skill update is safe — it replaces the installed file and the `CLAUDE.md` pointer in place.
+This writes `.claude/skills/properui/SKILL.md` — which Claude Code loads automatically for every session, not just the one where you happen to mention the library — and appends a short pointer to `CLAUDE.md` (creating the file if it doesn't exist yet). The Skill encodes the full workflow: run `properui info --json` before touching UI code, search the registry before writing markup, prefer a full-page example for a whole screen, and keep semantic tokens, React Aria props and RTL-safe logical properties in anything written by hand. Re-running the command after a Skill update is safe — it replaces the installed file and the `CLAUDE.md` pointer in place.
 
-With that in place, Claude reaches for `smarteraui add` before improvising markup even on prompts that don't mention the library by name.
+With that in place, Claude reaches for `properui add` before improvising markup even on prompts that don't mention the library by name.
 
 ## MCP integration
 
 An MCP server that would let an assistant query the registry directly, instead of shelling out to
-`npx` for each lookup, is planned but **not built** — see the [MCP page](/integrations/mcp) and the [roadmap](https://github.com/aymanshabaro/smarteraui/blob/main/ROADMAP.md). Until it
-exists, the CLI is the supported path, and it is enough: Claude Code runs `smarteraui search` and
-`smarteraui add` through its own shell tool.
+`npx` for each lookup, is planned but **not built** — see the [MCP page](/integrations/mcp) and the [roadmap](https://github.com/properui/properui/blob/main/ROADMAP.md). Until it
+exists, the CLI is the supported path, and it is enough: Claude Code runs `properui search` and
+`properui add` through its own shell tool.
 
 ## FAQs
 
@@ -51,7 +51,7 @@ exists, the CLI is the supported path, and it is enough: Claude Code runs `smart
     items={[
         {
             question: "Does Claude need the MCP server, or is the CLI enough?",
-            answer: "The CLI is enough, and it is the only option today — the MCP server is planned but not built. Claude Code can already run smarteraui search and smarteraui add through its shell tool.",
+            answer: "The CLI is enough, and it is the only option today — the MCP server is planned but not built. Claude Code can already run properui search and properui add through its shell tool.",
         },
         {
             question: "Will Claude overwrite my customizations to an installed component?",
@@ -59,7 +59,7 @@ exists, the CLI is the supported path, and it is enough: Claude Code runs `smart
         },
         {
             question: "How do I stop Claude from writing custom markup instead of using the library?",
-            answer: 'Run npx smarteraui@latest agent init --client claude. Claude follows repository instructions closely, and the installed Skill\'s explicit "search before writing markup" step is usually all it takes.',
+            answer: 'Run npx properui@latest agent init --client claude. Claude follows repository instructions closely, and the installed Skill\'s explicit "search before writing markup" step is usually all it takes.',
         },
     ]}
 />

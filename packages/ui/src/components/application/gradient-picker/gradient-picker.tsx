@@ -9,7 +9,7 @@ import {
     Input as AriaInput,
     TextField as AriaTextField,
 } from "react-aria-components";
-import { ChevronDown, Minus, Plus, SwitchHorizontal01 } from "@smarteraui/icons";
+import { ChevronDown, Minus, Plus, SwitchHorizontal01 } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { ButtonUtility } from "@/components/base/buttons/button-utility";
 import { Dropdown } from "@/components/base/dropdown/dropdown";

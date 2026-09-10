@@ -2,7 +2,7 @@
 
 import { type ReactNode, useState } from "react";
 import { parseDate } from "@internationalized/date";
-import { FilterLines, Plus, SearchLg, Trash01 } from "@smarteraui/icons";
+import { FilterLines, Plus, SearchLg, Trash01 } from "@properui/icons";
 import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
 import { FilterBar } from "@/components/application/filter-bar/filter-bar";
 import { SlideoutMenu } from "@/components/application/slideout-menus/slideout-menu";

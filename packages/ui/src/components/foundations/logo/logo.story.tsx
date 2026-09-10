@@ -1,6 +1,6 @@
 import type { FC } from "react";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
-import { SmarteraLogoMinimal } from "@/components/foundations/logo/smartera-logo-minimal";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
+import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
 
 export default {
     title: "Foundations/Logo",
@@ -13,6 +13,6 @@ export default {
     ],
 };
 
-export const Logo = () => <SmarteraLogo />;
+export const Logo = () => <ProperLogo />;
 
-export const LogoMinimal = () => <SmarteraLogoMinimal />;
+export const LogoMinimal = () => <ProperLogoMinimal />;

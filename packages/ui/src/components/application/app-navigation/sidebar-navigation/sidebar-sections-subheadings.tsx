@@ -1,9 +1,9 @@
 "use client";
 
 import type { CSSProperties } from "react";
-import { SearchLg } from "@smarteraui/icons";
+import { SearchLg } from "@properui/icons";
 import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { MobileNavigationHeader } from "../base-components/mobile-header";
 import { NavAccountCard } from "../base-components/nav-account-card";
 import { NavItemBase } from "../base-components/nav-item";
@@ -30,7 +30,7 @@ export const SidebarNavigationSectionsSubheadings = ({ activeUrl = "/", items }:
             className="bg-primary ring-secondary flex h-full w-full max-w-full flex-col justify-between overflow-auto pt-4 shadow-xs ring-inset lg:w-(--width) lg:rounded-xl lg:ring-1"
         >
             <div className="flex items-center justify-between gap-5 px-4 lg:ps-5">
-                <SmarteraLogo className="h-6" />
+                <ProperLogo className="h-6" />
                 <ButtonUtility size="xs" color="tertiary" tooltip="Search" icon={SearchLg} />
             </div>
 

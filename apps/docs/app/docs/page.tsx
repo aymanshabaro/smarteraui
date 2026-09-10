@@ -5,7 +5,7 @@ import { buttonClasses } from "~/components/primitives";
 import { SITE_NAME, absoluteUrl } from "~/lib/site";
 
 const TITLE = "Documentation";
-const DESCRIPTION = "The Smartera design system — React components built with React Aria and Tailwind CSS, documented example by example.";
+const DESCRIPTION = "The Proper design system — React components built with React Aria and Tailwind CSS, documented example by example.";
 
 export const metadata: Metadata = {
     title: TITLE,

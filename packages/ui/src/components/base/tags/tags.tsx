@@ -8,7 +8,7 @@ import {
     TagList as AriaTagList,
     type TagProps as AriaTagProps,
 } from "react-aria-components";
-import { User01 } from "@smarteraui/icons";
+import { User01 } from "@properui/icons";
 import { cx, sortCx } from "@/utils/cx";
 import { TagCheckbox } from "./base-components/tag-checkbox";
 import { TagCloseX } from "./base-components/tag-close-x";

@@ -21,7 +21,7 @@ import {
     Plus,
     SearchLg,
     Trash01,
-} from "@smarteraui/icons";
+} from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { cx, sortCx } from "@/utils/cx";
 import { AVATARS } from "@/utils/demo-assets";

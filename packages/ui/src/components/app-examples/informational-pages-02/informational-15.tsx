@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, Copy01, HomeLine, SearchLg, Zap } from "@smarteraui/icons";
+import { ArrowLeft, Copy01, HomeLine, SearchLg, Zap } from "@properui/icons";
 import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
 import { CodeSnippet } from "@/components/application/code-snippet/code-snippet";
 import { Table, TableCard } from "@/components/application/table/table";
@@ -42,7 +42,7 @@ const actions = [
 ];
 
 const payload = `// Imports
-import mongoose, { Schema } from 'smartera'
+import mongoose, { Schema } from 'mongoose'
 
 // Collection name
 export const collection = 'Design'
@@ -54,7 +54,7 @@ const schema = new Schema({
 }, { timestamps: true })
 
 // Model
-export default smartera.model(collection, schema, collection)`;
+export default mongoose.model(collection, schema, collection)`;
 
 /** Informational page 15 — a data sources debugger with a live event table beside the selected event payload. */
 export const Informational15 = () => (

@@ -54,7 +54,7 @@ function argVal(flag: string): string | undefined {
 const UPSTREAM_ROOT =
     argVal("--upstream") ??
     process.env.UPSTREAM_REACT_PATH ??
-    "/private/tmp/claude-501/-Users-aymanshabaro-SmartEraUI/8ebb12b7-426c-4849-8ef4-15de5d2537f0/scratchpad/untitledui-react";
+    "/private/tmp/claude-501/-Users-aymanshabaro-ProperUI/8ebb12b7-426c-4849-8ef4-15de5d2537f0/scratchpad/untitledui-react";
 
 const OUT_PATH = argVal("--out") ?? path.join(REPO_ROOT, "docs/spec/provenance.md");
 
@@ -300,7 +300,7 @@ function findMatch(our: OurFile, upstreamByRoot: Map<string, UpstreamFile[]>, up
 // Flags: untitledui mentions/imports outside the icon deps; docs/spec/reference refs
 // ---------------------------------------------------------------------------
 
-const ICON_PACKAGE_ALLOWLIST = ["@untitledui/icons", "@smarteraui/icons", "@untitledui/file-icons"];
+const ICON_PACKAGE_ALLOWLIST = ["@untitledui/icons", "@properui/icons", "@untitledui/file-icons"];
 
 interface FlagHit {
     file: string;
@@ -335,7 +335,7 @@ function scanFlags(): { untitledMentions: FlagHit[]; referenceRefs: FlagHit[]; m
             if (referencePattern.test(line)) {
                 referenceRefs.push({ file: rel, line: idx + 1, text: line.trim(), kind: "docs/spec/reference reference" });
             }
-            if (marketingCopyPattern.test(line) && !line.includes("@untitledui") && !line.includes("@smarteraui/icons")) {
+            if (marketingCopyPattern.test(line) && !line.includes("@untitledui") && !line.includes("@properui/icons")) {
                 marketingCopyHits.push({ file: rel, line: idx + 1, text: line.trim(), kind: "'Untitled UI' literal text" });
             }
         });

@@ -1,7 +1,7 @@
 "use client";
 
 import type { FC, SVGProps } from "react";
-import { PlayCircle } from "@smarteraui/icons";
+import { PlayCircle } from "@properui/icons";
 import { Badge } from "@/components/base/badges/badges";
 import { Button } from "@/components/base/buttons/button";
 import { ChatGPTIcon, ClaudeIcon, FigmaIcon, GitHubIcon, NextjsIcon, ReactIcon, TailwindCSSIcon, ViteIcon } from "@/components/foundations/integration-icons";

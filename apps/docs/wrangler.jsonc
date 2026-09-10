@@ -1,5 +1,5 @@
 /**
- * Cloudflare Workers configuration for the Smartera UI documentation site.
+ * Cloudflare Workers configuration for the Proper UI documentation site.
  *
  * The site is built by the OpenNext Cloudflare adapter (`opennextjs-cloudflare build`),
  * which emits the Worker entry at `.open-next/worker.js` and every static asset at
@@ -7,7 +7,7 @@
  */
 {
     "$schema": "node_modules/wrangler/config-schema.json",
-    "name": "smarteraui-docs",
+    "name": "properui-docs",
     "main": ".open-next/worker.js",
     "compatibility_date": "2026-09-09",
     // `nodejs_compat` is required by the adapter; `global_fetch_strictly_public` makes
@@ -28,11 +28,11 @@
         "enabled": true,
     },
 
-    // Custom domains. The `smarteraui.com` zone is active in this Cloudflare account —
-    // Namecheap points the domain at Cloudflare's nameservers — so `wrangler deploy` creates
-    // and maintains the DNS records for both hostnames itself.
-    "routes": [
-        { "pattern": "smarteraui.com", "custom_domain": true },
-        { "pattern": "www.smarteraui.com", "custom_domain": true },
-    ],
+    // Custom domains. Re-enable once the `properui.dev` zone is active in this Cloudflare
+    // account — the domain is registered at Namecheap but still on its default nameservers,
+    // and `wrangler deploy` fails with "Could not find zone" until the move is done.
+    // "routes": [
+    //     { "pattern": "properui.dev", "custom_domain": true },
+    //     { "pattern": "www.properui.dev", "custom_domain": true }
+    // ]
 }

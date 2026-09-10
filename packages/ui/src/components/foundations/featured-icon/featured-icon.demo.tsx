@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle } from "@smarteraui/icons";
+import { CheckCircle } from "@properui/icons";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 
 export const FeaturedIconExample = () => {

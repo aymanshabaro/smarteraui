@@ -1,6 +1,6 @@
 "use client";
 
-import { PlayCircle } from "@smarteraui/icons";
+import { PlayCircle } from "@properui/icons";
 import { BadgeGroup } from "@/components/base/badges/badge-groups";
 import { Button } from "@/components/base/buttons/button";
 import type { MarketingNavItemType } from "@/components/marketing/header-navigations/base-components/header";
@@ -45,7 +45,7 @@ export const HeroCardMockup02 = () => (
                         No more business banking headaches
                     </h1>
                     <p className="text-tertiary mt-4 max-w-120 text-lg text-balance md:mt-6 md:text-xl">
-                        Smartera is a next-gen financial technology company in the process of reinventing banking.
+                        Proper is a next-gen financial technology company in the process of reinventing banking.
                     </p>
 
                     <div className="mt-8 flex w-full flex-col-reverse items-stretch gap-3 md:mt-12 md:flex-row md:items-start">
@@ -61,10 +61,10 @@ export const HeroCardMockup02 = () => (
                 <div className="bg-quaternary relative -mx-4 flex h-80 items-center justify-center md:mx-0 md:h-120 lg:h-full lg:min-h-160">
                     <div className="-translate-x-0.5 -space-y-[106px] md:translate-x-[9px] md:-translate-y-px md:-space-y-16 lg:-space-y-8">
                         <div className="relative z-1 [transform:scale(var(--scale))_rotate(60deg)_translate(38px,-53px)] [--scale:0.84] md:[--scale:1.3] lg:[--scale:1.57]">
-                            <CreditCard type="transparent" company="Smartera." cardHolder={AVATARS[0].name} />
+                            <CreditCard type="transparent" company="Proper." cardHolder={AVATARS[0].name} />
                         </div>
                         <div className="relative z-0 [transform:scale(var(--scale))_rotate(30deg)_translate(-23px,24px)] [--scale:0.84] md:[--scale:1.3] lg:[--scale:1.57]">
-                            <CreditCard type="brand-dark" company="Smartera." cardHolder={AVATARS[1].name} />
+                            <CreditCard type="brand-dark" company="Proper." cardHolder={AVATARS[1].name} />
                         </div>
                     </div>
                 </div>

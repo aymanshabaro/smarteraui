@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, DownloadCloud01, DownloadCloud02, Mail01 } from "@smarteraui/icons";
+import { ArrowRight, DownloadCloud01, DownloadCloud02, Mail01 } from "@properui/icons";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
 import { Table, TableCard } from "@/components/application/table/table";
 import { Badge, BadgeWithDot } from "@/components/base/badges/badges";
@@ -93,7 +93,7 @@ export const Settings13 = () => (
 
                                     <div className="flex items-center gap-1.5">
                                         <Mail01 aria-hidden="true" className="text-fg-quaternary size-4" />
-                                        <span className="text-tertiary text-sm">billing@smartera.com</span>
+                                        <span className="text-tertiary text-sm">billing@proper.example</span>
                                     </div>
                                 </div>
                             </div>

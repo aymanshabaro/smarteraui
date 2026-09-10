@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { Plus } from "@smarteraui/icons";
+import { Plus } from "@properui/icons";
 import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
 import { MetricSimple } from "@/components/application/metrics/metrics";
 import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";

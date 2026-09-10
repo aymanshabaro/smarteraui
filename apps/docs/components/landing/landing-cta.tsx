@@ -1,4 +1,4 @@
-import { Button } from "@smarteraui/ui/components/base/buttons/button";
+import { Button } from "@properui/ui/components/base/buttons/button";
 import { INSTALL_COMMAND } from "./content";
 
 /**

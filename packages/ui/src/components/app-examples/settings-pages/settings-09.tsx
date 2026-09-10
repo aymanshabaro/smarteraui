@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, DotsVertical, Plus } from "@smarteraui/icons";
+import { ArrowLeft, DotsVertical, Plus } from "@properui/icons";
 import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
 import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
 import { Table } from "@/components/application/table/table";

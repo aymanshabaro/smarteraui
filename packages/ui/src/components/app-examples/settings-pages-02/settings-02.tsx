@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail01 } from "@smarteraui/icons";
+import { Mail01 } from "@properui/icons";
 import { FileUploadDropZone } from "@/components/application/file-upload/file-upload-base";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
 import { Avatar } from "@/components/base/avatar/avatar";
@@ -94,12 +94,12 @@ export const Settings02 = () => (
                             <div className="flex flex-col gap-6 px-4 py-5 lg:p-6">
                                 <Toggle defaultSelected size="sm" label="Available for projects" hint="I'm open and available for work." />
 
-                                <InputGroup isRequired label="Username" leadingAddon={<InputGroup.Prefix>smartera.com/</InputGroup.Prefix>}>
+                                <InputGroup isRequired label="Username" leadingAddon={<InputGroup.Prefix>proper.example/</InputGroup.Prefix>}>
                                     <InputBase name="username" defaultValue={person.username.replace("@", "")} />
                                 </InputGroup>
 
                                 <InputGroup isRequired label="Website" leadingAddon={<InputGroup.Prefix>https://</InputGroup.Prefix>}>
-                                    <InputBase name="website" defaultValue="www.smartera.com" />
+                                    <InputBase name="website" defaultValue="www.proper.example" />
                                 </InputGroup>
 
                                 <TextArea

@@ -12,7 +12,7 @@ import {
     Group as AriaGroup,
     Popover as AriaPopover,
 } from "react-aria-components";
-import { Calendar as CalendarIcon, Clock } from "@smarteraui/icons";
+import { Calendar as CalendarIcon, Clock } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { InputDateBase } from "@/components/base/input/input-date";
 import { cx } from "@/utils/cx";

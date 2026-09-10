@@ -1,7 +1,7 @@
 "use client";
 
 import { Radio as AriaRadio } from "react-aria-components";
-import { DownloadCloud01, DownloadCloud02, Plus } from "@smarteraui/icons";
+import { DownloadCloud01, DownloadCloud02, Plus } from "@properui/icons";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
 import { Table, TableCard } from "@/components/application/table/table";
 import { Tabs } from "@/components/application/tabs/tabs";

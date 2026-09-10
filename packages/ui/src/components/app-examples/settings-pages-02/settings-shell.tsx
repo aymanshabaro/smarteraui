@@ -3,7 +3,7 @@
 // TODO(orchestrator): candidate for components/internal — the chrome shared by every
 // `settings-pages-02` variant (header navigation, page container, form scaffolding).
 import type { ComponentPropsWithoutRef, FC, ReactNode } from "react";
-import { Bell01, HelpCircle, Settings01, Zap } from "@smarteraui/icons";
+import { Bell01, HelpCircle, Settings01, Zap } from "@properui/icons";
 import { NavButton } from "@/components/application/app-navigation/base-components/nav-button";
 import { HeaderNavigationBase } from "@/components/application/app-navigation/header-navigation";
 import { Button } from "@/components/base/buttons/button";
@@ -215,7 +215,7 @@ export const FormFooter = ({ leading, submitLabel = "Save", isSubmit = true, cla
 export interface IntegrationLogoProps {
     /**
      * The product mark. Only Figma and GitHub ship as brand marks in `foundations/integration-icons`;
-     * the rest fall back to a line icon from `@smarteraui/icons`.
+     * the rest fall back to a line icon from `@properui/icons`.
      */
     icon: FC<{ className?: string }>;
     /** Product name, used as the accessible label of the plate. */

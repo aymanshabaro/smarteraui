@@ -1,9 +1,9 @@
 "use client";
 
-import { PlayCircle } from "@smarteraui/icons";
+import { PlayCircle } from "@properui/icons";
 import { AppStoreButton, GooglePlayButton } from "@/components/base/buttons/app-store-buttons";
 import { Button } from "@/components/base/buttons/button";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { AngelList, Dribbble, Facebook, GitHub, Layers, LinkedIn, X } from "@/components/foundations/social-icons";
 import { sortCx } from "@/utils/cx";
 
@@ -49,7 +49,7 @@ export const FooterLarge11 = () => (
             <div className="mt-12 flex flex-col justify-between gap-x-8 gap-y-12 md:mt-16 lg:flex-row">
                 <div className="flex flex-col gap-8 md:items-start">
                     <div className="flex w-full flex-col gap-6 md:max-w-xs md:gap-8">
-                        <SmarteraLogo className="h-7 w-min shrink-0" />
+                        <ProperLogo className="h-7 w-min shrink-0" />
                         <p className="text-tertiary text-md">Design amazing digital experiences that create more happy in the world.</p>
                     </div>
 
@@ -76,7 +76,7 @@ export const FooterLarge11 = () => (
             </div>
 
             <div className="border-secondary mt-12 flex flex-col-reverse justify-between gap-6 border-t pt-8 md:mt-16 md:flex-row">
-                <p className="text-quaternary text-sm">© 2077 Smartera. All rights reserved.</p>
+                <p className="text-quaternary text-sm">© 2077 Proper. All rights reserved.</p>
                 <ul className="flex gap-4">
                     {socials.map(({ label, href, icon: Icon }) => (
                         <li key={label}>

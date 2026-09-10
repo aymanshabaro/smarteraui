@@ -1,7 +1,7 @@
 "use client";
 
 import type { FC, ReactNode } from "react";
-import { ArrowDown, ArrowDownRight, ArrowUp, ArrowUpRight, TrendDown01, TrendUp01 } from "@smarteraui/icons";
+import { ArrowDown, ArrowDownRight, ArrowUp, ArrowUpRight, TrendDown01, TrendUp01 } from "@properui/icons";
 import { BadgeWithIcon } from "@/components/base/badges/badges";
 import { cx, sortCx } from "@/utils/cx";
 import type { MetricTrend } from "./metrics-chart";

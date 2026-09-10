@@ -1,30 +1,30 @@
 ---
 title: Replit integration
 section: integrations
-description: Scaffold a Replit project with Smartera UI pre-installed, or import an existing Smartera UI project into Replit from its GitHub repo.
-metaTitle: Replit integration | Smartera UI
-metaDescription: Use Smartera UI inside Replit — starter template setup and how to import an existing GitHub project into a new Repl.
+description: Scaffold a Replit project with Proper UI pre-installed, or import an existing Proper UI project into Replit from its GitHub repo.
+metaTitle: Replit integration | Proper UI
+metaDescription: Use Proper UI inside Replit — starter template setup and how to import an existing GitHub project into a new Repl.
 ---
 
-Replit runs a real container, not a sandboxed preview, so `@smarteraui/ui` installs and behaves exactly as it would on your own machine.
+Replit runs a real container, not a sandboxed preview, so `@properui/ui` installs and behaves exactly as it would on your own machine.
 
-## Start using Smartera UI in Replit
+## Start using Proper UI in Replit
 
 Import our starter template to get a Repl with the package installed, `globals.css` imported, and both providers already wired up:
 
 ```text
-https://replit.com/github/smartera/starter-nextjs
+https://replit.com/github/properui/starter-nextjs
 ```
 
 Replit clones the template, installs dependencies, and gives you a running dev server with a public preview URL. From there, use the CLI in the Repl's shell the same way you would locally:
 
 ```bash
-npx smarteraui@latest add button input select
+npx properui@latest add button input select
 ```
 
 ## How to open existing projects in Replit
 
-Already have a Smartera UI project on GitHub? Use Replit's GitHub import instead of the starter template:
+Already have a Proper UI project on GitHub? Use Replit's GitHub import instead of the starter template:
 
 ```text
 https://replit.com/github/your-org/your-repo
@@ -37,12 +37,12 @@ Replit clones the repository into a new Repl, detects the package manager from y
 <FAQs
     items={[
         {
-            question: "Does Replit install @smarteraui/ui as a real dependency?",
+            question: "Does Replit install @properui/ui as a real dependency?",
             answer: "Yes — Replit runs a real Node container, so the package installs from npm exactly as it would locally, with no source-inlining step.",
         },
         {
             question: "Can I run the CLI inside a Repl?",
-            answer: "Yes. Open the Repl's shell tab and run npx smarteraui@latest add or init exactly as you would in a local terminal.",
+            answer: "Yes. Open the Repl's shell tab and run npx properui@latest add or init exactly as you would in a local terminal.",
         },
         {
             question: "Will dark mode and theming work the same in a Repl's preview?",

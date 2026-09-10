@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { DownloadCloud02, FilterLines, HomeLine, SearchLg } from "@smarteraui/icons";
+import { DownloadCloud02, FilterLines, HomeLine, SearchLg } from "@properui/icons";
 import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
 import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
 import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";

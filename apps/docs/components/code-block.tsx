@@ -2,8 +2,8 @@
 
 import { Button as AriaButton } from "react-aria-components";
 import { cx } from "~/lib/cx";
-import { Check, Copy01 } from "@smarteraui/icons";
-import { useClipboard } from "@smarteraui/ui/hooks/use-clipboard";
+import { Check, Copy01 } from "@properui/icons";
+import { useClipboard } from "@properui/ui/hooks/use-clipboard";
 import { utilityButtonClasses } from "./primitives";
 
 /**

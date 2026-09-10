@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { ArrowUpRight, Share04 } from "@smarteraui/icons";
+import { ArrowUpRight, Share04 } from "@properui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { AvatarProfilePhoto } from "@/components/base/avatar/avatar-profile-photo";
 import { Button } from "@/components/base/buttons/button";
@@ -31,7 +31,7 @@ const experience = [
 
 const projects = [IMAGES.landscape[4]!, IMAGES.landscape[5]!, IMAGES.landscape[6]!, IMAGES.landscape[7]!];
 
-const portfolioUrl = "smartera.com";
+const portfolioUrl = "proper.example";
 
 const Detail = ({ label, children }: { label: string; children: ReactNode }) => (
     <div className="flex flex-col gap-2">

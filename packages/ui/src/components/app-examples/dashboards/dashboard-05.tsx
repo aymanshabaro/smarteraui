@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FilterLines, SearchLg, X } from "@smarteraui/icons";
+import { FilterLines, SearchLg, X } from "@properui/icons";
 import { FeaturedCardEventCTA } from "@/components/application/app-navigation/base-components/featured-cards";
 import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
 import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";

@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle, Download01, FilterLines, RefreshCcw01, SearchLg, XCircle } from "@smarteraui/icons";
+import { CheckCircle, Download01, FilterLines, RefreshCcw01, SearchLg, XCircle } from "@properui/icons";
 import { Table, TableCard } from "@/components/application/table/table";
 import { Tabs } from "@/components/application/tabs/tabs";
 import { Avatar } from "@/components/base/avatar/avatar";

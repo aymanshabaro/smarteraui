@@ -8,7 +8,7 @@ import { ImageResponse } from "next/og";
  * are inlined here (they mirror `--color-brand-600` / `--color-brand-300` in theme.css).
  */
 
-export const alt = "Smartera UI — accessible React components, ready on arrival";
+export const alt = "Proper UI — accessible React components, ready on arrival";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -47,7 +47,7 @@ export default function OpengraphImage() {
                 >
                     S
                 </div>
-                <div style={{ color: "white", fontSize: 36, fontWeight: 600 }}>Smartera UI</div>
+                <div style={{ color: "white", fontSize: 36, fontWeight: 600 }}>Proper UI</div>
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
@@ -71,9 +71,9 @@ export default function OpengraphImage() {
                         fontWeight: 600,
                     }}
                 >
-                    npm i @smarteraui/ui
+                    npm i @properui/ui
                 </div>
-                <div style={{ color: "rgb(148 155 170)", fontSize: 26 }}>smarteraui.com</div>
+                <div style={{ color: "rgb(148 155 170)", fontSize: 26 }}>properui.dev</div>
             </div>
         </div>,
         size,

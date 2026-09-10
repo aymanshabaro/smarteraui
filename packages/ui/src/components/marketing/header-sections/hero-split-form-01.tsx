@@ -3,7 +3,7 @@ import { Button } from "@/components/base/buttons/button";
 import { SocialButton } from "@/components/base/buttons/social-button";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogoMinimal } from "@/components/foundations/logo/smartera-logo-minimal";
+import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
 import { RatingStars } from "@/components/foundations/rating/rating-stars";
 import type { MarketingNavItemType } from "@/components/marketing/header-navigations/base-components/header";
 import { MarketingHeader } from "@/components/marketing/header-navigations/base-components/header";
@@ -79,7 +79,7 @@ export const HeroSplitForm01 = () => (
 
                     <Form>
                         <div className="flex flex-col items-center gap-6">
-                            <SmarteraLogoMinimal className="hidden size-10 md:block" />
+                            <ProperLogoMinimal className="hidden size-10 md:block" />
 
                             <div className="flex flex-col gap-2 text-center md:gap-3">
                                 <h2 className="text-display-xs text-primary md:text-display-sm font-semibold">Create an account</h2>

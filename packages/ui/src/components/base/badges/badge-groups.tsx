@@ -2,7 +2,7 @@
 
 import type { FC, ReactNode } from "react";
 import { isValidElement } from "react";
-import { ArrowRight } from "@smarteraui/icons";
+import { ArrowRight } from "@properui/icons";
 import { cx, sortCx } from "@/utils/cx";
 import { isReactComponent } from "@/utils/is-react-component";
 

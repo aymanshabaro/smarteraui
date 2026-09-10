@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button as AriaButton } from "react-aria-components";
-import { ChevronDown, Trash01 } from "@smarteraui/icons";
+import { ChevronDown, Trash01 } from "@properui/icons";
 import { Dropdown } from "@/components/base/dropdown/dropdown";
 import { cx } from "@/utils/cx";
 

@@ -4,8 +4,8 @@ import { SocialButton } from "@/components/base/buttons/social-button";
 import { Checkbox } from "@/components/base/checkbox/checkbox";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
-import { SmarteraLogoMinimal } from "@/components/foundations/logo/smartera-logo-minimal";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
+import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
 import { RatingStars } from "@/components/foundations/rating/rating-stars";
 import { avatar } from "@/utils/demo-assets";
 
@@ -16,12 +16,12 @@ export const LoginSplitQuote = () => (
     <section className="bg-primary grid min-h-screen grid-cols-1 lg:grid-cols-2">
         <div className="bg-secondary relative hidden items-center justify-between overflow-hidden lg:flex">
             <header className="absolute start-8 top-8">
-                <SmarteraLogo />
+                <ProperLogo />
             </header>
 
             <figure className="flex flex-col gap-8 px-20 text-center">
                 <blockquote className="text-display-sm text-primary font-medium">
-                    We&apos;ve been using Smartera to kick start every new project and can&apos;t imagine working without it.
+                    We&apos;ve been using Proper to kick start every new project and can&apos;t imagine working without it.
                 </blockquote>
 
                 <figcaption className="flex flex-col items-center gap-8">
@@ -39,7 +39,7 @@ export const LoginSplitQuote = () => (
             </figure>
 
             <footer className="absolute start-8 bottom-8">
-                <p className="text-tertiary text-sm">© Smartera UI 2077</p>
+                <p className="text-tertiary text-sm">© Proper UI 2077</p>
             </footer>
         </div>
 
@@ -47,7 +47,7 @@ export const LoginSplitQuote = () => (
             <div className="flex flex-1 justify-center px-4 py-12 md:items-center md:px-8">
                 <div className="flex w-full flex-col gap-8 sm:max-w-90">
                     <div className="flex flex-col gap-6">
-                        <SmarteraLogoMinimal className="size-8 origin-center scale-[1.2] lg:hidden" />
+                        <ProperLogoMinimal className="size-8 origin-center scale-[1.2] lg:hidden" />
 
                         <div className="flex flex-col gap-2 md:gap-3">
                             <h1 className="text-primary md:text-display-xs text-xl font-semibold">Welcome back</h1>

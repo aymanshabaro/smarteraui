@@ -2,7 +2,7 @@
 
 ## Prompt
 
-Paste this verbatim into the agent, in a fresh project with either Smart Era UI or the shadcn/ui baseline already installed (see `../baseline/README.md`).
+Paste this verbatim into the agent, in a fresh project with either Proper UI or the shadcn/ui baseline already installed (see `../baseline/README.md`).
 
 > Build a pricing page with three plans: Starter, Pro, and Enterprise. Include a monthly/yearly billing toggle that changes the displayed price. Mark the Pro plan as the recommended option. Each plan should list its included features with checkmarks, and have its own call-to-action button. Below the plans, add a short FAQ section with at least four questions people ask before buying. The page should work on mobile, tablet, and desktop, and should be fully usable from the keyboard.
 

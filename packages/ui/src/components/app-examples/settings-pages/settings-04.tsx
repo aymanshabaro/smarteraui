@@ -42,9 +42,9 @@ const tabs: SettingsTabItem[] = [
 ];
 
 const socialProfiles = [
-    { id: "x", label: "X profile", prefix: "x.com/", placeholder: "smartera" },
-    { id: "facebook", label: "Facebook profile", prefix: "facebook.com/", placeholder: "smartera" },
-    { id: "linkedin", label: "LinkedIn profile", prefix: "linkedin.com/company/", placeholder: "smartera" },
+    { id: "x", label: "X profile", prefix: "x.com/", placeholder: "properui" },
+    { id: "facebook", label: "Facebook profile", prefix: "facebook.com/", placeholder: "properui" },
+    { id: "linkedin", label: "LinkedIn profile", prefix: "linkedin.com/company/", placeholder: "properui" },
 ];
 
 /** Company profile settings with a segmented button-group tab row. */
@@ -96,9 +96,9 @@ export const Settings04 = () => (
                                     isRequired
                                     label="Public profile"
                                     className={hideLabelOnDesktop}
-                                    leadingAddon={<InputGroup.Prefix>smartera.com/profile/</InputGroup.Prefix>}
+                                    leadingAddon={<InputGroup.Prefix>proper.example/profile/</InputGroup.Prefix>}
                                 >
-                                    <InputBase placeholder="smartera" defaultValue="smartera" />
+                                    <InputBase placeholder="properui" defaultValue="properui" />
                                 </InputGroup>
                             </SettingsFormRow>
 
@@ -111,7 +111,7 @@ export const Settings04 = () => (
                                     maxLength={150}
                                     hint="41 characters left"
                                     className={hideLabelOnDesktop}
-                                    defaultValue="Smartera UI is the ultimate design system for product teams. Kickstart any project and level up as a designer."
+                                    defaultValue="Proper UI is the ultimate design system for product teams. Kickstart any project and level up as a designer."
                                 />
                             </SettingsFormRow>
 

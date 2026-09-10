@@ -1,6 +1,6 @@
 "use client";
 
-import { DownloadCloud01, SearchLg } from "@smarteraui/icons";
+import { DownloadCloud01, SearchLg } from "@properui/icons";
 import { ActivityFeed } from "@/components/application/activity-feed/activity-feed";
 import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
 import { MetricChart03 } from "@/components/application/metrics/metrics";

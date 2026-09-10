@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, Edit05, UserPlus01 } from "@smarteraui/icons";
+import { ArrowUpRight, Edit05, UserPlus01 } from "@properui/icons";
 import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
 import { MetricChangeIndicator } from "@/components/application/metrics/metrics-base";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";

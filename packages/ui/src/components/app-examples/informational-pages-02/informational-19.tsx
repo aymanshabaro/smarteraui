@@ -2,7 +2,7 @@
 
 import type { ComponentProps } from "react";
 import { FileIcon } from "@untitledui/file-icons";
-import { ArrowLeft, ArrowRight, BookOpen01, Edit01, Eye, Heart, Link01, MarkerPin02, MessageCircle01, Plus } from "@smarteraui/icons";
+import { ArrowLeft, ArrowRight, BookOpen01, Edit01, Eye, Heart, Link01, MarkerPin02, MessageCircle01, Plus } from "@properui/icons";
 import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
 import { FileUpload } from "@/components/application/file-upload/file-upload-base";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
@@ -40,7 +40,7 @@ const notableWorks = [
     { id: "white-pine-and-blue-water", title: "White Pine and Blue Water", year: "1974", cover: IMAGES.square[0]! },
 ];
 
-const author = { name: "Henry Beston", lifespan: "1888-1968", location: "Quincy, Massachusetts", website: "smartera.com/authors/henry-beston" };
+const author = { name: "Henry Beston", lifespan: "1888-1968", location: "Quincy, Massachusetts", website: "proper.example/authors/henry-beston" };
 
 const excerpt =
     "<p>The world today is sick to its thin blood for lack of elemental things, for fire before the hands, for water welling from the earth, for air, for the dear earth itself underfoot.</p>";

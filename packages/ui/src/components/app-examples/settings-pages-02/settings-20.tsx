@@ -1,6 +1,6 @@
 "use client";
 
-import { File02, LayersThree01, MessageChatCircle, SearchLg, Zap } from "@smarteraui/icons";
+import { File02, LayersThree01, MessageChatCircle, SearchLg, Zap } from "@properui/icons";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
 import { Tabs } from "@/components/application/tabs/tabs";
 import { Button } from "@/components/base/buttons/button";

@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 import { Radio as AriaRadio } from "react-aria-components";
-import { Code01 } from "@smarteraui/icons";
+import { Code01 } from "@properui/icons";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
 import { Tabs } from "@/components/application/tabs/tabs";
 import { Button } from "@/components/base/buttons/button";

@@ -36,7 +36,7 @@ describe("Marketing contact sections (part B variants)", () => {
     it("wires the contact links to mail, map and phone targets", () => {
         const { getByRole } = render(<ContactSimpleIcons01 />);
 
-        expect(getByRole("link", { name: "hi@smartera.com" })).toHaveAttribute("href", "mailto:hi@smartera.com");
+        expect(getByRole("link", { name: "hi@proper.example" })).toHaveAttribute("href", "mailto:hi@proper.example");
         expect(getByRole("link", { name: "+1 (555) 000-0000" })).toHaveAttribute("href", "tel:+15550000000");
     });
 

@@ -1,26 +1,26 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowNext, ArrowPrevious } from "@smarteraui/icons";
+import { ArrowNext, ArrowPrevious } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { SocialButton } from "@/components/base/buttons/social-button";
 import { Checkbox } from "@/components/base/checkbox/checkbox";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
-import { SmarteraLogoMinimal } from "@/components/foundations/logo/smartera-logo-minimal";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
+import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
 import { AVATARS, IMAGES, LOGOS } from "@/utils/demo-assets";
 
 const reviews = [
     {
-        quote: "We've been using Smartera to kick start every new project and can't imagine working without it.",
+        quote: "We've been using Proper to kick start every new project and can't imagine working without it.",
         author: AVATARS[4],
         role: `Lead Designer, ${LOGOS[0].name}`,
         industry: "Web Development Agency",
         portrait: IMAGES.square[0],
     },
     {
-        quote: "Smartera has saved us thousands of hours of work. We're able to spin up projects faster and take on more clients.",
+        quote: "Proper has saved us thousands of hours of work. We're able to spin up projects faster and take on more clients.",
         author: AVATARS[9],
         role: `Product Manager, ${LOGOS[5].name}`,
         industry: "Web Design Agency",
@@ -42,13 +42,13 @@ export const LoginSplitQuoteImage01 = () => {
         <section className="bg-primary grid min-h-screen lg:grid-cols-2">
             <div className="bg-primary relative flex w-full flex-1 flex-col">
                 <header className="absolute start-0 top-0 hidden p-8 lg:block">
-                    <SmarteraLogo />
+                    <ProperLogo />
                 </header>
 
                 <div className="flex flex-1 justify-center px-4 py-12 md:items-center md:px-8 md:py-0">
                     <div className="flex w-full flex-col gap-8 sm:max-w-90">
                         <div className="flex flex-col gap-6">
-                            <SmarteraLogoMinimal className="size-8 origin-center scale-[1.2] lg:hidden" />
+                            <ProperLogoMinimal className="size-8 origin-center scale-[1.2] lg:hidden" />
 
                             <div className="flex flex-col gap-2 lg:gap-3">
                                 <h1 className="text-primary md:text-display-xs text-xl font-semibold">Welcome back</h1>
@@ -97,7 +97,7 @@ export const LoginSplitQuoteImage01 = () => {
                 </div>
 
                 <footer className="absolute start-0 bottom-0 hidden p-8 pt-11 lg:block">
-                    <p className="text-tertiary text-sm">© Smartera UI 2077</p>
+                    <p className="text-tertiary text-sm">© Proper UI 2077</p>
                 </footer>
             </div>
 

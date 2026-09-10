@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail01, SearchLg } from "@smarteraui/icons";
+import { Mail01, SearchLg } from "@properui/icons";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
 import { Tabs } from "@/components/application/tabs/tabs";
 import { Avatar } from "@/components/base/avatar/avatar";
@@ -88,7 +88,7 @@ export const Settings03 = () => (
                                     isRequired
                                     label="Username"
                                     className="lg:**:data-label:hidden"
-                                    leadingAddon={<InputGroup.Prefix>smartera.com/</InputGroup.Prefix>}
+                                    leadingAddon={<InputGroup.Prefix>proper.example/</InputGroup.Prefix>}
                                 >
                                     <InputBase name="username" defaultValue={person.username.replace("@", "")} />
                                 </InputGroup>
@@ -105,7 +105,7 @@ export const Settings03 = () => (
                                     className="lg:**:data-label:hidden"
                                     leadingAddon={<InputGroup.Prefix>https://</InputGroup.Prefix>}
                                 >
-                                    <InputBase name="website" defaultValue="www.smartera.com" />
+                                    <InputBase name="website" defaultValue="www.proper.example" />
                                 </InputGroup>
                             </div>
 

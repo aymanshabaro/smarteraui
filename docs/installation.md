@@ -1,9 +1,9 @@
 # Installation
 
-Smartera UI can be consumed two ways. Both are supported; pick whichever suits the project.
+Proper UI can be consumed two ways. Both are supported; pick whichever suits the project.
 
-1. **As a package.** `pnpm add @smarteraui/ui` and import components from their subpaths. Upgrades are a version bump.
-2. **As copied-in source.** `npx smarteraui@latest add <component>` writes the component's `.tsx` into your repo. You own
+1. **As a package.** `pnpm add @properui/ui` and import components from their subpaths. Upgrades are a version bump.
+2. **As copied-in source.** `npx properui@latest add <component>` writes the component's `.tsx` into your repo. You own
    the code from that point; there is nothing to upgrade unless you ask for it.
 
 Either way the styling setup is the same, because the package ships its stylesheet and token file as source.
@@ -19,8 +19,8 @@ Either way the styling setup is the same, because the package ships its styleshe
 ## Install as a package
 
 ```bash
-pnpm add @smarteraui/ui
-# npm install @smarteraui/ui · yarn add @smarteraui/ui · bun add @smarteraui/ui
+pnpm add @properui/ui
+# npm install @properui/ui · yarn add @properui/ui · bun add @properui/ui
 ```
 
 Runtime dependencies (React Aria Components, `tailwind-merge`, `next-themes`, `recharts`, `motion`, `sonner` and the
@@ -28,14 +28,14 @@ rest) come with the package. `react`, `react-dom` and `tailwindcss` are peer dep
 
 ### Import the stylesheet
 
-`@smarteraui/ui/styles/globals.css` is a complete entry point — it imports Tailwind, the design tokens, the typography
+`@properui/ui/styles/globals.css` is a complete entry point — it imports Tailwind, the design tokens, the typography
 scale, and registers the plugins and custom variants the components rely on:
 
 ```css
 /* your global stylesheet */
-@import "@smarteraui/ui/styles/globals.css";
+@import "@properui/ui/styles/globals.css";
 
-@source "../node_modules/@smarteraui/ui/src/**/*.{ts,tsx}";
+@source "../node_modules/@properui/ui/src/**/*.{ts,tsx}";
 ```
 
 The `@source` line matters. Tailwind v4 scans your own source for class names but skips `node_modules`, so without it
@@ -44,19 +44,19 @@ project's `node_modules` from wherever that stylesheet lives.
 
 ### Framework wiring
 
-- **Next.js** — needs `transpilePackages: ["@smarteraui/ui"]` plus the two providers. See [nextjs.md](./nextjs.md).
+- **Next.js** — needs `transpilePackages: ["@properui/ui"]` plus the two providers. See [nextjs.md](./nextjs.md).
 - **Vite** — needs the `@tailwindcss/vite` plugin. See [vite.md](./vite.md).
 
 ### Import a component
 
 ```tsx
-import { Button } from "@smarteraui/ui/components/base/buttons/button";
+import { Button } from "@properui/ui/components/base/buttons/button";
 
 export const Example = () => <Button size="md">Get started</Button>;
 ```
 
-Subpath imports map one-to-one onto the source tree: `@smarteraui/ui/components/<layer>/<group>/<file>`. A root barrel
-also exists (`import { Button } from "@smarteraui/ui"`) which re-exports every component — convenient, but the subpath
+Subpath imports map one-to-one onto the source tree: `@properui/ui/components/<layer>/<group>/<file>`. A root barrel
+also exists (`import { Button } from "@properui/ui"`) which re-exports every component — convenient, but the subpath
 keeps bundles smallest.
 
 ## Install with the CLI
@@ -64,7 +64,7 @@ keeps bundles smallest.
 The CLI copies source into your project instead of adding a dependency.
 
 ```bash
-npx smarteraui@latest init
+npx properui@latest init
 ```
 
 `init` detects your framework, TypeScript setup, `src/` directory, path alias, Tailwind version and package manager,
@@ -75,8 +75,8 @@ your entry point, and `-y` to accept every default.
 Then add components one at a time:
 
 ```bash
-npx smarteraui@latest add button
-npx smarteraui@latest add button input select table
+npx properui@latest add button
+npx properui@latest add button input select table
 ```
 
 Dependencies are resolved for you — `add badge-groups` also pulls in `badges` and `dot-icon`, because those are its
@@ -154,11 +154,11 @@ Take the files from `packages/ui/src/components/...` and fix the `@/` imports to
 **Components render unstyled.** The `@source` line is missing or its relative path is wrong. Tailwind is not seeing the
 library's class names.
 
-**`Cannot use import statement outside a module` in Next.js.** Add `transpilePackages: ["@smarteraui/ui"]` to
+**`Cannot use import statement outside a module` in Next.js.** Add `transpilePackages: ["@properui/ui"]` to
 `next.config.ts`; the package publishes TSX, not compiled JS.
 
 **Theme flashes on first paint in Next.js.** Add `suppressHydrationWarning` to `<html>` — `next-themes` sets the theme
 class before React hydrates.
 
-**Tailwind v3 errors about `@theme` or `@plugin`.** Smartera UI requires Tailwind v4. The CLI stops with upgrade
+**Tailwind v3 errors about `@theme` or `@plugin`.** Proper UI requires Tailwind v4. The CLI stops with upgrade
 instructions rather than writing a broken setup.

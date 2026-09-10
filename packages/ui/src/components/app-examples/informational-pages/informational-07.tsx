@@ -14,8 +14,8 @@ import {
     Settings01,
     UploadCloud01,
     Users01,
-} from "@smarteraui/icons";
-import { Edit01, Trash01 } from "@smarteraui/icons";
+} from "@properui/icons";
+import { Edit01, Trash01 } from "@properui/icons";
 import type { NavItemDividerType, NavItemType } from "@/components/application/app-navigation/config";
 import { SidebarNavigationSectionDividers } from "@/components/application/app-navigation/sidebar-navigation/sidebar-section-dividers";
 import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
@@ -66,7 +66,7 @@ const navItems: (NavItemType | NavItemDividerType)[] = [
         ),
     },
     { label: "Customers", href: "/customers", icon: Users01 },
-    { label: "Open in browser", href: "https://smartera.example.com/", icon: LayoutAlt01 },
+    { label: "Open in browser", href: "https://proper.example.com/", icon: LayoutAlt01 },
 ];
 
 const tabs = [

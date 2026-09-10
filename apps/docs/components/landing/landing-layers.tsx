@@ -1,8 +1,8 @@
 "use client";
 
-import { Announcement01, ArrowRight, Cube01, LayoutAlt01 } from "@smarteraui/icons";
-import { Button } from "@smarteraui/ui/components/base/buttons/button";
-import { FeaturedIcon } from "@smarteraui/ui/components/foundations/featured-icon/featured-icon";
+import { Announcement01, ArrowRight, Cube01, LayoutAlt01 } from "@properui/icons";
+import { Button } from "@properui/ui/components/base/buttons/button";
+import { FeaturedIcon } from "@properui/ui/components/foundations/featured-icon/featured-icon";
 import { APP_PAGE_EXAMPLES, LAYER_COUNTS, MARKETING_PAGE_EXAMPLES, SECTION_VARIANTS } from "./content";
 
 /**

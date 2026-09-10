@@ -3,7 +3,7 @@
 import { type FC, type ReactNode, createContext, useContext } from "react";
 import type { Key as AriaKey } from "react-aria-components";
 import { Breadcrumb as AriaBreadcrumb, Breadcrumbs as AriaBreadcrumbs, Button as AriaButton, Link as AriaLink } from "react-aria-components";
-import { ChevronRight, ChevronSelectorVertical, SlashDivider } from "@smarteraui/icons";
+import { ChevronRight, ChevronSelectorVertical, SlashDivider } from "@properui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { Dropdown } from "@/components/base/dropdown/dropdown";
 import { cx, sortCx } from "@/utils/cx";

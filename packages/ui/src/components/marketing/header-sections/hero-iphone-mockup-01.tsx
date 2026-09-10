@@ -39,7 +39,7 @@ export const HeroIphoneMockup01 = () => (
                         Portfolio performance tracking made easy
                     </h1>
                     <p className="text-tertiary mt-4 text-lg text-balance md:mt-6 md:text-xl">
-                        Designed by marketers. Smartera gives you the guidance, data and innovation you need to become a better marketer.
+                        Designed by marketers. Proper gives you the guidance, data and innovation you need to become a better marketer.
                     </p>
 
                     <div className="mt-8 flex gap-3 md:mt-12">

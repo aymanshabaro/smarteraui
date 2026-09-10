@@ -3,10 +3,10 @@
 import type { ReactNode } from "react";
 import { useRef } from "react";
 import { Button as AriaButton, Dialog as AriaDialog, DialogTrigger as AriaDialogTrigger, Popover as AriaPopover } from "react-aria-components";
-import { ChevronDown, X as CloseIcon, Menu02 } from "@smarteraui/icons";
+import { ChevronDown, X as CloseIcon, Menu02 } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
-import { SmarteraLogoMinimal } from "@/components/foundations/logo/smartera-logo-minimal";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
+import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
 import { cx, sortCx } from "@/utils/cx";
 
 const styles = sortCx({
@@ -103,8 +103,8 @@ export const MarketingHeader = ({ items, isFloating = false, className }: Market
                             aria-label="Go to homepage"
                             className="outline-focus-ring rounded-xs focus-visible:outline-2 focus-visible:outline-offset-2"
                         >
-                            <SmarteraLogo className="h-7 md:max-lg:hidden" />
-                            <SmarteraLogoMinimal className="hidden h-7 md:max-lg:block" />
+                            <ProperLogo className="h-7 md:max-lg:hidden" />
+                            <ProperLogoMinimal className="hidden h-7 md:max-lg:block" />
                         </a>
 
                         <nav aria-label="Main" className="max-md:hidden">

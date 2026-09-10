@@ -19,7 +19,7 @@ import {
     Popover as AriaPopover,
     Separator as AriaSeparator,
 } from "react-aria-components";
-import { Check, ChevronRight, DotsVertical } from "@smarteraui/icons";
+import { Check, ChevronRight, DotsVertical } from "@properui/icons";
 import { cx } from "@/utils/cx";
 import { Avatar } from "../avatar/avatar";
 import { CheckboxBase } from "../checkbox/checkbox";

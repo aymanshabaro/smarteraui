@@ -1,6 +1,6 @@
 "use client";
 
-import { PlayCircle } from "@smarteraui/icons";
+import { PlayCircle } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { IMAGES } from "@/utils/demo-assets";
 

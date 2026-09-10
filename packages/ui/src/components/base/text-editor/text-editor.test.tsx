@@ -39,7 +39,10 @@ describe("TextEditor", () => {
 
     it("counts the characters left against maxLength", () => {
         render(<Demos.DefaultSm />);
-        expect(screen.getByText("964 characters left")).toBeDefined();
+        // The used count is read back from the editor rather than hard-coded, so editing the
+        // demo copy cannot fail this test; 1744 is the demo's maxLength budget.
+        const used = screen.getByRole("textbox", { name: "Article body" }).textContent?.length ?? 0;
+        expect(screen.getByText(`${1744 - used} characters left`)).toBeDefined();
     });
 
     it("renders custom hint content instead of the counter", () => {

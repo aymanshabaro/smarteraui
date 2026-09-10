@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { ChartBreakoutSquare, MessageChatCircle, MessageSmileCircle, Zap } from "@smarteraui/icons";
+import { ChartBreakoutSquare, MessageChatCircle, MessageSmileCircle, Zap } from "@properui/icons";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 import { cx, sortCx } from "@/utils/cx";
 
@@ -29,7 +29,7 @@ const rightFeatures: Feature[] = [
     {
         icon: ChartBreakoutSquare,
         title: "Manage your team with reports",
-        subtitle: "Measure what matters with Smartera's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
+        subtitle: "Measure what matters with Proper's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
     },
     {
         icon: MessageChatCircle,

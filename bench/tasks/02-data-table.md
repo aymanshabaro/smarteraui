@@ -2,7 +2,7 @@
 
 ## Prompt
 
-Paste this verbatim into the agent, in a fresh project with either Smart Era UI or the shadcn/ui baseline already installed (see `../baseline/README.md`).
+Paste this verbatim into the agent, in a fresh project with either Proper UI or the shadcn/ui baseline already installed (see `../baseline/README.md`).
 
 > Build a customers table for an admin dashboard. Show at least 25 sample rows with columns for name, email, status (e.g. Active/Invited/Suspended), and a joined date. Above the table, add a search input and a status filter. Below the table, add pagination controls. The status column should use a visually distinct badge per status. Rows should be selectable with checkboxes, including a "select all" in the header. The table should work on mobile, tablet, and desktop, and should be fully usable from the keyboard.
 

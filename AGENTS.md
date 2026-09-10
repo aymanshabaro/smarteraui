@@ -2,26 +2,26 @@
 
 Conventions for an AI assistant working in this repository. Same file Codex reads; Claude Code reads it too.
 
-If you are consuming Smartera UI in **another** project rather than developing the library itself, you only need the
+If you are consuming Proper UI in **another** project rather than developing the library itself, you only need the
 three surfaces under "Fetching components" below.
 
 ## Fetching components
 
-Do not write a Smartera UI component from memory. Fetch it.
+Do not write a Proper UI component from memory. Fetch it.
 
 ```bash
-curl https://smarteraui.com/llms.txt          # index of every docs page, as plain markdown
-curl https://smarteraui.com/r/index.json      # every registry entry: name, layer, type, dependencies
-curl https://smarteraui.com/r/buttons.json    # one entry, including its real source
-npx smarteraui@latest add buttons date-picker # write the files into the project
-npx smarteraui@latest info --json             # this project's setup: framework, aliases, installed entries
-npx smarteraui@latest agent init              # install the Smartera UI Skill for Claude, Codex, Cursor and Lovable
+curl https://properui.dev/llms.txt          # index of every docs page, as plain markdown
+curl https://properui.dev/r/index.json      # every registry entry: name, layer, type, dependencies
+curl https://properui.dev/r/buttons.json    # one entry, including its real source
+npx properui@latest add buttons date-picker # write the files into the project
+npx properui@latest info --json             # this project's setup: framework, aliases, installed entries
+npx properui@latest agent init              # install the Proper UI Skill for Claude, Codex, Cursor and Lovable
 ```
 
 `add` resolves `registryDependencies`, rewrites `@/` imports to the alias in `components.json` and installs missing npm
 packages. Prefer it over hand-copying source out of a registry payload. `info --json` is what to run before deciding
 anything — it reports whether `components.json` exists yet and what's already installed. `agent init` writes the
-portable Skill (`skills/smarteraui/SKILL.md`) into `.claude/skills/`, `.agents/skills/`, or `.cursor/rules/`, so every
+portable Skill (`skills/properui/SKILL.md`) into `.claude/skills/`, `.agents/skills/`, or `.cursor/rules/`, so every
 session after the first one gets this guidance automatically instead of relying on this file alone.
 
 ## Writing component code
@@ -39,7 +39,7 @@ session after the first one gets this guidance automatically instead of relying 
 - **Icons as component references.** `<Button iconLeading={ArrowRight}>`, not `<Button iconLeading={<ArrowRight />}>`.
   The component applies sizing and the `data-icon` attribute that its own styles target.
 - **Import from the subpath** so bundlers keep only what is used:
-  `@smarteraui/ui/components/base/buttons/button`.
+  `@properui/ui/components/base/buttons/button`.
 
 ## Repository conventions
 
@@ -47,7 +47,7 @@ These apply when changing the library itself.
 
 - kebab-case file names; one component group per folder under `packages/ui/src/components/<layer>/`.
 - React Aria imports are aliased `Aria*` (`import { Button as AriaButton } from "react-aria-components"`).
-- Class lists go through `styles = sortCx({})` from `@smarteraui/ui/utils/cx`.
+- Class lists go through `styles = sortCx({})` from `@properui/ui/utils/cx`.
 - Anything a server component may render needs `"use client"` when it exports a function or a compound-component object
   — those cannot cross the RSC boundary.
 - Every component ships a demo, a story, a test and a docs page. The test asserts zero axe violations.
@@ -71,7 +71,7 @@ pnpm build
 
 Do not document or generate code against these — they do not exist:
 
-- `smarteraui upgrade` / `smarteraui migrate`. The commands are `init`, `add`, `list`, `search`, `diff`, `login`,
+- `properui upgrade` / `properui migrate`. The commands are `init`, `add`, `list`, `search`, `diff`, `login`,
   `info` and `agent init`.
 - A browser OAuth flow for `login`. It takes `--token`, or prompts you to paste one.
 - An MCP server. It is on the [roadmap](./ROADMAP.md); the Skill and the CLI cover the same ground today.

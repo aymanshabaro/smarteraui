@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { AppStoreButton, GooglePlayButton } from "@/components/base/buttons/app-store-buttons-outline";
 import { Button } from "@/components/base/buttons/button";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { sortCx } from "@/utils/cx";
 
 const styles = sortCx({
@@ -89,9 +89,9 @@ export const FooterLarge03Brand = () => {
 
                 <div className="border-brand_alt mt-12 flex flex-col justify-between gap-6 border-t pt-8 md:mt-16 md:flex-row md:items-center">
                     {/* The mark is always the light lockup on the solid brand background. */}
-                    <SmarteraLogo className="dark-mode" />
+                    <ProperLogo className="dark-mode" />
 
-                    <p className="text-quaternary_on-brand text-sm">© 2077 Smartera. All rights reserved.</p>
+                    <p className="text-quaternary_on-brand text-sm">© 2077 Proper. All rights reserved.</p>
                 </div>
             </div>
         </footer>

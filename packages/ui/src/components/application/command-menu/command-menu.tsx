@@ -23,7 +23,7 @@ import {
     Popover as AriaPopover,
     SearchField as AriaSearchField,
 } from "react-aria-components";
-import { SearchLg } from "@smarteraui/icons";
+import { SearchLg } from "@properui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 import { cx, sortCx } from "@/utils/cx";

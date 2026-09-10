@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { Key } from "react-aria";
-import { ArrowDown, ArrowUp, Cube01, DownloadCloud02, Edit01, FilterLines, Plus, SearchLg, Sliders02, Trash01, UploadCloud02, Zap } from "@smarteraui/icons";
+import { ArrowDown, ArrowUp, Cube01, DownloadCloud02, Edit01, FilterLines, Plus, SearchLg, Sliders02, Trash01, UploadCloud02, Zap } from "@properui/icons";
 import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
 import { Table, TableCard } from "@/components/application/table/table";
 import { TablePaginationNumbered } from "@/components/application/table/table-pagination";

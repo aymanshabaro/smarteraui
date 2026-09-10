@@ -1,27 +1,27 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowNext, ArrowPrevious } from "@smarteraui/icons";
+import { ArrowNext, ArrowPrevious } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { SocialButton } from "@/components/base/buttons/social-button";
 import { Checkbox } from "@/components/base/checkbox/checkbox";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
-import { SmarteraLogoMinimal } from "@/components/foundations/logo/smartera-logo-minimal";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
+import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
 import { RatingStars } from "@/components/foundations/rating/rating-stars";
 import { AVATARS, IMAGES, LOGOS } from "@/utils/demo-assets";
 
 const reviews = [
     {
-        quote: "We've been using Smartera to kick start every new project and can't imagine working without it. It's incredible.",
+        quote: "We've been using Proper to kick start every new project and can't imagine working without it. It's incredible.",
         author: AVATARS[11],
         role: `Founder, ${LOGOS[3].name}`,
         industry: "Web Design Agency",
         portrait: IMAGES.square[2],
     },
     {
-        quote: "Smartera has saved us thousands of hours of work. We're able to spin up projects faster and take on more clients.",
+        quote: "Proper has saved us thousands of hours of work. We're able to spin up projects faster and take on more clients.",
         author: AVATARS[5],
         role: `Head of Design, ${LOGOS[0].name}`,
         industry: "Web Development Agency",
@@ -45,8 +45,8 @@ export const LoginSplitQuoteImage02 = () => {
                 <div className="flex w-full flex-col gap-8 sm:max-w-90">
                     <div className="flex flex-col gap-6">
                         <header className="start-8 top-8 lg:absolute">
-                            <SmarteraLogo className="max-lg:hidden" />
-                            <SmarteraLogoMinimal className="size-8 origin-center scale-[1.2] lg:hidden" />
+                            <ProperLogo className="max-lg:hidden" />
+                            <ProperLogoMinimal className="size-8 origin-center scale-[1.2] lg:hidden" />
                         </header>
 
                         <div className="flex flex-col gap-2 md:gap-3">
@@ -87,7 +87,7 @@ export const LoginSplitQuoteImage02 = () => {
                     </Form>
 
                     <footer className="absolute start-8 bottom-8 hidden md:flex">
-                        <p className="text-tertiary text-sm">© Smartera UI 2077</p>
+                        <p className="text-tertiary text-sm">© Proper UI 2077</p>
                     </footer>
 
                     <div className="flex justify-center gap-1 text-center">

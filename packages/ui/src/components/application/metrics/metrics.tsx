@@ -1,6 +1,6 @@
 "use client";
 
-import { Eye, TrendUp01, Zap } from "@smarteraui/icons";
+import { Eye, TrendUp01, Zap } from "@properui/icons";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 import { cx, sortCx } from "@/utils/cx";
 import type { MetricCardBaseProps, MetricCardChangeDescriptionProps, MetricCardIconProps } from "./metrics-base";

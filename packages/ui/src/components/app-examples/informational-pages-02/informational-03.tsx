@@ -2,7 +2,7 @@
 
 import type { ComponentProps } from "react";
 import { FileIcon } from "@untitledui/file-icons";
-import { ArrowLeft, FilterLines, HomeLine, Plus, SearchLg, Share04 } from "@smarteraui/icons";
+import { ArrowLeft, FilterLines, HomeLine, Plus, SearchLg, Share04 } from "@properui/icons";
 import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
 import { FileUpload } from "@/components/application/file-upload/file-upload-base";
 import { Table, TableCard } from "@/components/application/table/table";

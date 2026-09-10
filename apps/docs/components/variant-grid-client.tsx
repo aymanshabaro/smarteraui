@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ToggleButton as AriaToggleButton, ToggleButtonGroup as AriaToggleButtonGroup } from "react-aria-components";
 import { cx } from "~/lib/cx";
-import { Grid01, Rows01 } from "@smarteraui/icons";
+import { Grid01, Rows01 } from "@properui/icons";
 
 /** One card in the gallery, resolved on the server (thumbnails may not exist yet). */
 export type VariantCard = {

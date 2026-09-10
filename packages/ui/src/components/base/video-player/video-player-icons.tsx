@@ -1,5 +1,5 @@
 // TODO(orchestrator): candidate for components/foundations/play-button-icon — the glyphs below are
-// the filled transport controls used by the video player and have no equivalent in `@smarteraui/icons`.
+// the filled transport controls used by the video player and have no equivalent in `@properui/icons`.
 import type { SVGProps } from "react";
 
 /** Filled play triangle used by the poster overlay and the transport bar. */

@@ -23,7 +23,7 @@ Wrap the app in `ThemeProvider`. It wraps [`next-themes`](https://github.com/pac
 
 ```tsx
 // app/layout.tsx
-import { ThemeProvider } from "@smarteraui/ui/providers";
+import { ThemeProvider } from "@properui/ui/providers";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
@@ -55,7 +55,7 @@ Vite SPA has.
 `useTheme` is re-exported from the same module:
 
 ```tsx
-import { useTheme } from "@smarteraui/ui/providers";
+import { useTheme } from "@properui/ui/providers";
 
 const { theme, resolvedTheme, setTheme } = useTheme();
 ```
@@ -69,9 +69,9 @@ A minimal toggle:
 ```tsx
 "use client";
 
-import { Moon01, Sun } from "@smarteraui/icons";
-import { ButtonUtility } from "@smarteraui/ui/components/base/buttons/button-utility";
-import { useTheme } from "@smarteraui/ui/providers";
+import { Moon01, Sun } from "@properui/icons";
+import { ButtonUtility } from "@properui/ui/components/base/buttons/button-utility";
+import { useTheme } from "@properui/ui/providers";
 
 export const ThemeToggle = () => {
     const { resolvedTheme, setTheme } = useTheme();

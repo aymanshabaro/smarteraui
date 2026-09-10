@@ -98,9 +98,9 @@ describe("highlight", () => {
     });
 
     it("marks the leading word of a shell command as a call", () => {
-        expect(typesOf(highlight("npm install @smarteraui/components", "bash")[0])).toEqual([
+        expect(typesOf(highlight("npm install @properui/components", "bash")[0])).toEqual([
             ["function", "npm"],
-            ["plain", " install @smarteraui/components"],
+            ["plain", " install @properui/components"],
         ]);
     });
 

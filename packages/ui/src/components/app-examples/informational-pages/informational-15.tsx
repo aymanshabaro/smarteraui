@@ -11,7 +11,7 @@ import {
     Rows01,
     SearchLg,
     Settings01,
-} from "@smarteraui/icons";
+} from "@properui/icons";
 import type { NavItemDividerType, NavItemType } from "@/components/application/app-navigation/config";
 import { SidebarNavigationSectionDividers } from "@/components/application/app-navigation/sidebar-navigation/sidebar-section-dividers";
 import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
@@ -89,7 +89,7 @@ const events: SourceEvent[] = [
 ];
 
 const schemaSnippet = `// Imports
-import mongoose, { Schema } from 'smartera'
+import mongoose, { Schema } from 'mongoose'
 
 // Collection name
 export const collection = 'Design'
@@ -106,7 +106,7 @@ const schema = new Schema({
 }, {timestamps: true})
 
 // Model
-export default smartera.model(collection, schema,
+export default mongoose.model(collection, schema,
   collection)
 `;
 

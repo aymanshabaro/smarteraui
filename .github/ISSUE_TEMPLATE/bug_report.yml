@@ -1,5 +1,5 @@
 name: Bug report
-description: Something in Smartera UI does not work as documented
+description: Something in Proper UI does not work as documented
 title: "[bug]: "
 labels: ["bug", "needs triage"]
 body:
@@ -8,7 +8,7 @@ body:
           value: |
               Thanks for filing a report. A minimal reproduction gets a bug fixed far faster than a description of it.
 
-              Please do not report security vulnerabilities here — see [SECURITY.md](https://github.com/aymanshabaro/smarteraui/blob/main/SECURITY.md).
+              Please do not report security vulnerabilities here — see [SECURITY.md](https://github.com/properui/properui/blob/main/SECURITY.md).
 
     - type: checkboxes
       id: preflight
@@ -39,7 +39,7 @@ body:
               A link to a minimal repro (StackBlitz, CodeSandbox, a small repo) or the smallest component tree that shows the problem.
           render: tsx
           placeholder: |
-              import { Select } from "@smarteraui/ui/components/base/select/select";
+              import { Select } from "@properui/ui/components/base/select/select";
 
               export const Repro = () => (
                   <Select items={[{ id: "1", label: "One" }]}>{/* … */}</Select>
@@ -64,9 +64,9 @@ body:
       attributes:
           label: Which part of the project?
           options:
-              - "@smarteraui/ui — a component"
-              - "@smarteraui/ui — styles, tokens or theming"
-              - "smarteraui — the CLI"
+              - "@properui/ui — a component"
+              - "@properui/ui — styles, tokens or theming"
+              - "properui — the CLI"
               - Documentation site
               - Documentation content
               - Other / not sure
@@ -100,12 +100,12 @@ body:
       id: versions
       attributes:
           label: Versions
-          description: Output of `npx envinfo --system --npmPackages "{react,react-dom,next,vite,tailwindcss,@smarteraui/*,react-aria-components}" --binaries --browsers`
+          description: Output of `npx envinfo --system --npmPackages "{react,react-dom,next,vite,tailwindcss,@properui/*,react-aria-components}" --binaries --browsers`
           render: shell
           placeholder: |
               System: macOS 15.1
               Binaries: Node 20.11.0, pnpm 9.12.0
-              npmPackages: @smarteraui/ui 0.1.0, react 19.0.0, tailwindcss 4.3.3
+              npmPackages: @properui/ui 0.1.0, react 19.0.0, tailwindcss 4.3.3
       validations:
           required: true
 

@@ -1,7 +1,7 @@
 "use client";
 
 import type { FC } from "react";
-import { BarChartSquare02, Heart, HomeLine, LayoutAlt01, Map01, MarkerPin01, Rows01, SearchLg, Settings01, Stars01, Users01, Wifi } from "@smarteraui/icons";
+import { BarChartSquare02, Heart, HomeLine, LayoutAlt01, Map01, MarkerPin01, Rows01, SearchLg, Settings01, Stars01, Users01, Wifi } from "@properui/icons";
 import type { NavItemType } from "@/components/application/app-navigation/config";
 import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
 import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";

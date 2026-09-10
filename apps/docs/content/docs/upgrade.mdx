@@ -1,42 +1,42 @@
 ---
 title: Upgrade guide
 section: docs
-description: How versioning works for Smartera UI, how to update the npm package, and how to update components you've copied into your project with the CLI.
-metaTitle: Upgrade guide | Smartera UI
-metaDescription: Understand semantic versioning for @smarteraui/ui, update the npm package, and pull component updates with the smarteraui CLI's diff and add commands.
+description: How versioning works for Proper UI, how to update the npm package, and how to update components you've copied into your project with the CLI.
+metaTitle: Upgrade guide | Proper UI
+metaDescription: Understand semantic versioning for @properui/ui, update the npm package, and pull component updates with the properui CLI's diff and add commands.
 ---
 
-Smartera UI is at `v0.1.0` and has not had a public release yet, so there is no migration history to document. This page explains how versioning works today and how you'll update once releases start shipping.
+Proper UI is at `v0.1.0` and has not had a public release yet, so there is no migration history to document. This page explains how versioning works today and how you'll update once releases start shipping.
 
 ## Versioning
 
-`@smarteraui/ui` and the `smarteraui` CLI are versioned and released independently, each following semantic versioning. Releases are managed with [Changesets](https://github.com/changesets/changesets): a change lands with a changeset describing its impact (patch, minor, or major), and publishing the release regenerates the changelog from those changesets.
+`@properui/ui` and the `properui` CLI are versioned and released independently, each following semantic versioning. Releases are managed with [Changesets](https://github.com/changesets/changesets): a change lands with a changeset describing its impact (patch, minor, or major), and publishing the release regenerates the changelog from those changesets.
 
-While the project is on `0.x`, any release may include a breaking change — semver doesn't promise stability below `1.0.0`. Once `@smarteraui/ui` reaches `1.0.0`, breaking changes will only ship in a major-version bump, and this page will gain a `## vX.Y.Z` section for each one, documenting exactly what changed and how to adapt.
+While the project is on `0.x`, any release may include a breaking change — semver doesn't promise stability below `1.0.0`. Once `@properui/ui` reaches `1.0.0`, breaking changes will only ship in a major-version bump, and this page will gain a `## vX.Y.Z` section for each one, documenting exactly what changed and how to adapt.
 
 ## Updating the npm package
 
-If your project depends on `@smarteraui/ui` as an npm package, update it the normal way:
+If your project depends on `@properui/ui` as an npm package, update it the normal way:
 
 ```bash
-npm install @smarteraui/ui@latest
+npm install @properui/ui@latest
 ```
 
-Or your package manager's equivalent (`pnpm up @smarteraui/ui`, `yarn up @smarteraui/ui`). Check the package's published release notes before upgrading across a major version.
+Or your package manager's equivalent (`pnpm up @properui/ui`, `yarn up @properui/ui`). Check the package's published release notes before upgrading across a major version.
 
 ## Updating components you've copied in
 
 The CLI copies component source directly into your project, so there's no dependency version to bump for those files — you update them by pulling in the current registry version. Start with `diff` to see what changed:
 
 ```bash
-npx smarteraui@latest diff              # every installed component
-npx smarteraui@latest diff button       # just one
+npx properui@latest diff              # every installed component
+npx properui@latest diff button       # just one
 ```
 
 `diff` compares your local files against the current registry version and shows exactly what's different, so you can decide whether to merge the change by hand or take the upstream file as-is. To take it as-is, re-run `add` with `--overwrite`:
 
 ```bash
-npx smarteraui@latest add button --overwrite
+npx properui@latest add button --overwrite
 ```
 
 `--overwrite` replaces the local file entirely — it doesn't merge. Review the `diff` output first if you've customized the component, or you'll lose those edits.
@@ -79,7 +79,7 @@ There's no `upgrade` or `migrate` command today, and this page won't describe on
         },
         {
             question: "Can I pin an older version?",
-            answer: "components.json doesn't have a version field to pin — the CLI always resolves against whatever registry it's pointed at. Pin @smarteraui/ui itself in package.json the way you'd pin any npm dependency.",
+            answer: "components.json doesn't have a version field to pin — the CLI always resolves against whatever registry it's pointed at. Pin @properui/ui itself in package.json the way you'd pin any npm dependency.",
         },
     ]}
 />

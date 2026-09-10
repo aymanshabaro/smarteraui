@@ -164,7 +164,7 @@ Landmarks that can appear twice in one document (`<nav>`, `<aside>`, `<header>`)
 Run them:
 
 ```bash
-pnpm --filter @smarteraui/ui test
+pnpm --filter @properui/ui test
 ```
 
 ## 6. Docs page
@@ -176,7 +176,7 @@ Add an MDX file under `apps/docs/content/<section>/<slug>.mdx`:
 title: Switch components
 section: base
 description: Accessible React switch components built with React Aria and styled with Tailwind CSS.
-metaTitle: React switch components | Smartera UI
+metaTitle: React switch components | Proper UI
 metaDescription: Accessible React switch components built with React Aria and styled with Tailwind CSS.
 install: switches
 source: packages/ui/src/components/base/switches

@@ -1,9 +1,9 @@
 "use client";
 
-import { CheckCircle, Terminal } from "@smarteraui/icons";
-import { CodeSnippet } from "@smarteraui/ui/components/application/code-snippet/code-snippet";
-import { Button } from "@smarteraui/ui/components/base/buttons/button";
-import { FeaturedIcon } from "@smarteraui/ui/components/foundations/featured-icon/featured-icon";
+import { CheckCircle, Terminal } from "@properui/icons";
+import { CodeSnippet } from "@properui/ui/components/application/code-snippet/code-snippet";
+import { Button } from "@properui/ui/components/base/buttons/button";
+import { FeaturedIcon } from "@properui/ui/components/foundations/featured-icon/featured-icon";
 import { COMPOSABLE_VARIANTS, LLMS_TXT_URL, REGISTRY_ENTRIES, REGISTRY_URL } from "./content";
 
 /**
@@ -25,7 +25,7 @@ const code = [
     `curl ${REGISTRY_URL}/buttons.json`,
     "",
     "# 3. write the files into the project",
-    "npx smarteraui@latest add buttons date-picker",
+    "npx properui@latest add buttons date-picker",
 ].join("\n");
 
 const bullets = [
@@ -44,7 +44,7 @@ export const LandingAgents = () => (
                     Your agent does not have to guess
                 </h2>
                 <p className="text-md text-tertiary mt-2 md:mt-4 md:text-lg">
-                    A model writing UI from memory invents class names, props and markup that look plausible and do not compile. Smartera UI is readable by
+                    A model writing UI from memory invents class names, props and markup that look plausible and do not compile. Proper UI is readable by
                     machines on purpose: a JSON registry, a markdown mirror of every page, and a CLI that writes the files. Nothing here is specific to one
                     assistant — anything that can fetch a URL or run a shell command can use it.
                 </p>
@@ -62,7 +62,7 @@ export const LandingAgents = () => (
             </div>
 
             <div className="w-full min-w-0 flex-1 self-center">
-                <CodeSnippet isFramed code={code} language="bash" aria-label="How an assistant uses Smartera UI" />
+                <CodeSnippet isFramed code={code} language="bash" aria-label="How an assistant uses Proper UI" />
             </div>
         </div>
     </section>

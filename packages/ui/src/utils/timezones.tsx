@@ -1,6 +1,6 @@
 "use client";
 
-import { Clock } from "@smarteraui/icons";
+import { Clock } from "@properui/icons";
 import type { SelectItemType } from "@/utils/select-item-type";
 
 /**

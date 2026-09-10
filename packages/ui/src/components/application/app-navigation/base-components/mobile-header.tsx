@@ -8,8 +8,8 @@ import {
     Modal as AriaModal,
     ModalOverlay as AriaModalOverlay,
 } from "react-aria-components";
-import { X as CloseIcon, Menu02 } from "@smarteraui/icons";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { X as CloseIcon, Menu02 } from "@properui/icons";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { cx } from "@/utils/cx";
 
 export const MobileNavigationHeader = ({ children }: PropsWithChildren) => {
@@ -23,7 +23,7 @@ export const MobileNavigationHeader = ({ children }: PropsWithChildren) => {
              */}
             <nav aria-label="Mobile navigation" className="lg:hidden">
                 <header className="border-secondary bg-primary flex h-14 items-center justify-between border-b p-3 ps-4">
-                    <SmarteraLogo className="h-6" />
+                    <ProperLogo className="h-6" />
 
                     <AriaButton
                         aria-label="Expand navigation menu"

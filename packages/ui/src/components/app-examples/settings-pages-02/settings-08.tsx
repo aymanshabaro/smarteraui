@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment } from "react";
-import { Plus } from "@smarteraui/icons";
+import { Plus } from "@properui/icons";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
 import { Table, TableCard } from "@/components/application/table/table";
 import { Avatar } from "@/components/base/avatar/avatar";

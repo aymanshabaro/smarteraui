@@ -12,7 +12,7 @@ export const CtaSplitImage03 = () => (
                         <span className="max-md:hidden">Start your 30-day free trial</span>
                         <span className="md:hidden">Start your free trial</span>
                     </h2>
-                    <p className="text-tertiary mt-4 text-lg md:mt-5 md:text-xl">Join over 4,000+ startups already growing with Smartera.</p>
+                    <p className="text-tertiary mt-4 text-lg md:mt-5 md:text-xl">Join over 4,000+ startups already growing with Proper.</p>
 
                     <div className="mt-8 flex w-full flex-col-reverse gap-3 md:w-auto md:flex-row">
                         <Button size="xl" color="secondary">

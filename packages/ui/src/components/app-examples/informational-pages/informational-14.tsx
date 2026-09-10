@@ -17,7 +17,7 @@ import {
     Rows01,
     Stars02,
     Users01,
-} from "@smarteraui/icons";
+} from "@properui/icons";
 import type { NavItemType } from "@/components/application/app-navigation/config";
 import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
 import { MessageComposer } from "@/components/application/messaging/message-composer";

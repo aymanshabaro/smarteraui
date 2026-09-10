@@ -1,4 +1,4 @@
-import { ChartBreakoutSquare, MessageChatCircle, MessageSmileCircle, Zap } from "@smarteraui/icons";
+import { ChartBreakoutSquare, MessageChatCircle, MessageSmileCircle, Zap } from "@properui/icons";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 import { IPhoneMockup } from "@/components/shared-assets/mockups/iphone-mockup";
 import { IMAGES } from "@/utils/demo-assets";
@@ -17,7 +17,7 @@ const features = [
     },
     {
         title: "Manage your team with reports",
-        subtitle: "Measure what matters with Smartera's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
+        subtitle: "Measure what matters with Proper's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
         icon: ChartBreakoutSquare,
     },
     {

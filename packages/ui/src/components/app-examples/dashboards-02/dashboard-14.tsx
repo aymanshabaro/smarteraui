@@ -1,6 +1,6 @@
 "use client";
 
-import { Edit01, Plus, RefreshCcw01 } from "@smarteraui/icons";
+import { Edit01, Plus, RefreshCcw01 } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { ButtonUtility } from "@/components/base/buttons/button-utility";
 import { CreditCard } from "@/components/shared-assets/credit-card/credit-card";
@@ -69,11 +69,11 @@ export const Dashboard14 = () => (
                         <CreditCard
                             type="transparent-gradient"
                             width={260}
-                            company="Smartera."
+                            company="Proper."
                             cardHolder={owner.name.toUpperCase()}
                             className="absolute start-0 top-2 -rotate-6"
                         />
-                        <CreditCard type="gray-dark" width={260} company="Smartera." cardHolder={owner.name.toUpperCase()} className="absolute start-8 top-6" />
+                        <CreditCard type="gray-dark" width={260} company="Proper." cardHolder={owner.name.toUpperCase()} className="absolute start-8 top-6" />
                     </div>
 
                     <section className="flex flex-col gap-4">

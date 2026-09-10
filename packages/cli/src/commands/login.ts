@@ -1,5 +1,5 @@
 /**
- * `smarteraui login` — stores a registry token at `~/.smarteraui/auth.json`.
+ * `properui login` — stores a registry token at `~/.properui/auth.json`.
  * Only needed for a private registry; the public one is anonymous.
  *
  * Spec: docs/cli.md
@@ -31,7 +31,7 @@ export async function runLogin(options: LoginOptions): Promise<void> {
     let token = options.token ?? "";
     if (!token) {
         if (!canPrompt() || options.yes) {
-            log.error("No token given. Pass --token <token>, or run `smarteraui login` in an interactive terminal.");
+            log.error("No token given. Pass --token <token>, or run `properui login` in an interactive terminal.");
             process.exitCode = 1;
             return;
         }

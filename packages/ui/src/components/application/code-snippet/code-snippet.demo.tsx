@@ -3,7 +3,7 @@
 import { CodeSnippet } from "./code-snippet";
 
 const schemaSnippet = `// Imports
-import mongoose, { Schema } from 'smartera'
+import mongoose, { Schema } from 'mongoose'
 
 // Collection name
 export const collection = 'Design'
@@ -21,7 +21,7 @@ const schema = new Schema({
 }, {timestamps: true})
 
 // Model
-export default smartera.model(collection, schema, collection)`;
+export default mongoose.model(collection, schema, collection)`;
 
 const colorsSnippet = `export const colors = {
   current: "currentColor",
@@ -63,9 +63,9 @@ const colorsSnippet = `export const colors = {
 };`;
 
 const installTabs = [
-    { id: "npm", label: "npm", code: "npm install @smarteraui/components", language: "bash" as const },
-    { id: "yarn", label: "yarn", code: "yarn add @smarteraui/components", language: "bash" as const },
-    { id: "bun", label: "bun", code: "bun add @smarteraui/components", language: "bash" as const },
+    { id: "npm", label: "npm", code: "npm install @properui/components", language: "bash" as const },
+    { id: "yarn", label: "yarn", code: "yarn add @properui/components", language: "bash" as const },
+    { id: "bun", label: "bun", code: "bun add @properui/components", language: "bash" as const },
 ];
 
 export const CodeSnippetExample = () => (

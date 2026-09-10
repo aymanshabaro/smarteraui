@@ -8,8 +8,8 @@ import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 
 const nextConfig: NextConfig = {
     pageExtensions: ["ts", "tsx", "mdx"],
-    transpilePackages: ["@smarteraui/ui"],
-    experimental: { optimizePackageImports: ["@smarteraui/icons"] },
+    transpilePackages: ["@properui/ui"],
+    experimental: { optimizePackageImports: ["@properui/icons"] },
     // Plain-markdown twin of every docs route: /components/buttons.md, /docs/theming.md, …
     async rewrites() {
         return [{ source: "/:path*.md", destination: "/api/markdown/:path*" }];

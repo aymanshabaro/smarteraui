@@ -1,6 +1,6 @@
 "use client";
 
-import { Monitor01, Plus, SearchLg, UploadCloud02, UserSquare, Users01 } from "@smarteraui/icons";
+import { Monitor01, Plus, SearchLg, UploadCloud02, UserSquare, Users01 } from "@properui/icons";
 import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
 import { FilterBar } from "@/components/application/filter-bar/filter-bar";
 import { MetricChart02 } from "@/components/application/metrics/metrics";

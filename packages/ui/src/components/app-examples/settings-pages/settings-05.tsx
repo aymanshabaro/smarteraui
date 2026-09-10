@@ -1,6 +1,6 @@
 "use client";
 
-import { Laptop01 } from "@smarteraui/icons";
+import { Laptop01 } from "@properui/icons";
 import { FeaturedCardMessage } from "@/components/application/app-navigation/base-components/featured-cards";
 import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
 import { SectionFooter } from "@/components/application/section-footers/section-footers";

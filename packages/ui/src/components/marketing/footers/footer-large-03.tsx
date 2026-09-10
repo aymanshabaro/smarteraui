@@ -1,7 +1,7 @@
 import { Badge } from "@/components/base/badges/badges";
 import { AppStoreButton, GooglePlayButton } from "@/components/base/buttons/app-store-buttons";
 import { Button } from "@/components/base/buttons/button";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { sortCx } from "@/utils/cx";
 
 const styles = sortCx({
@@ -88,9 +88,9 @@ export const FooterLarge03 = () => {
                 </nav>
 
                 <div className="border-secondary mt-12 flex flex-col justify-between gap-6 border-t pt-8 md:mt-16 md:flex-row md:items-center">
-                    <SmarteraLogo className="h-7 w-min" />
+                    <ProperLogo className="h-7 w-min" />
 
-                    <p className="text-quaternary text-sm">© 2077 Smartera. All rights reserved.</p>
+                    <p className="text-quaternary text-sm">© 2077 Proper. All rights reserved.</p>
                 </div>
             </div>
         </footer>

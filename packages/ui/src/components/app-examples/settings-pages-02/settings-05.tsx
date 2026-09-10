@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment } from "react";
-import { InfoCircle, Monitor04, Phone01 } from "@smarteraui/icons";
+import { InfoCircle, Monitor04, Phone01 } from "@properui/icons";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
 import { Tabs } from "@/components/application/tabs/tabs";
 import { BadgeWithDot } from "@/components/base/badges/badges";

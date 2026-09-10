@@ -1,6 +1,6 @@
 "use client";
 
-import { CurrencyDollar, Send01 } from "@smarteraui/icons";
+import { CurrencyDollar, Send01 } from "@properui/icons";
 import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
 import { MetricChangeIndicator } from "@/components/application/metrics/metrics-base";
 import { Button } from "@/components/base/buttons/button";
@@ -28,12 +28,12 @@ const cards = [
 const deposits = [
     { icon: VisaIcon, label: "Visa ending in 1234", detail: "Expiry 06/2028", amount: "$244.00" },
     { icon: MastercardIcon, label: "Mastercard ending in 5678", detail: "Expiry 06/2028", amount: "$326.00" },
-    { icon: StripeIcon, label: "Stripe deposit", detail: "billing@smartera.com", amount: "$408.00" },
+    { icon: StripeIcon, label: "Stripe deposit", detail: "billing@proper.example", amount: "$408.00" },
     { icon: VisaIcon, label: "Visa ending in 1234", detail: "Expiry 06/2028", amount: "$628.00" },
     { icon: PayPalIcon, label: "PayPal deposit", detail: avatar(8).email, amount: "$166.00" },
     { icon: ApplePayIcon, label: "Apple Pay", detail: avatar(5).email, amount: "$250.00" },
     { icon: VisaIcon, label: "Visa ending in 1234", detail: "Expiry 06/2028", amount: "$144.00" },
-    { icon: StripeIcon, label: "Stripe deposit", detail: "billing@smartera.com", amount: "$408.00" },
+    { icon: StripeIcon, label: "Stripe deposit", detail: "billing@proper.example", amount: "$408.00" },
 ];
 
 /** Banking dashboard: account gauges, a balance trend, the card wallet and the deposit ledger. */
@@ -125,7 +125,7 @@ export const Dashboard13 = () => (
                             <ul className="flex flex-col gap-5 md:flex-row">
                                 {cards.map((card) => (
                                     <li key={card.type} className="flex flex-1 flex-col gap-4">
-                                        <CreditCard type={card.type} width={260} company="Smartera." cardHolder={owner.name.toUpperCase()} />
+                                        <CreditCard type={card.type} width={260} company="Proper." cardHolder={owner.name.toUpperCase()} />
 
                                         <div className="flex flex-col gap-2">
                                             <div className="flex justify-between gap-4">

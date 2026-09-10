@@ -1,6 +1,6 @@
 "use client";
 
-import { Copy01, DownloadCloud02, Edit04, FaceSmile, ItalicSquare, Microphone02, Paperclip, Recording02, RefreshCcw02, Stars02 } from "@smarteraui/icons";
+import { Copy01, DownloadCloud02, Edit04, FaceSmile, ItalicSquare, Microphone02, Paperclip, Recording02, RefreshCcw02, Stars02 } from "@properui/icons";
 import { IMAGES, avatar } from "@/utils/demo-assets";
 import { MessageComposer } from "./message-composer";
 import { MessageStatus as MessageStatusIndicator } from "./message-status";
@@ -156,9 +156,9 @@ export const MessageLinkPreview = () => (
     <MessageList className="max-w-90">
         <Message name={phoenix.name} avatarSrc={phoenix.src} status="online" time="Friday 2:20pm" dateTime="2027-01-22T14:20">
             <Message.Bubble actions={bubbleActions}>
-                <Message.LinkPreview src={preview.src} alt="Smartera UI link preview" />
-                <a href="https://www.smartera.com" target="_blank" rel="noopener noreferrer">
-                    https://www.smartera.com
+                <Message.LinkPreview src={preview.src} alt="Proper UI link preview" />
+                <a href="https://www.proper.example" target="_blank" rel="noopener noreferrer">
+                    https://www.proper.example
                 </a>
             </Message.Bubble>
         </Message>
@@ -170,11 +170,11 @@ export const MessageLinkMinimal = () => (
         <Message name={phoenix.name} avatarSrc={phoenix.src} status="online" time="Friday 2:20pm" dateTime="2027-01-22T14:20">
             <Message.Bubble actions={bubbleActions}>
                 <Message.LinkCard
-                    title="Smartera UI — Figma UI Kit and Design System"
-                    description="Smartera UI is the largest UI kit and design system for Figma in the world. Kickstart any project, save thousands of hours, and level up as a designer."
+                    title="Proper UI — Figma UI Kit and Design System"
+                    description="Proper UI is the largest UI kit and design system for Figma in the world. Kickstart any project, save thousands of hours, and level up as a designer."
                 />
-                <a href="https://www.smartera.com" target="_blank" rel="noopener noreferrer">
-                    https://www.smartera.com
+                <a href="https://www.proper.example" target="_blank" rel="noopener noreferrer">
+                    https://www.proper.example
                 </a>
             </Message.Bubble>
         </Message>

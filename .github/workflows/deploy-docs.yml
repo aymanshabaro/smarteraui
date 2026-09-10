@@ -1,13 +1,13 @@
 name: Deploy docs
 
-# Deploys apps/docs to Cloudflare Workers (worker `smarteraui-docs`, https://smarteraui.com)
+# Deploys apps/docs to Cloudflare Workers (worker `properui-docs`, https://properui.dev)
 # via the OpenNext Cloudflare adapter.
 #
 # Required repository secrets (Settings → Secrets and variables → Actions → New repository secret):
 #   CLOUDFLARE_API_TOKEN   — API token with the "Edit Cloudflare Workers" template permissions
 #                            (Account: Workers Scripts:Edit, Account: Account Settings:Read,
 #                            User: Memberships:Read; add Zone: Workers Routes:Edit and
-#                            Zone: DNS:Edit once the smarteraui.com custom domains are enabled).
+#                            Zone: DNS:Edit once the properui.dev custom domains are enabled).
 #   CLOUDFLARE_ACCOUNT_ID  — the account ID from the Cloudflare dashboard sidebar.
 #
 # No other secrets are needed. See apps/docs/DEPLOYMENT.md.
@@ -33,7 +33,7 @@ jobs:
 
             - run: pnpm install --frozen-lockfile
 
-            # Workspace packages the docs site reads at build time (@smarteraui/ui) and the
+            # Workspace packages the docs site reads at build time (@properui/ui) and the
             # component registry the /r/*.json routes are prerendered from.
             - run: pnpm build:packages
             - run: pnpm registry:build

@@ -1,6 +1,6 @@
 "use client";
 
-import { SearchLg } from "@smarteraui/icons";
+import { SearchLg } from "@properui/icons";
 import { CalendarAppHeader, EventChip, MONTH_EVENTS, MONTH_GRID, WEEKDAYS_SHORT } from "@/components/application/date-picker/calendar-app-shared";
 import { Tabs } from "@/components/application/tabs/tabs";
 import { Input } from "@/components/base/input/input";

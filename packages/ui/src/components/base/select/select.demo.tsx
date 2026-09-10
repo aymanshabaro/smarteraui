@@ -1,7 +1,7 @@
 "use client";
 
 import { useListData as AriaUseListData } from "react-aria-components";
-import { User01 } from "@smarteraui/icons";
+import { User01 } from "@properui/icons";
 import { Dot } from "@/components/foundations/dot-icon";
 import { AVATARS } from "@/utils/demo-assets";
 import { Select } from "./select";

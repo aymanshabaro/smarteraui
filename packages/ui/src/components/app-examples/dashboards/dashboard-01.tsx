@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, FilterLines, PlusCircle, UserPlus01 } from "@smarteraui/icons";
+import { ArrowUpRight, FilterLines, PlusCircle, UserPlus01 } from "@properui/icons";
 import { FeaturedCardImage } from "@/components/application/app-navigation/base-components/featured-cards";
 import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
 import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";

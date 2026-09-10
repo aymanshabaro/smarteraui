@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { Check, LayersThree01, LayersTwo01, Zap } from "@smarteraui/icons";
+import { Check, LayersThree01, LayersTwo01, Zap } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 
@@ -60,7 +60,7 @@ export const PricingSectionSimpleCards01 = () => (
             <div className="flex w-full max-w-3xl flex-col">
                 <span className="text-brand-secondary md:text-md text-sm font-semibold">Pricing</span>
                 <h2 className="text-display-sm text-primary md:text-display-md mt-3 font-semibold">Simple, transparent pricing</h2>
-                <p className="text-tertiary mt-4 text-lg md:mt-5 md:text-xl">We believe Smartera should be accessible to all companies, no matter the size.</p>
+                <p className="text-tertiary mt-4 text-lg md:mt-5 md:text-xl">We believe Proper should be accessible to all companies, no matter the size.</p>
             </div>
 
             <div className="mt-12 grid w-full grid-cols-1 gap-4 md:mt-16 md:grid-cols-2 md:gap-8 xl:grid-cols-3">

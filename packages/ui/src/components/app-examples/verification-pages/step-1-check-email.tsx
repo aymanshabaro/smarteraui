@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, Mail01 } from "@smarteraui/icons";
+import { ArrowLeft, Mail01 } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 import { AVATARS } from "@/utils/demo-assets";

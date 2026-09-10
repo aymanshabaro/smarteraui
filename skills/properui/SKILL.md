@@ -1,13 +1,13 @@
 ---
-name: smarteraui
-description: Use when building or editing UI screens, pages, forms, or components in a project that uses (or could use) Smartera UI (@smarteraui/ui) — before writing any new JSX/TSX markup by hand. Covers checking the registry for an existing component or full-page example, inspecting the project's Smartera UI setup, installing with the CLI instead of hand-copying source, and the accessibility/token/RTL rules the installed code must keep. Trigger on "build a settings page", "add a form", "make a dashboard", "add a button/modal/table", or any request to create or modify UI in a React/Next.js/Vite project.
+name: properui
+description: Use when building or editing UI screens, pages, forms, or components in a project that uses (or could use) Proper UI (@properui/ui) — before writing any new JSX/TSX markup by hand. Covers checking the registry for an existing component or full-page example, inspecting the project's Proper UI setup, installing with the CLI instead of hand-copying source, and the accessibility/token/RTL rules the installed code must keep. Trigger on "build a settings page", "add a form", "make a dashboard", "add a button/modal/table", or any request to create or modify UI in a React/Next.js/Vite project.
 license: MIT
 ---
 
-# Smartera UI
+# Proper UI
 
-Smartera UI (`@smarteraui/ui`) is a registry of React Aria + Tailwind v4 components distributed as
-source, not a runtime package you import blindly. The `smarteraui` CLI copies the files you ask for
+Proper UI (`@properui/ui`) is a registry of React Aria + Tailwind v4 components distributed as
+source, not a runtime package you import blindly. The `properui` CLI copies the files you ask for
 into the project and rewrites their imports to fit. Follow these steps, in order, every time UI work
 comes up.
 
@@ -16,14 +16,14 @@ comes up.
 Before adding or writing anything, run:
 
 ```bash
-npx smarteraui@latest info --json
+npx properui@latest info --json
 ```
 
 This reports whether the project is already set up (framework, Tailwind version, `components.json`
 aliases, theme CSS path, which registry entries are already installed, and the installed
-`@smarteraui/ui` / `smarteraui` versions). Read it before deciding anything else:
+`@properui/ui` / `properui` versions). Read it before deciding anything else:
 
-- No `components.json` → run `npx smarteraui@latest init -y` first. Do not hand-write
+- No `components.json` → run `npx properui@latest init -y` first. Do not hand-write
   `components.json`, `utils/cx.ts`, the theme token file, or the `ThemeProvider` wiring — `init`
   generates all of it correctly for the detected framework.
 - `components.json` exists → note the `aliases.components` value (often `@/components`, sometimes a
@@ -37,9 +37,9 @@ Never write a component's markup from memory or invent your own version of somet
 already has. Check first:
 
 ```bash
-npx smarteraui@latest search "<what you need>"     # fuzzy match over names, titles, examples
-npx smarteraui@latest list --layer base             # browse by layer: base, application, marketing
-npx smarteraui@latest list --type example            # full-page examples specifically
+npx properui@latest search "<what you need>"     # fuzzy match over names, titles, examples
+npx properui@latest list --layer base             # browse by layer: base, application, marketing
+npx properui@latest list --type example            # full-page examples specifically
 ```
 
 Only write custom markup when the search genuinely comes up empty. If it does, still build the
@@ -57,8 +57,8 @@ one-off styling.
   example.
 
 ```bash
-npx smarteraui@latest add example settings-01
-npx smarteraui@latest add button input select
+npx properui@latest add example settings-01
+npx properui@latest add button input select
 ```
 
 `add` resolves `registryDependencies` recursively (installing a component's own component
@@ -68,15 +68,15 @@ of the same name is a no-op unless you pass `--overwrite`; never pass `--overwri
 a human has since edited without checking `diff` first:
 
 ```bash
-npx smarteraui@latest diff <name>     # see local modifications before overwriting
+npx properui@latest diff <name>     # see local modifications before overwriting
 ```
 
 ## 4. Never mix component systems
 
-Once a screen uses Smartera UI components, keep using Smartera UI components for the rest of that
+Once a screen uses Proper UI components, keep using Proper UI components for the rest of that
 screen — don't drop in a different UI library's `<Button>` or a hand-rolled equivalent alongside
 installed ones. If the project already has another design system in place, ask before introducing
-Smartera UI into it rather than mixing the two silently.
+Proper UI into it rather than mixing the two silently.
 
 ## 5. Write code that matches the installed conventions
 
@@ -100,7 +100,7 @@ page shell, a piece the registry doesn't have — must follow them too:
 - **Icons as component references.** `<Button iconLeading={ArrowRight}>`, not
   `<Button iconLeading={<ArrowRight />}>` — the component applies its own sizing and the `data-icon`
   attribute its styles target.
-- **Import from the component's subpath**, e.g. `@smarteraui/ui/components/base/buttons/button`, so
+- **Import from the component's subpath**, e.g. `@properui/ui/components/base/buttons/button`, so
   bundlers keep only what's used — never a barrel import of the whole library for one component.
 - **Preserve what's already there.** Keyboard interaction, focus order, ARIA attributes, and
   responsive breakpoints on installed components are load-bearing. When adapting a copied file,

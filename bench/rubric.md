@@ -1,6 +1,6 @@
 # AgentBench rubric
 
-Every metric below is scored identically for both conditions (Smart Era UI, shadcn/ui baseline) and both tools (Claude Code, Codex). A result report (`results/TEMPLATE.md`) fills in one row per metric per run.
+Every metric below is scored identically for both conditions (Proper UI, shadcn/ui baseline) and both tools (Claude Code, Codex). A result report (`results/TEMPLATE.md`) fills in one row per metric per run.
 
 ## 1. Compile success
 
@@ -10,7 +10,7 @@ Every metric below is scored identically for both conditions (Smart Era UI, shad
 
 ## 2. Exact reuse
 
-**Definition:** of the registry entries listed in the task file's "Ideal registry entries" section, what percentage does the final code actually import from `@smarteraui/ui` (or, for the shadcn baseline, from the equivalent installed shadcn component)?
+**Definition:** of the registry entries listed in the task file's "Ideal registry entries" section, what percentage does the final code actually import from `@properui/ui` (or, for the shadcn baseline, from the equivalent installed shadcn component)?
 
 **Scoring:** `reused / ideal_total`, reported as a percentage plus the raw fraction (e.g. `9/13 — 69%`). Count an entry as reused if the generated code imports it and uses it for a materially similar purpose to what the task describes (a `<Tabs>` used for page navigation counts; a `<Tabs>` accidentally imported and never rendered does not). Also record, separately, any registry entries the agent used that were _not_ on the ideal list — this isn't penalized, it's just useful context for whether the ideal list itself needs revising later.
 
@@ -28,7 +28,7 @@ Three rule families, each with an exact regex (also implemented in `scripts/scor
 | `arbitrary-px`    | Arbitrary pixel dimensions on any utility: `w-[257px]`, `top-[13px]`, `text-[14px]`                                                          | `(?:^\|[^\w-])[a-zA-Z][\w-]*-\[[0-9]+(?:\.[0-9]+)?px\]`                                                                                                                                                                                                    |
 | `raw-palette`     | A raw Tailwind color-scale class used directly instead of a semantic token: `bg-gray-500`, `text-blue-600`, `border-red-300`, `bg-brand-600` | `(?:^\|[^\w-])(?:[\w-]+:)*(bg\|text\|border\|ring(?:-offset)?\|fill\|stroke\|from\|via\|to\|divide\|outline\|decoration\|caret\|accent\|shadow\|placeholder\|selection)-[a-z]+-(?:50\|100\|200\|300\|400\|500\|600\|700\|800\|900\|950)(?:/[0-9]{1,3})?\b` |
 
-**Deliberate exclusion:** `raw-palette` does not flag Smart Era UI's own `utility-*` color family (e.g. `bg-utility-blue-50`, `text-utility-blue-700`). Those classes appear verbatim inside shipped component source (see `packages/ui/src/components/base/badges/badges.tsx`) as the sanctioned way to express status/semantic color inside a variant — an agent that copies them via composing an existing component is doing exact reuse, not bypassing the token system. An agent that hand-writes `bg-blue-500` (the _default_ Tailwind palette, not the design system's namespaced one) to get a similar effect is exactly what this rule is for.
+**Deliberate exclusion:** `raw-palette` does not flag Proper UI's own `utility-*` color family (e.g. `bg-utility-blue-50`, `text-utility-blue-700`). Those classes appear verbatim inside shipped component source (see `packages/ui/src/components/base/badges/badges.tsx`) as the sanctioned way to express status/semantic color inside a variant — an agent that copies them via composing an existing component is doing exact reuse, not bypassing the token system. An agent that hand-writes `bg-blue-500` (the _default_ Tailwind palette, not the design system's namespaced one) to get a similar effect is exactly what this rule is for.
 
 **Scoring:** raw counts per rule plus a total, each with `file:line`. Lower is better; report the total and the breakdown. This is a regex scanner, not a Tailwind AST parser — known blind spots:
 

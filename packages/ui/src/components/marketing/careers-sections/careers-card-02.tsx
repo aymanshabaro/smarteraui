@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowUpRight, Clock, MarkerPin01 } from "@smarteraui/icons";
+import { ArrowUpRight, Clock, MarkerPin01 } from "@properui/icons";
 import { BadgeWithDot } from "@/components/base/badges/badges";
 import { Select } from "@/components/base/select/select";
 import { sortCx } from "@/utils/cx";

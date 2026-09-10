@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowNext, ArrowPrevious, ArrowUpRight } from "@smarteraui/icons";
+import { ArrowNext, ArrowPrevious, ArrowUpRight } from "@properui/icons";
 import { Carousel } from "@/components/application/carousel/carousel-base";
 import { Button } from "@/components/base/buttons/button";
 import { Dribbble, LinkedIn, X } from "@/components/foundations/social-icons";

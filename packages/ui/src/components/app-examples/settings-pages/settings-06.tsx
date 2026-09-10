@@ -1,7 +1,7 @@
 "use client";
 
 import { Radio as AriaRadio, RadioGroup as AriaRadioGroup } from "react-aria-components";
-import { Check, Code02 } from "@smarteraui/icons";
+import { Check, Code02 } from "@properui/icons";
 import { SidebarNavigationSectionsSubheadings } from "@/components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings";
 import { SectionFooter } from "@/components/application/section-footers/section-footers";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
@@ -9,7 +9,7 @@ import { Button } from "@/components/base/buttons/button";
 import { RadioButtonBase } from "@/components/base/radio-buttons/radio-buttons";
 import { NativeSelect } from "@/components/base/select/select-native";
 import { Toggle } from "@/components/base/toggle/toggle";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { cx } from "@/utils/cx";
 import {
     SettingsFormRow,
@@ -122,7 +122,7 @@ export const Settings06 = () => (
                         <div className="flex flex-col gap-5">
                             <SettingsFormRow label="Company logo" hint="Update your company logo.">
                                 <div className="flex items-center gap-5">
-                                    <SmarteraLogo className="h-8" />
+                                    <ProperLogo className="h-8" />
                                     <Button color="secondary" size="md">
                                         Replace logo
                                     </Button>

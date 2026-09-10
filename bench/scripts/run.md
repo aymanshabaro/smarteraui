@@ -2,13 +2,13 @@
 
 There is no harness that drives Claude Code or Codex programmatically here — both tools are interactive-first, and scripting either one reliably (headless auth, session control, transcript capture) is more infrastructure than a five-task benchmark justifies right now. This is the manual protocol until that changes. Budget 30–60 minutes per task per condition, plus scoring time.
 
-Run this once per **(task, library condition, tool)** triple — e.g. Task 01, Smart Era UI, Claude Code is one run; Task 01, shadcn/ui, Claude Code is a second, separate run of the same task.
+Run this once per **(task, library condition, tool)** triple — e.g. Task 01, Proper UI, Claude Code is one run; Task 01, shadcn/ui, Claude Code is a second, separate run of the same task.
 
 ## 1. Fresh app
 
 Scaffold a new project. Never reuse a project from a previous run — leftover files, installed dependencies, or agent memory from an earlier task will contaminate the result.
 
-- **Smart Era UI condition:** follow the quickstart in the docs (`npx create-next-app@latest`, matching versions in `../baseline/README.md`, then `npx smarteraui@latest init`).
+- **Proper UI condition:** follow the quickstart in the docs (`npx create-next-app@latest`, matching versions in `../baseline/README.md`, then `npx properui@latest init`).
 - **shadcn/ui condition:** follow `../baseline/README.md` exactly.
 
 Confirm the app runs (`pnpm dev`) and builds (`pnpm build`) empty, before the agent touches it. If the empty scaffold doesn't build, fix that first — a build failure caused by scaffolding, not by the agent, would corrupt the compile-success metric.
@@ -17,7 +17,7 @@ Confirm the app runs (`pnpm dev`) and builds (`pnpm build`) empty, before the ag
 
 Give the agent whatever setup step the library documents for that tool, and nothing more:
 
-- **Smart Era UI:** `npx smarteraui@latest agent init --client claude` (or `--client codex`), which writes the Skill file and its pointer (`CLAUDE.md` or `AGENTS.md`) into the project.
+- **Proper UI:** `npx properui@latest agent init --client claude` (or `--client codex`), which writes the Skill file and its pointer (`CLAUDE.md` or `AGENTS.md`) into the project.
 - **shadcn/ui:** whatever `npx shadcn@latest init` itself sets up. No hand-authored `CLAUDE.md`/`AGENTS.md` beyond that.
 
 Start a fresh agent session/conversation in the project directory. Do not carry over context from a previous task's session.
@@ -62,7 +62,7 @@ Work through `../rubric.md` in order:
     ```bash
     pnpm exec tsx bench/scripts/score-tokens.ts <path-to-generated-app>/src
     ```
-    (Run this from a checkout of this repository, since the script lives here — point its argument at the _baseline/Smart-Era-UI project's_ source directory, wherever that project lives on disk.)
+    (Run this from a checkout of this repository, since the script lives here — point its argument at the _baseline/Proper-UI project's_ source directory, wherever that project lives on disk.)
 4. **Axe violations** — add a `vitest-axe` (or `@axe-core/playwright`) assertion against the rendered page's default state, and against any additional interactive states the task calls out (e.g. an opened modal). If the generated app has no test setup at all, the fastest path is a small standalone script using `@axe-core/playwright` against the built app running locally.
 5. **Manual keyboard pass** — unplug your mouse or just don't touch it; go through the checklist in the task file and in `../rubric.md` §5.
 6. **Responsive defects** — resize the browser (or use device emulation) to each of the three viewports in the task file and check the per-viewport checklist in `../rubric.md` §6.
@@ -71,7 +71,7 @@ Work through `../rubric.md` in order:
 
 ## 7. Write it up
 
-Copy `../results/TEMPLATE.md` to `../results/<YYYY-MM-DD>-<tool>-<library>-<task-slug>.md` (e.g. `../results/2026-09-10-claude-code-smarteraui-01-settings-page.md`), fill in every field, link or attach the transcript and generated code, and open a PR. See the honesty rules in `../README.md` before you do — a submission that skips them gets removed.
+Copy `../results/TEMPLATE.md` to `../results/<YYYY-MM-DD>-<tool>-<library>-<task-slug>.md` (e.g. `../results/2026-09-10-claude-code-properui-01-settings-page.md`), fill in every field, link or attach the transcript and generated code, and open a PR. See the honesty rules in `../README.md` before you do — a submission that skips them gets removed.
 
 ## Handling failures
 

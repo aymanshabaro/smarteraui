@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, Edit01, Plus, Trash01 } from "@smarteraui/icons";
+import { ArrowLeft, Edit01, Plus, Trash01 } from "@properui/icons";
 import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
 import { Breadcrumbs, type BreadcrumbsMenuItem } from "@/components/application/breadcrumbs/breadcrumbs";
 import { Table } from "@/components/application/table/table";
@@ -83,7 +83,7 @@ export const Settings07 = () => (
                                     aria-label={`Invite ${index + 1} email address`}
                                     trailingAddon={<NativeSelect aria-label={`Invite ${index + 1} permission`} defaultValue="read" options={roleOptions} />}
                                 >
-                                    <InputBase type="email" placeholder="you@smartera.com" />
+                                    <InputBase type="email" placeholder="you@proper.example" />
                                 </InputGroup>
                             ))}
 

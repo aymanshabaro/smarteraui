@@ -22,7 +22,7 @@ import {
     Stars02,
     Users01,
     VideoRecorder,
-} from "@smarteraui/icons";
+} from "@properui/icons";
 import type { NavItemType } from "@/components/application/app-navigation/config";
 import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
 import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
@@ -64,7 +64,7 @@ const footerItems: NavItemType[] = [
             </BadgeWithDot>
         ),
     },
-    { label: "Open in browser", href: "https://smartera.example.com/", icon: LayoutAlt01 },
+    { label: "Open in browser", href: "https://proper.example.com/", icon: LayoutAlt01 },
 ];
 
 const bubbleActions = [

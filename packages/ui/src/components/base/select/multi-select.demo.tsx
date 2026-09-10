@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { Selection as AriaSelection } from "react-aria-components";
-import { User01 } from "@smarteraui/icons";
+import { User01 } from "@properui/icons";
 import { MultiSelect } from "./multi-select";
 import type { SelectItemType } from "./select-shared";
 

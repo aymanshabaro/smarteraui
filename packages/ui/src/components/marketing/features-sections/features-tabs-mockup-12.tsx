@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight } from "@smarteraui/icons";
+import { ArrowRight } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { CreditCard } from "@/components/shared-assets/credit-card/credit-card";
 import { cx, sortCx } from "@/utils/cx";
@@ -26,7 +26,7 @@ const features = [
     },
     {
         title: "Manage your team with reports",
-        subtitle: "Measure what matters with Smartera's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
+        subtitle: "Measure what matters with Proper's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
     },
 ];
 
@@ -67,16 +67,16 @@ export const FeaturesTabsMockup12 = () => (
                     <div className="translate-x-[34px] translate-y-[3px] -space-y-[116.5px] md:translate-x-[45px] md:translate-y-[37px] md:-space-y-[83px]">
                         <div className="relative z-3 translate-y-[22px] rotate-[29.9deg]">
                             <div className={styles.cardScale} style={{ transform: CARD_TRANSFORM }}>
-                                <CreditCard type="transparent-gradient" company="Smartera" cardHolder={AVATARS[2].name} />
+                                <CreditCard type="transparent-gradient" company="Proper" cardHolder={AVATARS[2].name} />
                             </div>
                         </div>
                         <div className="relative z-2 translate-y-[10px] rotate-[14.8deg]">
                             <div className={styles.cardScale} style={{ transform: CARD_TRANSFORM }}>
-                                <CreditCard type="transparent-gradient" company="Smartera" cardHolder={AVATARS[0].name} />
+                                <CreditCard type="transparent-gradient" company="Proper" cardHolder={AVATARS[0].name} />
                             </div>
                         </div>
                         <div className={cx("relative z-1", styles.cardScale)} style={{ transform: CARD_TRANSFORM }}>
-                            <CreditCard type="transparent-gradient" company="Smartera" cardHolder={AVATARS[1].name} />
+                            <CreditCard type="transparent-gradient" company="Proper" cardHolder={AVATARS[1].name} />
                         </div>
                     </div>
                 </div>

@@ -13,7 +13,7 @@ import {
     // The repo requires an `Aria*` alias on every `react-aria-components` import, hooks included.
     useDragAndDrop as AriaUseDragAndDrop,
 } from "react-aria-components";
-import { ChevronDown, DotsGrid } from "@smarteraui/icons";
+import { ChevronDown, DotsGrid } from "@properui/icons";
 import { CheckboxBase } from "@/components/base/checkbox/checkbox";
 import { cx, sortCx } from "@/utils/cx";
 

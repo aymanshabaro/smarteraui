@@ -48,7 +48,7 @@ export const HeroIphoneMockup03 = () => (
                 <div className="flex w-full max-w-3xl flex-1 flex-col">
                     <h1 className="text-display-md text-primary md:text-display-lg lg:text-display-xl font-semibold">Banking, but for digital creators</h1>
                     <p className="text-tertiary mt-4 max-w-120 text-lg text-balance md:mt-6 md:text-xl">
-                        Designed by creators, for creators. Smartera gives you the guidance, data and innovation you need to sell more and grow your digital
+                        Designed by creators, for creators. Proper gives you the guidance, data and innovation you need to sell more and grow your digital
                         business.
                     </p>
 

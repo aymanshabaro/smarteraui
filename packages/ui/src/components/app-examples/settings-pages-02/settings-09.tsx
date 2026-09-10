@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, Edit01, HomeLine, Plus, Trash01 } from "@smarteraui/icons";
+import { ArrowLeft, Edit01, HomeLine, Plus, Trash01 } from "@properui/icons";
 import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
 import { Table, TableCard } from "@/components/application/table/table";
 import { Avatar } from "@/components/base/avatar/avatar";

@@ -1,5 +1,5 @@
 /**
- * `smarteraui diff [component]` — local modifications vs the registry version.
+ * `properui diff [component]` — local modifications vs the registry version.
  * With no argument it checks every component that already exists in the project.
  *
  * Spec: docs/cli.md
@@ -21,7 +21,7 @@ export async function runDiff(component: string | undefined, options: DiffOption
     const cwd = path.resolve(options.cwd ?? process.cwd());
     const config = readConfig(cwd);
     if (!config) {
-        log.error("No components.json found. Run `smarteraui init` first.");
+        log.error("No components.json found. Run `properui init` first.");
         process.exitCode = 1;
         return;
     }
@@ -90,5 +90,5 @@ export async function runDiff(component: string | undefined, options: DiffOption
         return;
     }
     log.warn(`${modified} file${modified === 1 ? "" : "s"} differ from the registry.`);
-    log.info(`Take the registry version with: npx smarteraui add ${component ?? "<component>"} --overwrite`);
+    log.info(`Take the registry version with: npx properui add ${component ?? "<component>"} --overwrite`);
 }

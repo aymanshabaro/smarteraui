@@ -1,6 +1,6 @@
 "use client";
 
-import { BookmarkAdd, CurrencyDollar, FilterLines, Home02, List, Map01, MarkerPin02, SearchLg, Wifi, Zap } from "@smarteraui/icons";
+import { BookmarkAdd, CurrencyDollar, FilterLines, Home02, List, Map01, MarkerPin02, SearchLg, Wifi, Zap } from "@properui/icons";
 import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
 import { TablePaginationNumbered } from "@/components/application/table/table-pagination";
 import { BadgeWithIcon } from "@/components/base/badges/badges";

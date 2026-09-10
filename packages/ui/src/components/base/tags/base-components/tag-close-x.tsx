@@ -2,7 +2,7 @@
 
 import type { RefAttributes } from "react";
 import { Button as AriaButton, type ButtonProps as AriaButtonProps } from "react-aria-components";
-import { XClose } from "@smarteraui/icons";
+import { XClose } from "@properui/icons";
 import { cx } from "@/utils/cx";
 
 interface TagCloseXProps extends AriaButtonProps, RefAttributes<HTMLButtonElement> {

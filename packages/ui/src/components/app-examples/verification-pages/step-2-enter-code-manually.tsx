@@ -1,7 +1,7 @@
 "use client";
 
 import { REGEXP_ONLY_DIGITS } from "input-otp";
-import { ArrowLeft, Mail01 } from "@smarteraui/icons";
+import { ArrowLeft, Mail01 } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { PinInput, type PinInputSize } from "@/components/base/input/pin-input";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";

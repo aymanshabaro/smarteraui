@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AlertCircle, Calendar, Check, CheckCircle, Copy01, Lock03, Mail01 } from "@smarteraui/icons";
+import { AlertCircle, Calendar, Check, CheckCircle, Copy01, Lock03, Mail01 } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { HintText } from "@/components/base/input/hint-text";
 import { Input, InputBase, TextField } from "@/components/base/input/input";
@@ -20,35 +20,72 @@ import { cx } from "@/utils/cx";
 /** Hero example shown at the top of the docs page. */
 export const InputExample = () => {
     return (
-        <Input isRequired icon={Mail01} label="Email" hint="This is a hint text to help user." placeholder="olivia@smartera.com" tooltip="This is a tooltip" />
+        <Input
+            isRequired
+            icon={Mail01}
+            label="Email"
+            hint="This is a hint text to help user."
+            placeholder="olivia@proper.example"
+            tooltip="This is a tooltip"
+        />
     );
 };
 
 export const Default = () => {
-    return <Input isRequired label="Email" hint="This is a hint text to help user." placeholder="olivia@smartera.com" tooltip="This is a tooltip" />;
+    return <Input isRequired label="Email" hint="This is a hint text to help user." placeholder="olivia@proper.example" tooltip="This is a tooltip" />;
 };
 
 export const Disabled = () => {
-    return <Input isRequired isDisabled label="Email" hint="This is a hint text to help user." placeholder="olivia@smartera.com" tooltip="This is a tooltip" />;
+    return (
+        <Input isRequired isDisabled label="Email" hint="This is a hint text to help user." placeholder="olivia@proper.example" tooltip="This is a tooltip" />
+    );
 };
 
 export const Invalid = () => {
-    return <Input isRequired isInvalid label="Email" hint="This is an error message." placeholder="olivia@smartera.com" tooltip="This is a tooltip" />;
+    return <Input isRequired isInvalid label="Email" hint="This is an error message." placeholder="olivia@proper.example" tooltip="This is a tooltip" />;
 };
 
 export const Sizes = () => {
     return (
         <div className="flex flex-col gap-8">
-            <Input isRequired size="sm" label="Email" hint="This is a hint text to help user." placeholder="olivia@smartera.com" tooltip="This is a tooltip" />
-            <Input isRequired size="md" label="Email" hint="This is a hint text to help user." placeholder="olivia@smartera.com" tooltip="This is a tooltip" />
-            <Input isRequired size="lg" label="Email" hint="This is a hint text to help user." placeholder="olivia@smartera.com" tooltip="This is a tooltip" />
+            <Input
+                isRequired
+                size="sm"
+                label="Email"
+                hint="This is a hint text to help user."
+                placeholder="olivia@proper.example"
+                tooltip="This is a tooltip"
+            />
+            <Input
+                isRequired
+                size="md"
+                label="Email"
+                hint="This is a hint text to help user."
+                placeholder="olivia@proper.example"
+                tooltip="This is a tooltip"
+            />
+            <Input
+                isRequired
+                size="lg"
+                label="Email"
+                hint="This is a hint text to help user."
+                placeholder="olivia@proper.example"
+                tooltip="This is a tooltip"
+            />
         </div>
     );
 };
 
 export const LeadingIcon = () => {
     return (
-        <Input isRequired icon={Mail01} label="Email" hint="This is a hint text to help user." placeholder="olivia@smartera.com" tooltip="This is a tooltip" />
+        <Input
+            isRequired
+            icon={Mail01}
+            label="Email"
+            hint="This is a hint text to help user."
+            placeholder="olivia@proper.example"
+            tooltip="This is a tooltip"
+        />
     );
 };
 
@@ -100,7 +137,7 @@ export const TrailingDropdown = () => {
 export const LeadingText = () => {
     return (
         <InputGroup isRequired label="Website" hint="This is a hint text to help user." leadingAddon={<InputGroup.Prefix>https://</InputGroup.Prefix>}>
-            <InputBase placeholder="www.smartera.com" tooltip="This is a tooltip" />
+            <InputBase placeholder="www.proper.example" tooltip="This is a tooltip" />
         </InputGroup>
     );
 };
@@ -128,12 +165,12 @@ export const TrailingButton = () => {
             hint="This is a hint text to help user."
             onChange={setValue}
             trailingAddon={
-                <Button color="secondary" iconLeading={copied ? Check : Copy01} onClick={() => copy(value || "www.smartera.com")}>
+                <Button color="secondary" iconLeading={copied ? Check : Copy01} onClick={() => copy(value || "www.proper.example")}>
                     Copy
                 </Button>
             }
         >
-            <InputBase placeholder="www.smartera.com" tooltip="This is a tooltip" />
+            <InputBase placeholder="www.proper.example" tooltip="This is a tooltip" />
         </InputGroup>
     );
 };

@@ -1,30 +1,30 @@
 import { render } from "@testing-library/react";
 import { axe } from "vitest-axe";
-import { SmarteraLogo } from "./smartera-logo";
-import { SmarteraLogoMinimal } from "./smartera-logo-minimal";
+import { ProperLogo } from "./proper-logo";
+import { ProperLogoMinimal } from "./proper-logo-minimal";
 
-describe("SmarteraLogo", () => {
+describe("ProperLogo", () => {
     it("renders and has no a11y violations", async () => {
-        const { container } = render(<SmarteraLogo />);
-        expect(container.textContent).toContain("Smartera");
+        const { container } = render(<ProperLogo />);
+        expect(container.textContent).toContain("Proper");
         expect(await axe(container)).toHaveNoViolations();
     });
 
     it("merges a custom className", () => {
-        const { container } = render(<SmarteraLogo className="custom-logo-class" />);
+        const { container } = render(<ProperLogo className="custom-logo-class" />);
         expect(container.querySelector(".custom-logo-class")).toBeInTheDocument();
     });
 });
 
-describe("SmarteraLogoMinimal", () => {
+describe("ProperLogoMinimal", () => {
     it("renders and has no a11y violations", async () => {
-        const { container } = render(<SmarteraLogoMinimal />);
+        const { container } = render(<ProperLogoMinimal />);
         expect(container.querySelector("svg")).toBeInTheDocument();
         expect(await axe(container)).toHaveNoViolations();
     });
 
     it("merges a custom className", () => {
-        const { container } = render(<SmarteraLogoMinimal className="custom-mark-class" />);
+        const { container } = render(<ProperLogoMinimal className="custom-mark-class" />);
         expect(container.querySelector(".custom-mark-class")).toBeInTheDocument();
     });
 });

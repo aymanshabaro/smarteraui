@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useFilter } from "react-aria";
 import type { Selection as AriaSelection } from "react-aria-components";
 import { Autocomplete as AriaAutocomplete, SearchField as AriaSearchField, SubmenuTrigger as AriaSubmenuTrigger } from "react-aria-components";
-import { ChevronDown, Plus, SearchLg } from "@smarteraui/icons";
+import { ChevronDown, Plus, SearchLg } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { Dropdown } from "@/components/base/dropdown/dropdown";
 import { LOGOS, avatar } from "@/utils/demo-assets";

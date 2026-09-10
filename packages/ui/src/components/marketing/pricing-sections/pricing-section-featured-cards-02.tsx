@@ -1,4 +1,4 @@
-import { Check } from "@smarteraui/icons";
+import { Check } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 
 interface Plan {

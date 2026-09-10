@@ -1,16 +1,16 @@
 {
-    "name": "smarteraui",
+    "name": "properui",
     "private": true,
-    "description": "Smartera UI — an accessible React 19 + Tailwind CSS v4 component library, its CLI and its documentation site.",
+    "description": "Proper UI — an accessible React 19 + Tailwind CSS v4 component library, its CLI and its documentation site.",
     "license": "MIT",
     "author": "Ayman Shabaro (https://github.com/aymanshabaro)",
-    "homepage": "https://github.com/aymanshabaro/smarteraui#readme",
+    "homepage": "https://github.com/properui/properui#readme",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/aymanshabaro/smarteraui.git"
+        "url": "git+https://github.com/properui/properui.git"
     },
     "bugs": {
-        "url": "https://github.com/aymanshabaro/smarteraui/issues"
+        "url": "https://github.com/properui/properui/issues"
     },
     "packageManager": "pnpm@9.12.0",
     "engines": {
@@ -20,7 +20,7 @@
     "scripts": {
         "dev": "turbo run dev --filter=docs",
         "build": "turbo run build",
-        "build:packages": "turbo run build --filter=@smarteraui/ui --filter=smarteraui",
+        "build:packages": "turbo run build --filter=@properui/ui --filter=properui",
         "test": "turbo run test",
         "lint": "turbo run lint",
         "type-check": "turbo run type-check",

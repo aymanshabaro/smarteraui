@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, ArrowRight, BookOpen01, Cube01, MessageChatCircle, SearchLg } from "@smarteraui/icons";
+import { ArrowLeft, ArrowRight, BookOpen01, Cube01, MessageChatCircle, SearchLg } from "@properui/icons";
 import { BadgeWithDot } from "@/components/base/badges/badges";
 import { Button } from "@/components/base/buttons/button";
 import { Form } from "@/components/base/form/form";

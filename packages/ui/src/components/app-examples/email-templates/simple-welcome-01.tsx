@@ -1,5 +1,5 @@
 import { Button } from "@/components/base/buttons/button";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { Facebook, Instagram, X } from "@/components/foundations/social-icons";
 import { sortCx } from "@/utils/cx";
 
@@ -34,7 +34,7 @@ export const SimpleWelcome01 = () => (
     <section className={styles.shell}>
         <div className={styles.container}>
             <div className="bg-primary p-6">
-                <SmarteraLogo className="h-6" />
+                <ProperLogo className="h-6" />
 
                 <nav aria-label="Email" className="mt-8">
                     <ul className="flex flex-wrap items-center gap-4">
@@ -74,8 +74,8 @@ export const SimpleWelcome01 = () => (
             <div className="bg-primary px-6 py-8">
                 <p className="text-tertiary text-sm">
                     This email was sent to{" "}
-                    <a href="mailto:olivia@smartera.com" className={styles.inlineLink}>
-                        olivia@smartera.com
+                    <a href="mailto:olivia@proper.example" className={styles.inlineLink}>
+                        olivia@proper.example
                     </a>
                     . If you&apos;d rather not receive this kind of email, you can{" "}
                     <a href="/unsubscribe" className={styles.inlineLink}>
@@ -87,10 +87,10 @@ export const SimpleWelcome01 = () => (
                     </a>
                     .
                 </p>
-                <p className="text-tertiary mt-5 text-sm">© 2077 Smartera UI, 100 Smith Street, Collingwood VIC 3066</p>
+                <p className="text-tertiary mt-5 text-sm">© 2077 Proper UI, 100 Smith Street, Collingwood VIC 3066</p>
 
                 <div className="mt-12 flex items-center justify-between gap-4">
-                    <SmarteraLogo className="h-6" />
+                    <ProperLogo className="h-6" />
 
                     <ul className="flex items-center gap-4">
                         {socials.map(({ label, href, icon: Icon }) => (

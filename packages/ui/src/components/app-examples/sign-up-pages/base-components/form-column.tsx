@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
-import { SmarteraLogoMinimal } from "@/components/foundations/logo/smartera-logo-minimal";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
+import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
 import { cx } from "@/utils/cx";
 import { LogInPrompt, SupportFooter } from "./page-parts";
 import { SignUpForm } from "./sign-up-form";
@@ -48,14 +48,14 @@ export const SignUpFormColumn = ({
     <div className={cx("bg-primary flex flex-col", className)}>
         {headerClassName && (
             <header className={headerClassName}>
-                <SmarteraLogo />
+                <ProperLogo />
             </header>
         )}
 
         <div className={cx("flex flex-1 justify-center px-4 py-12 md:items-center md:px-8", bodyClassName)}>
             <div className={cx("flex w-full flex-col gap-8 sm:max-w-90", innerClassName)}>
                 <div className="flex flex-col gap-6">
-                    <SmarteraLogoMinimal className="size-8 lg:hidden" />
+                    <ProperLogoMinimal className="size-8 lg:hidden" />
 
                     <div className="flex flex-col gap-2 md:gap-3">
                         <h1 className="text-primary md:text-display-xs text-xl font-semibold">{title}</h1>

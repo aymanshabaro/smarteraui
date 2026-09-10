@@ -1,6 +1,6 @@
 "use client";
 
-import { Calendar as CalendarIcon, CurrencyDollarCircle, FilterLines, Send01 } from "@smarteraui/icons";
+import { Calendar as CalendarIcon, CurrencyDollarCircle, FilterLines, Send01 } from "@properui/icons";
 import { FeaturedCardUpgradeCTA } from "@/components/application/app-navigation/base-components/featured-cards";
 import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
 import { Button } from "@/components/base/buttons/button";
@@ -26,12 +26,12 @@ const cards = [
 const deposits = [
     { id: "visa-1", icon: VisaIcon, title: "Visa ending in 1234", subtitle: "Expiry 06/2028", amount: "244.00" },
     { id: "visa-2", icon: VisaIcon, title: "Visa ending in 1234", subtitle: "Expiry 06/2028", amount: "326.00" },
-    { id: "stripe-1", icon: StripeIcon, title: "Card deposit", subtitle: "billing@smartera.com", amount: "408.00" },
+    { id: "stripe-1", icon: StripeIcon, title: "Card deposit", subtitle: "billing@proper.example", amount: "408.00" },
     { id: "visa-3", icon: VisaIcon, title: "Visa ending in 1234", subtitle: "Expiry 06/2028", amount: "628.00" },
-    { id: "paypal-1", icon: PayPalIcon, title: "PayPal deposit", subtitle: "alina@smartera.com", amount: "166.00" },
-    { id: "applepay-1", icon: ApplePayIcon, title: "Apple Pay", subtitle: "molly@smartera.com", amount: "250.00" },
+    { id: "paypal-1", icon: PayPalIcon, title: "PayPal deposit", subtitle: "alina@proper.example", amount: "166.00" },
+    { id: "applepay-1", icon: ApplePayIcon, title: "Apple Pay", subtitle: "molly@proper.example", amount: "250.00" },
     { id: "visa-4", icon: VisaIcon, title: "Visa ending in 1234", subtitle: "Expiry 06/2028", amount: "144.00" },
-    { id: "stripe-2", icon: StripeIcon, title: "Card deposit", subtitle: "billing@smartera.com", amount: "408.00" },
+    { id: "stripe-2", icon: StripeIcon, title: "Card deposit", subtitle: "billing@proper.example", amount: "408.00" },
 ];
 
 const CardMenu = () => (
@@ -142,7 +142,7 @@ export const Dashboard13 = () => (
                             <div className="flex flex-wrap gap-6">
                                 {cards.map((card, index) => (
                                     <div key={index} className="flex min-w-[240px] flex-1 flex-col gap-3">
-                                        <CreditCard type="brand-dark" width={260} cardHolder={card.holder} company="Smartera." />
+                                        <CreditCard type="brand-dark" width={260} cardHolder={card.holder} company="Proper." />
                                         <div className="flex items-center justify-between gap-2">
                                             <span className="text-tertiary text-sm font-medium">Spending this month</span>
                                             <span className="text-primary text-sm font-medium">{card.spend}</span>

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { Selection as AriaSelection } from "react-aria-components";
-import { SearchLg } from "@smarteraui/icons";
+import { SearchLg } from "@properui/icons";
 import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
 import { FilterBar } from "@/components/application/filter-bar/filter-bar";
 import { Table, TableRowActionsDropdown } from "@/components/application/table/table";

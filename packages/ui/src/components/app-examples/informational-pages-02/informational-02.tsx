@@ -1,6 +1,6 @@
 "use client";
 
-import { DownloadCloud01, FilterLines, Plus, SearchLg } from "@smarteraui/icons";
+import { DownloadCloud01, FilterLines, Plus, SearchLg } from "@properui/icons";
 import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
 import { Table, TableCard } from "@/components/application/table/table";
 import { TablePaginationNumbered } from "@/components/application/table/table-pagination";

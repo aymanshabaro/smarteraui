@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail01, MarkerPin01, MessageSmileCircle, Phone } from "@smarteraui/icons";
+import { Mail01, MarkerPin01, MessageSmileCircle, Phone } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { Checkbox } from "@/components/base/checkbox/checkbox";
 import { Form } from "@/components/base/form/form";
@@ -8,7 +8,7 @@ import { Input } from "@/components/base/input/input";
 import { TextArea } from "@/components/base/textarea/textarea";
 
 const channels = [
-    { icon: Mail01, title: "Email", subtitle: "Our friendly team is here to help.", cta: "hi@smartera.com", href: "mailto:hi@smartera.com" },
+    { icon: Mail01, title: "Email", subtitle: "Our friendly team is here to help.", cta: "hi@proper.example", href: "mailto:hi@proper.example" },
     { icon: MessageSmileCircle, title: "Live chat", subtitle: "Our friendly team is here to help.", cta: "Start new chat", href: "#" },
     {
         icon: MarkerPin01,

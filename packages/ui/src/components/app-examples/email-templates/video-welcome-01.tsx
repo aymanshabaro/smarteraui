@@ -1,6 +1,6 @@
-import { Maximize01, Play, VolumeMax } from "@smarteraui/icons";
+import { Maximize01, Play, VolumeMax } from "@properui/icons";
 import { AppStoreButton, GooglePlayButton } from "@/components/base/buttons/app-store-buttons";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { PlayButtonIcon } from "@/components/foundations/play-button-icon";
 import { Facebook, Instagram, X } from "@/components/foundations/social-icons";
 import { cx, sortCx } from "@/utils/cx";
@@ -29,7 +29,7 @@ export const VideoWelcome01 = () => (
     <section className={styles.shell}>
         <div className={styles.container}>
             <div className="bg-primary flex justify-center p-6">
-                <SmarteraLogo className="h-6" />
+                <ProperLogo className="h-6" />
             </div>
 
             <div className="bg-primary px-6 py-8">
@@ -37,7 +37,7 @@ export const VideoWelcome01 = () => (
                     Hi Olivia,
                     <br />
                     <br />
-                    Welcome to Smartera! You&apos;re already on your way to creating beautiful visual products.
+                    Welcome to Proper! You&apos;re already on your way to creating beautiful visual products.
                     <br />
                     <br />
                     We&apos;ve created a quick intro video to get you up and running as soon as possible. If you have any questions,{" "}
@@ -73,7 +73,7 @@ export const VideoWelcome01 = () => (
 
             <div className="bg-primary px-6 py-8 text-center">
                 <p className="text-primary md:text-md text-sm font-semibold">Download the app</p>
-                <p className="text-tertiary mt-2 text-sm">Get the most of Smartera by installing our new mobile app.</p>
+                <p className="text-tertiary mt-2 text-sm">Get the most of Proper by installing our new mobile app.</p>
 
                 <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                     <AppStoreButton href="https://www.apple.com/app-store/" size="md" />
@@ -91,15 +91,15 @@ export const VideoWelcome01 = () => (
                 </ul>
 
                 <p className="text-tertiary mt-8 text-sm">
-                    Smartera is committed to sustainable building. This email was sent with 200% carbon offset. If you&apos;d prefer to not receive these
-                    emails, please{" "}
+                    Proper is committed to sustainable building. This email was sent with 200% carbon offset. If you&apos;d prefer to not receive these emails,
+                    please{" "}
                     <a href="/unsubscribe" className={styles.inlineLink}>
                         unsubscribe
                     </a>
                     .
                 </p>
                 <p className="text-tertiary mt-5 text-sm">
-                    © 2077 Smartera UI
+                    © 2077 Proper UI
                     <br />
                     100 Smith Street, Collingwood VIC 3066
                 </p>

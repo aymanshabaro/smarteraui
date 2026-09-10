@@ -1,6 +1,6 @@
 "use client";
 
-import { HomeLine } from "@smarteraui/icons";
+import { HomeLine } from "@properui/icons";
 import { Breadcrumbs, type BreadcrumbsMenuItem } from "@/components/application/breadcrumbs/breadcrumbs";
 import { AVATARS, IMAGES, LOGOS } from "@/utils/demo-assets";
 

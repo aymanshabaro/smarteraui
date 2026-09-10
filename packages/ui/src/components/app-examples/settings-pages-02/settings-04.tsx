@@ -14,14 +14,14 @@ import { Divider, FieldLabel, FormFooter, PageContainer, SettingsHeaderNav, sett
 
 const company = LOGOS[0];
 
-const tagline = "Smartera UI is the ultimate React component library and design system. Kickstart any project and level up as a developer.";
+const tagline = "Proper UI is the ultimate React component library and design system. Kickstart any project and level up as a developer.";
 /** 41 characters are left of the budget once `tagline` is in the field. */
 const taglineBudget = tagline.length + 41;
 
 const socialProfiles = [
-    { name: "x", prefix: "x.com/", defaultValue: "smarteraui" },
-    { name: "facebook", prefix: "facebook.com/", defaultValue: "smarteraui" },
-    { name: "linkedin", prefix: "linkedin.com/company/", defaultValue: "smarteraui" },
+    { name: "x", prefix: "x.com/", defaultValue: "properui" },
+    { name: "facebook", prefix: "facebook.com/", defaultValue: "properui" },
+    { name: "linkedin", prefix: "linkedin.com/company/", defaultValue: "properui" },
 ];
 
 /** Company profile settings behind a vertical line tab rail. */
@@ -77,8 +77,8 @@ export const Settings04 = () => (
                                         aria-label="Profile URL"
                                         leadingAddon={
                                             <InputGroup.Prefix>
-                                                <span className="max-lg:hidden">smartera.com/profile/</span>
-                                                <span className="lg:hidden">smartera.com/.../</span>
+                                                <span className="max-lg:hidden">proper.example/profile/</span>
+                                                <span className="lg:hidden">proper.example/.../</span>
                                             </InputGroup.Prefix>
                                         }
                                     >

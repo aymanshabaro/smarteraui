@@ -1,13 +1,13 @@
 # Run report
 
-Copy this file to `results/<YYYY-MM-DD>-<tool>-<library>-<task-slug>.md` (e.g. `results/2026-09-10-claude-code-smarteraui-01-settings-page.md`) and fill in every field. Read `../README.md`'s honesty rules before submitting — an incomplete report (missing transcript, missing raw output) is not a valid submission.
+Copy this file to `results/<YYYY-MM-DD>-<tool>-<library>-<task-slug>.md` (e.g. `results/2026-09-10-claude-code-properui-01-settings-page.md`) and fill in every field. Read `../README.md`'s honesty rules before submitting — an incomplete report (missing transcript, missing raw output) is not a valid submission.
 
 ## Run identity
 
 | Field              | Value                                                                      |
 | ------------------ | -------------------------------------------------------------------------- |
 | Task               | (e.g. `01-settings-page`)                                                  |
-| Library condition  | Smart Era UI `<version>` / shadcn/ui baseline                              |
+| Library condition  | Proper UI `<version>` / shadcn/ui baseline                                 |
 | Tool               | Claude Code / Codex                                                        |
 | Model              | exact model name + snapshot/version if the provider exposes one            |
 | Date               | YYYY-MM-DD                                                                 |

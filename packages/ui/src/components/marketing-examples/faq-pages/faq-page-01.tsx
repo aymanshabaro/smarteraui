@@ -1,6 +1,6 @@
 "use client";
 
-import { CreditCard02, File02, Heart, Mail01, SearchLg, SlashCircle01, SwitchHorizontal01 } from "@smarteraui/icons";
+import { CreditCard02, File02, Heart, Mail01, SearchLg, SlashCircle01, SwitchHorizontal01 } from "@properui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { Button } from "@/components/base/buttons/button";
 import { Input } from "@/components/base/input/input";
@@ -46,7 +46,7 @@ const faqs = [
     {
         icon: Mail01,
         question: "How do I change my account email?",
-        answer: "You can change the email address associated with your account by going to smartera.com/account from a laptop or desktop.",
+        answer: "You can change the email address associated with your account by going to proper.example/account from a laptop or desktop.",
     },
 ] as const;
 

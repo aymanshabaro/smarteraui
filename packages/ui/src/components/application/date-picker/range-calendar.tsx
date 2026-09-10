@@ -15,7 +15,7 @@ import {
     RangeCalendarStateContext as AriaRangeCalendarStateContext,
     useSlottedContext as AriaUseSlottedContext,
 } from "react-aria-components";
-import { ChevronLeft, ChevronRight } from "@smarteraui/icons";
+import { ChevronLeft, ChevronRight } from "@properui/icons";
 import type { ButtonProps } from "@/components/base/buttons/button";
 import { Button } from "@/components/base/buttons/button";
 import { InputDateBase } from "@/components/base/input/input-date";

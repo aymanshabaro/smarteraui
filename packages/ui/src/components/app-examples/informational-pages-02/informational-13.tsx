@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, Copy01, Edit05, Share04, UsersPlus } from "@smarteraui/icons";
+import { ArrowLeft, Copy01, Edit05, Share04, UsersPlus } from "@properui/icons";
 import { ActivityFeed } from "@/components/application/activity-feed/activity-feed";
 import { FileUpload } from "@/components/application/file-upload/file-upload-base";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
@@ -59,7 +59,7 @@ export const Informational13 = () => (
                                     </Button>
                                 }
                             >
-                                <InputBase defaultValue="smartera.com/projects/marketing-site-redesign" />
+                                <InputBase defaultValue="proper.example/projects/marketing-site-redesign" />
                             </InputGroup>
                         </div>
                     </div>

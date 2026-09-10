@@ -1,4 +1,4 @@
-import { Passcode, Stars02, User01, UserPlus01 } from "@smarteraui/icons";
+import { Passcode, Stars02, User01, UserPlus01 } from "@properui/icons";
 import type { ProgressStepItem } from "@/components/application/progress-steps/progress-steps";
 
 /** The four onboarding steps shared by the progress and sidebar progress sign up pages. */

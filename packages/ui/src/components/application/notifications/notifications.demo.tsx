@@ -3,7 +3,7 @@
 import type { CSSProperties } from "react";
 import { useState } from "react";
 import { Button as AriaButton } from "react-aria-components";
-import { AlertCircle, CheckCircle, Codepen, CursorClick01, InfoCircle, UploadCloud02 } from "@smarteraui/icons";
+import { AlertCircle, CheckCircle, Codepen, CursorClick01, InfoCircle, UploadCloud02 } from "@properui/icons";
 import type { NotificationProps } from "@/components/application/notifications/notifications";
 import { Notification } from "@/components/application/notifications/notifications";
 import type { NotifyOptions } from "@/components/application/notifications/notifications-provider";

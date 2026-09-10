@@ -8,8 +8,8 @@ import {
     MenuTrigger as AriaMenuTrigger,
     Popover as AriaPopover,
 } from "react-aria-components";
-import { Monitor04, Moon01, Sun } from "@smarteraui/icons";
-import { useTheme } from "@smarteraui/ui/providers";
+import { Monitor04, Moon01, Sun } from "@properui/icons";
+import { useTheme } from "@properui/ui/providers";
 import { menuItemClasses, popoverClasses, utilityButtonClasses } from "./primitives";
 
 /**

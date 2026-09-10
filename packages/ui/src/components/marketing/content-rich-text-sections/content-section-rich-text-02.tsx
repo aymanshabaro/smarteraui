@@ -4,11 +4,11 @@ export const ContentSectionRichText02 = () => (
         <div className="max-w-container mx-auto px-4 md:px-8">
             <div className="prose md:prose-lg mx-auto md:max-w-180">
                 <p>
-                    Your privacy matters to us at Smartera. This policy explains what we collect when you use our website and products, why we collect it, and
+                    Your privacy matters to us at Proper. This policy explains what we collect when you use our website and products, why we collect it, and
                     what you can ask us to do with it.
                 </p>
                 <p>
-                    It applies to smartera.com and to every product served from it. If we ever change how we handle your information, we will update this page
+                    It applies to proper.example and to every product served from it. If we ever change how we handle your information, we will update this page
                     and say what changed at the top.
                 </p>
 
@@ -63,8 +63,8 @@ export const ContentSectionRichText02 = () => (
 
                 <h3>How can you contact us about this policy?</h3>
                 <p>
-                    Write to privacy@smartera.com and a person will read it. If you would rather escalate, you can also contact the data protection authority in
-                    your country. Before you do, here is what usually resolves things fastest:
+                    Write to privacy@proper.example and a person will read it. If you would rather escalate, you can also contact the data protection authority
+                    in your country. Before you do, here is what usually resolves things fastest:
                 </p>
                 <ol>
                     <li>Tell us the email address associated with your workspace.</li>

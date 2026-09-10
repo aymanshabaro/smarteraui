@@ -6,7 +6,7 @@
 // imports `@/components/base/select/select`, which does not exist in this repo. Once `base/select`
 // lands, delete this file and import both footers from the pagination component instead (the
 // page-size control below should then become the real `<Select />`).
-import { ArrowLeft, ArrowRight } from "@smarteraui/icons";
+import { ArrowLeft, ArrowRight } from "@properui/icons";
 import { Pagination } from "@/components/application/pagination/pagination-base";
 import { Button } from "@/components/base/buttons/button";
 import { DemoNativeSelect } from "@/components/base/input/input-native-select";

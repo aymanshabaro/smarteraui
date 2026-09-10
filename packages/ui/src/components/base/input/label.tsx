@@ -3,7 +3,7 @@
 import type { ReactNode, Ref } from "react";
 import type { LabelProps as AriaLabelProps } from "react-aria-components";
 import { Label as AriaLabel } from "react-aria-components";
-import { HelpCircle } from "@smarteraui/icons";
+import { HelpCircle } from "@properui/icons";
 import { Tooltip, TooltipTrigger } from "@/components/base/tooltip/tooltip";
 import { cx } from "@/utils/cx";
 

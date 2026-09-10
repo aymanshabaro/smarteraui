@@ -65,8 +65,8 @@ If you consume the package rather than copying it in, override the brand variabl
 import:
 
 ```css
-@import "@smarteraui/ui/styles/globals.css";
-@source "../node_modules/@smarteraui/ui/src/**/*.{ts,tsx}";
+@import "@properui/ui/styles/globals.css";
+@source "../node_modules/@properui/ui/src/**/*.{ts,tsx}";
 
 @theme {
     --color-brand-600: #2563eb;

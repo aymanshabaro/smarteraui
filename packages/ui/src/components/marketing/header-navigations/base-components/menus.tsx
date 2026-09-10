@@ -1,6 +1,6 @@
 "use client";
 
-import { BookOpen01 } from "@smarteraui/icons";
+import { BookOpen01 } from "@properui/icons";
 import { cx } from "@/utils/cx";
 import {
     blogCategories,

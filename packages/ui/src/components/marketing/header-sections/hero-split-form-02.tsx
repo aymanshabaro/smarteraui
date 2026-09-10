@@ -1,11 +1,11 @@
 "use client";
 
-import { Check } from "@smarteraui/icons";
+import { Check } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { SocialButton } from "@/components/base/buttons/social-button";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogoMinimal } from "@/components/foundations/logo/smartera-logo-minimal";
+import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
 import type { MarketingNavItemType } from "@/components/marketing/header-navigations/base-components/header";
 import { MarketingHeader } from "@/components/marketing/header-navigations/base-components/header";
 import { SimpleResourcesMenu } from "@/components/marketing/header-navigations/base-components/menus";
@@ -59,7 +59,7 @@ export const HeroSplitForm02 = () => (
                 <div className="bg-primary md:bg-tertiary w-full px-4 md:max-w-lg md:rounded-3xl md:p-10">
                     <Form className="border-secondary bg-primary border-t pt-12 pb-16 md:rounded-2xl md:border-none md:p-8">
                         <div className="flex flex-col items-center gap-6">
-                            <SmarteraLogoMinimal className="hidden size-10 md:block" />
+                            <ProperLogoMinimal className="hidden size-10 md:block" />
                             <div className="flex flex-col gap-2 text-center md:gap-3">
                                 <h2 className="text-display-xs text-primary md:text-display-sm font-semibold">Create an account</h2>
                                 <p className="text-tertiary text-md">Start your 30-day free trial</p>

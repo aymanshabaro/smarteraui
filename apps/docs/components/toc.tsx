@@ -2,8 +2,8 @@
 
 import { cx } from "~/lib/cx";
 import type { TocEntry } from "~/lib/toc";
-import { List } from "@smarteraui/icons";
-import { useActiveItem } from "@smarteraui/ui/hooks/use-active-item";
+import { List } from "@properui/icons";
+import { useActiveItem } from "@properui/ui/hooks/use-active-item";
 
 /** Right-hand "On this page" rail with scroll spy. Hidden below 2xl, as in the reference. */
 export const TableOfContents = ({ entries }: { entries: TocEntry[] }) => {

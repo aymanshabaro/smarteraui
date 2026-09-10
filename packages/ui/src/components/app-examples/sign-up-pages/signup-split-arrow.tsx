@@ -1,4 +1,4 @@
-import { SmarteraLogoMinimal } from "@/components/foundations/logo/smartera-logo-minimal";
+import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
 import { IMAGES } from "@/utils/demo-assets";
 import { SignUpFormColumn } from "./base-components/form-column";
 import { SocialProofRow } from "./base-components/page-parts";
@@ -31,7 +31,7 @@ export const SignupSplitArrow = () => (
 
             <div className="z-10 flex flex-col items-start justify-start gap-8 bg-linear-to-t from-black/40 to-black/0 px-16 py-24">
                 <div className="dark-mode">
-                    <SmarteraLogoMinimal className="size-20" />
+                    <ProperLogoMinimal className="size-20" />
                 </div>
 
                 <div className="flex flex-col gap-5">

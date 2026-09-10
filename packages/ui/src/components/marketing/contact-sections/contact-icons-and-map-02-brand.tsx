@@ -1,6 +1,6 @@
 "use client";
 
-import { MarkerPin01 } from "@smarteraui/icons";
+import { MarkerPin01 } from "@properui/icons";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 
 const offices = [

@@ -1,9 +1,9 @@
-import { ChevronRight } from "@smarteraui/icons";
+import { ChevronRight } from "@properui/icons";
 import { Badge } from "@/components/base/badges/badges";
 import { Button } from "@/components/base/buttons/button";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { sortCx } from "@/utils/cx";
 import { LOGOS } from "@/utils/demo-assets";
 
@@ -56,7 +56,7 @@ export const FooterLarge04 = () => (
         <div className="max-w-container mx-auto px-4 md:px-8">
             <div className="flex flex-col gap-12 md:gap-16 xl:flex-row">
                 <div className="flex w-full flex-col gap-6 md:max-w-xs">
-                    <SmarteraLogo className="h-7 w-min shrink-0" />
+                    <ProperLogo className="h-7 w-min shrink-0" />
                     <p className="text-tertiary text-md">Design amazing digital experiences that create more happy in the world.</p>
 
                     <a
@@ -119,7 +119,7 @@ export const FooterLarge04 = () => (
             </div>
 
             <div className="border-secondary mt-12 flex flex-col-reverse justify-between gap-4 border-t pt-8 md:mt-16 md:flex-row md:gap-6">
-                <p className="text-quaternary text-sm">© 2077 Smartera. All rights reserved.</p>
+                <p className="text-quaternary text-sm">© 2077 Proper. All rights reserved.</p>
                 <ul className="flex gap-3">
                     {legalLinks.map((link) => (
                         <li key={link.label}>

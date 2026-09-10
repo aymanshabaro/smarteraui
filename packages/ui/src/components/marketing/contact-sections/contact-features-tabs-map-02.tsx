@@ -1,7 +1,7 @@
 "use client";
 
 import { Tab as AriaTab, TabList as AriaTabList, TabPanel as AriaTabPanel, Tabs as AriaTabs } from "react-aria-components";
-import { ArrowRight } from "@smarteraui/icons";
+import { ArrowRight } from "@properui/icons";
 import { cx, sortCx } from "@/utils/cx";
 
 const stores = [

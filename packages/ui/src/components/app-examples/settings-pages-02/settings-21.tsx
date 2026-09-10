@@ -13,7 +13,7 @@ import {
     SearchLg,
     Ticket01,
     Zap,
-} from "@smarteraui/icons";
+} from "@properui/icons";
 import { PaginationPageMinimalCenter } from "@/components/application/pagination/pagination";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
 import { Tabs } from "@/components/application/tabs/tabs";

@@ -1,6 +1,6 @@
 "use client";
 
-import { SearchLg } from "@smarteraui/icons";
+import { SearchLg } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { Input } from "@/components/base/input/input";
 import { FaqAccordion04 } from "@/components/marketing/faq-sections/faq-accordion-04";
@@ -38,7 +38,7 @@ export const FaqPage08 = () => (
 
                 {/* The paragraph is pulled level with the headline from `lg` by zeroing its height. */}
                 <div className="grid grid-cols-[minmax(auto,768px)] gap-x-16 lg:grid-cols-[1fr_480px]">
-                    <h1 className="text-display-md text-primary_on-brand md:text-display-lg font-semibold">Top questions about Smartera</h1>
+                    <h1 className="text-display-md text-primary_on-brand md:text-display-lg font-semibold">Top questions about Proper</h1>
                     <p className="text-tertiary_on-brand mt-4 text-lg md:mt-6 md:text-xl lg:mt-3 lg:h-0">
                         Need something cleared up? Here are our most frequently asked questions.
                     </p>
@@ -59,7 +59,7 @@ export const FaqPage08 = () => (
                         <span className="hidden md:inline">Start your 30-day free trial</span>
                         <span className="md:hidden">Start your free trial</span>
                     </h2>
-                    <p className="text-tertiary_on-brand mt-4 text-lg md:mt-5 lg:text-xl">Join over 4,000+ startups already growing with Smartera.</p>
+                    <p className="text-tertiary_on-brand mt-4 text-lg md:mt-5 lg:text-xl">Join over 4,000+ startups already growing with Proper.</p>
 
                     <div className="mt-8 flex flex-col-reverse gap-3 self-stretch sm:flex-row sm:self-center">
                         {/* The secondary button loses its ring on the brand background. */}

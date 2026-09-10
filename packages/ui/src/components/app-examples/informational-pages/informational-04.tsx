@@ -16,7 +16,7 @@ import {
     Settings01,
     Users01,
     XCircle,
-} from "@smarteraui/icons";
+} from "@properui/icons";
 import type { NavItemType } from "@/components/application/app-navigation/config";
 import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
 import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
@@ -51,7 +51,7 @@ const navItems: NavItemType[] = [
 const footerItems: NavItemType[] = [
     { label: "Settings", href: "/settings", icon: Settings01 },
     { label: "Support", href: "/support", icon: MessageChatCircle },
-    { label: "Open in browser", href: "https://smartera.example.com/", icon: LayoutAlt01 },
+    { label: "Open in browser", href: "https://proper.example.com/", icon: LayoutAlt01 },
 ];
 
 const statusOptions: SelectItemType[] = [

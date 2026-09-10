@@ -3,7 +3,7 @@ import type { Frontmatter } from "~/lib/content";
 import { cx } from "~/lib/cx";
 import { githubSourceUrl } from "~/lib/site";
 import type { NavSiblings } from "~/lib/site-nav";
-import { ArrowLeft, ArrowRight } from "@smarteraui/icons";
+import { ArrowLeft, ArrowRight } from "@properui/icons";
 import { GithubMark } from "./brand-icons";
 import { CopyMenu } from "./copy-menu";
 import { ResourceLink, utilityButtonClasses } from "./primitives";

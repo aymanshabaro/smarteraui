@@ -66,7 +66,7 @@ export const Settings14 = () => (
                             <SettingsRowDivider />
 
                             <SettingsFormRow label="Email address" hint="Invoices will be sent to this email address.">
-                                <Input isRequired type="email" label="Email address" placeholder="billing@smartera.com" className={hideLabelOnDesktop} />
+                                <Input isRequired type="email" label="Email address" placeholder="billing@proper.example" className={hideLabelOnDesktop} />
                                 <Button color="link-color" size="md" className="w-max">
                                     Add another
                                 </Button>

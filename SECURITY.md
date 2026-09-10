@@ -2,19 +2,19 @@
 
 ## Supported versions
 
-Smartera UI is pre-1.0. Security fixes land on the latest published minor release of each package; there are no
+Proper UI is pre-1.0. Security fixes land on the latest published minor release of each package; there are no
 long-term support branches yet.
 
-| Package          | Version | Supported          |
-| ---------------- | ------- | ------------------ |
-| `@smarteraui/ui` | 0.1.x   | :white_check_mark: |
-| `@smarteraui/ui` | < 0.1   | :x:                |
-| `smarteraui` CLI | 0.1.x   | :white_check_mark: |
-| `smarteraui` CLI | < 0.1   | :x:                |
+| Package        | Version | Supported          |
+| -------------- | ------- | ------------------ |
+| `@properui/ui` | 0.1.x   | :white_check_mark: |
+| `@properui/ui` | < 0.1   | :x:                |
+| `properui` CLI | 0.1.x   | :white_check_mark: |
+| `properui` CLI | < 0.1   | :x:                |
 
 If you copied components into your project with the CLI, you own that code — a fix released here does not reach you
-automatically. Re-run `npx smarteraui@latest add <component> --overwrite` to pull it in, and use
-`npx smarteraui@latest diff` first to see what you would overwrite.
+automatically. Re-run `npx properui@latest add <component> --overwrite` to pull it in, and use
+`npx properui@latest diff` first to see what you would overwrite.
 
 Once 1.0 ships, this table will move to supporting the current major and the previous one.
 
@@ -50,7 +50,7 @@ when the fix goes out, unless you would rather stay anonymous.
 **In scope**
 
 - Cross-site scripting or injection reachable through a component's public props.
-- Arbitrary file write, path traversal or command injection in the `smarteraui` CLI.
+- Arbitrary file write, path traversal or command injection in the `properui` CLI.
 - Supply-chain problems in this repository: a compromised build script, a malicious generated registry entry.
 - Vulnerable dependency versions pinned by these packages, where the vulnerability is actually reachable.
 
@@ -63,4 +63,4 @@ when the fix goes out, unless you would rather stay anonymous.
   with no accounts and no user data.
 - Findings from automated scanners with no demonstrated exploit path.
 - Accessibility bugs, rendering bugs and correctness bugs: those are ordinary
-  [issues](https://github.com/aymanshabaro/smarteraui/issues), and very welcome as such.
+  [issues](https://github.com/properui/properui/issues), and very welcome as such.

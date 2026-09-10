@@ -1,4 +1,4 @@
-import { Check } from "@smarteraui/icons";
+import { Check } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
@@ -59,7 +59,7 @@ export const NewsletterScreenMockup01 = () => (
                         <div className="bg-utility-neutral-50 ring-utility-neutral-200 relative overflow-hidden rounded-[6.77px] ring-[0.56px] md:rounded-[20.21px] md:ring-[1.68px]">
                             <img
                                 src={IMAGES.landscape[0].src}
-                                alt="Dashboard mockup showing the Smartera application interface"
+                                alt="Dashboard mockup showing the Proper application interface"
                                 className="w-full object-cover object-left-top"
                             />
                         </div>

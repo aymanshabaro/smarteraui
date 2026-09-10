@@ -10,7 +10,7 @@ import {
     Input as AriaInput,
     ListBox as AriaListBox,
 } from "react-aria-components";
-import { SearchLg } from "@smarteraui/icons";
+import { SearchLg } from "@properui/icons";
 import { HintText } from "@/components/base/input/hint-text";
 import { Label } from "@/components/base/input/label";
 import { Popover } from "@/components/base/select/popover";

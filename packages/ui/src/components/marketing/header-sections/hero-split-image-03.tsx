@@ -1,7 +1,7 @@
 "use client";
 
 import type { SVGProps } from "react";
-import { PlayCircle } from "@smarteraui/icons";
+import { PlayCircle } from "@properui/icons";
 import { FileUpload } from "@/components/application/file-upload/file-upload-base";
 import { Button } from "@/components/base/buttons/button";
 import type { MarketingNavItemType } from "@/components/marketing/header-navigations/base-components/header";
@@ -76,13 +76,13 @@ export const HeroSplitImage03 = () => (
                 <div className="relative lg:h-full lg:min-h-160">
                     <ul className="absolute -start-18 bottom-9 z-10 hidden w-92 flex-col gap-3 select-none lg:flex">
                         <FileUpload.ListItemProgressBar
-                            name="Smartera Podcast – Episode 1.mp3"
+                            name="Proper Podcast – Episode 1.mp3"
                             size={20 * MB}
                             progress={100}
                             className="bg-alpha-white/90 ring-secondary_alt ring backdrop-blur-lg"
                         />
                         <FileUpload.ListItemProgressBar
-                            name="Smartera Podcast – Episode 2.mp3"
+                            name="Proper Podcast – Episode 2.mp3"
                             size={16 * MB}
                             progress={80}
                             className="bg-alpha-white/90 ring-secondary_alt ring backdrop-blur-lg"

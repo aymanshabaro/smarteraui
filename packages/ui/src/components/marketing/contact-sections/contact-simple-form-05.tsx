@@ -1,7 +1,7 @@
 "use client";
 
 import { Link as AriaLink } from "react-aria-components";
-import { MarkerPin01, MessageChatCircle, Phone } from "@smarteraui/icons";
+import { MarkerPin01, MessageChatCircle, Phone } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { Checkbox } from "@/components/base/checkbox/checkbox";
 import { Form } from "@/components/base/form/form";
@@ -15,7 +15,13 @@ import { countries } from "@/utils/countries";
 const countryCodeOptions = countries.map((country) => ({ value: country.code, label: country.code }));
 
 const channels = [
-    { icon: MessageChatCircle, title: "Chat to us", subtitle: "Our friendly team is here to help.", cta: "hi@smartera.com", href: "mailto:hi@smartera.com" },
+    {
+        icon: MessageChatCircle,
+        title: "Chat to us",
+        subtitle: "Our friendly team is here to help.",
+        cta: "hi@proper.example",
+        href: "mailto:hi@proper.example",
+    },
     {
         icon: MarkerPin01,
         title: "Office",
@@ -87,8 +93,8 @@ export const ContactSimpleForm05 = () => (
                 <h2 className="text-display-sm text-primary md:text-display-md font-semibold">Level up your brand</h2>
                 <p className="text-tertiary mt-4 text-lg whitespace-pre-line md:mt-5 md:text-xl">
                     You can reach us anytime via{" "}
-                    <Button href="mailto:hi@smartera.com" color="link-color" size="xl" className="text-lg font-medium md:text-xl">
-                        hi@smartera.com
+                    <Button href="mailto:hi@proper.example" color="link-color" size="xl" className="text-lg font-medium md:text-xl">
+                        hi@proper.example
                     </Button>
                 </p>
 

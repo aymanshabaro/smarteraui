@@ -2,7 +2,7 @@
 
 ## Prompt
 
-Paste this verbatim into the agent, in a fresh project with either Smart Era UI or the shadcn/ui baseline already installed (see `../baseline/README.md`). Do not add any hints, framework names, or component names beyond what's written here — that's the point of a tool-agnostic prompt.
+Paste this verbatim into the agent, in a fresh project with either Proper UI or the shadcn/ui baseline already installed (see `../baseline/README.md`). Do not add any hints, framework names, or component names beyond what's written here — that's the point of a tool-agnostic prompt.
 
 > Build a settings page for a SaaS product. It needs tabbed navigation between three sections: **Profile**, **Notifications**, and **Billing**.
 >

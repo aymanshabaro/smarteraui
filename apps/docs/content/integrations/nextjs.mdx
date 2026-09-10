@@ -1,19 +1,19 @@
 ---
 title: Next.js integration
 section: integrations
-description: Set up a Next.js App Router or Pages Router project with Smartera UI in minutes — providers, dark mode, and Tailwind v4 scanning included.
-metaTitle: Next.js integration | Smartera UI
-metaDescription: Install Smartera UI in a Next.js project with the CLI or by hand. Configure RouterProvider, ThemeProvider, dark mode, and server component boundaries.
+description: Set up a Next.js App Router or Pages Router project with Proper UI in minutes — providers, dark mode, and Tailwind v4 scanning included.
+metaTitle: Next.js integration | Proper UI
+metaDescription: Install Proper UI in a Next.js project with the CLI or by hand. Configure RouterProvider, ThemeProvider, dark mode, and server component boundaries.
 ---
 
-Smartera UI ships as a regular npm workspace package, so a Next.js app consumes it the same way it consumes any other dependency — install it, import its styles, and wrap the tree in two providers.
+Proper UI ships as a regular npm workspace package, so a Next.js app consumes it the same way it consumes any other dependency — install it, import its styles, and wrap the tree in two providers.
 
 ## Installation
 
 The fastest path is the CLI. Run it from the root of your Next.js project:
 
 ```bash
-npx smarteraui@latest init --nextjs
+npx properui@latest init --nextjs
 ```
 
 It detects App Router vs Pages Router and whether you use a `src/` directory automatically — `--nextjs` only overrides framework detection, it doesn't scaffold a new project. The CLI writes `app/globals.css` (or `styles/globals.css` for a Pages Router project), adds the Tailwind `@source` line so the package's classes get scanned, sets `transpilePackages` in `next.config.ts`, and wires up `ThemeProvider` in your root layout — it does not add `RouterProvider` for you, since that depends on which router you're using (see below). You're ready to add components once it's done.
@@ -25,18 +25,18 @@ Prefer to wire it up yourself, or already have opinions about your `layout.tsx`?
 **1. Install the package**
 
 ```bash
-npm install @smarteraui/ui react-aria-components next-themes
+npm install @properui/ui react-aria-components next-themes
 ```
 
 **2. Import the stylesheet**
 
-`@smarteraui/ui` publishes a single `globals.css` that already contains the Tailwind import, the design tokens, typography, and every plugin the components need. Import it once and add an `@source` line so Tailwind v4 scans the package's own class names:
+`@properui/ui` publishes a single `globals.css` that already contains the Tailwind import, the design tokens, typography, and every plugin the components need. Import it once and add an `@source` line so Tailwind v4 scans the package's own class names:
 
 ```css
 /* app/globals.css */
-@import "@smarteraui/ui/styles/globals.css";
+@import "@properui/ui/styles/globals.css";
 
-@source "../node_modules/@smarteraui/ui/src/**/*.{ts,tsx}";
+@source "../node_modules/@properui/ui/src/**/*.{ts,tsx}";
 ```
 
 **3. Transpile the package**
@@ -48,7 +48,7 @@ Next.js only compiles your own source by default. Add the package to `transpileP
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-    transpilePackages: ["@smarteraui/ui"],
+    transpilePackages: ["@properui/ui"],
 };
 
 export default nextConfig;
@@ -56,7 +56,7 @@ export default nextConfig;
 
 **4. Load a font with `next/font`**
 
-Smartera UI's type scale reads from a `--font-body` (and `--font-display`) token in `theme.css`. Point them at whatever font `next/font` generates instead of loading a stylesheet:
+Proper UI's type scale reads from a `--font-body` (and `--font-display`) token in `theme.css`. Point them at whatever font `next/font` generates instead of loading a stylesheet:
 
 ```tsx
 // app/layout.tsx
@@ -77,7 +77,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "sw
 
 ## App router vs pages router
 
-Both routers need the same two providers, but they're not interchangeable. `ThemeProvider` (from `@smarteraui/ui/providers`, wrapping `next-themes`) works identically in both. `RouterProvider` (also from `@smarteraui/ui/providers`) does not take a `navigate` prop — it reads `useRouter` from `next/navigation` internally, which only exists in the App Router. A Pages Router app has to use React Aria's own `RouterProvider` directly, fed from `next/router`.
+Both routers need the same two providers, but they're not interchangeable. `ThemeProvider` (from `@properui/ui/providers`, wrapping `next-themes`) works identically in both. `RouterProvider` (also from `@properui/ui/providers`) does not take a `navigate` prop — it reads `useRouter` from `next/navigation` internally, which only exists in the App Router. A Pages Router app has to use React Aria's own `RouterProvider` directly, fed from `next/router`.
 
 ### App router
 
@@ -85,7 +85,7 @@ Both provider files already carry their own `"use client"` directive, so you can
 
 ```tsx
 // app/layout.tsx
-import { RouterProvider, ThemeProvider } from "@smarteraui/ui/providers";
+import { RouterProvider, ThemeProvider } from "@properui/ui/providers";
 import "./globals.css";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -112,7 +112,7 @@ The bundled `RouterProvider` doesn't work here — swap it for React Aria's own,
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { RouterProvider } from "react-aria-components";
-import { ThemeProvider } from "@smarteraui/ui/providers";
+import { ThemeProvider } from "@properui/ui/providers";
 import "../styles/globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -128,12 +128,12 @@ export default function App({ Component, pageProps }: AppProps) {
 }
 ```
 
-## Using Smartera UI components
+## Using Proper UI components
 
 Import each component from its own subpath — the same path the CLI writes when you run `add`:
 
 ```tsx
-import { Button } from "@smarteraui/ui/components/base/buttons/button";
+import { Button } from "@properui/ui/components/base/buttons/button";
 
 export default function Page() {
     return <Button size="md">Get started</Button>;
@@ -144,7 +144,7 @@ Most base components already carry their own `"use client"` directive because th
 
 ## Dark mode
 
-Dark mode is class-based: Smartera UI looks for `.dark-mode` on `<html>` and flips every semantic token underneath it. The `value` map passed to `ThemeProvider` above tells `next-themes` to write `light-mode` / `dark-mode` instead of its default `light` / `dark` class names, and `suppressHydrationWarning` on `<html>` stops React from complaining about the class next-themes adds before hydration.
+Dark mode is class-based: Proper UI looks for `.dark-mode` on `<html>` and flips every semantic token underneath it. The `value` map passed to `ThemeProvider` above tells `next-themes` to write `light-mode` / `dark-mode` instead of its default `light` / `dark` class names, and `suppressHydrationWarning` on `<html>` stops React from complaining about the class next-themes adds before hydration.
 
 ### Theme toggle
 
@@ -155,7 +155,7 @@ Dark mode is class-based: Smartera UI looks for `.dark-mode` on `<html>` and fli
 "use client";
 
 import { useTheme } from "next-themes";
-import { Button } from "@smarteraui/ui/components/base/buttons/button";
+import { Button } from "@properui/ui/components/base/buttons/button";
 
 export const ThemeToggleButton = () => {
     const { resolvedTheme, setTheme } = useTheme();
@@ -169,27 +169,27 @@ export const ThemeToggleButton = () => {
 <FAQs
     items={[
         {
-            question: "How do I integrate Smartera UI with a Next.js project?",
-            answer: "Run npx smarteraui@latest init --nextjs for a complete setup, or install @smarteraui/ui yourself and import its globals.css from your own stylesheet. Tailwind v4 needs no config file — everything is imported directly in CSS.",
+            question: "How do I integrate Proper UI with a Next.js project?",
+            answer: "Run npx properui@latest init --nextjs for a complete setup, or install @properui/ui yourself and import its globals.css from your own stylesheet. Tailwind v4 needs no config file — everything is imported directly in CSS.",
         },
         {
-            question: "Does Smartera UI support both App Router and Pages Router?",
-            answer: "Yes, but the wiring differs. ThemeProvider works the same in both. RouterProvider from @smarteraui/ui/providers only works in the App Router — it reads next/navigation internally and takes no props. In the Pages Router, use RouterProvider from react-aria-components directly and feed it next/router's useRouter().push.",
+            question: "Does Proper UI support both App Router and Pages Router?",
+            answer: "Yes, but the wiring differs. ThemeProvider works the same in both. RouterProvider from @properui/ui/providers only works in the App Router — it reads next/navigation internally and takes no props. In the Pages Router, use RouterProvider from react-aria-components directly and feed it next/router's useRouter().push.",
         },
         {
-            question: "Can I use Smartera UI with Next.js server components?",
+            question: "Can I use Proper UI with Next.js server components?",
             answer: 'Yes. Interactive components already declare "use client" internally, so you can import and render them from a server component without adding the directive yourself. You only need it on files where you add your own interactivity.',
         },
         {
-            question: "How do I set up dark mode with Smartera UI in Next.js?",
-            answer: 'Wrap your app in ThemeProvider from next-themes with attribute="class" and a value map of { light: "light-mode", dark: "dark-mode" } — those are the two classes Smartera UI\'s theme.css looks for on <html>.',
+            question: "How do I set up dark mode with Proper UI in Next.js?",
+            answer: 'Wrap your app in ThemeProvider from next-themes with attribute="class" and a value map of { light: "light-mode", dark: "dark-mode" } — those are the two classes Proper UI\'s theme.css looks for on <html>.',
         },
         {
-            question: "How does Smartera UI work with Tailwind CSS v4 in Next.js?",
-            answer: "There's no tailwind.config.js. You import @smarteraui/ui/styles/globals.css from your own CSS file and add one @source line so Tailwind's scanner picks up the package's class names alongside your own.",
+            question: "How does Proper UI work with Tailwind CSS v4 in Next.js?",
+            answer: "There's no tailwind.config.js. You import @properui/ui/styles/globals.css from your own CSS file and add one @source line so Tailwind's scanner picks up the package's class names alongside your own.",
         },
         {
-            question: "Do Smartera UI components work with next/image?",
+            question: "Do Proper UI components work with next/image?",
             answer: "Yes — components like avatars and cards accept a rendered image as a child or prop, so you can nest next/image inside them and keep automatic optimization, lazy loading, and responsive sizing.",
         },
     ]}

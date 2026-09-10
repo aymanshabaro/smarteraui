@@ -2,7 +2,7 @@
 
 import type { FC } from "react";
 import { Radio as AriaRadio, RadioGroup as AriaRadioGroup } from "react-aria-components";
-import { DownloadCloud02, Plus } from "@smarteraui/icons";
+import { DownloadCloud02, Plus } from "@properui/icons";
 import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
 import { Table } from "@/components/application/table/table";

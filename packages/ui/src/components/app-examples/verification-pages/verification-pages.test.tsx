@@ -26,7 +26,7 @@ describe("Verification pages (part A)", () => {
 
     it("addresses the verification email to the demo persona", () => {
         const { getByText } = render(<Demos.VerificationPageExample />);
-        expect(getByText("olivia@smartera.com")).toBeInTheDocument();
+        expect(getByText("olivia@proper.example")).toBeInTheDocument();
     });
 
     it("renders a four-slot code field per breakpoint on the manual code step", () => {

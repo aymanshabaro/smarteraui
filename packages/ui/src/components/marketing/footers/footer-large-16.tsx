@@ -1,7 +1,7 @@
 import { Button } from "@/components/base/buttons/button";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 
 const navItems = [
     { label: "Overview", href: "/product/overview" },
@@ -17,7 +17,7 @@ export const FooterLarge16 = () => (
     <footer className="bg-primary py-12 md:pt-16">
         <div className="max-w-container mx-auto px-4 md:px-8">
             <div className="flex flex-col gap-8 md:items-center">
-                <SmarteraLogo className="h-7 w-min shrink-0" />
+                <ProperLogo className="h-7 w-min shrink-0" />
 
                 <nav>
                     <ul className="grid grid-cols-2 gap-x-8 gap-y-3 sm:grid-cols-[repeat(6,max-content)]">
@@ -43,7 +43,7 @@ export const FooterLarge16 = () => (
                     </Button>
                 </Form>
 
-                <p className="text-quaternary text-sm">© 2077 Smartera. All rights reserved.</p>
+                <p className="text-quaternary text-sm">© 2077 Proper. All rights reserved.</p>
             </div>
         </div>
     </footer>

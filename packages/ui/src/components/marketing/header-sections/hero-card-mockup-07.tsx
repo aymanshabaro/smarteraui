@@ -1,6 +1,6 @@
 "use client";
 
-import { PlayCircle } from "@smarteraui/icons";
+import { PlayCircle } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import type { MarketingNavItemType } from "@/components/marketing/header-navigations/base-components/header";
 import { MarketingHeader } from "@/components/marketing/header-navigations/base-components/header";
@@ -63,18 +63,18 @@ export const HeroCardMockup07 = () => (
                     <div className="translate-x-[34px] translate-y-[3px] -space-y-[116.5px] md:translate-x-[53px] md:translate-y-[37px] md:-space-y-[83px]">
                         <div className="relative z-3 translate-y-[22px] rotate-[29.9deg]">
                             <div style={tilt} className="[--scale:1.365] md:[--scale:2.1]">
-                                <CreditCard company="Smartera." type="transparent-gradient" cardHolder={AVATARS[2].name} />
+                                <CreditCard company="Proper." type="transparent-gradient" cardHolder={AVATARS[2].name} />
                             </div>
                         </div>
 
                         <div className="relative z-2 translate-y-[10px] rotate-[14.8deg]">
                             <div style={tilt} className="[--scale:1.365] md:[--scale:2.099]">
-                                <CreditCard company="Smartera." type="transparent-gradient" cardHolder={AVATARS[0].name} />
+                                <CreditCard company="Proper." type="transparent-gradient" cardHolder={AVATARS[0].name} />
                             </div>
                         </div>
 
                         <div style={tilt} className="relative z-1 [--scale:1.365] md:[--scale:2.1]">
-                            <CreditCard company="Smartera." type="transparent-gradient" cardHolder={AVATARS[1].name} />
+                            <CreditCard company="Proper." type="transparent-gradient" cardHolder={AVATARS[1].name} />
                         </div>
                     </div>
                 </div>

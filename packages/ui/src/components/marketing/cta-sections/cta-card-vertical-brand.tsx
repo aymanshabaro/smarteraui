@@ -10,7 +10,7 @@ export const CtaCardVerticalBrand = () => (
                         <span className="hidden md:inline">Start your 30-day free trial</span>
                         <span className="md:hidden">Start your free trial</span>
                     </h2>
-                    <p className="text-tertiary_on-brand mt-4 text-lg md:mt-5 lg:text-xl">Join over 4,000+ startups already growing with Smartera.</p>
+                    <p className="text-tertiary_on-brand mt-4 text-lg md:mt-5 lg:text-xl">Join over 4,000+ startups already growing with Proper.</p>
                 </div>
 
                 <div className="flex flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-start">

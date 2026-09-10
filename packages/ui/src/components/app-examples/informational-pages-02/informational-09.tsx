@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment } from "react";
-import { SearchLg } from "@smarteraui/icons";
+import { SearchLg } from "@properui/icons";
 import { CalendarAppHeader, HOURS, WEEK_DAYS, WeekStripNav, formatHourLabel } from "@/components/application/date-picker/calendar-app-shared";
 import { Tabs } from "@/components/application/tabs/tabs";
 import { Input } from "@/components/base/input/input";

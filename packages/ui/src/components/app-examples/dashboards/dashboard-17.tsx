@@ -1,6 +1,6 @@
 "use client";
 
-import { Plus, SearchLg } from "@smarteraui/icons";
+import { Plus, SearchLg } from "@properui/icons";
 import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
 import { Button } from "@/components/base/buttons/button";
 import { Dropdown } from "@/components/base/dropdown/dropdown";

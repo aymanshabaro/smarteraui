@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { Check, MessageSmileCircle, PresentationChart01, Zap } from "@smarteraui/icons";
+import { Check, MessageSmileCircle, PresentationChart01, Zap } from "@properui/icons";
 import { Badge } from "@/components/base/badges/badges";
 import { Button } from "@/components/base/buttons/button";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
@@ -18,7 +18,7 @@ const benefits: { icon: FC<{ className?: string }>; title: string; description: 
     {
         icon: PresentationChart01,
         title: "Manage your team with reports",
-        description: "Measure what matters with Smartera's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
+        description: "Measure what matters with Proper's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
     },
 ];
 

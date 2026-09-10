@@ -1,6 +1,6 @@
 "use client";
 
-import { PlayCircle } from "@smarteraui/icons";
+import { PlayCircle } from "@properui/icons";
 import { BadgeGroup } from "@/components/base/badges/badge-groups";
 import { Button } from "@/components/base/buttons/button";
 import type { MarketingNavItemType } from "@/components/marketing/header-navigations/base-components/header";
@@ -43,7 +43,7 @@ export const HeroCardMockup01 = () => (
 
                     <h1 className="text-display-md text-primary md:text-display-lg lg:text-display-xl mt-4 font-semibold">No more banking headaches</h1>
                     <p className="text-tertiary mt-4 max-w-3xl text-lg text-balance md:mt-6 md:text-xl">
-                        Mo money, no problems. Smartera is a next-generation financial technology company in the process of reinventing banking. 30-day free
+                        Mo money, no problems. Proper is a next-generation financial technology company in the process of reinventing banking. 30-day free
                         trial.
                     </p>
 
@@ -62,10 +62,10 @@ export const HeroCardMockup01 = () => (
                 <div className="bg-quaternary flex h-68 items-center justify-center md:h-120 md:items-end">
                     <div className="flex">
                         <div className="[transform:scale(0.79)_translate(141px,17px)] md:[transform:scale(1.77)_translate(35px,2px)]">
-                            <CreditCard type="brand-dark" company="Smartera." cardHolder={AVATARS[1].name} />
+                            <CreditCard type="brand-dark" company="Proper." cardHolder={AVATARS[1].name} />
                         </div>
                         <div className="[transform:scale(0.79)_translate(-88px,4px)_rotate(30deg)] md:[transform:scale(1.77)_translate(28px,-10.8px)_rotate(30deg)]">
-                            <CreditCard type="transparent" company="Smartera." cardHolder={AVATARS[0].name} />
+                            <CreditCard type="transparent" company="Proper." cardHolder={AVATARS[0].name} />
                         </div>
                     </div>
                 </div>

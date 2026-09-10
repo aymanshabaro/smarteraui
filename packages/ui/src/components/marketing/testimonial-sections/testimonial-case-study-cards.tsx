@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowNext, ArrowPrevious, ArrowUpRight } from "@smarteraui/icons";
+import { ArrowNext, ArrowPrevious, ArrowUpRight } from "@properui/icons";
 import { Carousel } from "@/components/application/carousel/carousel-base";
 import { Button } from "@/components/base/buttons/button";
 import { cx, sortCx } from "@/utils/cx";
@@ -19,12 +19,12 @@ const styles = sortCx({
 const caseStudies = [
     {
         logo: LOGOS[0],
-        quote: "Smartera has saved us thousands of hours of work. We're able to spin up projects faster.",
+        quote: "Proper has saved us thousands of hours of work. We're able to spin up projects faster.",
         background: "bg-utility-brand-600",
     },
     {
         logo: LOGOS[1],
-        quote: "We've been using Smartera to kick start every new project and can't work without it.",
+        quote: "We've been using Proper to kick start every new project and can't work without it.",
         background: "bg-utility-green-600",
     },
     {
@@ -34,7 +34,7 @@ const caseStudies = [
     },
     {
         logo: LOGOS[3],
-        quote: "Smartera has saved us thousands of hours of work. We're able to spin up projects faster.",
+        quote: "Proper has saved us thousands of hours of work. We're able to spin up projects faster.",
         background: "bg-utility-indigo-600",
     },
 ] as const;

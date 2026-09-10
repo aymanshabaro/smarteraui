@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft } from "@smarteraui/icons";
+import { ArrowLeft } from "@properui/icons";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
 import { Button } from "@/components/base/buttons/button";
 import { Checkbox } from "@/components/base/checkbox/checkbox";

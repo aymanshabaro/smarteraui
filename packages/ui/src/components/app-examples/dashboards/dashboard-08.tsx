@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowDown, ArrowUp, DownloadCloud02, Edit01, FilterLines, SearchLg, Sliders02, Trash01 } from "@smarteraui/icons";
+import { ArrowDown, ArrowUp, DownloadCloud02, Edit01, FilterLines, SearchLg, Sliders02, Trash01 } from "@properui/icons";
 import { SidebarNavigationSectionDividers } from "@/components/application/app-navigation/sidebar-navigation/sidebar-section-dividers";
 import { Table, TableCard } from "@/components/application/table/table";
 import { TablePaginationMinimal } from "@/components/application/table/table-pagination";

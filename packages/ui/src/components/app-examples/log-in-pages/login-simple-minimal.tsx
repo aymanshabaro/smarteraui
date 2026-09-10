@@ -2,14 +2,14 @@ import { Button } from "@/components/base/buttons/button";
 import { SocialButton } from "@/components/base/buttons/social-button";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 
 /** Minimal log in page: a stacked, borderless email/password pair with no labels or checkbox. */
 export const LoginSimpleMinimal = () => (
     <section className="bg-primary min-h-screen px-4 py-12 md:px-8 md:pt-24">
         <div className="mx-auto flex w-full flex-col gap-8 sm:max-w-90">
             <div className="flex flex-col items-center gap-8 text-center md:gap-16">
-                <SmarteraLogo />
+                <ProperLogo />
 
                 <div className="flex flex-col gap-2 md:gap-3">
                     <h1 className="text-primary md:text-display-xs text-xl font-semibold">Log in to your account</h1>

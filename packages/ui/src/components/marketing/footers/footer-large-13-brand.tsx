@@ -1,8 +1,8 @@
 "use client";
 
-import { PlayCircle } from "@smarteraui/icons";
+import { PlayCircle } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
-import { SmarteraLogoMinimal } from "@/components/foundations/logo/smartera-logo-minimal";
+import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
 import { sortCx } from "@/utils/cx";
 
 const styles = sortCx({
@@ -21,12 +21,12 @@ export const FooterLarge13Brand = () => {
         <footer className="bg-brand-section py-12 md:pt-16">
             <div className="max-w-container mx-auto px-4 md:px-8">
                 <div className="flex flex-col md:items-center md:text-center">
-                    <SmarteraLogoMinimal className="size-8 origin-center scale-[1.2] drop-shadow" />
+                    <ProperLogoMinimal className="size-8 origin-center scale-[1.2] drop-shadow" />
 
                     <h2 className="text-display-xs text-primary_on-brand md:text-display-sm mt-8 font-semibold md:mt-12">
                         Let's get started on something great
                     </h2>
-                    <p className="text-md text-tertiary_on-brand mt-2 md:mt-4 md:text-xl">Join over 4,000+ startups already growing with Smartera.</p>
+                    <p className="text-md text-tertiary_on-brand mt-2 md:mt-4 md:text-xl">Join over 4,000+ startups already growing with Proper.</p>
 
                     <div className="mt-8 flex flex-col-reverse gap-3 md:mt-12 md:flex-row">
                         {/* The secondary button loses its ring on the brand background. */}
@@ -38,7 +38,7 @@ export const FooterLarge13Brand = () => {
                 </div>
 
                 <div className="border-brand_alt mt-12 flex flex-col-reverse justify-between gap-4 border-t pt-8 md:mt-16 md:flex-row md:gap-6">
-                    <p className="text-quaternary_on-brand text-sm">© 2077 Smartera. All rights reserved.</p>
+                    <p className="text-quaternary_on-brand text-sm">© 2077 Proper. All rights reserved.</p>
 
                     <ul className="flex gap-3">
                         {legalItems.map((item) => (

@@ -1,16 +1,16 @@
 ---
 title: RTL support
 section: docs
-description: Build right-to-left interfaces with Smartera UI. Arabic, Hebrew, Persian, and other RTL languages are supported through CSS logical properties, not a separate theme.
-metaTitle: RTL support | Smartera UI
-metaDescription: Build right-to-left interfaces with Smartera UI React. Logical Tailwind utilities, mirrored icons, and RTL-aware React Aria components.
+description: Build right-to-left interfaces with Proper UI. Arabic, Hebrew, Persian, and other RTL languages are supported through CSS logical properties, not a separate theme.
+metaTitle: RTL support | Proper UI
+metaDescription: Build right-to-left interfaces with Proper UI React. Logical Tailwind utilities, mirrored icons, and RTL-aware React Aria components.
 ---
 
 ## Right-to-left support
 
-Smartera UI supports right-to-left languages — Arabic, Hebrew, Persian, Urdu — without a separate theme or component fork. Direction-aware behavior (arrow-key navigation, popover placement, date-picker field order) comes from React Aria and is complete; the styling layer gets there with CSS logical properties, and is mid-migration.
+Proper UI supports right-to-left languages — Arabic, Hebrew, Persian, Urdu — without a separate theme or component fork. Direction-aware behavior (arrow-key navigation, popover placement, date-picker field order) comes from React Aria and is complete; the styling layer gets there with CSS logical properties, and is mid-migration.
 
-> **Status.** React Aria's direction handling is complete. The style layer is not: across `packages/ui/src/components`, roughly 281 logical spacing utilities (`ms-*`, `me-*`, `ps-*`, `pe-*`, `start-*`, `end-*`) are in place against about 365 remaining physical ones (`ml-*`, `mr-*`, `pl-*`, `pr-*`, `left-*`, `right-*`), and 34 `text-start`/`text-end` against 36 `text-left`/`text-right`. Coverage is strongest in base components and weakest in marketing sections and page examples. If a component doesn't mirror correctly, that's a bug — [open an issue](https://github.com/aymanshabaro/smarteraui/issues).
+> **Status.** React Aria's direction handling is complete. The style layer is not: across `packages/ui/src/components`, roughly 281 logical spacing utilities (`ms-*`, `me-*`, `ps-*`, `pe-*`, `start-*`, `end-*`) are in place against about 365 remaining physical ones (`ml-*`, `mr-*`, `pl-*`, `pr-*`, `left-*`, `right-*`), and 34 `text-start`/`text-end` against 36 `text-left`/`text-right`. Coverage is strongest in base components and weakest in marketing sections and page examples. If a component doesn't mirror correctly, that's a bug — [open an issue](https://github.com/properui/properui/issues).
 
 Try it live — this toggle flips only the panel below between `dir="ltr"` and `dir="rtl"`, nothing else on the page moves, because every class inside it is logical rather than physical:
 
@@ -46,7 +46,7 @@ Try it live — this toggle flips only the panel below between `dir="ltr"` and `
 
 ## How it works
 
-Logical properties describe layout relative to text direction (`start` / `end`) instead of a physical side (`left` / `right`). In a `dir="ltr"` document `margin-inline-start` resolves to the left; in `dir="rtl"` it resolves to the right — the same class, no conditional styling. Smartera UI's components are migrating to these Tailwind utilities everywhere spacing, alignment, or borders would otherwise assume a direction — see the status note above for how far that migration has gotten:
+Logical properties describe layout relative to text direction (`start` / `end`) instead of a physical side (`left` / `right`). In a `dir="ltr"` document `margin-inline-start` resolves to the left; in `dir="rtl"` it resolves to the right — the same class, no conditional styling. Proper UI's components are migrating to these Tailwind utilities everywhere spacing, alignment, or borders would otherwise assume a direction — see the status note above for how far that migration has gotten:
 
 | Physical    | Logical      | Resolves to (LTR)     | Resolves to (RTL)     |
 | ----------- | ------------ | --------------------- | --------------------- |
@@ -101,10 +101,10 @@ Icons that visually encode a direction — arrows, chevrons pointing to "next", 
 
 ### Setup
 
-Smartera UI marks direction-sensitive icons in `@smarteraui/icons` with a naming convention (`ArrowRight`, `ChevronRight`, `ArrowNarrowRight`, and their `Left` counterparts) so you know which ones to flip. Apply the flip with the `rtl:` variant directly on the icon:
+Proper UI marks direction-sensitive icons in `@properui/icons` with a naming convention (`ArrowRight`, `ChevronRight`, `ArrowNarrowRight`, and their `Left` counterparts) so you know which ones to flip. Apply the flip with the `rtl:` variant directly on the icon:
 
 ```tsx
-import { ArrowRight } from "@smarteraui/icons";
+import { ArrowRight } from "@properui/icons";
 
 <ArrowRight className="size-5 rtl:-scale-x-100" aria-hidden="true" />;
 ```
@@ -114,7 +114,7 @@ import { ArrowRight } from "@smarteraui/icons";
 Because `Button`'s `iconTrailing` prop accepts a component reference, wrap the flip once in a small helper and reuse it everywhere a directional icon appears as a button icon:
 
 ```tsx
-import { ArrowRight } from "@smarteraui/icons";
+import { ArrowRight } from "@properui/icons";
 import { cx } from "@/utils/cx";
 
 const DirectionalArrow = (props: React.ComponentProps<typeof ArrowRight>) => <ArrowRight {...props} className={cx("rtl:-scale-x-100", props.className)} />;

@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment } from "react";
-import { ZapFast } from "@smarteraui/icons";
+import { ZapFast } from "@properui/icons";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 
 const metrics = [

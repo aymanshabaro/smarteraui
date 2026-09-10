@@ -1,8 +1,8 @@
 import { GithubMark } from "~/components/brand-icons";
-import { CodeSnippet } from "@smarteraui/ui/components/application/code-snippet/code-snippet";
-import { BadgeGroup } from "@smarteraui/ui/components/base/badges/badge-groups";
-import { Button } from "@smarteraui/ui/components/base/buttons/button";
-import { BackgroundPattern } from "@smarteraui/ui/components/shared-assets/background-patterns/index";
+import { CodeSnippet } from "@properui/ui/components/application/code-snippet/code-snippet";
+import { BadgeGroup } from "@properui/ui/components/base/badges/badge-groups";
+import { Button } from "@properui/ui/components/base/buttons/button";
+import { BackgroundPattern } from "@properui/ui/components/shared-assets/background-patterns/index";
 import { INSTALL_COMMAND, REPO_URL } from "./content";
 
 /**
@@ -40,7 +40,7 @@ export const LandingHero = () => (
                         Vibecode the UI. Ship code you would merge.
                     </h1>
                     <p className="text-tertiary mt-4 max-w-3xl text-lg text-balance md:mt-6 md:text-xl">
-                        Smartera UI is an open-source React component library designed for the way code gets written now — by an agent, at speed. Your assistant
+                        Proper UI is an open-source React component library designed for the way code gets written now — by an agent, at speed. Your assistant
                         fetches real source from a machine-readable registry instead of recalling it, and accessibility, dark mode and right-to-left come from
                         the token layer rather than the prompt.
                     </p>

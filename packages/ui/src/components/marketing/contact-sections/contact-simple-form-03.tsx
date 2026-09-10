@@ -29,8 +29,8 @@ export const ContactSimpleForm03 = () => (
                 <h2 className="text-display-sm text-primary md:text-display-md font-semibold">Let&apos;s level up your brand, together</h2>
                 <p className="text-tertiary mt-4 text-lg whitespace-pre-line md:mt-5 md:text-xl">
                     You can reach us anytime via{" "}
-                    <Button href="mailto:hi@smartera.com" color="link-color" size="xl" className="text-lg font-medium md:text-xl">
-                        hi@smartera.com
+                    <Button href="mailto:hi@proper.example" color="link-color" size="xl" className="text-lg font-medium md:text-xl">
+                        hi@proper.example
                     </Button>
                 </p>
 

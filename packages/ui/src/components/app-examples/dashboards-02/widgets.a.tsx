@@ -4,7 +4,7 @@
 // panel shell and the avatar lists.
 // TODO(orchestrator): candidate for components/internal if other page examples repeat them.
 import type { ReactNode } from "react";
-import { Edit01, FilterLines, Trash01 } from "@smarteraui/icons";
+import { Edit01, FilterLines, Trash01 } from "@properui/icons";
 import { MetricChangeIndicator } from "@/components/application/metrics/metrics-base";
 import { Table } from "@/components/application/table/table";
 import { TabList, Tabs } from "@/components/application/tabs/tabs";

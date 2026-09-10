@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { Key } from "react-aria";
-import { DownloadCloud02, FilterLines, Plus, UserPlus01 } from "@smarteraui/icons";
+import { DownloadCloud02, FilterLines, Plus, UserPlus01 } from "@properui/icons";
 import { SidebarNavigationDualTier } from "@/components/application/app-navigation/sidebar-navigation/sidebar-dual-tier";
 import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
 import { MetricSimple } from "@/components/application/metrics/metrics";

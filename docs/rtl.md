@@ -11,7 +11,7 @@ tree. Two things do the work:
 > **Status.** React Aria behaviour is complete. The style layer is mid-migration: many components already use logical
 > utilities throughout, but physical ones (`ml-*`, `pr-*`, `text-left`) still appear in parts of the library, mostly in
 > the marketing sections and page examples. If you hit a component that does not mirror correctly, please
-> [open an issue](https://github.com/aymanshabaro/smarteraui/issues) — it is a bug, not a design decision.
+> [open an issue](https://github.com/properui/properui/issues) — it is a bug, not a design decision.
 
 ## Setting it up
 
@@ -75,7 +75,7 @@ Icons that encode direction must mirror; icons that do not, must not.
 **Mirror** — arrows, chevrons meaning "next"/"back", breadcrumb separators, the icon in a "return" button:
 
 ```tsx
-import { ArrowRight } from "@smarteraui/icons";
+import { ArrowRight } from "@properui/icons";
 
 <ArrowRight className="size-5 rtl:-scale-x-100" aria-hidden="true" />;
 ```
@@ -83,7 +83,7 @@ import { ArrowRight } from "@smarteraui/icons";
 Since `Button` takes a component reference for `iconLeading` / `iconTrailing`, wrap the flip once and reuse it:
 
 ```tsx
-import { ArrowRight } from "@smarteraui/icons";
+import { ArrowRight } from "@properui/icons";
 import { cx } from "@/utils/cx";
 
 const DirectionalArrow = (props: React.ComponentProps<typeof ArrowRight>) => <ArrowRight {...props} className={cx("rtl:-scale-x-100", props.className)} />;

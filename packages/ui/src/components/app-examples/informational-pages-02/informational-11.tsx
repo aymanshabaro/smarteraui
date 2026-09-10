@@ -1,7 +1,7 @@
 "use client";
 
 import { ListBox as AriaListBox, ListBoxItem as AriaListBoxItem } from "react-aria-components";
-import { Copy01, DownloadCloud02, Edit04, Edit05, FaceSmile, Microphone02, Paperclip, Phone, RefreshCcw02, SearchLg, Stars02 } from "@smarteraui/icons";
+import { Copy01, DownloadCloud02, Edit04, Edit05, FaceSmile, Microphone02, Paperclip, Phone, RefreshCcw02, SearchLg, Stars02 } from "@properui/icons";
 import { MessageComposer } from "@/components/application/messaging/message-composer";
 import { Message, MessageList } from "@/components/application/messaging/messaging";
 import { Avatar } from "@/components/base/avatar/avatar";
@@ -187,9 +187,9 @@ export const Informational11 = () => (
 
                         <Message name={activeChat.name} avatarSrc={activeChat.src} status="online" time="Thursday 11:40am" dateTime="2026-01-21T11:40">
                             <Message.Bubble actions={bubbleActions}>
-                                <Message.LinkPreview src={preview.src} alt="Smartera UI link preview" />
-                                <a href="https://www.smartera.com" target="_blank" rel="noopener noreferrer">
-                                    https://www.smartera.com
+                                <Message.LinkPreview src={preview.src} alt="Proper UI link preview" />
+                                <a href="https://www.proper.example" target="_blank" rel="noopener noreferrer">
+                                    https://www.proper.example
                                 </a>
                             </Message.Bubble>
                         </Message>

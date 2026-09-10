@@ -3,7 +3,7 @@
 import type { ReactNode } from "react";
 import { useState } from "react";
 import type { Key } from "react-aria";
-import { Grid01, Plus, Rows03, SearchLg, UploadCloud01 } from "@smarteraui/icons";
+import { Grid01, Plus, Rows03, SearchLg, UploadCloud01 } from "@properui/icons";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
 import { Tabs } from "@/components/application/tabs/tabs";
 import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";

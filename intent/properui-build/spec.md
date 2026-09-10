@@ -1,5 +1,5 @@
 ---
-slug: smarteraui-build
+slug: properui-build
 status: superseded
 updated: 2026-09-09
 approved_by: aymanshabaro (chat instruction, 2026-09-09)
@@ -14,7 +14,7 @@ bundle left open.
 
 ## Decisions
 
-1. **Icons** are imported from `@smarteraui/icons` (an npm alias of `@untitledui/icons`), never from
+1. **Icons** are imported from `@properui/icons` (an npm alias of `@untitledui/icons`), never from
    `@untitledui/icons` directly, so the set can be swapped later.
 2. **Demo assets** come only from `packages/ui/src/utils/demo-assets.ts` (SVG placeholders under
    `apps/docs/public/demo/`). Flags are local `/flags/XX.svg` from `flag-icons` (MIT).

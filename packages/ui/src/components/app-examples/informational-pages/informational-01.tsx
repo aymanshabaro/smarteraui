@@ -14,7 +14,7 @@ import {
     Rows01,
     SearchLg,
     Users01,
-} from "@smarteraui/icons";
+} from "@properui/icons";
 import type { NavItemType } from "@/components/application/app-navigation/config";
 import { SidebarNavigationSectionsSubheadings } from "@/components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings";
 import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
@@ -58,7 +58,7 @@ const navItems: Array<{ label: string; items: NavItemType[] }> = [
         ],
     },
     {
-        label: "Smartera UI",
+        label: "Proper UI",
         items: [
             { label: "Reporting", href: "/reporting", icon: PieChart03 },
             {

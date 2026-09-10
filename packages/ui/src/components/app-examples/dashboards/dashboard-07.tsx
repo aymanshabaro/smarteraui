@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Edit01, FilterLines, Plus, SearchLg, Trash01, UploadCloud02 } from "@smarteraui/icons";
+import { Edit01, FilterLines, Plus, SearchLg, Trash01, UploadCloud02 } from "@properui/icons";
 import { FeaturedCardQRCode } from "@/components/application/app-navigation/base-components/featured-cards";
 import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
 import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
@@ -50,7 +50,7 @@ export const Dashboard07 = () => {
                     <FeaturedCardQRCode
                         title="Verify this device"
                         description="Open the app and scan the QR code below to verify this device."
-                        value="https://smartera.example.com/verify/4060020"
+                        value="https://proper.example.com/verify/4060020"
                         onDismiss={noop}
                     />
                 }

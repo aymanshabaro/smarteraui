@@ -1,4 +1,4 @@
-import { MarkerPin01, MessageChatCircle, MessageSmileCircle, Phone } from "@smarteraui/icons";
+import { MarkerPin01, MessageChatCircle, MessageSmileCircle, Phone } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 
@@ -7,15 +7,15 @@ const channels = [
         icon: MessageSmileCircle,
         title: "Chat to sales",
         subtitle: "Speak to our friendly team.",
-        cta: "sales@smartera.com",
-        href: "mailto:sales@smartera.com",
+        cta: "sales@proper.example",
+        href: "mailto:sales@proper.example",
     },
     {
         icon: MessageChatCircle,
         title: "Chat to support",
         subtitle: "We're here to help.",
-        cta: "support@smartera.com",
-        href: "mailto:support@smartera.com",
+        cta: "support@proper.example",
+        href: "mailto:support@proper.example",
     },
     {
         icon: MarkerPin01,

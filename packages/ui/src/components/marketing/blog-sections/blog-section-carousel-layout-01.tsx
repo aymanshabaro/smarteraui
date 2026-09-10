@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "@smarteraui/icons";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "@properui/icons";
 import { Carousel } from "@/components/application/carousel/carousel-base";
 import { Button } from "@/components/base/buttons/button";
 import { sortCx } from "@/utils/cx";
@@ -106,7 +106,7 @@ export const BlogSectionCarouselLayout01 = () => (
             <div className="flex flex-col items-start justify-between lg:flex-row">
                 <div className="max-w-3xl">
                     <p className="text-brand-secondary md:text-md text-sm font-semibold">Latest posts</p>
-                    <h2 className="text-display-sm text-primary md:text-display-md mt-3 font-semibold">Smartera blog</h2>
+                    <h2 className="text-display-sm text-primary md:text-display-md mt-3 font-semibold">Proper blog</h2>
                     <p className="text-tertiary mt-4 text-lg md:mt-5 md:text-xl">Interviews, tips, guides, industry best practices, and news.</p>
                 </div>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { Link01 } from "@smarteraui/icons";
+import { Link01 } from "@properui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { Badge } from "@/components/base/badges/badges";
 import { Button } from "@/components/base/buttons/button";
@@ -69,7 +69,7 @@ export const ContentLargeImage04 = () => (
                             <span>
                                 Image from the {/* eslint-disable-next-line jsx-a11y/anchor-is-valid -- placeholder href for a marketing section */}
                                 <a href="#" className={styles.proseLink}>
-                                    Smartera brand library
+                                    Proper brand library
                                 </a>
                             </span>
                         </figcaption>
@@ -125,7 +125,7 @@ export const ContentLargeImage04 = () => (
                             <span>
                                 Image from the {/* eslint-disable-next-line jsx-a11y/anchor-is-valid -- placeholder href for a marketing section */}
                                 <a href="#" className={styles.proseLink}>
-                                    Smartera brand library
+                                    Proper brand library
                                 </a>
                             </span>
                         </figcaption>

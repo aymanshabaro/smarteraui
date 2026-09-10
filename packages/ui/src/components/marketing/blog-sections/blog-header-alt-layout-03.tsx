@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowDown, ArrowUpRight, SearchLg } from "@smarteraui/icons";
+import { ArrowDown, ArrowUpRight, SearchLg } from "@properui/icons";
 import { Tab, TabList, TabPanel, Tabs } from "@/components/application/tabs/tabs";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { BadgeGroup } from "@/components/base/badges/badge-groups";

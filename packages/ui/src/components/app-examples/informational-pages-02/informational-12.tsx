@@ -13,7 +13,7 @@ import {
     Phone,
     RefreshCcw02,
     Stars02,
-} from "@smarteraui/icons";
+} from "@properui/icons";
 import { MessageComposer } from "@/components/application/messaging/message-composer";
 import { Message, MessageList } from "@/components/application/messaging/messaging";
 import { Avatar } from "@/components/base/avatar/avatar";
@@ -108,7 +108,7 @@ const ProfilePanel = () => (
                 <h2 className="text-primary text-sm font-semibold">About</h2>
                 <p className="text-tertiary mt-1 text-sm">
                     I&rsquo;m a Designer based in Melbourne. I co-founded{" "}
-                    <a href="https://smartera.com" className="rounded-xs underline">
+                    <a href="https://proper.example" className="rounded-xs underline">
                         {LOGOS[0]!.name} Studio
                     </a>{" "}
                     where we help early stage founders and startups take their product from 0→1.

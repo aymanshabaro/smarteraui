@@ -5,7 +5,7 @@ import { useControlledState } from "@react-stately/utils";
 import { useDateFormatter } from "react-aria";
 import type { DatePickerProps as AriaDatePickerProps, DateValue as AriaDateValue } from "react-aria-components";
 import { DatePicker as AriaDatePicker, Dialog as AriaDialog, Group as AriaGroup, Popover as AriaPopover } from "react-aria-components";
-import { Calendar as CalendarIcon } from "@smarteraui/icons";
+import { Calendar as CalendarIcon } from "@properui/icons";
 import { Button, type ButtonProps } from "@/components/base/buttons/button";
 import { cx } from "@/utils/cx";
 import { Calendar } from "./calendar";

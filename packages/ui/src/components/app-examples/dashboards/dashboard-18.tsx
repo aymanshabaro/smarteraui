@@ -1,6 +1,6 @@
 "use client";
 
-import { DownloadCloud02, FilterLines, Zap } from "@smarteraui/icons";
+import { DownloadCloud02, FilterLines, Zap } from "@properui/icons";
 import { FeaturedCardReferralLink } from "@/components/application/app-navigation/base-components/featured-cards";
 import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
 import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
@@ -51,7 +51,7 @@ export const Dashboard18 = () => (
                 <FeaturedCardReferralLink
                     title="Refer a friend"
                     description="Earn 50% back for 12 months when someone uses your link."
-                    referralLink="smartera.ui/4060020"
+                    referralLink="properui.dev/4060020"
                     onDismiss={noop}
                     onCopy={noop}
                 />

@@ -1,7 +1,7 @@
 "use client";
 
 import { RadioGroup as AriaRadioGroup } from "react-aria-components";
-import { DownloadCloud02, Zap, ZapFast } from "@smarteraui/icons";
+import { DownloadCloud02, Zap, ZapFast } from "@properui/icons";
 import { FeaturedCardEventCTA } from "@/components/application/app-navigation/base-components/featured-cards";
 import { SidebarNavigationDualTier } from "@/components/application/app-navigation/sidebar-navigation/sidebar-dual-tier";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";

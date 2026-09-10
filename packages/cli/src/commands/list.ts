@@ -1,5 +1,5 @@
 /**
- * `smarteraui list [--layer base]` — available components with layer and description.
+ * `properui list [--layer base]` — available components with layer and description.
  */
 import path from "node:path";
 import { readConfig } from "../config.js";
@@ -49,5 +49,5 @@ export async function runList(options: ListOptions): Promise<void> {
         log.plain(`  ${kleur.bold(entry.name.padEnd(width))}  ${kleur.dim(entry.layer.padEnd(18))}  ${truncate(entry.description, 72)}`);
     }
     log.plain();
-    log.info("Add one with: npx smarteraui add <name>");
+    log.info("Add one with: npx properui add <name>");
 }

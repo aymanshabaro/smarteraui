@@ -1,5 +1,5 @@
 /**
- * `smarteraui init` — configure an existing project.
+ * `properui init` — configure an existing project.
  *
  * Detects framework / TypeScript / `src` / alias / Tailwind version / package manager,
  * writes components.json, copies styles/theme.css, wires the `@source` scan line and the
@@ -29,12 +29,12 @@ export interface InitOptions {
 
 /** Tailwind v3 is not supported — the token layer is written entirely in v4 `@theme` syntax. */
 const TAILWIND_V3_MESSAGE = [
-    "Smartera UI requires Tailwind CSS v4. This project is on v3.",
+    "Proper UI requires Tailwind CSS v4. This project is on v3.",
     "",
     "  1. npx @tailwindcss/upgrade@latest",
     "  2. Replace tailwind.config.js content with the v4 CSS-first setup:",
     '       @import "tailwindcss";',
-    "  3. Re-run: npx smarteraui init",
+    "  3. Re-run: npx properui init",
     "",
     "Upgrade guide: https://tailwindcss.com/docs/upgrade-guide",
 ].join("\n");
@@ -276,7 +276,7 @@ export async function runInit(options: InitOptions): Promise<void> {
     const cwd = path.resolve(options.cwd ?? process.cwd());
     const project = detectProject(cwd, frameworkOverride(options));
 
-    log.title("Configuring this project for Smartera UI");
+    log.title("Configuring this project for Proper UI");
     log.step(`Framework       ${FRAMEWORK_LABEL[project.framework]}`);
     log.step(`Language        ${project.typescript ? "TypeScript" : "JavaScript"}`);
     log.step(`Source folder   ${project.srcDir ? "src/" : "project root"}`);
@@ -352,7 +352,7 @@ export async function runInit(options: InitOptions): Promise<void> {
     } catch (error) {
         themeSpinner.stop();
         log.warn(`Registry unavailable (${(error as Error).message}).`);
-        log.warn("Wrote placeholder theme tokens — run `smarteraui add styles --overwrite` once the registry is reachable.");
+        log.warn("Wrote placeholder theme tokens — run `properui add styles --overwrite` once the registry is reachable.");
     }
 
     writes.push(writeSourceFile(path.resolve(cwd, config.tailwind.theme), themeCss, writeOptions));
@@ -406,12 +406,12 @@ export async function runInit(options: InitOptions): Promise<void> {
     const viteAliasFailed =
         !options.manual && ((viteTsconfig?.status ?? "written") === "unsupported" || (viteConfigAlias?.status ?? "written") === "unsupported");
     if (viteAliasFailed) {
-        log.error("Could not wire the Vite `@` alias automatically — add the snippets printed above by hand, then re-run `smarteraui init`.");
+        log.error("Could not wire the Vite `@` alias automatically — add the snippets printed above by hand, then re-run `properui init`.");
         process.exitCode = 1;
         return;
     }
 
-    log.success("Project configured. Next: npx smarteraui add button badges");
+    log.success("Project configured. Next: npx properui add button badges");
 }
 
 function statusLabel(status: WriteResult["status"]): string {

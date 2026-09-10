@@ -2,7 +2,7 @@ import Link from "next/link";
 import { cx } from "~/lib/cx";
 import { GITHUB_URL } from "~/lib/site";
 import type { Crumb, SiteNavGroup } from "~/lib/site-nav";
-import { ChevronRight } from "@smarteraui/icons";
+import { ChevronRight } from "@properui/icons";
 import { GithubMark } from "./brand-icons";
 import { Logo } from "./logo";
 import { buttonClasses } from "./primitives";

@@ -1,6 +1,6 @@
 "use client";
 
-import { Camera01, Link01 } from "@smarteraui/icons";
+import { Camera01, Link01 } from "@properui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { Button } from "@/components/base/buttons/button";
 import { Facebook, LinkedIn, X } from "@/components/foundations/social-icons";
@@ -24,7 +24,7 @@ export const ContentSectionRichText01 = () => (
                 <div className="prose md:prose-lg mx-auto">
                     <p className="lead">
                         A good review does two things at once: it shows the work, and it shows the thinking behind the work. Most decks only manage the first.
-                        Here is the structure we use at Smartera to do both without doubling the length.
+                        Here is the structure we use at Proper to do both without doubling the length.
                     </p>
 
                     <hr />
@@ -52,7 +52,7 @@ export const ContentSectionRichText01 = () => (
                             <span>
                                 Image from the {/* eslint-disable-next-line jsx-a11y/anchor-is-valid -- placeholder href for a marketing section */}
                                 <a href="#" className={styles.proseLink}>
-                                    Smartera brand library
+                                    Proper brand library
                                 </a>
                             </span>
                         </figcaption>
@@ -112,7 +112,7 @@ export const ContentSectionRichText01 = () => (
                             <span>
                                 Image from the {/* eslint-disable-next-line jsx-a11y/anchor-is-valid -- placeholder href for a marketing section */}
                                 <a href="#" className={styles.proseLink}>
-                                    Smartera brand library
+                                    Proper brand library
                                 </a>
                             </span>
                         </figcaption>
@@ -146,7 +146,7 @@ export const ContentSectionRichText01 = () => (
                         <Avatar size="lg" className="md:size-14" src={author.src} alt={author.name} />
                         <div>
                             <p className="text-md text-primary font-semibold md:text-lg">{author.name}</p>
-                            <p className="text-md text-tertiary">Product Designer, Smartera</p>
+                            <p className="text-md text-tertiary">Product Designer, Proper</p>
                         </div>
                     </div>
 

@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { MessageSmileCircle, Zap } from "@smarteraui/icons";
+import { MessageSmileCircle, Zap } from "@properui/icons";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 import { sortCx } from "@/utils/cx";
 import { IMAGES } from "@/utils/demo-assets";

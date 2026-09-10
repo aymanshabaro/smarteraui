@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { Key } from "react-aria";
-import { DownloadCloud02, Edit01, HomeLine, PiggyBank01, RefreshCcw01, SearchLg, Umbrella03 } from "@smarteraui/icons";
+import { DownloadCloud02, Edit01, HomeLine, PiggyBank01, RefreshCcw01, SearchLg, Umbrella03 } from "@properui/icons";
 import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
 import { Table } from "@/components/application/table/table";
 import { Tabs } from "@/components/application/tabs/tabs";
@@ -239,7 +239,7 @@ export const Dashboard16 = () => {
                     <div className="flex gap-4 overflow-x-auto pb-2">
                         {[0, 1, 2].map((index) => (
                             <div key={index} className="flex shrink-0 flex-col gap-3">
-                                <CreditCard type="brand-light" width={280} cardHolder={currentUser.name.toUpperCase()} company="Smartera." />
+                                <CreditCard type="brand-light" width={280} cardHolder={currentUser.name.toUpperCase()} company="Proper." />
                                 <div className="flex items-center justify-between">
                                     <span className="text-tertiary text-sm font-medium">This month</span>
                                     <span className="text-primary text-sm font-medium">$1,240.40</span>

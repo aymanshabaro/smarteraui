@@ -3,7 +3,7 @@ import { SocialButton } from "@/components/base/buttons/social-button";
 import { Checkbox } from "@/components/base/checkbox/checkbox";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogoMinimal } from "@/components/foundations/logo/smartera-logo-minimal";
+import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
 import { IMAGES } from "@/utils/demo-assets";
 
 /** Split log in page with a centred form on the left and a full-bleed decorative image on the right. */
@@ -13,7 +13,7 @@ export const LoginSplitImage = () => (
             <div className="flex flex-1 justify-center px-4 py-12 md:items-center md:px-8">
                 <div className="flex w-full flex-col gap-8 sm:max-w-90">
                     <div className="flex flex-col items-center gap-6 text-center">
-                        <SmarteraLogoMinimal className="size-8 origin-center scale-[1.2]" />
+                        <ProperLogoMinimal className="size-8 origin-center scale-[1.2]" />
 
                         <div className="flex flex-col gap-2 md:gap-3">
                             <h1 className="text-primary md:text-display-xs text-xl font-semibold">Welcome back</h1>
@@ -62,7 +62,7 @@ export const LoginSplitImage = () => (
             </div>
 
             <footer className="hidden p-8 pt-11 lg:block">
-                <p className="text-tertiary text-sm">© Smartera UI 2077</p>
+                <p className="text-tertiary text-sm">© Proper UI 2077</p>
             </footer>
         </div>
 

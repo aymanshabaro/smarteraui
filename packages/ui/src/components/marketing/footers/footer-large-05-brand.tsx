@@ -1,7 +1,7 @@
 import { Button } from "@/components/base/buttons/button";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { sortCx } from "@/utils/cx";
 
 const styles = sortCx({
@@ -130,8 +130,8 @@ export const FooterLarge05Brand = () => (
             </nav>
 
             <div className="border-brand_alt mt-12 flex flex-col justify-between gap-6 border-t pt-8 md:mt-16 md:flex-row md:items-center">
-                <SmarteraLogo className="dark-mode" />
-                <p className="text-quaternary_on-brand text-sm">© 2077 Smartera. All rights reserved.</p>
+                <ProperLogo className="dark-mode" />
+                <p className="text-quaternary_on-brand text-sm">© 2077 Proper. All rights reserved.</p>
             </div>
         </div>
     </footer>

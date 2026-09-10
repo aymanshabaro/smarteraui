@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, ArrowRight } from "@smarteraui/icons";
+import { ArrowLeft, ArrowRight } from "@properui/icons";
 import { RatingStars } from "@/components/foundations/rating/rating-stars";
 import { cx } from "@/utils/cx";
 

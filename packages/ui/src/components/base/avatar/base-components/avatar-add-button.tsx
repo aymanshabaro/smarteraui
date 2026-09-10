@@ -2,7 +2,7 @@
 
 import type { ButtonProps as AriaButtonProps } from "react-aria-components";
 import { Button as AriaButton, Tooltip as AriaTooltip, TooltipTrigger as AriaTooltipTrigger } from "react-aria-components";
-import { Plus } from "@smarteraui/icons";
+import { Plus } from "@properui/icons";
 import { cx } from "@/utils/cx";
 
 const sizes = {

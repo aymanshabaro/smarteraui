@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronLeft, ChevronRight } from "@smarteraui/icons";
+import { ChevronLeft, ChevronRight } from "@properui/icons";
 import { Carousel, useCarousel } from "@/components/application/carousel/carousel-base";
 import { PaginationDot } from "@/components/application/pagination/pagination-dot";
 import { IMAGES } from "@/utils/demo-assets";

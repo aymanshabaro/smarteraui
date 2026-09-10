@@ -1,6 +1,6 @@
 "use client";
 
-import { Monitor01, Plus, ShoppingCart01, Umbrella03, Wallet02 } from "@smarteraui/icons";
+import { Monitor01, Plus, ShoppingCart01, Umbrella03, Wallet02 } from "@properui/icons";
 import { Carousel } from "@/components/application/carousel/carousel-base";
 import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
 import { PaginationPageDefault } from "@/components/application/pagination/pagination";
@@ -243,7 +243,7 @@ export const Dashboard12 = () => (
                         <Carousel.Content className="gap-5">
                             {cardTypes.map((type) => (
                                 <Carousel.Item key={type} className="basis-auto">
-                                    <CreditCard type={type} width={280} company="Smartera." cardHolder={owner.name.toUpperCase()} />
+                                    <CreditCard type={type} width={280} company="Proper." cardHolder={owner.name.toUpperCase()} />
                                 </Carousel.Item>
                             ))}
                         </Carousel.Content>

@@ -1,4 +1,4 @@
-import { CheckVerified03 } from "@smarteraui/icons";
+import { CheckVerified03 } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { CloseButton } from "@/components/base/buttons/close-button";
 

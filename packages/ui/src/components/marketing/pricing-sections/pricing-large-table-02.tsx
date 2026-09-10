@@ -2,7 +2,7 @@
 
 import type { FC } from "react";
 import { Fragment } from "react";
-import { CheckCircle, HelpCircle, LayersThree01, LayersTwo01, Minus, Zap } from "@smarteraui/icons";
+import { CheckCircle, HelpCircle, LayersThree01, LayersTwo01, Minus, Zap } from "@properui/icons";
 import { Tab, TabList, TabPanel, Tabs } from "@/components/application/tabs/tabs";
 import { Button } from "@/components/base/buttons/button";
 import { Slider } from "@/components/base/slider/slider";
@@ -43,7 +43,7 @@ const groups: { title: string; features: Feature[] }[] = [
             { name: "Individual data", hint: "Storage available to each member of your team.", values: ["20 GB", "40 GB", "Unlimited"] },
             { name: "Support", hint: "Chat and email support from our team.", values: [true, true, true] },
             { name: "Automated workflows", hint: "Trigger actions automatically when your data changes.", values: [false, true, true] },
-            { name: "200+ integrations", hint: "Connect Smartera to the tools your team already uses.", values: [false, true, true] },
+            { name: "200+ integrations", hint: "Connect Proper to the tools your team already uses.", values: [false, true, true] },
         ],
     },
     {
@@ -132,7 +132,7 @@ export const PricingLargeTable02 = () => (
             <div className="flex w-full max-w-3xl flex-col">
                 <span className="text-brand-secondary md:text-md text-sm font-semibold">Pricing</span>
                 <h2 className="text-display-md text-primary md:text-display-lg mt-3 font-semibold">Simple, transparent pricing</h2>
-                <p className="text-tertiary mt-4 text-lg md:mt-6 md:text-xl">We believe Smartera should be accessible to all companies, no matter the size.</p>
+                <p className="text-tertiary mt-4 text-lg md:mt-6 md:text-xl">We believe Proper should be accessible to all companies, no matter the size.</p>
 
                 <Tabs defaultSelectedKey="monthly" className="hidden md:flex">
                     <TabList type="button-border" size="md" aria-label="Billing period" className="w-max md:mt-12">

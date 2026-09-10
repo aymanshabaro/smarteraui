@@ -47,11 +47,7 @@ export const NewsletterScreenMockup03 = () => (
             <div className="bg-primary ring-utility-neutral-300 size-full rounded-[9.03px] p-[0.9px] shadow-lg ring-[0.56px] ring-inset md:rounded-[32px] md:p-1 md:ring-[2px]">
                 <div className="bg-primary shadow-modern-mockup-inner-md md:shadow-modern-mockup-inner-lg size-full rounded-[7.9px] p-0.5 md:rounded-[28px] md:p-[5.4px]">
                     <div className="bg-utility-neutral-50 ring-utility-neutral-200 relative size-full overflow-hidden rounded-[6.77px] ring-[0.56px] md:rounded-[24px] md:ring-[2px]">
-                        <img
-                            src={IMAGES.landscape[0].src}
-                            alt="Dashboard mockup showing the Smartera application interface"
-                            className="size-full object-cover"
-                        />
+                        <img src={IMAGES.landscape[0].src} alt="Dashboard mockup showing the Proper application interface" className="size-full object-cover" />
                     </div>
                 </div>
             </div>

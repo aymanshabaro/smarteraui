@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Clock, CurrencyDollarCircle, MarkerPin01 } from "@smarteraui/icons";
+import { Clock, CurrencyDollarCircle, MarkerPin01 } from "@properui/icons";
 import { BadgeWithDot, BadgeWithFlag } from "@/components/base/badges/badges";
 import { Select } from "@/components/base/select/select";
 import { sortCx } from "@/utils/cx";

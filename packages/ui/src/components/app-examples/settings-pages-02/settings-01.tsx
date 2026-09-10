@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, HomeLine, Mail01 } from "@smarteraui/icons";
+import { ArrowLeft, HomeLine, Mail01 } from "@properui/icons";
 import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
 import { FileUploadDropZone } from "@/components/application/file-upload/file-upload-base";
 import { Avatar } from "@/components/base/avatar/avatar";

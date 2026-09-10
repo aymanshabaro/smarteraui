@@ -1,6 +1,6 @@
 "use client";
 
-import { Copy01, DownloadCloud02, Edit01, Trash01 } from "@smarteraui/icons";
+import { Copy01, DownloadCloud02, Edit01, Trash01 } from "@properui/icons";
 import { ButtonUtility } from "@/components/base/buttons/button-utility";
 import { CloseButton } from "@/components/base/buttons/close-button";
 

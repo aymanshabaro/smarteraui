@@ -1,4 +1,4 @@
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { AngelList, Dribbble, Facebook, GitHub, Layers, LinkedIn, X } from "@/components/foundations/social-icons";
 
 const socialLinks = [
@@ -37,9 +37,9 @@ export const FooterSmall03Brand = () => {
                     </ul>
 
                     {/* The mark is always the light lockup on the solid brand background. */}
-                    <SmarteraLogo className="dark-mode order-first h-7 w-min shrink-0 lg:order-none" />
+                    <ProperLogo className="dark-mode order-first h-7 w-min shrink-0 lg:order-none" />
 
-                    <p className="text-quaternary_on-brand mt-6 text-sm lg:mt-0 lg:w-full lg:max-w-xs lg:text-end">© 2077 Smartera. All rights reserved.</p>
+                    <p className="text-quaternary_on-brand mt-6 text-sm lg:mt-0 lg:w-full lg:max-w-xs lg:text-end">© 2077 Proper. All rights reserved.</p>
                 </div>
             </div>
         </footer>

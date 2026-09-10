@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://smarteraui.com/schema.json",
-    "title": "Smartera UI registry entry",
+    "$id": "https://properui.dev/schema.json",
+    "title": "Proper UI registry entry",
     "description": "One component, example, util, hook or stylesheet as served from /r/<name>.json.",
     "type": "object",
     "required": [

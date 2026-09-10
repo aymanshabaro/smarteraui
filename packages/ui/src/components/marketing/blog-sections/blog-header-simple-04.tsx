@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowDown, ArrowUpRight } from "@smarteraui/icons";
+import { ArrowDown, ArrowUpRight } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { Input } from "@/components/base/input/input";
 import { IMAGES, avatar } from "@/utils/demo-assets";
@@ -167,7 +167,7 @@ export const BlogHeaderSimple04 = () => (
             <div className="max-w-container mx-auto px-4 md:px-8">
                 <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
                     <span className="text-secondary_on-brand md:text-md text-sm font-semibold">Resources</span>
-                    <h2 className="text-display-md text-primary_on-brand md:text-display-lg mt-3 font-semibold">Smartera blog</h2>
+                    <h2 className="text-display-md text-primary_on-brand md:text-display-lg mt-3 font-semibold">Proper blog</h2>
                     <p className="text-secondary_on-brand mt-4 text-lg md:mt-6 md:text-xl">
                         Tool and strategies modern teams need to help their companies grow.
                     </p>

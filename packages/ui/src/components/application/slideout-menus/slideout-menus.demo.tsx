@@ -25,7 +25,7 @@ import {
     Trash01,
     UserPlus01,
     VideoRecorder,
-} from "@smarteraui/icons";
+} from "@properui/icons";
 import { FileUpload } from "@/components/application/file-upload/file-upload-base";
 import { Notification } from "@/components/application/notifications/notifications";
 import { Avatar } from "@/components/base/avatar/avatar";
@@ -1037,7 +1037,7 @@ export const CalendarEventMenu = () => (
                     <div className="flex items-start gap-3">
                         <VideoRecorder aria-hidden="true" className="text-fg-quaternary mt-0.5 size-5 shrink-0" />
                         <div className="flex flex-1 items-center justify-between gap-2">
-                            <p className="text-brand-secondary truncate text-sm">meet.smartera.com/design-sync</p>
+                            <p className="text-brand-secondary truncate text-sm">meet.proper.example/design-sync</p>
                             <ButtonUtility tooltip="Copy link" size="sm" color="tertiary" icon={Copy01} />
                         </div>
                     </div>
@@ -1259,7 +1259,13 @@ export const ShareProjectMenu = () => (
                     </div>
 
                     <div className="flex w-full items-center gap-2">
-                        <Input aria-label="Shareable link" value="https://smartera.app/p/website-redesign" isReadOnly size="md" wrapperClassName="flex-1" />
+                        <Input
+                            aria-label="Shareable link"
+                            value="https://proper.example.com/p/website-redesign"
+                            isReadOnly
+                            size="md"
+                            wrapperClassName="flex-1"
+                        />
                         <ButtonUtility tooltip="Copy link" size="sm" color="secondary" icon={Link01} />
                     </div>
                 </SlideoutMenu.Content>

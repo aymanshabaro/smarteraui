@@ -2,7 +2,7 @@
 
 import { GradientScan, QRCode } from "@/components/shared-assets/qr-code/qr-code";
 
-const QR_VALUE = "https://www.smarteraui.com";
+const QR_VALUE = "https://www.properui.dev";
 
 // Small inline monogram used to demonstrate the `options.image` override — deterministic,
 // no external network request (data URI, not an http(s) link).

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { Key } from "react-aria";
-import { Archive, Edit03, Trash01 } from "@smarteraui/icons";
+import { Archive, Edit03, Trash01 } from "@properui/icons";
 import { Dot } from "@/components/foundations/dot-icon";
 import { ButtonGroup, ButtonGroupItem } from "./button-group";
 

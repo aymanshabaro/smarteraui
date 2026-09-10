@@ -40,7 +40,7 @@ import {
     UserPlus01,
     Users01,
     Zap,
-} from "@smarteraui/icons";
+} from "@properui/icons";
 import { Calendar } from "@/components/application/date-picker/calendar";
 import { FileUpload as FileUploadBase } from "@/components/application/file-upload/file-upload-base";
 import { Dialog } from "@/components/application/modals/modal";
@@ -67,7 +67,7 @@ import { TextArea } from "@/components/base/textarea/textarea";
 import { Toggle } from "@/components/base/toggle/toggle";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 import { FigmaIcon } from "@/components/foundations/integration-icons";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { MastercardIcon, VisaIcon } from "@/components/foundations/payment-icons";
 import { cx } from "@/utils/cx";
 import { AVATARS, IMAGES, VIDEO_POSTER, avatar } from "@/utils/demo-assets";
@@ -265,7 +265,7 @@ export const Login = () => (
     <ModalPanel width="md">
         <Dialog aria-label="Log in to your account">
             <div className="relative flex flex-col gap-4 px-4 pt-4 sm:px-6 sm:pt-6">
-                <SmarteraLogo className="h-8 w-max" />
+                <ProperLogo className="h-8 w-max" />
                 <div className="flex flex-col gap-1">
                     <h2 className="text-primary text-md font-semibold sm:text-lg">Log in to your account</h2>
                     <p className="text-tertiary text-sm">Welcome back! Please enter your details.</p>
@@ -306,7 +306,7 @@ export const Signup01 = () => (
     <ModalPanel width="md">
         <Dialog aria-label="Create an account">
             <div className="relative flex flex-col gap-4 px-4 pt-4 sm:px-6 sm:pt-6">
-                <SmarteraLogo className="h-8 w-max" />
+                <ProperLogo className="h-8 w-max" />
                 <div className="flex flex-col gap-1">
                     <h2 className="text-primary text-md font-semibold sm:text-lg">Create an account</h2>
                     <p className="text-tertiary text-sm">Start your 30-day free trial. No credit card required.</p>
@@ -421,7 +421,7 @@ export const LinkField = () => (
                         </Button>
                     }
                 >
-                    <InputBase readOnly value="smartera.com/p/quarterly-review" />
+                    <InputBase readOnly value="proper.example/p/quarterly-review" />
                 </InputGroup>
             </ModalBody>
             <ModalFooter>
@@ -592,7 +592,7 @@ export const StackedWithTeamAndLink = () => (
                         </Button>
                     }
                 >
-                    <InputBase readOnly value="smartera.com/p/quarterly-review" />
+                    <InputBase readOnly value="proper.example/p/quarterly-review" />
                 </InputGroup>
             </ModalBody>
             <ModalFooter>
@@ -723,7 +723,7 @@ export const PasswordPrompt = () => (
 
 export const CenteredPhoto = () => (
     <ModalPanel className="overflow-hidden">
-        <Dialog aria-label="New in Smartera">
+        <Dialog aria-label="New in Proper">
             <div className="relative">
                 <img src={IMAGES.landscape[0].src} alt="" className="h-45 w-full object-cover" />
                 <CloseButton size="sm" theme="dark" slot={null} className="absolute end-3 top-3" />
@@ -836,7 +836,7 @@ export const PaymentDetailsWithImage = () => (
             </div>
             <div className="flex flex-col gap-1 px-4 pt-4 sm:px-6 sm:pt-6">
                 <h2 className="text-primary text-md font-semibold sm:text-lg">Confirm your purchase</h2>
-                <p className="text-tertiary text-sm">Smartera Pro, billed annually at $120 per seat.</p>
+                <p className="text-tertiary text-sm">Proper Pro, billed annually at $120 per seat.</p>
             </div>
             <ModalBody>
                 <Input isRequired label="Name on card" placeholder={avatar(0).name} />
@@ -1492,7 +1492,7 @@ export const ShareProject = () => (
                         </Button>
                     }
                 >
-                    <InputBase readOnly value="smartera.com/p/quarterly-review" />
+                    <InputBase readOnly value="proper.example/p/quarterly-review" />
                 </InputGroup>
             </ModalBody>
             <ModalFooter align="end">
@@ -1556,7 +1556,7 @@ export const Integration = () => (
                         </li>
                     ))}
                 </ul>
-                <p className="text-tertiary text-sm">Smartera will be able to read file names, thumbnails and comments. You can disconnect at any time.</p>
+                <p className="text-tertiary text-sm">Proper will be able to read file names, thumbnails and comments. You can disconnect at any time.</p>
             </ModalBody>
             <ModalFooter>
                 <Button size="lg" color="secondary">

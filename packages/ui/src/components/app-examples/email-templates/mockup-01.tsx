@@ -1,9 +1,9 @@
 "use client";
 
-import { ArrowRight } from "@smarteraui/icons";
+import { ArrowRight } from "@properui/icons";
 import { AppStoreButton, GooglePlayButton } from "@/components/base/buttons/app-store-buttons";
 import { Button } from "@/components/base/buttons/button";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { Facebook, Instagram, X } from "@/components/foundations/social-icons";
 import { cx, sortCx } from "@/utils/cx";
 import { IMAGES } from "@/utils/demo-assets";
@@ -33,7 +33,7 @@ export const Mockup01 = () => (
     <section className={styles.shell}>
         <div className={styles.container}>
             <div className="bg-primary flex items-center gap-4 p-6">
-                <SmarteraLogo className="h-6" />
+                <ProperLogo className="h-6" />
 
                 <a href="/login" className={cx(styles.headerLink, "ms-auto")}>
                     Log in
@@ -52,10 +52,10 @@ export const Mockup01 = () => (
 
             <div className="bg-primary px-6 py-8">
                 <div className={styles.mockupFrame}>
-                    <img src={IMAGES.landscape[0].src} alt="The Smartera dashboard on a laptop" className="aspect-video w-full object-cover" />
+                    <img src={IMAGES.landscape[0].src} alt="The Proper dashboard on a laptop" className="aspect-video w-full object-cover" />
                 </div>
 
-                <h1 className="text-primary text-display-xs mt-8 font-semibold">Introducing Smartera UI</h1>
+                <h1 className="text-primary text-display-xs mt-8 font-semibold">Introducing Proper UI</h1>
 
                 <p className="text-tertiary md:text-md mt-4 text-sm">
                     We&apos;re glad to have you onboard! You&apos;re already on your way to creating beautiful visual products.
@@ -77,7 +77,7 @@ export const Mockup01 = () => (
 
             <div className="bg-primary px-6 py-8">
                 <p className="text-primary md:text-md text-sm font-semibold">Download the app</p>
-                <p className="text-tertiary mt-2 text-sm">Get the most of Smartera by installing our new mobile app.</p>
+                <p className="text-tertiary mt-2 text-sm">Get the most of Proper by installing our new mobile app.</p>
 
                 <div className="mt-6 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
                     <AppStoreButton href="https://www.apple.com/app-store/" size="md" />
@@ -86,8 +86,8 @@ export const Mockup01 = () => (
 
                 <p className="text-tertiary mt-12 text-sm">
                     This email was sent to{" "}
-                    <a href="mailto:olivia@smartera.com" className={styles.inlineLink}>
-                        olivia@smartera.com
+                    <a href="mailto:olivia@proper.example" className={styles.inlineLink}>
+                        olivia@proper.example
                     </a>
                     . If you&apos;d rather not receive this kind of email, you can{" "}
                     <a href="/unsubscribe" className={styles.inlineLink}>
@@ -99,10 +99,10 @@ export const Mockup01 = () => (
                     </a>
                     .
                 </p>
-                <p className="text-tertiary mt-5 text-sm">© 2077 Smartera UI, 100 Smith Street, Collingwood VIC 3066</p>
+                <p className="text-tertiary mt-5 text-sm">© 2077 Proper UI, 100 Smith Street, Collingwood VIC 3066</p>
 
                 <div className="mt-12 flex items-center justify-between gap-4">
-                    <SmarteraLogo className="h-6" />
+                    <ProperLogo className="h-6" />
 
                     <ul className="flex items-center gap-4">
                         {socials.map(({ label, href, icon: Icon }) => (

@@ -1,6 +1,6 @@
 "use client";
 
-import { PlayCircle } from "@smarteraui/icons";
+import { PlayCircle } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
 import { BackgroundPattern } from "@/components/shared-assets/background-patterns";

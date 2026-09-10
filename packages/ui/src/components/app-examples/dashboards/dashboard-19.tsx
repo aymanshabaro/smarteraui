@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
-import { Command, Edit01, Paperclip } from "@smarteraui/icons";
+import { Command, Edit01, Paperclip } from "@properui/icons";
 import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
 import { ChartTooltipContent } from "@/components/application/charts/charts-base";
 import { MessageComposer } from "@/components/application/messaging/message-composer";

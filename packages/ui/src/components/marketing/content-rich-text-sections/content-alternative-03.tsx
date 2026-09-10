@@ -1,6 +1,6 @@
 "use client";
 
-import { Compass03, Link01 } from "@smarteraui/icons";
+import { Compass03, Link01 } from "@properui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { Button } from "@/components/base/buttons/button";
 import { Facebook, LinkedIn, X } from "@/components/foundations/social-icons";
@@ -77,7 +77,7 @@ export const ContentAlternative03 = () => (
                             <span>
                                 Image from the {/* eslint-disable-next-line jsx-a11y/anchor-is-valid -- placeholder href for a marketing section */}
                                 <a href="#" className={styles.proseLink}>
-                                    Smartera brand library
+                                    Proper brand library
                                 </a>
                             </span>
                         </figcaption>
@@ -130,7 +130,7 @@ export const ContentAlternative03 = () => (
                             <span>
                                 Image from the {/* eslint-disable-next-line jsx-a11y/anchor-is-valid -- placeholder href for a marketing section */}
                                 <a href="#" className={styles.proseLink}>
-                                    Smartera brand library
+                                    Proper brand library
                                 </a>
                             </span>
                         </figcaption>

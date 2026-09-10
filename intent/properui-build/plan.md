@@ -1,5 +1,5 @@
 ---
-slug: smarteraui-build
+slug: properui-build
 status: superseded
 updated: 2026-09-09
 approved_by: aymanshabaro (chat instruction, 2026-09-09)

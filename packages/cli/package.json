@@ -1,7 +1,7 @@
 {
-    "name": "smarteraui",
+    "name": "properui",
     "version": "0.1.0",
-    "description": "CLI that copies Smartera UI components into your React or Next.js project, shadcn-style.",
+    "description": "CLI that copies Proper UI components into your React or Next.js project, shadcn-style.",
     "keywords": [
         "cli",
         "react",
@@ -14,14 +14,14 @@
     ],
     "license": "MIT",
     "author": "Ayman Shabaro (https://github.com/aymanshabaro)",
-    "homepage": "https://github.com/aymanshabaro/smarteraui#readme",
+    "homepage": "https://github.com/properui/properui#readme",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/aymanshabaro/smarteraui.git",
+        "url": "git+https://github.com/properui/properui.git",
         "directory": "packages/cli"
     },
     "bugs": {
-        "url": "https://github.com/aymanshabaro/smarteraui/issues"
+        "url": "https://github.com/properui/properui/issues"
     },
     "publishConfig": {
         "access": "public"
@@ -31,7 +31,7 @@
         "node": ">=20"
     },
     "bin": {
-        "smarteraui": "./dist/index.js"
+        "properui": "./dist/index.js"
     },
     "files": [
         "dist",

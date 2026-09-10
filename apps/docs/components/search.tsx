@@ -15,7 +15,7 @@ import {
     SearchField as AriaSearchField,
 } from "react-aria-components";
 import type { SearchEntry } from "~/lib/search-index";
-import { SearchLg } from "@smarteraui/icons";
+import { SearchLg } from "@properui/icons";
 
 /**
  * ⌘K command menu over the build-time search index (spec 08-docs-site.md § Search).

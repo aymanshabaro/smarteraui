@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import type { Key } from "react-aria";
 import type { SortDescriptor as AriaSortDescriptor } from "react-aria-components";
-import { Edit01, FilterLines, SearchLg, SwitchHorizontal01, Trash01 } from "@smarteraui/icons";
+import { Edit01, FilterLines, SearchLg, SwitchHorizontal01, Trash01 } from "@properui/icons";
 import { SidebarNavigationSectionDividers } from "@/components/application/app-navigation/sidebar-navigation/sidebar-section-dividers";
 import { MetricChart01 } from "@/components/application/metrics/metrics";
 import { Table, TableCard } from "@/components/application/table/table";
@@ -47,13 +47,13 @@ interface PageRow {
 }
 
 const pageRows: PageRow[] = [
-    { page: "smartera.com", sessions: 4288, avgTime: "1m 24s", share: 62.4 },
-    { page: "smartera.com/free-icons", sessions: 582, avgTime: "1m 8s", share: 8.2 },
-    { page: "smartera.com/icons", sessions: 464, avgTime: "1m 12s", share: 7.6 },
-    { page: "smartera.com/components", sessions: 446, avgTime: "2m 22s", share: 7.2 },
-    { page: "smartera.com/pricing", sessions: 382, avgTime: "48s", share: 7.0 },
-    { page: "smartera.com/faqs", sessions: 326, avgTime: "56s", share: 6.4 },
-    { page: "smartera.com/blog", sessions: 262, avgTime: "1m 14s", share: 5.4 },
+    { page: "proper.example", sessions: 4288, avgTime: "1m 24s", share: 62.4 },
+    { page: "proper.example/free-icons", sessions: 582, avgTime: "1m 8s", share: 8.2 },
+    { page: "proper.example/icons", sessions: 464, avgTime: "1m 12s", share: 7.6 },
+    { page: "proper.example/components", sessions: 446, avgTime: "2m 22s", share: 7.2 },
+    { page: "proper.example/pricing", sessions: 382, avgTime: "48s", share: 7.0 },
+    { page: "proper.example/faqs", sessions: 326, avgTime: "56s", share: 6.4 },
+    { page: "proper.example/blog", sessions: 262, avgTime: "1m 14s", share: 5.4 },
 ];
 
 /** Dashboard 02 — a site traffic report: session metrics above a filterable page-level table. */

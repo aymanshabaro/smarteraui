@@ -1,4 +1,4 @@
-import { SmarteraLogoMinimal } from "@/components/foundations/logo/smartera-logo-minimal";
+import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
 import { LogInPrompt } from "./base-components/page-parts";
 import { SignUpForm } from "./base-components/sign-up-form";
 
@@ -7,7 +7,7 @@ export const SignupCardSeparated = () => (
     <section className="bg-secondary min-h-screen overflow-hidden px-4 py-12 md:px-8 md:pt-24">
         <div className="mx-auto flex w-full flex-col gap-8 sm:max-w-110">
             <div className="flex flex-col items-center gap-6 text-center">
-                <SmarteraLogoMinimal className="relative size-8" />
+                <ProperLogoMinimal className="relative size-8" />
 
                 <div className="z-10 flex flex-col gap-2 md:gap-3">
                     <h1 className="text-primary md:text-display-xs text-xl font-semibold">Create an account</h1>

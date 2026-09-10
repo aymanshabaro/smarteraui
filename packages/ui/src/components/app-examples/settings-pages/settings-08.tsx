@@ -1,6 +1,6 @@
 "use client";
 
-import { Edit01, Plus, Trash01 } from "@smarteraui/icons";
+import { Edit01, Plus, Trash01 } from "@properui/icons";
 import { SidebarNavigationSectionsSubheadings } from "@/components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
 import { Table } from "@/components/application/table/table";
@@ -21,7 +21,7 @@ import {
 
 const teams = LOGOS.slice(0, 4).map((logo) => ({
     ...logo,
-    domain: `${logo.name.toLowerCase()}.smartera.com`,
+    domain: `${logo.name.toLowerCase()}.proper.example`,
 }));
 
 const members = AVATARS.slice(0, 5);

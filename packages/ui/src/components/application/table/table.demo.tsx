@@ -21,7 +21,7 @@ import {
     UploadCloud02,
     UsersPlus,
     X,
-} from "@smarteraui/icons";
+} from "@properui/icons";
 import { EmptyState } from "@/components/application/empty-state/empty-state";
 import { Table, TableCard } from "@/components/application/table/table";
 import { customers, invoices, teamMembers, uploadedFiles } from "@/components/application/table/table-data";

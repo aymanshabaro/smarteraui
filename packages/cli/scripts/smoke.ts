@@ -1,12 +1,12 @@
 /**
- * End-to-end smoke test for the smarteraui CLI.
+ * End-to-end smoke test for the properui CLI.
  *
  * Builds a throwaway Vite + React + TypeScript project, runs `init` and `add badges`
  * against the on-disk registry (`packages/registry/dist`) and asserts the spec's
  * acceptance criteria: the files listed in `badges.json` are copied, `@/` imports are
  * rewritten to the project alias, and a second `add` reports no changes.
  *
- * Usage: pnpm -F smarteraui smoke   (run `pnpm -F smarteraui build` first)
+ * Usage: pnpm -F properui smoke   (run `pnpm -F properui build` first)
  */
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
@@ -18,7 +18,7 @@ const CLI_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 const REPO = path.resolve(CLI_DIR, "..", "..");
 const CLI = path.join(CLI_DIR, "dist", "index.js");
 const REGISTRY = path.join(REPO, "packages", "registry", "dist");
-const SCRATCH = process.env.SMOKE_DIR ?? path.join(tmpdir(), "smarteraui-cli-smoke");
+const SCRATCH = process.env.SMOKE_DIR ?? path.join(tmpdir(), "properui-cli-smoke");
 
 let failures = 0;
 let checks = 0;
@@ -38,7 +38,7 @@ function section(title: string): void {
 }
 
 function run(cwd: string, args: string[]): string {
-    console.log(`\n$ smarteraui ${args.join(" ")}`);
+    console.log(`\n$ properui ${args.join(" ")}`);
     const output = execFileSync(process.execPath, [CLI, ...args], {
         cwd,
         encoding: "utf8",
@@ -124,7 +124,7 @@ interface RegistryEntryShape {
 const readEntry = (name: string): RegistryEntryShape => JSON.parse(readFileSync(path.join(REGISTRY, `${name}.json`), "utf8"));
 
 function main(): void {
-    if (!existsSync(CLI)) throw new Error(`${CLI} not found — run \`pnpm -F smarteraui build\` first.`);
+    if (!existsSync(CLI)) throw new Error(`${CLI} not found — run \`pnpm -F properui build\` first.`);
     if (!existsSync(REGISTRY)) throw new Error(`${REGISTRY} not found — the registry has to be built first.`);
 
     mkdirSync(SCRATCH, { recursive: true });
@@ -193,7 +193,7 @@ function main(): void {
         const entry = readEntry(dependency);
         for (const file of entry.files) check(`dependency ${dependency}: src/${file.target}`, existsSync(path.join(app, "src", file.target)));
     }
-    check("npm dependencies reported, not silently installed", added.includes("@smarteraui/icons") && added.includes("Skipped install"));
+    check("npm dependencies reported, not silently installed", added.includes("@properui/icons") && added.includes("Skipped install"));
 
     // -------------------------------------------------------------- idempotency
     section("add badges (second run — must be a no-op)");
@@ -305,21 +305,21 @@ function main(): void {
     // -------------------------------------------------------------- scenario 6
     section("Scenario 6 — agent init");
     const agentAll = run(app, ["agent", "init", "--client", "all", "--yes"]);
-    check("agent init installs for claude", existsSync(path.join(app, ".claude", "skills", "smarteraui", "SKILL.md")));
-    check("agent init installs for codex", existsSync(path.join(app, ".agents", "skills", "smarteraui", "SKILL.md")));
-    check("agent init installs for cursor", existsSync(path.join(app, ".cursor", "rules", "smarteraui.mdc")));
-    check("agent init prints the Lovable import URL", agentAll.includes("github.com/aymanshabaro/smarteraui/blob/main/skills/smarteraui/SKILL.md"));
+    check("agent init installs for claude", existsSync(path.join(app, ".claude", "skills", "properui", "SKILL.md")));
+    check("agent init installs for codex", existsSync(path.join(app, ".agents", "skills", "properui", "SKILL.md")));
+    check("agent init installs for cursor", existsSync(path.join(app, ".cursor", "rules", "properui.mdc")));
+    check("agent init prints the Lovable import URL", agentAll.includes("github.com/properui/properui/blob/main/skills/properui/SKILL.md"));
 
-    const claudeSkill = readFileSync(path.join(app, ".claude", "skills", "smarteraui", "SKILL.md"), "utf8");
-    check("claude Skill has name frontmatter", claudeSkill.includes("name: smarteraui"));
-    const codexSkill = readFileSync(path.join(app, ".agents", "skills", "smarteraui", "SKILL.md"), "utf8");
+    const claudeSkill = readFileSync(path.join(app, ".claude", "skills", "properui", "SKILL.md"), "utf8");
+    check("claude Skill has name frontmatter", claudeSkill.includes("name: properui"));
+    const codexSkill = readFileSync(path.join(app, ".agents", "skills", "properui", "SKILL.md"), "utf8");
     check("codex Skill matches the claude Skill byte-for-byte", codexSkill === claudeSkill);
 
     const claudeMd = readFileSync(path.join(app, "CLAUDE.md"), "utf8");
-    check("CLAUDE.md got a Smartera UI pointer", claudeMd.includes("smarteraui:skill:start") && claudeMd.includes(".claude/skills/smarteraui/SKILL.md"));
+    check("CLAUDE.md got a Proper UI pointer", claudeMd.includes("properui:skill:start") && claudeMd.includes(".claude/skills/properui/SKILL.md"));
     const agentsMd = readFileSync(path.join(app, "AGENTS.md"), "utf8");
-    check("AGENTS.md got a Smartera UI rules block", agentsMd.includes("smarteraui:agents:start") && agentsMd.includes(".agents/skills/smarteraui/SKILL.md"));
-    const cursorRule = readFileSync(path.join(app, ".cursor", "rules", "smarteraui.mdc"), "utf8");
+    check("AGENTS.md got a Proper UI rules block", agentsMd.includes("properui:agents:start") && agentsMd.includes(".agents/skills/properui/SKILL.md"));
+    const cursorRule = readFileSync(path.join(app, ".cursor", "rules", "properui.mdc"), "utf8");
     check("cursor rule has alwaysApply: true", cursorRule.includes("alwaysApply: true"));
 
     // Idempotency: re-running with a pre-existing CLAUDE.md/AGENTS.md must update the marked
@@ -328,20 +328,20 @@ function main(): void {
     run(app, ["agent", "init", "--client", "claude", "--yes"]);
     const claudeMdAgain = readFileSync(path.join(app, "CLAUDE.md"), "utf8");
     check("re-running agent init keeps pre-existing CLAUDE.md content", claudeMdAgain.includes("Some existing notes."));
-    check("re-running agent init does not duplicate the marked block", claudeMdAgain.split("smarteraui:skill:start").length === 2);
+    check("re-running agent init does not duplicate the marked block", claudeMdAgain.split("properui:skill:start").length === 2);
 
     const agentLovable = run(app, ["agent", "init", "--client", "lovable", "--yes"]);
     check("agent init --client lovable writes no local skill file for lovable itself", !agentLovable.includes(".claude/skills"));
-    check("agent init --client lovable points at the SKILL.md source", agentLovable.includes("skills/smarteraui/SKILL.md"));
+    check("agent init --client lovable points at the SKILL.md source", agentLovable.includes("skills/properui/SKILL.md"));
 
     section("Skill source of truth");
 
     // The published CLI cannot read the monorepo, so agent-templates.ts carries a copy of
-    // skills/smarteraui/SKILL.md. Nothing stops an edit to one from missing the other.
-    const authored = readFileSync(path.join(REPO, "skills", "smarteraui", "SKILL.md"), "utf8").trim();
-    const skillWritten = readFileSync(path.join(app, ".claude", "skills", "smarteraui", "SKILL.md"), "utf8").trim();
+    // skills/properui/SKILL.md. Nothing stops an edit to one from missing the other.
+    const authored = readFileSync(path.join(REPO, "skills", "properui", "SKILL.md"), "utf8").trim();
+    const skillWritten = readFileSync(path.join(app, ".claude", "skills", "properui", "SKILL.md"), "utf8").trim();
     check(
-        "the Skill `agent init` writes matches skills/smarteraui/SKILL.md",
+        "the Skill `agent init` writes matches skills/properui/SKILL.md",
         skillWritten === authored,
         `authored ${authored.length} chars, written ${skillWritten.length}`,
     );

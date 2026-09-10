@@ -3,8 +3,8 @@ import { SocialButton } from "@/components/base/buttons/social-button";
 import { Checkbox } from "@/components/base/checkbox/checkbox";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
-import { SmarteraLogoMinimal } from "@/components/foundations/logo/smartera-logo-minimal";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
+import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
 import { RatingStars } from "@/components/foundations/rating/rating-stars";
 import { sortCx } from "@/utils/cx";
 import { AVATARS, IMAGES } from "@/utils/demo-assets";
@@ -26,8 +26,8 @@ export const LoginSplitMockupQuote = () => (
             <div className="flex flex-1 justify-center px-4 py-12 md:items-center md:px-8 md:py-32">
                 <div className="flex w-full flex-col gap-8 sm:max-w-90">
                     <div className="flex flex-col gap-6 md:gap-20">
-                        <SmarteraLogo className="max-md:hidden" />
-                        <SmarteraLogoMinimal className="size-8 origin-center scale-[1.2] md:hidden" />
+                        <ProperLogo className="max-md:hidden" />
+                        <ProperLogoMinimal className="size-8 origin-center scale-[1.2] md:hidden" />
 
                         <div className="flex flex-col gap-2 md:gap-3">
                             <h1 className="text-primary md:text-display-xs text-xl font-semibold">Log in</h1>
@@ -76,7 +76,7 @@ export const LoginSplitMockupQuote = () => (
             </div>
 
             <footer className="hidden p-8 pt-11 lg:block">
-                <p className="text-tertiary text-sm">© Smartera UI 2077</p>
+                <p className="text-tertiary text-sm">© Proper UI 2077</p>
             </footer>
         </div>
 
@@ -84,7 +84,7 @@ export const LoginSplitMockupQuote = () => (
             <figure className="flex max-w-3xl flex-col gap-6">
                 <blockquote>
                     <p className="text-display-sm text-primary font-medium">
-                        Few things make me feel more powerful than setting up automations in Smartera to make my life easier and more efficient.
+                        Few things make me feel more powerful than setting up automations in Proper to make my life easier and more efficient.
                     </p>
                 </blockquote>
 

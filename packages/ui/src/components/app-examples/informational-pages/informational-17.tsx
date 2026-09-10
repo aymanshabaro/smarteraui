@@ -19,7 +19,7 @@ import {
     User01,
     Users01,
     UsersPlus,
-} from "@smarteraui/icons";
+} from "@properui/icons";
 import type { NavItemType } from "@/components/application/app-navigation/config";
 import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
@@ -120,9 +120,9 @@ const footerItems: NavItemType[] = [
 const designer = avatar(11);
 
 const links = [
-    { label: "Website", value: "avawright.com", href: "https://www.smartera.com" },
-    { label: "Portfolio", value: designer.username, href: "https://www.smartera.com" },
-    { label: "Email", value: "ava@smartera.com", href: "mailto:ava@smartera.com" },
+    { label: "Website", value: "avawright.com", href: "https://www.proper.example" },
+    { label: "Portfolio", value: designer.username, href: "https://www.proper.example" },
+    { label: "Email", value: "ava@proper.example", href: "mailto:ava@proper.example" },
 ];
 
 const roles = [

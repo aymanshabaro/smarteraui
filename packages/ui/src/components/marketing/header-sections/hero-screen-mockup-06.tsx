@@ -1,6 +1,6 @@
 "use client";
 
-import { PlayCircle } from "@smarteraui/icons";
+import { PlayCircle } from "@properui/icons";
 import { BadgeGroup } from "@/components/base/badges/badge-groups";
 import { Button } from "@/components/base/buttons/button";
 import type { MarketingNavItemType } from "@/components/marketing/header-navigations/base-components/header";
@@ -56,7 +56,7 @@ export const HeroScreenMockup06 = () => (
                 <div className="relative lg:h-full lg:min-h-177">
                     <img
                         src={IMAGES.landscape[3].src}
-                        alt="Smartera dashboard shown on a laptop"
+                        alt="Proper dashboard shown on a laptop"
                         className="inset-0 h-auto w-full max-w-none rounded-xl object-cover md:h-90 md:w-auto lg:absolute lg:h-full lg:object-left"
                     />
                 </div>

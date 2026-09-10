@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, CurrencyDollarCircle, Eye, SearchLg, UserCircle } from "@smarteraui/icons";
+import { ChevronDown, CurrencyDollarCircle, Eye, SearchLg, UserCircle } from "@properui/icons";
 import { MetricIcon03 } from "@/components/application/metrics/metrics";
 import { MetricChangeIndicator } from "@/components/application/metrics/metrics-base";
 import { PaginationPageDefault } from "@/components/application/pagination/pagination";

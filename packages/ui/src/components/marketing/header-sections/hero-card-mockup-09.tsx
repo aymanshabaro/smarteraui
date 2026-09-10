@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, PlayCircle } from "@smarteraui/icons";
+import { ArrowRight, PlayCircle } from "@properui/icons";
 import { BadgeGroup } from "@/components/base/badges/badge-groups";
 import { Button } from "@/components/base/buttons/button";
 import type { MarketingNavItemType } from "@/components/marketing/header-navigations/base-components/header";
@@ -53,9 +53,9 @@ export const HeroCardMockup09 = () => (
 
                     <h1 className="text-display-md text-primary md:text-display-lg lg:text-display-xl mt-4 font-semibold">Smart business credit cards</h1>
                     <p className="text-tertiary mt-4 max-w-120 text-lg text-balance md:mt-6 md:text-xl">
-                        <span className="max-md:hidden">Smartera is a next-gen financial technology company in the process of reinventing banking.</span>
+                        <span className="max-md:hidden">Proper is a next-gen financial technology company in the process of reinventing banking.</span>
                         <span className="md:hidden">
-                            Mo money, no problems. Smartera is a next-generation financial technology company in the process of reinventing banking. 30-day free
+                            Mo money, no problems. Proper is a next-generation financial technology company in the process of reinventing banking. 30-day free
                             trial.
                         </span>
                     </p>
@@ -72,7 +72,7 @@ export const HeroCardMockup09 = () => (
                     <div className="-space-y-[146px] md:translate-y-3.5 md:-space-y-[126px]">
                         {stackedCards.map((card) => (
                             <div key={card.z} className={`relative ${card.z} [--scale:1.13] md:[--scale:1.641]`} style={{ transform: isometric }}>
-                                <CreditCard type={card.type} company="Smartera." cardHolder={card.holder} />
+                                <CreditCard type={card.type} company="Proper." cardHolder={card.holder} />
                             </div>
                         ))}
 

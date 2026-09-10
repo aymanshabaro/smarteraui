@@ -1,4 +1,4 @@
-import { LogIn04 } from "@smarteraui/icons";
+import { LogIn04 } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { SocialButton } from "@/components/base/buttons/social-button";
 import { Checkbox } from "@/components/base/checkbox/checkbox";

@@ -2,7 +2,7 @@ import { cx } from "~/lib/cx";
 
 /**
  * Placeholder wordmark for the docs chrome. Swapped for
- * `foundations/logo/smartera-logo` once that component lands.
+ * `foundations/logo/proper-logo` once that component lands.
  */
 export const Logo = ({ className }: { className?: string }) => (
     <span className={cx("flex items-center gap-2", className)}>
@@ -12,6 +12,6 @@ export const Logo = ({ className }: { className?: string }) => (
         >
             S
         </span>
-        <span className="text-md text-primary font-semibold">Smartera UI</span>
+        <span className="text-md text-primary font-semibold">Proper UI</span>
     </span>
 );

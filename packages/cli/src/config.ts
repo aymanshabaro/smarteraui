@@ -7,7 +7,7 @@ import path from "node:path";
 import { detectAlias, parseJsonc } from "./detect.js";
 
 export const CONFIG_FILE = "components.json";
-export const CONFIG_SCHEMA_URL = "https://smarteraui.com/schema.json";
+export const CONFIG_SCHEMA_URL = "https://properui.dev/schema.json";
 
 export interface ComponentsConfig {
     $schema: string;

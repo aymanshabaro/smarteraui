@@ -1,7 +1,7 @@
 "use client";
 
 import type { FC } from "react";
-import { CheckCircle, LayersThree01, LayersTwo01, Zap } from "@smarteraui/icons";
+import { CheckCircle, LayersThree01, LayersTwo01, Zap } from "@properui/icons";
 import { Tab, TabList, TabPanel, Tabs } from "@/components/application/tabs/tabs";
 import { Button } from "@/components/base/buttons/button";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";

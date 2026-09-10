@@ -14,7 +14,7 @@ import {
     Heading as AriaHeading,
     useSlottedContext as AriaUseSlottedContext,
 } from "react-aria-components";
-import { ChevronLeft, ChevronRight } from "@smarteraui/icons";
+import { ChevronLeft, ChevronRight } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { InputDateBase } from "@/components/base/input/input-date";
 import { cx } from "@/utils/cx";

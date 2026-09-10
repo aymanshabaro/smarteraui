@@ -2,7 +2,7 @@
 title: Registry metadata for agents
 section: docs
 description: The semantic manifest fields on every registry entry — intent, avoid_when, composes_with, a11y_contract, responsive_contract, token_contract and requires_data — and how an agent should use them to choose a component, not just download one.
-metaTitle: Registry metadata for agents | Smartera UI
+metaTitle: Registry metadata for agents | Proper UI
 metaDescription: Every /r/<name>.json entry carries an optional semantic manifest — intent, avoid_when, composes_with, a11y_contract, responsive_contract, token_contract, requires_data — so an agent can pick the right component before it writes any code.
 ---
 
@@ -120,7 +120,7 @@ The manifest is hand-authored for the 19 base and 32 application component group
 Fetch a single entry to see its full manifest alongside the rest of the registry shape:
 
 ```bash
-curl https://smarteraui.com/r/avatar.json
+curl https://properui.dev/r/avatar.json
 ```
 
 Or build the registry locally and read the file directly:
@@ -130,4 +130,4 @@ pnpm registry:build
 cat packages/registry/dist/avatar.json
 ```
 
-The manifest source lives in [`packages/registry/manifest/<layer>/<name>.json`](https://github.com/aymanshabaro/smarteraui/tree/main/packages/registry/manifest) — one hand-authored file per base/application group — and `packages/registry/schema.json` documents every field's shape. See also the [registry index](/r/index.json) and the [CLI guide](/docs/cli) for how `add`, `list` and `search` consume the rest of an entry.
+The manifest source lives in [`packages/registry/manifest/<layer>/<name>.json`](https://github.com/properui/properui/tree/main/packages/registry/manifest) — one hand-authored file per base/application group — and `packages/registry/schema.json` documents every field's shape. See also the [registry index](/r/index.json) and the [CLI guide](/docs/cli) for how `add`, `list` and `search` consume the rest of an entry.

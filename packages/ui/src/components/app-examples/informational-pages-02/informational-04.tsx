@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, CheckCircle, Download01, HomeLine, RefreshCcw01, SearchLg, XCircle } from "@smarteraui/icons";
+import { ArrowLeft, CheckCircle, Download01, HomeLine, RefreshCcw01, SearchLg, XCircle } from "@properui/icons";
 import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
 import { PaginationPageDefault } from "@/components/application/pagination/pagination";
 import { Table, TableCard } from "@/components/application/table/table";
@@ -78,7 +78,7 @@ export const Informational04 = () => (
                         <Breadcrumbs type="text" aria-label="Breadcrumbs">
                             <Breadcrumbs.Item href="/" icon={HomeLine} aria-label="Home" />
                             <Breadcrumbs.Item href="/dashboard">Dashboard</Breadcrumbs.Item>
-                            <Breadcrumbs.Item href="/dashboard/smartera">Smartera</Breadcrumbs.Item>
+                            <Breadcrumbs.Item href="/dashboard/proper">Proper</Breadcrumbs.Item>
                             <Breadcrumbs.Item href="/dashboard/orders">Orders</Breadcrumbs.Item>
                         </Breadcrumbs>
                     </div>

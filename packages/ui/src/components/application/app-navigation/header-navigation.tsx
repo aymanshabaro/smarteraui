@@ -1,12 +1,12 @@
 "use client";
 
 import type { FC, ReactNode } from "react";
-import { Bell01, LifeBuoy01, SearchLg, Settings01 } from "@smarteraui/icons";
+import { Bell01, LifeBuoy01, SearchLg, Settings01 } from "@properui/icons";
 import { TabList, Tabs } from "@/components/application/tabs/tabs";
 import { BadgeWithDot } from "@/components/base/badges/badges";
 import { DropdownAccountButton } from "@/components/base/dropdown/dropdown-account-button";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { cx } from "@/utils/cx";
 import { MobileNavigationHeader } from "./base-components/mobile-header";
 import { NavAccountCard } from "./base-components/nav-account-card";
@@ -126,7 +126,7 @@ export const HeaderNavigationBase = ({
             <MobileNavigationHeader>
                 <aside className="bg-primary flex h-full max-w-full flex-col justify-between overflow-auto pt-4">
                     <div className="flex flex-col gap-5 px-4">
-                        <SmarteraLogo className="h-6" />
+                        <ProperLogo className="h-6" />
 
                         <Input size="md" aria-label="Search" placeholder="Search" icon={SearchLg} />
                     </div>
@@ -150,7 +150,7 @@ export const HeaderNavigationBase = ({
                             >
                                 Settings
                             </NavItemBase>
-                            <NavItemBase type="link" href="https://smartera.example.com/" icon={Settings01}>
+                            <NavItemBase type="link" href="https://proper.example.com/" icon={Settings01}>
                                 Open in browser
                             </NavItemBase>
                         </div>
@@ -171,7 +171,7 @@ export const HeaderNavigationBase = ({
                                 href="/"
                                 className="outline-focus-ring rounded-xs focus-visible:outline-2 focus-visible:outline-offset-2"
                             >
-                                <SmarteraLogo className="h-6" />
+                                <ProperLogo className="h-6" />
                             </a>
                         </div>
 

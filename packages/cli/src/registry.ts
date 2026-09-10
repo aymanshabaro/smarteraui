@@ -1,7 +1,7 @@
 /**
  * Registry access for the CLI.
  *
- * A registry source is either an HTTP(S) base (`https://smarteraui.com/r`) or a
+ * A registry source is either an HTTP(S) base (`https://properui.dev/r`) or a
  * directory on disk (`packages/registry/dist`). Both expose the same shape:
  * `index.json` plus one `<name>.json` per entry.
  *
@@ -12,7 +12,7 @@ import path from "node:path";
 import { readAuthToken } from "./auth.js";
 
 /** Fallback used when neither `--registry` nor `REGISTRY_URL` nor components.json says otherwise. */
-export const DEFAULT_REGISTRY_URL = "https://smarteraui.com/r";
+export const DEFAULT_REGISTRY_URL = "https://properui.dev/r";
 
 export type RegistryFileType = "component" | "util" | "hook" | "style";
 export type RegistryEntryType = "component" | "example" | "util" | "hook" | "style";
@@ -103,7 +103,7 @@ export class Registry {
         }
         if (response.status === 404) return null;
         if (response.status === 401 || response.status === 403) {
-            throw new RegistryError(`${url} requires authentication. Run \`smarteraui login\` first.`);
+            throw new RegistryError(`${url} requires authentication. Run \`properui login\` first.`);
         }
         if (!response.ok) throw new RegistryError(`${url} responded ${response.status} ${response.statusText}`);
         return (await response.json()) as T;
@@ -125,7 +125,7 @@ export class Registry {
         const cached = this.entryCache.get(name);
         if (cached) return cached;
         const entry = await this.readJson<RegistryEntry>(`${name}.json`);
-        if (!entry) throw new RegistryError(`Unknown component "${name}". Run \`smarteraui list\` to see what is available.`);
+        if (!entry) throw new RegistryError(`Unknown component "${name}". Run \`properui list\` to see what is available.`);
         this.entryCache.set(name, entry);
         return entry;
     }

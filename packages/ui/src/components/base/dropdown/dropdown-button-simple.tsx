@@ -1,7 +1,7 @@
 "use client";
 
 import { SubmenuTrigger as AriaSubmenuTrigger } from "react-aria-components";
-import { ChevronDown } from "@smarteraui/icons";
+import { ChevronDown } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { Dropdown } from "@/components/base/dropdown/dropdown";
 

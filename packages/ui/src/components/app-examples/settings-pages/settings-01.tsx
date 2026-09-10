@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail01 } from "@smarteraui/icons";
+import { Mail01 } from "@properui/icons";
 import { FeaturedCardProgressBar } from "@/components/application/app-navigation/base-components/featured-cards";
 import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
 import { FileUpload } from "@/components/application/file-upload/file-upload-base";
@@ -93,7 +93,7 @@ export const Settings01 = () => (
                                     type="email"
                                     label="Email address"
                                     icon={Mail01}
-                                    placeholder="olivia@smartera.com"
+                                    placeholder="olivia@proper.example"
                                     defaultValue={account.email}
                                     className={hideLabelOnDesktop}
                                 />

@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment } from "react";
-import { Mail01 } from "@smarteraui/icons";
+import { Mail01 } from "@properui/icons";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
 import { Tabs } from "@/components/application/tabs/tabs";
 import { Button } from "@/components/base/buttons/button";
@@ -100,7 +100,7 @@ export const Settings18 = () => (
 
                                     <Form className="mt-5 flex flex-col gap-3 sm:w-full sm:max-w-100 sm:flex-row sm:items-end sm:gap-4">
                                         <div className="flex-1">
-                                            <Input type="email" name="email" icon={Mail01} label="Subscribe to updates" placeholder="you@smartera.com" />
+                                            <Input type="email" name="email" icon={Mail01} label="Subscribe to updates" placeholder="you@proper.example" />
                                         </div>
 
                                         <Button size="md" type="submit">

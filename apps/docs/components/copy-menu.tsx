@@ -10,8 +10,8 @@ import {
 import { cx } from "~/lib/cx";
 import { chatGptUrl, claudeUrl } from "~/lib/external";
 import { absoluteUrl, markdownUrl } from "~/lib/site";
-import { Check, ChevronDown, Copy01 } from "@smarteraui/icons";
-import { useClipboard } from "@smarteraui/ui/hooks/use-clipboard";
+import { Check, ChevronDown, Copy01 } from "@properui/icons";
+import { useClipboard } from "@properui/ui/hooks/use-clipboard";
 import { menuItemClasses, popoverClasses, utilityButtonClasses } from "./primitives";
 
 /**

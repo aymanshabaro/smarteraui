@@ -11,7 +11,7 @@ import {
     SliderThumb as AriaSliderThumb,
     SliderTrack as AriaSliderTrack,
 } from "react-aria-components";
-import { ChevronDown, RefreshCw01, UploadCloud02 } from "@smarteraui/icons";
+import { ChevronDown, RefreshCw01, UploadCloud02 } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { ButtonUtility } from "@/components/base/buttons/button-utility";
 import { Dropdown } from "@/components/base/dropdown/dropdown";

@@ -509,8 +509,8 @@ type Schema = {
 
 const SCHEMA: Schema & { $schema: string; $id: string; title: string; description: string } = {
     $schema: "http://json-schema.org/draft-07/schema#",
-    $id: "https://smarteraui.com/schema.json",
-    title: "Smartera UI registry entry",
+    $id: "https://properui.dev/schema.json",
+    title: "Proper UI registry entry",
     description: "One component, example, util, hook or stylesheet as served from /r/<name>.json.",
     type: "object",
     required: ["name", "layer", "type", "title", "files", "registryDependencies", "dependencies", "cssVars", "examples"],
@@ -640,7 +640,7 @@ const build = () => {
                     layer: directory,
                     type: directory === "utils" ? "util" : "hook",
                     title: titleize(name),
-                    description: `Shared ${directory === "utils" ? "utility" : "hook"} used by Smartera UI components.`,
+                    description: `Shared ${directory === "utils" ? "utility" : "hook"} used by Proper UI components.`,
                     files: toRegistryFiles([absolute]),
                     registryDependencies: derived.registryDependencies,
                     dependencies: derived.dependencies,
@@ -652,7 +652,7 @@ const build = () => {
         }
     }
 
-    // Stylesheets — what `smarteraui init` writes into a consuming project.
+    // Stylesheets — what `properui init` writes into a consuming project.
     const styleFiles = listDir(path.join(UI_SRC, "styles"))
         .filter((file) => file.endsWith(".css"))
         .map((file) => path.join(UI_SRC, "styles", file));
@@ -662,7 +662,7 @@ const build = () => {
             layer: "styles",
             type: "style",
             title: "Styles",
-            description: "Theme tokens, globals and typography for Smartera UI.",
+            description: "Theme tokens, globals and typography for Proper UI.",
             files: toRegistryFiles(styleFiles),
             registryDependencies: [],
             dependencies: [],
@@ -671,7 +671,7 @@ const build = () => {
         });
     }
 
-    // Providers — `smarteraui init` wires these into the consuming app's root layout.
+    // Providers — `properui init` wires these into the consuming app's root layout.
     const providerFiles = listDir(path.join(UI_SRC, "providers"))
         .filter((file) => file.endsWith(".ts") || file.endsWith(".tsx"))
         .map((file) => path.join(UI_SRC, "providers", file));
@@ -682,7 +682,7 @@ const build = () => {
             layer: "utils",
             type: "component",
             title: "Providers",
-            description: "ThemeProvider and RouterProvider — the two providers a Smartera UI app wraps its root in.",
+            description: "ThemeProvider and RouterProvider — the two providers a Proper UI app wraps its root in.",
             files: toRegistryFiles(providerFiles),
             registryDependencies: derivedProviders.registryDependencies,
             dependencies: derivedProviders.dependencies,

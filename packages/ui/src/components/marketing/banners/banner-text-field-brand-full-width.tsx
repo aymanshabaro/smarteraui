@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail01 } from "@smarteraui/icons";
+import { Mail01 } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { CloseButton } from "@/components/base/buttons/close-button";
 import { Form } from "@/components/base/form/form";

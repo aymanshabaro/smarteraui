@@ -24,7 +24,7 @@ import {
     Settings01,
     Star01,
     Users01,
-} from "@smarteraui/icons";
+} from "@properui/icons";
 import type { NavItemDividerType, NavItemType } from "@/components/application/app-navigation/config";
 import { Tabs } from "@/components/application/tabs/tabs";
 import { Avatar } from "@/components/base/avatar/avatar";
@@ -553,7 +553,7 @@ export const navItemsWithSubheadings: Array<{ label: string; items: NavItemType[
         ],
     },
     {
-        label: "Smartera UI",
+        label: "Proper UI",
         items: [
             { label: "Reporting", href: "/reporting", icon: PieChart03 },
             {

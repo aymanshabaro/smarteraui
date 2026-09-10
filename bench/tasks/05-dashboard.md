@@ -2,7 +2,7 @@
 
 ## Prompt
 
-Paste this verbatim into the agent, in a fresh project with either Smart Era UI or the shadcn/ui baseline already installed (see `../baseline/README.md`).
+Paste this verbatim into the agent, in a fresh project with either Proper UI or the shadcn/ui baseline already installed (see `../baseline/README.md`).
 
 > Build an analytics dashboard page. Show three or four key metrics at the top (e.g. total users, revenue, active sessions), each with a number and a trend indicator versus the previous period. Below that, add a chart showing a trend over time (e.g. daily signups over the last 30 days). Next to or below the chart, add an activity feed showing the 5 most recent events (e.g. "Jane Doe upgraded to Pro — 2 hours ago"), each with an actor, an action, and a relative timestamp. The page should work on mobile, tablet, and desktop, and should be fully usable from the keyboard.
 

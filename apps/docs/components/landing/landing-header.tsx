@@ -4,9 +4,9 @@ import { useRef } from "react";
 import { Button as AriaButton, Dialog as AriaDialog, DialogTrigger as AriaDialogTrigger, Popover as AriaPopover } from "react-aria-components";
 import { GithubMark } from "~/components/brand-icons";
 import { ThemeToggle } from "~/components/theme-toggle";
-import { X as CloseIcon, Menu02 } from "@smarteraui/icons";
-import { Button } from "@smarteraui/ui/components/base/buttons/button";
-import { cx, sortCx } from "@smarteraui/ui/utils/cx";
+import { X as CloseIcon, Menu02 } from "@properui/icons";
+import { Button } from "@properui/ui/components/base/buttons/button";
+import { cx, sortCx } from "@properui/ui/utils/cx";
 import { REPO_URL } from "./content";
 import { LandingLogo } from "./landing-logo";
 
@@ -46,7 +46,7 @@ export const LandingHeader = () => {
                     <div className="flex flex-1 items-center gap-5">
                         <a
                             href="/"
-                            aria-label="Smartera UI home"
+                            aria-label="Proper UI home"
                             className="outline-focus-ring rounded-xs focus-visible:outline-2 focus-visible:outline-offset-2"
                         >
                             <LandingLogo className="h-7" />

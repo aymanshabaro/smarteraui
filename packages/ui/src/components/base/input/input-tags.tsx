@@ -3,7 +3,7 @@
 import type { Key, KeyboardEvent, ReactNode } from "react";
 import { useCallback, useId, useRef, useState } from "react";
 import { Group as AriaGroup, Input as AriaInput } from "react-aria-components";
-import { HelpCircle, InfoCircle } from "@smarteraui/icons";
+import { HelpCircle, InfoCircle } from "@properui/icons";
 import { HintText } from "@/components/base/input/hint-text";
 import { Label } from "@/components/base/input/label";
 import { Tag, TagGroup, TagList } from "@/components/base/tags/tags";

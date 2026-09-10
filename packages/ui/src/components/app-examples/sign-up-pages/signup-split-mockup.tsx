@@ -8,7 +8,7 @@ export const SignupSplitMockup = () => (
         <SignUpFormColumn headerClassName="hidden pt-8 ps-8 lg:block" footerClassName="hidden px-8 pt-4 pb-8 lg:flex" bodyClassName="md:py-0" />
 
         <div className="bg-tertiary relative hidden items-center overflow-hidden ps-24 lg:flex">
-            <ScreenMockup src={IMAGES.landscape[0].src} alt="Smartera dashboard" imageClassName="max-h-168.5" />
+            <ScreenMockup src={IMAGES.landscape[0].src} alt="Proper dashboard" imageClassName="max-h-168.5" />
         </div>
     </section>
 );

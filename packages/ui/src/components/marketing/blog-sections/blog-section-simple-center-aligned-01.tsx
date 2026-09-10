@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "@smarteraui/icons";
+import { ArrowUpRight } from "@properui/icons";
 import { Badge } from "@/components/base/badges/badges";
 import { Button } from "@/components/base/buttons/button";
 import { IMAGES, avatar } from "@/utils/demo-assets";
@@ -52,7 +52,7 @@ export const BlogSectionSimpleCenterAligned01 = () => (
         <div className="max-w-container mx-auto px-4 md:px-8">
             <div className="mx-auto max-w-3xl text-center">
                 <p className="text-brand-secondary md:text-md text-sm font-semibold">Latest posts</p>
-                <h2 className="text-display-sm text-primary md:text-display-md mt-3 font-semibold">Smartera blog</h2>
+                <h2 className="text-display-sm text-primary md:text-display-md mt-3 font-semibold">Proper blog</h2>
                 <p className="text-tertiary mt-4 text-lg md:mt-5 md:text-xl">Interviews, tips, guides, industry best practices, and news.</p>
             </div>
 

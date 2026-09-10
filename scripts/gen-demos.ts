@@ -16,7 +16,7 @@ const imports: string[] = [];
 const entries: string[] = [];
 let i = 0;
 for (const file of walk(SRC).sort()) {
-    const rel = "@smarteraui/ui/components/" + path.relative(SRC, file).replace(/\.tsx$/, "");
+    const rel = "@properui/ui/components/" + path.relative(SRC, file).replace(/\.tsx$/, "");
     const ns = `d${i++}`;
     imports.push(`import * as ${ns} from "${rel}";`);
     const slug = path.basename(file, ".demo.tsx");

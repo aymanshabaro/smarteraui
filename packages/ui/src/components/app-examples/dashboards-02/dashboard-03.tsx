@@ -1,6 +1,6 @@
 "use client";
 
-import { SearchLg } from "@smarteraui/icons";
+import { SearchLg } from "@properui/icons";
 import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
 import { MetricChart04 } from "@/components/application/metrics/metrics";
 import { MetricChangeIndicator } from "@/components/application/metrics/metrics-base";

@@ -9,7 +9,7 @@ export const CtaSimpleLogos02 = () => (
             <div className="grid grid-cols-1 items-start lg:grid-cols-2 lg:gap-16">
                 <div className="flex flex-col">
                     <div className="max-w-3xl">
-                        <h2 className="text-display-sm text-primary md:text-display-md font-semibold">Join over 4,000+ startups growing with Smartera</h2>
+                        <h2 className="text-display-sm text-primary md:text-display-md font-semibold">Join over 4,000+ startups growing with Proper</h2>
                         <p className="text-tertiary mt-4 text-lg md:mt-5 md:text-xl">Start your 30-day free trial today.</p>
                     </div>
 

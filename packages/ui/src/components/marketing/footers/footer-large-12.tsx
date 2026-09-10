@@ -1,9 +1,9 @@
-import { ChevronRight } from "@smarteraui/icons";
+import { ChevronRight } from "@properui/icons";
 import { Badge } from "@/components/base/badges/badges";
 import { Button } from "@/components/base/buttons/button";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
 import { AngelList, Dribbble, Facebook, GitHub, Layers, LinkedIn, X } from "@/components/foundations/social-icons";
 import { sortCx } from "@/utils/cx";
 import { LOGOS } from "@/utils/demo-assets";
@@ -89,7 +89,7 @@ export const FooterLarge12 = () => {
             <div className="max-w-container mx-auto px-4 py-12 md:px-8 md:pt-16">
                 <div className="flex flex-col gap-12 md:gap-16 xl:flex-row">
                     <div className="flex flex-col gap-6 md:w-80">
-                        <SmarteraLogo className="h-7 w-min shrink-0" />
+                        <ProperLogo className="h-7 w-min shrink-0" />
 
                         <p className="text-tertiary text-md">Design amazing digital experiences that create more happy in the world.</p>
 
@@ -147,7 +147,7 @@ export const FooterLarge12 = () => {
                 </div>
 
                 <div className="border-secondary mt-12 flex flex-col-reverse justify-between gap-6 border-t pt-8 md:mt-16 md:flex-row">
-                    <p className="text-quaternary text-sm">© 2077 Smartera. All rights reserved.</p>
+                    <p className="text-quaternary text-sm">© 2077 Proper. All rights reserved.</p>
 
                     <ul className="flex gap-4">
                         {socialLinks.map(({ label, href, icon: Icon }) => (

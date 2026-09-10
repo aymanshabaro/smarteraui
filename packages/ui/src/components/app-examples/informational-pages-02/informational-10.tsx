@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment } from "react";
-import { SearchLg } from "@smarteraui/icons";
+import { SearchLg } from "@properui/icons";
 import { Calendar } from "@/components/application/date-picker/calendar";
 import {
     CalendarAppHeader,
@@ -88,7 +88,7 @@ export const Informational10 = () => (
                             yesCount={5}
                             awaitingCount={1}
                             description="Sienna is inviting you to a scheduled video meeting about the new dashboard."
-                            meetingUrl="https://meet.smartera.com/product-demo"
+                            meetingUrl="https://meet.proper.example/product-demo"
                         />
                     </div>
                 </div>

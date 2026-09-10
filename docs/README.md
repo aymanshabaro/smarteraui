@@ -1,6 +1,6 @@
-# Smartera UI documentation
+# Proper UI documentation
 
-These guides cover installing Smartera UI, wiring it into a framework, theming it, and contributing components back.
+These guides cover installing Proper UI, wiring it into a framework, theming it, and contributing components back.
 
 There is no hosted documentation site yet. The full site — every component, every variant, live previews and props
 tables — runs locally:

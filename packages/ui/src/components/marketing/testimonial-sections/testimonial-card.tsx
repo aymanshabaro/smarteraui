@@ -3,7 +3,7 @@ import { AVATARS, LOGOS } from "@/utils/demo-assets";
 
 const review = {
     industry: "Financial Services",
-    quote: "Smartera has saved us thousands of hours of work. We're able to spin up projects and features faster.",
+    quote: "Proper has saved us thousands of hours of work. We're able to spin up projects and features faster.",
     author: AVATARS[11],
     role: `Web Developer, ${LOGOS[1].name}`,
 };

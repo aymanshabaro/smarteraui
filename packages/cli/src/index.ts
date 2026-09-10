@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * smarteraui CLI — init / add / list / search / diff / login.
+ * properui CLI — init / add / list / search / diff / login.
  * Spec: docs/cli.md (commands, components.json, auto-detection).
  */
 import { Command } from "commander";
@@ -30,7 +30,7 @@ function guard<A extends unknown[]>(action: (...args: A) => Promise<void>): (...
                 return;
             }
             log.error(error instanceof RegistryError ? error.message : ((error as Error).message ?? String(error)));
-            if (process.env.SMARTERAUI_DEBUG) console.error(error);
+            if (process.env.PROPERUI_DEBUG) console.error(error);
             process.exitCode = 1;
         }
     };
@@ -39,8 +39,8 @@ function guard<A extends unknown[]>(action: (...args: A) => Promise<void>): (...
 const program = new Command();
 
 program
-    .name("smarteraui")
-    .description("Add Smartera UI components to your project")
+    .name("properui")
+    .description("Add Proper UI components to your project")
     .version("0.1.0")
     .option("--cwd <dir>", "run against another directory", process.cwd());
 
@@ -96,10 +96,10 @@ program
 
 program
     .command("agent")
-    .description("Manage the portable Smartera UI Skill for AI coding tools")
+    .description("Manage the portable Proper UI Skill for AI coding tools")
     .addCommand(
         new Command("init")
-            .description("Install the Smartera UI Skill for an AI coding tool: claude, codex, cursor, lovable, or all")
+            .description("Install the Proper UI Skill for an AI coding tool: claude, codex, cursor, lovable, or all")
             .option("--client <client>", "claude, codex, cursor, lovable, or all", "all")
             .option("--overwrite", "replace the Skill file even if it already exists")
             .option("-y, --yes", "accept every default; never prompt")
@@ -108,14 +108,14 @@ program
 
 program
     .command("info")
-    .description("Show this project's Smartera UI setup: framework, Tailwind, aliases and installed entries")
+    .description("Show this project's Proper UI setup: framework, Tailwind, aliases and installed entries")
     .option("--json", "print machine-readable JSON instead of a formatted report")
     .option("--registry <source>", REGISTRY_HELP)
     .action(guard(async (options) => runInfo({ ...options, cwd: program.opts().cwd })));
 
 program
     .command("login")
-    .description("Store a registry token at ~/.smarteraui/auth.json (private registries only)")
+    .description("Store a registry token at ~/.properui/auth.json (private registries only)")
     .option("--token <token>", "use this token instead of prompting")
     .option("--registry <source>", REGISTRY_HELP)
     .option("-y, --yes", "accept every default; never prompt")

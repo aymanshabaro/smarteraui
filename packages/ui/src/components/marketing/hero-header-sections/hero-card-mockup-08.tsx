@@ -1,4 +1,4 @@
-import { Check } from "@smarteraui/icons";
+import { Check } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { Form } from "@/components/base/form/form";
 import { Input } from "@/components/base/input/input";
@@ -51,7 +51,7 @@ export const HeroCardMockup08 = () => (
                         Simple, transparent business credit cards
                     </h1>
                     <p className="text-tertiary mt-4 text-lg text-balance md:mt-6 md:text-xl">
-                        Mo money, no problems. Smartera is a next-generation financial technology company in the process of reinventing banking. 30-day free
+                        Mo money, no problems. Proper is a next-generation financial technology company in the process of reinventing banking. 30-day free
                         trial.
                     </p>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { Copy01, Mail01, Plus, UsersPlus } from "@smarteraui/icons";
+import { Copy01, Mail01, Plus, UsersPlus } from "@properui/icons";
 import { SectionHeader } from "@/components/application/section-headers/section-headers";
 import { Tabs } from "@/components/application/tabs/tabs";
 import { Button } from "@/components/base/buttons/button";
@@ -152,7 +152,7 @@ export const Informational14 = () => (
                         </div>
 
                         <div className="flex items-end gap-1">
-                            <Input label="Share link" defaultValue="smartera.com/projects/marketing-site-redesign" className="w-full" />
+                            <Input label="Share link" defaultValue="proper.example/projects/marketing-site-redesign" className="w-full" />
                             <ButtonUtility size="sm" color="tertiary" tooltip="Copy link" icon={Copy01} />
                         </div>
                     </div>

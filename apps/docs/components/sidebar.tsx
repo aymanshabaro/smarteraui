@@ -14,7 +14,7 @@ import {
 import { cx } from "~/lib/cx";
 import { SITE_NAME } from "~/lib/site";
 import type { SiteNavGroup, SiteNavItem } from "~/lib/site-nav";
-import { ChevronDown, Menu02, XClose } from "@smarteraui/icons";
+import { ChevronDown, Menu02, XClose } from "@properui/icons";
 import { Logo } from "./logo";
 import { DottedDivider } from "./primitives";
 import { SearchTrigger } from "./search";

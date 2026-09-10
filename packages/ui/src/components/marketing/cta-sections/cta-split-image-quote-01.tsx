@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button as AriaButton } from "react-aria-components";
-import { ArrowNext, ArrowPrevious, CheckCircle } from "@smarteraui/icons";
+import { ArrowNext, ArrowPrevious, CheckCircle } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { RatingStars } from "@/components/foundations/rating/rating-stars";
 import { sortCx } from "@/utils/cx";
@@ -21,7 +21,7 @@ const benefits = ["30-day free trial", "Personalized onboarding", "Access to all
 
 const reviews = [
     {
-        quote: "Smartera has saved us thousands of hours of work. We're able to spin up projects and features faster.",
+        quote: "Proper has saved us thousands of hours of work. We're able to spin up projects and features faster.",
         name: AVATARS[11].name,
         company: "Web Design Agency",
         role: `PM, ${LOGOS[5].name}`,
@@ -48,7 +48,7 @@ export const CtaSplitImageQuote01 = () => {
             <div className="flex w-full lg:justify-end lg:py-24">
                 <div className="flex max-w-3xl flex-col items-start px-4 md:px-8 lg:max-w-(--breakpoint-sm)">
                     <h2 className="text-display-sm text-primary md:text-display-md lg:text-display-lg font-semibold">
-                        Join 4,000+ startups growing with Smartera
+                        Join 4,000+ startups growing with Proper
                     </h2>
 
                     <ul className="mt-8 flex flex-col gap-4 md:gap-5 md:ps-4">

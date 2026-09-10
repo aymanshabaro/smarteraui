@@ -1,7 +1,7 @@
 "use client";
 
 import type { FC } from "react";
-import { ArrowRight, ChartBreakoutSquare, MessageSmileCircle, Zap } from "@smarteraui/icons";
+import { ArrowRight, ChartBreakoutSquare, MessageSmileCircle, Zap } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 import { CreditCard } from "@/components/shared-assets/credit-card/credit-card";
@@ -30,7 +30,7 @@ const features: { icon: FC<{ className?: string }>; title: string; subtitle: str
     {
         icon: ChartBreakoutSquare,
         title: "Manage your team with reports",
-        subtitle: "Measure what matters with Smartera's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
+        subtitle: "Measure what matters with Proper's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
     },
 ];
 
@@ -72,16 +72,16 @@ export const FeaturesIconsAndMockup07 = () => (
                 <div className="bg-tertiary relative -mx-4 flex h-80 items-center justify-center md:me-0 md:h-120 md:rounded-2xl lg:h-140" aria-hidden="true">
                     <div className="-space-y-[146px] md:-translate-x-2 md:translate-y-3.5 md:-space-y-[126px]">
                         <div className={cx(styles.cardScale, "z-4")} style={{ transform: CARD_TRANSFORM }}>
-                            <CreditCard type="transparent-gradient" company="Smartera" cardHolder={AVATARS[3].name} />
+                            <CreditCard type="transparent-gradient" company="Proper" cardHolder={AVATARS[3].name} />
                         </div>
                         <div className={cx(styles.cardScale, "z-3")} style={{ transform: CARD_TRANSFORM }}>
-                            <CreditCard type="brand-dark" company="Smartera" cardHolder={AVATARS[2].name} />
+                            <CreditCard type="brand-dark" company="Proper" cardHolder={AVATARS[2].name} />
                         </div>
                         <div className={cx(styles.cardScale, "z-2")} style={{ transform: CARD_TRANSFORM }}>
-                            <CreditCard type="transparent" company="Smartera" cardHolder={AVATARS[0].name} />
+                            <CreditCard type="transparent" company="Proper" cardHolder={AVATARS[0].name} />
                         </div>
                         <div className={cx(styles.cardScale, "z-1")} style={{ transform: CARD_TRANSFORM }}>
-                            <CreditCard type="gray-dark" company="Smartera" cardHolder={AVATARS[1].name} />
+                            <CreditCard type="gray-dark" company="Proper" cardHolder={AVATARS[1].name} />
                         </div>
                         <div className={cx(styles.cardScale, "z-0")} style={{ transform: CARD_TRANSFORM }}>
                             <div className="h-47.5 w-79 rounded-2xl bg-neutral-900 opacity-15 blur-md" />

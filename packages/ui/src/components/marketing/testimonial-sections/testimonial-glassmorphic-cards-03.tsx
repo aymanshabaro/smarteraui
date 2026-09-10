@@ -1,6 +1,6 @@
 "use client";
 
-import { Plus } from "@smarteraui/icons";
+import { Plus } from "@properui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { RatingStars } from "@/components/foundations/rating/rating-stars";
 import { AVATARS, IMAGES, LOGOS } from "@/utils/demo-assets";
@@ -21,7 +21,7 @@ const reviews: GlassReview[] = [
         role: `Designer, ${LOGOS[3].name}`,
         industry: "UX Agency",
         portrait: IMAGES.square[2],
-        quote: "Smartera has saved us thousands of hours.",
+        quote: "Proper has saved us thousands of hours.",
     },
     { name: AVATARS[1].name, role: `PM, ${LOGOS[1].name}`, industry: "Machine Learning", portrait: IMAGES.square[3] },
     { name: AVATARS[10].name, role: `Fullstack Dev, ${LOGOS[4].name}`, industry: "Performance Marketing", portrait: IMAGES.landscape[0] },

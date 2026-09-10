@@ -3,7 +3,7 @@
 import { isValidElement, useContext } from "react";
 import type { ListBoxItemProps as AriaListBoxItemProps } from "react-aria-components";
 import { ListBoxItem as AriaListBoxItem, Text as AriaText } from "react-aria-components";
-import { Check } from "@smarteraui/icons";
+import { Check } from "@properui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { CheckboxBase } from "@/components/base/checkbox/checkbox";
 import { cx } from "@/utils/cx";

@@ -87,7 +87,7 @@ export const HeroCardMockup11 = () => (
                         {cardRows.map((row, rowIndex) => (
                             <div key={rowIndex} className={row.indent ? "flex gap-4 ps-40" : "flex gap-4"}>
                                 {row.types.map((type, cardIndex) => (
-                                    <CreditCard key={cardIndex} type={type} company="Smartera." cardHolder={AVATARS[1].name} />
+                                    <CreditCard key={cardIndex} type={type} company="Proper." cardHolder={AVATARS[1].name} />
                                 ))}
                             </div>
                         ))}

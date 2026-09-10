@@ -1,5 +1,5 @@
 /**
- * `smarteraui search <query>` — local fuzzy search over name + description + example names.
+ * `properui search <query>` — local fuzzy search over name + description + example names.
  * Scored subsequence match; no network beyond the registry index, no extra dependency.
  */
 import path from "node:path";

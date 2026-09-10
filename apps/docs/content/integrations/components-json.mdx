@@ -1,23 +1,23 @@
 ---
 title: components.json
 section: integrations
-description: components.json is an optional configuration file for the Smartera UI CLI, used to customize import aliases and file paths for your project.
-metaTitle: components.json | Smartera UI
+description: components.json is an optional configuration file for the Proper UI CLI, used to customize import aliases and file paths for your project.
+metaTitle: components.json | Proper UI
 metaDescription: Reference for every field in components.json — style, tsx, tailwind, aliases, and registry — and how the CLI resolves them against your tsconfig.
 ---
 
 ## Overview
 
-`components.json` tells `npx smarteraui@latest add` two things: where your Tailwind config and CSS files live, and which import alias each kind of file should use when it's copied into your project. The CLI only ever _reads_ this file — it never writes to it after `init` creates it.
+`components.json` tells `npx properui@latest add` two things: where your Tailwind config and CSS files live, and which import alias each kind of file should use when it's copied into your project. The CLI only ever _reads_ this file — it never writes to it after `init` creates it.
 
 ## Creating components.json
 
-`npx smarteraui@latest init` writes one for you, detected from your `tsconfig.json` and project structure. To create it by hand instead, add it at your project root:
+`npx properui@latest init` writes one for you, detected from your `tsconfig.json` and project structure. To create it by hand instead, add it at your project root:
 
 ```json
 // components.json
 {
-    "$schema": "https://smarteraui.com/schema.json",
+    "$schema": "https://properui.dev/schema.json",
     "style": "default",
     "tsx": true,
     "tailwind": {
@@ -31,7 +31,7 @@ metaDescription: Reference for every field in components.json — style, tsx, ta
         "ui": "@/components/base",
         "hooks": "@/hooks"
     },
-    "registry": "https://smarteraui.com/r"
+    "registry": "https://properui.dev/r"
 }
 ```
 
@@ -48,7 +48,7 @@ metaDescription: Reference for every field in components.json — style, tsx, ta
 | `aliases`         | `object`  | Import alias per file category — see below.                                           |
 | `registry`        | `string`  | Base URL or local directory the CLI fetches component and example JSON from.          |
 
-`registry` defaults to `https://smarteraui.com/r`, which goes live once the docs site deploys. Until then, point it at a locally built registry — see [the CLI's registry section](/docs/cli#pointing-at-another-registry).
+`registry` defaults to `https://properui.dev/r`, which goes live once the docs site deploys. Until then, point it at a locally built registry — see [the CLI's registry section](/docs/cli#pointing-at-another-registry).
 
 ### aliases
 
@@ -127,7 +127,7 @@ If the CLI can't resolve an alias against your `tsconfig.json`, it stops before 
 
 ```json
 {
-    "$schema": "https://smarteraui.com/schema.json",
+    "$schema": "https://properui.dev/schema.json",
     "style": "default",
     "tsx": true,
     "tailwind": {
@@ -141,7 +141,7 @@ If the CLI can't resolve an alias against your `tsconfig.json`, it stops before 
         "ui": "@/components/base",
         "hooks": "@/hooks"
     },
-    "registry": "https://smarteraui.com/r"
+    "registry": "https://properui.dev/r"
 }
 ```
 
@@ -149,7 +149,7 @@ If the CLI can't resolve an alias against your `tsconfig.json`, it stops before 
 
 ```json
 {
-    "$schema": "https://smarteraui.com/schema.json",
+    "$schema": "https://properui.dev/schema.json",
     "style": "default",
     "tsx": true,
     "tailwind": {
@@ -163,7 +163,7 @@ If the CLI can't resolve an alias against your `tsconfig.json`, it stops before 
         "ui": "@workspace/ui/components/base",
         "hooks": "@workspace/ui/hooks"
     },
-    "registry": "https://smarteraui.com/r"
+    "registry": "https://properui.dev/r"
 }
 ```
 
@@ -173,7 +173,7 @@ Run this from `packages/ui`, so components land in the shared package rather tha
 
 ```json
 {
-    "$schema": "https://smarteraui.com/schema.json",
+    "$schema": "https://properui.dev/schema.json",
     "style": "default",
     "tsx": true,
     "tailwind": {
@@ -187,7 +187,7 @@ Run this from `packages/ui`, so components land in the shared package rather tha
         "ui": "@/components/ui",
         "hooks": "@/lib/hooks"
     },
-    "registry": "https://smarteraui.com/r"
+    "registry": "https://properui.dev/r"
 }
 ```
 

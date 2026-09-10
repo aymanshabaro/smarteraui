@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { PaginationLine } from "@/components/application/pagination/pagination-line";
-import { SmarteraLogo } from "@/components/foundations/logo/smartera-logo";
-import { SmarteraLogoMinimal } from "@/components/foundations/logo/smartera-logo-minimal";
+import { ProperLogo } from "@/components/foundations/logo/proper-logo";
+import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
 import { cx } from "@/utils/cx";
 import { SupportFooter } from "./base-components/page-parts";
 import { SetPasswordForm } from "./base-components/sign-up-form";
@@ -82,7 +82,7 @@ export const SignupSidebarProgress02 = () => {
             <div className="bg-brand-section hidden max-w-96 flex-col justify-between lg:flex">
                 <div className="flex flex-col gap-16 px-8 pt-8">
                     <div className="dark-mode">
-                        <SmarteraLogo />
+                        <ProperLogo />
                     </div>
 
                     <BrandStepList />
@@ -94,7 +94,7 @@ export const SignupSidebarProgress02 = () => {
             <div className="relative flex w-full flex-col items-center gap-8 px-4 py-12 md:px-8 lg:pt-40 lg:pb-24">
                 <div className="flex w-full flex-col gap-8 sm:max-w-90">
                     <div className="flex flex-col items-center gap-6 text-center md:gap-8">
-                        <SmarteraLogoMinimal className="relative size-8" />
+                        <ProperLogoMinimal className="relative size-8" />
 
                         <div className="z-10 flex flex-col gap-2 md:gap-3">
                             <h1 className="text-primary md:text-display-xs text-xl font-semibold">Choose a password</h1>
