@@ -36,9 +36,10 @@ No CLI, no problem — see [Manual installation](#manual-installation) below for
 
 ## Installation via CLI
 
-The CLI creates `theme.css`, updates `globals.css` with the required imports and custom variants, and adds the `cx` utility. It reads your existing
-`tsconfig.json` path alias rather than writing one — if none is declared, it warns you and tells you what to add. Once your project is initialized, add
-components one at a time:
+The CLI creates `theme.css`, updates `globals.css` with the required imports and custom variants, and adds the `cx` utility. For Vite it also wires the `@`
+import alias for you — a `paths` entry in `tsconfig.app.json`/`tsconfig.json` and the matching `resolve.alias` in `vite.config`, since Vite needs both to
+resolve `@/...` imports and has no built-in tsconfig-paths support. For every other framework it reads your existing `tsconfig.json` path alias rather than
+writing one — if none is declared, it warns you and tells you what to add. Once your project is initialized, add components one at a time:
 
 ```bash
 npx smarteraui@latest add badges

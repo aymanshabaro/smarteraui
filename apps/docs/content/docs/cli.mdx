@@ -22,7 +22,7 @@ Requires Node 20+.
 
 ## Init command
 
-`init` configures an **existing** project — it does not scaffold a new one, so run it from the directory that already holds your `package.json`. It reads your `tsconfig.json` for an existing path alias, detects Next.js App Router vs Pages Router vs Vite vs Remix vs plain React, checks your Tailwind version (v3 projects are stopped with upgrade instructions — Smartera UI requires Tailwind v4), and confirms your package manager from the lockfile. It then writes `components.json`, copies the theme token file (from the registry when reachable, a placeholder otherwise), creates `utils/cx.ts`, adds the Tailwind `@source` scan line and theme import to your global stylesheet, and wraps your app entry point (`app/layout.tsx`, `pages/_app.tsx`, or `main.tsx`) in `ThemeProvider`. It does not install any npm packages itself — `add` is what installs a component's dependencies.
+`init` configures an **existing** project — it does not scaffold a new one, so run it from the directory that already holds your `package.json`. It reads your `tsconfig.json` for an existing path alias, detects Next.js App Router vs Pages Router vs Vite vs Remix vs plain React, checks your Tailwind version (v3 projects are stopped with upgrade instructions — Smartera UI requires Tailwind v4), and confirms your package manager from the lockfile. It then writes `components.json`, copies the theme token file (from the registry when reachable, a placeholder otherwise), creates `utils/cx.ts`, adds the Tailwind `@source` scan line and theme import to your global stylesheet, and wraps your app entry point (`app/layout.tsx`, `pages/_app.tsx`, or `main.tsx`) in `ThemeProvider`. For Vite specifically, it also writes the `@` alias into both halves Vite needs — a `paths` entry in `tsconfig.app.json`/`tsconfig.json` and a matching `resolve.alias` in `vite.config` — since Vite has no built-in tsconfig-paths support and `vite build`/`tsc -b` fail on `@/...` imports without both. It does not install any npm packages itself — `add` is what installs a component's dependencies.
 
 ```bash
 npx smarteraui@latest init
@@ -30,15 +30,15 @@ npx smarteraui@latest init
 
 ### Command options
 
-| Option                | Description                                                 |
-| --------------------- | ----------------------------------------------------------- |
-| `--nextjs`            | Treat the project as Next.js instead of auto-detecting.     |
-| `--vite`              | Treat the project as Vite instead of auto-detecting.        |
-| `--manual`            | Write the files but leave the app entry point alone.        |
-| `--overwrite`         | Replace `components.json` and any files that already exist. |
-| `--registry <source>` | Registry directory or base URL for this run (see below).    |
-| `-y, --yes`           | Accept every default; never prompt.                         |
-| `--cwd <path>`        | Run against a directory other than the current one.         |
+| Option                | Description                                                                                                     |
+| --------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `--nextjs`            | Treat the project as Next.js instead of auto-detecting.                                                         |
+| `--vite`              | Treat the project as Vite instead of auto-detecting.                                                            |
+| `--manual`            | Write the files but leave the app entry point (and, for Vite, the `@` alias) alone — print the snippet instead. |
+| `--overwrite`         | Replace `components.json` and any files that already exist.                                                     |
+| `--registry <source>` | Registry directory or base URL for this run (see below).                                                        |
+| `-y, --yes`           | Accept every default; never prompt.                                                                             |
+| `--cwd <path>`        | Run against a directory other than the current one.                                                             |
 
 ## Add command
 

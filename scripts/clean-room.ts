@@ -177,38 +177,26 @@ const VITE: Target = {
         section("vite — installing Tailwind v4 + @tailwindcss/vite (README step, done by hand)");
         run(appDir, "npm", ["install", "-D", "tailwindcss", "@tailwindcss/vite"]);
 
+        // Only the Tailwind plugin wiring is done by hand here (the README's own documented
+        // step). The `@/*` alias — both the tsconfig `paths` entry and the vite.config
+        // `resolve.alias` — is deliberately left missing so that `smarteraui init --vite`
+        // below is what has to supply it; that's the gap this clean-room run exists to prove
+        // the CLI closes on its own.
         const viteConfigPath = path.join(appDir, "vite.config.ts");
         writeFileSync(
             viteConfigPath,
             [
-                'import path from "node:path";',
-                'import { fileURLToPath } from "node:url";',
                 'import tailwindcss from "@tailwindcss/vite";',
                 'import react from "@vitejs/plugin-react";',
                 'import { defineConfig } from "vite";',
                 "",
-                "const dirname = path.dirname(fileURLToPath(import.meta.url));",
-                "",
                 "// https://vite.dev/config/",
                 "export default defineConfig({",
                 "    plugins: [react(), tailwindcss()],",
-                "    resolve: {",
-                '        alias: { "@": path.resolve(dirname, "./src") },',
-                "    },",
                 "});",
                 "",
             ].join("\n"),
         );
-
-        // Undocumented-but-necessary gap: Vite has no built-in tsconfig-paths support, so the
-        // `@/*` alias `init` needs (and warns about when missing) has to be wired into both
-        // tsconfig *and* the bundler, not just tsconfig as the CLI's own warning implies.
-        const tsconfigAppPath = path.join(appDir, "tsconfig.app.json");
-        const tsconfigApp = readFileSync(tsconfigAppPath, "utf8").replace(
-            /"compilerOptions":\s*\{/,
-            '"compilerOptions": {\n    "paths": { "@/*": ["./src/*"] },',
-        );
-        writeFileSync(tsconfigAppPath, tsconfigApp);
     },
 };
 

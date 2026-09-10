@@ -51,6 +51,133 @@ function relativeCssPath(from: string, to: string): string {
     return relative.startsWith(".") ? relative : `./${relative}`;
 }
 
+/** POSIX-style relative *directory* path from `from` to `to`. `.` for the same directory, always `./`-prefixed otherwise. */
+function relativeDirPath(from: string, to: string): string {
+    const relative = path.relative(from, to).split(path.sep).join("/");
+    if (relative === "") return ".";
+    return relative.startsWith(".") ? relative : `./${relative}`;
+}
+
+/** Index of the `}` that closes the `{` at `openIndex`, or -1 if the braces never balance. */
+function matchBalancedBrace(source: string, openIndex: number): number {
+    let depth = 0;
+    for (let i = openIndex; i < source.length; i++) {
+        if (source[i] === "{") depth++;
+        else if (source[i] === "}") {
+            depth--;
+            if (depth === 0) return i;
+        }
+    }
+    return -1;
+}
+
+interface TsconfigAliasResult {
+    file: string | null;
+    status: "written" | "already-declared" | "unsupported" | "skipped";
+    snippet: string;
+}
+
+/**
+ * Vite has no built-in tsconfig-paths support: the `@/*` (or whatever prefix the project
+ * uses) alias needs a `paths` entry in tsconfig *and* a matching `resolve.alias` in
+ * vite.config — this writes the tsconfig half. Prefers the split `tsconfig.app.json` that
+ * `npm create vite@latest` scaffolds (the root `tsconfig.json` there only holds
+ * `references`), falls back to `tsconfig.json`, then `jsconfig.json` for JS-only projects.
+ */
+function wireViteTsconfigPaths(project: ProjectInfo, dryRun: boolean): TsconfigAliasResult {
+    const file = ["tsconfig.app.json", "tsconfig.json", "jsconfig.json"].map((name) => path.join(project.cwd, name)).find((candidate) => existsSync(candidate));
+
+    const target = `${relativeDirPath(path.dirname(file ?? project.cwd), project.aliasBase)}/*`;
+    const snippet = `"paths": { "${project.aliasPrefix}*": ["${target}"] }`;
+
+    if (project.aliasDeclared) return { file: file ?? null, status: "already-declared", snippet };
+    if (!file) return { file: null, status: "skipped", snippet };
+
+    const raw = readFileSync(file, "utf8");
+    const match = /"compilerOptions"\s*:\s*\{/.exec(raw);
+    if (!match) return { file, status: "unsupported", snippet };
+
+    const afterBrace = match.index + match[0].length;
+    const indent = /\n([ \t]*)\S/.exec(raw.slice(afterBrace))?.[1] ?? "    ";
+    const next = `${raw.slice(0, afterBrace)}\n${indent}${snippet},${raw.slice(afterBrace)}`;
+
+    if (!dryRun) writeFileSync(file, next, "utf8");
+    return { file, status: "written", snippet };
+}
+
+const VITE_CONFIG_NAMES = ["vite.config.ts", "vite.config.mts", "vite.config.js", "vite.config.mjs"];
+
+interface ViteConfigAliasResult {
+    file: string | null;
+    aliasKey: string;
+    status: "written" | "already-present" | "unsupported" | "skipped";
+    snippet: string;
+}
+
+/**
+ * Writes the bundler half of the alias: `resolve.alias` in vite.config, merged into the
+ * existing config non-destructively. Handles the config shapes `npm create vite@latest`
+ * (and hand-edited variants of it) produce — `defineConfig({ ... })`, an existing `resolve:`
+ * block with or without `alias`, or `export default { ... }` without `defineConfig` at all.
+ * Anything else (a functional `defineConfig((env) => ({ ... }))`, an array-form `alias: [...]`)
+ * is left untouched — the caller prints `snippet` and reports failure instead of guessing.
+ */
+function wireViteConfigAlias(project: ProjectInfo, dryRun: boolean): ViteConfigAliasResult {
+    const file = VITE_CONFIG_NAMES.map((name) => path.join(project.cwd, name)).find((candidate) => existsSync(candidate));
+    const aliasKey = project.aliasPrefix.replace(/\/$/, "");
+    const srcPath = relativeDirPath(project.cwd, project.aliasBase);
+    const raw = file ? readFileSync(file, "utf8") : "";
+    const isEsm = raw ? /^\s*(?:import\s|export\s+default\b)/m.test(raw) : true;
+
+    const aliasExpr = isEsm ? `fileURLToPath(new URL("${srcPath}", import.meta.url))` : `path.resolve(__dirname, "${srcPath}")`;
+    const hasUrlImport = /fileURLToPath/.test(raw) && /from\s+["'](?:node:)?url["']/.test(raw);
+    const hasPathImport = /require\(\s*["'](?:node:)?path["']\s*\)/.test(raw) || /from\s+["'](?:node:)?path["']/.test(raw);
+    const needsImport = isEsm ? !hasUrlImport : !hasPathImport;
+    const importLine = isEsm ? 'import { fileURLToPath } from "node:url";' : 'const path = require("node:path");';
+
+    const snippet = [...(needsImport ? [importLine, ""] : []), "resolve: {", `    alias: { "${aliasKey}": ${aliasExpr} },`, "},"].join("\n");
+
+    if (!file) return { file: null, aliasKey, status: "skipped", snippet };
+
+    const aliasKeyPattern = aliasKey.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    if (new RegExp(`alias\\s*:\\s*\\{[^]*?["']${aliasKeyPattern}["']\\s*:`, "").test(raw)) {
+        return { file, aliasKey, status: "already-present", snippet };
+    }
+
+    let next: string | null = null;
+    const resolveMatch = /resolve\s*:\s*\{/.exec(raw);
+    if (resolveMatch) {
+        const openIndex = resolveMatch.index + resolveMatch[0].length - 1;
+        const closeIndex = matchBalancedBrace(raw, openIndex);
+        if (closeIndex === -1) return { file, aliasKey, status: "unsupported", snippet };
+        const body = raw.slice(openIndex + 1, closeIndex);
+        const aliasMatch = /alias\s*:\s*(\{|\[)/.exec(body);
+        if (aliasMatch?.[1] === "[") return { file, aliasKey, status: "unsupported", snippet };
+        if (aliasMatch) {
+            const aliasOpenIndex = openIndex + 1 + aliasMatch.index + aliasMatch[0].length;
+            next = `${raw.slice(0, aliasOpenIndex)} "${aliasKey}": ${aliasExpr},${raw.slice(aliasOpenIndex)}`;
+        } else {
+            const indent = /\n([ \t]*)\S/.exec(body)?.[1] ?? "    ";
+            next = `${raw.slice(0, openIndex + 1)}\n${indent}alias: { "${aliasKey}": ${aliasExpr} },${raw.slice(openIndex + 1)}`;
+        }
+    } else {
+        const defineConfigMatch = /(?:defineConfig\s*\(\s*|export\s+default\s*)\{/.exec(raw);
+        if (!defineConfigMatch) return { file, aliasKey, status: "unsupported", snippet };
+        const afterBrace = defineConfigMatch.index + defineConfigMatch[0].length;
+        const indent = /\n([ \t]*)\S/.exec(raw.slice(afterBrace))?.[1] ?? "    ";
+        next = `${raw.slice(0, afterBrace)}\n${indent}resolve: {\n${indent}    alias: { "${aliasKey}": ${aliasExpr} },\n${indent}},${raw.slice(afterBrace)}`;
+    }
+
+    if (needsImport) {
+        const importLines = [...next.matchAll(/^import .+;$/gm)];
+        const last = importLines[importLines.length - 1];
+        next = last ? `${next.slice(0, last.index! + last[0].length)}\n${importLine}${next.slice(last.index! + last[0].length)}` : `${importLine}\n${next}`;
+    }
+
+    if (!dryRun) writeFileSync(file, next, "utf8");
+    return { file, aliasKey, status: "written", snippet };
+}
+
 /**
  * Appends whatever is missing to the project's global stylesheet: the Tailwind import, the
  * theme token import and the `@source` line that makes Tailwind scan the copied components.
@@ -240,6 +367,9 @@ export async function runInit(options: InitOptions): Promise<void> {
 
     const stylesheet = wireStylesheet(cwd, config, false);
     const wiring = options.manual ? null : wireThemeProvider(project, config, false);
+    const viteDryRun = Boolean(options.manual);
+    const viteTsconfig = project.framework === "vite" ? wireViteTsconfigPaths(project, viteDryRun) : null;
+    const viteConfigAlias = project.framework === "vite" ? wireViteConfigAlias(project, viteDryRun) : null;
 
     log.plain();
     log.title("Changes");
@@ -264,8 +394,23 @@ export async function runInit(options: InitOptions): Promise<void> {
         log.plain(kleur.dim("        <ThemeProvider>{children}</ThemeProvider>"));
     }
 
+    if (viteTsconfig || viteConfigAlias) {
+        log.plain();
+        if (viteTsconfig) logTsconfigAliasResult(cwd, viteTsconfig, Boolean(options.manual));
+        if (viteConfigAlias) logViteConfigAliasResult(cwd, viteConfigAlias, Boolean(options.manual));
+    }
+
     log.plain();
     if (!themeFromRegistry) log.warn("Theme tokens are a placeholder — see the note above.");
+
+    const viteAliasFailed =
+        !options.manual && ((viteTsconfig?.status ?? "written") === "unsupported" || (viteConfigAlias?.status ?? "written") === "unsupported");
+    if (viteAliasFailed) {
+        log.error("Could not wire the Vite `@` alias automatically — add the snippets printed above by hand, then re-run `smarteraui init`.");
+        process.exitCode = 1;
+        return;
+    }
+
     log.success("Project configured. Next: npx smarteraui add button badges");
 }
 
@@ -274,4 +419,46 @@ function statusLabel(status: WriteResult["status"]): string {
     if (status === "updated") return kleur.yellow("updat");
     if (status === "skipped") return kleur.dim("skip ");
     return kleur.dim("keep ");
+}
+
+function logTsconfigAliasResult(cwd: string, result: TsconfigAliasResult, manual: boolean): void {
+    if (result.status === "already-declared") {
+        log.step(`${kleur.dim("keep ")} ${result.file ? path.relative(cwd, result.file) : "tsconfig.json"} (alias already declared)`);
+        return;
+    }
+    if (result.status === "skipped") {
+        log.warn("No tsconfig.json, tsconfig.app.json or jsconfig.json found — cannot wire the path alias. Add it yourself:");
+        log.plain(kleur.dim(`        ${result.snippet}`));
+        return;
+    }
+    const label = result.file ? path.relative(cwd, result.file) : "tsconfig.json";
+    if (manual || result.status === "unsupported") {
+        log.info(manual ? `Manual mode — add this to ${label}'s "compilerOptions":` : `Could not find "compilerOptions" in ${label}. Add this yourself:`);
+        log.plain(kleur.dim(`        ${result.snippet}`));
+        return;
+    }
+    log.step(`${kleur.green("write")} ${label} (+ \`paths\` entry)`);
+}
+
+function logViteConfigAliasResult(cwd: string, result: ViteConfigAliasResult, manual: boolean): void {
+    if (result.status === "already-present") {
+        log.step(`${kleur.dim("keep ")} ${result.file ? path.relative(cwd, result.file) : "vite.config.ts"} (resolve.alias already present)`);
+        return;
+    }
+    if (result.status === "skipped") {
+        log.warn("No vite.config.(ts|mts|js|mjs) found. Vite build/tsc will fail on `@/...` imports until you add:");
+        for (const line of result.snippet.split("\n")) log.plain(kleur.dim(`        ${line}`));
+        return;
+    }
+    const label = result.file ? path.relative(cwd, result.file) : "vite.config.ts";
+    if (manual || result.status === "unsupported") {
+        log.info(
+            manual
+                ? `Manual mode — add this inside ${label}'s defineConfig({ ... }):`
+                : `Could not safely edit ${label} (unrecognised shape). Add this yourself:`,
+        );
+        for (const line of result.snippet.split("\n")) log.plain(kleur.dim(`        ${line}`));
+        return;
+    }
+    log.step(`${kleur.green("write")} ${label} (+ \`resolve.alias\` for \`${result.aliasKey}\`)`);
 }
