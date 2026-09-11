@@ -997,6 +997,10 @@
 }
 
 .pui-landing .setup-dialog {
+    /* The docs app's Tailwind preflight resets `* { margin: 0 }` globally, which flattens the UA
+     * `dialog:modal { margin: auto }` that centres a modal dialog. The supplied page had no such
+     * reset, so this is the one declaration the port needs that the source stylesheet did not. */
+    margin: auto;
     width: min(calc(100% - 32px), 650px);
     max-height: min(860px, calc(100vh - 32px));
     overflow: auto;
