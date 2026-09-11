@@ -9,12 +9,12 @@ demoFile: typography
 ---
 
 Proper UI defines two related type systems. Interface text uses the size tokens in `theme.css` (`text-xs` through `text-display-2xl`) applied
-directly as Tailwind classes. Long-form content — articles, blog posts, changelogs, legal pages — uses the `.prose` class instead, which themes the
+directly as Tailwind classes. Long-form content (articles, blog posts, changelogs, legal pages) uses the `.prose` class instead, which themes the
 `@tailwindcss/typography` plugin with the same semantic color tokens so rich text never looks out of step with the rest of the UI.
 
 ## Installation
 
-`.prose` ships with the base setup — there's nothing extra to add once `globals.css` is in place (see [Installation](/docs/installation)):
+`.prose` ships with the base setup; there's nothing extra to add once `globals.css` is in place (see [Installation](/docs/installation)):
 
 ```css
 /* globals.css */
@@ -23,8 +23,8 @@ directly as Tailwind classes. Long-form content — articles, blog posts, change
 @plugin "@tailwindcss/typography";
 ```
 
-`typography.css` overrides the plugin's default CSS variables (`--tw-prose-body`, `--tw-prose-headings`, `--tw-prose-quotes`, …) with Proper UI's
-semantic tokens — body copy uses `text-tertiary`, headings use `text-primary`, quote borders use `fg-brand-primary_alt` — so a `.prose` block already
+`typography.css` overrides the plugin's default CSS variables (`--tw-prose-body`, `--tw-prose-headings`, `--tw-prose-quotes`, ...) with Proper UI's
+semantic tokens (body copy uses `text-tertiary`, headings use `text-primary`, quote borders use `fg-brand-primary_alt`), so a `.prose` block already
 matches your theme, including dark mode, with no extra classes.
 
 Wrap long-form HTML in `.prose`:
@@ -32,14 +32,14 @@ Wrap long-form HTML in `.prose`:
 ```tsx
 <div className="prose">
     <h2>Introduction</h2>
-    <p>Body copy styled automatically…</p>
+    <p>Body copy styled automatically...</p>
 </div>
 ```
 
-Two modifiers adjust how block quotes sit inside the flow — add them alongside `.prose`:
+Two modifiers adjust how block quotes sit inside the flow; add them alongside `.prose`:
 
-- `.prose-centered-quote` — centers the quote text and removes the left border, for a quote used as a section's visual anchor.
-- `.prose-minimal-quote` — removes the left border but keeps quotes left-aligned, for a lighter-weight pull quote.
+- `.prose-centered-quote`: centers the quote text and removes the left border, for a quote used as a section's visual anchor.
+- `.prose-minimal-quote`: removes the left border but keeps quotes left-aligned, for a lighter-weight pull quote.
 
 Opt any element out of the theme with `not-prose`, and scale everything up on larger viewports with `md:prose-lg`.
 

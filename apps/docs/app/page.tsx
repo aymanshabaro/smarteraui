@@ -16,7 +16,7 @@ import {
 } from "~/components/landing/stats";
 import { SITE_NAME } from "~/lib/site";
 
-const TITLE = "Proper UI — UI your AI can actually use";
+const TITLE = "Proper UI: UI your AI can actually use";
 const DESCRIPTION =
     "The open-source React 19 component library built for AI-generated code. Accessible, typed, token-driven, and ready for Claude Code, Codex, Cursor, Lovable, v0, and Bolt.";
 
@@ -252,7 +252,7 @@ export default function LandingPage() {
                                 Not plausible guesses.
                             </h2>
                             <p>
-                                Models are excellent at composing interfaces—and unreliable at recalling an API from memory. Proper UI gives every agent three
+                                Models are excellent at composing interfaces, but unreliable at recalling an API from memory. Proper UI gives every agent three
                                 machine-readable surfaces so it can inspect before it writes.
                             </p>
                             <a
@@ -299,7 +299,7 @@ export default function LandingPage() {
                                 <h2 id="platforms-title">One command teaches your agent the whole system.</h2>
                             </div>
                             <p>
-                                Proper UI installs durable project instructions—not a prompt you have to remember. Your agent learns to inspect the project,
+                                Proper UI installs durable project instructions, not a prompt you have to remember. Your agent learns to inspect the project,
                                 search before creating, choose complete examples when they fit, and preserve the design system.
                             </p>
                         </div>
@@ -619,7 +619,7 @@ export default function LandingPage() {
                             <span className="eyebrow">Built for systems</span>
                             <h2>Rebrand every component in one file.</h2>
                             <p>
-                                Proper UI components never hard-code a palette. Change the brand ramp once and every generated screen follows—without chasing
+                                Proper UI components never hard-code a palette. Change the brand ramp once and every generated screen follows, without chasing
                                 hundreds of utility classes.
                             </p>
                             <ul>

@@ -23,10 +23,10 @@ const socials = [
 ];
 
 const experience = [
-    { id: "lead", role: "Lead Product Designer", company: LOGOS[0]!, period: "May 2020 – Present" },
-    { id: "product", role: "Product Designer", company: LOGOS[1]!, period: "Jan 2018 – May 2020" },
-    { id: "ux", role: "UX Designer", company: LOGOS[2]!, period: "Mar 2017 – Jan 2018" },
-    { id: "visual", role: "Visual Designer", company: LOGOS[3]!, period: "Mar 2017 – Jan 2018" },
+    { id: "lead", role: "Lead Product Designer", company: LOGOS[0]!, period: "May 2020 - Present" },
+    { id: "product", role: "Product Designer", company: LOGOS[1]!, period: "Jan 2018 - May 2020" },
+    { id: "ux", role: "UX Designer", company: LOGOS[2]!, period: "Mar 2017 - Jan 2018" },
+    { id: "visual", role: "Visual Designer", company: LOGOS[3]!, period: "Mar 2017 - Jan 2018" },
 ];
 
 const projects = [IMAGES.landscape[4]!, IMAGES.landscape[5]!, IMAGES.landscape[6]!, IMAGES.landscape[7]!];

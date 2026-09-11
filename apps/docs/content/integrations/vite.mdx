@@ -1,12 +1,12 @@
 ---
 title: Vite integration
 section: integrations
-description: Set up a Vite + React project with Proper UI in minutes — the Tailwind Vite plugin, path aliases, and provider wiring included.
+description: "Set up a Vite + React project with Proper UI in minutes: the Tailwind Vite plugin, path aliases, and provider wiring included."
 metaTitle: Vite integration | Proper UI
 metaDescription: Install Proper UI in a Vite project with the CLI or by hand. Configure @tailwindcss/vite, the @/ alias, and RouterProvider + ThemeProvider.
 ---
 
-Vite has no framework-specific router or server/client split to work around, which makes it the simplest target to wire up by hand — but the CLI still saves you the boilerplate.
+Vite has no framework-specific router or server/client split to work around, which makes it the simplest target to wire up by hand, but the CLI still saves you the boilerplate.
 
 ## Installation
 
@@ -16,7 +16,7 @@ Run this from the root of your Vite project:
 npx @properui/cli@latest init --vite
 ```
 
-It detects your Tailwind version, `src/` layout, and package manager, then writes `components.json`, the theme token file, `utils/cx.ts`, adds the Tailwind imports and `@source` line to your CSS file, and wraps your app entry in `ThemeProvider`. It doesn't install npm packages, touch `vite.config.ts`, or add `RouterProvider` — set those up yourself as shown below.
+It detects your Tailwind version, `src/` layout, and package manager, then writes `components.json`, the theme token file, `utils/cx.ts`, adds the Tailwind imports and `@source` line to your CSS file, and wraps your app entry in `ThemeProvider`. It doesn't install npm packages, touch `vite.config.ts`, or add `RouterProvider`: set those up yourself as shown below.
 
 ## Manual Installation
 
@@ -61,7 +61,7 @@ Match the alias in `tsconfig.json` so your editor and type-checker resolve it to
 
 **3. Import the stylesheet**
 
-`@properui/ui/styles/globals.css` already bundles the Tailwind import, the design tokens, typography, and every plugin the components need — you only add one `@source` line so Tailwind's scanner also reads the package's own class names:
+`@properui/ui/styles/globals.css` already bundles the Tailwind import, the design tokens, typography, and every plugin the components need; you only add one `@source` line so Tailwind's scanner also reads the package's own class names:
 
 ```css
 /* src/index.css */
@@ -72,7 +72,7 @@ Match the alias in `tsconfig.json` so your editor and type-checker resolve it to
 
 **4. Wire up the providers**
 
-`@properui/ui/providers` exports only `ThemeProvider`. The Next.js-flavored `RouterProvider` sits on its own subpath — it reads `useRouter` from `next/navigation`, so importing it from Vite fails the build. Use React Aria's own `RouterProvider` from `react-aria-components` instead, and hand it your router's navigate function — `useNavigate` if you're using `react-router`:
+`@properui/ui/providers` exports only `ThemeProvider`. The Next.js-flavored `RouterProvider` sits on its own subpath: it reads `useRouter` from `next/navigation`, so importing it from Vite fails the build. Use React Aria's own `RouterProvider` from `react-aria-components` instead, and hand it your router's navigate function, `useNavigate` if you're using `react-router`:
 
 ```tsx
 // src/providers.tsx
@@ -112,7 +112,7 @@ createRoot(document.getElementById("root")!).render(
 );
 ```
 
-No router at all? Drop `RouterProvider` entirely. Every component still renders and behaves correctly — `href` links just do a full page load instead of a client-side transition.
+No router at all? Drop `RouterProvider` entirely. Every component still renders and behaves correctly: `href` links just do a full page load instead of a client-side transition.
 
 ## Using Proper UI components
 
@@ -126,7 +126,7 @@ export const App = () => <Button size="md">Get started</Button>;
 
 ## Theme toggle
 
-`next-themes` works outside of Next.js too — it only needs `localStorage` and a `document`, both of which a Vite SPA has:
+`next-themes` works outside of Next.js too; it only needs `localStorage` and a `document`, both of which a Vite SPA has:
 
 ```tsx
 // src/components/theme-toggle-button.tsx
@@ -158,11 +158,11 @@ export const ThemeToggleButton = () => {
         },
         {
             question: "Do I need a router to use Proper UI in Vite?",
-            answer: "No — drop react-aria-components' RouterProvider entirely if you don't have a router. Every component still renders and functions correctly; href links just do a full page load instead of a client-side transition.",
+            answer: "No, drop react-aria-components' RouterProvider entirely if you don't have a router. Every component still renders and functions correctly; href links just do a full page load instead of a client-side transition.",
         },
         {
             question: "How does Tailwind CSS v4 work with Vite?",
-            answer: "Through the @tailwindcss/vite plugin, which is faster than the previous PostCSS-based setup. Your CSS just imports Proper UI's globals.css directly — no tailwind.config.js and no separate PostCSS pipeline to maintain.",
+            answer: "Through the @tailwindcss/vite plugin, which is faster than the previous PostCSS-based setup. Your CSS just imports Proper UI's globals.css directly: no tailwind.config.js and no separate PostCSS pipeline to maintain.",
         },
     ]}
 />

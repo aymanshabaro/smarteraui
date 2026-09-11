@@ -344,7 +344,7 @@ export const Signup02 = () => (
             <ModalHeader
                 icon={UserPlus01}
                 title="Create your workspace"
-                description="Invite your team later — you can always add people once the space is set up."
+                description="Invite your team later. You can always add people once the space is set up."
             />
 
             <ModalBody>
@@ -730,7 +730,7 @@ export const CenteredPhoto = () => (
             </div>
             <div className="flex flex-col gap-1 px-4 pt-4 text-center sm:px-6 sm:pt-6">
                 <h2 className="text-primary text-md font-semibold sm:text-lg">Boards are here</h2>
-                <p className="text-tertiary text-sm">Plan a sprint, group ideas or track a launch — all on a canvas your whole team can edit.</p>
+                <p className="text-tertiary text-sm">Plan a sprint, group ideas or track a launch, all on a canvas your whole team can edit.</p>
             </div>
             <ModalFooter>
                 <Button size="lg" color="secondary">
@@ -1192,7 +1192,7 @@ export const CalendarEvent = () => (
                 <ul className="flex flex-col gap-3">
                     <li className="text-tertiary flex items-center gap-3 text-sm">
                         <Clock className="text-fg-quaternary size-5 shrink-0" aria-hidden="true" />
-                        Wednesday, 9 September · 10:00 – 11:00
+                        Wednesday, 9 September · 10:00 - 11:00
                     </li>
                     <li className="text-tertiary flex items-center gap-3 text-sm">
                         <MarkerPin01 className="text-fg-quaternary size-5 shrink-0" aria-hidden="true" />
@@ -1422,7 +1422,7 @@ export const TextEditor = () => (
             <ModalHeader icon={Edit01} title="Write an update" description="Everyone following this project will get your update by email." />
             <ModalBody>
                 <Input isRequired aria-label="Update title" placeholder="Title" />
-                <TextEditorField aria-label="Update body" placeholder="Share what changed this week…">
+                <TextEditorField aria-label="Update body" placeholder="Share what changed this week...">
                     <TextEditorField.Toolbar>
                         <TextEditorField.Group aria-label="Formatting">
                             <TextEditorField.Bold />
@@ -1603,7 +1603,7 @@ export const NewMessageFilled = () => (
                 <TextArea
                     aria-label="Message"
                     rows={5}
-                    defaultValue="Hi all — the quarterly review deck is ready for a first pass. Comments are open until Friday, then I will lock it for the board meeting."
+                    defaultValue="Hi all, the quarterly review deck is ready for a first pass. Comments are open until Friday, then I will lock it for the board meeting."
                 />
                 <div className="flex items-center gap-2">
                     <ButtonUtility size="sm" color="tertiary" icon={Image01} tooltip="Attach an image" />

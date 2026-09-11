@@ -18,7 +18,7 @@ export const TeamSectionImageCollage02 = () => (
                 <span className="text-brand-secondary md:text-md text-sm font-semibold">Join our team</span>
                 <h2 className="text-display-sm md:text-display-md text-primary mt-3 font-semibold">We&apos;re just getting started</h2>
                 <p className="text-tertiary mt-4 text-lg md:mt-5 md:text-xl">
-                    Our philosophy is simple—hire a team of diverse, passionate people and foster a culture that empowers you to do your best work.
+                    Our philosophy is simple: hire a team of diverse, passionate people and foster a culture that empowers you to do your best work.
                 </p>
 
                 <div className="mt-8 flex w-full flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-start">

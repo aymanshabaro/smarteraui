@@ -3,12 +3,12 @@ title: Icons
 section: docs
 description: Proper UI Icons are a clean, consistent line icon set built for modern interfaces, distributed as tree-shakeable React components.
 metaTitle: Icons | Proper UI
-metaDescription: Install, import, and style Proper UI Icons — 1,100+ line icons available as React components with instant npm access.
+metaDescription: "Install, import, and style Proper UI Icons: 1,100+ line icons available as React components with instant npm access."
 ---
 
 Proper UI Icons are a clean, consistent, neutral icon library crafted for modern UI design, available as tree-shakeable React components under `@properui/icons`. Every component spec in this library references icons by these exact export names, so the set you install here is the same one every component's `iconLeading` / `iconTrailing` prop expects.
 
-`@properui/icons` is not a package on npm. It is the name the component source imports, resolved to [`@untitledui/icons`](https://www.npmjs.com/package/@untitledui/icons) (MIT) through an npm alias — so that package's README and its 1,100+ icons apply directly here, and the import name stays stable if the underlying package ever changes.
+`@properui/icons` is not a package on npm. It is the name the component source imports, resolved to [`@untitledui/icons`](https://www.npmjs.com/package/@untitledui/icons) (MIT) through an npm alias: so that package's README and its 1,100+ icons apply directly here, and the import name stays stable if the underlying package ever changes.
 
 ## Installation
 
@@ -20,13 +20,13 @@ npm install @properui/icons@npm:@untitledui/icons@^0.0.22
 pnpm add @properui/icons@npm:@untitledui/icons@^0.0.22
 ```
 
-The `name@npm:real@range` form is an npm alias — npm, pnpm, yarn and bun all accept it — and it writes `"@properui/icons": "npm:@untitledui/icons@^0.0.22"` into your `package.json`. `npx @properui/cli@latest add` runs exactly this install for you whenever a component needs icons, and `@properui/ui` already declares it, so if you installed the component library you have it. Installing it directly only matters if you're using icons standalone, outside of any Proper UI component.
+The `name@npm:real@range` form is an npm alias (npm, pnpm, yarn and bun all accept it), and it writes `"@properui/icons": "npm:@untitledui/icons@^0.0.22"` into your `package.json`. `npx @properui/cli@latest add` runs exactly this install for you whenever a component needs icons, and `@properui/ui` already declares it, so if you installed the component library you have it. Installing it directly only matters if you're using icons standalone, outside of any Proper UI component.
 
 ## Using Proper UI Icons
 
 ### Main module import (recommended)
 
-Import icons by name from the package root. With Next.js or Vite, the bundler tree-shakes unused icons automatically — you only ship the ones you import, regardless of import style.
+Import icons by name from the package root. With Next.js or Vite, the bundler tree-shakes unused icons automatically: you only ship the ones you import, regardless of import style.
 
 ```tsx
 import { ArrowRight, Home01, SearchLg } from "@properui/icons";
@@ -42,11 +42,11 @@ Older bundlers without reliable tree-shaking can import a single icon from its o
 import ArrowRight from "@properui/icons/ArrowRight";
 ```
 
-Reach for this only if you've measured a bundle-size problem — with Next.js or Vite you don't need it, and mixing import styles in one project adds noise for no benefit.
+Reach for this only if you've measured a bundle-size problem: with Next.js or Vite you don't need it, and mixing import styles in one project adds noise for no benefit.
 
 ## Styling Proper UI Icons
 
-Icons are plain SVG React components: each one accepts `className` and the rest of `SVGProps<SVGSVGElement>`, so they take the same className-driven styling as any other element — text-color utilities for stroke color (icons default to `stroke="currentColor"`), size utilities for dimensions, and the `strokeWidth` prop for line thickness.
+Icons are plain SVG React components: each one accepts `className` and the rest of `SVGProps<SVGSVGElement>`, so they take the same className-driven styling as any other element: text-color utilities for stroke color (icons default to `stroke="currentColor"`), size utilities for dimensions, and the `strokeWidth` prop for line thickness.
 
 ```tsx
 <ArrowRight className="text-brand-600 size-5" strokeWidth={2} aria-hidden="true" />
@@ -59,17 +59,17 @@ Icons are plain SVG React components: each one accepts `className` and the rest 
 | Line weight   | `strokeWidth` prop                  | `2` by default; `Button` at `xs` size uses `2.25` for better legibility at small sizes                             |
 | Accessibility | `aria-hidden` / parent `aria-label` | decorative icons get `aria-hidden="true"`; icon-only buttons put the label on the button, not the icon             |
 
-Passing an icon into a component's `iconLeading` / `iconTrailing` prop as a **component reference** — `<Button iconLeading={ArrowRight}>` — lets the component apply sizing and the `data-icon` attribute for you. Internally, `Button` (see `packages/ui/src/components/base/buttons/button.tsx`) checks which form you passed with an `isReactComponent` helper (`packages/ui/src/utils/is-react-component.ts`, which detects function, forward-ref, and class components) and, when it's a component reference, renders it itself as `<IconLeading data-icon="leading" className={styles.common.icon} />`. That's why every spec in this library prefers the component-reference form over passing a rendered element — it's the form `Button` was written to size and label for you.
+Passing an icon into a component's `iconLeading` / `iconTrailing` prop as a **component reference** (`<Button iconLeading={ArrowRight}>`) lets the component apply sizing and the `data-icon` attribute for you. Internally, `Button` (see `packages/ui/src/components/base/buttons/button.tsx`) checks which form you passed with an `isReactComponent` helper (`packages/ui/src/utils/is-react-component.ts`, which detects function, forward-ref, and class components) and, when it's a component reference, renders it itself as `<IconLeading data-icon="leading" className={styles.common.icon} />`. That's why every spec in this library prefers the component-reference form over passing a rendered element: it's the form `Button` was written to size and label for you.
 
 ```tsx
-// preferred — component reference: Button applies size and data-icon for you
+// preferred (component reference): Button applies size and data-icon for you
 <Button iconLeading={ArrowRight}>Continue</Button>
 
-// also supported — a rendered element: Button renders it as-is, so you own data-icon and sizing
+// also supported (a rendered element): Button renders it as-is, so you own data-icon and sizing
 <Button iconLeading={<ArrowRight data-icon className="size-4" />}>Continue</Button>
 ```
 
-The `data-icon` attribute isn't just bookkeeping — `Button`'s styles target it directly (for example `*:data-icon:text-white/60` on the `primary` color, or hiding every non-loading icon during `isLoading` with a `[&>*:not([data-icon=loading])]` selector), so a rendered element that omits `data-icon` won't pick up those states.
+The `data-icon` attribute isn't just bookkeeping: `Button`'s styles target it directly (for example `*:data-icon:text-white/60` on the `primary` color, or hiding every non-loading icon during `isLoading` with a `[&>*:not([data-icon=loading])]` selector), so a rendered element that omits `data-icon` won't pick up those states.
 
 Standalone, outside of any component, add `aria-hidden="true"` to decorative icons and give the surrounding control an `aria-label` when the icon is the only content:
 
@@ -89,7 +89,7 @@ Standalone, outside of any component, add `aria-hidden="true"` to decorative ico
         },
         {
             question: "Are Proper UI Icons free?",
-            answer: "Yes — @properui/icons includes 1,100+ line icons for unlimited personal and commercial use, without attribution.",
+            answer: "Yes, @properui/icons includes 1,100+ line icons for unlimited personal and commercial use, without attribution.",
         },
         {
             question: "Can I customize the color and size of the icons?",
@@ -101,7 +101,7 @@ Standalone, outside of any component, add `aria-hidden="true"` to decorative ico
         },
         {
             question: "Should I pass an icon as a component reference or a rendered element?",
-            answer: "Pass a component reference (<Button iconLeading={ArrowRight}>) whenever you can — the component sizes it and sets data-icon for you. Only pass a rendered element (<ArrowRight data-icon ... />) when you need a variant the component's own icon slot doesn't offer, and remember to set data-icon and sizing yourself in that case.",
+            answer: "Pass a component reference (<Button iconLeading={ArrowRight}>) whenever you can: the component sizes it and sets data-icon for you. Only pass a rendered element (<ArrowRight data-icon ... />) when you need a variant the component's own icon slot doesn't offer, and remember to set data-icon and sizing yourself in that case.",
         },
     ]}
 />

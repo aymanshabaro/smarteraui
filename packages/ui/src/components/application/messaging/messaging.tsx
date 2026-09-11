@@ -356,7 +356,7 @@ export interface MessageTypingProps {
 }
 
 /** The three bouncing dots shown while the sender is still writing. */
-const MessageTyping = ({ label = "Typing…", className }: MessageTypingProps) => {
+const MessageTyping = ({ label = "Typing...", className }: MessageTypingProps) => {
     const direction = useContext(MessageContext);
 
     return (

@@ -65,7 +65,7 @@ export const ContentSplitImage03 = () => (
 
                 <h1 className="text-display-md text-primary md:text-display-lg mt-4 font-semibold">Migrating your issue tracker in a week</h1>
                 <p className="text-tertiary mt-4 text-lg md:mt-6 md:max-w-120 md:text-xl">
-                    Moving projects, sprints and bug reports without losing history — and without a freeze the whole team resents.
+                    Moving projects, sprints and bug reports without losing history, and without a freeze the whole team resents.
                 </p>
             </div>
 
@@ -131,7 +131,7 @@ export const ContentSplitImage03 = () => (
                             custom fields nobody has filled in since 2024 can be archived rather than translated.
                         </p>
                         <p>
-                            What remains is usually small enough to move in an afternoon. The week goes on agreeing states, owners and priorities — the things
+                            What remains is usually small enough to move in an afternoon. The week goes on agreeing states, owners and priorities: the things
                             that were never written down in the old tool either.
                         </p>
 

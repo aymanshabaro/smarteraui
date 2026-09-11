@@ -14,7 +14,7 @@ const columns = [
         reviews: [
             {
                 logo: LOGOS[0],
-                quote: "Proper UI has been a lifesaver for our team—everything we need is right at our fingertips, and it helps us jump right into new design projects.",
+                quote: "Proper UI has been a lifesaver for our team, everything we need is right at our fingertips, and it helps us jump right into new design projects.",
                 author: AVATARS[0],
                 role: `Product Designer, ${LOGOS[0].name}`,
             },

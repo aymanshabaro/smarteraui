@@ -113,7 +113,7 @@ export const ContentLargeImage02 = () => (
                     <p>If you are putting a review together for the first time, three habits carry most of the weight:</p>
                     <ol>
                         <li>Write the recommendation before you write anything else.</li>
-                        <li>Show one artefact per claim — a clip, a chart or a quote — and never more than one.</li>
+                        <li>Show one artefact per claim (a clip, a chart or a quote) and never more than one.</li>
                         <li>End with the decision you need and the date you need it by.</li>
                     </ol>
 

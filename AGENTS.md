@@ -20,7 +20,7 @@ npx @properui/cli@latest agent init              # install the Proper UI Skill f
 
 `add` resolves `registryDependencies`, rewrites `@/` imports to the alias in `components.json` and installs missing npm
 packages. Prefer it over hand-copying source out of a registry payload. `info --json` is what to run before deciding
-anything — it reports whether `components.json` exists yet and what's already installed. `agent init` writes the
+anything. It reports whether `components.json` exists yet and what's already installed. `agent init` writes the
 portable Skill (`skills/properui/SKILL.md`) into `.claude/skills/`, `.agents/skills/`, or `.cursor/rules/`, so every
 session after the first one gets this guidance automatically instead of relying on this file alone.
 
@@ -35,7 +35,7 @@ session after the first one gets this guidance automatically instead of relying 
   semantic tokens is already correct in both themes; a `dark:` utility is a bug.
 - **Logical properties for anything directional.** `ms-*`/`me-*` not `ml-*`/`mr-*`, `ps-*`/`pe-*` not `pl-*`/`pr-*`,
   `start-*`/`end-*` not `left-*`/`right-*`, `text-start` not `text-left`. This is what makes `dir="rtl"` work.
-- **Typography is tokenised too.** `text-display-lg`, `text-md` — not `text-4xl`.
+- **Typography is tokenised too.** `text-display-lg`, `text-md`, not `text-4xl`.
 - **Icons as component references.** `<Button iconLeading={ArrowRight}>`, not `<Button iconLeading={<ArrowRight />}>`.
   The component applies sizing and the `data-icon` attribute that its own styles target.
 - **Import from the subpath** so bundlers keep only what is used:
@@ -48,8 +48,8 @@ These apply when changing the library itself.
 - kebab-case file names; one component group per folder under `packages/ui/src/components/<layer>/`.
 - React Aria imports are aliased `Aria*` (`import { Button as AriaButton } from "react-aria-components"`).
 - Class lists go through `styles = sortCx({})` from `@properui/ui/utils/cx`.
-- Anything a server component may render needs `"use client"` when it exports a function or a compound-component object
-  — those cannot cross the RSC boundary.
+- Anything a server component may render needs `"use client"` when it exports a function or a compound-component object,
+  since those cannot cross the RSC boundary.
 - Every component ships a demo, a story, a test and a docs page. The test asserts zero axe violations.
 - Generated files (barrels, demos, variants, nav, registry) come from `pnpm gen:all`. Edit the generator, not the output.
 
@@ -69,7 +69,7 @@ pnpm build
 
 ## Things that are not true
 
-Do not document or generate code against these — they do not exist:
+Do not document or generate code against these, because they do not exist:
 
 - `properui upgrade` / `properui migrate`. The commands are `init`, `add`, `list`, `search`, `diff`, `login`,
   `info` and `agent init`.

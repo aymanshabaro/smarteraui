@@ -139,7 +139,7 @@ export const QuoteDefault = () => (
                 <p>{quoteText}</p>
             </blockquote>
             <figcaption className="not-prose text-md mt-6">
-                — {author.name}, <cite className="not-italic">Product Designer</cite>
+                {author.name}, <cite className="not-italic">Product Designer</cite>
             </figcaption>
         </figure>
         <p>
@@ -210,7 +210,7 @@ export const QuoteMinimal = () => (
                 <p>{quoteText}</p>
             </blockquote>
             <figcaption className="not-prose text-md mt-6">
-                — {author.name}, <cite className="not-italic">Product Designer</cite>
+                {author.name}, <cite className="not-italic">Product Designer</cite>
             </figcaption>
         </figure>
         <p>

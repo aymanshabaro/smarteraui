@@ -65,14 +65,14 @@ export const HeroSplitImage03 = () => (
                     <ul className="absolute bottom-9 -left-18 z-10 hidden w-92 flex-col gap-3 select-none lg:flex">
                         <FileListItemProgressBar
                             type="mp3"
-                            name="My Podcast – Episode 1.mp3"
+                            name="My Podcast - Episode 1.mp3"
                             size={20971520}
                             progress={100}
                             className="bg-alpha-white/90 ring-secondary_alt backdrop-blur-lg"
                         />
                         <FileListItemProgressBar
                             type="mp3"
-                            name="My Podcast – Episode 2.mp3"
+                            name="My Podcast - Episode 2.mp3"
                             size={20971520}
                             progress={80}
                             className="bg-alpha-white/90 ring-secondary_alt backdrop-blur-lg"

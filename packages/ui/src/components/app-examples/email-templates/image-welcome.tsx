@@ -36,7 +36,7 @@ export const ImageWelcome = () => (
                     We&apos;re glad to have you onboard! You&apos;re already on your way to creating beautiful visual products.
                     <br />
                     <br />
-                    Whether you&apos;re here for your brand, for a cause, or just for fun—welcome! If there&apos;s anything you need, we&apos;ll be here every
+                    Whether you&apos;re here for your brand, for a cause, or just for fun, welcome! If there&apos;s anything you need, we&apos;ll be here every
                     step of the way.
                     <br />
                     <br />

@@ -77,7 +77,7 @@ export async function runAdd(names: string[], options: AddOptions): Promise<void
             }
             if (exampleMode) {
                 const notExamples = requested.filter((name) => index.find((entry) => entry.name === name)?.type !== "example");
-                for (const name of notExamples) log.warn(`"${name}" is not a page example — adding it as a component.`);
+                for (const name of notExamples) log.warn(`"${name}" is not a page example. Adding it as a component.`);
             }
             targets = requested;
         }
@@ -124,7 +124,7 @@ export async function runAdd(names: string[], options: AddOptions): Promise<void
         for (const dependency of npmDependencies) log.step(`${kleur.cyan("need  ")} ${dependency}`);
 
         if (options.dryRun) {
-            log.info(`Dry run — would run: ${kleur.bold(installCommand(manager, npmDependencies))}`);
+            log.info(`Dry run: would run: ${kleur.bold(installCommand(manager, npmDependencies))}`);
         } else {
             const shouldInstall = await confirm(
                 `Install ${npmDependencies.length} missing package${npmDependencies.length === 1 ? "" : "s"} with ${manager}?`,
@@ -136,7 +136,7 @@ export async function runAdd(names: string[], options: AddOptions): Promise<void
             if (shouldInstall) {
                 const { ok, command } = installDependencies(cwd, manager, npmDependencies);
                 if (ok) log.success(`Installed with \`${command}\`.`);
-                else log.error(`\`${command}\` failed — install the packages above manually.`);
+                else log.error(`\`${command}\` failed. Install the packages above manually.`);
             } else {
                 log.info(`Skipped install. Run: ${kleur.bold(installCommand(manager, npmDependencies))}`);
             }
@@ -152,7 +152,7 @@ function reportWrites(results: { entry: RegistryEntry; writes: WriteResult[] }[]
     >;
 
     log.plain();
-    log.title(options.dryRun ? "Files (dry run — nothing was written)" : "Files");
+    log.title(options.dryRun ? "Files (dry run: nothing was written)" : "Files");
     for (const { entry, writes } of results) {
         const changed = writes.some((write) => write.status === "created" || write.status === "updated");
         log.plain(`  ${changed ? kleur.bold(entry.name) : kleur.dim(entry.name)}`);
@@ -162,13 +162,13 @@ function reportWrites(results: { entry: RegistryEntry; writes: WriteResult[] }[]
     const aliasPrefix = aliasPrefixOf(config.aliases.components);
     log.plain();
     if (aliasPrefix !== "@/") log.info(`Rewrote \`@/\` imports to \`${aliasPrefix}\`.`);
-    if (options.path) log.info(`Component files were placed under \`${options.path}\` — check the imports if that folder is outside your alias.`);
+    if (options.path) log.info(`Component files were placed under \`${options.path}\`. Check the imports if that folder is outside your alias.`);
 
     if (counts.created + counts.updated === 0) {
         log.success(
             counts.skipped > 0
-                ? `No changes — ${counts.skipped} file${counts.skipped === 1 ? "" : "s"} already exist. Pass --overwrite to replace them.`
-                : "No changes — everything is already up to date.",
+                ? `No changes: ${counts.skipped} file${counts.skipped === 1 ? "" : "s"} already exist. Pass --overwrite to replace them.`
+                : "No changes: everything is already up to date.",
         );
         return;
     }

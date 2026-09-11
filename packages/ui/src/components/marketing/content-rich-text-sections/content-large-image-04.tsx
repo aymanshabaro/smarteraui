@@ -48,7 +48,7 @@ export const ContentLargeImage04 = () => (
                 <div className="prose md:prose-lg mx-auto">
                     <p className="lead">
                         A wireframe is an argument about hierarchy, made cheaply enough that you can be wrong twice before lunch. Everything else it appears to
-                        be — layout, spacing, copy — is a side effect.
+                        be (layout, spacing, copy) is a side effect.
                     </p>
 
                     <hr />
@@ -88,7 +88,7 @@ export const ContentLargeImage04 = () => (
                             </p>
                         </blockquote>
                         <figcaption className="not-prose text-md mt-6 md:mt-8">
-                            — {author.name}, <cite className="not-italic">Product Designer</cite>
+                            {author.name}, <cite className="not-italic">Product Designer</cite>
                         </figcaption>
                     </figure>
 

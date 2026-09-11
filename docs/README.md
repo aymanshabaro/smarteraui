@@ -2,8 +2,8 @@
 
 These guides cover installing Proper UI, wiring it into a framework, theming it, and contributing components back.
 
-There is no hosted documentation site yet. The full site — every component, every variant, live previews and props
-tables — runs locally:
+There is no hosted documentation site yet. The full site (every component, every variant, live previews and props
+tables) runs locally:
 
 ```bash
 pnpm install
@@ -38,10 +38,10 @@ Component-level reference (props, examples, source links) lives on that site, un
 
 ## Elsewhere in the repo
 
-- [README](../README.md) — overview and quick start
-- [CONTRIBUTING](../CONTRIBUTING.md) — development setup, conventions, PR process
+- [README](../README.md): overview and quick start
+- [CONTRIBUTING](../CONTRIBUTING.md): development setup, conventions, PR process
 - [CODE_OF_CONDUCT](../CODE_OF_CONDUCT.md)
-- [SECURITY](../SECURITY.md) — reporting a vulnerability
+- [SECURITY](../SECURITY.md): reporting a vulnerability
 
 ## Requirements
 

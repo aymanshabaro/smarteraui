@@ -1,16 +1,16 @@
 ---
 title: CLI tool
 section: docs
-description: The Proper UI CLI copies component source into your project and configures Tailwind, straight from the terminal — no copy-pasting required.
+description: The Proper UI CLI copies component source into your project and configures Tailwind, straight from the terminal. No copy-pasting required.
 metaTitle: CLI tool | Proper UI
 metaDescription: Quickly configure a project and add components with the Proper UI CLI. Init detects your framework and Tailwind setup, add resolves dependencies automatically.
 ---
 
-The `properui` CLI copies component source into an existing project, shadcn-style — you get the `.tsx` files, not a runtime dependency. It detects your framework, TypeScript setup, and Tailwind version automatically, then writes files and installs dependencies for you. This guide covers every command: `init`, `add`, `list`, `search`, `diff`, and `login`.
+The `properui` CLI copies component source into an existing project, shadcn-style: you get the `.tsx` files, not a runtime dependency. It detects your framework, TypeScript setup, and Tailwind version automatically, then writes files and installs dependencies for you. This guide covers every command: `init`, `add`, `list`, `search`, `diff`, and `login`.
 
 ## Installation
 
-There's nothing to install ahead of time — every command runs through `npx` (or your package manager's equivalent), which always fetches the latest version:
+There's nothing to install ahead of time; every command runs through `npx` (or your package manager's equivalent), which always fetches the latest version:
 
 ```bash
 npx @properui/cli@latest init
@@ -22,7 +22,7 @@ Requires Node 20+.
 
 ## Init command
 
-`init` configures an **existing** project — it does not scaffold a new one, so run it from the directory that already holds your `package.json`. It reads your `tsconfig.json` for an existing path alias, detects Next.js App Router vs Pages Router vs Vite vs Remix vs plain React, checks your Tailwind version (v3 projects are stopped with upgrade instructions — Proper UI requires Tailwind v4), and confirms your package manager from the lockfile. It then writes `components.json`, copies the theme token file (from the registry when reachable, a placeholder otherwise), creates `utils/cx.ts`, adds the Tailwind `@source` scan line and theme import to your global stylesheet, and wraps your app entry point (`app/layout.tsx`, `pages/_app.tsx`, or `main.tsx`) in `ThemeProvider`. For Vite specifically, it also writes the `@` alias into both halves Vite needs — a `paths` entry in `tsconfig.app.json`/`tsconfig.json` and a matching `resolve.alias` in `vite.config` — since Vite has no built-in tsconfig-paths support and `vite build`/`tsc -b` fail on `@/...` imports without both. It does not install any npm packages itself — `add` is what installs a component's dependencies.
+`init` configures an **existing** project: it does not scaffold a new one, so run it from the directory that already holds your `package.json`. It reads your `tsconfig.json` for an existing path alias, detects Next.js App Router vs Pages Router vs Vite vs Remix vs plain React, checks your Tailwind version (v3 projects are stopped with upgrade instructions; Proper UI requires Tailwind v4), and confirms your package manager from the lockfile. It then writes `components.json`, copies the theme token file (from the registry when reachable, a placeholder otherwise), creates `utils/cx.ts`, adds the Tailwind `@source` scan line and theme import to your global stylesheet, and wraps your app entry point (`app/layout.tsx`, `pages/_app.tsx`, or `main.tsx`) in `ThemeProvider`. For Vite specifically, it also writes the `@` alias into both halves Vite needs: a `paths` entry in `tsconfig.app.json`/`tsconfig.json` and a matching `resolve.alias` in `vite.config`, since Vite has no built-in tsconfig-paths support and `vite build`/`tsc -b` fail on `@/...` imports without both. It does not install any npm packages itself: `add` is what installs a component's dependencies.
 
 ```bash
 npx @properui/cli@latest init
@@ -30,15 +30,15 @@ npx @properui/cli@latest init
 
 ### Command options
 
-| Option                | Description                                                                                                     |
-| --------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `--nextjs`            | Treat the project as Next.js instead of auto-detecting.                                                         |
-| `--vite`              | Treat the project as Vite instead of auto-detecting.                                                            |
-| `--manual`            | Write the files but leave the app entry point (and, for Vite, the `@` alias) alone — print the snippet instead. |
-| `--overwrite`         | Replace `components.json` and any files that already exist.                                                     |
-| `--registry <source>` | Registry directory or base URL for this run (see below).                                                        |
-| `-y, --yes`           | Accept every default; never prompt.                                                                             |
-| `--cwd <path>`        | Run against a directory other than the current one.                                                             |
+| Option                | Description                                                                                                    |
+| --------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `--nextjs`            | Treat the project as Next.js instead of auto-detecting.                                                        |
+| `--vite`              | Treat the project as Vite instead of auto-detecting.                                                           |
+| `--manual`            | Write the files but leave the app entry point (and, for Vite, the `@` alias) alone. Print the snippet instead. |
+| `--overwrite`         | Replace `components.json` and any files that already exist.                                                    |
+| `--registry <source>` | Registry directory or base URL for this run (see below).                                                       |
+| `-y, --yes`           | Accept every default; never prompt.                                                                            |
+| `--cwd <path>`        | Run against a directory other than the current one.                                                            |
 
 ## Add command
 
@@ -54,7 +54,7 @@ Add multiple components in one call:
 npx @properui/cli@latest add button input select
 ```
 
-If a component depends on another component internally — `badge-groups` depends on `badges`, for example — the CLI pulls in the whole dependency chain, so you never end up with a broken import.
+If a component depends on another component internally (`badge-groups` depends on `badges`, for example), the CLI pulls in the whole dependency chain, so you never end up with a broken import.
 
 ```bash
 npx @properui/cli@latest add badge-groups
@@ -74,18 +74,18 @@ Customize the installation directory:
 npx @properui/cli@latest add button --path src/components/ui
 ```
 
-Typing a name that doesn't exist gets a suggestion rather than a bare failure — the CLI runs a fuzzy match against the registry index and prints the closest names.
+Typing a name that doesn't exist gets a suggestion rather than a bare failure: the CLI runs a fuzzy match against the registry index and prints the closest names.
 
 ### Command options
 
-| Option                | Description                                                                              |
-| --------------------- | ---------------------------------------------------------------------------------------- |
-| `--all`               | Add every component in the registry.                                                     |
-| `--overwrite`         | Replace files that already exist instead of skipping them — how you pull upstream fixes. |
-| `--path <dir>`        | Put component files in this directory instead of the configured alias.                   |
-| `--dry-run`           | Print what would change without writing anything.                                        |
-| `--registry <source>` | Registry directory or base URL for this run (see below).                                 |
-| `-y, --yes`           | Skip the "install these dependencies?" confirmation.                                     |
+| Option                | Description                                                                             |
+| --------------------- | --------------------------------------------------------------------------------------- |
+| `--all`               | Add every component in the registry.                                                    |
+| `--overwrite`         | Replace files that already exist instead of skipping them: how you pull upstream fixes. |
+| `--path <dir>`        | Put component files in this directory instead of the configured alias.                  |
+| `--dry-run`           | Print what would change without writing anything.                                       |
+| `--registry <source>` | Registry directory or base URL for this run (see below).                                |
+| `-y, --yes`           | Skip the "install these dependencies?" confirmation.                                    |
 
 `--dry-run` before `--all` is a good habit:
 
@@ -95,7 +95,7 @@ npx @properui/cli@latest add --all --dry-run
 
 ## List command
 
-`list` prints the registry’s index — every component and example with its layer and description:
+`list` prints the registry’s index, every component and example with its layer and description:
 
 ```bash
 npx @properui/cli@latest list
@@ -114,7 +114,7 @@ npx @properui/cli@latest list --json
 
 ## Search command
 
-`search` runs a local fuzzy match over component names, descriptions, and example names — a scored subsequence match, not a network call or an AI model. It rewards contiguous, early, and whole-word matches, so `"date picker"` still finds `date-picker`, but it only ranks results that are actually a subsequence of the query; it can't reason about what a component looks like or means.
+`search` runs a local fuzzy match over component names, descriptions, and example names: a scored subsequence match, not a network call or an AI model. It rewards contiguous, early, and whole-word matches, so `"date picker"` still finds `date-picker`, but it only ranks results that are actually a subsequence of the query; it can't reason about what a component looks like or means.
 
 ```bash
 npx @properui/cli@latest search "pricing"
@@ -143,7 +143,7 @@ Requires `components.json`, so run `init` first.
 
 ## Adding example pages
 
-`add example` installs a complete, functional page — a dashboard, a settings screen, a marketing landing page — along with every component and dependency it uses.
+`add example` installs a complete, functional page (a dashboard, a settings screen, a marketing landing page) along with every component and dependency it uses.
 
 ```bash
 npx @properui/cli@latest add example settings-01
@@ -165,14 +165,14 @@ npx @properui/cli@latest list --type example
 
 ## Login command
 
-`login` stores a registry token at `~/.properui/auth.json`. It's only needed for a **private** registry — the public one is anonymous, and `add` works without ever logging in.
+`login` stores a registry token at `~/.properui/auth.json`. It's only needed for a **private** registry: the public one is anonymous, and `add` works without ever logging in.
 
 ```bash
 npx @properui/cli@latest login
 npx @properui/cli@latest login --token <token>
 ```
 
-Run with no `--token` in an interactive terminal and it prompts you to paste one (after pointing you at `<registry>/account/tokens` to create it). The token is reused by every later command on the same machine — you only need to do this once.
+Run with no `--token` in an interactive terminal and it prompts you to paste one (after pointing you at `<registry>/account/tokens` to create it). The token is reused by every later command on the same machine. You only need to do this once.
 
 ### Command options
 
@@ -180,7 +180,7 @@ Run with no `--token` in an interactive terminal and it prompts you to paste one
 | --------------------- | ---------------------------------------------------------- |
 | `--token <t>`         | Use this token instead of prompting for one.               |
 | `--registry <source>` | Registry directory or base URL to store the token against. |
-| `-y, --yes`           | Never prompt — fails with an error if no token is given.   |
+| `-y, --yes`           | Never prompt: fails with an error if no token is given.    |
 
 ## Pointing at another registry
 
@@ -239,15 +239,15 @@ npx @properui/cli@latest add example hero-split-image-01 --overwrite
     items={[
         {
             question: "Do I need an account or a licence to use these components?",
-            answer: "No. Every component and example in the registry is MIT licensed and free — there is no paid tier and nothing is held back. The public registry is anonymous, so you never need to log in.",
+            answer: "No. Every component and example in the registry is MIT licensed and free: there is no paid tier and nothing is held back. The public registry is anonymous, so you never need to log in.",
         },
         {
             question: "What is the login command for, then?",
-            answer: "Only for a private registry of your own. Run npx @properui/cli@latest login and paste a token when prompted, or pass --token directly — for example in CI. The token is saved to ~/.properui/auth.json and reused by every later command on the same machine; delete that file to log out.",
+            answer: "Only for a private registry of your own. Run npx @properui/cli@latest login and paste a token when prompted, or pass --token directly, for example in CI. The token is saved to ~/.properui/auth.json and reused by every later command on the same machine; delete that file to log out.",
         },
         {
             question: "Can I use the CLI with an existing project?",
-            answer: "Yes — init only ever configures an existing project (it doesn't scaffold a new one), and add works the same way: it detects your project structure and configures imports accordingly.",
+            answer: "Yes, init only ever configures an existing project (it doesn't scaffold a new one), and add works the same way: it detects your project structure and configures imports accordingly.",
         },
         {
             question: "What's the difference between components and examples?",
@@ -255,7 +255,7 @@ npx @properui/cli@latest add example hero-split-image-01 --overwrite
         },
         {
             question: "How does the search command work?",
-            answer: 'search runs a local fuzzy subsequence match over component names, descriptions, and example names — no network call beyond fetching the registry index, and no AI model involved. It rewards early, contiguous, whole-word matches, so short or reordered queries like "date picker" still find date-picker.',
+            answer: 'search runs a local fuzzy subsequence match over component names, descriptions, and example names: no network call beyond fetching the registry index, and no AI model involved. It rewards early, contiguous, whole-word matches, so short or reordered queries like "date picker" still find date-picker.',
         },
         {
             question: "Can I customize examples after adding them?",
@@ -279,7 +279,7 @@ npx @properui/cli@latest add example hero-split-image-01 --overwrite
         },
         {
             question: "What if I mistype a component name?",
-            answer: 'The CLI runs a fuzzy match against the registry index and suggests the closest names instead of just failing — for example, add buttton suggests "Did you mean: button?"',
+            answer: 'The CLI runs a fuzzy match against the registry index and suggests the closest names instead of just failing: for example, add buttton suggests "Did you mean: button?"',
         },
         {
             question: "How do I update components to the latest version?",

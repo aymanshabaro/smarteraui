@@ -3,12 +3,12 @@ title: components.json
 section: integrations
 description: components.json is an optional configuration file for the Proper UI CLI, used to customize import aliases and file paths for your project.
 metaTitle: components.json | Proper UI
-metaDescription: Reference for every field in components.json — style, tsx, tailwind, aliases, and registry — and how the CLI resolves them against your tsconfig.
+metaDescription: Reference for every field in components.json (style, tsx, tailwind, aliases, and registry) and how the CLI resolves them against your tsconfig.
 ---
 
 ## Overview
 
-`components.json` tells `npx @properui/cli@latest add` two things: where your Tailwind config and CSS files live, and which import alias each kind of file should use when it's copied into your project. The CLI only ever _reads_ this file — it never writes to it after `init` creates it.
+`components.json` tells `npx @properui/cli@latest add` two things: where your Tailwind config and CSS files live, and which import alias each kind of file should use when it's copied into your project. The CLI only ever _reads_ this file: it never writes to it after `init` creates it.
 
 ## Creating components.json
 
@@ -37,29 +37,29 @@ metaDescription: Reference for every field in components.json — style, tsx, ta
 
 ## Configuration options
 
-| Field             | Type      | Description                                                                           |
-| ----------------- | --------- | ------------------------------------------------------------------------------------- |
-| `$schema`         | `string`  | JSON Schema URL, used for editor autocomplete and validation.                         |
-| `style`           | `string`  | Reserved for future visual style presets. Currently always `"default"`.               |
-| `tsx`             | `boolean` | Whether the CLI writes `.tsx`/`.ts` files (`true`) or plain `.jsx`/`.js` (`false`).   |
-| `tailwind.css`    | `string`  | Path to the CSS file that imports Tailwind — where `init` appends the `@source` line. |
-| `tailwind.theme`  | `string`  | Path to the file that holds your `@theme` token block.                                |
-| `tailwind.prefix` | `string`  | Optional Tailwind class prefix, if your project namespaces its utility classes.       |
-| `aliases`         | `object`  | Import alias per file category — see below.                                           |
-| `registry`        | `string`  | Base URL or local directory the CLI fetches component and example JSON from.          |
+| Field             | Type      | Description                                                                          |
+| ----------------- | --------- | ------------------------------------------------------------------------------------ |
+| `$schema`         | `string`  | JSON Schema URL, used for editor autocomplete and validation.                        |
+| `style`           | `string`  | Reserved for future visual style presets. Currently always `"default"`.              |
+| `tsx`             | `boolean` | Whether the CLI writes `.tsx`/`.ts` files (`true`) or plain `.jsx`/`.js` (`false`).  |
+| `tailwind.css`    | `string`  | Path to the CSS file that imports Tailwind: where `init` appends the `@source` line. |
+| `tailwind.theme`  | `string`  | Path to the file that holds your `@theme` token block.                               |
+| `tailwind.prefix` | `string`  | Optional Tailwind class prefix, if your project namespaces its utility classes.      |
+| `aliases`         | `object`  | Import alias per file category: see below.                                           |
+| `registry`        | `string`  | Base URL or local directory the CLI fetches component and example JSON from.         |
 
-`registry` defaults to `https://properui.dev/r`, which goes live once the docs site deploys. Until then, point it at a locally built registry — see [the CLI's registry section](/docs/cli#pointing-at-another-registry).
+`registry` defaults to `https://properui.dev/r`, which goes live once the docs site deploys. Until then, point it at a locally built registry: see [the CLI's registry section](/docs/cli#pointing-at-another-registry).
 
 ### aliases
 
 Every file the CLI copies belongs to one of four categories, each with its own alias:
 
-| Alias        | Used for                                        | Default             |
-| ------------ | ----------------------------------------------- | ------------------- |
-| `components` | Application, marketing, and example components  | `@/components`      |
-| `ui`         | Base components (buttons, inputs, badges, …)    | `@/components/base` |
-| `utils`      | Shared helpers like `cx` and `demo-assets`      | `@/utils`           |
-| `hooks`      | Hooks like `use-breakpoint` and `use-clipboard` | `@/hooks`           |
+| Alias        | Used for                                            | Default             |
+| ------------ | --------------------------------------------------- | ------------------- |
+| `components` | Application, marketing, and example components      | `@/components`      |
+| `ui`         | Base components (buttons, inputs, badges, and more) | `@/components/base` |
+| `utils`      | Shared helpers like `cx` and `demo-assets`          | `@/utils`           |
+| `hooks`      | Hooks like `use-breakpoint` and `use-clipboard`     | `@/hooks`           |
 
 ### examples
 
@@ -80,17 +80,17 @@ A project that keeps base components under `src/ui` instead of `src/components/b
 
 ### 1. Import statement transformation
 
-Every file in the registry imports its neighbors using the package's own `@/` alias — `import { cx } from "@/utils/cx"`. When the CLI copies a file into your project, it rewrites each of those imports to the alias configured in `components.json`, so `@/utils/cx` becomes `@workspace/utils/cx` if that's what you've configured, with no manual find-and-replace required.
+Every file in the registry imports its neighbors using the package's own `@/` alias: `import { cx } from "@/utils/cx"`. When the CLI copies a file into your project, it rewrites each of those imports to the alias configured in `components.json`, so `@/utils/cx` becomes `@workspace/utils/cx` if that's what you've configured, with no manual find-and-replace required.
 
 ### 2. File path resolution
 
-Separately, the CLI needs to know _where on disk_ each alias actually points, so it can write the file to the right directory. It reads that mapping from your `tsconfig.json` (or `jsconfig.json`) `compilerOptions.paths` — the same paths your editor and bundler already use to resolve the alias at compile time.
+Separately, the CLI needs to know _where on disk_ each alias actually points, so it can write the file to the right directory. It reads that mapping from your `tsconfig.json` (or `jsconfig.json`) `compilerOptions.paths`: the same paths your editor and bundler already use to resolve the alias at compile time.
 
 ## Alias requirements
 
 ### Why relative paths don't work
 
-An alias like `../../../components/ui` might resolve correctly from one file, but the CLI writes the same import into many files at different depths — a relative path that's correct in one place breaks in another. Aliases in `components.json` must be tsconfig path aliases, which resolve the same way regardless of which file imports them.
+An alias like `../../../components/ui` might resolve correctly from one file, but the CLI writes the same import into many files at different depths: a relative path that's correct in one place breaks in another. Aliases in `components.json` must be tsconfig path aliases, which resolve the same way regardless of which file imports them.
 
 ### Correct setup
 
@@ -217,7 +217,7 @@ Run this from `packages/ui`, so components land in the shared package rather tha
         },
         {
             question: "How do I configure aliases for a monorepo?",
-            answer: 'Add the path mapping to tsconfig.json first — for example @workspace/ui/*: ["./packages/ui/src/*"] — then reference that same alias from components.json. The monorepo integration guide walks through a complete example.',
+            answer: 'Add the path mapping to tsconfig.json first (for example @workspace/ui/*: ["./packages/ui/src/*"]), then reference that same alias from components.json. The monorepo integration guide walks through a complete example.',
         },
         {
             question: "What's the difference between aliases and paths?",
@@ -225,7 +225,7 @@ Run this from `packages/ui`, so components land in the shared package rather tha
         },
         {
             question: "Can I use different aliases for different component types?",
-            answer: "Yes — components, ui, utils, and hooks each resolve independently, so base components can live in one directory while application components live in another.",
+            answer: "Yes, components, ui, utils, and hooks each resolve independently, so base components can live in one directory while application components live in another.",
         },
     ]}
 />

@@ -5,7 +5,7 @@ import { TextEditor } from "./text-editor";
 const paragraphs = [
     "Proper UI ships every component as readable source that you can paste straight into your own repository. Nothing is hidden behind a runtime, so the markup you review in the documentation is exactly the markup that renders in production, right down to the last utility class.",
     "Each component is built on React Aria primitives, styled with semantic Tailwind tokens, and verified against the same accessibility checks in both light and dark mode before it ever ships.",
-    "That means you can restyle a button, swap the brand ramp, or fork an entire section without fighting a wrapper library. Read the code, keep the parts you need, and delete the rest — the design system is yours from the moment you install it, and every example on this page is a real component that you can copy today.",
+    "That means you can restyle a button, swap the brand ramp, or fork an entire section without fighting a wrapper library. Read the code, keep the parts you need, and delete the rest. The design system is yours from the moment you install it, and every example on this page is a real component that you can copy today.",
 ];
 
 /** Paragraphs separated by empty ones, which is what the editing commands produce. */

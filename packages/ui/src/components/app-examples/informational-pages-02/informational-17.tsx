@@ -27,10 +27,10 @@ const projectTabs = [
 ];
 
 const experience = [
-    { id: "lead", role: "Lead Product Designer", company: LOGOS[4]!, period: "May 2020 – Present" },
-    { id: "product", role: "Product Designer", company: LOGOS[1]!, period: "Jan 2018 – May 2020" },
-    { id: "ux", role: "UX Designer", company: LOGOS[0]!, period: "Mar 2017 – Jan 2018" },
-    { id: "visual", role: "Visual Designer", company: LOGOS[2]!, period: "Apr 2015 – Mar 2017" },
+    { id: "lead", role: "Lead Product Designer", company: LOGOS[4]!, period: "May 2020 - Present" },
+    { id: "product", role: "Product Designer", company: LOGOS[1]!, period: "Jan 2018 - May 2020" },
+    { id: "ux", role: "UX Designer", company: LOGOS[0]!, period: "Mar 2017 - Jan 2018" },
+    { id: "visual", role: "Visual Designer", company: LOGOS[2]!, period: "Apr 2015 - Mar 2017" },
 ];
 
 const projects = [IMAGES.landscape[0]!, IMAGES.landscape[1]!, IMAGES.landscape[2]!, IMAGES.landscape[3]!];

@@ -3,14 +3,14 @@ title: Gemini integration
 section: integrations
 description: Point Gemini CLI or Gemini-based agents at Proper UI's registry and GEMINI.md conventions so it composes screens from real components.
 metaTitle: Gemini integration | Proper UI
-metaDescription: Use Proper UI with Gemini — recommended GEMINI.md instructions, prompts that resolve to real components, and the optional MCP server.
+metaDescription: "Use Proper UI with Gemini: recommended GEMINI.md instructions, prompts that resolve to real components, and the optional MCP server."
 ---
 
 Gemini CLI and Gemini-based coding agents can run shell commands the same way Claude Code can, so the setup mirrors it closely: give Gemini enough project context to reach for `properui add` before it writes markup from scratch.
 
 ## Prerequisites
 
-- A project already scaffolded with `npx @properui/cli@latest init` — Gemini works best once `components.json` exists.
+- A project already scaffolded with `npx @properui/cli@latest init`: Gemini works best once `components.json` exists.
 - Gemini CLI installed and authenticated (`gemini` on your `PATH`), or a Gemini-based agent with shell access.
 - Optional: the `properui-mcp` server, covered below, for tool-based access instead of shelling out to `npx`.
 
@@ -19,7 +19,7 @@ Gemini CLI and Gemini-based coding agents can run shell commands the same way Cl
 ```text
 Build a settings page with a page header, a tabbed navigation between
 "General" and "Billing", and a form with labeled inputs. Use Proper UI
-components — check `npx @properui/cli@latest search` for anything you're
+components. Check `npx @properui/cli@latest search` for anything you're
 not sure exists before writing custom markup.
 ```
 
@@ -41,7 +41,7 @@ UI markup:
    hand-rolling the equivalent markup.
 3. Import installed components from `@/components/...` (or your
    project's configured alias in `components.json`) and follow their
-   existing prop APIs — don't rename props to "clean them up".
+   existing prop APIs: don't rename props to "clean them up".
 4. Only write new markup for something the registry genuinely doesn't
    have, and keep it in the same style: Tailwind utility classes, no
    inline styles, React Aria for anything interactive.
@@ -62,7 +62,7 @@ Gemini CLI reads the same `mcpServers` config format as most other MCP clients. 
 }
 ```
 
-The [MCP integration guide](/integrations/mcp) covers authentication options and the full tool list — `search_components`, `get_component`, `add_component`, and `list_components`.
+The [MCP integration guide](/integrations/mcp) covers authentication options and the full tool list: `search_components`, `get_component`, `add_component`, and `list_components`.
 
 ## FAQs
 
@@ -70,11 +70,11 @@ The [MCP integration guide](/integrations/mcp) covers authentication options and
     items={[
         {
             question: "Does Gemini need the MCP server, or is the CLI enough?",
-            answer: "The CLI is enough on its own — Gemini's shell tool can run npx @properui/cli@latest search and add directly. The MCP server just avoids spawning a fresh process for every lookup.",
+            answer: "The CLI is enough on its own: Gemini's shell tool can run npx @properui/cli@latest search and add directly. The MCP server just avoids spawning a fresh process for every lookup.",
         },
         {
             question: "Is the setup different from the Claude Code integration?",
-            answer: "No — both read shell output the same way, so the prompts, the registry, and the CLI commands are identical. Only the project instructions file differs: GEMINI.md instead of CLAUDE.md.",
+            answer: "No, both read shell output the same way, so the prompts, the registry, and the CLI commands are identical. Only the project instructions file differs: GEMINI.md instead of CLAUDE.md.",
         },
         {
             question: "Will Gemini overwrite my customizations to an installed component?",

@@ -23,13 +23,13 @@ import {
 const noop = () => {};
 
 const invoices = [
-    { id: "dec", label: "Basic Plan – Dec 2026", amount: "USD $10.00", date: "Dec 1, 2026" },
-    { id: "nov", label: "Basic Plan – Nov 2026", amount: "USD $10.00", date: "Nov 1, 2026" },
-    { id: "oct", label: "Basic Plan – Oct 2026", amount: "USD $10.00", date: "Oct 1, 2026" },
-    { id: "sep", label: "Basic Plan – Sep 2026", amount: "USD $10.00", date: "Sep 1, 2026" },
-    { id: "aug", label: "Basic Plan – Aug 2026", amount: "USD $10.00", date: "Aug 1, 2026" },
-    { id: "jul", label: "Basic Plan – Jul 2026", amount: "USD $10.00", date: "Jul 1, 2026" },
-    { id: "jun", label: "Basic Plan – Jun 2026", amount: "USD $10.00", date: "Jun 1, 2026" },
+    { id: "dec", label: "Basic Plan - Dec 2026", amount: "USD $10.00", date: "Dec 1, 2026" },
+    { id: "nov", label: "Basic Plan - Nov 2026", amount: "USD $10.00", date: "Nov 1, 2026" },
+    { id: "oct", label: "Basic Plan - Oct 2026", amount: "USD $10.00", date: "Oct 1, 2026" },
+    { id: "sep", label: "Basic Plan - Sep 2026", amount: "USD $10.00", date: "Sep 1, 2026" },
+    { id: "aug", label: "Basic Plan - Aug 2026", amount: "USD $10.00", date: "Aug 1, 2026" },
+    { id: "jul", label: "Basic Plan - Jul 2026", amount: "USD $10.00", date: "Jul 1, 2026" },
+    { id: "jun", label: "Basic Plan - Jun 2026", amount: "USD $10.00", date: "Jun 1, 2026" },
 ];
 
 /** Billing settings: three stacked plan cards above the invoice history table. */

@@ -99,7 +99,7 @@ export class Registry {
         try {
             response = await fetch(url, { headers: token ? { authorization: `Bearer ${token}` } : {} });
         } catch (error) {
-            throw new RegistryError(`Could not reach ${url} — ${(error as Error).message}`);
+            throw new RegistryError(`Could not reach ${url}: ${(error as Error).message}`);
         }
         if (response.status === 404) return null;
         if (response.status === 401 || response.status === 403) {

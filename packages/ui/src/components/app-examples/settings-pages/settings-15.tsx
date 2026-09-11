@@ -44,13 +44,13 @@ const tabs: SettingsTabItem[] = [
 ];
 
 const invoices = [
-    { id: "dec", label: "Basic Plan – Dec 2026", date: "Dec 1, 2026" },
-    { id: "nov", label: "Basic Plan – Nov 2026", date: "Nov 1, 2026" },
-    { id: "oct", label: "Basic Plan – Oct 2026", date: "Oct 1, 2026" },
-    { id: "sep", label: "Basic Plan – Sep 2026", date: "Sep 1, 2026" },
-    { id: "aug", label: "Basic Plan – Aug 2026", date: "Aug 1, 2026" },
-    { id: "jul", label: "Basic Plan – Jul 2026", date: "Jul 1, 2026" },
-    { id: "jun", label: "Basic Plan – Jun 2026", date: "Jun 1, 2026" },
+    { id: "dec", label: "Basic Plan - Dec 2026", date: "Dec 1, 2026" },
+    { id: "nov", label: "Basic Plan - Nov 2026", date: "Nov 1, 2026" },
+    { id: "oct", label: "Basic Plan - Oct 2026", date: "Oct 1, 2026" },
+    { id: "sep", label: "Basic Plan - Sep 2026", date: "Sep 1, 2026" },
+    { id: "aug", label: "Basic Plan - Aug 2026", date: "Aug 1, 2026" },
+    { id: "jul", label: "Basic Plan - Jul 2026", date: "Jul 1, 2026" },
+    { id: "jun", label: "Basic Plan - Jun 2026", date: "Jun 1, 2026" },
 ];
 
 const usersOnPlan = AVATARS.slice(0, 4);

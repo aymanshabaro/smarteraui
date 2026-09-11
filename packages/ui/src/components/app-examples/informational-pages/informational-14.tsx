@@ -230,7 +230,7 @@ export const Informational14 = () => (
                         dateTime="2027-01-21T11:44"
                         className="lg:max-w-87.5"
                     >
-                        <Message.Bubble actions={bubbleActions}>Good timing—was just looking at this.</Message.Bubble>
+                        <Message.Bubble actions={bubbleActions}>Good timing, was just looking at this.</Message.Bubble>
                     </Message>
 
                     <MessageList.Divider>Today</MessageList.Divider>

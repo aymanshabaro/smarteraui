@@ -35,7 +35,7 @@ The rules that matter (the full list is in [CONTRIBUTING.md](../CONTRIBUTING.md#
 - kebab-case file names, PascalCase exports;
 - every `react-aria-components` import aliased with an `Aria` prefix;
 - styles in a `styles = sortCx({})` object, applied with `cx()`;
-- semantic tokens only — no raw palette classes;
+- semantic tokens only, no raw palette classes;
 - logical properties (`ms-*`, `ps-*`, `text-start`) so RTL works;
 - no `dark:` utility for anything a token already handles.
 
@@ -74,7 +74,7 @@ export const Switch = ({ size = "sm", label, className, ...props }: SwitchProps)
 );
 ```
 
-JSDoc every public prop — the docs site generates props tables from those comments.
+JSDoc every public prop: the docs site generates props tables from those comments.
 
 Interactive components need `"use client"` at the top of the file, so consumers can import them into a Next.js server
 component without drawing the boundary themselves.
@@ -82,7 +82,7 @@ component without drawing the boundary themselves.
 ## 3. Demos
 
 Every documented example is a named export in `<component>.demo.tsx`, and it **must** use the
-`export const Name = () => …` form — the demo generator only detects that shape.
+`export const Name = () => ...` form: the demo generator only detects that shape.
 
 ```tsx
 "use client";
@@ -154,10 +154,10 @@ describe("Switches", () => {
 
 Two axe failures come up repeatedly:
 
-- **Heading order.** An `<h4>` may only follow an `<h3>`. Promote the heading rather than suppressing the rule — the
+- **Heading order.** An `<h4>` may only follow an `<h3>`. Promote the heading rather than suppressing the rule; the
   class string stays the same, so nothing moves visually. Sections embedded in a page use `<h2>`, never `<h1>`.
 - **Tab lists need panels.** React Aria points each tab's `aria-controls` at a panel. Even for a segmented control that
-  switches nothing, render one `Tabs.Panel id={…}` per tab id, or `aria-valid-attr-value` fails.
+  switches nothing, render one `Tabs.Panel id={...}` per tab id, or `aria-valid-attr-value` fails.
 
 Landmarks that can appear twice in one document (`<nav>`, `<aside>`, `<header>`) each need their own `aria-label`.
 
@@ -211,7 +211,7 @@ The barrel, the demo map, the sidebar nav and the registry are all generated. Do
 pnpm gen:all
 ```
 
-or the individual steps — `pnpm gen:barrels`, `pnpm gen:demos`, `pnpm gen:nav`, `pnpm registry:build`.
+or the individual steps: `pnpm gen:barrels`, `pnpm gen:demos`, `pnpm gen:nav`, `pnpm registry:build`.
 
 ## 8. Check, changeset, PR
 

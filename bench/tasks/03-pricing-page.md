@@ -1,4 +1,4 @@
-# Task 03 — Pricing page
+# Task 03: Pricing page
 
 ## Prompt
 
@@ -9,8 +9,8 @@ Paste this verbatim into the agent, in a fresh project with either Proper UI or 
 ## Acceptance criteria
 
 - [ ] Three pricing tiers are shown side by side (or stacked on mobile) with distinct names, prices, and feature lists.
-- [ ] A monthly/yearly toggle exists and changes the displayed price for all three tiers when switched (a plausible discount for yearly, e.g. ~20%, is enough — exact numbers don't matter).
-- [ ] The Pro tier is visually marked as recommended/popular (e.g. a badge, a border, or an elevated card) — a reader should be able to tell which plan is being pushed within a couple of seconds.
+- [ ] A monthly/yearly toggle exists and changes the displayed price for all three tiers when switched (a plausible discount for yearly, e.g. ~20%, is enough; exact numbers don't matter).
+- [ ] The Pro tier is visually marked as recommended/popular (e.g. a badge, a border, or an elevated card); a reader should be able to tell which plan is being pushed within a couple of seconds.
 - [ ] Each tier lists at least 3 features with a checkmark or equivalent icon, and has its own visible call-to-action button.
 - [ ] An FAQ section below the pricing tiers shows at least four question/answer pairs.
 - [ ] The page builds and renders with no console errors at all three viewports below.
@@ -30,7 +30,7 @@ header-navigations, pricing-sections, features-sections, faq-sections, cta-secti
 badges, buttons, featured-icon, slider, tabs, toggle, tooltip
 ```
 
-For scoring, treat the union of both lists as the ideal set, but weight `pricing-sections`, `toggle` (the monthly/yearly switch), `badges` (the "Popular" marker), and `faq-sections` (or a specific `faq-accordion-*` entry) as the entries that matter most — a full pricing _page_ also reasonably includes a header and footer, but an answer that only builds the pricing section plus FAQ (skipping a full site header/footer, since the prompt doesn't ask for site chrome) should not be penalized for that.
+For scoring, treat the union of both lists as the ideal set, but weight `pricing-sections`, `toggle` (the monthly/yearly switch), `badges` (the "Popular" marker), and `faq-sections` (or a specific `faq-accordion-*` entry) as the entries that matter most. A full pricing _page_ also reasonably includes a header and footer, but an answer that only builds the pricing section plus FAQ (skipping a full site header/footer, since the prompt doesn't ask for site chrome) should not be penalized for that.
 
 ## Viewports
 

@@ -106,7 +106,7 @@ export const ContentAlternative02 = () => (
                         already owns, and a standing question about what they would take with them if they moved.
                     </p>
                     <p>
-                        The answers rarely match the brief, and reconciling the two in public — with the client in the room — is where most of the real design
+                        The answers rarely match the brief, and reconciling the two in public (with the client in the room) is where most of the real design
                         happens.
                     </p>
 
@@ -149,7 +149,7 @@ export const ContentAlternative02 = () => (
                     <div className={styles.callout}>
                         <h2 className="text-display-xs text-primary mb-4 font-semibold">Conclusion</h2>
                         <p>The most useful idea from the whole conversation was the cheapest: show the rough version, and show it early.</p>
-                        <p>It works in interiors for the same reason it works in software — approval is a worse signal than correction.</p>
+                        <p>It works in interiors for the same reason it works in software: approval is a worse signal than correction.</p>
                         <p>Maker &amp; Co. take on four commissions a year and are booked into next winter.</p>
                     </div>
                 </div>

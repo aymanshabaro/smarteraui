@@ -48,7 +48,7 @@ export const Mockup02 = () => (
                 </div>
 
                 <p className="text-tertiary text-md mt-8 text-center md:text-lg">
-                    If you have any questions, just reply to this email—we&apos;ll be happy to hear from you!
+                    If you have any questions, just reply to this email. We&apos;ll be happy to hear from you!
                 </p>
             </div>
 

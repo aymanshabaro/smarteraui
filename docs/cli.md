@@ -1,14 +1,14 @@
 # CLI
 
 `properui` copies component source into your project, shadcn-style: you get the `.tsx` files, not a dependency. Run it
-through `npx` — there is nothing to install:
+through `npx`: there is nothing to install:
 
 ```bash
 npx @properui/cli@latest init
 npx @properui/cli@latest add button
 ```
 
-Or `pnpm dlx properui@latest …`, `yarn dlx properui@latest …`, `bunx properui@latest …`.
+Or `pnpm dlx properui@latest ...`, `yarn dlx properui@latest ...`, `bunx properui@latest ...`.
 
 Requires Node 20+.
 
@@ -33,7 +33,7 @@ npx @properui/cli@latest init
 ```
 
 Detects your framework (Next.js App Router, Next.js Pages Router, Vite, plain React), whether you use TypeScript, whether
-you have a `src/` directory, your `tsconfig.json` path alias, your Tailwind version and your package manager — then:
+you have a `src/` directory, your `tsconfig.json` path alias, your Tailwind version and your package manager, then:
 
 - writes `components.json`,
 - copies the theme token file,
@@ -41,7 +41,7 @@ you have a `src/` directory, your `tsconfig.json` path alias, your Tailwind vers
 - creates `utils/cx.ts`,
 - wraps your app entry (`app/layout.tsx`, `pages/_app.tsx` or `src/main.tsx`) in `ThemeProvider`.
 
-Tailwind v3 projects are stopped with upgrade instructions rather than half-configured — the token layer is written in
+Tailwind v3 projects are stopped with upgrade instructions rather than half-configured: the token layer is written in
 v4 `@theme` syntax.
 
 | Option        | Description                                                |
@@ -89,7 +89,7 @@ npx @properui/cli@latest add button input select table
 For each component the CLI resolves its registry dependencies, copies every file to the target derived from your
 aliases, rewrites `@/` imports to your alias prefix, and installs any missing npm packages.
 
-Dependency resolution is transitive — `add badge-groups` also brings in `badges` and `dot-icon`, so you never end up with
+Dependency resolution is transitive: `add badge-groups` also brings in `badges` and `dot-icon`, so you never end up with
 a broken import.
 
 | Option         | Description                                                    |
@@ -112,7 +112,7 @@ npx @properui/cli@latest add --all --dry-run
 npx @properui/cli@latest add example about-page-01
 ```
 
-An example is a complete page — a dashboard, a settings screen, a marketing landing page — and its registry entry lists
+An example is a complete page (a dashboard, a settings screen, a marketing landing page) and its registry entry lists
 every section and component it composes, so all of them are installed with it. Once installed it is your code; the CLI
 never rewrites it unless you pass `--overwrite`.
 
@@ -164,7 +164,7 @@ Requires `components.json`, so run `init` first.
 
 ## `login`
 
-Only needed for a **private** registry — the public one is anonymous, and `add` works without ever logging in.
+Only needed for a **private** registry: the public one is anonymous, and `add` works without ever logging in.
 
 ```bash
 npx @properui/cli@latest login

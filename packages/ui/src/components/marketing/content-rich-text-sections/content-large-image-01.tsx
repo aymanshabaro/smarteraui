@@ -88,7 +88,7 @@ export const ContentLargeImage01 = () => (
                             </p>
                         </blockquote>
                         <figcaption className="not-prose text-md mt-6 md:mt-8">
-                            — {author.name}, <cite className="not-italic">Product Designer</cite>
+                            {author.name}, <cite className="not-italic">Product Designer</cite>
                         </figcaption>
                     </figure>
 
@@ -98,7 +98,7 @@ export const ContentLargeImage01 = () => (
                     </p>
                     <p>
                         Keep one idea per slide and one sentence per idea. If a slide needs a paragraph it is really two slides, and the second one is usually
-                        the interesting half. Long appendices are fine — nobody minds page forty as long as pages one through ten were honest.
+                        the interesting half. Long appendices are fine: nobody minds page forty as long as pages one through ten were honest.
                     </p>
                     <p>
                         Rehearse the transitions rather than the words. The sentences come out differently every time, but the order does not, and the order is
@@ -119,7 +119,7 @@ export const ContentLargeImage01 = () => (
                     <p>If you are putting a review together for the first time, three habits carry most of the weight:</p>
                     <ol>
                         <li>Write the recommendation before you write anything else.</li>
-                        <li>Show one artefact per claim — a clip, a chart or a quote — and never more than one.</li>
+                        <li>Show one artefact per claim (a clip, a chart or a quote) and never more than one.</li>
                         <li>End with the decision you need and the date you need it by.</li>
                     </ol>
 

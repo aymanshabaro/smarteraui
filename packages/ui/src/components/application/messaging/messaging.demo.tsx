@@ -45,7 +45,7 @@ export const MessagingExample = () => (
             </Message>
 
             <Message name={demi.name} avatarSrc={demi.src} status="online" time="Thursday 11:44am" dateTime="2027-01-21T11:44">
-                <Message.Bubble actions={bubbleActions}>Good timing—was just looking at this.</Message.Bubble>
+                <Message.Bubble actions={bubbleActions}>Good timing, was just looking at this.</Message.Bubble>
             </Message>
 
             <MessageList.Divider>Today</MessageList.Divider>
@@ -170,7 +170,7 @@ export const MessageLinkMinimal = () => (
         <Message name={phoenix.name} avatarSrc={phoenix.src} status="online" time="Friday 2:20pm" dateTime="2027-01-22T14:20">
             <Message.Bubble actions={bubbleActions}>
                 <Message.LinkCard
-                    title="Proper UI — Figma UI Kit and Design System"
+                    title="Proper UI: Figma UI Kit and Design System"
                     description="Proper UI is the largest UI kit and design system for Figma in the world. Kickstart any project, save thousands of hours, and level up as a designer."
                 />
                 <a href="https://www.proper.example" target="_blank" rel="noopener noreferrer">

@@ -3,14 +3,14 @@ title: Cursor integration
 section: integrations
 description: Point Cursor at Proper UI's registry with a project rule installed in one command, so Agent mode composes screens from real components instead of inventing markup.
 metaTitle: Cursor integration | Proper UI
-metaDescription: Use Proper UI with Cursor — install the Proper UI rule with one command, and prompts that resolve to real components.
+metaDescription: "Use Proper UI with Cursor: install the Proper UI rule with one command, and prompts that resolve to real components."
 ---
 
 Cursor's Agent mode runs shell commands directly in your terminal, so it can drive the `properui` CLI the same way Claude Code or Codex can. The only setup is a project rule that tells it to reach for a real component before writing markup from scratch.
 
 ## Prerequisites
 
-- A project already scaffolded with `npx @properui/cli@latest init` — Cursor works best once `components.json` exists.
+- A project already scaffolded with `npx @properui/cli@latest init`: Cursor works best once `components.json` exists.
 - Cursor with Agent mode enabled, so it can run terminal commands (with whatever approval level you've set under Run Mode).
 
 ## Start using Proper UI with Cursor
@@ -20,7 +20,7 @@ Describe what you're building in plain language and let Cursor's agent choose th
 ```text
 Build a settings page with a page header, a tabbed navigation between
 "General" and "Billing", and a form with labeled inputs. Use Proper UI
-components — check `npx @properui/cli@latest search` for anything you're
+components. Check `npx @properui/cli@latest search` for anything you're
 not sure exists before writing custom markup.
 ```
 
@@ -34,9 +34,9 @@ Rather than writing `.cursor/rules/properui.mdc` by hand, install it with the [P
 npx @properui/cli@latest agent init --client cursor
 ```
 
-This writes `.cursor/rules/properui.mdc` with `alwaysApply: true` frontmatter — Cursor's rules system only recognizes `.mdc` files with frontmatter in that folder, a plain `.md` file is ignored, so the CLI writes the correct format directly. The rule covers the same workflow as the Skill used by Claude Code and Codex: run `properui info --json` before touching UI code, search the registry before writing markup, install matches with `add` rather than hand-rolling, and keep React Aria props, semantic tokens and RTL-safe logical properties in anything written by hand.
+This writes `.cursor/rules/properui.mdc` with `alwaysApply: true` frontmatter: Cursor's rules system only recognizes `.mdc` files with frontmatter in that folder, a plain `.md` file is ignored, so the CLI writes the correct format directly. The rule covers the same workflow as the Skill used by Claude Code and Codex: run `properui info --json` before touching UI code, search the registry before writing markup, install matches with `add` rather than hand-rolling, and keep React Aria props, semantic tokens and RTL-safe logical properties in anything written by hand.
 
-`alwaysApply: true` means Cursor includes this rule in every chat and every Agent mode session, not just when a matching file is open — which matters here, since the "search before you write markup" instruction applies to any file, not just component files. If you'd rather it only load when a `.tsx`/`.jsx` file is in context, open the generated file, drop `alwaysApply`, and add a `globs` line instead; Cursor's own docs cover the other rule types (Auto Attached, Agent Requested, Manual). Re-running `agent init --client cursor` after a Skill update replaces the file, so keep any such manual edit in mind before re-running with `--overwrite`.
+`alwaysApply: true` means Cursor includes this rule in every chat and every Agent mode session, not just when a matching file is open, which matters here, since the "search before you write markup" instruction applies to any file, not just component files. If you'd rather it only load when a `.tsx`/`.jsx` file is in context, open the generated file, drop `alwaysApply`, and add a `globs` line instead; Cursor's own docs cover the other rule types (Auto Attached, Agent Requested, Manual). Re-running `agent init --client cursor` after a Skill update replaces the file, so keep any such manual edit in mind before re-running with `--overwrite`.
 
 ## FAQs
 
@@ -44,11 +44,11 @@ This writes `.cursor/rules/properui.mdc` with `alwaysApply: true` frontmatter �
     items={[
         {
             question: "Does Cursor need a Skill file or an MCP server for this?",
-            answer: "An MCP server doesn't exist for Proper UI today, but a Skill file does, in the .mdc rule format Cursor reads — run npx @properui/cli@latest agent init --client cursor to install it. Combined with Cursor's own terminal tool, that's enough; Agent mode can already run npx @properui/cli@latest search and add.",
+            answer: "An MCP server doesn't exist for Proper UI today, but a Skill file does, in the .mdc rule format Cursor reads: run npx @properui/cli@latest agent init --client cursor to install it. Combined with Cursor's own terminal tool, that's enough; Agent mode can already run npx @properui/cli@latest search and add.",
         },
         {
             question: "Why .mdc and not a plain .md file?",
-            answer: "Cursor's rules system only loads files with the .mdc extension and frontmatter from .cursor/rules — a plain .md file placed there is ignored, so the extension isn't optional.",
+            answer: "Cursor's rules system only loads files with the .mdc extension and frontmatter from .cursor/rules: a plain .md file placed there is ignored, so the extension isn't optional.",
         },
         {
             question: "Will Cursor overwrite my customizations to an installed component?",

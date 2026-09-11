@@ -5,7 +5,7 @@ contact_links:
       about: Ask how to do something, share what you built, or float an idea before opening a feature request.
     - name: Report a security vulnerability
       url: https://github.com/properui/properui/blob/main/SECURITY.md
-      about: Please report vulnerabilities privately by email — do not open a public issue.
+      about: Please report vulnerabilities privately by email; do not open a public issue.
     - name: Documentation
       url: https://github.com/properui/properui/tree/main/docs
       about: Installation, framework setup, theming, dark mode, RTL and the CLI. Run `pnpm dev` for the full component reference.
@@ -14,4 +14,4 @@ contact_links:
       about: Repo setup, component conventions, and how to get a PR merged.
     - name: Looking for a first task?
       url: https://github.com/properui/properui/blob/main/.github/GOOD-FIRST-ISSUES.md
-      about: A seeded list of scoped, verifiable tasks — missing manifests, missing test coverage, small docs fixes.
+      about: A seeded list of scoped, verifiable tasks; missing manifests, missing test coverage, small docs fixes.

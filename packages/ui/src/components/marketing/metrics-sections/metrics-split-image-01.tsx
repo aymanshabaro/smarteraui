@@ -16,7 +16,7 @@ export const MetricsSplitImage01 = () => (
                     <p className="text-brand-secondary md:text-md text-sm font-semibold">Launch faster</p>
                     <h2 className="text-display-sm text-primary md:text-display-md mt-3 font-semibold">Build something great</h2>
                     <p className="text-tertiary mt-4 text-lg md:mt-5 md:text-xl">
-                        Everything you need to build modern UI and great products. We&apos;ve done all the heavy lifting so you don&apos;t have to—the perfect
+                        Everything you need to build modern UI and great products. We&apos;ve done all the heavy lifting so you don&apos;t have to. The perfect
                         starting point for any project.
                     </p>
                 </div>

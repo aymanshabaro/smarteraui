@@ -12,7 +12,7 @@ Proper UI is at `v0.1.0` and has not had a public release yet, so there is no mi
 
 `@properui/ui` and the `properui` CLI are versioned and released independently, each following semantic versioning. Releases are managed with [Changesets](https://github.com/changesets/changesets): a change lands with a changeset describing its impact (patch, minor, or major), and publishing the release regenerates the changelog from those changesets.
 
-While the project is on `0.x`, any release may include a breaking change — semver doesn't promise stability below `1.0.0`. Once `@properui/ui` reaches `1.0.0`, breaking changes will only ship in a major-version bump, and this page will gain a `## vX.Y.Z` section for each one, documenting exactly what changed and how to adapt.
+While the project is on `0.x`, any release may include a breaking change: semver doesn't promise stability below `1.0.0`. Once `@properui/ui` reaches `1.0.0`, breaking changes will only ship in a major-version bump, and this page will gain a `## vX.Y.Z` section for each one, documenting exactly what changed and how to adapt.
 
 ## Updating the npm package
 
@@ -26,7 +26,7 @@ Or your package manager's equivalent (`pnpm up @properui/ui`, `yarn up @properui
 
 ## Updating components you've copied in
 
-The CLI copies component source directly into your project, so there's no dependency version to bump for those files — you update them by pulling in the current registry version. Start with `diff` to see what changed:
+The CLI copies component source directly into your project, so there's no dependency version to bump for those files: you update them by pulling in the current registry version. Start with `diff` to see what changed:
 
 ```bash
 npx @properui/cli@latest diff              # every installed component
@@ -39,7 +39,7 @@ npx @properui/cli@latest diff button       # just one
 npx @properui/cli@latest add button --overwrite
 ```
 
-`--overwrite` replaces the local file entirely — it doesn't merge. Review the `diff` output first if you've customized the component, or you'll lose those edits.
+`--overwrite` replaces the local file entirely: it doesn't merge. Review the `diff` output first if you've customized the component, or you'll lose those edits.
 
 ## What to expect from a future breaking change
 
@@ -55,7 +55,7 @@ There's no `upgrade` or `migrate` command today, and this page won't describe on
     items={[
         {
             question: "Will an upgrade break my styles?",
-            answer: "There's nothing to upgrade yet — v0.1.0 hasn't had a public release. Once breaking changes start shipping, each one will be documented in a version section on this page with exactly what changed.",
+            answer: "There's nothing to upgrade yet: v0.1.0 hasn't had a public release. Once breaking changes start shipping, each one will be documented in a version section on this page with exactly what changed.",
         },
         {
             question: "How do I roll back if something goes wrong?",
@@ -67,7 +67,7 @@ There's no `upgrade` or `migrate` command today, and this page won't describe on
         },
         {
             question: "What if I customized a component?",
-            answer: "Run diff first — it shows exactly what you've changed against the current registry version. add --overwrite replaces the file wholesale rather than merging, so use it only once you've reviewed the diff and are ready to lose local edits.",
+            answer: "Run diff first: it shows exactly what you've changed against the current registry version. add --overwrite replaces the file wholesale rather than merging, so use it only once you've reviewed the diff and are ready to lose local edits.",
         },
         {
             question: "Do I need to update all components at once?",
@@ -75,11 +75,11 @@ There's no `upgrade` or `migrate` command today, and this page won't describe on
         },
         {
             question: "What if the CLI can't reach the registry?",
-            answer: "There's no offline fallback — init, add, and diff all need to reach a registry. If you're working from a clone of this repo, build the registry locally with pnpm registry:build and point the CLI at the output directory with --registry ./packages/registry/dist.",
+            answer: "There's no offline fallback: init, add, and diff all need to reach a registry. If you're working from a clone of this repo, build the registry locally with pnpm registry:build and point the CLI at the output directory with --registry ./packages/registry/dist.",
         },
         {
             question: "Can I pin an older version?",
-            answer: "components.json doesn't have a version field to pin — the CLI always resolves against whatever registry it's pointed at. Pin @properui/ui itself in package.json the way you'd pin any npm dependency.",
+            answer: "components.json doesn't have a version field to pin: the CLI always resolves against whatever registry it's pointed at. Pin @properui/ui itself in package.json the way you'd pin any npm dependency.",
         },
     ]}
 />

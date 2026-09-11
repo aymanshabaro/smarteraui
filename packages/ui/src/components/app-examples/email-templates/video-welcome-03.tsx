@@ -56,7 +56,7 @@ export const VideoWelcome03 = () => (
 
                 <p className="text-tertiary text-md mt-4 text-center md:text-lg">
                     Hi Olivia, thanks for checking out Proper UI. Here are a few tips to help you get up and running as soon as possible. If you have any
-                    questions, just reply to this email—we&apos;ll be happy to hear from you!
+                    questions, just reply to this email. We&apos;ll be happy to hear from you!
                 </p>
 
                 <div className="mt-12 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">

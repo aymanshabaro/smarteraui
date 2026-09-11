@@ -1028,7 +1028,7 @@ export const CalendarEventMenu = () => (
                 <SlideoutMenu.Content>
                     <div className="flex items-start gap-3">
                         <Calendar aria-hidden="true" className="text-fg-quaternary mt-0.5 size-5 shrink-0" />
-                        <p className="text-secondary text-sm">Mon, 12 Jan · 10:00 – 11:00 AM</p>
+                        <p className="text-secondary text-sm">Mon, 12 Jan · 10:00 - 11:00 AM</p>
                     </div>
                     <div className="flex items-start gap-3">
                         <MarkerPin01 aria-hidden="true" className="text-fg-quaternary mt-0.5 size-5 shrink-0" />

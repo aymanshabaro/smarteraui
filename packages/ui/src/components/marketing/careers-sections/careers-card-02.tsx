@@ -80,7 +80,7 @@ export const CareersCard02 = () => {
                         <span className="text-brand-secondary md:text-md text-sm font-semibold">We&apos;re hiring!</span>
                         <h2 className="text-display-sm text-primary md:text-display-md mt-3 font-semibold">Join our team</h2>
                         <p className="text-tertiary mt-4 text-lg md:mt-5 md:text-xl">
-                            Our philosophy is simple—hire a team of diverse, passionate people and foster a culture that empowers you to do your best work.
+                            Our philosophy is simple: hire a team of diverse, passionate people and foster a culture that empowers you to do your best work.
                         </p>
                     </div>
 

@@ -125,7 +125,7 @@ const UsersMenuCard = ({ layout }: { layout: "inline" | "stacked" }) => (
 
         <CommandMenu.Popover>
             <CommandMenu layout={layout} className="w-90">
-                <CommandMenu.Search placeholder="Assign to…" />
+                <CommandMenu.Search placeholder="Assign to..." />
 
                 <CommandMenu.List className="max-h-90" renderEmptyState={() => <CommandMenu.Empty description="No one on your team matches that name." />}>
                     {AVATARS.slice(0, 6).map((user) => (

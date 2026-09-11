@@ -40,8 +40,8 @@ export const ContentSimple = () => (
                     a form or a support conversation.
                 </p>
                 <p>
-                    We also record limited technical information automatically — the pages you visit, the approximate region you visit them from, and the
-                    browser you use. This is what tells us that a feature is broken before anyone has to report it.
+                    We also record limited technical information automatically: the pages you visit, the approximate region you visit them from, and the browser
+                    you use. This is what tells us that a feature is broken before anyone has to report it.
                 </p>
                 <p>We do not purchase personal data from brokers, and we do not enrich your profile from third-party sources.</p>
 

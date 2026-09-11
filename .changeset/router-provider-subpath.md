@@ -6,7 +6,7 @@
 
 It imports `next/navigation`, and `next` is an optional peer. Re-exporting it from
 `@properui/ui/providers` and from the root barrel meant any bundler resolving either one
-without Next installed failed on a specifier it could not satisfy — Vite stubs the module and
+without Next installed failed on a specifier it could not satisfy: Vite stubs the module and
 the build dies with `"useRouter" is not exported by "__vite-optional-peer-dep:next/navigation"`.
 That broke the Vite quick-start in the README, which tells Vite users to import `ThemeProvider`
 from `@properui/ui/providers`.

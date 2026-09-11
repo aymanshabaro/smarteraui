@@ -12,13 +12,13 @@ import { VisaIcon } from "../../foundations/payment-icons";
 import { SettingsBlock, SettingsMain, SettingsPage, SettingsStack, navItemsWithDividers } from "./settings-shared.a";
 
 const invoices = [
-    { id: "001", label: "Invoice #001 – Jun 2026", date: "Jun 1, 2026" },
-    { id: "002", label: "Invoice #002 – Jul 2026", date: "Jul 1, 2026" },
-    { id: "003", label: "Invoice #003 – Aug 2026", date: "Aug 1, 2026" },
-    { id: "004", label: "Invoice #004 – Sep 2026", date: "Sep 1, 2026" },
-    { id: "005", label: "Invoice #005 – Oct 2026", date: "Oct 1, 2026" },
-    { id: "006", label: "Invoice #006 – Nov 2026", date: "Nov 1, 2026" },
-    { id: "007", label: "Invoice #007 – Dec 2026", date: "Dec 1, 2026" },
+    { id: "001", label: "Invoice #001 - Jun 2026", date: "Jun 1, 2026" },
+    { id: "002", label: "Invoice #002 - Jul 2026", date: "Jul 1, 2026" },
+    { id: "003", label: "Invoice #003 - Aug 2026", date: "Aug 1, 2026" },
+    { id: "004", label: "Invoice #004 - Sep 2026", date: "Sep 1, 2026" },
+    { id: "005", label: "Invoice #005 - Oct 2026", date: "Oct 1, 2026" },
+    { id: "006", label: "Invoice #006 - Nov 2026", date: "Nov 1, 2026" },
+    { id: "007", label: "Invoice #007 - Dec 2026", date: "Dec 1, 2026" },
 ];
 
 /** Billing overview: the current plan and payment method side by side, then invoice history. */

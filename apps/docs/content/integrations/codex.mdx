@@ -3,14 +3,14 @@ title: Codex integration
 section: integrations
 description: Point Codex at Proper UI's registry with the Proper UI Skill, installed in one command, so it composes screens from real components instead of inventing markup.
 metaTitle: Codex integration | Proper UI
-metaDescription: Use Proper UI with Codex — install the Proper UI Skill with one command, and prompts that resolve to real components.
+metaDescription: "Use Proper UI with Codex: install the Proper UI Skill with one command, and prompts that resolve to real components."
 ---
 
-Codex runs shell commands directly in your terminal and reads `AGENTS.md` for project context, so pointing it at Proper UI is mostly a matter of installing the [Proper UI Skill](/docs/agents) — Codex will reach for `npx @properui/cli@latest add` on its own once that's in place.
+Codex runs shell commands directly in your terminal and reads `AGENTS.md` for project context, so pointing it at Proper UI is mostly a matter of installing the [Proper UI Skill](/docs/agents): Codex will reach for `npx @properui/cli@latest add` on its own once that's in place.
 
 ## Prerequisites
 
-- A project already scaffolded with `npx @properui/cli@latest init` — Codex works best once `components.json` exists.
+- A project already scaffolded with `npx @properui/cli@latest init`: Codex works best once `components.json` exists.
 - The Codex CLI installed and signed in (`codex` on your `PATH`), or a Codex environment with shell access to your repo.
 
 ## Start using Proper UI with Codex
@@ -20,7 +20,7 @@ Describe what you're building in plain language and let Codex choose the compone
 ```text
 Build a settings page with a page header, a tabbed navigation between
 "General" and "Billing", and a form with labeled inputs. Use Proper UI
-components — check `npx @properui/cli@latest search` for anything you're
+components. Check `npx @properui/cli@latest search` for anything you're
 not sure exists before writing custom markup.
 ```
 
@@ -34,9 +34,9 @@ Rather than writing `AGENTS.md` by hand, install the [Proper UI Skill](/docs/age
 npx @properui/cli@latest agent init --client codex
 ```
 
-This writes `.agents/skills/properui/SKILL.md` — the path Codex discovers skills from — and appends a rules block to `AGENTS.md` (creating the file if it doesn't exist yet), so the guidance is there even in a Codex session that isn't picking up `.agents/skills` yet. The Skill encodes the full workflow: run `properui info --json` before touching UI code, search the registry before writing markup, prefer a full-page example for a whole screen, and keep React Aria props, semantic tokens and RTL-safe logical properties in anything written by hand.
+This writes `.agents/skills/properui/SKILL.md` (the path Codex discovers skills from) and appends a rules block to `AGENTS.md` (creating the file if it doesn't exist yet), so the guidance is there even in a Codex session that isn't picking up `.agents/skills` yet. The Skill encodes the full workflow: run `properui info --json` before touching UI code, search the registry before writing markup, prefer a full-page example for a whole screen, and keep React Aria props, semantic tokens and RTL-safe logical properties in anything written by hand.
 
-If you already keep an `AGENTS.md`, `agent init` appends its block between marker comments rather than replacing the file — Codex concatenates every `AGENTS.md` it finds walking from your project root down to your current directory, and a file closer to where you're working can extend or override guidance from one higher up. A monorepo can run the command once at the root and skip repeating it in every package. Re-running it after a Skill update is safe: it replaces the installed file and updates the marked `AGENTS.md` block in place, leaving the rest of the file untouched.
+If you already keep an `AGENTS.md`, `agent init` appends its block between marker comments rather than replacing the file: Codex concatenates every `AGENTS.md` it finds walking from your project root down to your current directory, and a file closer to where you're working can extend or override guidance from one higher up. A monorepo can run the command once at the root and skip repeating it in every package. Re-running it after a Skill update is safe: it replaces the installed file and updates the marked `AGENTS.md` block in place, leaving the rest of the file untouched.
 
 ## FAQs
 
@@ -44,7 +44,7 @@ If you already keep an `AGENTS.md`, `agent init` appends its block between marke
     items={[
         {
             question: "Does Codex need a Skill file or an MCP server for this?",
-            answer: "An MCP server doesn't exist for Proper UI today, but a Skill file does — run npx @properui/cli@latest agent init --client codex to install it, alongside Codex's own shell tool which can already run npx @properui/cli@latest search and add.",
+            answer: "An MCP server doesn't exist for Proper UI today, but a Skill file does: run npx @properui/cli@latest agent init --client codex to install it, alongside Codex's own shell tool which can already run npx @properui/cli@latest search and add.",
         },
         {
             question: "Will Codex overwrite my customizations to an installed component?",

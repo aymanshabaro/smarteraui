@@ -1,6 +1,6 @@
 # Next.js
 
-Proper UI is developed against Next.js 15 with the App Router — the documentation site in this repo is exactly that
+Proper UI is developed against Next.js 15 with the App Router: the documentation site in this repo is exactly that
 setup, so [`apps/docs`](../apps/docs) is a working reference for everything below.
 
 ## Install
@@ -28,7 +28,7 @@ Import it from your global stylesheet and add the `@source` line so Tailwind v4 
 @source "../node_modules/@properui/ui/src/**/*.{ts,tsx}";
 ```
 
-The relative path is from the stylesheet to your project's `node_modules` — from `app/globals.css` in a standard
+The relative path is from the stylesheet to your project's `node_modules`: from `app/globals.css` in a standard
 project that is `../node_modules`; from `src/app/globals.css` it is `../../node_modules`.
 
 ## 2. `transpilePackages`
@@ -47,15 +47,15 @@ const nextConfig: NextConfig = {
 export default nextConfig;
 ```
 
-If you import icons heavily, `experimental.optimizePackageImports: ["@properui/icons"]` is worth adding as well —
-that is what the docs site uses.
+If you import icons heavily, `experimental.optimizePackageImports: ["@properui/icons"]` is worth adding as well.
+That is what the docs site uses.
 
 ## 3. Providers (App Router)
 
 Two providers wrap the tree:
 
 - **`ThemeProvider`** wraps `next-themes` with `attribute="class"` and a value map of
-  `{ light: "light-mode", dark: "dark-mode" }` — the two classes the token layer keys off. Defaults are already correct;
+  `{ light: "light-mode", dark: "dark-mode" }`: the two classes the token layer keys off. Defaults are already correct;
   it takes no required props.
 - **`RouterProvider`** hands React Aria the Next router, so every component that accepts `href` (buttons, links, menu
   items, breadcrumbs, pagination) performs a client-side transition instead of a full page load.
@@ -82,7 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 }
 ```
 
-`suppressHydrationWarning` on `<html>` is required — `next-themes` writes the theme class before React hydrates, and
+`suppressHydrationWarning` on `<html>` is required: `next-themes` writes the theme class before React hydrates, and
 without it React reports a mismatch.
 
 `ThemeProvider` forwards every `next-themes` prop, so `defaultTheme`, `enableSystem`, `storageKey` and friends all work:
@@ -122,8 +122,8 @@ export default function App({ Component, pageProps }: AppProps) {
 
 ## Fonts
 
-`theme.css` defines `--font-body` and `--font-display` as `var(--font-inter, "Inter"), …`, so loading Inter through
-`next/font` with the variable name `--font-inter` is all it takes — no CSS override:
+`theme.css` defines `--font-body` and `--font-display` as `var(--font-inter, "Inter"), ...`, so loading Inter through
+`next/font` with the variable name `--font-inter` is all it takes, with no CSS override needed:
 
 ```tsx
 // app/layout.tsx
@@ -131,7 +131,7 @@ import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
-// …then: <html lang="en" suppressHydrationWarning className={inter.variable}>
+// ...then: <html lang="en" suppressHydrationWarning className={inter.variable}>
 ```
 
 For a different typeface, point the two tokens at your own font variable:
@@ -149,11 +149,11 @@ For a different typeface, point the two tokens at your own font variable:
 Interactive components declare `"use client"` internally, so you can import and render them from a server component
 without adding the directive to your own file. The boundary is drawn inside the library, not at your call site.
 
-You only need `"use client"` on a file where **you** add interactivity — a state hook, an event handler you define, a
-form controller:
+You only need `"use client"` on a file where **you** add interactivity (a state hook, an event handler you define, a
+form controller):
 
 ```tsx
-// app/page.tsx — a server component
+// app/page.tsx: a server component
 import { Button } from "@properui/ui/components/base/buttons/button";
 
 export default function Page() {
@@ -162,7 +162,7 @@ export default function Page() {
 ```
 
 ```tsx
-// components/counter.tsx — yours, so it needs the directive
+// components/counter.tsx: yours, so it needs the directive
 "use client";
 
 import { useState } from "react";
@@ -174,7 +174,7 @@ export const Counter = () => {
 };
 ```
 
-Note `onPress`, not `onClick` — these are React Aria components.
+Note `onPress`, not `onClick`. These are React Aria components.
 
 ## Images
 
@@ -183,6 +183,6 @@ loading and responsive sizing.
 
 ## Next steps
 
-- [Theming](./theming.md) — re-brand from one file
-- [Dark mode](./dark-mode.md) — the toggle and section-scoped dark sections
-- [RTL](./rtl.md) — `dir="rtl"` and `I18nProvider`
+- [Theming](./theming.md): re-brand from one file
+- [Dark mode](./dark-mode.md): the toggle and section-scoped dark sections
+- [RTL](./rtl.md): `dir="rtl"` and `I18nProvider`

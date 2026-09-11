@@ -24,7 +24,7 @@ export const CareersSimple04Brand = () => (
                 <span className="text-tertiary_on-brand md:text-md text-sm font-semibold">We&apos;re hiring!</span>
                 <h2 className="text-display-sm text-primary_on-brand md:text-display-md mt-3 font-semibold">Start doing work that matters</h2>
                 <p className="text-tertiary_on-brand mt-4 text-lg md:mt-5 md:text-xl">
-                    Our philosophy is simple—hire a team of diverse, passionate people and foster a culture that empowers you to do your best work.
+                    Our philosophy is simple: hire a team of diverse, passionate people and foster a culture that empowers you to do your best work.
                 </p>
             </div>
 

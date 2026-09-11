@@ -9,7 +9,7 @@ approved_by: aymanshabaro (chat instruction, 2026-09-09)
 
 The full specification already exists and is authoritative: `docs/spec/00-foundation/*` (architecture,
 tokens, theming, typography, conventions, icons/assets, a11y/testing, docs site, CLI, orchestration) and
-one requirement file per task under `docs/spec/01-…06-*`. This file only records decisions that the spec
+one requirement file per task under `docs/spec/01-...06-*`. This file only records decisions that the spec
 bundle left open.
 
 ## Decisions

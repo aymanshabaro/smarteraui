@@ -3,7 +3,7 @@ title: Dark mode
 section: docs
 description: Easily swap between light and dark modes with CSS variables.
 metaTitle: Dark mode | Proper UI
-metaDescription: "Proper UI ships class-based dark mode driven by CSS variables — no dark: utilities required. Learn the .dark-mode strategy, ThemeProvider, and section-scoped dark mode."
+metaDescription: "Proper UI ships class-based dark mode driven by CSS variables. No dark: utilities required. Learn the .dark-mode strategy, ThemeProvider, and section-scoped dark mode."
 ---
 
 ## Dark mode support
@@ -14,12 +14,12 @@ Dark mode in Proper UI is **class-based**, not media-query based. `globals.css` 
 @custom-variant dark (&:where(.dark-mode, .dark-mode *));
 ```
 
-so adding `.dark-mode` anywhere in the ancestor chain flips every semantic token defined in `theme.css`'s `.dark-mode { … }` block. A component written
-with semantic tokens — `bg-primary`, `text-primary`, `border-secondary` — is automatically correct in dark mode and needs **zero** `dark:` utilities of
+so adding `.dark-mode` anywhere in the ancestor chain flips every semantic token defined in `theme.css`'s `.dark-mode { ... }` block. A component written
+with semantic tokens (`bg-primary`, `text-primary`, `border-secondary`) is automatically correct in dark mode and needs **zero** `dark:` utilities of
 its own.
 
-Reach for an explicit `dark:` utility only for the rare case a token can't express — swapping an image asset, inverting a logo mark, or a gradient stop
-with no semantic equivalent — and leave a comment explaining why when you do.
+Reach for an explicit `dark:` utility only for the rare case a token can't express (swapping an image asset, inverting a logo mark, or a gradient stop
+with no semantic equivalent), and leave a comment explaining why when you do.
 
 ## How to switch to dark mode
 
@@ -42,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 }
 ```
 
-`ThemeProvider` exposes three states to your users — **Light**, **Dark**, and **System** — and injects a blocking script so there's no flash of the
+`ThemeProvider` exposes three states to your users (**Light**, **Dark**, and **System**) and injects a blocking script so there's no flash of the
 wrong theme on first paint. Read or change the current theme anywhere with the re-exported hook:
 
 ```tsx
@@ -71,7 +71,7 @@ export const ThemeToggle = () => {
 };
 ```
 
-If you'd rather manage the class yourself — no `next-themes` — toggle `.dark-mode` on the root element directly and persist the choice:
+If you'd rather manage the class yourself (no `next-themes`), toggle `.dark-mode` on the root element directly and persist the choice:
 
 ```ts
 const isDark = document.documentElement.classList.toggle("dark-mode");
@@ -80,7 +80,7 @@ localStorage.setItem("theme", isDark ? "dark" : "light");
 
 ### Section-scoped dark mode
 
-Some sections should render permanently dark regardless of the page's theme — a dark footer, a dark call-to-action band. Put `.dark-mode` directly on
+Some sections should render permanently dark regardless of the page's theme: a dark footer, a dark call-to-action band. Put `.dark-mode` directly on
 that element instead of hardcoding colors:
 
 ```tsx
@@ -90,7 +90,7 @@ that element instead of hardcoding colors:
 ```
 
 Every component inside resolves its dark tokens without any prop drilling, because the `dark` custom variant matches `.dark-mode` at any depth in the
-ancestor chain — not just on `<html>`.
+ancestor chain, not just on `<html>`.
 
 ## FAQs
 
@@ -98,11 +98,11 @@ ancestor chain — not just on `<html>`.
     items={[
         {
             question: "How do I enable dark mode for my entire application?",
-            answer: 'Add the dark-mode class to your root HTML or body element — either directly, or by rendering ThemeProvider with theme set to "dark". This applies dark mode styles to every component within that container.',
+            answer: 'Add the dark-mode class to your root HTML or body element: either directly, or by rendering ThemeProvider with theme set to "dark". This applies dark mode styles to every component within that container.',
         },
         {
             question: "Can I have both light and dark mode components on the same page?",
-            answer: "Yes — apply the dark-mode or light-mode class to any specific container to mix and match appearances on the same page. This gives you fine-grained control, such as a dark footer on an otherwise light page.",
+            answer: "Yes, apply the dark-mode or light-mode class to any specific container to mix and match appearances on the same page. This gives you fine-grained control, such as a dark footer on an otherwise light page.",
         },
         {
             question: "How do I implement a dark mode toggle?",
@@ -110,15 +110,15 @@ ancestor chain — not just on `<html>`.
         },
         {
             question: "Do I need to write separate styles for dark mode?",
-            answer: "No — Proper UI handles dark mode through CSS variables, so semantic classes like bg-primary automatically resolve to the right value in both themes. You only need a dark: utility for the handful of things tokens can't express, like swapping an image.",
+            answer: "No, Proper UI handles dark mode through CSS variables, so semantic classes like bg-primary automatically resolve to the right value in both themes. You only need a dark: utility for the handful of things tokens can't express, like swapping an image.",
         },
         {
             question: "Does dark mode affect performance?",
-            answer: "Barely — theme switching flips CSS variable values rather than duplicating stylesheets or re-rendering components, so it's effectively instantaneous.",
+            answer: "Barely, theme switching flips CSS variable values rather than duplicating stylesheets or re-rendering components, so it's effectively instantaneous.",
         },
         {
             question: "How do I customize dark mode colors?",
-            answer: "Edit the .dark-mode block in theme.css. Each semantic color token has a light-mode value under :root and a dark-mode value under .dark-mode — update the one you want to change without touching the other.",
+            answer: "Edit the .dark-mode block in theme.css. Each semantic color token has a light-mode value under :root and a dark-mode value under .dark-mode: update the one you want to change without touching the other.",
         },
     ]}
 />

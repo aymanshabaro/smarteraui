@@ -15,7 +15,7 @@ export interface ListOptions {
 }
 
 /** Keeps the description on one line so the table stays readable in an 80-column terminal. */
-const truncate = (value: string, max: number) => (value.length <= max ? value : `${value.slice(0, max - 1).trimEnd()}…`);
+const truncate = (value: string, max: number) => (value.length <= max ? value : `${value.slice(0, max - 3).trimEnd()}...`);
 
 export async function runList(options: ListOptions): Promise<void> {
     const cwd = path.resolve(options.cwd ?? process.cwd());

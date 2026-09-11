@@ -139,9 +139,9 @@ const excerptParagraphs = [
 ];
 
 const uploads = [
-    { name: "The Quiet Shore — ebook.epub", size: 647_168, progress: 100, type: "empty" },
-    { name: "The Quiet Shore — reader.mobi", size: 861_184, progress: 100, type: "empty" },
-    { name: "The Quiet Shore — print proof.pdf", size: 1_048_576, progress: 80, type: "pdf" },
+    { name: "The Quiet Shore - ebook.epub", size: 647_168, progress: 100, type: "empty" },
+    { name: "The Quiet Shore - reader.mobi", size: 861_184, progress: 100, type: "empty" },
+    { name: "The Quiet Shore - print proof.pdf", size: 1_048_576, progress: 80, type: "pdf" },
 ] satisfies { name: string; size: number; progress: number; type: ComponentProps<typeof FileIcon>["type"] }[];
 
 const stats = [
@@ -307,7 +307,7 @@ export const Informational19 = () => (
                                     <div className="flex items-center gap-2">
                                         <span className="text-tertiary text-sm">Author</span>
                                         <hr className="bg-border-primary h-3 w-px border-none" />
-                                        <span className="text-tertiary text-sm">1988—</span>
+                                        <span className="text-tertiary text-sm">1988-</span>
                                     </div>
                                 </div>
 

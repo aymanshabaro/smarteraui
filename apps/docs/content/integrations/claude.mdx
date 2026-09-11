@@ -3,14 +3,14 @@ title: Claude Code integration
 section: integrations
 description: Point Claude Code at Proper UI's registry and CLAUDE.md conventions so it composes screens from real components instead of inventing markup.
 metaTitle: Claude Code integration | Proper UI
-metaDescription: Use Proper UI with Claude Code — recommended project instructions and prompts that resolve to real components.
+metaDescription: "Use Proper UI with Claude Code: recommended project instructions and prompts that resolve to real components."
 ---
 
-Claude Code already runs shell commands, so it can drive the `properui` CLI directly — the only setup is giving it enough context to reach for a real component instead of writing one from scratch.
+Claude Code already runs shell commands, so it can drive the `properui` CLI directly: the only setup is giving it enough context to reach for a real component instead of writing one from scratch.
 
 ## Prerequisites
 
-- A project already scaffolded with `npx @properui/cli@latest init` — Claude works best once `components.json` exists.
+- A project already scaffolded with `npx @properui/cli@latest init`: Claude works best once `components.json` exists.
 - Claude Code installed and authenticated (`claude` on your `PATH`).
 
 ## Start using Proper UI with Claude
@@ -20,7 +20,7 @@ Describe what you're building in plain language and let Claude choose the compon
 ```text
 Build a settings page with a page header, a tabbed navigation between
 "General" and "Billing", and a form with labeled inputs. Use Proper UI
-components — check `npx @properui/cli@latest search` for anything you're
+components. Check `npx @properui/cli@latest search` for anything you're
 not sure exists before writing custom markup.
 ```
 
@@ -34,14 +34,14 @@ Rather than writing `CLAUDE.md` instructions by hand, install the [Proper UI Ski
 npx @properui/cli@latest agent init --client claude
 ```
 
-This writes `.claude/skills/properui/SKILL.md` — which Claude Code loads automatically for every session, not just the one where you happen to mention the library — and appends a short pointer to `CLAUDE.md` (creating the file if it doesn't exist yet). The Skill encodes the full workflow: run `properui info --json` before touching UI code, search the registry before writing markup, prefer a full-page example for a whole screen, and keep semantic tokens, React Aria props and RTL-safe logical properties in anything written by hand. Re-running the command after a Skill update is safe — it replaces the installed file and the `CLAUDE.md` pointer in place.
+This writes `.claude/skills/properui/SKILL.md` (which Claude Code loads automatically for every session, not just the one where you happen to mention the library) and appends a short pointer to `CLAUDE.md` (creating the file if it doesn't exist yet). The Skill encodes the full workflow: run `properui info --json` before touching UI code, search the registry before writing markup, prefer a full-page example for a whole screen, and keep semantic tokens, React Aria props and RTL-safe logical properties in anything written by hand. Re-running the command after a Skill update is safe: it replaces the installed file and the `CLAUDE.md` pointer in place.
 
 With that in place, Claude reaches for `properui add` before improvising markup even on prompts that don't mention the library by name.
 
 ## MCP integration
 
 An MCP server that would let an assistant query the registry directly, instead of shelling out to
-`npx` for each lookup, is planned but **not built** — see the [MCP page](/integrations/mcp) and the [roadmap](https://github.com/properui/properui/blob/main/ROADMAP.md). Until it
+`npx` for each lookup, is planned but **not built**: see the [MCP page](/integrations/mcp) and the [roadmap](https://github.com/properui/properui/blob/main/ROADMAP.md). Until it
 exists, the CLI is the supported path, and it is enough: Claude Code runs `properui search` and
 `properui add` through its own shell tool.
 
@@ -51,7 +51,7 @@ exists, the CLI is the supported path, and it is enough: Claude Code runs `prope
     items={[
         {
             question: "Does Claude need the MCP server, or is the CLI enough?",
-            answer: "The CLI is enough, and it is the only option today — the MCP server is planned but not built. Claude Code can already run properui search and properui add through its shell tool.",
+            answer: "The CLI is enough, and it is the only option today: the MCP server is planned but not built. Claude Code can already run properui search and properui add through its shell tool.",
         },
         {
             question: "Will Claude overwrite my customizations to an installed component?",

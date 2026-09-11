@@ -144,7 +144,7 @@ export const Informational09 = () => (
                         dayOfMonth={9}
                         title="September 2026"
                         weekLabel="Week 2"
-                        subtitle="7 Sept 2026 – 13 Sept 2026"
+                        subtitle="7 Sept 2026 - 13 Sept 2026"
                         view="Week view"
                     />
 

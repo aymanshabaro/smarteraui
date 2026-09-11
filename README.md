@@ -13,7 +13,7 @@
 </div>
 
 Proper UI is a component library, a documentation site and a copy-in CLI in one repository, designed for the way UI
-code gets written now — by a coding agent, at speed. A model writing UI from memory invents class names, props and markup
+code gets written now: by a coding agent, at speed. A model writing UI from memory invents class names, props and markup
 that look plausible and do not compile. This library is readable by machines on purpose: a public JSON registry your
 assistant fetches real source from, a plain-markdown mirror of every documentation page indexed at
 [`/llms.txt`](https://properui.dev/llms.txt), and a CLI that writes the files into your project.
@@ -21,7 +21,7 @@ assistant fetches real source from, a plain-markdown mirror of every documentati
 Components ship as readable TypeScript source rather than a compiled bundle, so you can install `@properui/ui` as a
 normal dependency _or_ copy the files in with `npx @properui/cli@latest add` and own them outright. Behaviour, keyboard
 handling and ARIA come from [React Aria Components](https://react-spectrum.adobe.com/react-aria/); styling is Tailwind
-CSS v4 utilities resolved through a semantic token layer, so re-branding the whole system means editing one file — and a
+CSS v4 utilities resolved through a semantic token layer, so re-branding the whole system means editing one file, and a
 generated screen lands on the system rather than near it.
 
 <!-- stats:start -->
@@ -37,7 +37,7 @@ Codex, Cursor, v0, Bolt and Lovable can all drive them.
 | Surface             | URL                                                                    | What an assistant does with it                                                                                                                  |
 | ------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | Markdown docs index | [`/llms.txt`](https://properui.dev/llms.txt)                           | Finds the plain-markdown twin of every page, so it reads the same reference you do without parsing rendered HTML.                               |
-| Component registry  | [`/r/index.json`](https://properui.dev/r/index.json), `/r/<name>.json` | Fetches a component's real source, props, npm dependencies and registry dependencies — 797 entries.                                             |
+| Component registry  | [`/r/index.json`](https://properui.dev/r/index.json), `/r/<name>.json` | Fetches a component's real source, props, npm dependencies and registry dependencies: 797 entries.                                              |
 | Config schema       | [`/schema.json`](https://properui.dev/schema.json)                     | Validates and autocompletes the `components.json` that `init` writes.                                                                           |
 | CLI                 | `npx @properui/cli@latest add <component>`                             | Writes the `.tsx` into the project, resolves the dependency chain, rewrites `@/` imports to the configured alias and installs missing packages. |
 
@@ -53,7 +53,7 @@ Why generated code comes out better against this library specifically:
   so there are no `dark:` utilities to forget on half the elements and no second stylesheet to hand-write.
 - **679 named variants to compose from.** Asked for a pricing page, an assistant reaches for an existing file instead of
   inventing three hundred lines of layout.
-- **You review a diff.** The CLI writes plain `.tsx` you own — there is no opaque wrapper between the generated code and
+- **You review a diff.** The CLI writes plain `.tsx` you own. There is no opaque wrapper between the generated code and
   what renders.
 
 [`AGENTS.md`](./AGENTS.md) holds the conventions an assistant working in this repository should follow. There is no MCP
@@ -61,9 +61,9 @@ server yet; it is on the [roadmap](./ROADMAP.md), and the CLI covers the same gr
 
 ## Features
 
-- **Accessible by default.** Every interactive primitive — menus, dialogs, comboboxes, tables, sliders, date pickers —
+- **Accessible by default.** Every interactive primitive (menus, dialogs, comboboxes, tables, sliders, date pickers)
   delegates to React Aria Components. Focus management, keyboard navigation and ARIA wiring are inherited, not
-  re-implemented. Each component ships an `axe` smoke test that runs in CI — zero _detected_ violations across 118 automated suites; see
+  re-implemented. Each component ships an `axe` smoke test that runs in CI: zero _detected_ violations across 118 automated suites; see
   [the accessibility page](https://properui.dev/docs/accessibility) for what that does and does not cover.
 - **Tailwind CSS v4 tokens, no config file.** All design decisions live in `@theme` blocks in
   [`packages/ui/src/styles/theme.css`](./packages/ui/src/styles/theme.css). There is no `tailwind.config.js`.
@@ -71,12 +71,12 @@ server yet; it is on the [roadmap](./ROADMAP.md), and the CLI covers the same gr
   token. Components written against `bg-primary` / `text-secondary` are correct in both themes automatically.
 - **RTL support.** React Aria supplies direction-aware behaviour, and components use CSS logical properties (`ms-*`,
   `ps-*`, `start-*`, `text-start`) so `dir="rtl"` flips the layout without a fork. The migration away from physical
-  utilities is still in progress in parts of the marketing layer — see [docs/rtl.md](./docs/rtl.md).
+  utilities is still in progress in parts of the marketing layer. See [docs/rtl.md](./docs/rtl.md).
 - **TypeScript strict.** `strict` and `noUncheckedIndexedAccess` across the monorepo; every prop is typed and
   JSDoc-documented, and `tsc --noEmit` runs in CI.
 - **Tree-shakeable source.** The package publishes `.tsx` with per-component subpath exports, so a bundler only ever
   sees the components you import.
-- **No alias to configure.** Every internal import in the package is a plain relative specifier — installing
+- **No alias to configure.** Every internal import in the package is a plain relative specifier. Installing
   `@properui/ui` as a normal dependency and importing it in a Vite (or other bundler) project needs no `@/` path alias
   or `tsconfig` change on your end. Next.js still needs `transpilePackages` (see below) because it does not compile
   TSX from `node_modules` by default, not because of any alias.
@@ -181,8 +181,8 @@ export default defineConfig({
 
 **4. Wrap the app in the providers**
 
-`ThemeProvider` is framework-agnostic and works as-is. `RouterProvider` from `@properui/ui/providers/router-provider` is Next-only —
-in Vite, use React Aria's own `RouterProvider` and hand it your router's navigate function:
+`ThemeProvider` is framework-agnostic and works as-is. `RouterProvider` from `@properui/ui/providers/router-provider` is Next-only.
+In Vite, use React Aria's own `RouterProvider` and hand it your router's navigate function:
 
 ```tsx
 // src/main.tsx
@@ -214,7 +214,7 @@ createRoot(document.getElementById("root")!).render(
 );
 ```
 
-With no router at all, drop `RouterProvider` entirely — every component still renders and works; `href` links just do a
+With no router at all, drop `RouterProvider` entirely: every component still renders and works; `href` links just do a
 full page load.
 
 ### Your first component
@@ -230,7 +230,7 @@ export const Example = () => (
 ```
 
 Import from the subpath (`@properui/ui/components/<layer>/<group>/<file>`) so bundlers pull in only that component.
-The root barrel — `import { Button } from "@properui/ui"` — re-exports everything and is handy while prototyping.
+The root barrel (`import { Button } from "@properui/ui"`) re-exports everything and is handy while prototyping.
 
 Interactive components are React Aria based: use `onPress` rather than `onClick`, and `isDisabled` rather than
 `disabled`.
@@ -279,13 +279,13 @@ in both light and dark mode. Full detail in [docs/theming.md](./docs/theming.md)
 ## Project layout
 
 ```
-apps/docs             documentation site — Next.js 15 App Router + MDX
-packages/ui           @properui/ui — the component library
+apps/docs             documentation site: Next.js 15 App Router + MDX
+packages/ui           @properui/ui: the component library
   src/components      base/ application/ marketing/ app-examples/
                       marketing-examples/ foundations/ shared-assets/
   src/styles          globals.css · theme.css · typography.css
   src/{hooks,utils,providers}
-packages/cli          properui — the init/add CLI
+packages/cli          properui: the init/add CLI
 packages/registry     generated registry JSON consumed by the CLI and the docs site
 scripts               generators, screenshot and visual-diff tooling
 docs                  these guides
@@ -324,17 +324,17 @@ Contributions are welcome. [CONTRIBUTING.md](./CONTRIBUTING.md) covers the setup
 test and docs page every component ships with), how to run the checks, and the changeset-based release flow.
 [docs/contributing-components.md](./docs/contributing-components.md) walks through adding a component end to end.
 
-[ROADMAP.md](./ROADMAP.md) lists what is not built yet — an MCP server, full RTL coverage, visual regression baselines
-and a few others — so you can see where help is most useful.
+[ROADMAP.md](./ROADMAP.md) lists what is not built yet (an MCP server, full RTL coverage, visual regression baselines
+and a few others) so you can see where help is most useful.
 
 By participating you agree to abide by the [Code of Conduct](./CODE_OF_CONDUCT.md). Security issues should be reported
-privately — see [SECURITY.md](./SECURITY.md).
+privately. See [SECURITY.md](./SECURITY.md).
 
 ## License
 
 Released under the **MIT License**. Use it in personal and commercial projects, without attribution.
 
-Every component, example, icon and page in this repository is included — there is no paid tier, no private
+Every component, example, icon and page in this repository is included. There is no paid tier, no private
 registry and nothing held back behind an account.
 
 ## Credits

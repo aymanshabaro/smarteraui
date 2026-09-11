@@ -26,7 +26,7 @@ export const ContentSectionSplitImage02 = () => (
                     </p>
                     <p>
                         We moved all three onto a single pipeline and rewrote the proposal template around the numbers the team actually reported on. Nothing
-                        about their sales approach changed — only the amount of time between a yes and the first invoice.
+                        about their sales approach changed: only the amount of time between a yes and the first invoice.
                     </p>
                     <h3 className="text-display-xs! mb-4! font-semibold md:mt-8">Closing more clients</h3>
                     <p>

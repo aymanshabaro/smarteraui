@@ -1,6 +1,6 @@
 # properui
 
-The CLI for [Proper UI](https://github.com/properui/properui) — an accessible React 19 component library built on React Aria Components and Tailwind CSS v4.
+The CLI for [Proper UI](https://github.com/properui/properui): an accessible React 19 component library built on React Aria Components and Tailwind CSS v4.
 
 It copies component **source** into your project (shadcn-style) instead of adding a dependency: you own the files, you can edit them, and `properui diff` still tells you what you changed relative to upstream. If you would rather consume the library as a package, install [`@properui/ui`](https://www.npmjs.com/package/@properui/ui) and skip the CLI.
 
@@ -21,7 +21,7 @@ Global flags: `--cwd <dir>` runs against another directory; every command accept
 
 ## `init`
 
-Configures the current project: detects the framework, TypeScript vs JavaScript, a `src/` folder, the import alias from `tsconfig.json` paths, the Tailwind version and the package manager — then writes `components.json`, `styles/theme.css`, the `cx` utility, the Tailwind `@source` scan line and a `ThemeProvider` in the app entry point.
+Configures the current project: detects the framework, TypeScript vs JavaScript, a `src/` folder, the import alias from `tsconfig.json` paths, the Tailwind version and the package manager, then writes `components.json`, `styles/theme.css`, the `cx` utility, the Tailwind `@source` scan line and a `ThemeProvider` in the app entry point.
 
 ```bash
 npx @properui/cli@latest init              # auto-detect everything
@@ -32,7 +32,7 @@ npx @properui/cli@latest init --overwrite  # replace components.json and existin
 npx @properui/cli@latest init --yes        # non-interactive (CI)
 ```
 
-`components.json` — read by every other command:
+`components.json`, read by every other command:
 
 ```json
 {
@@ -62,7 +62,7 @@ Unknown names are matched fuzzily, so a typo comes back as a suggestion rather t
 
 ## `add example`
 
-Adds a whole page example — a dashboard, a settings page, a login screen, a pricing section — together with every component it uses.
+Adds a whole page example (a dashboard, a settings page, a login screen, a pricing section) together with every component it uses.
 
 ```bash
 npx @properui/cli add example settings-01
@@ -75,7 +75,7 @@ Lists what the registry holds, with layer and description.
 
 ```bash
 npx @properui/cli list
-npx @properui/cli list --layer base          # base · application · marketing · …
+npx @properui/cli list --layer base          # base · application · marketing · ...
 npx @properui/cli list --type example        # component · example · util · hook · style
 npx @properui/cli list --json                # raw index rows, for scripts
 ```
@@ -91,7 +91,7 @@ npx @properui/cli search "empty state" --limit 5
 
 ## `diff`
 
-Shows how the files in your project differ from the registry version — the upgrade path once you have edited copied-in code.
+Shows how the files in your project differ from the registry version: the upgrade path once you have edited copied-in code.
 
 ```bash
 npx @properui/cli diff            # everything already installed

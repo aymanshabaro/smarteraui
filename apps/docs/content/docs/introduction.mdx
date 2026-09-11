@@ -8,7 +8,7 @@ metaDescription: Proper UI is a collection of open-source React components built
 
 ## What is Proper UI?
 
-Proper UI is a library of production-ready React components — base components, application UI, and marketing sections — that you copy into your own
+Proper UI is a library of production-ready React components (base components, application UI, and marketing sections) that you copy into your own
 project instead of installing as an opaque dependency. Every component ships as plain `.tsx` you can read, edit, and extend, styled entirely with Tailwind
 CSS utility classes and semantic design tokens.
 
@@ -19,13 +19,13 @@ marketing sections, and full page examples are also included, giving you everyth
 
 Proper UI keeps its dependency surface small on purpose, so the components stay easy to read and cheap to maintain:
 
-- **React 19** — components use the latest APIs (`use`, the React Compiler-friendly patterns, and modern refs) without polyfills for older versions.
-- **Tailwind CSS v4.3** — every visual style is a utility class or a semantic CSS variable defined in `theme.css`; there is no separate CSS-in-JS layer.
-- **TypeScript v5.9** — every prop is typed and documented with a JSDoc comment that also powers the generated props tables on each component page.
-- **React Aria Components v1.20** — interactive components (menus, dialogs, comboboxes, tables, sliders) delegate behaviour, keyboard handling, and ARIA
+- **React 19**: components use the latest APIs (`use`, the React Compiler-friendly patterns, and modern refs) without polyfills for older versions.
+- **Tailwind CSS v4.3**: every visual style is a utility class or a semantic CSS variable defined in `theme.css`; there is no separate CSS-in-JS layer.
+- **TypeScript v5.9**: every prop is typed and documented with a JSDoc comment that also powers the generated props tables on each component page.
+- **React Aria Components v1.20**: interactive components (menus, dialogs, comboboxes, tables, sliders) delegate behaviour, keyboard handling, and ARIA
   wiring to React Aria, so you inherit accessible interaction patterns instead of re-implementing them.
 
-You own the code once it's in your project, so upgrading any of these is a normal dependency bump — nothing in the library is locked behind a build step
+You own the code once it's in your project, so upgrading any of these is a normal dependency bump: nothing in the library is locked behind a build step
 or a proprietary runtime.
 
 ## Accessibility
@@ -37,34 +37,34 @@ Proper UI adds:
 - Semantic color tokens that meet WCAG 2.1 AA contrast ratios for text and UI boundaries in both themes.
 - Required labels for icon-only controls, live regions for toasts, and `aria-busy` on loading states.
 
-Because styling is driven by data attributes (`data-selected`, `data-focused`, `data-disabled`, …) rather than by re-implementing state in JavaScript, a
+Because styling is driven by data attributes (`data-selected`, `data-focused`, `data-disabled`, ...) rather than by re-implementing state in JavaScript, a
 component's visual states can't drift out of sync with what assistive technology actually reports.
 
 ## How is this different from a library?
 
 Most component libraries publish a compiled package: you install it, import from it, and patch around its API when it doesn't match your design. Proper UI
-UI works the other way around — the CLI (or a manual copy) places the component's source directly in your project.
+UI works the other way around: the CLI (or a manual copy) places the component's source directly in your project.
 
 That means:
 
 - No wrapper API to learn beyond the props already documented on each component's page.
-- No version lock — a component you copied today doesn't change unless you pull an update yourself.
+- No version lock: a component you copied today doesn't change unless you pull an update yourself.
 - Full control over markup, styles, and behavior, because it's your file once it lands in your repo.
 
 ## How things are counted
 
-The README and this site quote a handful of numbers about the library — 69, 106, 797, and so on. They all come from one generated
+The README and this site quote a handful of numbers about the library: 69, 106, 797, and so on. They all come from one generated
 file, `packages/registry/dist/stats.json` (written by `pnpm registry:build`), so the same four terms mean the same thing everywhere:
 
-- **Entry** — one item in the component registry, of any kind: a component, an example, a hook, a util, or a style.
-- **Group** — one registry item of type `component`, i.e. one folder under `packages/ui/src/components/<layer>`. This is reported two
+- **Entry**: one item in the component registry, of any kind: a component, an example, a hook, a util, or a style.
+- **Group**: one registry item of type `component`, i.e. one folder under `packages/ui/src/components/<layer>`. This is reported two
   ways: **published** groups count only the base, application, and marketing layers (currently 69, the components you can install);
   **all** groups add foundations, shared assets, and the example-page layers (currently 106).
-- **Variant** — an `example` entry in the `marketing` layer: one section variant (a hero, a pricing table, a footer, and so on).
-- **Example** — an `example` entry in the `marketing-examples` or `app-examples` layer: a complete, assembled page rather than a
+- **Variant**: an `example` entry in the `marketing` layer: one section variant (a hero, a pricing table, a footer, and so on).
+- **Example**: an `example` entry in the `marketing-examples` or `app-examples` layer: a complete, assembled page rather than a
   single section.
 
-Whenever you see a count with no scope attached, assume it means the published groups (69) — the number that matters when you're
+Whenever you see a count with no scope attached, assume it means the published groups (69): the number that matters when you're
 picking a component to install. A number described as "counting foundations, shared assets, and example groups" is the broader,
 all-layers total (106).
 
@@ -90,7 +90,7 @@ npx @properui/cli@latest add badges
         },
         {
             question: "What tech stack does Proper UI use?",
-            answer: "Proper UI components are built with React 19, Tailwind CSS v4.3, TypeScript v5.9, and React Aria Components v1.20. The dependency surface is kept minimal on purpose — you own the code, so there is nothing to wrestle with beyond your own project's setup.",
+            answer: "Proper UI components are built with React 19, Tailwind CSS v4.3, TypeScript v5.9, and React Aria Components v1.20. The dependency surface is kept minimal on purpose: you own the code, so there is nothing to wrestle with beyond your own project's setup.",
         },
         {
             question: "What version of Tailwind CSS does Proper UI use?",
@@ -106,7 +106,7 @@ npx @properui/cli@latest add badges
         },
         {
             question: "Can I contribute to Proper UI?",
-            answer: "Yes — Proper UI is open-source. If you'd like to contribute a fix or a new component, open an issue or a pull request on the project's GitHub repository.",
+            answer: "Yes, Proper UI is open-source. If you'd like to contribute a fix or a new component, open an issue or a pull request on the project's GitHub repository.",
         },
         {
             question: "Where do I go next?",

@@ -1,4 +1,4 @@
-# Task 02 — Data table with filters and pagination
+# Task 02: Data table with filters and pagination
 
 ## Prompt
 
@@ -9,7 +9,7 @@ Paste this verbatim into the agent, in a fresh project with either Proper UI or 
 ## Acceptance criteria
 
 - [ ] The table renders at least 25 rows of realistic sample data with the four columns described.
-- [ ] The search input filters the visible rows (client-side filtering against the sample data is fine — no backend is required).
+- [ ] The search input filters the visible rows (client-side filtering against the sample data is fine; no backend is required).
 - [ ] The status filter narrows rows to a selected status (or "All").
 - [ ] Status is rendered as a badge whose color/style differs meaningfully per status value.
 - [ ] Each row has a checkbox; a header checkbox selects/deselects all currently visible rows, and shows an indeterminate state when some but not all rows are selected.
@@ -19,18 +19,18 @@ Paste this verbatim into the agent, in a fresh project with either Proper UI or 
 
 ## Ideal registry entries an ideal answer would reuse
 
-There's no single composed page example for this in the registry — the closest grounding is the `table` component itself plus the two application-layer companions the prompt explicitly asks for (filters, pagination). Their combined dependency list is the "ideal reuse" set for scoring:
+There's no single composed page example for this in the registry. The closest grounding is the `table` component itself plus the two application-layer companions the prompt explicitly asks for (filters, pagination). Their combined dependency list is the "ideal reuse" set for scoring:
 
 ```
 table, filter-bar, pagination,
 badges, buttons, checkbox, dropdown, input, tooltip, select, button-group
 ```
 
-- `table` (`application` layer) — the table primitive itself; its own registry dependencies are `badges, buttons, checkbox, dropdown, input, pagination, tooltip`.
-- `filter-bar` (`application` layer) — the search/filter row; depends on `badges, buttons`.
-- `pagination` (`application` layer) — the page controls; depends on `button-group, buttons, input, select`.
+- `table` (`application` layer): the table primitive itself; its own registry dependencies are `badges, buttons, checkbox, dropdown, input, pagination, tooltip`.
+- `filter-bar` (`application` layer): the search/filter row; depends on `badges, buttons`.
+- `pagination` (`application` layer): the page controls; depends on `button-group, buttons, input, select`.
 
-An answer that hand-rolls its own table markup instead of composing `table` is still gradeable — score exact reuse against the list above regardless (a 0/11 is a legitimate, informative result, not a scoring error).
+An answer that hand-rolls its own table markup instead of composing `table` is still gradeable: score exact reuse against the list above regardless (a 0/11 is a legitimate, informative result, not a scoring error).
 
 ## Viewports
 

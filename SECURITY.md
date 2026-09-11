@@ -12,7 +12,7 @@ long-term support branches yet.
 | `properui` CLI | 0.1.x   | :white_check_mark: |
 | `properui` CLI | < 0.1   | :x:                |
 
-If you copied components into your project with the CLI, you own that code — a fix released here does not reach you
+If you copied components into your project with the CLI, you own that code. A fix released here does not reach you
 automatically. Re-run `npx @properui/cli@latest add <component> --overwrite` to pull it in, and use
 `npx @properui/cli@latest diff` first to see what you would overwrite.
 
@@ -40,7 +40,7 @@ Include as much of the following as you have:
 | Fix or mitigation plan communicated | within 30 days for confirmed vulnerabilities |
 
 This is a small, volunteer-maintained project, so these are targets rather than guarantees. You will get an honest
-status update either way — if a fix is going to take longer, you will be told why.
+status update either way: if a fix is going to take longer, you will be told why.
 
 Please give us a reasonable window to ship a fix before disclosing publicly. We will credit you in the release notes
 when the fix goes out, unless you would rather stay anonymous.
@@ -59,7 +59,7 @@ when the fix goes out, unless you would rather stay anonymous.
 - Vulnerabilities in your own application code, or in components after you have copied and modified them.
 - Issues in upstream dependencies where the right fix is a report to that project (report those upstream; tell us if a
   version bump here would help).
-- Missing security headers, TLS configuration or similar on any site running the documentation — it is a static site
+- Missing security headers, TLS configuration or similar on any site running the documentation: it is a static site
   with no accounts and no user data.
 - Findings from automated scanners with no demonstrated exploit path.
 - Accessibility bugs, rendering bugs and correctness bugs: those are ordinary

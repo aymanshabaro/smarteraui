@@ -90,7 +90,7 @@ export const LoginSplitMockupQuote = () => (
 
                 <figcaption className="flex items-start gap-3">
                     <div className="flex-1">
-                        <p className="text-primary text-lg font-semibold">— {AVATARS[8].name}</p>
+                        <p className="text-primary text-lg font-semibold">{AVATARS[8].name}</p>
                         <cite className="text-tertiary text-md font-medium not-italic">Founder, Layers.io</cite>
                     </div>
 

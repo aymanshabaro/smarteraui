@@ -6,7 +6,7 @@ metaTitle: AI agents & the Proper UI Skill | Proper UI
 metaDescription: Install the Proper UI Skill for Claude Code, Codex, Cursor and Lovable with one command, and let an agent inspect a project's setup with `properui info --json`.
 ---
 
-Proper UI ships one authored Skill — [`skills/properui/SKILL.md`](https://github.com/properui/properui/blob/main/skills/properui/SKILL.md) in the repo — that works across Claude Code, Codex, Cursor and Lovable. It encodes the same workflow every [integration page](/integrations/claude) already documents by hand: inspect the project, search the registry before writing markup, prefer a full-page example for a whole screen, keep semantic tokens and accessibility intact, verify before reporting done. Two CLI commands make that Skill installable and the project it targets inspectable.
+Proper UI ships one authored Skill ([`skills/properui/SKILL.md`](https://github.com/properui/properui/blob/main/skills/properui/SKILL.md) in the repo) that works across Claude Code, Codex, Cursor and Lovable. It encodes the same workflow every [integration page](/integrations/claude) already documents by hand: inspect the project, search the registry before writing markup, prefer a full-page example for a whole screen, keep semantic tokens and accessibility intact, verify before reporting done. Two CLI commands make that Skill installable and the project it targets inspectable.
 
 ## `properui agent init`
 
@@ -19,7 +19,7 @@ npx @properui/cli@latest agent init --client cursor
 npx @properui/cli@latest agent init --client lovable
 ```
 
-Or install for everything at once — this is also the default when `--client` is omitted:
+Or install for everything at once; this is also the default when `--client` is omitted:
 
 ```bash
 npx @properui/cli@latest agent init --client all
@@ -29,21 +29,21 @@ npx @properui/cli@latest agent init --client all
 
 | Client          | Files written                                                                                     | Notes                                                                                                                                                                                                   |
 | --------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Claude Code** | `.claude/skills/properui/SKILL.md` + a short pointer appended to `CLAUDE.md` (created if missing) | Claude Code loads project skills from `.claude/skills/` automatically — no further setup.                                                                                                               |
+| **Claude Code** | `.claude/skills/properui/SKILL.md` + a short pointer appended to `CLAUDE.md` (created if missing) | Claude Code loads project skills from `.claude/skills/` automatically: no further setup.                                                                                                                |
 | **Codex**       | `.agents/skills/properui/SKILL.md` + a rules block appended to `AGENTS.md` (created if missing)   | Codex discovers skills under `.agents/skills/`, and reads `AGENTS.md` for every session regardless.                                                                                                     |
-| **Cursor**      | `.cursor/rules/properui.mdc` (`alwaysApply: true`)                                                | Cursor's rules system only reads `.mdc` files with frontmatter from `.cursor/rules` — it does not read `SKILL.md` — so the same guidance is written as a Cursor rule instead.                           |
+| **Cursor**      | `.cursor/rules/properui.mdc` (`alwaysApply: true`)                                                | Cursor's rules system only reads `.mdc` files with frontmatter from `.cursor/rules` (it does not read `SKILL.md`), so the same guidance is written as a Cursor rule instead.                            |
 | **Lovable**     | Nothing written locally                                                                           | Lovable runs in the browser with no access to this checkout. `agent init --client lovable` prints the Skill's public GitHub URL and what to paste into Lovable's knowledge / custom instructions panel. |
 
-`CLAUDE.md` and `AGENTS.md` are never overwritten wholesale — the block `agent init` adds lives between a pair of HTML comment markers, so re-running the command updates that section in place and leaves the rest of the file untouched. Running `agent init` again after an update to the Skill is always safe.
+`CLAUDE.md` and `AGENTS.md` are never overwritten wholesale: the block `agent init` adds lives between a pair of HTML comment markers, so re-running the command updates that section in place and leaves the rest of the file untouched. Running `agent init` again after an update to the Skill is always safe.
 
 ### Command options
 
-| Option            | Description                                                                                                                                                                                                           |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--client <name>` | `claude`, `codex`, `cursor`, `lovable`, or `all` (default).                                                                                                                                                           |
-| `--overwrite`     | Replace the installed `SKILL.md` / rule file even if it already exists and differs — useful after editing the Skill upstream. Does not affect the `CLAUDE.md`/`AGENTS.md` marker block, which is always kept in sync. |
-| `-y, --yes`       | Accept every default; never prompt.                                                                                                                                                                                   |
-| `--cwd <path>`    | Run against a directory other than the current one.                                                                                                                                                                   |
+| Option            | Description                                                                                                                                                                                                          |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--client <name>` | `claude`, `codex`, `cursor`, `lovable`, or `all` (default).                                                                                                                                                          |
+| `--overwrite`     | Replace the installed `SKILL.md` / rule file even if it already exists and differs: useful after editing the Skill upstream. Does not affect the `CLAUDE.md`/`AGENTS.md` marker block, which is always kept in sync. |
+| `-y, --yes`       | Accept every default; never prompt.                                                                                                                                                                                  |
+| `--cwd <path>`    | Run against a directory other than the current one.                                                                                                                                                                  |
 
 ## `properui info --json`
 
@@ -74,7 +74,7 @@ npx @properui/cli@latest info --json
 }
 ```
 
-`installed` is computed the same way `properui diff` finds local components: every non-example entry in the registry index is checked against the project's files, and anything present is reported. Without `--json`, the same data prints as a short human-readable report instead — useful for a quick check from your own terminal, not just from an agent.
+`installed` is computed the same way `properui diff` finds local components: every non-example entry in the registry index is checked against the project's files, and anything present is reported. Without `--json`, the same data prints as a short human-readable report instead: useful for a quick check from your own terminal, not just from an agent.
 
 ### Command options
 
@@ -84,7 +84,7 @@ npx @properui/cli@latest info --json
 | `--registry <source>` | Registry directory or base URL for this run (see [`docs/cli.md`](/docs/cli)). |
 | `--cwd <path>`        | Run against a directory other than the current one.                           |
 
-The Skill itself tells an agent to run this before deciding anything — whether to run `init` first, which alias to use in hand-written imports, and which components are already installed and shouldn't be re-added.
+The Skill itself tells an agent to run this before deciding anything: whether to run `init` first, which alias to use in hand-written imports, and which components are already installed and shouldn't be re-added.
 
 ## FAQs
 
@@ -100,7 +100,7 @@ The Skill itself tells an agent to run this before deciding anything — whether
         },
         {
             question: "Does agent init install @properui/ui or run properui init?",
-            answer: "No — it only installs the Skill/rule files that tell an agent how to use the CLI. Run properui init separately to configure the project itself.",
+            answer: "No, it only installs the Skill/rule files that tell an agent how to use the CLI. Run properui init separately to configure the project itself.",
         },
     ]}
 />

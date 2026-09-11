@@ -56,7 +56,7 @@ you plan to copy components in. Mirror it in `tsconfig.json` so the editor and `
 ```
 
 `@properui/ui/styles/globals.css` already imports Tailwind, the tokens, the typography scale and the plugins. The
-`@source` line is what makes Tailwind scan the package — Tailwind v4 skips `node_modules` by default, and without it the
+`@source` line is what makes Tailwind scan the package: Tailwind v4 skips `node_modules` by default, and without it the
 components render unstyled. From `src/index.css` the path to your project's `node_modules` is `../node_modules`.
 
 Import it once from your entry:
@@ -68,7 +68,7 @@ import "./index.css";
 
 ## 3. Providers
 
-**`ThemeProvider`** is framework-agnostic — `next-themes` needs only `localStorage` and a `document`, both of which a
+**`ThemeProvider`** is framework-agnostic: `next-themes` needs only `localStorage` and a `document`, both of which a
 Vite SPA has. Import it from `@properui/ui/providers` and use it as-is.
 
 **`RouterProvider`** from `@properui/ui/providers` is Next-only: it reads `useRouter` from `next/navigation`. In Vite,
@@ -106,7 +106,7 @@ createRoot(document.getElementById("root")!).render(
 );
 ```
 
-No router at all? Drop `RouterProvider` entirely. Every component still renders and behaves correctly — `href` links
+No router at all? Drop `RouterProvider` entirely. Every component still renders and behaves correctly: `href` links
 just do a full page load.
 
 ## 4. Use a component
@@ -144,7 +144,7 @@ More in [dark-mode.md](./dark-mode.md).
 
 ## Fonts
 
-`theme.css` sets `--font-body` and `--font-display` to `var(--font-inter, "Inter"), …`. Load Inter however you like
+`theme.css` sets `--font-body` and `--font-display` to `var(--font-inter, "Inter"), ...`. Load Inter however you like
 (a `<link>` to Google Fonts, `@fontsource/inter`, a self-hosted `@font-face`) and it is picked up. For a different
 typeface, override the two tokens in your stylesheet:
 
@@ -159,7 +159,7 @@ typeface, override the two tokens in your stylesheet:
 
 **Everything renders unstyled.** The `@source` line is missing, or its relative path does not reach `node_modules`.
 
-**HMR.** Components are ordinary React function components — Fast Refresh swaps them in place like your own code.
+**HMR.** Components are ordinary React function components: Fast Refresh swaps them in place like your own code.
 
 **SSR (vite-plugin-ssr, Remix, TanStack Start).** `ThemeProvider` writes a class before hydration; suppress the
 hydration warning on the element that carries it, the same way the Next.js setup does.

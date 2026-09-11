@@ -25,7 +25,7 @@ For the CLI, the commands you ran against a real project.
 ## Screenshots
 
 <!--
-Required for anything visual. Light and dark mode, please — and RTL if the change touches layout.
+Required for anything visual. Light and dark mode, please, and RTL if the change touches layout.
 Before / after in a table is ideal.
 -->
 
@@ -40,14 +40,14 @@ Before / after in a table is ideal.
 - [ ] `pnpm prettier` run (CI checks formatting)
 - [ ] `pnpm test` passes, including the axe a11y tests
 - [ ] `pnpm build` passes
-- [ ] A changeset is included (`pnpm changeset`) — required for changes to `packages/ui` or `packages/cli`
+- [ ] A changeset is included (`pnpm changeset`); required for changes to `packages/ui` or `packages/cli`
 
 For a component change, additionally:
 
 - [ ] Files are kebab-case; exports are PascalCase
 - [ ] `react-aria-components` imports are aliased with an `Aria` prefix
 - [ ] Styles live in a `styles = sortCx({})` object and are applied with `cx()`
-- [ ] Only semantic tokens are used — no raw palette classes, no `dark:` for anything a token handles
+- [ ] Only semantic tokens are used: no raw palette classes, no `dark:` for anything a token handles
 - [ ] Logical properties (`ms-*`, `ps-*`, `text-start`) used for anything direction-dependent
 - [ ] Demo, story, test and docs page are all present and updated
 - [ ] Generated files were regenerated with `pnpm gen:all`, not hand-edited

@@ -20,7 +20,7 @@ import {
 
 const MonthCalendarView = () => (
     <div className="border-secondary bg-primary flex h-[912px] w-full flex-col overflow-hidden rounded-xl border shadow-xs">
-        <CalendarAppHeader monthAbbr="SEPT" dayOfMonth={9} title="September 2026" weekLabel="Week 2" subtitle="1 Sept 2026 – 30 Sept 2026" view="Month view" />
+        <CalendarAppHeader monthAbbr="SEPT" dayOfMonth={9} title="September 2026" weekLabel="Week 2" subtitle="1 Sept 2026 - 30 Sept 2026" view="Month view" />
 
         <div className="grid grid-cols-7">
             {WEEKDAYS_SHORT.map((day, index) => (
@@ -77,7 +77,7 @@ export const CalendarMonthView = () => <MonthCalendarView />;
 /** Example 3: `calendar-week-view`. */
 export const CalendarWeekView = () => (
     <div className="border-secondary bg-primary flex h-[912px] w-full flex-col overflow-hidden rounded-xl border shadow-xs">
-        <CalendarAppHeader monthAbbr="SEPT" dayOfMonth={9} title="September 2026" weekLabel="Week 2" subtitle="7 Sept 2026 – 13 Sept 2026" view="Week view" />
+        <CalendarAppHeader monthAbbr="SEPT" dayOfMonth={9} title="September 2026" weekLabel="Week 2" subtitle="7 Sept 2026 - 13 Sept 2026" view="Week view" />
 
         <WeekStripNav selectedDay={9} />
 
@@ -126,7 +126,7 @@ export const CalendarDayView = () => (
             <EventDetailPanel
                 title="Product demo"
                 dateLabel="Friday, Jan 10, 2027"
-                timeLabel="1:30 PM – 3:30 PM"
+                timeLabel="1:30 PM - 3:30 PM"
                 reminderLabel="10 min before"
                 guestCount={6}
                 yesCount={5}

@@ -76,7 +76,7 @@ export const ContentAlternative01 = () => (
                         </figure>
 
                         <p>
-                            Moderation is the whole job. Not deleting things — deciding what the room is for, saying it out loud, and repeating it patiently for
+                            Moderation is the whole job. Not deleting things: deciding what the room is for, saying it out loud, and repeating it patiently for
                             eighteen months.
                         </p>
 

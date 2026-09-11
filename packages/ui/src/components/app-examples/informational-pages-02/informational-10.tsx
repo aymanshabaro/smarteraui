@@ -82,7 +82,7 @@ export const Informational10 = () => (
                         <EventDetailPanel
                             title="Product demo"
                             dateLabel="Wednesday, Sept 9, 2026"
-                            timeLabel="1:30 PM – 3:30 PM"
+                            timeLabel="1:30 PM - 3:30 PM"
                             reminderLabel="10 min before"
                             guestCount={6}
                             yesCount={5}

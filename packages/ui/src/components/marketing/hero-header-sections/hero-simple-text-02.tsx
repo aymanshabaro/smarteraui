@@ -63,7 +63,7 @@ export const HeroSimpleText02 = () => (
                         that create more happy in the world
                     </h1>
                     <p className="text-tertiary_on-brand mt-4 max-w-(--breakpoint-sm) text-lg text-balance md:mt-6 md:text-xl">
-                        — We&apos;re a full-service design and development agency who specialize in simple, useful and beautiful solutions.
+                        We&apos;re a full-service design and development agency who specialize in simple, useful and beautiful solutions.
                     </p>
                     <div className="mt-8 flex w-full flex-col-reverse items-stretch gap-3 sm:w-auto sm:flex-row sm:items-start md:mt-12">
                         <Button size="xl" color="secondary" iconLeading={PlayCircle} className="shadow-xs! ring-0" href="/showreel">

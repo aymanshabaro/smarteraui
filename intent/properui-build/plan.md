@@ -5,7 +5,7 @@ updated: 2026-09-09
 approved_by: aymanshabaro (chat instruction, 2026-09-09)
 ---
 
-# Plan — parallel waves
+# Plan: parallel waves
 
 Source of truth for readiness: `pnpm task:next` over `docs/spec/manifest/tasks.json`. Every agent gets
 `docs/spec/manifest/AGENT-BRIEF.md` + its spec file(s). Between waves the orchestrator runs

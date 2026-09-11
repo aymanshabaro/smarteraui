@@ -8,12 +8,12 @@ updated: 2026-09-09
 approved_by: aymanshabaro (chat instruction, 2026-09-09)
 ---
 
-# Intent — build the Proper UI kit and library
+# Intent: build the Proper UI kit and library
 
 **What:** implement the whole `properui` design system from the scaffold in
 `properui-scaffold_1.tar.gz`: the `@properui/ui` component library (base, application, marketing,
 page examples, foundations, shared assets), the docs site (`apps/docs`), the CLI + registry, and the
-docs/integration pages — 128 tasks in `docs/spec/manifest/tasks.json`.
+docs/integration pages: 128 tasks in `docs/spec/manifest/tasks.json`.
 
 **Why:** every Proper app should share one UI, modeled 1:1 on Untitled UI React, re-brandable from a
 single token file.

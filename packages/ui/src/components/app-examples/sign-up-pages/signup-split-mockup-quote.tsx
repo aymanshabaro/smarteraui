@@ -20,7 +20,7 @@ export const SignupSplitMockupQuote = () => (
 
                 <figcaption className="flex items-start gap-3">
                     <div className="flex-1">
-                        <p className="text-primary text-lg font-semibold">— {author.name}</p>
+                        <p className="text-primary text-lg font-semibold">{author.name}</p>
                         <cite className="text-tertiary text-md font-medium not-italic">Founder, {LOGOS[0].name}</cite>
                     </div>
 

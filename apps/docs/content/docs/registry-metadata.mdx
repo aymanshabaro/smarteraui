@@ -1,54 +1,54 @@
 ---
 title: Registry metadata for agents
 section: docs
-description: The semantic manifest fields on every registry entry — intent, avoid_when, composes_with, a11y_contract, responsive_contract, token_contract and requires_data — and how an agent should use them to choose a component, not just download one.
+description: The semantic manifest fields on every registry entry (intent, avoid_when, composes_with, a11y_contract, responsive_contract, token_contract and requires_data) and how an agent should use them to choose a component, not just download one.
 metaTitle: Registry metadata for agents | Proper UI
-metaDescription: Every /r/<name>.json entry carries an optional semantic manifest — intent, avoid_when, composes_with, a11y_contract, responsive_contract, token_contract, requires_data — so an agent can pick the right component before it writes any code.
+metaDescription: Every /r/<name>.json entry carries an optional semantic manifest (intent, avoid_when, composes_with, a11y_contract, responsive_contract, token_contract, requires_data), so an agent can pick the right component before it writes any code.
 ---
 
-`files`, `registryDependencies`, `dependencies` and `description` tell an agent how to **install** a registry entry. They don't tell it whether the entry is the right **choice**. Two components can both render a list of chips, both accept a `label` prop, and still be wrong for each other's job — `tags` is a removable, selectable input; `badges` is a read-only status label. Picking between them from `files` and `description` alone means guessing.
+`files`, `registryDependencies`, `dependencies` and `description` tell an agent how to **install** a registry entry. They don't tell it whether the entry is the right **choice**. Two components can both render a list of chips, both accept a `label` prop, and still be wrong for each other's job. `tags` is a removable, selectable input; `badges` is a read-only status label. Picking between them from `files` and `description` alone means guessing.
 
-Every entry in `/r/<name>.json` can also carry a semantic manifest: a small set of optional fields that describe what the component is _for_, when _not_ to reach for it, what it's normally paired with, what accessibility contract it already fulfils versus what the caller still owes it, how it behaves across breakpoints, which design tokens its appearance depends on, and what data it needs to be meaningful. None of it is required — every field is optional, so an entry with no manifest is still a fully valid registry entry — but where it's present, use it before writing markup.
+Every entry in `/r/<name>.json` can also carry a semantic manifest: a small set of optional fields that describe what the component is _for_, when _not_ to reach for it, what it's normally paired with, what accessibility contract it already fulfils versus what the caller still owes it, how it behaves across breakpoints, which design tokens its appearance depends on, and what data it needs to be meaningful. None of it is required (every field is optional, so an entry with no manifest is still a fully valid registry entry), but where it's present, use it before writing markup.
 
 ## The fields
 
-| Field                 | Type       | Hand-authored for                         | Meaning                                                                                         |
-| --------------------- | ---------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `intent`              | `string`   | base + application components             | The user goal this component serves, in one sentence.                                           |
-| `avoid_when`          | `string[]` | base + application components             | Plausible-but-wrong uses — situations where a different component is the right call.            |
-| `composes_with`       | `string[]` | base + application; derived elsewhere     | Registry names this entry is typically used alongside.                                          |
-| `a11y_contract`       | `string[]` | base + application components             | What React Aria / the component already handles, and what the caller still has to supply.       |
-| `responsive_contract` | `string[]` | base + application components (when true) | How the component's own layout changes across breakpoints — only present when it actually does. |
-| `token_contract`      | `string[]` | every entry, always derived               | The semantic design tokens (`bg-*`/`text-*`/`border-*`) the component's appearance depends on.  |
-| `requires_data`       | `string[]` | base + application components             | The props or data the caller must supply for the component to be meaningful, not just render.   |
+| Field                 | Type       | Hand-authored for                         | Meaning                                                                                        |
+| --------------------- | ---------- | ----------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `intent`              | `string`   | base + application components             | The user goal this component serves, in one sentence.                                          |
+| `avoid_when`          | `string[]` | base + application components             | Plausible-but-wrong uses: situations where a different component is the right call.            |
+| `composes_with`       | `string[]` | base + application; derived elsewhere     | Registry names this entry is typically used alongside.                                         |
+| `a11y_contract`       | `string[]` | base + application components             | What React Aria / the component already handles, and what the caller still has to supply.      |
+| `responsive_contract` | `string[]` | base + application components (when true) | How the component's own layout changes across breakpoints: only present when it actually does. |
+| `token_contract`      | `string[]` | every entry, always derived               | The semantic design tokens (`bg-*`/`text-*`/`border-*`) the component's appearance depends on. |
+| `requires_data`       | `string[]` | base + application components             | The props or data the caller must supply for the component to be meaningful, not just render.  |
 
 ### `intent`
 
-One sentence, framed as a user goal rather than a UI description — "collect one billing address," not "a form with four inputs." Use it to shortlist candidates before opening any source file.
+One sentence, framed as a user goal rather than a UI description: "collect one billing address," not "a form with four inputs." Use it to shortlist candidates before opening any source file.
 
 ### `avoid_when`
 
-Concrete, plausible misuses — not generic caveats. `select`'s `avoid_when` includes "there are only 2-4 options that could stay visible (use radio-buttons or button-group)"; `modals`'s includes "the message is purely informational and non-blocking (use alerts or notifications)." If a candidate's `avoid_when` matches the task in front of you, keep looking before you keep reading.
+Concrete, plausible misuses, not generic caveats. `select`'s `avoid_when` includes "there are only 2-4 options that could stay visible (use radio-buttons or button-group)"; `modals`'s includes "the message is purely informational and non-blocking (use alerts or notifications)." If a candidate's `avoid_when` matches the task in front of you, keep looking before you keep reading.
 
 ### `composes_with`
 
-Registry names this entry is normally used _with_ — not the same thing as `registryDependencies`. `table` lists `pagination`, `badges`, `checkbox` and `empty-state` in `composes_with` without hard-depending on any of them; you can use `table` alone, but a real table screen usually reaches for those too. For entries with no hand-authored manifest, `composes_with` is filled in automatically from `registryDependencies`, so the field is always present when the entry actually depends on something else in the registry.
+Registry names this entry is normally used _with_, not the same thing as `registryDependencies`. `table` lists `pagination`, `badges`, `checkbox` and `empty-state` in `composes_with` without hard-depending on any of them; you can use `table` alone, but a real table screen usually reaches for those too. For entries with no hand-authored manifest, `composes_with` is filled in automatically from `registryDependencies`, so the field is always present when the entry actually depends on something else in the registry.
 
 ### `a11y_contract`
 
-The most load-bearing field for correctness. It separates what the component's React Aria foundation already does — keyboard navigation, roving tabindex, `aria-selected`/`aria-pressed`/`aria-current` wiring, focus trapping, live-region announcements — from what still lands on the caller: an icon-only button needs its own `aria-label`, a `tree-view` needs an explicit `aria-label` describing its contents (there is no default), a `slider` only renders a fallback label when the caller hasn't supplied `aria-label`/`aria-labelledby`. Read this before adding your own `aria-*` props — duplicating what the component already provides is as wrong as omitting what it doesn't.
+The most load-bearing field for correctness. It separates what the component's React Aria foundation already does (keyboard navigation, roving tabindex, `aria-selected`/`aria-pressed`/`aria-current` wiring, focus trapping, live-region announcements) from what still lands on the caller: an icon-only button needs its own `aria-label`, a `tree-view` needs an explicit `aria-label` describing its contents (there is no default), a `slider` only renders a fallback label when the caller hasn't supplied `aria-label`/`aria-labelledby`. Read this before adding your own `aria-*` props. Duplicating what the component already provides is as wrong as omitting what it doesn't.
 
 ### `responsive_contract`
 
-Only present when the component's _own_ layout genuinely changes shape across breakpoints — a `page-headers` title and actions stack below `md` and become a row above it; a `modals` panel is edge-to-edge below `sm` and centered with padding above it. Components with no responsive behavior of their own (most base-layer atoms — `avatar`, `checkbox`, `tooltip`) simply omit the field rather than assert something that isn't true.
+Only present when the component's _own_ layout genuinely changes shape across breakpoints: a `page-headers` title and actions stack below `md` and become a row above it; a `modals` panel is edge-to-edge below `sm` and centered with padding above it. Components with no responsive behavior of their own (most base-layer atoms, such as `avatar`, `checkbox`, `tooltip`) simply omit the field rather than assert something that isn't true.
 
 ### `token_contract`
 
-Never hand-authored — always computed from the component's own source at build time, for all 797 entries. The build script reads `packages/ui/src/styles/theme.css` for the exact set of semantic token names Tailwind resolves `bg-*`/`text-*`/`border-*` classes against (its `--background-color-*`, `--text-color-*`, `--border-color-*` namespaces, plus the semantic subset of the generic `--color-*` namespace — raw palette shades like `brand-700` or `neutral-950` are excluded, since those bypass the semantic layer entirely), then greps the entry's own files for classes that match. Use it to know, before restyling a theme, which components will visibly change — and which raw-palette classes in a diff are a signal the change bypassed the token system.
+Never hand-authored, always computed from the component's own source at build time, for all 797 entries. The build script reads `packages/ui/src/styles/theme.css` for the exact set of semantic token names Tailwind resolves `bg-*`/`text-*`/`border-*` classes against (its `--background-color-*`, `--text-color-*`, `--border-color-*` namespaces, plus the semantic subset of the generic `--color-*` namespace; raw palette shades like `brand-700` or `neutral-950` are excluded, since those bypass the semantic layer entirely), then greps the entry's own files for classes that match. Use it to know, before restyling a theme, which components will visibly change, and which raw-palette classes in a diff are a signal the change bypassed the token system.
 
 ### `requires_data`
 
-The minimum a caller must supply for the component to convey anything — not the full prop API. `avatar` requires `src` or `initials` ("the placeholder icon alone carries no identity"); `progress-indicators` requires a real numeric `value`. If a candidate's `requires_data` can't be satisfied by the data you actually have, that's a sign to keep looking rather than to render it half-populated.
+The minimum a caller must supply for the component to convey anything, not the full prop API. `avatar` requires `src` or `initials` ("the placeholder icon alone carries no identity"); `progress-indicators` requires a real numeric `value`. If a candidate's `requires_data` can't be satisfied by the data you actually have, that's a sign to keep looking rather than to render it half-populated.
 
 ## Example: a hand-authored base component
 
@@ -59,17 +59,17 @@ The minimum a caller must supply for the component to convey anything — not th
     "name": "avatar",
     "layer": "base",
     "type": "component",
-    "intent": "Show who or what an item belongs to — a user, team, or company — as a compact image or initials.",
+    "intent": "Show who or what an item belongs to (a user, team, or company) as a compact image or initials.",
     "avoid_when": [
         "identifying more than one person at once (use avatar-label-group or a stacked list)",
         "the only way to identify a user (pair it with a visible name)"
     ],
     "composes_with": ["avatar-label-group", "dropdown", "table", "activity-feed", "messaging"],
     "a11y_contract": [
-        "caller must supply `alt` describing the person/entity — the component does not infer one",
+        "caller must supply `alt` describing the person/entity: the component does not infer one",
         "falls back to initials or an icon when `src` is missing or fails to load, but does not auto-generate accessible text for that fallback"
     ],
-    "requires_data": ["src (image URL) or initials, so the avatar renders a meaningful identity — the placeholder icon alone carries none"],
+    "requires_data": ["src (image URL) or initials, so the avatar renders a meaningful identity: the placeholder icon alone carries none"],
     "token_contract": ["bg-primary", "bg-primary_hover", "border-primary", "text-fg-quaternary", "text-primary", "text-tertiary"]
 }
 ```
@@ -90,7 +90,7 @@ The minimum a caller must supply for the component to convey anything — not th
     ],
     "composes_with": ["buttons", "form", "input"],
     "a11y_contract": [
-        "built on React Aria Modal/Dialog/ModalOverlay — focus trapping, focus restoration on close, and Escape-to-close come for free; the Dialog content wrapper always needs an explicit aria-label or aria-labelledby from the caller — it has no default"
+        "built on React Aria Modal/Dialog/ModalOverlay: focus trapping, focus restoration on close, and Escape-to-close come for free; the Dialog content wrapper always needs an explicit aria-label or aria-labelledby from the caller; it has no default"
     ],
     "responsive_contract": ["edge-to-edge on small screens; becomes a centered, rounded panel with side padding from the sm breakpoint up"],
     "requires_data": ["dialog content; a trigger element to open it"]
@@ -99,7 +99,7 @@ The minimum a caller must supply for the component to convey anything — not th
 
 ## Example: a derived-only marketing entry
 
-Marketing and page-example layers get no hand-authored prose — just the two fields the build can compute honestly from source: `token_contract`, and a `composes_with` derived straight from `registryDependencies`. `GET /r/hero-simple-text-01.json`:
+Marketing and page-example layers get no hand-authored prose. Just the two fields the build can compute honestly from source: `token_contract`, and a `composes_with` derived straight from `registryDependencies`. `GET /r/hero-simple-text-01.json`:
 
 ```json
 {
@@ -113,7 +113,7 @@ Marketing and page-example layers get no hand-authored prose — just the two fi
 
 ## Coverage
 
-The manifest is hand-authored for the 19 base and 32 application component groups — the entries most often chosen from scratch. `token_contract` is derived for every entry that references at least one semantic token (777 of 797 at last build); a handful of entries (styles, hooks, and a few purely structural components) reference none and omit the field. `composes_with` is present wherever an entry either has a manifest that names it or has at least one `registryDependencies` entry to derive it from.
+The manifest is hand-authored for the 19 base and 32 application component groups, the entries most often chosen from scratch. `token_contract` is derived for every entry that references at least one semantic token (777 of 797 at last build); a handful of entries (styles, hooks, and a few purely structural components) reference none and omit the field. `composes_with` is present wherever an entry either has a manifest that names it or has at least one `registryDependencies` entry to derive it from.
 
 ## Where this comes from
 
@@ -130,4 +130,4 @@ pnpm registry:build
 cat packages/registry/dist/avatar.json
 ```
 
-The manifest source lives in [`packages/registry/manifest/<layer>/<name>.json`](https://github.com/properui/properui/tree/main/packages/registry/manifest) — one hand-authored file per base/application group — and `packages/registry/schema.json` documents every field's shape. See also the [registry index](/r/index.json) and the [CLI guide](/docs/cli) for how `add`, `list` and `search` consume the rest of an entry.
+The manifest source lives in [`packages/registry/manifest/<layer>/<name>.json`](https://github.com/properui/properui/tree/main/packages/registry/manifest) (one hand-authored file per base/application group), and `packages/registry/schema.json` documents every field's shape. See also the [registry index](/r/index.json) and the [CLI guide](/docs/cli) for how `add`, `list` and `search` consume the rest of an entry.

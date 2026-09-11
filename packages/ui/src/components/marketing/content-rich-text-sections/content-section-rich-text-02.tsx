@@ -18,7 +18,7 @@ export const ContentSectionRichText02 = () => (
                     a form or a support conversation.
                 </p>
                 <p>
-                    We also record a small amount of technical information automatically — the pages you visit, the approximate region you visit them from, and
+                    We also record a small amount of technical information automatically: the pages you visit, the approximate region you visit them from, and
                     the browser you use. This is what tells us that a feature is broken before anyone has to report it.
                 </p>
                 <p>We do not buy personal data from brokers, and we do not enrich your profile from third-party sources. What you tell us is what we have.</p>

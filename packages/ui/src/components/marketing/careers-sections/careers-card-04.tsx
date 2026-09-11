@@ -120,7 +120,7 @@ export const CareersCard04 = () => {
                     <div className="flex w-full max-w-3xl flex-col">
                         <h2 className="text-display-sm text-primary md:text-display-md font-semibold">Start doing work that matters</h2>
                         <p className="text-tertiary mt-4 text-lg md:mt-5 md:text-xl">
-                            Our philosophy is simple—hire a team of diverse, passionate people and foster a culture that empowers you to do your best work.
+                            Our philosophy is simple: hire a team of diverse, passionate people and foster a culture that empowers you to do your best work.
                         </p>
                     </div>
 

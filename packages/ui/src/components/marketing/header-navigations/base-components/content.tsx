@@ -162,7 +162,7 @@ export interface PostType {
 export const blogPosts: PostType[] = [
     {
         title: "Auto Layout explained",
-        summary: "Jump right in—get an overview of the basics and fundamentals of auto-layout so you can build faster.",
+        summary: "Jump right in, get an overview of the basics and fundamentals of auto-layout so you can build faster.",
         href: "/blog/auto-layout-explained",
         imageSrc: IMAGES.landscape[0].src,
     },
@@ -186,7 +186,7 @@ export const blogPosts: PostType[] = [
     },
     {
         title: "How to embrace inclusivity in UX research",
-        summary: "In user experience research, your main job is to consider the user—every user, regardless of ability.",
+        summary: "In user experience research, your main job is to consider the user: every user, regardless of ability.",
         href: "/blog/inclusivity-in-ux-research",
         imageSrc: IMAGES.landscape[4].src,
     },
@@ -223,7 +223,7 @@ export const blogPostsCompact: PostType[] = blogPosts.slice(0, 6);
 export const tutorials: PostType[] = [
     {
         title: "How to get started",
-        summary: "Jump right in—get an overview of the basics and get started on building.",
+        summary: "Jump right in, get an overview of the basics and get started on building.",
         href: "/tutorials/getting-started",
         imageSrc: IMAGES.landscape[1].src,
     },

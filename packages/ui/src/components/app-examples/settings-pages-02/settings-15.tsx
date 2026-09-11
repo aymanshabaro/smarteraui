@@ -41,7 +41,7 @@ const months = ["Dec", "Nov", "Oct", "Sep", "Aug", "Jul", "Jun"];
 
 const invoices = months.map((month) => ({
     id: month,
-    invoice: `Basic plan – ${month} 2026`,
+    invoice: `Basic plan - ${month} 2026`,
     amount: "USD $10.00",
     date: `${month} 1, 2026`,
 }));

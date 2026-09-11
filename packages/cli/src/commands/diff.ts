@@ -86,7 +86,7 @@ export async function runDiff(component: string | undefined, options: DiffOption
 
     log.plain();
     if (modified === 0) {
-        log.success(missing > 0 ? `No local modifications (${missing} file(s) not installed).` : "No local modifications — everything matches the registry.");
+        log.success(missing > 0 ? `No local modifications (${missing} file(s) not installed).` : "No local modifications: everything matches the registry.");
         return;
     }
     log.warn(`${modified} file${modified === 1 ? "" : "s"} differ from the registry.`);

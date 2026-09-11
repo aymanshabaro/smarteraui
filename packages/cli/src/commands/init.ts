@@ -352,7 +352,7 @@ export async function runInit(options: InitOptions): Promise<void> {
     } catch (error) {
         themeSpinner.stop();
         log.warn(`Registry unavailable (${(error as Error).message}).`);
-        log.warn("Wrote placeholder theme tokens — run `properui add styles --overwrite` once the registry is reachable.");
+        log.warn("Wrote placeholder theme tokens. Run `properui add styles --overwrite` once the registry is reachable.");
     }
 
     writes.push(writeSourceFile(path.resolve(cwd, config.tailwind.theme), themeCss, writeOptions));
@@ -389,7 +389,7 @@ export async function runInit(options: InitOptions): Promise<void> {
     } else {
         const importPath = `${config.aliases.components.replace(/\/components$/, "")}/providers/theme-provider`;
         log.plain();
-        log.info(options.manual ? "Manual mode — wrap your app yourself:" : "Could not wire the provider automatically. Wrap your app root yourself:");
+        log.info(options.manual ? "Manual mode. Wrap your app yourself:" : "Could not wire the provider automatically. Wrap your app root yourself:");
         log.plain(kleur.dim(`        import { ThemeProvider } from "${importPath}";`));
         log.plain(kleur.dim("        <ThemeProvider>{children}</ThemeProvider>"));
     }
@@ -401,12 +401,12 @@ export async function runInit(options: InitOptions): Promise<void> {
     }
 
     log.plain();
-    if (!themeFromRegistry) log.warn("Theme tokens are a placeholder — see the note above.");
+    if (!themeFromRegistry) log.warn("Theme tokens are a placeholder. See the note above.");
 
     const viteAliasFailed =
         !options.manual && ((viteTsconfig?.status ?? "written") === "unsupported" || (viteConfigAlias?.status ?? "written") === "unsupported");
     if (viteAliasFailed) {
-        log.error("Could not wire the Vite `@` alias automatically — add the snippets printed above by hand, then re-run `properui init`.");
+        log.error("Could not wire the Vite `@` alias automatically. Add the snippets printed above by hand, then re-run `properui init`.");
         process.exitCode = 1;
         return;
     }
@@ -427,13 +427,13 @@ function logTsconfigAliasResult(cwd: string, result: TsconfigAliasResult, manual
         return;
     }
     if (result.status === "skipped") {
-        log.warn("No tsconfig.json, tsconfig.app.json or jsconfig.json found — cannot wire the path alias. Add it yourself:");
+        log.warn("No tsconfig.json, tsconfig.app.json or jsconfig.json found. Cannot wire the path alias. Add it yourself:");
         log.plain(kleur.dim(`        ${result.snippet}`));
         return;
     }
     const label = result.file ? path.relative(cwd, result.file) : "tsconfig.json";
     if (manual || result.status === "unsupported") {
-        log.info(manual ? `Manual mode — add this to ${label}'s "compilerOptions":` : `Could not find "compilerOptions" in ${label}. Add this yourself:`);
+        log.info(manual ? `Manual mode. Add this to ${label}'s "compilerOptions":` : `Could not find "compilerOptions" in ${label}. Add this yourself:`);
         log.plain(kleur.dim(`        ${result.snippet}`));
         return;
     }
@@ -454,7 +454,7 @@ function logViteConfigAliasResult(cwd: string, result: ViteConfigAliasResult, ma
     if (manual || result.status === "unsupported") {
         log.info(
             manual
-                ? `Manual mode — add this inside ${label}'s defineConfig({ ... }):`
+                ? `Manual mode. Add this inside ${label}'s defineConfig({ ... }):`
                 : `Could not safely edit ${label} (unrecognised shape). Add this yourself:`,
         );
         for (const line of result.snippet.split("\n")) log.plain(kleur.dim(`        ${line}`));

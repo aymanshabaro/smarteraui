@@ -1,16 +1,16 @@
 ---
 title: Quality
 section: docs
-description: "What is actually verified about Proper UI, how it's verified, and what is not — release status, CI checks, clean-room installs, accessibility scope, and known gaps, dated and sourced."
+description: "What is actually verified about Proper UI, how it's verified, and what is not: release status, CI checks, clean-room installs, accessibility scope, and known gaps, dated and sourced."
 metaTitle: Quality | Proper UI
 metaDescription: "Proper UI's quality claims, sourced: exact CI jobs, clean-room install results, 0 detected axe violations in 118 suites, and what's not verified yet."
 ---
 
 ## Why this page exists
 
-Adjectives like "battle-tested" or "production-ready" don't tell you anything you can check. This page replaces them with what is actually run, where it runs, and what it does not cover — every number below is quoted from a file in this repository, not typed by hand. When a number changes, this page is regenerated from the same sources.
+Adjectives like "battle-tested" or "production-ready" don't tell you anything you can check. This page replaces them with what is actually run, where it runs, and what it does not cover. Every number below is quoted from a file in this repository, not typed by hand. When a number changes, this page is regenerated from the same sources.
 
-**Last verified: 2026-09-10.** This page is updated per release, not on a fixed schedule — if a section describes a script or job that no longer matches `main`, [open an issue](https://github.com/properui/properui/issues).
+**Last verified: 2026-09-10.** This page is updated per release, not on a fixed schedule; if a section describes a script or job that no longer matches `main`, [open an issue](https://github.com/properui/properui/issues).
 
 ## Release status
 
@@ -25,18 +25,18 @@ Adjectives like "battle-tested" or "production-ready" don't tell you anything yo
 | Page examples (marketing + app)                           | **233** (105 marketing, 128 app) |
 | Test suites with an axe assertion                         | **118**                          |
 
-Counts are quoted from `packages/registry/dist/stats.json`, which the registry build (`pnpm registry:build`) generates — they are not hand-maintained.
+Counts are quoted from `packages/registry/dist/stats.json`, which the registry build (`pnpm registry:build`) generates. They are not hand-maintained.
 
 ### Supported ranges
 
 Read from `packages/ui/package.json` and `packages/cli/package.json`:
 
 - **React:** `^19` (`react`, `react-dom` peer dependencies of `@properui/ui`)
-- **Next.js:** `^15.1.0` (optional peer dependency — `next` is marked optional, since the library also supports Vite)
+- **Next.js:** `^15.1.0` (optional peer dependency: `next` is marked optional, since the library also supports Vite)
 - **Tailwind CSS:** `^4.3.0` (peer dependency)
 - **Node.js:** `>=20` (`engines.node` in `packages/cli/package.json`; `@properui/ui` declares no `engines` field of its own)
 
-`@properui/ui` ships source TSX, not a bundled build — see [Known limitations](#known-limitations).
+`@properui/ui` ships source TSX, not a bundled build. See [Known limitations](#known-limitations).
 
 ## What CI verifies on every PR
 
@@ -48,7 +48,7 @@ Two jobs run on every pull request and on every push to `main`, defined in `.git
 2. `pnpm type-check`
 3. `pnpm lint`
 4. `pnpm prettier:check`
-5. `pnpm test` — unit and component tests across the workspace, including the 118 axe suites described on the [Accessibility](/docs/accessibility) page
+5. `pnpm test`: unit and component tests across the workspace, including the 118 axe suites described on the [Accessibility](/docs/accessibility) page
 6. `pnpm check:assets`
 7. `pnpm build`
 8. `pnpm build-storybook`
@@ -58,14 +58,14 @@ Two jobs run on every pull request and on every push to `main`, defined in `.git
 1. `pnpm install --frozen-lockfile`
 2. `pnpm test:clean-room`
 
-Neither job's failure is soft — both must pass before a PR can merge. `release.yml` (publishing to npm via Changesets) and `deploy-docs.yml` (deploying `apps/docs` to Cloudflare Workers) run separately, only on pushes to `main`, and don't gate a PR.
+Neither job's failure is soft; both must pass before a PR can merge. `release.yml` (publishing to npm via Changesets) and `deploy-docs.yml` (deploying `apps/docs` to Cloudflare Workers) run separately, only on pushes to `main`, and don't gate a PR.
 
 ## Clean-room installs
 
 `scripts/clean-room.ts` (run as `pnpm test:clean-room`, the `clean-room` CI job above) proves the documented install path works end to end, not just in a fixture:
 
-- Scaffolds a blank app with the framework's **own official CLI** — `npm create vite@latest -- --template react-ts` and `npx create-next-app@latest`, not a checked-in template.
-- Runs `properui init` against the freshly scaffolded app, then `properui add badges alerts social-proof-sections use-clipboard` and `properui add example settings-17` against the **built** registry (`packages/registry/dist`) — no shortcuts, no mocked network calls.
+- Scaffolds a blank app with the framework's **own official CLI**: `npm create vite@latest -- --template react-ts` and `npx create-next-app@latest`, not a checked-in template.
+- Runs `properui init` against the freshly scaffolded app, then `properui add badges alerts social-proof-sections use-clipboard` and `properui add example settings-17` against the **built** registry (`packages/registry/dist`). No shortcuts, no mocked network calls.
 - Lets the real `npm install` for each component's dependencies happen, including the `@properui/icons` npm-alias install (`npm:@untitledui/icons@^0.0.22`) that a plain "does the file exist" check wouldn't catch.
 - Asserts no dangling `@/`-aliased imports were left behind, then runs the scaffolded app's own `npm run build` (and `tsc --noEmit` where a `tsconfig.json` exists).
 - Repeats the entire sequence for **both** Vite and Next.js.
@@ -74,19 +74,19 @@ This runs on every PR via the `clean-room` job in `.github/workflows/ci.yml`. It
 
 ## Accessibility
 
-Every one of the **118** component test suites in `packages/ui/src/components` renders each documented variant through [axe-core](https://github.com/dequelabs/axe-core) and asserts zero detected violations, on every PR. That is a real, narrow claim — not "fully accessible." It doesn't cover meaningful alt text, focus-order sensibility, contrast (jsdom has no layout engine), screen-reader announcement quality, or keyboard operability beyond static ARIA, and no manual assistive-technology audit has been performed yet. See [Accessibility](/docs/accessibility) for the full scope, what React Aria provides underneath the axe suites, and the manual verification matrix — that page is the source of truth for this claim; this section doesn't repeat it.
+Every one of the **118** component test suites in `packages/ui/src/components` renders each documented variant through [axe-core](https://github.com/dequelabs/axe-core) and asserts zero detected violations, on every PR. That is a real, narrow claim: not "fully accessible." It doesn't cover meaningful alt text, focus-order sensibility, contrast (jsdom has no layout engine), screen-reader announcement quality, or keyboard operability beyond static ARIA, and no manual assistive-technology audit has been performed yet. See [Accessibility](/docs/accessibility) for the full scope, what React Aria provides underneath the axe suites, and the manual verification matrix: that page is the source of truth for this claim; this section doesn't repeat it.
 
 ## Visual quality
 
 Screenshot tooling exists (`scripts/shot.ts`, run as `pnpm docs:shot <slug>` or `pnpm docs:shot --all`) and pixel-diffing against a reference set exists (`scripts/diff-shots.ts`, run as `pnpm docs:diff`) for one-off parity checks against a local run of the docs site.
 
-Alongside those, a curated visual regression baseline is committed and checked on every PR: `pnpm visual:baseline` (`scripts/visual-baseline.ts`) captures ~25 routes spanning docs, integrations, base components, application examples and marketing pages — not the full ~1,720-page surface — into `tests/visual/baseline/`, and `pnpm visual:check` (`scripts/visual-check.ts`) re-captures and diffs against it, exiting non-zero past the threshold. The `visual` job in `.github/workflows/ci.yml` runs the check against a built, served docs site on every PR. See [`tests/visual/routes.ts`](https://github.com/properui/properui/blob/main/tests/visual/routes.ts) for the exact route list.
+Alongside those, a curated visual regression baseline is committed and checked on every PR: `pnpm visual:baseline` (`scripts/visual-baseline.ts`) captures ~25 routes spanning docs, integrations, base components, application examples and marketing pages (not the full ~1,720-page surface) into `tests/visual/baseline/`, and `pnpm visual:check` (`scripts/visual-check.ts`) re-captures and diffs against it, exiting non-zero past the threshold. The `visual` job in `.github/workflows/ci.yml` runs the check against a built, served docs site on every PR. See [`tests/visual/routes.ts`](https://github.com/properui/properui/blob/main/tests/visual/routes.ts) for the exact route list.
 
-| Dimension | Values                                                                                                                                                                                        |
-| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Viewport  | 1280×800 desktop and 390×844 mobile (`tests/visual/routes.ts`) — separate from `scripts/shot.ts`'s own 1600×1000                                                                              |
-| Theme     | Light, dark (toggled via the `dark-mode` class)                                                                                                                                               |
-| Direction | LTR everywhere, plus `dir="rtl"` on a handful of routes (a form-heavy page, a dashboard, a marketing hero) — see [Known limitations](#known-limitations) for the scope of RTL coverage itself |
+| Dimension | Values                                                                                                                                                                                       |
+| --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Viewport  | 1280×800 desktop and 390×844 mobile (`tests/visual/routes.ts`), separate from `scripts/shot.ts`'s own 1600×1000                                                                              |
+| Theme     | Light, dark (toggled via the `dark-mode` class)                                                                                                                                              |
+| Direction | LTR everywhere, plus `dir="rtl"` on a handful of routes (a form-heavy page, a dashboard, a marketing hero); see [Known limitations](#known-limitations) for the scope of RTL coverage itself |
 
 `scripts/visual-check.ts` treats anything above roughly 8% differing pixels, or a size mismatch, as a layout regression (`CHECK` in its output, with a diff image written to the gitignored `tests/visual/.diff/`); smaller deltas are expected content differences and marked `ok`. `scripts/diff-shots.ts` uses the same ~8% cutoff for its own ad hoc, full-site comparisons, which still have no committed baseline under `docs/spec/reference/screenshots`.
 
@@ -96,15 +96,15 @@ Proper UI documents a workflow for the following coding tools. "Documented" mean
 
 | Tool        | Documented?                                                      | Automated end-to-end test? |
 | ----------- | ---------------------------------------------------------------- | -------------------------- |
-| Claude Code | Yes (`integrations/claude.mdx`)                                  | No — not yet               |
-| Codex       | Yes (`integrations/codex.mdx`)                                   | No — not yet               |
-| Cursor      | Yes (`integrations/cursor.mdx`)                                  | No — not yet               |
-| Gemini CLI  | Yes (`integrations/gemini.mdx`)                                  | No — not yet               |
-| v0          | Yes (`integrations/v0.mdx`)                                      | No — not yet               |
-| Bolt.new    | Yes (`integrations/bolt.mdx`)                                    | No — not yet               |
-| Lovable     | Yes (`integrations/lovable.mdx`)                                 | No — not yet               |
-| Replit      | Yes (`integrations/replit.mdx`)                                  | No — not yet               |
-| MCP server  | Planned, not built (`integrations/mcp.mdx` describes the intent) | No — nothing to test yet   |
+| Claude Code | Yes (`integrations/claude.mdx`)                                  | No, not yet                |
+| Codex       | Yes (`integrations/codex.mdx`)                                   | No, not yet                |
+| Cursor      | Yes (`integrations/cursor.mdx`)                                  | No, not yet                |
+| Gemini CLI  | Yes (`integrations/gemini.mdx`)                                  | No, not yet                |
+| v0          | Yes (`integrations/v0.mdx`)                                      | No, not yet                |
+| Bolt.new    | Yes (`integrations/bolt.mdx`)                                    | No, not yet                |
+| Lovable     | Yes (`integrations/lovable.mdx`)                                 | No, not yet                |
+| Replit      | Yes (`integrations/replit.mdx`)                                  | No, not yet                |
+| MCP server  | Planned, not built (`integrations/mcp.mdx` describes the intent) | No, nothing to test yet    |
 
 None of these tool-specific workflows has an automated end-to-end test today. The `clean-room` job (above) verifies the underlying `init`/`add` CLI path against real Vite and Next.js scaffolds, which every one of these integrations builds on, but it does not drive Claude Code, Codex, Cursor, or any of the other tools themselves.
 
@@ -113,16 +113,16 @@ None of these tool-specific workflows has an automated end-to-end test today. Th
 Sourced from `ROADMAP.md`, which exists specifically so nothing in the docs promises what the code doesn't do yet:
 
 - **RTL coverage is incomplete.** Logical properties (`ms-*`, `pe-*`, `text-start`) are the house rule, but the port is partial: roughly **281** logical spacing utilities against **365** physical ones across `packages/ui/src/components`. Base components are further along; marketing sections and page examples carry most of the remaining physical values. Storybook also has no direction toggle yet.
-- **No committed visual regression baseline.** Covered above — the tooling exists, the baseline and CI comparison do not.
+- **No committed visual regression baseline.** Covered above: the tooling exists, the baseline and CI comparison do not.
 - **No variant gallery thumbnails.** Every variant gallery card renders a neutral placeholder; `pnpm shots:thumbs` generates real thumbnails but none are committed yet.
 - **No bundled build.** `@properui/ui` ships source TSX; consumers whose bundler won't transpile a dependency need `transpilePackages` (Next.js) or their own pipeline (Vite). `packages/ui` has no `build` script.
 - **No MCP server.** The CLI is the supported path today; an MCP server is planned but not built (`integrations/mcp.mdx`).
-- **`cssVars` is reserved but unused.** Every registry entry carries an empty `cssVars` array — components rely entirely on the shared token file, so there's nothing to merge yet.
-- **No manual accessibility audit.** See the [Accessibility](/docs/accessibility) manual verification matrix — every row reads "Not yet verified."
+- **`cssVars` is reserved but unused.** Every registry entry carries an empty `cssVars` array: components rely entirely on the shared token file, so there's nothing to merge yet.
+- **No manual accessibility audit.** See the [Accessibility](/docs/accessibility) manual verification matrix: every row reads "Not yet verified."
 
 ## How to reproduce
 
-Every command below is exactly what CI runs — nothing hidden, nothing sequenced differently for a human reader:
+Every command below is exactly what CI runs, nothing hidden, nothing sequenced differently for a human reader:
 
 ```bash
 # Install
@@ -143,7 +143,7 @@ pnpm test:clean-room
 # Regenerate the counts quoted on this page (registry build + stats)
 pnpm registry:build
 
-# Visual tooling (no committed baseline to diff against yet — see above)
+# Visual tooling (no committed baseline to diff against yet; see above)
 pnpm docs:shot --all
 pnpm docs:diff --all --report reports/visual-parity.md
 ```
@@ -154,7 +154,7 @@ pnpm docs:diff --all --report reports/visual-parity.md
     items={[
         {
             question: 'Does "0 detected axe violations" mean Proper UI is fully accessible?',
-            answer: "No. It means 118 automated test suites, run on every pull request, detect zero axe-core violations in the rendered markup they check. It doesn't cover contrast, focus order, screen-reader announcement quality, or a manual keyboard/assistive-technology pass — see the Accessibility page for the full boundary.",
+            answer: "No. It means 118 automated test suites, run on every pull request, detect zero axe-core violations in the rendered markup they check. It doesn't cover contrast, focus order, screen-reader announcement quality, or a manual keyboard/assistive-technology pass: see the Accessibility page for the full boundary.",
         },
         {
             question: "Is there a visual regression test in CI?",

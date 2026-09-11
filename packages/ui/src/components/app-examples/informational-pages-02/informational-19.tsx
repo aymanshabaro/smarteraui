@@ -21,9 +21,9 @@ const noop = () => {};
 const navItems = navItemsWith(2, { label: "CMS", href: "/cms" });
 
 const uploads = [
-    { name: "The Outermost House – Henry Beston (1928).upub", size: 647_168, progress: 100, type: "empty" },
-    { name: "The Outermost House – Henry Beston (1928).mobi", size: 861_184, progress: 100, type: "empty" },
-    { name: "The Outermost House – Henry Beston (1928).pdf", size: 1_048_576, progress: 80, type: "pdf" },
+    { name: "The Outermost House - Henry Beston (1928).upub", size: 647_168, progress: 100, type: "empty" },
+    { name: "The Outermost House - Henry Beston (1928).mobi", size: 861_184, progress: 100, type: "empty" },
+    { name: "The Outermost House - Henry Beston (1928).pdf", size: 1_048_576, progress: 80, type: "pdf" },
 ] satisfies { name: string; size: number; progress: number; type: ComponentProps<typeof FileIcon>["type"] }[];
 
 const stats = [

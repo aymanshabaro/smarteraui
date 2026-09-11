@@ -67,8 +67,8 @@ export const ContentAlternative03 = () => (
                         the return trip takes five to six hours, which is honest rather than optimistic.
                     </p>
                     <p>
-                        From the gate the track climbs immediately and does not stop. It is farmland for the first two hours — open, exposed and grazed — and
-                        the views arrive early enough that most people stop far too often in the first kilometre.
+                        From the gate the track climbs immediately and does not stop. It is farmland for the first two hours (open, exposed and grazed) and the
+                        views arrive early enough that most people stop far too often in the first kilometre.
                     </p>
 
                     <figure>
@@ -93,7 +93,7 @@ export const ContentAlternative03 = () => (
                             <p>Everyone photographs the spur and nobody photographs the last forty minutes, which is the part you actually remember.</p>
                         </blockquote>
                         <figcaption className="not-prose text-md mt-6 md:mt-8">
-                            — {author.name}, <cite className="not-italic">Product Designer</cite>
+                            {author.name}, <cite className="not-italic">Product Designer</cite>
                         </figcaption>
                     </figure>
 
@@ -120,7 +120,7 @@ export const ContentAlternative03 = () => (
                     <p>If you are planning to walk it, three things decide how the day goes:</p>
                     <ol>
                         <li>Start before sunrise, both for the light and for the heat.</li>
-                        <li>Check whether the track is closed for lambing — it usually is in October.</li>
+                        <li>Check whether the track is closed for lambing: it usually is in October.</li>
                         <li>Book accommodation in town rather than driving in from Queenstown.</li>
                     </ol>
 

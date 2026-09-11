@@ -29,7 +29,7 @@ isolation, and gives you a light/dark toolbar toggle.
 
 ## Finding a first task
 
-[`.github/GOOD-FIRST-ISSUES.md`](./.github/GOOD-FIRST-ISSUES.md) is a seeded list of scoped, verifiable tasks —
+[`.github/GOOD-FIRST-ISSUES.md`](./.github/GOOD-FIRST-ISSUES.md) is a seeded list of scoped, verifiable tasks:
 missing semantic manifests in `packages/registry/manifest/`, component groups missing their demo/story/test files,
 and a couple of small documentation fixes. Each entry names the exact files to touch and the exact command to verify
 it. Pick one, open an issue from the "Good first issue" template (linked from the list, or from
@@ -45,14 +45,14 @@ everything else that's ready to pick up.
 
 ```
 apps/docs             Next.js 15 App Router docs site (MDX content in apps/docs/content)
-packages/ui           @properui/ui — the component library
+packages/ui           @properui/ui: the component library
   src/components      base/ application/ marketing/ app-examples/
                       marketing-examples/ foundations/ shared-assets/ internal/
   src/styles          globals.css · theme.css · typography.css
   src/hooks           use-breakpoint, use-clipboard, use-resize-observer, use-active-item
-  src/utils           cx, demo-assets, countries, timezones, …
+  src/utils           cx, demo-assets, countries, timezones, ...
   src/providers       ThemeProvider, RouterProvider
-packages/cli          properui — the init/add CLI
+packages/cli          properui: the init/add CLI
 packages/registry     build script + generated registry JSON the CLI consumes
 scripts               generators (barrels, demos, nav, variants) and screenshot tooling
 .storybook            Storybook config
@@ -75,7 +75,7 @@ import { Button as AriaButton, DialogTrigger as AriaDialogTrigger } from "react-
 ```
 
 This keeps the library's own `Button` unambiguous in files that use both. Never hand-roll focus management, keyboard
-navigation or ARIA — if React Aria has a primitive for it, use the primitive.
+navigation or ARIA. If React Aria has a primitive for it, use the primitive.
 
 **Styles live in a `styles = sortCx({})` object** next to the component, applied with `cx()`:
 
@@ -98,13 +98,13 @@ export const styles = sortCx({
 });
 ```
 
-`sortCx` is an identity function — it exists only so Tailwind IntelliSense sorts classes inside the object. Keys follow
-the same shape everywhere: `common`, `sizes`, `colors`, with per-slot `root` / `icon` / … keys underneath. No CSS
+`sortCx` is an identity function: it exists only so Tailwind IntelliSense sorts classes inside the object. Keys follow
+the same shape everywhere: `common`, `sizes`, `colors`, with per-slot `root` / `icon` / ... keys underneath. No CSS
 modules, no CSS-in-JS, and no inline `style` objects except for genuinely dynamic values (a computed height, a chart
 series colour).
 
 **Semantic tokens only.** Inside a component use `bg-primary`, `text-tertiary`, `border-secondary`, `bg-brand-solid`,
-`text-fg-quaternary`, `shadow-xs`, `text-display-md`. Never a raw palette class (`bg-neutral-100`, `text-purple-600`) —
+`text-fg-quaternary`, `shadow-xs`, `text-display-md`. Never a raw palette class (`bg-neutral-100`, `text-purple-600`);
 those belong in `theme.css` alone. The one exception is the `utility-*` scales, which badges, tags and charts use.
 
 This is what makes dark mode and re-branding work without touching component files. See [docs/theming.md](./docs/theming.md).
@@ -121,13 +121,13 @@ physical equivalents, so RTL works without a fork. See [docs/rtl.md](./docs/rtl.
 | File                  | Purpose                                                                       |
 | --------------------- | ----------------------------------------------------------------------------- |
 | `component.tsx`       | The component (plus any sub-files it needs)                                   |
-| `component.demo.tsx`  | One `export const Name = () => …` per documented example                      |
+| `component.demo.tsx`  | One `export const Name = () => ...` per documented example                    |
 | `component.story.tsx` | Storybook stories, one per demo export, with a `storyName`                    |
 | `component.test.tsx`  | Vitest: an `axe` pass over every demo, plus assertions on the component's API |
 
-…and an MDX page under `apps/docs/content/`.
+The set also includes an MDX page under `apps/docs/content/`.
 
-Demo exports **must** use the `export const Name = () =>` form — the demo generator only detects that shape. Demo
+Demo exports **must** use the `export const Name = () =>` form: the demo generator only detects that shape. Demo
 images and videos come from `@/utils/demo-assets`, flags from `@/utils/countries`; external image URLs fail CI
 (`pnpm check:assets`).
 
@@ -152,7 +152,7 @@ describe("Badges", () => {
 
 Two failures come up often enough to call out: **do not skip heading levels** (an `<h4>` may only follow an `<h3>`;
 promote the heading rather than suppressing the rule), and **every tab list needs panels** (render one
-`Tabs.Panel id={…}` per tab id, even an empty one, or `aria-valid-attr-value` fails).
+`Tabs.Panel id={...}` per tab id, even an empty one, or `aria-valid-attr-value` fails).
 
 **Do not hand-edit generated files.** `packages/ui/src/index.ts`, the docs nav and `packages/registry/dist` are
 generated. Run `pnpm gen:all` (or the narrower `pnpm gen:barrels`, `pnpm gen:demos`, `pnpm gen:nav`,
@@ -162,7 +162,7 @@ For a full walkthrough of adding one, see [docs/contributing-components.md](./do
 
 ## Running the checks
 
-Run this before pushing — it is the same set CI runs:
+Run this before pushing: it is the same set CI runs:
 
 ```bash
 pnpm type-check     # tsc --noEmit everywhere
@@ -174,7 +174,7 @@ pnpm build          # every package and the docs site
 
 Or the whole lot via the root `pnpm test`, which fans out through Turborepo.
 
-Formatting is Prettier with the repo's `.prettierrc` — 4-space indent, 160-column width, double quotes, trailing
+Formatting is Prettier with the repo's `.prettierrc`: 4-space indent, 160-column width, double quotes, trailing
 commas, plus the import-sort and Tailwind class-sort plugins. Do not fight it; run `pnpm prettier`.
 
 CI additionally runs `pnpm check:assets` (no external image URLs) and `pnpm build-storybook`, and a non-blocking visual
@@ -189,37 +189,37 @@ Releases are managed with [changesets](https://github.com/changesets/changesets)
 pnpm changeset
 ```
 
-Pick the affected packages, pick a bump, and write one sentence a consumer would understand — it goes into the
+Pick the affected packages, pick a bump, and write one sentence a consumer would understand: it goes into the
 changelog verbatim. Commit the generated file in `.changeset/` with your PR.
 
 Rough guide to the bump:
 
-- **patch** — a bug fix, a style correction, an a11y fix that does not change the API.
-- **minor** — a new component, a new prop, a new variant.
-- **major** — a renamed or removed prop, changed default behaviour, a dropped export.
+- **patch**: a bug fix, a style correction, an a11y fix that does not change the API.
+- **minor**: a new component, a new prop, a new variant.
+- **major**: a renamed or removed prop, changed default behaviour, a dropped export.
 
 Docs-only and tooling-only changes don't need a changeset (`apps/docs` is excluded from releases).
 
 **How this credits you.** The changelog generator is `@changesets/changelog-git`
 (`.changeset/config.json`'s `changelog` field), which prints your changeset summary as a plain bullet in
-`CHANGELOG.md` — there's no automatic commit hash or "Thanks @you!" line added around it (that's a
+`CHANGELOG.md`. There's no automatic commit hash or "Thanks @you!" line added around it (that's a
 `changelog-github`-specific feature this repo doesn't use). Your name is attached to the change through the PR and
-commit history on GitHub, and through the release announcement, which credits every contributor by handle — see
+commit history on GitHub, and through the release announcement, which credits every contributor by handle: see
 [docs/releases.md](./docs/releases.md#what-the-changelog-actually-looks-like) for exactly how that works. This is
 also why the summary you write matters: it's the one line a consumer of the library actually reads.
 
-Releases go out roughly every two weeks — see [docs/releases.md](./docs/releases.md) for the full cadence, what
+Releases go out roughly every two weeks. See [docs/releases.md](./docs/releases.md) for the full cadence, what
 triggers the "Version Packages" PR, and what a release announcement contains.
 
 ## Pull requests
 
-1. **Open an issue first** for anything larger than a fix — a new component, an API change, a new dependency. It saves
+1. **Open an issue first** for anything larger than a fix (a new component, an API change, a new dependency). It saves
    you building something that then needs reworking.
-2. **Branch from `main`.** Name it `feat/…`, `fix/…`, `docs/…` or `chore/…`.
+2. **Branch from `main`.** Name it `feat/...`, `fix/...`, `docs/...` or `chore/...`.
 3. **Keep it focused.** One component, or one concern, per PR. Do not reformat unrelated files.
-4. **Commit messages** follow the existing style: `feat(ui): base/badges — add BadgeWithFlag`,
+4. **Commit messages** follow the existing style: `feat(ui): add BadgeWithFlag to base/badges`,
    `fix(cli): resolve aliases without a slash`, `docs: clarify the @source line`.
-5. **Fill in the PR template** — what changed, why, how you verified it, screenshots for anything visual (both light
+5. **Fill in the PR template**: what changed, why, how you verified it, screenshots for anything visual (both light
    and dark).
 6. **Green CI.** Type-check, lint, prettier, tests, assets check and build all have to pass.
 7. **New dependencies** need justification in the PR description. The dependency surface is deliberately small.
@@ -228,29 +228,29 @@ Maintainers may push small fixups to your branch rather than round-tripping on n
 
 ## Contributor ladder
 
-There's no formal application process for any of this — it's what naturally changes as a maintainer gets to know
+There's no formal application process for any of this. It's what naturally changes as a maintainer gets to know
 your work.
 
 **Your first PR.** Start from [`.github/GOOD-FIRST-ISSUES.md`](./.github/GOOD-FIRST-ISSUES.md) or a `good first
-issue`-labeled issue. Expect a more detailed review than a repeat contributor gets — comments explaining _why_ a
+issue`-labeled issue. Expect a more detailed review than a repeat contributor gets: comments explaining _why_ a
 convention exists, not just that it was missed, since you haven't internalized the patterns in
 [Component conventions](#component-conventions) yet. Once it's merged, your name is in the git history for that
 file, and the change ships in the next [dated release](./docs/releases.md).
 
-**Repeat contributor (a few merged PRs in).** Review comments get terser — a maintainer will assume you know the
+**Repeat contributor (a few merged PRs in).** Review comments get terser: a maintainer will assume you know the
 `sortCx`/semantic-token/`Aria`-prefix conventions by now. You can pick up issues without a `good first issue` label,
 including ones that touch multiple files or add a new variant to an existing component. You'll start getting tagged
 for review on PRs that touch areas you've worked in before, since you have the most relevant context.
 
 **Ongoing.** Consistent contributors get invited to help triage incoming issues (the `needs triage` label every new
-bug report and feature request starts with — see [`.github/ISSUE_TEMPLATE/`](./.github/ISSUE_TEMPLATE/)) and to
+bug report and feature request starts with: see [`.github/ISSUE_TEMPLATE/`](./.github/ISSUE_TEMPLATE/)) and to
 weigh in on [ROADMAP.md](./ROADMAP.md) priorities before they're turned into issues. There is no paid role, no
-equity, and no path to one — Proper UI has no revenue to offer; what's on offer is design/architecture input on a
+equity, and no path to one. Proper UI has no revenue to offer; what's on offer is design/architecture input on a
 project other people will build on.
 
 ## Reporting bugs and asking for features
 
-Use the issue templates — [bug report](https://github.com/properui/properui/issues/new?template=bug_report.yml) or
+Use the issue templates: [bug report](https://github.com/properui/properui/issues/new?template=bug_report.yml) or
 [feature request](https://github.com/properui/properui/issues/new?template=feature_request.yml). A minimal
 reproduction (a StackBlitz, or the smallest component tree that shows it) gets a bug fixed far faster than a
 description.

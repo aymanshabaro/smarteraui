@@ -51,9 +51,9 @@ const stats = [
 ];
 
 const experience = [
-    { role: "Founder", company: LOGOS[0]!, period: "May 2020 – Present" },
-    { role: "UX Designer", company: LOGOS[1]!, period: "Jan 2018 – May 2020" },
-    { role: "Visual Designer", company: LOGOS[3]!, period: "Mar 2017 – Jan 2018" },
+    { role: "Founder", company: LOGOS[0]!, period: "May 2020 - Present" },
+    { role: "UX Designer", company: LOGOS[1]!, period: "Jan 2018 - May 2020" },
+    { role: "Visual Designer", company: LOGOS[3]!, period: "Mar 2017 - Jan 2018" },
 ];
 
 /** The contact card shown beside the conversation: cover photo, profile stats, bio and work history. */
@@ -191,7 +191,7 @@ export const Informational12 = () => (
                     </Message>
 
                     <Message name={contact.name} avatarSrc={contact.src} status="online" time="39 days ago" dateTime="2026-01-21T11:46">
-                        <Message.Bubble actions={bubbleActions}>No rush though—we still have to wait for Lana&rsquo;s designs.</Message.Bubble>
+                        <Message.Bubble actions={bubbleActions}>No rush though, we still have to wait for Lana&rsquo;s designs.</Message.Bubble>
                         <Message.Reactions>
                             <Message.Reaction emoji="❤️" label="Red heart" />
                             <Message.Reaction emoji="👌" label="OK hand" />

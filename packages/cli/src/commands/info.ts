@@ -160,7 +160,7 @@ function printHuman(snapshot: ProjectSnapshot): void {
     log.plain();
 
     if (!snapshot.registryReachable) {
-        log.warn(`Could not reach the registry — installed entries below may be incomplete.`);
+        log.warn(`Could not reach the registry. Installed entries below may be incomplete.`);
     }
 
     if (snapshot.installed.length === 0) {

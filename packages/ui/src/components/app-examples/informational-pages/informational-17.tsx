@@ -126,9 +126,9 @@ const links = [
 ];
 
 const roles = [
-    { id: "role-01", title: "Lead Product Designer", company: LOGOS[0]!, period: "May 2020 – Present" },
-    { id: "role-02", title: "Product Designer", company: LOGOS[1]!, period: "Jan 2018 – May 2020" },
-    { id: "role-03", title: "UX Designer", company: LOGOS[2]!, period: "Mar 2017 – Jan 2018" },
+    { id: "role-01", title: "Lead Product Designer", company: LOGOS[0]!, period: "May 2020 - Present" },
+    { id: "role-02", title: "Product Designer", company: LOGOS[1]!, period: "Jan 2018 - May 2020" },
+    { id: "role-03", title: "UX Designer", company: LOGOS[2]!, period: "Mar 2017 - Jan 2018" },
 ];
 
 const projectTabs = [

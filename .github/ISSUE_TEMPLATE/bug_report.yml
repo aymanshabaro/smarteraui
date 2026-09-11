@@ -8,7 +8,7 @@ body:
           value: |
               Thanks for filing a report. A minimal reproduction gets a bug fixed far faster than a description of it.
 
-              Please do not report security vulnerabilities here — see [SECURITY.md](https://github.com/properui/properui/blob/main/SECURITY.md).
+              Please do not report security vulnerabilities here: see [SECURITY.md](https://github.com/properui/properui/blob/main/SECURITY.md).
 
     - type: checkboxes
       id: preflight
@@ -42,7 +42,7 @@ body:
               import { Select } from "@properui/ui/components/base/select/select";
 
               export const Repro = () => (
-                  <Select items={[{ id: "1", label: "One" }]}>{/* … */}</Select>
+                  <Select items={[{ id: "1", label: "One" }]}>{/* ... */}</Select>
               );
       validations:
           required: true
@@ -64,9 +64,9 @@ body:
       attributes:
           label: Which part of the project?
           options:
-              - "@properui/ui — a component"
-              - "@properui/ui — styles, tokens or theming"
-              - "properui — the CLI"
+              - "@properui/ui: a component"
+              - "@properui/ui: styles, tokens or theming"
+              - "properui: the CLI"
               - Documentation site
               - Documentation content
               - Other / not sure
@@ -124,6 +124,6 @@ body:
       id: extra
       attributes:
           label: Anything else?
-          description: Screenshots, console errors, a recording — drop them here.
+          description: Screenshots, console errors, a recording; drop them here.
       validations:
           required: false

@@ -1,12 +1,12 @@
 ---
 title: Next.js integration
 section: integrations
-description: Set up a Next.js App Router or Pages Router project with Proper UI in minutes — providers, dark mode, and Tailwind v4 scanning included.
+description: "Set up a Next.js App Router or Pages Router project with Proper UI in minutes: providers, dark mode, and Tailwind v4 scanning included."
 metaTitle: Next.js integration | Proper UI
 metaDescription: Install Proper UI in a Next.js project with the CLI or by hand. Configure RouterProvider, ThemeProvider, dark mode, and server component boundaries.
 ---
 
-Proper UI ships as a regular npm workspace package, so a Next.js app consumes it the same way it consumes any other dependency — install it, import its styles, and wrap the tree in two providers.
+Proper UI ships as a regular npm workspace package, so a Next.js app consumes it the same way it consumes any other dependency: install it, import its styles, and wrap the tree in two providers.
 
 ## Installation
 
@@ -16,7 +16,7 @@ The fastest path is the CLI. Run it from the root of your Next.js project:
 npx @properui/cli@latest init --nextjs
 ```
 
-It detects App Router vs Pages Router and whether you use a `src/` directory automatically — `--nextjs` only overrides framework detection, it doesn't scaffold a new project. The CLI writes `app/globals.css` (or `styles/globals.css` for a Pages Router project), adds the Tailwind `@source` line so the package's classes get scanned, sets `transpilePackages` in `next.config.ts`, and wires up `ThemeProvider` in your root layout — it does not add `RouterProvider` for you, since that depends on which router you're using (see below). You're ready to add components once it's done.
+It detects App Router vs Pages Router and whether you use a `src/` directory automatically: `--nextjs` only overrides framework detection, it doesn't scaffold a new project. The CLI writes `app/globals.css` (or `styles/globals.css` for a Pages Router project), adds the Tailwind `@source` line so the package's classes get scanned, sets `transpilePackages` in `next.config.ts`, and wires up `ThemeProvider` in your root layout: it does not add `RouterProvider` for you, since that depends on which router you're using (see below). You're ready to add components once it's done.
 
 ## Manual installation
 
@@ -64,7 +64,7 @@ import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
-// …then: <html lang="en" suppressHydrationWarning className={inter.variable}>
+// ...then: <html lang="en" suppressHydrationWarning className={inter.variable}>
 ```
 
 ```css
@@ -77,7 +77,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "sw
 
 ## App router vs pages router
 
-Both routers need the same two providers, but they're not interchangeable. `ThemeProvider` (from `@properui/ui/providers`, wrapping `next-themes`) works identically in both. `RouterProvider` (from `@properui/ui/providers/router-provider`, its own subpath so the shared providers barrel stays free of Next imports) does not take a `navigate` prop — it reads `useRouter` from `next/navigation` internally, which only exists in the App Router. A Pages Router app has to use React Aria's own `RouterProvider` directly, fed from `next/router`.
+Both routers need the same two providers, but they're not interchangeable. `ThemeProvider` (from `@properui/ui/providers`, wrapping `next-themes`) works identically in both. `RouterProvider` (from `@properui/ui/providers/router-provider`, its own subpath so the shared providers barrel stays free of Next imports) does not take a `navigate` prop: it reads `useRouter` from `next/navigation` internally, which only exists in the App Router. A Pages Router app has to use React Aria's own `RouterProvider` directly, fed from `next/router`.
 
 ### App router
 
@@ -102,11 +102,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 }
 ```
 
-`suppressHydrationWarning` on `<html>` is required — `next-themes` writes the theme class before React hydrates, and without it React reports a mismatch. `ThemeProvider` forwards every `next-themes` prop, so `defaultTheme`, `enableSystem`, `storageKey`, and friends all still work if you want to override its defaults.
+`suppressHydrationWarning` on `<html>` is required: `next-themes` writes the theme class before React hydrates, and without it React reports a mismatch. `ThemeProvider` forwards every `next-themes` prop, so `defaultTheme`, `enableSystem`, `storageKey`, and friends all still work if you want to override its defaults.
 
 ### Pages router
 
-The bundled `RouterProvider` doesn't work here — swap it for React Aria's own, fed `next/router`'s `useRouter`:
+The bundled `RouterProvider` doesn't work here; swap it for React Aria's own, fed `next/router`'s `useRouter`:
 
 ```tsx
 // pages/_app.tsx
@@ -131,7 +131,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
 ## Using Proper UI components
 
-Import each component from its own subpath — the same path the CLI writes when you run `add`:
+Import each component from its own subpath; the same path the CLI writes when you run `add`:
 
 ```tsx
 import { Button } from "@properui/ui/components/base/buttons/button";
@@ -141,7 +141,7 @@ export default function Page() {
 }
 ```
 
-Most base components already carry their own `"use client"` directive because they're built on React Aria hooks, so you can import them directly into a server component's JSX without adding the directive yourself — the boundary is drawn inside the component, not at the call site. You only need `"use client"` on your own file when _you_ add interactivity — a click handler, `useState`, a form — around the components you're composing.
+Most base components already carry their own `"use client"` directive because they're built on React Aria hooks, so you can import them directly into a server component's JSX without adding the directive yourself: the boundary is drawn inside the component, not at the call site. You only need `"use client"` on your own file when _you_ add interactivity (a click handler, `useState`, a form) around the components you're composing.
 
 ## Dark mode
 
@@ -171,11 +171,11 @@ export const ThemeToggleButton = () => {
     items={[
         {
             question: "How do I integrate Proper UI with a Next.js project?",
-            answer: "Run npx @properui/cli@latest init --nextjs for a complete setup, or install @properui/ui yourself and import its globals.css from your own stylesheet. Tailwind v4 needs no config file — everything is imported directly in CSS.",
+            answer: "Run npx @properui/cli@latest init --nextjs for a complete setup, or install @properui/ui yourself and import its globals.css from your own stylesheet. Tailwind v4 needs no config file: everything is imported directly in CSS.",
         },
         {
             question: "Does Proper UI support both App Router and Pages Router?",
-            answer: "Yes, but the wiring differs. ThemeProvider works the same in both. RouterProvider from @properui/ui/providers/router-provider only works in the App Router — it reads next/navigation internally and takes no props. In the Pages Router, use RouterProvider from react-aria-components directly and feed it next/router's useRouter().push.",
+            answer: "Yes, but the wiring differs. ThemeProvider works the same in both. RouterProvider from @properui/ui/providers/router-provider only works in the App Router: it reads next/navigation internally and takes no props. In the Pages Router, use RouterProvider from react-aria-components directly and feed it next/router's useRouter().push.",
         },
         {
             question: "Can I use Proper UI with Next.js server components?",
@@ -183,7 +183,7 @@ export const ThemeToggleButton = () => {
         },
         {
             question: "How do I set up dark mode with Proper UI in Next.js?",
-            answer: 'Wrap your app in ThemeProvider from next-themes with attribute="class" and a value map of { light: "light-mode", dark: "dark-mode" } — those are the two classes Proper UI\'s theme.css looks for on <html>.',
+            answer: 'Wrap your app in ThemeProvider from next-themes with attribute="class" and a value map of { light: "light-mode", dark: "dark-mode" }: those are the two classes Proper UI\'s theme.css looks for on <html>.',
         },
         {
             question: "How does Proper UI work with Tailwind CSS v4 in Next.js?",
@@ -191,7 +191,7 @@ export const ThemeToggleButton = () => {
         },
         {
             question: "Do Proper UI components work with next/image?",
-            answer: "Yes — components like avatars and cards accept a rendered image as a child or prop, so you can nest next/image inside them and keep automatic optimization, lazy loading, and responsive sizing.",
+            answer: "Yes, components like avatars and cards accept a rendered image as a child or prop, so you can nest next/image inside them and keep automatic optimization, lazy loading, and responsive sizing.",
         },
     ]}
 />

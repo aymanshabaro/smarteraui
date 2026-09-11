@@ -11,7 +11,7 @@ Either way the styling setup is the same, because the package ships its styleshe
 ## Requirements
 
 - **React 19** and **react-dom 19**
-- **Tailwind CSS v4** — the token layer is written entirely in v4 `@theme` syntax. Tailwind v3 is not supported; run
+- **Tailwind CSS v4**: the token layer is written entirely in v4 `@theme` syntax. Tailwind v3 is not supported; run
   `npx @tailwindcss/upgrade@latest` first.
 - **Node 20+** to run the CLI.
 - TypeScript 5.9+ if you're using TypeScript (the components are `.tsx`, but a JS project can consume them fine).
@@ -28,7 +28,7 @@ rest) come with the package. `react`, `react-dom` and `tailwindcss` are peer dep
 
 ### Import the stylesheet
 
-`@properui/ui/styles/globals.css` is a complete entry point — it imports Tailwind, the design tokens, the typography
+`@properui/ui/styles/globals.css` is a complete entry point: it imports Tailwind, the design tokens, the typography
 scale, and registers the plugins and custom variants the components rely on:
 
 ```css
@@ -44,8 +44,8 @@ project's `node_modules` from wherever that stylesheet lives.
 
 ### Framework wiring
 
-- **Next.js** — needs `transpilePackages: ["@properui/ui"]` plus the two providers. See [nextjs.md](./nextjs.md).
-- **Vite** — needs the `@tailwindcss/vite` plugin. See [vite.md](./vite.md).
+- **Next.js**: needs `transpilePackages: ["@properui/ui"]` plus the two providers. See [nextjs.md](./nextjs.md).
+- **Vite**: needs the `@tailwindcss/vite` plugin. See [vite.md](./vite.md).
 
 ### Import a component
 
@@ -56,7 +56,7 @@ export const Example = () => <Button size="md">Get started</Button>;
 ```
 
 Subpath imports map one-to-one onto the source tree: `@properui/ui/components/<layer>/<group>/<file>`. A root barrel
-also exists (`import { Button } from "@properui/ui"`) which re-exports every component — convenient, but the subpath
+also exists (`import { Button } from "@properui/ui"`) which re-exports every component. Convenient, but the subpath
 keeps bundles smallest.
 
 ## Install with the CLI
@@ -79,7 +79,7 @@ npx @properui/cli@latest add button
 npx @properui/cli@latest add button input select table
 ```
 
-Dependencies are resolved for you — `add badge-groups` also pulls in `badges` and `dot-icon`, because those are its
+Dependencies are resolved for you: `add badge-groups` also pulls in `badges` and `dot-icon`, because those are its
 registry dependencies. Full command reference in [cli.md](./cli.md).
 
 ## Manual installation
@@ -100,7 +100,7 @@ for date pickers, `input-otp` for verification code inputs). Each component page
 
 Copy [`packages/ui/src/styles/theme.css`](../packages/ui/src/styles/theme.css) and
 [`typography.css`](../packages/ui/src/styles/typography.css) into your project. `theme.css` is the single file a
-re-brand touches — see [theming.md](./theming.md).
+re-brand touches. See [theming.md](./theming.md).
 
 **3. Write your global stylesheet**
 
@@ -139,7 +139,7 @@ const twMerge = extendTailwindMerge({
 
 export const cx = twMerge;
 
-/** Identity function — it only exists so Tailwind IntelliSense sorts classes inside style objects. */
+/** Identity function: it only exists so Tailwind IntelliSense sorts classes inside style objects. */
 export function sortCx<T extends Record<string, unknown>>(classes: T): T {
     return classes;
 }
@@ -157,7 +157,7 @@ library's class names.
 **`Cannot use import statement outside a module` in Next.js.** Add `transpilePackages: ["@properui/ui"]` to
 `next.config.ts`; the package publishes TSX, not compiled JS.
 
-**Theme flashes on first paint in Next.js.** Add `suppressHydrationWarning` to `<html>` — `next-themes` sets the theme
+**Theme flashes on first paint in Next.js.** Add `suppressHydrationWarning` to `<html>`: `next-themes` sets the theme
 class before React hydrates.
 
 **Tailwind v3 errors about `@theme` or `@plugin`.** Proper UI requires Tailwind v4. The CLI stops with upgrade

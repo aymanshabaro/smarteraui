@@ -16,11 +16,11 @@ import { ProgressBarBase } from "../../base/progress-indicators/progress-indicat
 import { ChartCard, DonutChart, StackedBarChart, navItemsWithFolders, styles, vendors } from "./dashboards-shared";
 
 const breakdown = [
-    { name: "81–100", value: 18, className: "fill-utility-neutral-500" },
-    { name: "61–80", value: 22, className: "fill-utility-neutral-300" },
-    { name: "41–60", value: 26, className: "fill-utility-brand-600" },
-    { name: "21–40", value: 20, className: "fill-utility-brand-400" },
-    { name: "0–20", value: 14, className: "fill-utility-brand-200" },
+    { name: "81-100", value: 18, className: "fill-utility-neutral-500" },
+    { name: "61-80", value: 22, className: "fill-utility-neutral-300" },
+    { name: "41-60", value: 26, className: "fill-utility-brand-600" },
+    { name: "21-40", value: 20, className: "fill-utility-brand-400" },
+    { name: "0-20", value: 14, className: "fill-utility-brand-200" },
 ];
 
 const CardMenu = () => (

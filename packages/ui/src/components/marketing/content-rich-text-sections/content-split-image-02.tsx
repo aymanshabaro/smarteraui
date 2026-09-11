@@ -79,7 +79,7 @@ export const ContentSplitImage02 = () => (
                             <p>We changed framework twice in four years and both migrations cost more than every performance win they delivered, combined.</p>
                         </blockquote>
                         <figcaption className="not-prose text-md mt-6 md:mt-8">
-                            — {quoted.name}, <cite className="not-italic">Product Designer</cite>
+                            {quoted.name}, <cite className="not-italic">Product Designer</cite>
                         </figcaption>
                     </figure>
 

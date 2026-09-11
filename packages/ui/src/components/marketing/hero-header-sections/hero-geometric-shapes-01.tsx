@@ -76,7 +76,7 @@ export const HeroGeometricShapes01 = () => (
                         Creating stylish, functional and memorable spaces
                     </h1>
                     <p className="text-tertiary mt-4 max-w-lg text-lg text-balance md:mt-6 md:text-xl">
-                        — We&apos;re a full-service interior design studio who specialize in simple and timeless spaces.
+                        We&apos;re a full-service interior design studio who specialize in simple and timeless spaces.
                     </p>
                     <div className="mt-8 flex w-full flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-start md:mt-12">
                         <Button size="xl" color="secondary" iconLeading={PlayCircle} href="/showreel">

@@ -46,7 +46,7 @@ export const SimpleWelcome02 = () => (
                     your way to creating beautiful visual products.
                     <br />
                     <br />
-                    Whether you&apos;re here for your brand, for a cause, or just for fun—welcome! If there&apos;s anything you need, we&apos;ll be here every
+                    Whether you&apos;re here for your brand, for a cause, or just for fun, welcome! If there&apos;s anything you need, we&apos;ll be here every
                     step of the way.
                 </p>
 
@@ -74,7 +74,8 @@ export const SimpleWelcome02 = () => (
                     </a>
                     . We&apos;d love to hear from you.
                     <br />
-                    <br />— The team
+                    <br />
+                    From the team
                 </p>
 
                 <Button href="/login" size="md" className="mt-12">

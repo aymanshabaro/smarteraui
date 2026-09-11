@@ -78,7 +78,7 @@ function installCursor(cwd: string, writeOptions: WriteFileOptions): void {
 }
 
 function installLovable(): void {
-    log.step(`Lovable reads from the web, not this checkout — nothing is written locally.`);
+    log.step(`Lovable reads from the web, not this checkout. Nothing is written locally.`);
     log.plain();
     log.info(`Paste this into Lovable's knowledge / custom instructions panel:`);
     log.plain(kleur.dim(`        ${LOVABLE_SKILL_URL}`));
@@ -103,6 +103,6 @@ export async function runAgentInit(options: AgentInitOptions): Promise<void> {
     }
 
     log.plain();
-    log.success("Done. Re-run any time — existing files are updated in place, not duplicated.");
+    log.success("Done. Re-run any time. Existing files are updated in place, not duplicated.");
     if (!options.overwrite) log.info("Pass --overwrite to replace the Skill file even if you've edited it locally.");
 }

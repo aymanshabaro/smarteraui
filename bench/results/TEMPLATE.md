@@ -1,19 +1,19 @@
 # Run report
 
-Copy this file to `results/<YYYY-MM-DD>-<tool>-<library>-<task-slug>.md` (e.g. `results/2026-09-10-claude-code-properui-01-settings-page.md`) and fill in every field. Read `../README.md`'s honesty rules before submitting — an incomplete report (missing transcript, missing raw output) is not a valid submission.
+Copy this file to `results/<YYYY-MM-DD>-<tool>-<library>-<task-slug>.md` (e.g. `results/2026-09-10-claude-code-properui-01-settings-page.md`) and fill in every field. Read `../README.md`'s honesty rules before submitting: an incomplete report (missing transcript, missing raw output) is not a valid submission.
 
 ## Run identity
 
-| Field              | Value                                                                      |
-| ------------------ | -------------------------------------------------------------------------- |
-| Task               | (e.g. `01-settings-page`)                                                  |
-| Library condition  | Proper UI `<version>` / shadcn/ui baseline                                 |
-| Tool               | Claude Code / Codex                                                        |
-| Model              | exact model name + snapshot/version if the provider exposes one            |
-| Date               | YYYY-MM-DD                                                                 |
-| Run attempt number | 1 of N (report every attempt if you ran more than one — see honesty rules) |
-| Transcript         | link to the saved transcript (gist, branch, or path in this PR)            |
-| Generated code     | link to the branch/gist/commit containing the raw, unedited output         |
+| Field              | Value                                                                     |
+| ------------------ | ------------------------------------------------------------------------- |
+| Task               | (e.g. `01-settings-page`)                                                 |
+| Library condition  | Proper UI `<version>` / shadcn/ui baseline                                |
+| Tool               | Claude Code / Codex                                                       |
+| Model              | exact model name + snapshot/version if the provider exposes one           |
+| Date               | YYYY-MM-DD                                                                |
+| Run attempt number | 1 of N (report every attempt if you ran more than one; see honesty rules) |
+| Transcript         | link to the saved transcript (gist, branch, or path in this PR)           |
+| Generated code     | link to the branch/gist/commit containing the raw, unedited output        |
 
 ## 1. Compile success
 
@@ -26,7 +26,7 @@ Copy this file to `results/<YYYY-MM-DD>-<tool>-<library>-<task-slug>.md` (e.g. `
 ## 2. Exact reuse
 
 - Ideal set (from the task file): `n` entries
-- Reused: `n` entries — list them
+- Reused: `n` entries; list them
 - Reused but not on the ideal list (context only, not penalized): list them
 - Percentage: `reused / ideal_total = X%`
 
@@ -83,4 +83,4 @@ Output of `pnpm exec tsx bench/scripts/score-tokens.ts <path>`:
 
 ## Overall notes
 
-Anything a reader needs to interpret these numbers correctly — surprises, judgment calls made during scoring, things the task file should clarify for next time, etc.
+Anything a reader needs to interpret these numbers correctly: surprises, judgment calls made during scoring, things the task file should clarify for next time, etc.

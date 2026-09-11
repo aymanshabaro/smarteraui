@@ -89,13 +89,13 @@ export const ContentSplitImage04 = () => (
                             </p>
                         </blockquote>
                         <figcaption className="not-prose text-md mt-6 md:mt-8">
-                            — {quoted.name}, <cite className="not-italic">Product Designer</cite>
+                            {quoted.name}, <cite className="not-italic">Product Designer</cite>
                         </figcaption>
                     </figure>
 
                     <p>
-                        Errors deserve as much design attention as the happy path. A consistent error shape — a stable code, a human message and a
-                        machine-readable field — removes more support tickets than any amount of endpoint tuning.
+                        Errors deserve as much design attention as the happy path. A consistent error shape (a stable code, a human message and a
+                        machine-readable field) removes more support tickets than any amount of endpoint tuning.
                     </p>
                     <p>
                         Pagination, filtering and sorting should look identical on every collection. Consumers learn the pattern once and stop reading your

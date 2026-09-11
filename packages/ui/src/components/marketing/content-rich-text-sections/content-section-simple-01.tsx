@@ -28,7 +28,7 @@ export const ContentSectionSimple01 = () => (
 
                     <p>
                         Proper UI connects to the tools you already run and builds a single event model on top of them. Activation, retention and revenue are
-                        defined once, reviewed by the whole team, and then used everywhere — dashboards, alerts and the weekly report all read from the same
+                        defined once, reviewed by the whole team, and then used everywhere: dashboards, alerts and the weekly report all read from the same
                         definitions.
                     </p>
                     <p>

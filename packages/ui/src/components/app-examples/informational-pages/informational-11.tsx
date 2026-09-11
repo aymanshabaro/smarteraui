@@ -92,7 +92,7 @@ const chats = [
         person: avatar(1),
         time: "5 mins ago",
         unread: true,
-        preview: "Hey Olivia, Katherine sent me over the latest doc. I just have a quick question about the…",
+        preview: "Hey Olivia, Katherine sent me over the latest doc. I just have a quick question about the...",
     },
     {
         id: "chat-02",
@@ -107,21 +107,21 @@ const chats = [
         person: avatar(3),
         time: "1 hour ago",
         unread: true,
-        preview: "I've just published the site again. Looks like it fixed it. How weird! I'll keep an eye on it…",
+        preview: "I've just published the site again. Looks like it fixed it. How weird! I'll keep an eye on it...",
     },
     {
         id: "chat-04",
         person: avatar(4),
         time: "2 hours ago",
         unread: false,
-        preview: "Hey Liv—just wanted to say thanks for chasing up the release for me. Really…",
+        preview: "Hey Liv, just wanted to say thanks for chasing up the release for me. Really...",
     },
     {
         id: "chat-05",
         person: avatar(5),
         time: "2 hours ago",
         unread: false,
-        preview: "Good news!! Jack accepted the offer. I've sent over a contract for him to review but…",
+        preview: "Good news!! Jack accepted the offer. I've sent over a contract for him to review but...",
     },
     { id: "chat-06", person: avatar(6), time: "4 hours ago", unread: true, preview: "Thanks! Looks great!" },
     {
@@ -129,7 +129,7 @@ const chats = [
         person: avatar(7),
         time: "4 hours ago",
         unread: false,
-        preview: "The press release went out! It's been picked up by a few of the big publications…",
+        preview: "The press release went out! It's been picked up by a few of the big publications...",
     },
 ];
 
@@ -261,7 +261,7 @@ export const Informational11 = () => (
                 </Message>
 
                 <Message name={activeChat.name} avatarSrc={activeChat.src} status="online" time="Thursday 11:44am" dateTime="2027-01-21T11:44">
-                    <Message.Bubble actions={bubbleActions}>No rush though—we still have to wait for Lana&rsquo;s designs.</Message.Bubble>
+                    <Message.Bubble actions={bubbleActions}>No rush though, we still have to wait for Lana&rsquo;s designs.</Message.Bubble>
                 </Message>
 
                 <MessageList.Divider>Today</MessageList.Divider>

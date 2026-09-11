@@ -1,12 +1,12 @@
 ---
 title: Monorepo integration
 section: integrations
-description: Consume Proper UI from a Turborepo or pnpm workspace — the workspace protocol, Tailwind source scanning, and TypeScript project references.
+description: "Consume Proper UI from a Turborepo or pnpm workspace: the workspace protocol, Tailwind source scanning, and TypeScript project references."
 metaTitle: Monorepo integration | Proper UI
 metaDescription: Share Proper UI across multiple apps in a pnpm workspace or Turborepo. Configure the workspace protocol, @source scanning, and custom alias paths.
 ---
 
-If you already run Proper UI's own monorepo layout — a pnpm workspace with `apps/*` and `packages/*` — or you're adding it to one of yours, `@properui/ui` behaves exactly like a published npm package, resolved locally instead of from the registry.
+If you already run Proper UI's own monorepo layout (a pnpm workspace with `apps/*` and `packages/*`) or you're adding it to one of yours, `@properui/ui` behaves exactly like a published npm package, resolved locally instead of from the registry.
 
 ## Installation
 
@@ -30,7 +30,7 @@ packages:
     - "packages/*"
 ```
 
-Run `pnpm install` and pnpm symlinks `packages/ui` into `apps/web/node_modules/@properui/ui` — from the app's point of view it's an ordinary dependency, so the same `next.config.ts` and CSS setup from the [Next.js guide](/integrations/nextjs) or [Vite guide](/integrations/vite) applies without changes:
+Run `pnpm install` and pnpm symlinks `packages/ui` into `apps/web/node_modules/@properui/ui`; from the app's point of view it's an ordinary dependency, so the same `next.config.ts` and CSS setup from the [Next.js guide](/integrations/nextjs) or [Vite guide](/integrations/vite) applies without changes:
 
 ```ts
 // apps/web/next.config.ts
@@ -70,7 +70,7 @@ For editor tooling and incremental builds, add a TypeScript project reference fr
 
 ## Custom alias paths
 
-Inside `packages/ui/src`, every component imports its neighbors with the package's own `@/` alias — that alias is local to the package and resolves against `packages/ui/src`, never against your app's `src` directory. Leave it alone; the CLI rewrites it automatically when it copies a component into a project that doesn't use the workspace package.
+Inside `packages/ui/src`, every component imports its neighbors with the package's own `@/` alias: that alias is local to the package and resolves against `packages/ui/src`, never against your app's `src` directory. Leave it alone; the CLI rewrites it automatically when it copies a component into a project that doesn't use the workspace package.
 
 Your app keeps its own `@/` alias pointing at its own `src`, and reaches Proper UI through the package's subpath exports instead of reusing that alias for the shared package:
 
@@ -85,7 +85,7 @@ Your app keeps its own `@/` alias pointing at its own `src`, and reaches Proper 
 }
 ```
 
-If you want to jump straight to the package's source while developing — skipping the built output — add a second alias that points at it explicitly:
+If you want to jump straight to the package's source while developing (skipping the built output), add a second alias that points at it explicitly:
 
 ```json
 // apps/web/tsconfig.json
@@ -99,7 +99,7 @@ If you want to jump straight to the package's source while developing — skippi
 }
 ```
 
-This is a development convenience only — published consumers outside the monorepo always resolve `@properui/ui/*` through the package's own `exports` map, so keep the mapping scoped to apps that live inside this workspace.
+This is a development convenience only: published consumers outside the monorepo always resolve `@properui/ui/*` through the package's own `exports` map, so keep the mapping scoped to apps that live inside this workspace.
 
 ## FAQs
 
@@ -107,7 +107,7 @@ This is a development convenience only — published consumers outside the monor
     items={[
         {
             question: "Do I need the CLI inside a monorepo?",
-            answer: "No — if @properui/ui is already a workspace dependency you consume it like any npm package. The CLI is for copying component source into a project instead of depending on the package; see the components.json guide if you want that workflow inside one app of the monorepo.",
+            answer: "No, if @properui/ui is already a workspace dependency you consume it like any npm package. The CLI is for copying component source into a project instead of depending on the package; see the components.json guide if you want that workflow inside one app of the monorepo.",
         },
         {
             question: "Does every app in the monorepo need its own theme.css?",
@@ -115,11 +115,11 @@ This is a development convenience only — published consumers outside the monor
         },
         {
             question: "Why does the @source path point into node_modules instead of packages/ui/src directly?",
-            answer: "pnpm symlinks the workspace package into node_modules, so the same relative path works whether @properui/ui is a local workspace package or a published dependency — the Tailwind scanning setup never has to change when you switch modes.",
+            answer: "pnpm symlinks the workspace package into node_modules, so the same relative path works whether @properui/ui is a local workspace package or a published dependency: the Tailwind scanning setup never has to change when you switch modes.",
         },
         {
             question: "Does Turborepo need a build step for @properui/ui?",
-            answer: "Not for Next.js apps in the same workspace — transpilePackages compiles the package's TSX at build time. Add a build task in turbo.json only if another consumer needs a pre-built dist, e.g. an app outside this monorepo.",
+            answer: "Not for Next.js apps in the same workspace: transpilePackages compiles the package's TSX at build time. Add a build task in turbo.json only if another consumer needs a pre-built dist, e.g. an app outside this monorepo.",
         },
     ]}
 />

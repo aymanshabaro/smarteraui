@@ -1,8 +1,8 @@
-# Task 01 — Settings page (tabs + form)
+# Task 01: Settings page (tabs + form)
 
 ## Prompt
 
-Paste this verbatim into the agent, in a fresh project with either Proper UI or the shadcn/ui baseline already installed (see `../baseline/README.md`). Do not add any hints, framework names, or component names beyond what's written here — that's the point of a tool-agnostic prompt.
+Paste this verbatim into the agent, in a fresh project with either Proper UI or the shadcn/ui baseline already installed (see `../baseline/README.md`). Do not add any hints, framework names, or component names beyond what's written here. That's the point of a tool-agnostic prompt.
 
 > Build a settings page for a SaaS product. It needs tabbed navigation between three sections: **Profile**, **Notifications**, and **Billing**.
 >
@@ -18,7 +18,7 @@ Paste this verbatim into the agent, in a fresh project with either Proper UI or 
 - [ ] The Profile panel has labeled inputs for name and email, an avatar preview, and a way to upload/change the avatar image.
 - [ ] The Notifications panel shows at least two distinct toggle controls, each with a visible label and a short description of what it controls.
 - [ ] The Billing panel shows a plan name, a payment method (e.g. masked card number or "PayPal"), and a control to change it.
-- [ ] Each panel has its own save action, and activating it produces a visible confirmation (toast, inline message, or button state change) — not just a silent state change.
+- [ ] Each panel has its own save action, and activating it produces a visible confirmation (toast, inline message, or button state change), not just a silent state change.
 - [ ] Every field has a programmatically associated label (not a placeholder used as a label).
 - [ ] The tabs follow the WAI-ARIA tabs keyboard pattern (arrow keys move focus between tabs; the panel is reachable by `Tab`).
 - [ ] The page builds and renders with no console errors at all three viewports below.
@@ -26,14 +26,14 @@ Paste this verbatim into the agent, in a fresh project with either Proper UI or 
 
 ## Ideal registry entries an ideal answer would reuse
 
-The closest existing composed example in the registry is **`settings-02`** (`app-examples` layer, "Settings 02" — tabs + avatar/file-upload profile section + toggle-based notifications section). Its full dependency list, which is the grounded "ideal reuse" set for scoring:
+The closest existing composed example in the registry is **`settings-02`** (`app-examples` layer, "Settings 02": tabs + avatar/file-upload profile section + toggle-based notifications section). Its full dependency list, which is the grounded "ideal reuse" set for scoring:
 
 ```
 app-navigation, avatar, badges, button-group, buttons, checkbox, featured-icon,
 file-upload, form, input, select, tabs, textarea, toggle
 ```
 
-(`countries`, `demo-assets`, `cx`, and `timezones` are also technical dependencies of that example but are supporting utilities, not something a scored answer is expected to visibly "reuse" — don't count them in the exact-reuse percentage.)
+(`countries`, `demo-assets`, `cx`, and `timezones` are also technical dependencies of that example but are supporting utilities, not something a scored answer is expected to visibly "reuse"; don't count them in the exact-reuse percentage.)
 
 The components that matter most for this specific prompt, in rough order of how central they are to the task: `tabs`, `form`, `input`, `toggle`, `file-upload`, `avatar`, `buttons`, `select` (for a plan or country field, if used), `checkbox` (if notifications use checkboxes instead of/alongside toggles), `badges` (e.g. a "Current plan" badge in Billing).
 

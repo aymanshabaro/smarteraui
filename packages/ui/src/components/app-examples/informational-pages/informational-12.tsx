@@ -86,9 +86,9 @@ const owner = avatar(0);
 const preview = IMAGES.landscape[1]!;
 
 const experience = [
-    { role: "Lead Product Designer", company: LOGOS[4]!, period: "May 2020 – Present" },
-    { role: "UX Designer", company: LOGOS[5]!, period: "Jan 2018 – May 2020" },
-    { role: "Visual Designer", company: LOGOS[0]!, period: "Mar 2017 – Jan 2018" },
+    { role: "Lead Product Designer", company: LOGOS[4]!, period: "May 2020 - Present" },
+    { role: "UX Designer", company: LOGOS[5]!, period: "Jan 2018 - May 2020" },
+    { role: "Visual Designer", company: LOGOS[0]!, period: "Mar 2017 - Jan 2018" },
 ];
 
 /** Informational page 12 — project messaging app with a contact profile panel. */
@@ -127,7 +127,7 @@ export const Informational12 = () => (
                     </Message>
 
                     <Message name={contact.name} avatarSrc={contact.src} status="online" time="Thursday 11:44am" dateTime="2027-01-21T11:44">
-                        <Message.Bubble actions={bubbleActions}>No rush though—we still have to wait for Lana&rsquo;s designs.</Message.Bubble>
+                        <Message.Bubble actions={bubbleActions}>No rush though, we still have to wait for Lana&rsquo;s designs.</Message.Bubble>
                     </Message>
 
                     <Message direction="outgoing" name="You" time="Thursday 11:45am" dateTime="2027-01-21T11:45" delivery="delivered">

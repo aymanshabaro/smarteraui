@@ -19,7 +19,7 @@ export const MetricsSplitImage02Brand = () => (
                             Build something great
                         </h2>
                         <p className="text-secondary_on-brand mt-4 text-lg md:mt-5 md:hidden md:text-xl">
-                            Everything you need to build modern UI and great products. We&apos;ve done all the heavy lifting so you don&apos;t have to—the
+                            Everything you need to build modern UI and great products. We&apos;ve done all the heavy lifting so you don&apos;t have to. The
                             perfect starting point for any project.
                         </p>
                     </div>
