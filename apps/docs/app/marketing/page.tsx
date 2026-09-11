@@ -5,7 +5,7 @@ import { getContentPages } from "~/lib/content";
 import { SITE_NAME, absoluteUrl } from "~/lib/site";
 
 const TITLE = "Marketing";
-const DESCRIPTION = "Marketing sections and complete marketing pages — heroes, pricing, testimonials, footers and the landing pages built from them.";
+const DESCRIPTION = "Marketing sections and complete marketing pages: heroes, pricing, testimonials, footers and the landing pages built from them.";
 
 export const metadata: Metadata = {
     title: TITLE,

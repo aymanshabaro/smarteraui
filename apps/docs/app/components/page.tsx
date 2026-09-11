@@ -5,7 +5,7 @@ import { getContentPages } from "~/lib/content";
 import { SITE_NAME, absoluteUrl } from "~/lib/site";
 
 const TITLE = "Base components";
-const DESCRIPTION = "Free and open-source React base components — the buttons, inputs, badges and other primitives every screen is built from.";
+const DESCRIPTION = "Free and open-source React base components: the buttons, inputs, badges and other primitives every screen is built from.";
 
 export const metadata: Metadata = {
     title: TITLE,

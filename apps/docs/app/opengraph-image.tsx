@@ -8,7 +8,7 @@ import { ImageResponse } from "next/og";
  * are inlined here (they mirror `--color-brand-600` / `--color-brand-300` in theme.css).
  */
 
-export const alt = "Proper UI — accessible React components, ready on arrival";
+export const alt = "Proper UI: UI your AI can actually use";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -52,7 +52,7 @@ export default function OpengraphImage() {
 
             <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
                 <div style={{ color: "white", fontSize: 76, fontWeight: 700, lineHeight: 1.1, letterSpacing: -1.5 }}>
-                    Accessible React components, ready on arrival
+                    The UI library your AI can actually use
                 </div>
                 <div style={{ color: BRAND_300, fontSize: 30, lineHeight: 1.4 }}>
                     Open source, built on React Aria Components and Tailwind CSS v4. MIT licensed.

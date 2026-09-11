@@ -5,7 +5,7 @@ import { getContentPages } from "~/lib/content";
 import { SITE_NAME, absoluteUrl } from "~/lib/site";
 
 const TITLE = "Application UI";
-const DESCRIPTION = "Application components and full page examples — dashboards, settings, tables, modals and the shared authentication screens.";
+const DESCRIPTION = "Application components and full page examples: dashboards, settings, tables, modals and the shared authentication screens.";
 
 /** Same split the sidebar uses (spec 08-docs-site.md § Global chrome, groups 6 and 7). */
 const APP_EXAMPLE_SLUGS = ["dashboards", "dashboards-02", "settings-pages", "settings-pages-02", "informational-pages", "informational-pages-02"];

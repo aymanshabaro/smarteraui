@@ -29,8 +29,8 @@ domain with no flags.
 2. The `properui.dev` domain, registered anywhere.
 3. **Node 22+** and pnpm 9. Note this is stricter than the rest of the repo: `next build`,
    `next dev` and `opennextjs-cloudflare build` are happy on Node 20 (what `ci.yml` uses),
-   but **wrangler 4 refuses to start on Node 20**, so anything that talks to Cloudflare —
-   `deploy`, `preview`, `cf-typegen`, `wrangler rollback` — needs Node 22. The deploy
+   but **wrangler 4 refuses to start on Node 20**, so anything that talks to Cloudflare
+   (`deploy`, `preview`, `cf-typegen`, `wrangler rollback`) needs Node 22. The deploy
    workflow pins `node-version: 22` for exactly this reason.
 
 ## 1. Add the domain to Cloudflare
@@ -39,7 +39,7 @@ domain with no flags.
 2. Cloudflare shows two assigned nameservers. At your registrar, replace the existing
    nameservers with those two.
 3. Wait for the zone status to become **Active** (minutes to a few hours). Everything below
-   assumes the zone is active — `wrangler deploy` fails with "Could not find zone" otherwise.
+   assumes the zone is active; `wrangler deploy` fails with "Could not find zone" otherwise.
 
 ## 2. DNS records
 
@@ -71,10 +71,10 @@ Optional: to make `www` redirect to the apex instead of serving a second copy, a
 
 Add exactly two repository secrets (Settings → Secrets and variables → Actions):
 
-| Secret                  | Where to get it                                                                                                                                                                                                                                                                                     |
-| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `CLOUDFLARE_API_TOKEN`  | My Profile → API Tokens → Create Token → **Edit Cloudflare Workers** template. Scope it to this account and to the `properui.dev` zone. It needs Workers Scripts:Edit, Account Settings:Read, User Memberships:Read, and — once custom domains are on — Zone Workers Routes:Edit and Zone DNS:Edit. |
-| `CLOUDFLARE_ACCOUNT_ID` | Cloudflare dashboard → Workers & Pages → the **Account ID** in the right-hand sidebar.                                                                                                                                                                                                              |
+| Secret                  | Where to get it                                                                                                                                                                                                                                                                                   |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `CLOUDFLARE_API_TOKEN`  | My Profile → API Tokens → Create Token → **Edit Cloudflare Workers** template. Scope it to this account and to the `properui.dev` zone. It needs Workers Scripts:Edit, Account Settings:Read, User Memberships:Read, and, once custom domains are on, Zone Workers Routes:Edit and Zone DNS:Edit. |
+| `CLOUDFLARE_ACCOUNT_ID` | Cloudflare dashboard → Workers & Pages → the **Account ID** in the right-hand sidebar.                                                                                                                                                                                                            |
 
 [`.github/workflows/deploy-docs.yml`](../../.github/workflows/deploy-docs.yml) deploys on
 every push to `main` (and via **Run workflow**) using `cloudflare/wrangler-action@v4`.
@@ -89,7 +89,7 @@ pnpm install
 
 # Workspace inputs the docs build reads from disk.
 pnpm build:packages      # @properui/ui + properui (CLI)
-pnpm registry:build      # packages/registry/dist/*.json — the source of /r/*.json
+pnpm registry:build      # packages/registry/dist/*.json, the source of /r/*.json
 
 # Authenticate this machine once (opens a browser).
 pnpm -F docs exec wrangler login
@@ -103,8 +103,8 @@ Other scripts on `apps/docs`:
 
 | Script                    | What it does                                                           |
 | ------------------------- | ---------------------------------------------------------------------- |
-| `pnpm -F docs dev`        | Plain `next dev` — unchanged, use this for day-to-day work.            |
-| `pnpm -F docs build`      | Plain `next build` — unchanged.                                        |
+| `pnpm -F docs dev`        | Plain `next dev`, unchanged. Use this for day-to-day work.             |
+| `pnpm -F docs build`      | Plain `next build`, unchanged.                                         |
 | `pnpm -F docs cf:build`   | `next build` + the OpenNext transform into `.open-next/`.              |
 | `pnpm -F docs preview`    | Builds, then serves the real Worker locally with workerd.              |
 | `pnpm -F docs deploy`     | Builds, then uploads and activates the Worker.                         |
@@ -136,7 +136,7 @@ Or in the dashboard: Workers & Pages → `properui-docs` → **Deployments** →
 version → **Rollback**. Rolling back the Worker also rolls back its static assets, so the
 whole site returns to that build. Rollback does not change DNS or custom domains.
 
-If a bad commit reached `main`, revert it there too — the next push redeploys.
+If a bad commit reached `main`, revert it there too; the next push redeploys.
 
 ## Notes and limitations
 

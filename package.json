@@ -1,7 +1,7 @@
 {
     "name": "properui",
     "private": true,
-    "description": "Proper UI — an accessible React 19 + Tailwind CSS v4 component library, its CLI and its documentation site.",
+    "description": "Proper UI: an accessible React 19 + Tailwind CSS v4 component library, its CLI and its documentation site.",
     "license": "MIT",
     "author": "Ayman Shabaro (https://github.com/aymanshabaro)",
     "homepage": "https://github.com/properui/properui#readme",
