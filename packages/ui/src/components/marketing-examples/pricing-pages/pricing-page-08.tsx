@@ -1,11 +1,11 @@
-import { CtaCardHorizontalBrand } from "@/components/marketing/cta-sections/cta-card-horizontal-brand";
-import { FaqSimple01 } from "@/components/marketing/faq-sections/faq-simple-01";
-import { FeaturesCenterMockup01 } from "@/components/marketing/features-sections/features-center-mockup-01";
-import { FeaturesIconsAndImage03 } from "@/components/marketing/features-sections/features-icons-and-image-03";
-import { FooterLarge02 } from "@/components/marketing/footers/footer-large-02";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { PricingSimpleBanner } from "@/components/marketing/pricing-sections/pricing-simple-banner";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { CtaCardHorizontalBrand } from "../../marketing/cta-sections/cta-card-horizontal-brand";
+import { FaqSimple01 } from "../../marketing/faq-sections/faq-simple-01";
+import { FeaturesCenterMockup01 } from "../../marketing/features-sections/features-center-mockup-01";
+import { FeaturesIconsAndImage03 } from "../../marketing/features-sections/features-icons-and-image-03";
+import { FooterLarge02 } from "../../marketing/footers/footer-large-02";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { PricingSimpleBanner } from "../../marketing/pricing-sections/pricing-simple-banner";
 
 const styles = sortCx({
     // Hairline rule that separates two sections sharing the same surface.

@@ -15,9 +15,9 @@ import {
     useSlottedContext as AriaUseSlottedContext,
 } from "react-aria-components";
 import { ChevronLeft, ChevronRight } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { InputDateBase } from "@/components/base/input/input-date";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { Button } from "../../base/buttons/button";
+import { InputDateBase } from "../../base/input/input-date";
 import { CalendarCell } from "./cell";
 
 export const CalendarContextProvider = ({ children }: PropsWithChildren) => {

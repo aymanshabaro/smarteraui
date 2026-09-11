@@ -1,7 +1,7 @@
 import { ChartBreakoutSquare, Check, MessageChatCircle, Zap } from "@properui/icons";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { cx } from "@/utils/cx";
-import { IMAGES } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { IMAGES } from "../../../utils/demo-assets";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 const features = [
     {

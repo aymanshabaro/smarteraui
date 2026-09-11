@@ -1,7 +1,7 @@
-import { AppStoreButton, GooglePlayButton } from "@/components/base/buttons/app-store-buttons";
-import { IPhoneMockup } from "@/components/shared-assets/mockups/iphone-mockup";
-import { cx } from "@/utils/cx";
-import { AVATARS, IMAGES } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { AVATARS, IMAGES } from "../../../utils/demo-assets";
+import { AppStoreButton, GooglePlayButton } from "../../base/buttons/app-store-buttons";
+import { IPhoneMockup } from "../../shared-assets/mockups/iphone-mockup";
 
 /** Decorative notification cards that overlap the device. Purely illustrative, hidden from AT. */
 const notifications = [

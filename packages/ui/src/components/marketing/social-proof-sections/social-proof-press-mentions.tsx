@@ -1,4 +1,4 @@
-import { LOGOS } from "@/utils/demo-assets";
+import { LOGOS } from "../../../utils/demo-assets";
 
 // The reference lists five press outlets; the placeholder set has no press wordmarks, so the first
 // five company logos stand in for them.

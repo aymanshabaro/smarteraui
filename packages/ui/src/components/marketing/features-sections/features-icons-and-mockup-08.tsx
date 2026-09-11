@@ -2,11 +2,11 @@
 
 import type { FC } from "react";
 import { ArrowRight, ChartBreakoutSquare, MessageSmileCircle, Zap } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { CreditCard } from "@/components/shared-assets/credit-card/credit-card";
-import { cx, sortCx } from "@/utils/cx";
-import { AVATARS } from "@/utils/demo-assets";
+import { cx, sortCx } from "../../../utils/cx";
+import { AVATARS } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
+import { CreditCard } from "../../shared-assets/credit-card/credit-card";
 
 const styles = sortCx({
     section: "overflow-hidden bg-primary py-16 md:py-24",

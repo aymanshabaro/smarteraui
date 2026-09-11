@@ -1,13 +1,13 @@
 "use client";
 
 import { Plus } from "@properui/icons";
-import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";
-import { Button } from "@/components/base/buttons/button";
-import { Toggle } from "@/components/base/toggle/toggle";
-import { LOGOS } from "@/utils/demo-assets";
+import { LOGOS } from "../../../utils/demo-assets";
+import { SidebarNavigationSlim } from "../../application/app-navigation/sidebar-navigation/sidebar-slim";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Avatar } from "../../base/avatar/avatar";
+import { ButtonGroup, ButtonGroupItem } from "../../base/button-group/button-group";
+import { Button } from "../../base/buttons/button";
+import { Toggle } from "../../base/toggle/toggle";
 import {
     SettingsMain,
     SettingsPage,

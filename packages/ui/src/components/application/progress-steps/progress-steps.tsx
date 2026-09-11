@@ -1,6 +1,6 @@
 import type { CSSProperties, FC, ReactNode } from "react";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 const styles = sortCx({
     common: {

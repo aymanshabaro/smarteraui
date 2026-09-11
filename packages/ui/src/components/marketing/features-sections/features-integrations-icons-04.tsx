@@ -1,6 +1,6 @@
 import type { FC, SVGProps } from "react";
-import { ClaudeIcon, FigmaIcon, GitHubIcon, NextjsIcon, ReactIcon, TailwindCSSIcon } from "@/components/foundations/integration-icons";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { ClaudeIcon, FigmaIcon, GitHubIcon, NextjsIcon, ReactIcon, TailwindCSSIcon } from "../../foundations/integration-icons";
 
 const styles = sortCx({
     section: "bg-primary py-16 md:py-24",

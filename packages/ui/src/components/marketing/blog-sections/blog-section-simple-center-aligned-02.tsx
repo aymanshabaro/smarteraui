@@ -1,5 +1,5 @@
-import { Avatar } from "@/components/base/avatar/avatar";
-import { IMAGES, avatar } from "@/utils/demo-assets";
+import { IMAGES, avatar } from "../../../utils/demo-assets";
+import { Avatar } from "../../base/avatar/avatar";
 
 const authorHref = (username: string) => `/blog/authors/${username.replace("@", "")}`;
 

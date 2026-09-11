@@ -3,8 +3,8 @@
 import type { FC, ReactNode } from "react";
 import { isValidElement } from "react";
 import { ArrowRight } from "@properui/icons";
-import { cx, sortCx } from "@/utils/cx";
-import { isReactComponent } from "@/utils/is-react-component";
+import { cx, sortCx } from "../../../utils/cx";
+import { isReactComponent } from "../../../utils/is-react-component";
 
 type Size = "md" | "lg";
 type Color = "brand" | "warning" | "error" | "gray" | "success";

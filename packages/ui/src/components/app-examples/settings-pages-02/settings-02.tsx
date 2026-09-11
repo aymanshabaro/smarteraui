@@ -1,20 +1,20 @@
 "use client";
 
 import { Mail01 } from "@properui/icons";
-import { FileUploadDropZone } from "@/components/application/file-upload/file-upload-base";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { DropdownIconSimple } from "@/components/base/dropdown/dropdown-icon-simple";
-import { Form } from "@/components/base/form/form";
-import { Input, InputBase } from "@/components/base/input/input";
-import { InputGroup } from "@/components/base/input/input-group";
-import { Select } from "@/components/base/select/select";
-import { TextArea } from "@/components/base/textarea/textarea";
-import { Toggle } from "@/components/base/toggle/toggle";
-import { countriesOptions } from "@/utils/countries";
-import { avatar } from "@/utils/demo-assets";
-import { timezonesOptions } from "@/utils/timezones";
+import { countriesOptions } from "../../../utils/countries";
+import { avatar } from "../../../utils/demo-assets";
+import { timezonesOptions } from "../../../utils/timezones";
+import { FileUploadDropZone } from "../../application/file-upload/file-upload-base";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
+import { DropdownIconSimple } from "../../base/dropdown/dropdown-icon-simple";
+import { Form } from "../../base/form/form";
+import { Input, InputBase } from "../../base/input/input";
+import { InputGroup } from "../../base/input/input-group";
+import { Select } from "../../base/select/select";
+import { TextArea } from "../../base/textarea/textarea";
+import { Toggle } from "../../base/toggle/toggle";
 import { PageContainer, SettingsHeaderNav } from "./settings-shell";
 
 const person = avatar(0);

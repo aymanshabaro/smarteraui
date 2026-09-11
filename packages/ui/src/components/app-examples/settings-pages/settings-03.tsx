@@ -1,16 +1,16 @@
 "use client";
 
-import { SidebarNavigationSectionDividers } from "@/components/application/app-navigation/sidebar-navigation/sidebar-section-dividers";
-import { SectionFooter } from "@/components/application/section-footers/section-footers";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { Checkbox } from "@/components/base/checkbox/checkbox";
-import { Form } from "@/components/base/form/form";
-import { Input, InputBase } from "@/components/base/input/input";
-import { InputGroup } from "@/components/base/input/input-group";
-import { TextArea } from "@/components/base/textarea/textarea";
-import { AVATARS } from "@/utils/demo-assets";
+import { AVATARS } from "../../../utils/demo-assets";
+import { SidebarNavigationSectionDividers } from "../../application/app-navigation/sidebar-navigation/sidebar-section-dividers";
+import { SectionFooter } from "../../application/section-footers/section-footers";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
+import { Checkbox } from "../../base/checkbox/checkbox";
+import { Form } from "../../base/form/form";
+import { Input, InputBase } from "../../base/input/input";
+import { InputGroup } from "../../base/input/input-group";
+import { TextArea } from "../../base/textarea/textarea";
 import {
     SettingsFormRow,
     SettingsMain,

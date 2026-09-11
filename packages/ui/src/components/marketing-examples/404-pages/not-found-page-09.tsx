@@ -1,9 +1,9 @@
-import { NotFoundSimple02 } from "@/components/app-examples/404-sections/not-found-simple-02";
-import { BlogSectionCarouselLayout01 } from "@/components/marketing/blog-sections/blog-section-carousel-layout-01";
-import { CtaIphoneMockup01 } from "@/components/marketing/cta-sections/cta-iphone-mockup-01";
-import { FooterLarge09 } from "@/components/marketing/footers/footer-large-09";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { SectionDivider } from "@/components/shared-assets/section-divider";
+import { NotFoundSimple02 } from "../../app-examples/404-sections/not-found-simple-02";
+import { BlogSectionCarouselLayout01 } from "../../marketing/blog-sections/blog-section-carousel-layout-01";
+import { CtaIphoneMockup01 } from "../../marketing/cta-sections/cta-iphone-mockup-01";
+import { FooterLarge09 } from "../../marketing/footers/footer-large-09";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { SectionDivider } from "../../shared-assets/section-divider";
 
 /** A marketing 404 page: a badged error section with onward links, a blog carousel, an app CTA and a dark footer. */
 export const NotFoundPage09 = () => (

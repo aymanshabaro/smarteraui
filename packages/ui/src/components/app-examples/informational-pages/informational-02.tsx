@@ -22,18 +22,18 @@ import {
     Users01,
     UsersPlus,
 } from "@properui/icons";
-import type { NavItemType } from "@/components/application/app-navigation/config";
-import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
-import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
-import { Table, TableCard } from "@/components/application/table/table";
-import { TablePaginationNumbered } from "@/components/application/table/table-pagination";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
-import type { DemoAvatar } from "@/utils/demo-assets";
-import { avatar } from "@/utils/demo-assets";
+import type { DemoAvatar } from "../../../utils/demo-assets";
+import { avatar } from "../../../utils/demo-assets";
+import type { NavItemType } from "../../application/app-navigation/config";
+import { SidebarNavigationSlim } from "../../application/app-navigation/sidebar-navigation/sidebar-slim";
+import { DateRangePicker } from "../../application/date-picker/date-range-picker";
+import { Table, TableCard } from "../../application/table/table";
+import { TablePaginationNumbered } from "../../application/table/table-pagination";
+import { Avatar } from "../../base/avatar/avatar";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { ButtonGroup, ButtonGroupItem } from "../../base/button-group/button-group";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
 
 const navItems: (NavItemType & { icon: FC<{ className?: string }> })[] = [
     { label: "Home", href: "/", icon: HomeLine },

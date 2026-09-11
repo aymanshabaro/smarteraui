@@ -1,5 +1,5 @@
-import { cx, sortCx } from "@/utils/cx";
-import { LOGOS } from "@/utils/demo-assets";
+import { cx, sortCx } from "../../../utils/cx";
+import { LOGOS } from "../../../utils/demo-assets";
 
 // The reference marquee runs ten wordmarks per track; the placeholder set ships six, so it is cycled
 // to keep the track long enough for a seamless loop.

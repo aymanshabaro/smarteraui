@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { axe } from "vitest-axe";
-import * as Demos from "@/components/base/input/pin-input.demo";
+import * as Demos from "./pin-input.demo";
 
 describe("PinInput (verification code inputs)", () => {
     for (const [name, Demo] of Object.entries(Demos)) {

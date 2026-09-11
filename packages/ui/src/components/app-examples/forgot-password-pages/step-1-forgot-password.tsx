@@ -1,10 +1,10 @@
 "use client";
 
 import { ArrowLeft, Key01 } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 /** Step 1 of the password reset flow: ask for the account email. */
 export const Step1ForgotPassword = () => (

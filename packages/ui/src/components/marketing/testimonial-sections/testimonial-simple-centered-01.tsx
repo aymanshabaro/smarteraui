@@ -1,6 +1,6 @@
-import { Avatar } from "@/components/base/avatar/avatar";
-import { RatingStars } from "@/components/foundations/rating/rating-stars";
-import { AVATARS, LOGOS } from "@/utils/demo-assets";
+import { AVATARS, LOGOS } from "../../../utils/demo-assets";
+import { Avatar } from "../../base/avatar/avatar";
+import { RatingStars } from "../../foundations/rating/rating-stars";
 
 const review = {
     quote: "Love the simplicity of the service and the prompt customer support. We can't imagine working without it.",

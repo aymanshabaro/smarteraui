@@ -3,11 +3,11 @@
 // TODO(orchestrator): candidate for components/internal — the log in / forgot password page
 // examples build the same credential form from the same primitives.
 import { CheckCircle } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { SocialButton } from "@/components/base/buttons/social-button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../../utils/cx";
+import { Button } from "../../../base/buttons/button";
+import { SocialButton } from "../../../base/buttons/social-button";
+import { Form } from "../../../base/form/form";
+import { Input } from "../../../base/input/input";
 
 /** The two rules the reference sign up pages enforce on a new password. */
 const passwordRules = ["Must be at least 8 characters", "Must contain one special character"];

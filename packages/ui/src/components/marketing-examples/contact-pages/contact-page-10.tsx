@@ -1,4 +1,4 @@
-import { ContactSimpleForm05 } from "@/components/marketing/contact-sections/contact-simple-form-05";
+import { ContactSimpleForm05 } from "../../marketing/contact-sections/contact-simple-form-05";
 
 /**
  * Contact page: a single full-height panel pairing the branded contact sidebar with a services

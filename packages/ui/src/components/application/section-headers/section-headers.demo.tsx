@@ -4,11 +4,11 @@ import type { ReactNode } from "react";
 import { useState } from "react";
 import type { Key } from "react-aria";
 import { Grid01, Plus, Rows03, SearchLg, UploadCloud01 } from "@properui/icons";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
+import { ButtonGroup, ButtonGroupItem } from "../../base/button-group/button-group";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
+import { Tabs } from "../tabs/tabs";
+import { SectionHeader } from "./section-headers";
 
 /** Matches the width the docs preview gives every section header. Demo-only, not exported. */
 const Wrapper = ({ children }: { children: ReactNode }) => <div className="w-full max-w-3xl">{children}</div>;

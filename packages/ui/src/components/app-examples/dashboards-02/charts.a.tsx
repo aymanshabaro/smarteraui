@@ -26,8 +26,8 @@ import {
     XAxis,
     YAxis,
 } from "recharts";
-import { ChartLegendContent, ChartTooltipContent } from "@/components/application/charts/charts-base";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { ChartLegendContent, ChartTooltipContent } from "../../application/charts/charts-base";
 
 /** Brand-scale colors used, in order, by the multi-series charts on this page. */
 const seriesColors = ["text-utility-brand-600", "text-utility-brand-400", "text-utility-neutral-400"] as const;

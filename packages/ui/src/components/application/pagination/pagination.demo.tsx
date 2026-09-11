@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import * as Paginations from "@/components/application/pagination/pagination";
-import { PaginationDot as PaginationDotComponent } from "@/components/application/pagination/pagination-dot";
-import { PaginationLine as PaginationLineComponent } from "@/components/application/pagination/pagination-line";
+import * as Paginations from "./pagination";
+import { PaginationDot as PaginationDotComponent } from "./pagination-dot";
+import { PaginationLine as PaginationLineComponent } from "./pagination-line";
 
 export const PaginationExample = () => {
     const [currentPage, setCurrentPage] = useState(1);

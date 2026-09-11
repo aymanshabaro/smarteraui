@@ -2,15 +2,15 @@
 
 import { RadioGroup as AriaRadioGroup } from "react-aria-components";
 import { DownloadCloud02, Plus } from "@properui/icons";
-import { FeaturedCardQRCode } from "@/components/application/app-navigation/base-components/featured-cards";
-import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Table } from "@/components/application/table/table";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { RadioButton } from "@/components/base/radio-buttons/radio-buttons";
-import { MastercardIcon, VisaIcon } from "@/components/foundations/payment-icons";
-import { AVATARS } from "@/utils/demo-assets";
+import { AVATARS } from "../../../utils/demo-assets";
+import { FeaturedCardQRCode } from "../../application/app-navigation/base-components/featured-cards";
+import { SidebarNavigationSimple } from "../../application/app-navigation/sidebar-navigation/sidebar-simple";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Table } from "../../application/table/table";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { RadioButton } from "../../base/radio-buttons/radio-buttons";
+import { MastercardIcon, VisaIcon } from "../../foundations/payment-icons";
 import {
     AvatarStack,
     PaymentMethodRow,

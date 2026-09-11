@@ -1,8 +1,8 @@
 "use client";
 
 import { Copy01, DownloadCloud02, Edit01, Trash01 } from "@properui/icons";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { CloseButton } from "@/components/base/buttons/close-button";
+import { ButtonUtility } from "./button-utility";
+import { CloseButton } from "./close-button";
 
 export const UtilityButtonsExample = () => {
     return (

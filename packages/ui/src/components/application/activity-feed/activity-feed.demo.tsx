@@ -1,10 +1,10 @@
 "use client";
 
 import type { ReactNode } from "react";
-import type { ActivityFeedType } from "@/components/application/activity-feed/activity-feed";
-import { ActivityFeed } from "@/components/application/activity-feed/activity-feed";
-import { Badge } from "@/components/base/badges/badges";
-import { avatar } from "@/utils/demo-assets";
+import { avatar } from "../../../utils/demo-assets";
+import { Badge } from "../../base/badges/badges";
+import type { ActivityFeedType } from "./activity-feed";
+import { ActivityFeed } from "./activity-feed";
 
 const project = <ActivityFeed.Link href="#">Marketing site redesign</ActivityFeed.Link>;
 

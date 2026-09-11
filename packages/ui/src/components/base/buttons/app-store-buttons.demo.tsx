@@ -1,12 +1,12 @@
 "use client";
 
-import { AppGalleryButton, AppStoreButton, GalaxyStoreButton, GooglePlayButton } from "@/components/base/buttons/app-store-buttons";
+import { AppGalleryButton, AppStoreButton, GalaxyStoreButton, GooglePlayButton } from "./app-store-buttons";
 import {
     AppGalleryButton as AppGalleryButtonOutline,
     AppStoreButton as AppStoreButtonOutline,
     GalaxyStoreButton as GalaxyStoreButtonOutline,
     GooglePlayButton as GooglePlayButtonOutline,
-} from "@/components/base/buttons/app-store-buttons-outline";
+} from "./app-store-buttons-outline";
 
 export const MobileAppStoreButtonsExample = () => {
     return (

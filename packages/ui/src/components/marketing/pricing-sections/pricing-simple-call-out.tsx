@@ -1,5 +1,5 @@
 import { Check } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
+import { Button } from "../../base/buttons/button";
 
 interface Plan {
     name: string;

@@ -1,10 +1,10 @@
 "use client";
 
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "@properui/icons";
-import { Carousel } from "@/components/application/carousel/carousel-base";
-import { Button } from "@/components/base/buttons/button";
-import { sortCx } from "@/utils/cx";
-import { IMAGES, avatar } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { IMAGES, avatar } from "../../../utils/demo-assets";
+import { Carousel } from "../../application/carousel/carousel-base";
+import { Button } from "../../base/buttons/button";
 
 const authorHref = (username: string) => `/blog/authors/${username.replace("@", "")}`;
 const categoryHref = (label: string) => `/blog/categories/${label.toLowerCase().replace(/\s+/g, "-")}`;

@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import type { Selection as AriaSelection } from "react-aria-components";
-import { Tag, TagGroup, type TagItem, TagList } from "@/components/base/tags/tags";
-import { countries } from "@/utils/countries";
-import { AVATARS } from "@/utils/demo-assets";
+import { countries } from "../../../utils/countries";
+import { AVATARS } from "../../../utils/demo-assets";
+import { Tag, TagGroup, type TagItem, TagList } from "./tags";
 
 const AU_FLAG = countries.find((country) => country.code === "AU")!.flag;
 const AVATAR = AVATARS[0];

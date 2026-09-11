@@ -1,10 +1,10 @@
 "use client";
 
 import { PlayCircle } from "@properui/icons";
-import { BadgeGroup } from "@/components/base/badges/badge-groups";
-import { Button } from "@/components/base/buttons/button";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { BadgeGroup } from "../../base/badges/badge-groups";
+import { Button } from "../../base/buttons/button";
+import { HeaderDropdownSimple } from "../header-navigations/header-dropdown-simple";
 
 /**
  * Named grid lines cannot be expressed as a Tailwind utility, so the stripe grid template

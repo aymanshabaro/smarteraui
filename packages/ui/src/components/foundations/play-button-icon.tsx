@@ -1,5 +1,5 @@
 import type { HTMLAttributes, SVGProps } from "react";
-import { cx } from "@/utils/cx";
+import { cx } from "../../utils/cx";
 
 const PlayIcon = (props: SVGProps<SVGSVGElement>) => {
     return (

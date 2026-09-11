@@ -1,8 +1,8 @@
 "use client";
 
-import { ProgressSteps } from "@/components/application/progress-steps/progress-steps";
-import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
-import { useBreakpoint } from "@/hooks/use-breakpoint";
+import { useBreakpoint } from "../../../hooks/use-breakpoint";
+import { ProgressSteps } from "../../application/progress-steps/progress-steps";
+import { ProperLogoMinimal } from "../../foundations/logo/proper-logo-minimal";
 import { SetPasswordForm } from "./base-components/sign-up-form";
 import { signUpSteps } from "./base-components/steps";
 

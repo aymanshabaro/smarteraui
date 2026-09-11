@@ -2,11 +2,11 @@
 
 import { Fragment } from "react";
 import { Plus } from "@properui/icons";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Table, TableCard } from "@/components/application/table/table";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { AVATARS, LOGOS } from "@/utils/demo-assets";
+import { AVATARS, LOGOS } from "../../../utils/demo-assets";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Table, TableCard } from "../../application/table/table";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
 import { Divider, FieldLabel, PageContainer, SettingsHeaderNav } from "./settings-shell";
 
 const teams = LOGOS.slice(0, 3).map((logo) => ({

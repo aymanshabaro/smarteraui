@@ -2,8 +2,8 @@
 
 import type { HTMLAttributes } from "react";
 import { Check } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { Button } from "./button";
 
 /** Placeholder decorative icon used to demonstrate icon slots without implying a specific action. */
 const Circle = (props: HTMLAttributes<HTMLSpanElement>) => <span {...props} className={cx("size-5 rounded-[50%] border-2 border-current", props.className)} />;

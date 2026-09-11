@@ -2,7 +2,7 @@
 
 import type { ComponentType, HTMLAttributes } from "react";
 import { Input as AriaInput } from "react-aria-components";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
 
 interface DropdownSearchFieldProps {
     /** Placeholder text for the search input. */

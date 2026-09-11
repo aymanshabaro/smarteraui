@@ -1,10 +1,10 @@
-import { CareersCard01 } from "@/components/marketing/careers-sections/careers-card-01";
-import { ContactSimpleIcons02 } from "@/components/marketing/contact-sections/contact-simple-icons-02";
-import { FaqAccordion01 } from "@/components/marketing/faq-sections/faq-accordion-01";
-import { FooterLarge09 } from "@/components/marketing/footers/footer-large-09";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { HeaderSpaceBetweenBrand } from "@/components/marketing/header-sections/header-space-between-brand";
-import { SectionDivider } from "@/components/shared-assets/section-divider";
+import { CareersCard01 } from "../../marketing/careers-sections/careers-card-01";
+import { ContactSimpleIcons02 } from "../../marketing/contact-sections/contact-simple-icons-02";
+import { FaqAccordion01 } from "../../marketing/faq-sections/faq-accordion-01";
+import { FooterLarge09 } from "../../marketing/footers/footer-large-09";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { HeaderSpaceBetweenBrand } from "../../marketing/header-sections/header-space-between-brand";
+import { SectionDivider } from "../../shared-assets/section-divider";
 
 /**
  * About company page led by a brand-coloured introduction: the hiring contact channels, the

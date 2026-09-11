@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowLeft } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
+import { Button } from "../../base/buttons/button";
 
 /** A left-aligned 404 with an eyebrow, headline and a pair of actions. */
 export const NotFoundSimple01 = () => (

@@ -1,12 +1,12 @@
 "use client";
 
 import { Maximize01, Play, PlayCircle, VolumeMax } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
-import { PlayButtonIcon } from "@/components/foundations/play-button-icon";
-import { Facebook, Instagram, X } from "@/components/foundations/social-icons";
-import { cx, sortCx } from "@/utils/cx";
-import { IMAGES } from "@/utils/demo-assets";
+import { cx, sortCx } from "../../../utils/cx";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
+import { PlayButtonIcon } from "../../foundations/play-button-icon";
+import { Facebook, Instagram, X } from "../../foundations/social-icons";
 
 const styles = sortCx({
     shell: "bg-secondary flex w-full justify-center",

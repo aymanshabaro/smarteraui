@@ -1,5 +1,5 @@
-import { sortCx } from "@/utils/cx";
-import { LOGOS } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { LOGOS } from "../../../utils/demo-assets";
 
 // The reference grid holds eight logo tiles; the placeholder set ships six, so it is cycled to fill
 // the two rows of four that the `md` grid lays out.

@@ -16,25 +16,25 @@ import {
     Users01,
 } from "@properui/icons";
 import { Edit01, Trash01 } from "@properui/icons";
-import type { NavItemDividerType, NavItemType } from "@/components/application/app-navigation/config";
-import { SidebarNavigationSectionDividers } from "@/components/application/app-navigation/sidebar-navigation/sidebar-section-dividers";
-import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
-import { MetricSimple } from "@/components/application/metrics/metrics";
-import { PaginationPageDefault } from "@/components/application/pagination/pagination";
-import { Table, TableCard } from "@/components/application/table/table";
-import { customers } from "@/components/application/table/table-data";
-import { TablePaginationMinimal } from "@/components/application/table/table-pagination";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { DropdownIconSimple } from "@/components/base/dropdown/dropdown-icon-simple";
-import { Input } from "@/components/base/input/input";
-import { ProgressBarBase } from "@/components/base/progress-indicators/progress-indicators";
-import { Select } from "@/components/base/select/select";
-import type { SelectItemType } from "@/components/base/select/select-shared";
-import { AVATARS } from "@/utils/demo-assets";
+import { AVATARS } from "../../../utils/demo-assets";
+import type { NavItemDividerType, NavItemType } from "../../application/app-navigation/config";
+import { SidebarNavigationSectionDividers } from "../../application/app-navigation/sidebar-navigation/sidebar-section-dividers";
+import { DateRangePicker } from "../../application/date-picker/date-range-picker";
+import { MetricSimple } from "../../application/metrics/metrics";
+import { PaginationPageDefault } from "../../application/pagination/pagination";
+import { Table, TableCard } from "../../application/table/table";
+import { customers } from "../../application/table/table-data";
+import { TablePaginationMinimal } from "../../application/table/table-pagination";
+import { Tabs } from "../../application/tabs/tabs";
+import { Avatar } from "../../base/avatar/avatar";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { DropdownIconSimple } from "../../base/dropdown/dropdown-icon-simple";
+import { Input } from "../../base/input/input";
+import { ProgressBarBase } from "../../base/progress-indicators/progress-indicators";
+import { Select } from "../../base/select/select";
+import type { SelectItemType } from "../../base/select/select-shared";
 
 const navItems: (NavItemType | NavItemDividerType)[] = [
     { label: "Home", href: "/", icon: HomeLine },

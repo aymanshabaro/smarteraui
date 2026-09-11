@@ -1,7 +1,7 @@
 "use client";
 
 import { ChartBreakoutSquare } from "@properui/icons";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 /** A headline column paired with a rich-text column, introduced by a featured icon. */
 export const ContentSectionSimple01 = () => (

@@ -1,15 +1,15 @@
 "use client";
 
 import { DownloadCloud02, FilterLines, Zap } from "@properui/icons";
-import { FeaturedCardReferralLink } from "@/components/application/app-navigation/base-components/featured-cards";
-import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
-import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
-import { MetricChart03 } from "@/components/application/metrics/metrics";
-import { Button } from "@/components/base/buttons/button";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { ProgressBarBase } from "@/components/base/progress-indicators/progress-indicators";
-import { BackgroundPattern } from "@/components/shared-assets/background-patterns";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { FeaturedCardReferralLink } from "../../application/app-navigation/base-components/featured-cards";
+import { SidebarNavigationSimple } from "../../application/app-navigation/sidebar-navigation/sidebar-simple";
+import { DateRangePicker } from "../../application/date-picker/date-range-picker";
+import { MetricChart03 } from "../../application/metrics/metrics";
+import { Button } from "../../base/buttons/button";
+import { Dropdown } from "../../base/dropdown/dropdown";
+import { ProgressBarBase } from "../../base/progress-indicators/progress-indicators";
+import { BackgroundPattern } from "../../shared-assets/background-patterns";
 import { ChartCard, RangeTabs, StackedBarChart, currentUser, navFooterItems, navItemsSimple, sparklineDown, sparklineUp, styles } from "./dashboards-shared";
 
 const noop = () => {};

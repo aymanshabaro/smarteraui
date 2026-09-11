@@ -1,12 +1,12 @@
 "use client";
 
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import type { MarketingNavItemType } from "@/components/marketing/header-navigations/base-components/header";
-import { MarketingHeader } from "@/components/marketing/header-navigations/base-components/header";
-import { SimpleResourcesMenu } from "@/components/marketing/header-navigations/base-components/menus";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import type { MarketingNavItemType } from "../header-navigations/base-components/header";
+import { MarketingHeader } from "../header-navigations/base-components/header";
+import { SimpleResourcesMenu } from "../header-navigations/base-components/menus";
 
 const navItems: MarketingNavItemType[] = [
     { label: "Products", menu: <SimpleResourcesMenu /> },

@@ -1,8 +1,8 @@
 "use client";
 
 import { Link03, Plus, SearchLg, UsersPlus } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { AVATARS, LOGOS } from "@/utils/demo-assets";
+import { AVATARS, LOGOS } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
 import { EmptyState } from "./empty-state";
 
 export const EmptyStateExample = () => (

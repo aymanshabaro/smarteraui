@@ -1,6 +1,6 @@
 import { Check } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
 
 const benefits = ["30-day free trial", "Personalized onboarding", "Access to all features"];
 

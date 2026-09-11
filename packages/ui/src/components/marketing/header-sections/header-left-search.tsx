@@ -1,7 +1,7 @@
 "use client";
 
 import { SearchLg } from "@properui/icons";
-import { Input } from "@/components/base/input/input";
+import { Input } from "../../base/input/input";
 
 /** Left-aligned page header with a search field, used for support and resource hubs. */
 export const HeaderLeftSearch = () => (

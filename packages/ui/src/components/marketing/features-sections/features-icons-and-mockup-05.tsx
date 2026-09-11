@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import { ChartBreakoutSquare, MessageChatCircle, MessageSmileCircle, Zap } from "@properui/icons";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 const styles = sortCx({
     section: "overflow-hidden bg-primary py-16 lg:py-24",

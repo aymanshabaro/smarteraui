@@ -1,6 +1,6 @@
 "use client";
 
-import { Checkbox } from "@/components/base/checkbox/checkbox";
+import { Checkbox } from "./checkbox";
 
 export const CheckboxExample = () => <Checkbox size="sm" label="Remember me" hint="Save my login details for next time." />;
 

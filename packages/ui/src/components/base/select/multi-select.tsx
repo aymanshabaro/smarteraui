@@ -15,12 +15,12 @@ import {
     SearchField as AriaSearchField,
 } from "react-aria-components";
 import { ChevronDown, SearchLg } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { HintText } from "@/components/base/input/hint-text";
-import { Label } from "@/components/base/input/label";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { cx } from "@/utils/cx";
-import { isReactComponent } from "@/utils/is-react-component";
+import { cx } from "../../../utils/cx";
+import { isReactComponent } from "../../../utils/is-react-component";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
+import { Button } from "../buttons/button";
+import { HintText } from "../input/hint-text";
+import { Label } from "../input/label";
 import { SelectItem } from "./select-item";
 import { type CommonProps, SelectContext, type SelectItemType, sizes } from "./select-shared";
 

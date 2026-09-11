@@ -1,6 +1,6 @@
-import { NotFoundSplitImage01 } from "@/components/app-examples/404-sections/not-found-split-image-01";
-import { FooterLarge01 } from "@/components/marketing/footers/footer-large-01";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
+import { NotFoundSplitImage01 } from "../../app-examples/404-sections/not-found-split-image-01";
+import { FooterLarge01 } from "../../marketing/footers/footer-large-01";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
 
 /** A marketing 404 page: header navigation, a split-image error section with site search, and a six-column footer. */
 export const NotFoundPage01 = () => (

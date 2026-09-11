@@ -2,14 +2,14 @@
 
 import { Fragment } from "react";
 import { InfoCircle, Monitor04, Phone01 } from "@properui/icons";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { DropdownIconSimple } from "@/components/base/dropdown/dropdown-icon-simple";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { NativeSelect } from "@/components/base/select/select-native";
-import { avatar } from "@/utils/demo-assets";
+import { avatar } from "../../../utils/demo-assets";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Tabs } from "../../application/tabs/tabs";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { DropdownIconSimple } from "../../base/dropdown/dropdown-icon-simple";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { NativeSelect } from "../../base/select/select-native";
 import { Divider, FormFooter, SettingsHeaderNav, settingsSectionOptions, settingsSections } from "./settings-shell";
 
 const person = avatar(0);

@@ -4,10 +4,10 @@ import { isValidElement, useContext } from "react";
 import type { ListBoxItemProps as AriaListBoxItemProps } from "react-aria-components";
 import { ListBoxItem as AriaListBoxItem, Text as AriaText } from "react-aria-components";
 import { Check } from "@properui/icons";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { CheckboxBase } from "@/components/base/checkbox/checkbox";
-import { cx } from "@/utils/cx";
-import { isReactComponent } from "@/utils/is-react-component";
+import { cx } from "../../../utils/cx";
+import { isReactComponent } from "../../../utils/is-react-component";
+import { Avatar } from "../avatar/avatar";
+import { CheckboxBase } from "../checkbox/checkbox";
 import type { SelectItemType } from "./select-shared";
 import { SelectContext } from "./select-shared";
 

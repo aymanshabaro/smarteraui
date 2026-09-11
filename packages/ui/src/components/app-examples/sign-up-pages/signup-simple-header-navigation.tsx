@@ -1,9 +1,9 @@
 "use client";
 
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Button } from "@/components/base/buttons/button";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
-import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
+import { Tabs } from "../../application/tabs/tabs";
+import { Button } from "../../base/buttons/button";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
+import { ProperLogoMinimal } from "../../foundations/logo/proper-logo-minimal";
 import { LogInPrompt } from "./base-components/page-parts";
 import { SignUpForm } from "./base-components/sign-up-form";
 

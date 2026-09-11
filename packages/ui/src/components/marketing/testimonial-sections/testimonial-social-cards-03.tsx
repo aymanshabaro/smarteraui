@@ -1,7 +1,7 @@
-import { AvatarLabelGroup } from "@/components/base/avatar/avatar-label-group";
-import { VerifiedTick } from "@/components/base/avatar/base-components";
-import { cx, sortCx } from "@/utils/cx";
-import { AVATARS, LOGOS } from "@/utils/demo-assets";
+import { cx, sortCx } from "../../../utils/cx";
+import { AVATARS, LOGOS } from "../../../utils/demo-assets";
+import { AvatarLabelGroup } from "../../base/avatar/avatar-label-group";
+import { VerifiedTick } from "../../base/avatar/base-components";
 
 const styles = sortCx({
     card: "flex flex-col gap-8 rounded-xl bg-primary_alt p-6 ring-1 ring-secondary ring-inset lg:justify-between lg:gap-12 lg:p-8",

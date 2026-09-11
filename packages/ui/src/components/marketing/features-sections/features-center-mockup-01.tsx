@@ -2,11 +2,11 @@
 
 import type { FC } from "react";
 import { ArrowRight, ChartBreakoutSquare, MessageSmileCircle, Zap } from "@properui/icons";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { sortCx } from "@/utils/cx";
-import { IMAGES } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { IMAGES } from "../../../utils/demo-assets";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 const styles = sortCx({
     section: "bg-primary py-16 md:py-24",

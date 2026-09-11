@@ -1,12 +1,12 @@
 "use client";
 
 import { useControlledState } from "@react-stately/utils";
-import { HintText } from "@/components/base/input/hint-text";
-import type { InputProps } from "@/components/base/input/input";
-import { InputBase, TextField } from "@/components/base/input/input";
-import { Label } from "@/components/base/input/label";
-import { AmexIcon, DiscoverIcon, MastercardIcon, UnionPayIcon, VisaIcon } from "@/components/foundations/payment-icons";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { AmexIcon, DiscoverIcon, MastercardIcon, UnionPayIcon, VisaIcon } from "../../foundations/payment-icons";
+import { HintText } from "./hint-text";
+import type { InputProps } from "./input";
+import { InputBase, TextField } from "./input";
+import { Label } from "./label";
 
 const cardTypes = [
     {

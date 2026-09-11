@@ -1,13 +1,13 @@
 "use client";
 
 import { Camera01, Link01 } from "@properui/icons";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { BadgeGroup } from "@/components/base/badges/badge-groups";
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { Facebook, LinkedIn, X } from "@/components/foundations/social-icons";
-import { sortCx } from "@/utils/cx";
-import { AVATARS, IMAGES } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { AVATARS, IMAGES } from "../../../utils/demo-assets";
+import { Avatar } from "../../base/avatar/avatar";
+import { BadgeGroup } from "../../base/badges/badge-groups";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { Facebook, LinkedIn, X } from "../../foundations/social-icons";
 
 const author = AVATARS[5];
 const quoted = AVATARS[0];

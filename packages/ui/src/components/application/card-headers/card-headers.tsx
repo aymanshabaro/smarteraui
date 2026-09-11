@@ -1,7 +1,7 @@
 import type { HTMLAttributes, ReactNode } from "react";
 import { isValidElement } from "react";
-import { Badge } from "@/components/base/badges/badges";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
+import { Badge } from "../../base/badges/badges";
 
 export const styles = sortCx({
     common: {

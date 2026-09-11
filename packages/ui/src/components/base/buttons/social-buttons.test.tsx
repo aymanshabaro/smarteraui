@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { axe } from "vitest-axe";
-import { SocialButton } from "@/components/base/buttons/social-button";
-import * as Demos from "@/components/base/buttons/social-buttons.demo";
+import { SocialButton } from "./social-button";
+import * as Demos from "./social-buttons.demo";
 
 describe("Social buttons", () => {
     for (const [name, Demo] of Object.entries(Demos)) {

@@ -1,8 +1,8 @@
-import { ContentSectionRichText02 } from "@/components/marketing/content-rich-text-sections/content-section-rich-text-02";
-import { CtaScreenMockup02 } from "@/components/marketing/cta-sections/cta-screen-mockup-02";
-import { FooterLarge09 } from "@/components/marketing/footers/footer-large-09";
-import { HeaderDropdownSimpleTwoColumns } from "@/components/marketing/header-navigations/header-dropdown-simple-two-columns";
-import { HeaderCenteredEmail } from "@/components/marketing/header-sections/header-centered-email";
+import { ContentSectionRichText02 } from "../../marketing/content-rich-text-sections/content-section-rich-text-02";
+import { CtaScreenMockup02 } from "../../marketing/cta-sections/cta-screen-mockup-02";
+import { FooterLarge09 } from "../../marketing/footers/footer-large-09";
+import { HeaderDropdownSimpleTwoColumns } from "../../marketing/header-navigations/header-dropdown-simple-two-columns";
+import { HeaderCenteredEmail } from "../../marketing/header-sections/header-centered-email";
 
 /**
  * Terms and conditions page opening on a permanently dark header with an email capture, then

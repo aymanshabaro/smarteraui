@@ -1,10 +1,10 @@
-import { BlogHeaderAltLayout04 } from "@/components/marketing/blog-sections/blog-header-alt-layout-04";
-import { BlogSectionSimpleCenterAligned01 } from "@/components/marketing/blog-sections/blog-section-simple-center-aligned-01";
-import { FooterLarge08Brand } from "@/components/marketing/footers/footer-large-08-brand";
-import { FloatingSimpleWithFooter } from "@/components/marketing/header-navigations/floating-simple-with-footer";
-import { NewsletterSimpleCentered } from "@/components/marketing/newsletter-cta-sections/newsletter-simple-centered";
-import { SectionDivider } from "@/components/shared-assets/section-divider";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { BlogHeaderAltLayout04 } from "../../marketing/blog-sections/blog-header-alt-layout-04";
+import { BlogSectionSimpleCenterAligned01 } from "../../marketing/blog-sections/blog-section-simple-center-aligned-01";
+import { FooterLarge08Brand } from "../../marketing/footers/footer-large-08-brand";
+import { FloatingSimpleWithFooter } from "../../marketing/header-navigations/floating-simple-with-footer";
+import { NewsletterSimpleCentered } from "../../marketing/newsletter-cta-sections/newsletter-simple-centered";
+import { SectionDivider } from "../../shared-assets/section-divider";
 
 const styles = sortCx({
     // The latest-posts row already ends the run of padding, so the sign-up keeps only its bottom spacing.

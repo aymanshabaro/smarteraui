@@ -1,11 +1,11 @@
 "use client";
 
 import { Mail01, MarkerPin01, MessageSmileCircle, Phone } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { Checkbox } from "@/components/base/checkbox/checkbox";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { TextArea } from "@/components/base/textarea/textarea";
+import { Button } from "../../base/buttons/button";
+import { Checkbox } from "../../base/checkbox/checkbox";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { TextArea } from "../../base/textarea/textarea";
 
 const channels = [
     { icon: Mail01, title: "Email", subtitle: "Our friendly team is here to help.", cta: "hi@proper.example", href: "mailto:hi@proper.example" },

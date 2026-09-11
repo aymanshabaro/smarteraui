@@ -3,15 +3,15 @@
 import type { ReactNode } from "react";
 import { Radio as AriaRadio } from "react-aria-components";
 import { DownloadCloud01, DownloadCloud02, Zap } from "@properui/icons";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Table, TableCard } from "@/components/application/table/table";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { CheckboxBase } from "@/components/base/checkbox/checkbox";
-import { RadioGroup } from "@/components/base/radio-buttons/radio-buttons";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Table, TableCard } from "../../application/table/table";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { CheckboxBase } from "../../base/checkbox/checkbox";
+import { RadioGroup } from "../../base/radio-buttons/radio-buttons";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 import { PageContainer, PageTitle, SettingsHeaderNav } from "./settings-shell";
 
 const plans = [

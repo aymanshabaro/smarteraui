@@ -1,7 +1,7 @@
 import { File02, Heart, SlashCircle01, SwitchHorizontal01 } from "@properui/icons";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { sortCx } from "@/utils/cx";
-import { IMAGES } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { IMAGES } from "../../../utils/demo-assets";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 const styles = sortCx({
     /** The featured icon is rendered twice so it can step up a size from `md` upwards. It sits in the

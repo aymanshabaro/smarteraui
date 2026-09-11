@@ -1,9 +1,9 @@
 "use client";
 
 import { RadioGroup as AriaRadioGroup } from "react-aria-components";
-import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
-import { Checkbox } from "@/components/base/checkbox/checkbox";
-import { RadioButton } from "@/components/base/radio-buttons/radio-buttons";
+import { SidebarNavigationSlim } from "../../application/app-navigation/sidebar-navigation/sidebar-slim";
+import { Checkbox } from "../../base/checkbox/checkbox";
+import { RadioButton } from "../../base/radio-buttons/radio-buttons";
 import {
     SettingsMain,
     SettingsPage,

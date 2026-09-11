@@ -1,9 +1,9 @@
 "use client";
 
 import { ArrowDown, ArrowUpRight } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
-import { IMAGES, avatar } from "@/utils/demo-assets";
+import { IMAGES, avatar } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
 
 const authorHref = (username: string) => `/blog/authors/${username.replace("@", "")}`;
 const categoryHref = (label: string) => `/blog/categories/${label.toLowerCase().replace(/\s+/g, "-")}`;

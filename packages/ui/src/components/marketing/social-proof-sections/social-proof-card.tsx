@@ -1,5 +1,5 @@
-import { cx } from "@/utils/cx";
-import { LOGOS } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { LOGOS } from "../../../utils/demo-assets";
 
 /** The logo row inside a rounded, secondary-surface card that bleeds to the edges on mobile. */
 export const SocialProofCard = () => (

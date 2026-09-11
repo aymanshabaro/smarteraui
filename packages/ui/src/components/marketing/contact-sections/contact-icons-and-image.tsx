@@ -1,5 +1,5 @@
 import { MarkerPin01 } from "@properui/icons";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
 
 const offices = [
     { city: "Melbourne", address: "100 Flinders Street, Melbourne VIC 3000 AU" },

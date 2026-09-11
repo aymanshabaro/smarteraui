@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 import { Switch as AriaSwitch, type SwitchProps as AriaSwitchProps } from "react-aria-components";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
 
 export interface ToggleBaseProps {
     /** The size of the toggle. */

@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import * as Breadcrumbs from "@/components/application/breadcrumbs/breadcrumbs.demo";
+import * as Breadcrumbs from "./breadcrumbs.demo";
 
 export default {
     title: "Application components/Breadcrumbs",

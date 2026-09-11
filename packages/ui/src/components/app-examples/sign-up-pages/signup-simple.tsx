@@ -1,7 +1,7 @@
 "use client";
 
-import { Tabs } from "@/components/application/tabs/tabs";
-import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
+import { Tabs } from "../../application/tabs/tabs";
+import { ProperLogoMinimal } from "../../foundations/logo/proper-logo-minimal";
 import { LogInPrompt } from "./base-components/page-parts";
 import { SignUpForm } from "./base-components/sign-up-form";
 

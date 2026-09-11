@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "@properui/icons";
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { IMAGES, avatar } from "@/utils/demo-assets";
+import { IMAGES, avatar } from "../../../utils/demo-assets";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
 
 const categoryHref = (label: string) => `/blog/categories/${label.toLowerCase().replace(/\s+/g, "-")}`;
 

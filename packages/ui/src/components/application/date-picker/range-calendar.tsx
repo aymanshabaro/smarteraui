@@ -16,11 +16,11 @@ import {
     useSlottedContext as AriaUseSlottedContext,
 } from "react-aria-components";
 import { ChevronLeft, ChevronRight } from "@properui/icons";
-import type { ButtonProps } from "@/components/base/buttons/button";
-import { Button } from "@/components/base/buttons/button";
-import { InputDateBase } from "@/components/base/input/input-date";
-import { useBreakpoint } from "@/hooks/use-breakpoint";
-import { cx } from "@/utils/cx";
+import { useBreakpoint } from "../../../hooks/use-breakpoint";
+import { cx } from "../../../utils/cx";
+import type { ButtonProps } from "../../base/buttons/button";
+import { Button } from "../../base/buttons/button";
+import { InputDateBase } from "../../base/input/input-date";
 import { CalendarCell } from "./cell";
 
 export const RangeCalendarContextProvider = ({ children }: PropsWithChildren) => {

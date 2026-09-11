@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import * as Inputs from "@/components/base/input/inputs.demo";
+import * as Inputs from "./inputs.demo";
 
 export default {
     title: "Base components/Inputs",

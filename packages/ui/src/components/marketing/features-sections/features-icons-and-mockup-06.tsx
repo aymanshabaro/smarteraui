@@ -1,10 +1,10 @@
 "use client";
 
 import { ArrowRight, ChartBreakoutSquare, MessageChatCircle, Zap } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { CreditCard } from "@/components/shared-assets/credit-card/credit-card";
-import { AVATARS } from "@/utils/demo-assets";
+import { AVATARS } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
+import { CreditCard } from "../../shared-assets/credit-card/credit-card";
 
 const features = [
     {

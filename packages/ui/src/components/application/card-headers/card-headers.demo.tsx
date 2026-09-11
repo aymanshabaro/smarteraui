@@ -2,11 +2,11 @@
 
 import type { ReactNode } from "react";
 import { Plus } from "@properui/icons";
-import { CardHeader } from "@/components/application/card-headers/card-headers";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { AVATARS } from "@/utils/demo-assets";
+import { AVATARS } from "../../../utils/demo-assets";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
+import { Dropdown } from "../../base/dropdown/dropdown";
+import { CardHeader } from "./card-headers";
 
 /** Every preview shows the header as the top row of a card. Demo-only, not exported. */
 const Card = ({ children }: { children: ReactNode }) => (

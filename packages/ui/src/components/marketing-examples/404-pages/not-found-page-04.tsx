@@ -1,9 +1,9 @@
-import { NotFoundSimple04 } from "@/components/app-examples/404-sections/not-found-simple-04";
-import { BlogSectionSimpleCenterAligned02 } from "@/components/marketing/blog-sections/blog-section-simple-center-aligned-02";
-import { CtaSplitImageQuote02 } from "@/components/marketing/cta-sections/cta-split-image-quote-02";
-import { FooterLarge04 } from "@/components/marketing/footers/footer-large-04";
-import { FloatingSimpleWithFooter } from "@/components/marketing/header-navigations/floating-simple-with-footer";
-import { SectionDivider } from "@/components/shared-assets/section-divider";
+import { NotFoundSimple04 } from "../../app-examples/404-sections/not-found-simple-04";
+import { BlogSectionSimpleCenterAligned02 } from "../../marketing/blog-sections/blog-section-simple-center-aligned-02";
+import { CtaSplitImageQuote02 } from "../../marketing/cta-sections/cta-split-image-quote-02";
+import { FooterLarge04 } from "../../marketing/footers/footer-large-04";
+import { FloatingSimpleWithFooter } from "../../marketing/header-navigations/floating-simple-with-footer";
+import { SectionDivider } from "../../shared-assets/section-divider";
 
 /** A marketing 404 page: a floating header, a centered error section with help cards, recent writing, a quote CTA and a dark footer. */
 export const NotFoundPage04 = () => (

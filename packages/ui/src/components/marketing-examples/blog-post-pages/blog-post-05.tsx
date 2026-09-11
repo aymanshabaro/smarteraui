@@ -1,9 +1,9 @@
-import { BlogSectionCarouselLayout01 } from "@/components/marketing/blog-sections/blog-section-carousel-layout-01";
-import { ContentSplitImage01 } from "@/components/marketing/content-rich-text-sections/content-split-image-01";
-import { CtaCardHorizontal } from "@/components/marketing/cta-sections/cta-card-horizontal";
-import { FooterLarge16 } from "@/components/marketing/footers/footer-large-16";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { SectionDivider } from "@/components/shared-assets/section-divider";
+import { BlogSectionCarouselLayout01 } from "../../marketing/blog-sections/blog-section-carousel-layout-01";
+import { ContentSplitImage01 } from "../../marketing/content-rich-text-sections/content-split-image-01";
+import { CtaCardHorizontal } from "../../marketing/cta-sections/cta-card-horizontal";
+import { FooterLarge16 } from "../../marketing/footers/footer-large-16";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { SectionDivider } from "../../shared-assets/section-divider";
 
 /**
  * Blog post 05 — a long-form post with a sticky table of contents beside the body, followed by a

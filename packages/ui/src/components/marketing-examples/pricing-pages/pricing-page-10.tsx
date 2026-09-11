@@ -1,9 +1,9 @@
-import { CtaScreenMockup04 } from "@/components/marketing/cta-sections/cta-screen-mockup-04";
-import { FaqSimple02 } from "@/components/marketing/faq-sections/faq-simple-02";
-import { FooterLarge03 } from "@/components/marketing/footers/footer-large-03";
-import { FloatingSimpleWithFooter } from "@/components/marketing/header-navigations/floating-simple-with-footer";
-import { PricingSimpleIconOffset } from "@/components/marketing/pricing-sections/pricing-simple-icon-offset";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { CtaScreenMockup04 } from "../../marketing/cta-sections/cta-screen-mockup-04";
+import { FaqSimple02 } from "../../marketing/faq-sections/faq-simple-02";
+import { FooterLarge03 } from "../../marketing/footers/footer-large-03";
+import { FloatingSimpleWithFooter } from "../../marketing/header-navigations/floating-simple-with-footer";
+import { PricingSimpleIconOffset } from "../../marketing/pricing-sections/pricing-simple-icon-offset";
 
 const styles = sortCx({
     // Hairline rule that separates two sections sharing the same surface.

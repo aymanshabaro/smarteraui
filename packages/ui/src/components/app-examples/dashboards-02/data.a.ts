@@ -1,7 +1,7 @@
 // Deterministic demo data for the `dashboards-02` page examples. Every series is a literal so the
 // pages render identically in Storybook, the docs previews and the a11y smoke tests.
 // TODO(orchestrator): candidate for components/internal if other page examples need the same series.
-import { AVATARS, LOGOS, avatar } from "@/utils/demo-assets";
+import { AVATARS, LOGOS, avatar } from "../../../utils/demo-assets";
 
 /** Twelve month labels used as the x-axis of every "12 months" chart on this page. */
 export const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] as const;

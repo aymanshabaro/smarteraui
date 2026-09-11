@@ -4,13 +4,13 @@ import type { CSSProperties } from "react";
 import { useState } from "react";
 import { Button as AriaButton } from "react-aria-components";
 import { AlertCircle, CheckCircle, Codepen, CursorClick01, InfoCircle, UploadCloud02 } from "@properui/icons";
-import type { NotificationProps } from "@/components/application/notifications/notifications";
-import { Notification } from "@/components/application/notifications/notifications";
-import type { NotifyOptions } from "@/components/application/notifications/notifications-provider";
-import { NotificationsProvider, notify } from "@/components/application/notifications/notifications-provider";
-import { Button } from "@/components/base/buttons/button";
-import { cx } from "@/utils/cx";
-import { IMAGES, avatar } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { IMAGES, avatar } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import type { NotificationProps } from "./notifications";
+import { Notification } from "./notifications";
+import type { NotifyOptions } from "./notifications-provider";
+import { NotificationsProvider, notify } from "./notifications-provider";
 
 const hintClasses =
     "outline-focus-ring flex cursor-pointer items-center gap-1 rounded-md text-sm font-medium text-quaternary transition duration-100 ease-linear hover:text-tertiary focus-visible:outline-2 focus-visible:outline-offset-2";

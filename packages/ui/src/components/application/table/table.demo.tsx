@@ -22,19 +22,19 @@ import {
     UsersPlus,
     X,
 } from "@properui/icons";
-import { EmptyState } from "@/components/application/empty-state/empty-state";
-import { Table, TableCard } from "@/components/application/table/table";
-import { customers, invoices, teamMembers, uploadedFiles } from "@/components/application/table/table-data";
-import { TablePaginationMinimal, TablePaginationNumbered } from "@/components/application/table/table-pagination";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Badge, BadgeWithDot, BadgeWithIcon } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { DropdownIconSimple } from "@/components/base/dropdown/dropdown-icon-simple";
-import { Input } from "@/components/base/input/input";
-import { ProgressBar } from "@/components/base/progress-indicators/progress-indicators";
-import { AVATARS, LOGOS } from "@/utils/demo-assets";
+import { AVATARS, LOGOS } from "../../../utils/demo-assets";
+import { Avatar } from "../../base/avatar/avatar";
+import { Badge, BadgeWithDot, BadgeWithIcon } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { DropdownIconSimple } from "../../base/dropdown/dropdown-icon-simple";
+import { Input } from "../../base/input/input";
+import { ProgressBar } from "../../base/progress-indicators/progress-indicators";
+import { EmptyState } from "../empty-state/empty-state";
+import { Tabs } from "../tabs/tabs";
+import { Table, TableCard } from "./table";
+import { customers, invoices, teamMembers, uploadedFiles } from "./table-data";
+import { TablePaginationMinimal, TablePaginationNumbered } from "./table-pagination";
 
 /** Sorts a list of records by the column and direction described by a `SortDescriptor`. */
 const sortItems = <T extends object>(items: T[], { column, direction }: AriaSortDescriptor) => {

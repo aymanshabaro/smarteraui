@@ -1,10 +1,10 @@
-import { BannerSlimBrandFullWidth } from "@/components/marketing/banners/banner-slim-brand-full-width";
-import { CtaScreenMockup02 } from "@/components/marketing/cta-sections/cta-screen-mockup-02";
-import { CtaSimpleCentered } from "@/components/marketing/cta-sections/cta-simple-centered";
-import { FooterLarge09 } from "@/components/marketing/footers/footer-large-09";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { PricingLargeTable02 } from "@/components/marketing/pricing-sections/pricing-large-table-02";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { BannerSlimBrandFullWidth } from "../../marketing/banners/banner-slim-brand-full-width";
+import { CtaScreenMockup02 } from "../../marketing/cta-sections/cta-screen-mockup-02";
+import { CtaSimpleCentered } from "../../marketing/cta-sections/cta-simple-centered";
+import { FooterLarge09 } from "../../marketing/footers/footer-large-09";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { PricingLargeTable02 } from "../../marketing/pricing-sections/pricing-large-table-02";
 
 const styles = sortCx({
     // The page alternates surfaces, so this section sits on the secondary background.

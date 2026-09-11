@@ -1,5 +1,5 @@
-import { CloseButton } from "@/components/base/buttons/close-button";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { CloseButton } from "../../base/buttons/close-button";
 
 const styles = sortCx({
     counter: "ring-utility-brand-500_alt flex min-w-7 items-center justify-center rounded-md p-1 ring-1 ring-inset",

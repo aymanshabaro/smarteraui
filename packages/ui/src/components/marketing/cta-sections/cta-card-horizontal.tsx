@@ -1,4 +1,4 @@
-import { Button } from "@/components/base/buttons/button";
+import { Button } from "../../base/buttons/button";
 
 /** A rounded card that lays the copy and the actions out side by side on large screens. */
 export const CtaCardHorizontal = () => (

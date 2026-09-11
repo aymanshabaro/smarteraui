@@ -1,13 +1,13 @@
 "use client";
 
 import { SearchLg } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
-import { CtaAbstractImages } from "@/components/marketing/cta-sections/cta-abstract-images";
-import { FaqAccordion02 } from "@/components/marketing/faq-sections/faq-accordion-02";
-import { FooterLarge08 } from "@/components/marketing/footers/footer-large-08";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { NewsletterCardVertical } from "@/components/marketing/newsletter-cta-sections/newsletter-card-vertical";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
+import { CtaAbstractImages } from "../../marketing/cta-sections/cta-abstract-images";
+import { FaqAccordion02 } from "../../marketing/faq-sections/faq-accordion-02";
+import { FooterLarge08 } from "../../marketing/footers/footer-large-08";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { NewsletterCardVertical } from "../../marketing/newsletter-cta-sections/newsletter-card-vertical";
 
 /**
  * FAQ page 06 — a permanently dark header and search hero, the card accordion, a "still have

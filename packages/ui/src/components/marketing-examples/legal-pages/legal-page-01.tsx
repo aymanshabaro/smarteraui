@@ -1,7 +1,7 @@
-import { ContentSectionRichText02 } from "@/components/marketing/content-rich-text-sections/content-section-rich-text-02";
-import { FooterLarge16 } from "@/components/marketing/footers/footer-large-16";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { HeaderCentered } from "@/components/marketing/header-sections/header-centered";
+import { ContentSectionRichText02 } from "../../marketing/content-rich-text-sections/content-section-rich-text-02";
+import { FooterLarge16 } from "../../marketing/footers/footer-large-16";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { HeaderCentered } from "../../marketing/header-sections/header-centered";
 
 /**
  * Privacy policy page: a centered document header above the policy body, closed by the

@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { axe } from "vitest-axe";
-import { TextArea } from "@/components/base/textarea/textarea";
-import * as Demos from "@/components/base/textarea/textarea.demo";
+import { TextArea } from "./textarea";
+import * as Demos from "./textarea.demo";
 
 describe("Textareas", () => {
     for (const [name, Demo] of Object.entries(Demos)) {

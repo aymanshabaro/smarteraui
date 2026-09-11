@@ -5,7 +5,7 @@ import { createContext } from "react";
 // `SelectItemType` lives in `@/utils/select-item-type` so that data modules (`@/utils/countries`,
 // `@/utils/timezones`) do not depend on the select component. Re-exported here for consumers that
 // import it from `select-shared` (the reference source location) or from `select`/`multi-select`.
-export type { SelectItemType } from "@/utils/select-item-type";
+export type { SelectItemType } from "../../../utils/select-item-type";
 
 export interface CommonProps {
     /** Helper text displayed below the input. */

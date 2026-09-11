@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import * as Demos from "@/components/base/video-player/video-player.demo";
+import * as Demos from "./video-player.demo";
 
 export default {
     title: "Base components/Video player",

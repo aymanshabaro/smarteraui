@@ -4,11 +4,11 @@ import type { ComponentProps, ComponentPropsWithRef, ReactNode } from "react";
 import { Children, createContext, isValidElement, useContext } from "react";
 import { FileIcon } from "@untitledui/file-icons";
 import { SearchLg } from "@properui/icons";
-import { FeaturedIcon as FeaturedIconbase } from "@/components/foundations/featured-icon/featured-icon";
-import type { BackgroundPatternProps } from "@/components/shared-assets/background-patterns";
-import { BackgroundPattern } from "@/components/shared-assets/background-patterns";
-import { Illustration as Illustrations } from "@/components/shared-assets/illustrations";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { FeaturedIcon as FeaturedIconbase } from "../../foundations/featured-icon/featured-icon";
+import type { BackgroundPatternProps } from "../../shared-assets/background-patterns";
+import { BackgroundPattern } from "../../shared-assets/background-patterns";
+import { Illustration as Illustrations } from "../../shared-assets/illustrations";
 
 interface RootContextProps {
     size?: "sm" | "md" | "lg";

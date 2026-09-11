@@ -3,20 +3,20 @@
 import { useState } from "react";
 import type { Key } from "react-aria";
 import { DownloadCloud02, Edit01, HomeLine, PiggyBank01, RefreshCcw01, SearchLg, Umbrella03 } from "@properui/icons";
-import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
-import { Table } from "@/components/application/table/table";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Badge, BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { Input } from "@/components/base/input/input";
-import { ProgressBarBase } from "@/components/base/progress-indicators/progress-indicators";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { MastercardIcon, VisaIcon } from "@/components/foundations/payment-icons";
-import { CreditCard } from "@/components/shared-assets/credit-card/credit-card";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { SidebarNavigationSlim } from "../../application/app-navigation/sidebar-navigation/sidebar-slim";
+import { Table } from "../../application/table/table";
+import { Tabs } from "../../application/tabs/tabs";
+import { Avatar } from "../../base/avatar/avatar";
+import { Badge, BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { Dropdown } from "../../base/dropdown/dropdown";
+import { Input } from "../../base/input/input";
+import { ProgressBarBase } from "../../base/progress-indicators/progress-indicators";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
+import { MastercardIcon, VisaIcon } from "../../foundations/payment-icons";
+import { CreditCard } from "../../shared-assets/credit-card/credit-card";
 import { RangeTabs, StackedBarChart, TrendAreaChart, currentUser, navFooterItemsWithIcons, navItemsDualTier, styles, transactions } from "./dashboards-shared";
 
 const pots = [

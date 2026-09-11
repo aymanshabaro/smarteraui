@@ -2,7 +2,7 @@
 
 import type { FC, SVGProps } from "react";
 import { Button as AriaButton } from "react-aria-components";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
 
 /** Delivery state of a sent message. */
 export type MessageStatusType = "sent" | "delivered" | "failed";

@@ -1,13 +1,13 @@
 "use client";
 
 import { SearchLg } from "@properui/icons";
-import { SidebarNavigationSectionDividers } from "@/components/application/app-navigation/sidebar-navigation/sidebar-section-dividers";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
-import { Toggle } from "@/components/base/toggle/toggle";
-import { IMAGES, LOGOS } from "@/utils/demo-assets";
+import { IMAGES, LOGOS } from "../../../utils/demo-assets";
+import { SidebarNavigationSectionDividers } from "../../application/app-navigation/sidebar-navigation/sidebar-section-dividers";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
+import { Toggle } from "../../base/toggle/toggle";
 import { SettingsMain, SettingsPage, SettingsPageTitle, SettingsTabPanel, SettingsTabsRoot, SettingsTabsRow, navItemsWithDividers } from "./settings-shared.a";
 
 const appDescriptions = [

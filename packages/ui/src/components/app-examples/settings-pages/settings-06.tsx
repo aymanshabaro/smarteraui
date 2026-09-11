@@ -2,15 +2,15 @@
 
 import { Radio as AriaRadio, RadioGroup as AriaRadioGroup } from "react-aria-components";
 import { Check, Code02 } from "@properui/icons";
-import { SidebarNavigationSectionsSubheadings } from "@/components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings";
-import { SectionFooter } from "@/components/application/section-footers/section-footers";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Button } from "@/components/base/buttons/button";
-import { RadioButtonBase } from "@/components/base/radio-buttons/radio-buttons";
-import { NativeSelect } from "@/components/base/select/select-native";
-import { Toggle } from "@/components/base/toggle/toggle";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { SidebarNavigationSectionsSubheadings } from "../../application/app-navigation/sidebar-navigation/sidebar-sections-subheadings";
+import { SectionFooter } from "../../application/section-footers/section-footers";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Button } from "../../base/buttons/button";
+import { RadioButtonBase } from "../../base/radio-buttons/radio-buttons";
+import { NativeSelect } from "../../base/select/select-native";
+import { Toggle } from "../../base/toggle/toggle";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
 import {
     SettingsFormRow,
     SettingsMain,

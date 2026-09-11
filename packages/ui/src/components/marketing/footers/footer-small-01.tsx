@@ -1,5 +1,5 @@
-import { Button } from "@/components/base/buttons/button";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
+import { Button } from "../../base/buttons/button";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
 
 const navItems = [
     { label: "Overview", href: "/product/overview" },

@@ -12,7 +12,7 @@ import {
     type NumberFieldProps as AriaNumberFieldProps,
 } from "react-aria-components";
 import { ChevronDown, ChevronUp, Minus, Plus } from "@properui/icons";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
 import { Button } from "../buttons/button";
 import { HintText } from "./hint-text";
 import { Label } from "./label";

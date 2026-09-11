@@ -1,6 +1,6 @@
-import { Button } from "@/components/base/buttons/button";
-import { cx } from "@/utils/cx";
-import { IMAGES } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
 
 /**
  * The collage is a decorative mood board, so every tile is hidden from assistive tech

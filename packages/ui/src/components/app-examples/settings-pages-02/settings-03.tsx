@@ -1,18 +1,18 @@
 "use client";
 
 import { Mail01, SearchLg } from "@properui/icons";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { AvatarProfilePhoto } from "@/components/base/avatar/avatar-profile-photo";
-import { Button } from "@/components/base/buttons/button";
-import { Checkbox } from "@/components/base/checkbox/checkbox";
-import { Form } from "@/components/base/form/form";
-import { Input, InputBase } from "@/components/base/input/input";
-import { InputGroup } from "@/components/base/input/input-group";
-import { NativeSelect } from "@/components/base/select/select-native";
-import { TextEditor } from "@/components/base/text-editor/text-editor";
-import { avatar } from "@/utils/demo-assets";
+import { avatar } from "../../../utils/demo-assets";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Tabs } from "../../application/tabs/tabs";
+import { Avatar } from "../../base/avatar/avatar";
+import { AvatarProfilePhoto } from "../../base/avatar/avatar-profile-photo";
+import { Button } from "../../base/buttons/button";
+import { Checkbox } from "../../base/checkbox/checkbox";
+import { Form } from "../../base/form/form";
+import { Input, InputBase } from "../../base/input/input";
+import { InputGroup } from "../../base/input/input-group";
+import { NativeSelect } from "../../base/select/select-native";
+import { TextEditor } from "../../base/text-editor/text-editor";
 import { Divider, FieldLabel, FormFooter, PageContainer, SettingsHeaderNav, settingsSectionOptions, settingsSections, styles } from "./settings-shell";
 
 const person = avatar(0);

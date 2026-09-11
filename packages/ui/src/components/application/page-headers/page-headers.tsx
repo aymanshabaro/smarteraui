@@ -2,8 +2,8 @@
 
 import type { ComponentPropsWithRef } from "react";
 import { Children, createContext, isValidElement, useContext } from "react";
-import { Avatar as AvatarBase, type AvatarProps } from "@/components/base/avatar/avatar";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
+import { Avatar as AvatarBase, type AvatarProps } from "../../base/avatar/avatar";
 
 const styles = sortCx({
     root: {

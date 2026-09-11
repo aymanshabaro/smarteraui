@@ -12,8 +12,8 @@ import {
     ResponsiveContainer,
     Tooltip,
 } from "recharts";
-import { ChartLegendContent, ChartTooltipContent } from "@/components/application/charts/charts-base";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { ChartLegendContent, ChartTooltipContent } from "./charts-base";
 
 const CustomRadarChartTick = ({ payload, x, y, textAnchor, stroke }: BaseTickContentProps) => {
     const textRef = useRef<SVGTextElement>(null);

@@ -1,11 +1,11 @@
 "use client";
 
 import { PlayCircle } from "@properui/icons";
-import { BadgeGroup } from "@/components/base/badges/badge-groups";
-import { Button } from "@/components/base/buttons/button";
-import { VideoPlayer } from "@/components/base/video-player/video-player";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { VIDEO_POSTER, VIDEO_SRC } from "@/utils/demo-assets";
+import { VIDEO_POSTER, VIDEO_SRC } from "../../../utils/demo-assets";
+import { BadgeGroup } from "../../base/badges/badge-groups";
+import { Button } from "../../base/buttons/button";
+import { VideoPlayer } from "../../base/video-player/video-player";
+import { HeaderDropdownSimple } from "../header-navigations/header-dropdown-simple";
 
 /**
  * Named grid lines cannot be expressed as a Tailwind utility, so the stripe grid template

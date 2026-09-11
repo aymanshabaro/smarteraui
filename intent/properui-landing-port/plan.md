@@ -35,8 +35,8 @@ chat can redo this from this file plus spec.md.
 **Deleted** (confirmed via repo-wide grep that nothing else imports them first)
 
 - `apps/docs/components/landing/{content.ts,landing-agents.tsx,landing-cta.tsx,landing-faq.tsx,
-  landing-features.tsx,landing-footer.tsx,landing-header.tsx,landing-hero.tsx,landing-layers.tsx,
-  landing-logo.tsx,landing-metrics.tsx,landing-theming.tsx}`.
+landing-features.tsx,landing-footer.tsx,landing-header.tsx,landing-hero.tsx,landing-layers.tsx,
+landing-logo.tsx,landing-metrics.tsx,landing-theming.tsx}`.
 
 **Edited**
 

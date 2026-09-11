@@ -1,12 +1,12 @@
-import { CareersSimple03 } from "@/components/marketing/careers-sections/careers-simple-03";
-import { ContentSectionSimple03 } from "@/components/marketing/content-rich-text-sections/content-section-simple-03";
-import { FooterLarge08 } from "@/components/marketing/footers/footer-large-08";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { HeaderCentered } from "@/components/marketing/header-sections/header-centered";
-import { MetricsMinimalCenteredText } from "@/components/marketing/metrics-sections/metrics-minimal-centered-text";
-import { TeamSectionImageGlass04 } from "@/components/marketing/team-sections/team-section-image-glass-04";
-import { TestimonialCaseStudyCards } from "@/components/marketing/testimonial-sections/testimonial-case-study-cards";
-import { SectionDivider } from "@/components/shared-assets/section-divider";
+import { CareersSimple03 } from "../../marketing/careers-sections/careers-simple-03";
+import { ContentSectionSimple03 } from "../../marketing/content-rich-text-sections/content-section-simple-03";
+import { FooterLarge08 } from "../../marketing/footers/footer-large-08";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { HeaderCentered } from "../../marketing/header-sections/header-centered";
+import { MetricsMinimalCenteredText } from "../../marketing/metrics-sections/metrics-minimal-centered-text";
+import { TeamSectionImageGlass04 } from "../../marketing/team-sections/team-section-image-glass-04";
+import { TestimonialCaseStudyCards } from "../../marketing/testimonial-sections/testimonial-case-study-cards";
+import { SectionDivider } from "../../shared-assets/section-divider";
 
 /**
  * About company page told as a story: the mission, the headline numbers, the long-form company

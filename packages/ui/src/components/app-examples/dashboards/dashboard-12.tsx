@@ -3,22 +3,22 @@
 import { useState } from "react";
 import type { Key } from "react-aria";
 import { Calendar as CalendarIcon, Edit01, FilterLines, Monitor01, Plus, ShoppingCart01, Umbrella03 } from "@properui/icons";
-import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
-import { PageHeader } from "@/components/application/page-headers/page-headers";
-import { Table } from "@/components/application/table/table";
-import { TablePaginationMinimal } from "@/components/application/table/table-pagination";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Badge, BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { ProgressBarBase } from "@/components/base/progress-indicators/progress-indicators";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { MastercardIcon, VisaIcon } from "@/components/foundations/payment-icons";
-import { CreditCard } from "@/components/shared-assets/credit-card/credit-card";
-import { cx } from "@/utils/cx";
-import { IMAGES } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { IMAGES } from "../../../utils/demo-assets";
+import { SidebarNavigationSlim } from "../../application/app-navigation/sidebar-navigation/sidebar-slim";
+import { PageHeader } from "../../application/page-headers/page-headers";
+import { Table } from "../../application/table/table";
+import { TablePaginationMinimal } from "../../application/table/table-pagination";
+import { Tabs } from "../../application/tabs/tabs";
+import { Avatar } from "../../base/avatar/avatar";
+import { Badge, BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { Dropdown } from "../../base/dropdown/dropdown";
+import { ProgressBarBase } from "../../base/progress-indicators/progress-indicators";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
+import { MastercardIcon, VisaIcon } from "../../foundations/payment-icons";
+import { CreditCard } from "../../shared-assets/credit-card/credit-card";
 import { TrendAreaChart, currentUser, navFooterItemsWithIcons, navItemsDualTier, styles, transactions } from "./dashboards-shared";
 
 const accountTabs = [

@@ -1,10 +1,10 @@
 "use client";
 
 import { SearchLg } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
 
 /** Half the width of a numeral's stroke — the construction grid the glyphs are drawn on. */
 const R = 31;

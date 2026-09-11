@@ -1,10 +1,10 @@
-import { CtaSimpleLogos01 } from "@/components/marketing/cta-sections/cta-simple-logos-01";
-import { FaqAccordion04 } from "@/components/marketing/faq-sections/faq-accordion-04";
-import { FeaturesSimpleIcons01 } from "@/components/marketing/features-sections/features-simple-icons-01";
-import { FooterLarge05 } from "@/components/marketing/footers/footer-large-05";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { PricingPrimaryDarkBadge } from "@/components/marketing/pricing-sections/pricing-primary-dark-badge";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { CtaSimpleLogos01 } from "../../marketing/cta-sections/cta-simple-logos-01";
+import { FaqAccordion04 } from "../../marketing/faq-sections/faq-accordion-04";
+import { FeaturesSimpleIcons01 } from "../../marketing/features-sections/features-simple-icons-01";
+import { FooterLarge05 } from "../../marketing/footers/footer-large-05";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { PricingPrimaryDarkBadge } from "../../marketing/pricing-sections/pricing-primary-dark-badge";
 
 const styles = sortCx({
     // The plan hero opens on the brand section, so the header is painted to match it.

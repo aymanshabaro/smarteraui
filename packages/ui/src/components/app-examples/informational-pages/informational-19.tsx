@@ -28,21 +28,21 @@ import {
     Underline01,
     Users01,
 } from "@properui/icons";
-import type { NavItemType } from "@/components/application/app-navigation/config";
-import { SidebarNavigationSectionsSubheadings } from "@/components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings";
-import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
-import { FileUpload } from "@/components/application/file-upload/file-upload-base";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { AvatarProfilePhoto } from "@/components/base/avatar/avatar-profile-photo";
-import { Badge, BadgeIcon } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { CloseButton } from "@/components/base/buttons/close-button";
-import { DropdownIconSimple } from "@/components/base/dropdown/dropdown-icon-simple";
-import { NativeSelect } from "@/components/base/select/select-native";
-import { cx } from "@/utils/cx";
-import { IMAGES, LOGOS, avatar } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { IMAGES, LOGOS, avatar } from "../../../utils/demo-assets";
+import type { NavItemType } from "../../application/app-navigation/config";
+import { SidebarNavigationSectionsSubheadings } from "../../application/app-navigation/sidebar-navigation/sidebar-sections-subheadings";
+import { Breadcrumbs } from "../../application/breadcrumbs/breadcrumbs";
+import { FileUpload } from "../../application/file-upload/file-upload-base";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Avatar } from "../../base/avatar/avatar";
+import { AvatarProfilePhoto } from "../../base/avatar/avatar-profile-photo";
+import { Badge, BadgeIcon } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { CloseButton } from "../../base/buttons/close-button";
+import { DropdownIconSimple } from "../../base/dropdown/dropdown-icon-simple";
+import { NativeSelect } from "../../base/select/select-native";
 
 const noop = () => {};
 

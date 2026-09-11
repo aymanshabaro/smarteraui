@@ -1,7 +1,7 @@
 "use client";
 
 import { SubmenuTrigger as AriaSubmenuTrigger } from "react-aria-components";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
+import { Dropdown } from "./dropdown";
 
 export const DropdownIconSimple = () => (
     <Dropdown.Root>

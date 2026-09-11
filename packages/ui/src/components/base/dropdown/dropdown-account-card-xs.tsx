@@ -4,10 +4,10 @@ import { useState } from "react";
 import type { Selection as AriaSelection } from "react-aria-components";
 import { Button as AriaButton, SubmenuTrigger as AriaSubmenuTrigger } from "react-aria-components";
 import { ChevronDown, LogOut01, Moon01, Plus, Settings01 } from "@properui/icons";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { cx } from "@/utils/cx";
-import { avatar } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { avatar } from "../../../utils/demo-assets";
+import { Avatar } from "../avatar/avatar";
+import { Dropdown } from "./dropdown";
 
 const primaryAccount = avatar(0);
 const secondaryAccount = avatar(1);

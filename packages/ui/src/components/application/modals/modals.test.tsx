@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { axe } from "vitest-axe";
 import "vitest-axe/extend-expect";
-import { Button } from "@/components/base/buttons/button";
+import { Button } from "../../base/buttons/button";
 import { Dialog, DialogTrigger, Modal, ModalOverlay } from "./modal";
 import { ModalFooter, ModalPanel } from "./modal-parts";
 import * as Demos from "./modals.demo";

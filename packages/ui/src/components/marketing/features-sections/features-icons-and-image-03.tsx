@@ -1,7 +1,7 @@
 import { MessageChatCircle, Zap } from "@properui/icons";
-import { VideoPlayer } from "@/components/base/video-player/video-player";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { VIDEO_POSTER, VIDEO_SRC } from "@/utils/demo-assets";
+import { VIDEO_POSTER, VIDEO_SRC } from "../../../utils/demo-assets";
+import { VideoPlayer } from "../../base/video-player/video-player";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 /** Empty WebVTT track — the placeholder clip has no dialogue, but WCAG 1.2.2 wants a track. */
 const CAPTIONS = { src: "data:text/vtt;charset=utf-8,WEBVTT%0A%0A", srcLang: "en", label: "English" };

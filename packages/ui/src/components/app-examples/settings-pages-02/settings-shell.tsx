@@ -4,12 +4,12 @@
 // `settings-pages-02` variant (header navigation, page container, form scaffolding).
 import type { ComponentPropsWithoutRef, FC, ReactNode } from "react";
 import { Bell01, HelpCircle, Settings01, Zap } from "@properui/icons";
-import { NavButton } from "@/components/application/app-navigation/base-components/nav-button";
-import { HeaderNavigationBase } from "@/components/application/app-navigation/header-navigation";
-import { Button } from "@/components/base/buttons/button";
-import { DropdownAvatar } from "@/components/base/dropdown/dropdown-avatar";
-import { Tooltip, TooltipTrigger } from "@/components/base/tooltip/tooltip";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
+import { NavButton } from "../../application/app-navigation/base-components/nav-button";
+import { HeaderNavigationBase } from "../../application/app-navigation/header-navigation";
+import { Button } from "../../base/buttons/button";
+import { DropdownAvatar } from "../../base/dropdown/dropdown-avatar";
+import { Tooltip, TooltipTrigger } from "../../base/tooltip/tooltip";
 
 /** Primary product navigation shown in the header of every settings page. */
 export const productNavItems = [

@@ -1,15 +1,15 @@
 "use client";
 
 import { CreditCard02, File02, Heart, Mail01, SearchLg, SlashCircle01, SwitchHorizontal01 } from "@properui/icons";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { CtaScreenMockup03 } from "@/components/marketing/cta-sections/cta-screen-mockup-03";
-import { FooterLarge02 } from "@/components/marketing/footers/footer-large-02";
-import { FloatingSimpleWithFooter } from "@/components/marketing/header-navigations/floating-simple-with-footer";
-import { sortCx } from "@/utils/cx";
-import { AVATARS } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { AVATARS } from "../../../utils/demo-assets";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
+import { CtaScreenMockup03 } from "../../marketing/cta-sections/cta-screen-mockup-03";
+import { FooterLarge02 } from "../../marketing/footers/footer-large-02";
+import { FloatingSimpleWithFooter } from "../../marketing/header-navigations/floating-simple-with-footer";
 
 const styles = sortCx({
     /** The featured icon steps up a size from `md`, so it is rendered once per breakpoint. */

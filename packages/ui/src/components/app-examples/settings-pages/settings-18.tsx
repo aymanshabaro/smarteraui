@@ -1,9 +1,9 @@
 "use client";
 
 import { ArrowLeft } from "@properui/icons";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Button } from "@/components/base/buttons/button";
-import { Checkbox } from "@/components/base/checkbox/checkbox";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Button } from "../../base/buttons/button";
+import { Checkbox } from "../../base/checkbox/checkbox";
 import { SettingsFormRow, SettingsMain, SettingsPage, SettingsTabPanel, SettingsTabsRoot, SettingsTabsRow, styles } from "./settings-shared.a";
 
 interface NotificationCategory {

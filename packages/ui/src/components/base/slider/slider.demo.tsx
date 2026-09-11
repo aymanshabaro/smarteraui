@@ -1,6 +1,6 @@
 "use client";
 
-import { Slider } from "@/components/base/slider/slider";
+import { Slider } from "./slider";
 
 export const SliderExample = () => {
     return (

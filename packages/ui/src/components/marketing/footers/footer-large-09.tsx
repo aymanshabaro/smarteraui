@@ -1,7 +1,7 @@
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
 
 const styles = sortCx({
     columnTitle: "text-quaternary text-sm font-semibold",

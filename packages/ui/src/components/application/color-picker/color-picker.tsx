@@ -24,9 +24,9 @@ import {
     TextField as AriaTextField,
 } from "react-aria-components";
 import { Dropper, Plus } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { Select } from "@/components/base/select/select";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
+import { Button } from "../../base/buttons/button";
+import { Select } from "../../base/select/select";
 import { TAILWIND_PALETTE, TAILWIND_PALETTE_COLUMNS } from "./color-picker-colors";
 
 /** A parsed React Aria color value. */

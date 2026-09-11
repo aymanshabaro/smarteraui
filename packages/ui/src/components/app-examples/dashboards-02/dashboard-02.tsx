@@ -1,14 +1,14 @@
 "use client";
 
 import { FilterLines, SearchLg, SwitchHorizontal01 } from "@properui/icons";
-import { MetricChart03 } from "@/components/application/metrics/metrics";
-import { PaginationCardMinimal } from "@/components/application/pagination/pagination";
-import { Table, TableCard } from "@/components/application/table/table";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { Input } from "@/components/base/input/input";
-import { ProgressBar } from "@/components/base/progress-indicators/progress-indicators";
+import { MetricChart03 } from "../../application/metrics/metrics";
+import { PaginationCardMinimal } from "../../application/pagination/pagination";
+import { Table, TableCard } from "../../application/table/table";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { Input } from "../../base/input/input";
+import { ProgressBar } from "../../base/progress-indicators/progress-indicators";
 import { sitePages, sparkUp } from "./data.a";
 import { DashboardHeader, DashboardMain, DashboardSection } from "./shell.a";
 import { FiltersButton, PanelMenu, PeriodTabs, RowActions, SegmentTabs } from "./widgets.a";

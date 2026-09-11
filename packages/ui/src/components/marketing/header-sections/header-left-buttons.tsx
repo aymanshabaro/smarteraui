@@ -1,4 +1,4 @@
-import { Button } from "@/components/base/buttons/button";
+import { Button } from "../../base/buttons/button";
 
 /** Left-aligned page header with a secondary/primary button pair below the copy. */
 export const HeaderLeftButtons = () => (

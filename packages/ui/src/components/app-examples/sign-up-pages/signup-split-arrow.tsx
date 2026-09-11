@@ -1,5 +1,5 @@
-import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { ProperLogoMinimal } from "../../foundations/logo/proper-logo-minimal";
 import { SignUpFormColumn } from "./base-components/form-column";
 import { SocialProofRow } from "./base-components/page-parts";
 

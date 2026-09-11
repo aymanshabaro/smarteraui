@@ -1,6 +1,6 @@
 "use client";
 
-import { TextArea } from "@/components/base/textarea/textarea";
+import { TextArea } from "./textarea";
 
 /** Hero example shown at the top of the docs page. */
 export const TextareaExample = () => {

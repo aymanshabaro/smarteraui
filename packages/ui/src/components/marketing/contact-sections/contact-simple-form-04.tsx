@@ -1,15 +1,15 @@
 "use client";
 
 import { MarkerPin01, MessageChatCircle, Phone } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { Checkbox } from "@/components/base/checkbox/checkbox";
-import { Form } from "@/components/base/form/form";
-import { Input, InputBase } from "@/components/base/input/input";
-import { InputGroup } from "@/components/base/input/input-group";
-import { NativeSelect } from "@/components/base/select/select-native";
-import { TextArea } from "@/components/base/textarea/textarea";
-import { Dribbble, Facebook, LinkedIn, X, YouTube } from "@/components/foundations/social-icons";
-import { countries } from "@/utils/countries";
+import { countries } from "../../../utils/countries";
+import { Button } from "../../base/buttons/button";
+import { Checkbox } from "../../base/checkbox/checkbox";
+import { Form } from "../../base/form/form";
+import { Input, InputBase } from "../../base/input/input";
+import { InputGroup } from "../../base/input/input-group";
+import { NativeSelect } from "../../base/select/select-native";
+import { TextArea } from "../../base/textarea/textarea";
+import { Dribbble, Facebook, LinkedIn, X, YouTube } from "../../foundations/social-icons";
 
 const countryCodeOptions = countries.map((country) => ({ value: country.code, label: country.code }));
 

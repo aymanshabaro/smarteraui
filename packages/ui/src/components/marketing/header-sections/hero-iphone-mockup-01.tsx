@@ -1,11 +1,11 @@
-import { BadgeGroup } from "@/components/base/badges/badge-groups";
-import { AppStoreButton, GooglePlayButton } from "@/components/base/buttons/app-store-buttons";
-import type { MarketingNavItemType } from "@/components/marketing/header-navigations/base-components/header";
-import { MarketingHeader } from "@/components/marketing/header-navigations/base-components/header";
-import { SimpleResourcesMenu } from "@/components/marketing/header-navigations/base-components/menus";
-import { BackgroundPattern } from "@/components/shared-assets/background-patterns";
-import { IPhoneMockup } from "@/components/shared-assets/mockups/iphone-mockup";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { BadgeGroup } from "../../base/badges/badge-groups";
+import { AppStoreButton, GooglePlayButton } from "../../base/buttons/app-store-buttons";
+import { BackgroundPattern } from "../../shared-assets/background-patterns";
+import { IPhoneMockup } from "../../shared-assets/mockups/iphone-mockup";
+import type { MarketingNavItemType } from "../header-navigations/base-components/header";
+import { MarketingHeader } from "../header-navigations/base-components/header";
+import { SimpleResourcesMenu } from "../header-navigations/base-components/menus";
 
 const navItems: MarketingNavItemType[] = [
     { label: "Products", menu: <SimpleResourcesMenu /> },

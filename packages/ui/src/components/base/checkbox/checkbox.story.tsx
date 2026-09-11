@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import * as Checkbox from "@/components/base/checkbox/checkbox.demo";
+import * as Checkbox from "./checkbox.demo";
 
 export default {
     title: "Base components/Checkboxes",

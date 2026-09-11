@@ -2,11 +2,11 @@
 
 import type { FC } from "react";
 import { ArrowRight, ChartBreakoutSquare, MessageSmileCircle, Zap } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { IPhoneMockup } from "@/components/shared-assets/mockups/iphone-mockup";
-import { sortCx } from "@/utils/cx";
-import { IMAGES } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
+import { IPhoneMockup } from "../../shared-assets/mockups/iphone-mockup";
 
 const styles = sortCx({
     section: "overflow-hidden bg-primary pt-16 lg:py-24",

@@ -1,8 +1,8 @@
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { IPhoneMockup } from "@/components/shared-assets/mockups/iphone-mockup";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { IPhoneMockup } from "../../shared-assets/mockups/iphone-mockup";
 
 /** Pre-launch newsletter capture with a pair of overlapping phone mockups on a tinted panel. */
 export const NewsletterIphoneMockup03 = () => (

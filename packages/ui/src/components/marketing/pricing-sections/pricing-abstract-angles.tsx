@@ -2,10 +2,10 @@
 
 import type { CSSProperties, FC } from "react";
 import { Check, LayersThree01, LayersTwo01, Zap } from "@properui/icons";
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { Toggle } from "@/components/base/toggle/toggle";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { Toggle } from "../../base/toggle/toggle";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 interface Plan {
     icon: FC<{ className?: string }>;

@@ -2,7 +2,7 @@ import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { axe } from "vitest-axe";
 import "vitest-axe/extend-expect";
-import { LOGOS } from "@/utils/demo-assets";
+import { LOGOS } from "../../../utils/demo-assets";
 import * as Demos from "./social-proof-sections.demo";
 import { variantsA } from "./variants.a";
 

@@ -1,8 +1,8 @@
 import { MarkerPin01, MessageChatCircle, Phone } from "@properui/icons";
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 const cards = [
     {

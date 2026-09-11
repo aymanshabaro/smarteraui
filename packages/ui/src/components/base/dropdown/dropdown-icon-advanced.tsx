@@ -4,9 +4,9 @@ import { useState } from "react";
 import type { Selection as AriaSelection } from "react-aria-components";
 import { SubmenuTrigger as AriaSubmenuTrigger } from "react-aria-components";
 import { ArrowNarrowLeft, ArrowNarrowRight, Code02, Copy01, Cube01, Download01, Edit04, RefreshCcw02, Scissors01, Star01 } from "@properui/icons";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { cx } from "@/utils/cx";
-import { avatar } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { avatar } from "../../../utils/demo-assets";
+import { Dropdown } from "./dropdown";
 
 const StatusDot = ({ status }: { status: "online" | "offline" }) => (
     <span className="me-2 inline-flex shrink-0 items-center justify-center p-[5px]">

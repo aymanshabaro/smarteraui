@@ -1,8 +1,8 @@
 "use client";
 
 import { ArrowLeft, CheckCircle } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
+import { Button } from "../../base/buttons/button";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 /** Step 3 of the email verification flow: the address is confirmed and the user can continue. */
 export const Step3Success = () => (

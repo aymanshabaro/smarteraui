@@ -2,12 +2,12 @@
 
 import { RadioGroup as AriaRadioGroup } from "react-aria-components";
 import { DownloadCloud02, Edit01, Zap, ZapFast } from "@properui/icons";
-import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Table } from "@/components/application/table/table";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
+import { SidebarNavigationSlim } from "../../application/app-navigation/sidebar-navigation/sidebar-slim";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Table } from "../../application/table/table";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
 import {
     PlanOptionRadio,
     SettingsBlock,

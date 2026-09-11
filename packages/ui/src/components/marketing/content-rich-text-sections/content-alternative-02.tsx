@@ -1,11 +1,11 @@
 "use client";
 
 import { ArrowNext, ArrowPrevious } from "@properui/icons";
-import { Carousel } from "@/components/application/carousel/carousel-base";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Badge } from "@/components/base/badges/badges";
-import { sortCx } from "@/utils/cx";
-import { AVATARS, IMAGES } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { AVATARS, IMAGES } from "../../../utils/demo-assets";
+import { Carousel } from "../../application/carousel/carousel-base";
+import { Avatar } from "../../base/avatar/avatar";
+import { Badge } from "../../base/badges/badges";
 
 const author = AVATARS[10];
 const quoted = AVATARS[0];

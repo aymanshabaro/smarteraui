@@ -3,16 +3,16 @@
 import type { ComponentProps } from "react";
 import { FileIcon } from "@untitledui/file-icons";
 import { ArrowLeft, FilterLines, HomeLine, Plus, SearchLg, Share04 } from "@properui/icons";
-import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
-import { FileUpload } from "@/components/application/file-upload/file-upload-base";
-import { Table, TableCard } from "@/components/application/table/table";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { DropdownIconSimple } from "@/components/base/dropdown/dropdown-icon-simple";
-import { Input } from "@/components/base/input/input";
-import type { DemoAvatar } from "@/utils/demo-assets";
-import { avatar } from "@/utils/demo-assets";
+import type { DemoAvatar } from "../../../utils/demo-assets";
+import { avatar } from "../../../utils/demo-assets";
+import { Breadcrumbs } from "../../application/breadcrumbs/breadcrumbs";
+import { FileUpload } from "../../application/file-upload/file-upload-base";
+import { Table, TableCard } from "../../application/table/table";
+import { Tabs } from "../../application/tabs/tabs";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
+import { DropdownIconSimple } from "../../base/dropdown/dropdown-icon-simple";
+import { Input } from "../../base/input/input";
 import { AppHeader } from "./shell.a";
 
 const noop = () => {};

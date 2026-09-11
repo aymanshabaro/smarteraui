@@ -15,9 +15,9 @@ import {
     XAxis,
     YAxis,
 } from "recharts";
-import { ChartLegendContent, ChartTooltipContent, selectEvenlySpacedItems } from "@/components/application/charts/charts-base";
-import { useBreakpoint } from "@/hooks/use-breakpoint";
-import { cx } from "@/utils/cx";
+import { useBreakpoint } from "../../../hooks/use-breakpoint";
+import { cx } from "../../../utils/cx";
+import { ChartLegendContent, ChartTooltipContent, selectEvenlySpacedItems } from "./charts-base";
 
 const lineData = [
     { date: new Date(2026, 0, 1), A: 600, B: 400, C: 100 },

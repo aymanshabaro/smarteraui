@@ -56,7 +56,7 @@ import {
     YandexIcon,
     ZelleIcon,
     ZipPayIcon,
-} from "@/components/foundations/payment-icons";
+} from "./";
 
 const icons = [
     { name: "Visa", icon: VisaIcon },

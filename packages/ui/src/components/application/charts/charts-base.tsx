@@ -4,7 +4,7 @@ import type { TooltipProps } from "recharts";
 import type { Props as LegendContentProps } from "recharts/types/component/DefaultLegendContent";
 import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent";
 import type { Props as DotProps } from "recharts/types/shape/Dot";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
 
 /**
  * Selects evenly spaced items from an array. Used for rendering

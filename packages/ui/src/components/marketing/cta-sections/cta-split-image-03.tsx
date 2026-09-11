@@ -1,5 +1,5 @@
-import { Button } from "@/components/base/buttons/button";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
 
 /** A centered CTA on a tinted band, with a wide image overlapping its bottom edge. */
 export const CtaSplitImage03 = () => (

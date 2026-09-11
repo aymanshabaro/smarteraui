@@ -8,7 +8,7 @@ import {
     Heading as AriaHeading,
 } from "react-aria-components";
 import { MinusCircle, PlusCircle } from "@properui/icons";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
 
 const styles = sortCx({
     item: "rounded-2xl p-5 transition duration-300 ease-in-out md:p-6",

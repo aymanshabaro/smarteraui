@@ -2,9 +2,9 @@
 
 import { Tab as AriaTab, TabList as AriaTabList, TabPanel as AriaTabPanel, Tabs as AriaTabs } from "react-aria-components";
 import { ArrowRight } from "@properui/icons";
-import { CreditCard } from "@/components/shared-assets/credit-card/credit-card";
-import { cx } from "@/utils/cx";
-import { AVATARS } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { AVATARS } from "../../../utils/demo-assets";
+import { CreditCard } from "../../shared-assets/credit-card/credit-card";
 
 /** The isometric transform every card in the fanned stack shares. */
 const cardTransform = "relative [--scale:1.13] [transform:scale(var(--scale))_rotateX(63deg)_rotateY(1deg)_rotateZ(51deg)_skewX(14deg)] md:[--scale:1.641]";

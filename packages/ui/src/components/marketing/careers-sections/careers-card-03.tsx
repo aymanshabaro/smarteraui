@@ -1,7 +1,7 @@
 import { Clock, CurrencyDollarCircle } from "@properui/icons";
-import { Badge, BadgeWithDot, BadgeWithFlag } from "@/components/base/badges/badges";
-import { sortCx } from "@/utils/cx";
-import { IMAGES } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Badge, BadgeWithDot, BadgeWithFlag } from "../../base/badges/badges";
 
 const styles = sortCx({
     card: "bg-primary ring-secondary outline-focus-ring flex flex-col rounded-2xl p-6 ring-1 ring-inset focus-visible:outline-2 focus-visible:outline-offset-2",

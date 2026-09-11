@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment } from "react";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
 import { Calendar } from "./calendar";
 import {
     CalendarAppHeader,

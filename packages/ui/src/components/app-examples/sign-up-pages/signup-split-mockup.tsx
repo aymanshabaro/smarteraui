@@ -1,4 +1,4 @@
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
 import { SignUpFormColumn } from "./base-components/form-column";
 import { ScreenMockup } from "./base-components/screen-mockup";
 

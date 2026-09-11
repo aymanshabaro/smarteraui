@@ -1,4 +1,4 @@
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
 
 /**
  * The brand-background twin of `FooterSmall02`: the logo and a copyright line on a solid

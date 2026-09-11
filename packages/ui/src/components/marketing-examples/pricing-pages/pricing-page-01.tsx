@@ -1,10 +1,10 @@
-import { CtaSimpleLogos01Brand } from "@/components/marketing/cta-sections/cta-simple-logos-01-brand";
-import { FaqSimple04 } from "@/components/marketing/faq-sections/faq-simple-04";
-import { FeaturesSimpleIcons03 } from "@/components/marketing/features-sections/features-simple-icons-03";
-import { FooterLarge01 } from "@/components/marketing/footers/footer-large-01";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { PricingSimpleCallOut } from "@/components/marketing/pricing-sections/pricing-simple-call-out";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { CtaSimpleLogos01Brand } from "../../marketing/cta-sections/cta-simple-logos-01-brand";
+import { FaqSimple04 } from "../../marketing/faq-sections/faq-simple-04";
+import { FeaturesSimpleIcons03 } from "../../marketing/features-sections/features-simple-icons-03";
+import { FooterLarge01 } from "../../marketing/footers/footer-large-01";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { PricingSimpleCallOut } from "../../marketing/pricing-sections/pricing-simple-call-out";
 
 const styles = sortCx({
     // The page alternates surfaces, so this section sits on the secondary background instead of its own default.

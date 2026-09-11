@@ -1,8 +1,8 @@
-import { ContentSectionRichText02 } from "@/components/marketing/content-rich-text-sections/content-section-rich-text-02";
-import { CtaSimpleCentered } from "@/components/marketing/cta-sections/cta-simple-centered";
-import { FooterLarge10 } from "@/components/marketing/footers/footer-large-10";
-import { FloatingSimpleWithFooter } from "@/components/marketing/header-navigations/floating-simple-with-footer";
-import { HeaderCenteredTabs } from "@/components/marketing/header-sections/header-centered-tabs";
+import { ContentSectionRichText02 } from "../../marketing/content-rich-text-sections/content-section-rich-text-02";
+import { CtaSimpleCentered } from "../../marketing/cta-sections/cta-simple-centered";
+import { FooterLarge10 } from "../../marketing/footers/footer-large-10";
+import { FloatingSimpleWithFooter } from "../../marketing/header-navigations/floating-simple-with-footer";
+import { HeaderCenteredTabs } from "../../marketing/header-sections/header-centered-tabs";
 
 /**
  * Privacy policy page under a floating header: a document header whose tab list switches

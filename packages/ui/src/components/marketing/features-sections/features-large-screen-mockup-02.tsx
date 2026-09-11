@@ -1,5 +1,5 @@
-import { sortCx } from "@/utils/cx";
-import { IMAGES } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { IMAGES } from "../../../utils/demo-assets";
 
 const styles = sortCx({
     band: "bg-secondary pt-16 pb-28 md:pt-24 md:pb-40",

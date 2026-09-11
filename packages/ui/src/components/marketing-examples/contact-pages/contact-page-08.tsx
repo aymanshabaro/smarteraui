@@ -1,8 +1,8 @@
-import { ContactIconsAndImage } from "@/components/marketing/contact-sections/contact-icons-and-image";
-import { ContactSimpleForm } from "@/components/marketing/contact-sections/contact-simple-form";
-import { CtaCardHorizontal } from "@/components/marketing/cta-sections/cta-card-horizontal";
-import { FooterLarge11Brand } from "@/components/marketing/footers/footer-large-11-brand";
-import { FloatingSimpleWithFooter } from "@/components/marketing/header-navigations/floating-simple-with-footer";
+import { ContactIconsAndImage } from "../../marketing/contact-sections/contact-icons-and-image";
+import { ContactSimpleForm } from "../../marketing/contact-sections/contact-simple-form";
+import { CtaCardHorizontal } from "../../marketing/cta-sections/cta-card-horizontal";
+import { FooterLarge11Brand } from "../../marketing/footers/footer-large-11-brand";
+import { FloatingSimpleWithFooter } from "../../marketing/header-navigations/floating-simple-with-footer";
 
 /**
  * Contact page: a floating header, the centered enquiry form, the office band with an overlapping

@@ -1,6 +1,6 @@
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { IMAGES, avatar } from "@/utils/demo-assets";
+import { IMAGES, avatar } from "../../../utils/demo-assets";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
 
 const authorHref = (username: string) => `/blog/authors/${username.replace("@", "")}`;
 const categoryHref = (label: string) => `/blog/categories/${label.toLowerCase().replace(/\s+/g, "-")}`;

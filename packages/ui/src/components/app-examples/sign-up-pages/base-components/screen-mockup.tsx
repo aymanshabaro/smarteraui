@@ -1,6 +1,6 @@
 // TODO(orchestrator): candidate for components/shared-assets/mockups — the marketing hero and
 // CTA sections inline the same three-layer bezel.
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../../utils/cx";
 
 const styles = sortCx({
     /** The three nested layers that make up a desktop device bezel. */

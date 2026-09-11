@@ -1,11 +1,11 @@
-import { Button } from "@/components/base/buttons/button";
-import { CtaSimpleCentered } from "@/components/marketing/cta-sections/cta-simple-centered";
-import { FaqSimple03 } from "@/components/marketing/faq-sections/faq-simple-03";
-import { FeaturesIconsAndImage03 } from "@/components/marketing/features-sections/features-icons-and-image-03";
-import { FooterLarge03 } from "@/components/marketing/footers/footer-large-03";
-import type { MarketingNavItemType } from "@/components/marketing/header-navigations/base-components/header";
-import { MarketingHeader } from "@/components/marketing/header-navigations/base-components/header";
-import { SimpleResourcesMenu } from "@/components/marketing/header-navigations/base-components/menus";
+import { Button } from "../../base/buttons/button";
+import { CtaSimpleCentered } from "../../marketing/cta-sections/cta-simple-centered";
+import { FaqSimple03 } from "../../marketing/faq-sections/faq-simple-03";
+import { FeaturesIconsAndImage03 } from "../../marketing/features-sections/features-icons-and-image-03";
+import { FooterLarge03 } from "../../marketing/footers/footer-large-03";
+import type { MarketingNavItemType } from "../../marketing/header-navigations/base-components/header";
+import { MarketingHeader } from "../../marketing/header-navigations/base-components/header";
+import { SimpleResourcesMenu } from "../../marketing/header-navigations/base-components/menus";
 
 const navItems: MarketingNavItemType[] = [
     { label: "Products", menu: <SimpleResourcesMenu /> },

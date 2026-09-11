@@ -2,7 +2,7 @@
 
 import type { FC } from "react";
 import { Button as AriaButton } from "react-aria-components";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
 
 export interface MessageActionItem {
     /** Accessible name of the action, e.g. `Copy`. */

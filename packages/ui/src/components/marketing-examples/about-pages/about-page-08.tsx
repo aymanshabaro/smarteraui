@@ -1,12 +1,12 @@
-import { CareersSimple04 } from "@/components/marketing/careers-sections/careers-simple-04";
-import { ContactSimpleForm01 } from "@/components/marketing/contact-sections/contact-simple-form-01";
-import { FooterLarge13 } from "@/components/marketing/footers/footer-large-13";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { HeaderCentered } from "@/components/marketing/header-sections/header-centered";
-import { NewsletterSimpleCentered } from "@/components/marketing/newsletter-cta-sections/newsletter-simple-centered";
-import { SocialProofFullWidthMasked } from "@/components/marketing/social-proof-sections/social-proof-full-width-masked";
-import { TeamSectionSimple03 } from "@/components/marketing/team-sections/team-section-simple-03";
-import { SectionDivider } from "@/components/shared-assets/section-divider";
+import { CareersSimple04 } from "../../marketing/careers-sections/careers-simple-04";
+import { ContactSimpleForm01 } from "../../marketing/contact-sections/contact-simple-form-01";
+import { FooterLarge13 } from "../../marketing/footers/footer-large-13";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { HeaderCentered } from "../../marketing/header-sections/header-centered";
+import { NewsletterSimpleCentered } from "../../marketing/newsletter-cta-sections/newsletter-simple-centered";
+import { SocialProofFullWidthMasked } from "../../marketing/social-proof-sections/social-proof-full-width-masked";
+import { TeamSectionSimple03 } from "../../marketing/team-sections/team-section-simple-03";
+import { SectionDivider } from "../../shared-assets/section-divider";
 
 /**
  * About us page that states the mission, proves it with customer logos, introduces the

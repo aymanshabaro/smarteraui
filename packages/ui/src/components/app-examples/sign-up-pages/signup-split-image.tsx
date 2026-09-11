@@ -1,4 +1,4 @@
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
 import { SignUpFormColumn } from "./base-components/form-column";
 
 /** Split sign up page whose right half is a full-bleed photograph with a rounded inner corner. */

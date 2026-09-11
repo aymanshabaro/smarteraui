@@ -2,13 +2,13 @@
 
 import { Radio as AriaRadio, Text as AriaText } from "react-aria-components";
 import { Bank, BarChartSquare01, LayersThree01, Package, Zap } from "@properui/icons";
-import { Avatar as AvatarPrimitive } from "@/components/base/avatar/avatar";
-import { CheckboxBase } from "@/components/base/checkbox/checkbox";
-import { RadioButtonBase, RadioButton as RadioButtonPrimitive, RadioGroup } from "@/components/base/radio-buttons/radio-buttons";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { MastercardIcon, PayPalIcon, StripeIcon, VisaIcon } from "@/components/foundations/payment-icons";
-import { cx } from "@/utils/cx";
-import { AVATARS } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { AVATARS } from "../../../utils/demo-assets";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
+import { MastercardIcon, PayPalIcon, StripeIcon, VisaIcon } from "../../foundations/payment-icons";
+import { Avatar as AvatarPrimitive } from "../avatar/avatar";
+import { CheckboxBase } from "../checkbox/checkbox";
+import { RadioButtonBase, RadioButton as RadioButtonPrimitive, RadioGroup } from "./radio-buttons";
 
 /* -----------------------------------------------------------------------------------------
  * Radio button examples (task B-radio-buttons)

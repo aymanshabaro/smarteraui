@@ -1,4 +1,4 @@
-import { Button } from "@/components/base/buttons/button";
+import { Button } from "../../base/buttons/button";
 
 /**
  * Coarse equirectangular land mask for the decorative dot map: `#` renders a dot, `.` is water.

@@ -2,8 +2,8 @@
 
 import { Tab as AriaTab, TabList as AriaTabList, TabPanel as AriaTabPanel, Tabs as AriaTabs } from "react-aria-components";
 import { ArrowRight } from "@properui/icons";
-import { cx } from "@/utils/cx";
-import { IMAGES } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { IMAGES } from "../../../utils/demo-assets";
 
 const tabs = [
     {

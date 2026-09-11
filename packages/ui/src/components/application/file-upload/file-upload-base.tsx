@@ -6,11 +6,11 @@ import type { FileIcon } from "@untitledui/file-icons";
 import { FileIcon as FileTypeIcon } from "@untitledui/file-icons";
 import { AnimatePresence, motion } from "motion/react";
 import { CheckCircle, Trash01, UploadCloud02, XCircle } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { ProgressBar } from "@/components/base/progress-indicators/progress-indicators";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { ProgressBar } from "../../base/progress-indicators/progress-indicators";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 /**
  * Returns a human-readable file size.

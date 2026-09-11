@@ -1,8 +1,8 @@
-import { NotFoundScreenMockup } from "@/components/app-examples/404-sections/not-found-screen-mockup";
-import { BlogSectionSimpleCenterAligned01 } from "@/components/marketing/blog-sections/blog-section-simple-center-aligned-01";
-import { FooterLarge06Brand } from "@/components/marketing/footers/footer-large-06-brand";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { SectionDivider } from "@/components/shared-assets/section-divider";
+import { NotFoundScreenMockup } from "../../app-examples/404-sections/not-found-screen-mockup";
+import { BlogSectionSimpleCenterAligned01 } from "../../marketing/blog-sections/blog-section-simple-center-aligned-01";
+import { FooterLarge06Brand } from "../../marketing/footers/footer-large-06-brand";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { SectionDivider } from "../../shared-assets/section-divider";
 
 /** A marketing maintenance page: an error section beside an app screen mockup, the latest posts and a brand newsletter footer. */
 export const NotFoundPage06 = () => (

@@ -1,10 +1,10 @@
-import { BannerSlimDefaultFullWidth } from "@/components/marketing/banners/banner-slim-default-full-width";
-import { BlogHeaderFeaturedPost03 } from "@/components/marketing/blog-sections/blog-header-featured-post-03";
-import { BlogSectionCarouselLayout02 } from "@/components/marketing/blog-sections/blog-section-carousel-layout-02";
-import { CtaSplitImageQuote02 } from "@/components/marketing/cta-sections/cta-split-image-quote-02";
-import { FooterLarge10 } from "@/components/marketing/footers/footer-large-10";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { BannerSlimDefaultFullWidth } from "../../marketing/banners/banner-slim-default-full-width";
+import { BlogHeaderFeaturedPost03 } from "../../marketing/blog-sections/blog-header-featured-post-03";
+import { BlogSectionCarouselLayout02 } from "../../marketing/blog-sections/blog-section-carousel-layout-02";
+import { CtaSplitImageQuote02 } from "../../marketing/cta-sections/cta-split-image-quote-02";
+import { FooterLarge10 } from "../../marketing/footers/footer-large-10";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
 
 const styles = sortCx({
     // The carousel band sits on the secondary surface between two primary-surface sections.

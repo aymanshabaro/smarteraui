@@ -1,14 +1,14 @@
 "use client";
 
 import { ChevronDown, CurrencyDollarCircle, Eye, SearchLg, UserCircle } from "@properui/icons";
-import { MetricIcon03 } from "@/components/application/metrics/metrics";
-import { MetricChangeIndicator } from "@/components/application/metrics/metrics-base";
-import { PaginationPageDefault } from "@/components/application/pagination/pagination";
-import { Table, TableRowActionsDropdown } from "@/components/application/table/table";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
+import { MetricIcon03 } from "../../application/metrics/metrics";
+import { MetricChangeIndicator } from "../../application/metrics/metrics-base";
+import { PaginationPageDefault } from "../../application/pagination/pagination";
+import { Table, TableRowActionsDropdown } from "../../application/table/table";
+import { Avatar } from "../../base/avatar/avatar";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
 import { StackedBarChart } from "./charts.a";
 import { customerRows, stackedSeries } from "./data.a";
 import { DashboardHeader, DashboardMain, DashboardSection, subNavItems } from "./shell.a";

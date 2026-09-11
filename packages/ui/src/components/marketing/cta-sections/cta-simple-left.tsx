@@ -1,4 +1,4 @@
-import { Button } from "@/components/base/buttons/button";
+import { Button } from "../../base/buttons/button";
 
 /** A left-aligned headline with the actions pushed to the end of the row on large screens. */
 export const CtaSimpleLeft = () => (

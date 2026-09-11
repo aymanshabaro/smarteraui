@@ -9,8 +9,7 @@
         ],
         "baseUrl": ".",
         "paths": {
-            "~/*": ["./*"],
-            "@/*": ["../../packages/ui/src/*"]
+            "~/*": ["./*"]
         },
         "incremental": true
     },

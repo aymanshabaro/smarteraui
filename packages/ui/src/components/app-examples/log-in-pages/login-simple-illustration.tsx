@@ -1,10 +1,10 @@
 import { LogIn04 } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { SocialButton } from "@/components/base/buttons/social-button";
-import { Checkbox } from "@/components/base/checkbox/checkbox";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { Illustration } from "@/components/shared-assets/illustrations";
+import { Button } from "../../base/buttons/button";
+import { SocialButton } from "../../base/buttons/social-button";
+import { Checkbox } from "../../base/checkbox/checkbox";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { Illustration } from "../../shared-assets/illustrations";
 
 /** Log in page that swaps the logo lockup for a cloud illustration badged with a sign-in glyph. */
 export const LoginSimpleIllustration = () => (

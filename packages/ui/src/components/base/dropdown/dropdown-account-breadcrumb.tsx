@@ -3,11 +3,11 @@
 import { useState } from "react";
 import { Button as AriaButton, MenuItem as AriaMenuItem } from "react-aria-components";
 import { ChevronSelectorVertical } from "@properui/icons";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { cx } from "@/utils/cx";
-import { avatar } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { avatar } from "../../../utils/demo-assets";
+import { Avatar } from "../avatar/avatar";
 import { RadioButtonBase } from "../radio-buttons/radio-buttons";
+import { Dropdown } from "./dropdown";
 
 const accounts = [
     { id: avatar(0).username, name: avatar(0).name, email: avatar(0).email, src: avatar(0).src },

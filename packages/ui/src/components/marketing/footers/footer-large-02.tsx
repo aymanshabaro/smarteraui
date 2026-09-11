@@ -1,9 +1,9 @@
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
-import { RatingBadge } from "@/components/foundations/rating/rating-badge";
-import { AngelList, Dribbble, Facebook, GitHub, Layers, LinkedIn, X } from "@/components/foundations/social-icons";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
+import { RatingBadge } from "../../foundations/rating/rating-badge";
+import { AngelList, Dribbble, Facebook, GitHub, Layers, LinkedIn, X } from "../../foundations/social-icons";
 
 const styles = sortCx({
     socialLink:

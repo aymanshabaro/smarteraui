@@ -1,4 +1,4 @@
-import { LOGOS } from "@/utils/demo-assets";
+import { LOGOS } from "../../../utils/demo-assets";
 
 /** The full-width logo row on the brand-colored section background. */
 export const SocialProofFullWidthBrand = () => (

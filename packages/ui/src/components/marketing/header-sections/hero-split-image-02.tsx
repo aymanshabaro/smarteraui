@@ -1,12 +1,12 @@
 "use client";
 
 import { PlayCircle } from "@properui/icons";
-import { BadgeGroup } from "@/components/base/badges/badge-groups";
-import { Button } from "@/components/base/buttons/button";
-import type { MarketingNavItemType } from "@/components/marketing/header-navigations/base-components/header";
-import { MarketingHeader } from "@/components/marketing/header-navigations/base-components/header";
-import { SimpleResourcesMenu } from "@/components/marketing/header-navigations/base-components/menus";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { BadgeGroup } from "../../base/badges/badge-groups";
+import { Button } from "../../base/buttons/button";
+import type { MarketingNavItemType } from "../header-navigations/base-components/header";
+import { MarketingHeader } from "../header-navigations/base-components/header";
+import { SimpleResourcesMenu } from "../header-navigations/base-components/menus";
 
 const navItems: MarketingNavItemType[] = [
     { label: "Products", menu: <SimpleResourcesMenu /> },

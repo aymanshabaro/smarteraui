@@ -1,9 +1,9 @@
 "use client";
 
 import { Tab as AriaTab, TabList as AriaTabList, TabPanel as AriaTabPanel, Tabs as AriaTabs } from "react-aria-components";
-import { Badge } from "@/components/base/badges/badges";
-import { cx, sortCx } from "@/utils/cx";
-import { IMAGES } from "@/utils/demo-assets";
+import { cx, sortCx } from "../../../utils/cx";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Badge } from "../../base/badges/badges";
 
 const styles = sortCx({
     section: "bg-primary py-16 md:py-24",

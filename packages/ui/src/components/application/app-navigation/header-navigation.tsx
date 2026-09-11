@@ -2,12 +2,12 @@
 
 import type { FC, ReactNode } from "react";
 import { Bell01, LifeBuoy01, SearchLg, Settings01 } from "@properui/icons";
-import { TabList, Tabs } from "@/components/application/tabs/tabs";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { DropdownAccountButton } from "@/components/base/dropdown/dropdown-account-button";
-import { Input } from "@/components/base/input/input";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { DropdownAccountButton } from "../../base/dropdown/dropdown-account-button";
+import { Input } from "../../base/input/input";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
+import { TabList, Tabs } from "../tabs/tabs";
 import { MobileNavigationHeader } from "./base-components/mobile-header";
 import { NavAccountCard } from "./base-components/nav-account-card";
 import { NavButton } from "./base-components/nav-button";

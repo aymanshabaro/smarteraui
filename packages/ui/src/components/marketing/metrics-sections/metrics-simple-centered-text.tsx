@@ -2,7 +2,7 @@
 
 import { Fragment } from "react";
 import { ZapFast } from "@properui/icons";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 const metrics = [
     { value: "400+", label: "Projects completed" },

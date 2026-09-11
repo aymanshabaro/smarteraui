@@ -2,8 +2,8 @@
 
 import type { CSSProperties } from "react";
 import { SearchLg } from "@properui/icons";
-import { Input } from "@/components/base/input/input";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
+import { Input } from "../../../base/input/input";
+import { ProperLogo } from "../../../foundations/logo/proper-logo";
 import { MobileNavigationHeader } from "../base-components/mobile-header";
 import { NavAccountCard } from "../base-components/nav-account-card";
 import { NavList } from "../base-components/nav-list";

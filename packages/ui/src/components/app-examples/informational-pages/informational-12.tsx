@@ -23,16 +23,16 @@ import {
     Users01,
     VideoRecorder,
 } from "@properui/icons";
-import type { NavItemType } from "@/components/application/app-navigation/config";
-import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
-import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
-import { MessageComposer } from "@/components/application/messaging/message-composer";
-import { Message, MessageList } from "@/components/application/messaging/messaging";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { AvatarProfilePhoto } from "@/components/base/avatar/avatar-profile-photo";
-import { Badge, BadgeIcon, BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { IMAGES, LOGOS, avatar } from "@/utils/demo-assets";
+import { IMAGES, LOGOS, avatar } from "../../../utils/demo-assets";
+import type { NavItemType } from "../../application/app-navigation/config";
+import { SidebarNavigationSimple } from "../../application/app-navigation/sidebar-navigation/sidebar-simple";
+import { Breadcrumbs } from "../../application/breadcrumbs/breadcrumbs";
+import { MessageComposer } from "../../application/messaging/message-composer";
+import { Message, MessageList } from "../../application/messaging/messaging";
+import { Avatar } from "../../base/avatar/avatar";
+import { AvatarProfilePhoto } from "../../base/avatar/avatar-profile-photo";
+import { Badge, BadgeIcon, BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
 
 const navItems: NavItemType[] = [
     { label: "Home", href: "/", icon: HomeLine, items: [{ label: "Overview", href: "/overview" }] },

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import type { CSSProperties, FC, HTMLAttributes, ReactNode } from "react";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
 import {
     defaultFontFamily,
     defaultFontSize,

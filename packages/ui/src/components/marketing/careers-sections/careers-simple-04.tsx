@@ -1,7 +1,7 @@
 import { Clock, MarkerPin01 } from "@properui/icons";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { sortCx } from "@/utils/cx";
-import { IMAGES } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { IMAGES } from "../../../utils/demo-assets";
+import { BadgeWithDot } from "../../base/badges/badges";
 
 const styles = sortCx({
     // The whole row is the link; the divider is absolutely positioned so it is not part of the focus ring.

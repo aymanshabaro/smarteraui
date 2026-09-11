@@ -3,19 +3,19 @@
 import { useState } from "react";
 import type { Key } from "react-aria";
 import { ArrowDown, ArrowUp, Cube01, DownloadCloud02, Edit01, FilterLines, Plus, SearchLg, Sliders02, Trash01, UploadCloud02, Zap } from "@properui/icons";
-import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
-import { Table, TableCard } from "@/components/application/table/table";
-import { TablePaginationNumbered } from "@/components/application/table/table-pagination";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Badge, BadgeWithDot, BadgeWithIcon } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { Input } from "@/components/base/input/input";
-import { ProgressBarBase } from "@/components/base/progress-indicators/progress-indicators";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { SidebarNavigationSlim } from "../../application/app-navigation/sidebar-navigation/sidebar-slim";
+import { Table, TableCard } from "../../application/table/table";
+import { TablePaginationNumbered } from "../../application/table/table-pagination";
+import { Tabs } from "../../application/tabs/tabs";
+import { Avatar } from "../../base/avatar/avatar";
+import { Badge, BadgeWithDot, BadgeWithIcon } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { Dropdown } from "../../base/dropdown/dropdown";
+import { Input } from "../../base/input/input";
+import { ProgressBarBase } from "../../base/progress-indicators/progress-indicators";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 import { ChartCard, RadialGauge, StackedBarChart, currentUser, navFooterItemsWithIcons, navItemsDualTier, styles, vendors } from "./dashboards-shared";
 
 const vendorTabs = [

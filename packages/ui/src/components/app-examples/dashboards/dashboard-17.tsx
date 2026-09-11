@@ -1,11 +1,11 @@
 "use client";
 
 import { Plus, SearchLg } from "@properui/icons";
-import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
-import { Button } from "@/components/base/buttons/button";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { Input } from "@/components/base/input/input";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { SidebarNavigationSlim } from "../../application/app-navigation/sidebar-navigation/sidebar-slim";
+import { Button } from "../../base/buttons/button";
+import { Dropdown } from "../../base/dropdown/dropdown";
+import { Input } from "../../base/input/input";
 import {
     DonutChart,
     RangeTabs,

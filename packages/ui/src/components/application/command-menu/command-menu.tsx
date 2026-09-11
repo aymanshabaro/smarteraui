@@ -24,9 +24,9 @@ import {
     SearchField as AriaSearchField,
 } from "react-aria-components";
 import { SearchLg } from "@properui/icons";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
+import { Avatar } from "../../base/avatar/avatar";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 /**
  * How a command menu item arranges its label and supporting text.

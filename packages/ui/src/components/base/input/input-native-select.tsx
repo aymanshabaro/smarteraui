@@ -6,9 +6,9 @@
 // base/select/select-native.tsx is ported, delete this file and import `NativeSelect` from there instead.
 import { type SelectHTMLAttributes, useId } from "react";
 import { ChevronDown } from "@properui/icons";
-import { HintText } from "@/components/base/input/hint-text";
-import { Label } from "@/components/base/input/label";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { HintText } from "./hint-text";
+import { Label } from "./label";
 
 interface DemoNativeSelectProps extends Omit<SelectHTMLAttributes<HTMLSelectElement>, "size"> {
     label?: string;

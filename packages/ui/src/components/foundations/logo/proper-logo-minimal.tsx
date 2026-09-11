@@ -1,7 +1,7 @@
 "use client";
 
 import type { SVGProps } from "react";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
 
 /**
  * The standalone Proper UI mark: a rounded square containing a stylised "S".

@@ -1,16 +1,16 @@
 "use client";
 
 import { Laptop01 } from "@properui/icons";
-import { FeaturedCardMessage } from "@/components/application/app-navigation/base-components/featured-cards";
-import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
-import { SectionFooter } from "@/components/application/section-footers/section-footers";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { AvatarProfilePhoto } from "@/components/base/avatar/avatar-profile-photo";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { AVATARS, IMAGES } from "@/utils/demo-assets";
+import { AVATARS, IMAGES } from "../../../utils/demo-assets";
+import { FeaturedCardMessage } from "../../application/app-navigation/base-components/featured-cards";
+import { SidebarNavigationSimple } from "../../application/app-navigation/sidebar-navigation/sidebar-simple";
+import { SectionFooter } from "../../application/section-footers/section-footers";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { AvatarProfilePhoto } from "../../base/avatar/avatar-profile-photo";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
 import {
     SettingsFormRow,
     SettingsMain,

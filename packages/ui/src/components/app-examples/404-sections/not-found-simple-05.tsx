@@ -1,9 +1,9 @@
 "use client";
 
 import { ArrowLeft, SearchLg } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
 
 /** The oversized "404" watermark that sits behind the copy on desktop. */
 const WatermarkNumerals = () => (

@@ -1,5 +1,5 @@
-import { Button } from "@/components/base/buttons/button";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
 
 /** A branded card with the copy on the start edge and a portrait image on the end edge. */
 export const CtaSplitImage04 = () => (

@@ -1,9 +1,9 @@
 "use client";
 
 import { ArrowRight } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { cx, sortCx } from "@/utils/cx";
-import { IMAGES } from "@/utils/demo-assets";
+import { cx, sortCx } from "../../../utils/cx";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
 
 const styles = sortCx({
     section: "overflow-hidden bg-primary py-16 md:py-24",

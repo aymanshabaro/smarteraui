@@ -3,10 +3,10 @@
 import { useState } from "react";
 import type { Key } from "react-aria";
 import { Edit01, HomeLine, Mail01, Plus, Share04, Upload01 } from "@properui/icons";
-import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Button } from "@/components/base/buttons/button";
-import { AVATARS, IMAGES } from "@/utils/demo-assets";
+import { AVATARS, IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { Breadcrumbs } from "../breadcrumbs/breadcrumbs";
+import { Tabs } from "../tabs/tabs";
 import { PageHeader } from "./page-headers";
 
 const tabItems = [

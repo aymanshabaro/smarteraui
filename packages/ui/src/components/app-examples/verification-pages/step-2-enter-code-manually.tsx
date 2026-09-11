@@ -2,10 +2,10 @@
 
 import { REGEXP_ONLY_DIGITS } from "input-otp";
 import { ArrowLeft, Mail01 } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { PinInput, type PinInputSize } from "@/components/base/input/pin-input";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { AVATARS } from "@/utils/demo-assets";
+import { AVATARS } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { PinInput, type PinInputSize } from "../../base/input/pin-input";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 /**
  * The verification code field. Rendered twice so the slots can shrink on mobile —

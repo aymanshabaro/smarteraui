@@ -10,7 +10,7 @@ import {
     TooltipTrigger as AriaTooltipTrigger,
     type TooltipTriggerComponentProps as AriaTooltipTriggerComponentProps,
 } from "react-aria-components";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
 
 export interface TooltipProps extends AriaTooltipTriggerComponentProps, Omit<AriaTooltipProps, "children"> {
     /** The title of the tooltip. */

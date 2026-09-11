@@ -1,5 +1,5 @@
-import { IPhoneMockup } from "@/components/shared-assets/mockups/iphone-mockup";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { IPhoneMockup } from "../../shared-assets/mockups/iphone-mockup";
 import { SignUpFormColumn } from "./base-components/form-column";
 
 /** Split sign up page pairing the form with an oversized mobile app mockup on a tinted panel. */

@@ -2,7 +2,7 @@
 
 import { Button as AriaButton, type ButtonProps as AriaButtonProps } from "react-aria-components";
 import { X as CloseIcon } from "@properui/icons";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
 
 const sizes = {
     xs: { root: "size-7", icon: "size-4" },

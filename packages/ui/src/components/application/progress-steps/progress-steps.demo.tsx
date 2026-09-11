@@ -1,7 +1,7 @@
 "use client";
 
 import { Flag05, Stars02, User01, UsersPlus } from "@properui/icons";
-import { type ProgressStepItem, type ProgressStepStatus, ProgressSteps } from "@/components/application/progress-steps/progress-steps";
+import { type ProgressStepItem, type ProgressStepStatus, ProgressSteps } from "./progress-steps";
 
 const titles = ["Your details", "Company details", "Invite your team", "Add your socials"];
 const shortDescriptions = ["Name and email", "Website and location", "Start collaborating", "Automatic sharing"];

@@ -1,4 +1,4 @@
-import { Button } from "@/components/base/buttons/button";
+import { Button } from "../../base/buttons/button";
 
 /**
  * The brand-background twin of `HeaderCenteredButtons`: the same centered header and

@@ -1,8 +1,8 @@
 "use client";
 
 import { ArrowLeft, ArrowRight } from "@properui/icons";
-import { RatingStars } from "@/components/foundations/rating/rating-stars";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../../utils/cx";
+import { RatingStars } from "../../../foundations/rating/rating-stars";
 
 export interface Testimonial {
     /** The quoted sentence. */

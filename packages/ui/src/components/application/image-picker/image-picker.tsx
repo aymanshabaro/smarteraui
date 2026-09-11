@@ -12,10 +12,10 @@ import {
     SliderTrack as AriaSliderTrack,
 } from "react-aria-components";
 import { ChevronDown, RefreshCw01, UploadCloud02 } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { Dropdown } from "../../base/dropdown/dropdown";
 import type { AdjustmentKey, Adjustments, FillMode } from "./image-picker-canvas";
 import { ADJUSTMENT_KEYS, ADJUSTMENT_LABELS, DEFAULT_ADJUSTMENTS, FILL_MODES, FILL_MODE_LABELS, renderImageToCanvas } from "./image-picker-canvas";
 

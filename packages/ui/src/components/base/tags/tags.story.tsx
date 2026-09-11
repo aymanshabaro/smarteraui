@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import * as Tags from "@/components/base/tags/tags.demo";
+import * as Tags from "./tags.demo";
 
 export default {
     title: "Base components/Tags",

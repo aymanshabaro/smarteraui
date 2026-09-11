@@ -1,6 +1,6 @@
 import { CheckVerified03 } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { CloseButton } from "@/components/base/buttons/close-button";
+import { Button } from "../../base/buttons/button";
+import { CloseButton } from "../../base/buttons/close-button";
 
 /** A consent banner with a verified icon, a policy link and a decline / allow action pair. Brand palette, full-bleed layout. */
 export const BannerDualActionBrandFullWidth = () => (

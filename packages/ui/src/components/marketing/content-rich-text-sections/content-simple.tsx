@@ -1,6 +1,6 @@
 "use client";
 
-import { Tabs } from "@/components/application/tabs/tabs";
+import { Tabs } from "../../application/tabs/tabs";
 
 /** A centered legal header with a plain-language toggle above the policy body. */
 export const ContentSimple = () => (

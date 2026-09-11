@@ -1,13 +1,13 @@
 "use client";
 
 import { CurrencyDollar, Send01 } from "@properui/icons";
-import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
-import { MetricChangeIndicator } from "@/components/application/metrics/metrics-base";
-import { Button } from "@/components/base/buttons/button";
-import { ProgressBarBase } from "@/components/base/progress-indicators/progress-indicators";
-import { ApplePayIcon, MastercardIcon, PayPalIcon, StripeIcon, VisaIcon } from "@/components/foundations/payment-icons";
-import { CreditCard } from "@/components/shared-assets/credit-card/credit-card";
-import { avatar } from "@/utils/demo-assets";
+import { avatar } from "../../../utils/demo-assets";
+import { DateRangePicker } from "../../application/date-picker/date-range-picker";
+import { MetricChangeIndicator } from "../../application/metrics/metrics-base";
+import { Button } from "../../base/buttons/button";
+import { ProgressBarBase } from "../../base/progress-indicators/progress-indicators";
+import { ApplePayIcon, MastercardIcon, PayPalIcon, StripeIcon, VisaIcon } from "../../foundations/payment-icons";
+import { CreditCard } from "../../shared-assets/credit-card/credit-card";
 import { GaugeChart, TrendChart } from "./charts.a";
 import { trendSeries } from "./data.a";
 import { DashboardHeader, DashboardMain, DashboardSection } from "./shell.a";

@@ -1,17 +1,17 @@
 "use client";
 
 import { SearchLg } from "@properui/icons";
-import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
-import { MetricChart04 } from "@/components/application/metrics/metrics";
-import { MetricChangeIndicator } from "@/components/application/metrics/metrics-base";
-import { PaginationCardMinimal } from "@/components/application/pagination/pagination";
-import { Table } from "@/components/application/table/table";
-import { TableRowActionsDropdown } from "@/components/application/table/table";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { Input } from "@/components/base/input/input";
-import { RatingStars } from "@/components/foundations/rating/rating-stars";
-import { avatar } from "@/utils/demo-assets";
+import { avatar } from "../../../utils/demo-assets";
+import { DateRangePicker } from "../../application/date-picker/date-range-picker";
+import { MetricChart04 } from "../../application/metrics/metrics";
+import { MetricChangeIndicator } from "../../application/metrics/metrics-base";
+import { PaginationCardMinimal } from "../../application/pagination/pagination";
+import { Table } from "../../application/table/table";
+import { TableRowActionsDropdown } from "../../application/table/table";
+import { Avatar } from "../../base/avatar/avatar";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { Input } from "../../base/input/input";
+import { RatingStars } from "../../foundations/rating/rating-stars";
 import { TrendChart } from "./charts.a";
 import { dailySeries, orders, sparkUp } from "./data.a";
 import { DashboardHeader, DashboardMain, DashboardSection } from "./shell.a";

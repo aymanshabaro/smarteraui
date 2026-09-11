@@ -1,13 +1,13 @@
 "use client";
 
 import { ArrowLeft, DotsVertical, Plus } from "@properui/icons";
-import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
-import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
-import { Table } from "@/components/application/table/table";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { AVATARS } from "@/utils/demo-assets";
+import { AVATARS } from "../../../utils/demo-assets";
+import { SidebarNavigationSlim } from "../../application/app-navigation/sidebar-navigation/sidebar-slim";
+import { Breadcrumbs } from "../../application/breadcrumbs/breadcrumbs";
+import { Table } from "../../application/table/table";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
 import { SettingsFormRow, SettingsMain, SettingsPage, SettingsRowDivider, navFooterItemsCompact, navItemsFlat } from "./settings-shared.a";
 
 const adminUsers = AVATARS.slice(0, 5).map((person, index) => ({

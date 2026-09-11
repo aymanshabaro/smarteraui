@@ -1,9 +1,9 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "@properui/icons";
-import { Carousel, useCarousel } from "@/components/application/carousel/carousel-base";
-import { PaginationDot } from "@/components/application/pagination/pagination-dot";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { PaginationDot } from "../pagination/pagination-dot";
+import { Carousel, useCarousel } from "./carousel-base";
 
 /** Wires the carousel's internal scroll state into a `PaginationDot` indicator row. */
 const CarouselDotIndicator = ({ size = "md", framed }: { size?: "md" | "lg"; framed?: boolean }) => {

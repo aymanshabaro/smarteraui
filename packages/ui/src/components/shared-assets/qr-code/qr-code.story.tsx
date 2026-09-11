@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import * as QRCodes from "@/components/shared-assets/qr-code/qr-code.demo";
+import * as QRCodes from "./qr-code.demo";
 
 export default {
     title: "Base components/QR codes",

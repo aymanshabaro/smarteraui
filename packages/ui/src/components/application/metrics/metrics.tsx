@@ -1,8 +1,8 @@
 "use client";
 
 import { Eye, TrendUp01, Zap } from "@properui/icons";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 import type { MetricCardBaseProps, MetricCardChangeDescriptionProps, MetricCardIconProps } from "./metrics-base";
 import { MetricCardFooter, MetricCardMenu, MetricChangeIndicator } from "./metrics-base";
 import type { MetricChartDatum, MetricComparisonChartDatum } from "./metrics-chart";

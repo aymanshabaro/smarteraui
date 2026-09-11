@@ -1,11 +1,11 @@
 "use client";
 
 import type { FC, ReactNode } from "react";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { CloseButton } from "@/components/base/buttons/close-button";
-import { ProgressBar } from "@/components/base/progress-indicators/progress-indicators";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
+import { Avatar } from "../../base/avatar/avatar";
+import { CloseButton } from "../../base/buttons/close-button";
+import { ProgressBar } from "../../base/progress-indicators/progress-indicators";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 const styles = sortCx({
     root: {

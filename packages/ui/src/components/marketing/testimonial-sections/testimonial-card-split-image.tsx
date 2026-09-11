@@ -1,6 +1,6 @@
-import { PlayButtonIcon } from "@/components/foundations/play-button-icon";
-import { RatingStars } from "@/components/foundations/rating/rating-stars";
-import { AVATARS, IMAGES, LOGOS } from "@/utils/demo-assets";
+import { AVATARS, IMAGES, LOGOS } from "../../../utils/demo-assets";
+import { PlayButtonIcon } from "../../foundations/play-button-icon";
+import { RatingStars } from "../../foundations/rating/rating-stars";
 
 const review = {
     quote: "Love the simplicity of the service and the prompt customer support. We can't imagine working without it.",

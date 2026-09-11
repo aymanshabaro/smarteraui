@@ -1,6 +1,6 @@
 "use client";
 
-import { Illustration } from "@/components/shared-assets/illustrations";
+import { Illustration } from "./";
 
 export const IllustrationExample = () => <Illustration type="cloud" />;
 

@@ -8,7 +8,7 @@ import {
     useLocale as AriaUseLocale,
     useSlottedContext as AriaUseSlottedContext,
 } from "react-aria-components";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
 
 export interface CalendarCellProps extends AriaCalendarCellProps {
     /** Whether the calendar is a range calendar. */

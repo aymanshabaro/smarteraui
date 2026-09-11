@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
 import { SignUpFormColumn } from "./base-components/form-column";
 import type { Testimonial } from "./base-components/testimonial-overlay";
 import { TestimonialOverlay } from "./base-components/testimonial-overlay";

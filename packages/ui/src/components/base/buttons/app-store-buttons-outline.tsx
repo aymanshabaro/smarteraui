@@ -1,7 +1,7 @@
 "use client";
 
 import type { AnchorHTMLAttributes } from "react";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
 
 export const GooglePlayButton = ({ size = "md", ...props }: AnchorHTMLAttributes<HTMLAnchorElement> & { size?: "md" | "lg" }) => {
     return (

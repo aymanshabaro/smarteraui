@@ -1,12 +1,12 @@
 "use client";
 
 import { ArrowRight, ChartBreakoutSquare, MessageChatCircle, Zap } from "@properui/icons";
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { BackgroundPattern } from "@/components/shared-assets/background-patterns";
-import { IPhoneMockup } from "@/components/shared-assets/mockups/iphone-mockup";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
+import { BackgroundPattern } from "../../shared-assets/background-patterns";
+import { IPhoneMockup } from "../../shared-assets/mockups/iphone-mockup";
 import { ScreenMockup } from "./mockups.a";
 
 const features = [

@@ -3,18 +3,18 @@
 import type { ReactNode } from "react";
 import { Radio as AriaRadio } from "react-aria-components";
 import { Code01 } from "@properui/icons";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { InputBase } from "@/components/base/input/input";
-import { RadioButtonBase, RadioGroup } from "@/components/base/radio-buttons/radio-buttons";
-import { Select } from "@/components/base/select/select";
-import { NativeSelect } from "@/components/base/select/select-native";
-import { Toggle } from "@/components/base/toggle/toggle";
-import { countries } from "@/utils/countries";
-import { cx } from "@/utils/cx";
-import { LOGOS } from "@/utils/demo-assets";
+import { countries } from "../../../utils/countries";
+import { cx } from "../../../utils/cx";
+import { LOGOS } from "../../../utils/demo-assets";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Tabs } from "../../application/tabs/tabs";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { InputBase } from "../../base/input/input";
+import { RadioButtonBase, RadioGroup } from "../../base/radio-buttons/radio-buttons";
+import { Select } from "../../base/select/select";
+import { NativeSelect } from "../../base/select/select-native";
+import { Toggle } from "../../base/toggle/toggle";
 import { Divider, FieldLabel, PageContainer, SettingsHeaderNav, styles } from "./settings-shell";
 
 const sections = [

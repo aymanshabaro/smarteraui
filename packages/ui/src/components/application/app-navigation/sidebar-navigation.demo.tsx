@@ -31,6 +31,9 @@ import {
     Users01,
     UsersPlus,
 } from "@properui/icons";
+import { AVATARS, IMAGES, LOGOS } from "../../../utils/demo-assets";
+import { Avatar } from "../../base/avatar/avatar";
+import { Badge, BadgeWithDot } from "../../base/badges/badges";
 import {
     FeaturedCardCookiePreferences,
     FeaturedCardCurrentProjects,
@@ -45,16 +48,13 @@ import {
     FeaturedCardReferralLink,
     FeaturedCardSupportCTA,
     FeaturedCardUpgradeCTA,
-} from "@/components/application/app-navigation/base-components/featured-cards";
-import type { NavItemDividerType, NavItemType } from "@/components/application/app-navigation/config";
-import { SidebarNavigationDualTier } from "@/components/application/app-navigation/sidebar-navigation/sidebar-dual-tier";
-import { SidebarNavigationSectionDividers } from "@/components/application/app-navigation/sidebar-navigation/sidebar-section-dividers";
-import { SidebarNavigationSectionsSubheadings } from "@/components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings";
-import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
-import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Badge, BadgeWithDot } from "@/components/base/badges/badges";
-import { AVATARS, IMAGES, LOGOS } from "@/utils/demo-assets";
+} from "./base-components/featured-cards";
+import type { NavItemDividerType, NavItemType } from "./config";
+import { SidebarNavigationDualTier } from "./sidebar-navigation/sidebar-dual-tier";
+import { SidebarNavigationSectionDividers } from "./sidebar-navigation/sidebar-section-dividers";
+import { SidebarNavigationSectionsSubheadings } from "./sidebar-navigation/sidebar-sections-subheadings";
+import { SidebarNavigationSimple } from "./sidebar-navigation/sidebar-simple";
+import { SidebarNavigationSlim } from "./sidebar-navigation/sidebar-slim";
 
 const noop = () => {};
 

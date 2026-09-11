@@ -18,18 +18,18 @@ import {
     Share04,
     Users01,
 } from "@properui/icons";
-import { FeaturedCardEventCTA } from "@/components/application/app-navigation/base-components/featured-cards";
-import type { NavItemType } from "@/components/application/app-navigation/config";
-import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
-import { FileUpload } from "@/components/application/file-upload/file-upload-base";
-import { Table, TableCard } from "@/components/application/table/table";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { DropdownIconSimple } from "@/components/base/dropdown/dropdown-icon-simple";
-import { Input } from "@/components/base/input/input";
-import type { DemoAvatar } from "@/utils/demo-assets";
-import { AVATARS, avatar } from "@/utils/demo-assets";
+import type { DemoAvatar } from "../../../utils/demo-assets";
+import { AVATARS, avatar } from "../../../utils/demo-assets";
+import { FeaturedCardEventCTA } from "../../application/app-navigation/base-components/featured-cards";
+import type { NavItemType } from "../../application/app-navigation/config";
+import { SidebarNavigationSimple } from "../../application/app-navigation/sidebar-navigation/sidebar-simple";
+import { FileUpload } from "../../application/file-upload/file-upload-base";
+import { Table, TableCard } from "../../application/table/table";
+import { Tabs } from "../../application/tabs/tabs";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
+import { DropdownIconSimple } from "../../base/dropdown/dropdown-icon-simple";
+import { Input } from "../../base/input/input";
 
 const noop = () => {};
 

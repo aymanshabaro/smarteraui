@@ -2,11 +2,11 @@
 
 import type { ReactNode } from "react";
 import { Plus } from "@properui/icons";
-import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
-import { MetricSimple } from "@/components/application/metrics/metrics";
-import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";
-import { Button } from "@/components/base/buttons/button";
-import { Dot } from "@/components/foundations/dot-icon";
+import { DateRangePicker } from "../../application/date-picker/date-range-picker";
+import { MetricSimple } from "../../application/metrics/metrics";
+import { ButtonGroup, ButtonGroupItem } from "../../base/button-group/button-group";
+import { Button } from "../../base/buttons/button";
+import { Dot } from "../../foundations/dot-icon";
 import { StackedBarChart, TrendChart } from "./charts.a";
 import { recentPurchases, stackedSeries, trendSeries } from "./data.a";
 import { DashboardHeader, DashboardMain, DashboardSection, subNavItems } from "./shell.a";

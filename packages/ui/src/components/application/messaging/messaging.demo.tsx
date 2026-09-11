@@ -1,7 +1,7 @@
 "use client";
 
 import { Copy01, DownloadCloud02, Edit04, FaceSmile, ItalicSquare, Microphone02, Paperclip, Recording02, RefreshCcw02, Stars02 } from "@properui/icons";
-import { IMAGES, avatar } from "@/utils/demo-assets";
+import { IMAGES, avatar } from "../../../utils/demo-assets";
 import { MessageComposer } from "./message-composer";
 import { MessageStatus as MessageStatusIndicator } from "./message-status";
 import { Message, MessageList } from "./messaging";

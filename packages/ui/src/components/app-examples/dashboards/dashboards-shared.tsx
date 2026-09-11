@@ -52,13 +52,13 @@ import {
     Users01,
     UsersPlus,
 } from "@properui/icons";
-import type { NavItemDividerType, NavItemType } from "@/components/application/app-navigation/config";
-import { ChartTooltipContent } from "@/components/application/charts/charts-base";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Badge, BadgeWithDot } from "@/components/base/badges/badges";
-import { cx } from "@/utils/cx";
-import { AVATARS, LOGOS, avatar } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { AVATARS, LOGOS, avatar } from "../../../utils/demo-assets";
+import type { NavItemDividerType, NavItemType } from "../../application/app-navigation/config";
+import { ChartTooltipContent } from "../../application/charts/charts-base";
+import { Tabs } from "../../application/tabs/tabs";
+import { Avatar } from "../../base/avatar/avatar";
+import { Badge, BadgeWithDot } from "../../base/badges/badges";
 
 /* -------------------------------------------------------------------------------------------------
  * Navigation configs

@@ -1,10 +1,10 @@
 "use client";
 
 import { ArrowRight, ChartBreakoutSquare, MessageChatCircle, Zap } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { IPhoneMockup } from "@/components/shared-assets/mockups/iphone-mockup";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
+import { IPhoneMockup } from "../../shared-assets/mockups/iphone-mockup";
 
 const features = [
     {

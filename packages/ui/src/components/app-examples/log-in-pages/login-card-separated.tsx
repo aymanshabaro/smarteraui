@@ -1,9 +1,9 @@
-import { Button } from "@/components/base/buttons/button";
-import { SocialButton } from "@/components/base/buttons/social-button";
-import { Checkbox } from "@/components/base/checkbox/checkbox";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
+import { Button } from "../../base/buttons/button";
+import { SocialButton } from "../../base/buttons/social-button";
+import { Checkbox } from "../../base/checkbox/checkbox";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { ProperLogoMinimal } from "../../foundations/logo/proper-logo-minimal";
 
 /** Log in page whose form sits on its own raised card, separated from the heading and footer. */
 export const LoginCardSeparated = () => (

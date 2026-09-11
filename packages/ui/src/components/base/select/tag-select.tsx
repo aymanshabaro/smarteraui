@@ -14,16 +14,16 @@ import {
     useListData as AriaUseListData,
 } from "react-aria-components";
 import { SearchLg } from "@properui/icons";
-import { Avatar } from "@/components/base/avatar/avatar";
-import type { IconComponentType } from "@/components/base/badges/badge-types";
-import { HintText } from "@/components/base/input/hint-text";
-import { Label } from "@/components/base/input/label";
-import { Popover } from "@/components/base/select/popover";
-import { SelectContext, type SelectItemType, sizes } from "@/components/base/select/select-shared";
-import { TagCloseX } from "@/components/base/tags/base-components/tag-close-x";
-import { useResizeObserver } from "@/hooks/use-resize-observer";
-import { cx } from "@/utils/cx";
+import { useResizeObserver } from "../../../hooks/use-resize-observer";
+import { cx } from "../../../utils/cx";
+import { Avatar } from "../avatar/avatar";
+import type { IconComponentType } from "../badges/badge-types";
+import { HintText } from "../input/hint-text";
+import { Label } from "../input/label";
+import { TagCloseX } from "../tags/base-components/tag-close-x";
+import { Popover } from "./popover";
 import { SelectItem } from "./select-item";
+import { SelectContext, type SelectItemType, sizes } from "./select-shared";
 
 interface TagSelectValueProps extends AriaGroupProps {
     size: "sm" | "md" | "lg";

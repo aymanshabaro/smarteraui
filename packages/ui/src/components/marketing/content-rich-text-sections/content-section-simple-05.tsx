@@ -1,5 +1,5 @@
-import { Avatar } from "@/components/base/avatar/avatar";
-import { AVATARS } from "@/utils/demo-assets";
+import { AVATARS } from "../../../utils/demo-assets";
+import { Avatar } from "../../base/avatar/avatar";
 
 const author = AVATARS[0];
 

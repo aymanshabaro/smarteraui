@@ -1,9 +1,9 @@
 "use client";
 
 import { ArrowLeft, Mail01 } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { AVATARS } from "@/utils/demo-assets";
+import { AVATARS } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 /** Step 1 of the email verification flow: confirm the link was sent and offer the manual-code fallback. */
 export const Step1CheckEmail = () => (

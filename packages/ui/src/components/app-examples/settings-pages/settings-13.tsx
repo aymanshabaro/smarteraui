@@ -1,14 +1,14 @@
 "use client";
 
 import { ArrowLeft, ArrowRight, DownloadCloud02, Edit01, Mail01 } from "@properui/icons";
-import { SidebarNavigationSectionDividers } from "@/components/application/app-navigation/sidebar-navigation/sidebar-section-dividers";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Table } from "@/components/application/table/table";
-import { Badge, BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { ProgressBarBase } from "@/components/base/progress-indicators/progress-indicators";
-import { VisaIcon } from "@/components/foundations/payment-icons";
+import { SidebarNavigationSectionDividers } from "../../application/app-navigation/sidebar-navigation/sidebar-section-dividers";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Table } from "../../application/table/table";
+import { Badge, BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { ProgressBarBase } from "../../base/progress-indicators/progress-indicators";
+import { VisaIcon } from "../../foundations/payment-icons";
 import { SettingsBlock, SettingsMain, SettingsPage, SettingsStack, navItemsWithDividers } from "./settings-shared.a";
 
 const invoices = [

@@ -5,9 +5,9 @@ import { useFilter } from "react-aria";
 import type { Selection as AriaSelection } from "react-aria-components";
 import { Autocomplete as AriaAutocomplete, SearchField as AriaSearchField, SubmenuTrigger as AriaSubmenuTrigger } from "react-aria-components";
 import { ChevronDown, Plus, SearchLg } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { LOGOS, avatar } from "@/utils/demo-assets";
+import { LOGOS, avatar } from "../../../utils/demo-assets";
+import { Button } from "../buttons/button";
+import { Dropdown } from "./dropdown";
 import { DropdownSearchField } from "./dropdown-search-field";
 
 const teams = [LOGOS[1].name, LOGOS[2].name, LOGOS[3].name, LOGOS[4].name, LOGOS[5].name] as const;

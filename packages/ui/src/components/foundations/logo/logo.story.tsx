@@ -1,6 +1,6 @@
 import type { FC } from "react";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
-import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
+import { ProperLogo } from "./proper-logo";
+import { ProperLogoMinimal } from "./proper-logo-minimal";
 
 export default {
     title: "Foundations/Logo",

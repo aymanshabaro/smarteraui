@@ -2,7 +2,7 @@
 
 import { useId } from "react";
 import { Area, AreaChart, ResponsiveContainer } from "recharts";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
 
 /** Direction of a metric's change. Drives arrow direction and chart color. */
 export type MetricTrend = "positive" | "negative";

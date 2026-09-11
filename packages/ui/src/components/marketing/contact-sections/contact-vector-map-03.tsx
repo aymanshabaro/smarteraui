@@ -1,5 +1,5 @@
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
 
 const channels = [
     { title: "Support", subtitle: "Our friendly team is here to help.", cta: "support@proper.example", href: "mailto:support@proper.example" },

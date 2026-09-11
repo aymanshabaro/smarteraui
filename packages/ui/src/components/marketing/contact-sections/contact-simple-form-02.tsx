@@ -1,14 +1,14 @@
 "use client";
 
-import { Button } from "@/components/base/buttons/button";
-import { Checkbox } from "@/components/base/checkbox/checkbox";
-import { Form } from "@/components/base/form/form";
-import { Input, InputBase } from "@/components/base/input/input";
-import { InputGroup } from "@/components/base/input/input-group";
-import { NativeSelect } from "@/components/base/select/select-native";
-import { TextArea } from "@/components/base/textarea/textarea";
-import { countries } from "@/utils/countries";
-import { IMAGES } from "@/utils/demo-assets";
+import { countries } from "../../../utils/countries";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { Checkbox } from "../../base/checkbox/checkbox";
+import { Form } from "../../base/form/form";
+import { Input, InputBase } from "../../base/input/input";
+import { InputGroup } from "../../base/input/input-group";
+import { NativeSelect } from "../../base/select/select-native";
+import { TextArea } from "../../base/textarea/textarea";
 
 const countryCodeOptions = countries.map((country) => ({ value: country.code, label: country.code }));
 

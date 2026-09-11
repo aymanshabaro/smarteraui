@@ -2,7 +2,7 @@
 
 import { Tab as AriaTab, TabList as AriaTabList, TabPanel as AriaTabPanel, Tabs as AriaTabs } from "react-aria-components";
 import { ArrowRight } from "@properui/icons";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
 
 const stores = [
     { id: "melbourne", city: "Melbourne", address: "100 Flinders Street\nMelbourne VIC 3000 AU" },

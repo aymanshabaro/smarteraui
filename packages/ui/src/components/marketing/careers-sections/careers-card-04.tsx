@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { Clock, CurrencyDollarCircle, MarkerPin01 } from "@properui/icons";
-import { BadgeWithDot, BadgeWithFlag } from "@/components/base/badges/badges";
-import { Select } from "@/components/base/select/select";
-import { sortCx } from "@/utils/cx";
-import { IMAGES } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { IMAGES } from "../../../utils/demo-assets";
+import { BadgeWithDot, BadgeWithFlag } from "../../base/badges/badges";
+import { Select } from "../../base/select/select";
 
 const styles = sortCx({
     card: "bg-primary ring-secondary outline-focus-ring flex flex-col rounded-2xl p-6 ring-1 ring-inset focus-visible:outline-2 focus-visible:outline-offset-2",

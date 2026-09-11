@@ -14,22 +14,22 @@ import {
     UserPlus01,
     Users01,
 } from "@properui/icons";
-import type { NavItemType } from "@/components/application/app-navigation/config";
-import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
-import { MetricChangeIndicator } from "@/components/application/metrics/metrics-base";
-import { Table, TableCard } from "@/components/application/table/table";
-import { customers } from "@/components/application/table/table-data";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { DropdownIconSimple } from "@/components/base/dropdown/dropdown-icon-simple";
-import { Input } from "@/components/base/input/input";
-import { ProgressBar } from "@/components/base/progress-indicators/progress-indicators";
-import { Select } from "@/components/base/select/select";
-import type { SelectItemType } from "@/components/base/select/select-shared";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { AVATARS } from "@/utils/demo-assets";
+import { AVATARS } from "../../../utils/demo-assets";
+import type { NavItemType } from "../../application/app-navigation/config";
+import { SidebarNavigationSlim } from "../../application/app-navigation/sidebar-navigation/sidebar-slim";
+import { MetricChangeIndicator } from "../../application/metrics/metrics-base";
+import { Table, TableCard } from "../../application/table/table";
+import { customers } from "../../application/table/table-data";
+import { Tabs } from "../../application/tabs/tabs";
+import { Avatar } from "../../base/avatar/avatar";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { DropdownIconSimple } from "../../base/dropdown/dropdown-icon-simple";
+import { Input } from "../../base/input/input";
+import { ProgressBar } from "../../base/progress-indicators/progress-indicators";
+import { Select } from "../../base/select/select";
+import type { SelectItemType } from "../../base/select/select-shared";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 const navItems: (NavItemType & { icon: FC<{ className?: string }> })[] = [
     { label: "Home", href: "/", icon: HomeLine },

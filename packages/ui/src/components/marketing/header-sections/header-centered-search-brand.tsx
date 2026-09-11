@@ -1,7 +1,7 @@
 "use client";
 
 import { SearchLg } from "@properui/icons";
-import { Input } from "@/components/base/input/input";
+import { Input } from "../../base/input/input";
 
 /**
  * The brand-background twin of `HeaderCenteredSearch`: the same centered search header

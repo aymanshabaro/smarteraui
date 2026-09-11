@@ -1,18 +1,18 @@
 "use client";
 
-import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
-import { FileUpload } from "@/components/application/file-upload/file-upload-base";
-import { AvatarProfilePhoto } from "@/components/base/avatar/avatar-profile-photo";
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { Input, InputBase } from "@/components/base/input/input";
-import { InputGroup } from "@/components/base/input/input-group";
-import { Select } from "@/components/base/select/select";
-import { TextArea } from "@/components/base/textarea/textarea";
-import { Toggle } from "@/components/base/toggle/toggle";
-import { countriesOptions } from "@/utils/countries";
-import { AVATARS, IMAGES } from "@/utils/demo-assets";
-import { timezonesOptions } from "@/utils/timezones";
+import { countriesOptions } from "../../../utils/countries";
+import { AVATARS, IMAGES } from "../../../utils/demo-assets";
+import { timezonesOptions } from "../../../utils/timezones";
+import { SidebarNavigationSlim } from "../../application/app-navigation/sidebar-navigation/sidebar-slim";
+import { FileUpload } from "../../application/file-upload/file-upload-base";
+import { AvatarProfilePhoto } from "../../base/avatar/avatar-profile-photo";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { Input, InputBase } from "../../base/input/input";
+import { InputGroup } from "../../base/input/input-group";
+import { Select } from "../../base/select/select";
+import { TextArea } from "../../base/textarea/textarea";
+import { Toggle } from "../../base/toggle/toggle";
 import { SettingsFormRow, SettingsMain, SettingsPage, navFooterItemsCompact, navItemsFlat } from "./settings-shared.a";
 
 const account = AVATARS[0];

@@ -2,9 +2,9 @@
 
 import type { HTMLAttributes } from "react";
 import { ArrowLeft, ArrowRight, Plus } from "@properui/icons";
-import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";
-import { Button } from "@/components/base/buttons/button";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { ButtonGroup, ButtonGroupItem } from "../../base/button-group/button-group";
+import { Button } from "../../base/buttons/button";
 import { ContentDivider, type ContentDividerProps } from "./content-divider";
 
 /** Decorative placeholder standing in for real page content between dividers. Demo-only, not exported. */

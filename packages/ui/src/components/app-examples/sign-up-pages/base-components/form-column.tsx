@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
-import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../../utils/cx";
+import { ProperLogo } from "../../../foundations/logo/proper-logo";
+import { ProperLogoMinimal } from "../../../foundations/logo/proper-logo-minimal";
 import { LogInPrompt, SupportFooter } from "./page-parts";
 import { SignUpForm } from "./sign-up-form";
 

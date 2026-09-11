@@ -1,5 +1,5 @@
-import { Button } from "@/components/base/buttons/button";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
 
 /** Copy on the start edge and a tall image on the end edge, both inside the container gutter. */
 export const CtaSplitImage02 = () => (

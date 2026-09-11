@@ -1,6 +1,6 @@
 "use client";
 
-import { cx } from "@/utils/cx";
+import { cx } from "../../../../utils/cx";
 
 interface TagCheckboxProps {
     /** Size of the checkbox, matching the parent tag's size. @default "sm" */

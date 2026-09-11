@@ -1,13 +1,13 @@
 "use client";
 
 import { SearchLg } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
-import { FaqAccordion04 } from "@/components/marketing/faq-sections/faq-accordion-04";
-import { FeaturesIconsAndImage01 } from "@/components/marketing/features-sections/features-icons-and-image-01";
-import { FooterLarge10Brand } from "@/components/marketing/footers/footer-large-10-brand";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
+import { FaqAccordion04 } from "../../marketing/faq-sections/faq-accordion-04";
+import { FeaturesIconsAndImage01 } from "../../marketing/features-sections/features-icons-and-image-01";
+import { FooterLarge10Brand } from "../../marketing/footers/footer-large-10-brand";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
 
 const styles = sortCx({
     // The hero opens on the brand section, so the header is painted to match it.

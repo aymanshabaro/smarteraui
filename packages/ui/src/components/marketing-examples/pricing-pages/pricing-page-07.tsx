@@ -1,10 +1,10 @@
-import { CtaSimpleCenteredBrand } from "@/components/marketing/cta-sections/cta-simple-centered-brand";
-import { FaqAccordion03 } from "@/components/marketing/faq-sections/faq-accordion-03";
-import { FooterLarge05 } from "@/components/marketing/footers/footer-large-05";
-import { FloatingSimpleWithFooter } from "@/components/marketing/header-navigations/floating-simple-with-footer";
-import { PricingSimpleDualCheckItem } from "@/components/marketing/pricing-sections/pricing-simple-dual-check-item";
-import { TestimonialSocialCards01 } from "@/components/marketing/testimonial-sections/testimonial-social-cards-01";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { CtaSimpleCenteredBrand } from "../../marketing/cta-sections/cta-simple-centered-brand";
+import { FaqAccordion03 } from "../../marketing/faq-sections/faq-accordion-03";
+import { FooterLarge05 } from "../../marketing/footers/footer-large-05";
+import { FloatingSimpleWithFooter } from "../../marketing/header-navigations/floating-simple-with-footer";
+import { PricingSimpleDualCheckItem } from "../../marketing/pricing-sections/pricing-simple-dual-check-item";
+import { TestimonialSocialCards01 } from "../../marketing/testimonial-sections/testimonial-social-cards-01";
 
 const styles = sortCx({
     // Hairline rule that separates two sections sharing the same surface.

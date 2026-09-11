@@ -1,8 +1,8 @@
 "use client";
 
 import { HomeLine } from "@properui/icons";
-import { Breadcrumbs, type BreadcrumbsMenuItem } from "@/components/application/breadcrumbs/breadcrumbs";
-import { AVATARS, IMAGES, LOGOS } from "@/utils/demo-assets";
+import { AVATARS, IMAGES, LOGOS } from "../../../utils/demo-assets";
+import { Breadcrumbs, type BreadcrumbsMenuItem } from "./breadcrumbs";
 
 const hiddenItems: BreadcrumbsMenuItem[] = [
     { id: "projects", label: "Projects", href: "#" },

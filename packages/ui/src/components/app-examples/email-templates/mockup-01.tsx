@@ -1,12 +1,12 @@
 "use client";
 
 import { ArrowRight } from "@properui/icons";
-import { AppStoreButton, GooglePlayButton } from "@/components/base/buttons/app-store-buttons";
-import { Button } from "@/components/base/buttons/button";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
-import { Facebook, Instagram, X } from "@/components/foundations/social-icons";
-import { cx, sortCx } from "@/utils/cx";
-import { IMAGES } from "@/utils/demo-assets";
+import { cx, sortCx } from "../../../utils/cx";
+import { IMAGES } from "../../../utils/demo-assets";
+import { AppStoreButton, GooglePlayButton } from "../../base/buttons/app-store-buttons";
+import { Button } from "../../base/buttons/button";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
+import { Facebook, Instagram, X } from "../../foundations/social-icons";
 
 const styles = sortCx({
     shell: "bg-secondary flex w-full justify-center",

@@ -1,17 +1,17 @@
 "use client";
 
 import { Plus, SearchLg, UploadCloud02 } from "@properui/icons";
-import { PaginationCardMinimal } from "@/components/application/pagination/pagination";
-import { Table, TableCard } from "@/components/application/table/table";
-import { customers } from "@/components/application/table/table-data";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Badge, BadgeWithButton, BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
-import { ProgressBarBase } from "@/components/base/progress-indicators/progress-indicators";
-import { Select } from "@/components/base/select/select";
-import type { SelectItemType } from "@/components/base/select/select-shared";
-import { AVATARS } from "@/utils/demo-assets";
+import { AVATARS } from "../../../utils/demo-assets";
+import { PaginationCardMinimal } from "../../application/pagination/pagination";
+import { Table, TableCard } from "../../application/table/table";
+import { customers } from "../../application/table/table-data";
+import { Avatar } from "../../base/avatar/avatar";
+import { Badge, BadgeWithButton, BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
+import { ProgressBarBase } from "../../base/progress-indicators/progress-indicators";
+import { Select } from "../../base/select/select";
+import type { SelectItemType } from "../../base/select/select-shared";
 import { GaugeChart, TrendChart } from "./charts.a";
 import { trendSeries } from "./data.a";
 import { DashboardHeader, DashboardMain, DashboardSection } from "./shell.a";

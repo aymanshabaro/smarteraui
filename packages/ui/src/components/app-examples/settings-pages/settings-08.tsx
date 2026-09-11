@@ -1,13 +1,13 @@
 "use client";
 
 import { Edit01, Plus, Trash01 } from "@properui/icons";
-import { SidebarNavigationSectionsSubheadings } from "@/components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Table } from "@/components/application/table/table";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { AVATARS, LOGOS } from "@/utils/demo-assets";
+import { AVATARS, LOGOS } from "../../../utils/demo-assets";
+import { SidebarNavigationSectionsSubheadings } from "../../application/app-navigation/sidebar-navigation/sidebar-sections-subheadings";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Table } from "../../application/table/table";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
 import {
     SettingsBlock,
     SettingsFormRow,

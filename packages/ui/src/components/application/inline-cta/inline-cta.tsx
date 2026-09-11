@@ -2,7 +2,7 @@
 
 import type { FC, HTMLAttributes, ReactNode } from "react";
 import { CheckCircle } from "@properui/icons";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
 
 export const styles = sortCx({
     root: {

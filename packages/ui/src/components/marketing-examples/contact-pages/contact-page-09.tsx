@@ -1,5 +1,5 @@
-import { ContactFormAndImage02 } from "@/components/marketing/contact-sections/contact-form-and-image-02";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
+import { ContactFormAndImage02 } from "../../marketing/contact-sections/contact-form-and-image-02";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
 
 /**
  * Split contact form page: a header over a single full-height section that stretches the cover

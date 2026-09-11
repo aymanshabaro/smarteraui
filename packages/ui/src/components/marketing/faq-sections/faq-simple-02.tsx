@@ -1,7 +1,7 @@
 import { CreditCard02, File02, Heart, Mail01, SlashCircle01, SwitchHorizontal01 } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { Button } from "../../base/buttons/button";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 const styles = sortCx({
     /** The featured icon is rendered twice so it can step up a size from `md` upwards. */

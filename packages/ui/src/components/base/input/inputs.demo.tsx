@@ -2,20 +2,20 @@
 
 import { useState } from "react";
 import { AlertCircle, Calendar, Check, CheckCircle, Copy01, Lock03, Mail01 } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { HintText } from "@/components/base/input/hint-text";
-import { Input, InputBase, TextField } from "@/components/base/input/input";
-import { InputDate } from "@/components/base/input/input-date";
-import { InputFile } from "@/components/base/input/input-file";
-import { InputGroup } from "@/components/base/input/input-group";
-import { DemoNativeSelect } from "@/components/base/input/input-native-select";
-import { InputNumber } from "@/components/base/input/input-number";
-import { PaymentInput as PaymentInputField } from "@/components/base/input/input-payment";
-import { InputTags } from "@/components/base/input/input-tags";
-import { InputTagsOuter } from "@/components/base/input/input-tags-outer";
-import { Label } from "@/components/base/input/label";
-import { useClipboard } from "@/hooks/use-clipboard";
-import { cx } from "@/utils/cx";
+import { useClipboard } from "../../../hooks/use-clipboard";
+import { cx } from "../../../utils/cx";
+import { Button } from "../buttons/button";
+import { HintText } from "./hint-text";
+import { Input, InputBase, TextField } from "./input";
+import { InputDate } from "./input-date";
+import { InputFile } from "./input-file";
+import { InputGroup } from "./input-group";
+import { DemoNativeSelect } from "./input-native-select";
+import { InputNumber } from "./input-number";
+import { PaymentInput as PaymentInputField } from "./input-payment";
+import { InputTags } from "./input-tags";
+import { InputTagsOuter } from "./input-tags-outer";
+import { Label } from "./label";
 
 /** Hero example shown at the top of the docs page. */
 export const InputExample = () => {

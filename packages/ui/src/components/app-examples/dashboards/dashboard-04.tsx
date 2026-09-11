@@ -2,20 +2,20 @@
 
 import { useState } from "react";
 import { ChevronDown, Copy01, Edit01, FilterLines, LinkExternal01, SearchLg, Trash01, Zap } from "@properui/icons";
-import { FeaturedCardQRCode } from "@/components/application/app-navigation/base-components/featured-cards";
-import { SidebarNavigationDualTier } from "@/components/application/app-navigation/sidebar-navigation/sidebar-dual-tier";
-import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
-import { MetricIcon02 } from "@/components/application/metrics/metrics";
-import { Table, TableCard } from "@/components/application/table/table";
-import { TablePaginationMinimal } from "@/components/application/table/table-pagination";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { Input } from "@/components/base/input/input";
-import { cx } from "@/utils/cx";
-import { AVATARS, LOGOS } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { AVATARS, LOGOS } from "../../../utils/demo-assets";
+import { FeaturedCardQRCode } from "../../application/app-navigation/base-components/featured-cards";
+import { SidebarNavigationDualTier } from "../../application/app-navigation/sidebar-navigation/sidebar-dual-tier";
+import { Breadcrumbs } from "../../application/breadcrumbs/breadcrumbs";
+import { MetricIcon02 } from "../../application/metrics/metrics";
+import { Table, TableCard } from "../../application/table/table";
+import { TablePaginationMinimal } from "../../application/table/table-pagination";
+import { Avatar } from "../../base/avatar/avatar";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { Dropdown } from "../../base/dropdown/dropdown";
+import { Input } from "../../base/input/input";
 import { RangeTabs, TrendAreaChart, navFooterItemsWithIcons, navItemsDualTier, styles } from "./dashboards-shared";
 
 const noop = () => {};

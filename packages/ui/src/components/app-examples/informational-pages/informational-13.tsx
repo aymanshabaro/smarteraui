@@ -2,17 +2,17 @@
 
 import type { FC } from "react";
 import { ArrowLeft, BarChartSquare02, CheckDone01, Edit05, HomeLine, PieChart03, Rows01, Share04, Users01, UsersPlus } from "@properui/icons";
-import { ActivityFeed } from "@/components/application/activity-feed/activity-feed";
-import type { NavItemType } from "@/components/application/app-navigation/config";
-import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
-import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { DropdownIconSimple } from "@/components/base/dropdown/dropdown-icon-simple";
-import { NativeSelect } from "@/components/base/select/select-native";
-import { IMAGES, avatar } from "@/utils/demo-assets";
+import { IMAGES, avatar } from "../../../utils/demo-assets";
+import { ActivityFeed } from "../../application/activity-feed/activity-feed";
+import type { NavItemType } from "../../application/app-navigation/config";
+import { SidebarNavigationSlim } from "../../application/app-navigation/sidebar-navigation/sidebar-slim";
+import { Breadcrumbs } from "../../application/breadcrumbs/breadcrumbs";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Tabs } from "../../application/tabs/tabs";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { DropdownIconSimple } from "../../base/dropdown/dropdown-icon-simple";
+import { NativeSelect } from "../../base/select/select-native";
 
 const navItems: (NavItemType & { icon: FC<{ className?: string }> })[] = [
     { label: "Home", href: "/", icon: HomeLine },

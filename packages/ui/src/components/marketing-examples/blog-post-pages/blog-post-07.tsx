@@ -1,10 +1,10 @@
-import { BlogSectionSplitLayout01 } from "@/components/marketing/blog-sections/blog-section-split-layout-01";
-import { ContentLargeImage04 } from "@/components/marketing/content-rich-text-sections/content-large-image-04";
-import { FooterLarge08 } from "@/components/marketing/footers/footer-large-08";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { NewsletterSimpleCentered } from "@/components/marketing/newsletter-cta-sections/newsletter-simple-centered";
-import { SectionDivider } from "@/components/shared-assets/section-divider";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { BlogSectionSplitLayout01 } from "../../marketing/blog-sections/blog-section-split-layout-01";
+import { ContentLargeImage04 } from "../../marketing/content-rich-text-sections/content-large-image-04";
+import { FooterLarge08 } from "../../marketing/footers/footer-large-08";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { NewsletterSimpleCentered } from "../../marketing/newsletter-cta-sections/newsletter-simple-centered";
+import { SectionDivider } from "../../shared-assets/section-divider";
 
 const styles = sortCx({
     // The brand-coloured title block runs under the header, so the navigation adopts on-brand colours.

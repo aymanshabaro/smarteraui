@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { Button } from "@/components/base/buttons/button";
+import { Button } from "../../base/buttons/button";
 import { Alert, type AlertProps } from "./alerts";
 
 /** Copy + actions shared by the floating and full-width demos of each color. Demo-only, not exported. */

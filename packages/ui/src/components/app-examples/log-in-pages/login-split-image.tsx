@@ -1,10 +1,10 @@
-import { Button } from "@/components/base/buttons/button";
-import { SocialButton } from "@/components/base/buttons/social-button";
-import { Checkbox } from "@/components/base/checkbox/checkbox";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { SocialButton } from "../../base/buttons/social-button";
+import { Checkbox } from "../../base/checkbox/checkbox";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { ProperLogoMinimal } from "../../foundations/logo/proper-logo-minimal";
 
 /** Split log in page with a centred form on the left and a full-bleed decorative image on the right. */
 export const LoginSplitImage = () => (

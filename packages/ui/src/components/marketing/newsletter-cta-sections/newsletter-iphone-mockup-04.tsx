@@ -1,9 +1,9 @@
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { IPhoneMockup } from "@/components/shared-assets/mockups/iphone-mockup";
-import { cx } from "@/utils/cx";
-import { AVATARS, IMAGES } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { AVATARS, IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { IPhoneMockup } from "../../shared-assets/mockups/iphone-mockup";
 
 /** Decorative notification cards that overlap the device. Purely illustrative, hidden from AT. */
 const notifications = [

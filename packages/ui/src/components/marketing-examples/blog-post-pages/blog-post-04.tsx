@@ -1,12 +1,12 @@
-import { BannerSlimDefaultFullWidth } from "@/components/marketing/banners/banner-slim-default-full-width";
-import { BlogSectionSimpleLeftAligned01 } from "@/components/marketing/blog-sections/blog-section-simple-left-aligned-01";
-import { ContentSplitImage04 } from "@/components/marketing/content-rich-text-sections/content-split-image-04";
-import { CtaAbstractImages } from "@/components/marketing/cta-sections/cta-abstract-images";
-import { FooterLarge11 } from "@/components/marketing/footers/footer-large-11";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { NewsletterCardHorizontal } from "@/components/marketing/newsletter-cta-sections/newsletter-card-horizontal";
-import { SectionDivider } from "@/components/shared-assets/section-divider";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { BannerSlimDefaultFullWidth } from "../../marketing/banners/banner-slim-default-full-width";
+import { BlogSectionSimpleLeftAligned01 } from "../../marketing/blog-sections/blog-section-simple-left-aligned-01";
+import { ContentSplitImage04 } from "../../marketing/content-rich-text-sections/content-split-image-04";
+import { CtaAbstractImages } from "../../marketing/cta-sections/cta-abstract-images";
+import { FooterLarge11 } from "../../marketing/footers/footer-large-11";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { NewsletterCardHorizontal } from "../../marketing/newsletter-cta-sections/newsletter-card-horizontal";
+import { SectionDivider } from "../../shared-assets/section-divider";
 
 const styles = sortCx({
     // The abstract-image CTA above already carries the top padding for this run of sections.

@@ -2,13 +2,13 @@
 
 import type { CSSProperties } from "react";
 import { PlayCircle } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import type { MarketingNavItemType } from "@/components/marketing/header-navigations/base-components/header";
-import { MarketingHeader } from "@/components/marketing/header-navigations/base-components/header";
-import { ProductsMenu, SimpleResourcesMenu } from "@/components/marketing/header-navigations/base-components/menus";
-import { BackgroundPattern } from "@/components/shared-assets/background-patterns";
-import { CreditCard } from "@/components/shared-assets/credit-card/credit-card";
-import { AVATARS } from "@/utils/demo-assets";
+import { AVATARS } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { BackgroundPattern } from "../../shared-assets/background-patterns";
+import { CreditCard } from "../../shared-assets/credit-card/credit-card";
+import type { MarketingNavItemType } from "../header-navigations/base-components/header";
+import { MarketingHeader } from "../header-navigations/base-components/header";
+import { ProductsMenu, SimpleResourcesMenu } from "../header-navigations/base-components/menus";
 
 const navItems: MarketingNavItemType[] = [
     { label: "Products", menu: <ProductsMenu /> },

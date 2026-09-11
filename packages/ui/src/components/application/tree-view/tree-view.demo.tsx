@@ -2,7 +2,7 @@
 
 import type { FC, ReactNode } from "react";
 import { File04, Folder, Paperclip } from "@properui/icons";
-import { TreeView, type TreeViewSize } from "@/components/application/tree-view/tree-view";
+import { TreeView, type TreeViewSize } from "./tree-view";
 
 interface TreeNode {
     id: string;

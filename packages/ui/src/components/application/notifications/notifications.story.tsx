@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import * as Notifications from "@/components/application/notifications/notifications.demo";
+import * as Notifications from "./notifications.demo";
 
 export default {
     title: "Application components/Notifications",

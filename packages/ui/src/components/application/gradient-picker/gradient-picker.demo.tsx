@@ -2,10 +2,10 @@
 
 import type { ReactNode } from "react";
 import { useState } from "react";
-import { ColorPicker } from "@/components/application/color-picker/color-picker";
-import { GradientPicker as GradientPickerRoot } from "@/components/application/gradient-picker/gradient-picker";
-import { DEFAULT_GRADIENT_STOPS, SAVED_GRADIENTS } from "@/components/application/gradient-picker/gradient-picker-gradients";
-import type { GradientPreset } from "@/components/application/gradient-picker/gradient-picker-utils";
+import { ColorPicker } from "../color-picker/color-picker";
+import { GradientPicker as GradientPickerRoot } from "./gradient-picker";
+import { DEFAULT_GRADIENT_STOPS, SAVED_GRADIENTS } from "./gradient-picker-gradients";
+import type { GradientPreset } from "./gradient-picker-utils";
 
 /** Centres a floating card the way the reference previews do. */
 const DemoStage = ({ children }: { children: ReactNode }) => <div className="flex items-center justify-center p-4">{children}</div>;

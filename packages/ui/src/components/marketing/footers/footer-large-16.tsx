@@ -1,7 +1,7 @@
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
 
 const navItems = [
     { label: "Overview", href: "/product/overview" },

@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
-import { Button } from "@/components/base/buttons/button";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
-import { AngelList, Dribbble, Facebook, GitHub, Layers, LinkedIn, X } from "@/components/foundations/social-icons";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { Button } from "../../base/buttons/button";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
+import { AngelList, Dribbble, Facebook, GitHub, Layers, LinkedIn, X } from "../../foundations/social-icons";
 
 const styles = sortCx({
     columnTitle: "text-quaternary_on-brand text-sm font-semibold",

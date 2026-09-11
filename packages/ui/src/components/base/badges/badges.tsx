@@ -2,7 +2,7 @@
 
 import type { HTMLAttributes, MouseEventHandler, ReactNode } from "react";
 import { X as CloseX } from "@properui/icons";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
 import type { BadgeColors, BadgeTypeToColorMap, BadgeTypes, FlagTypes, IconComponentType, Sizes } from "./badge-types";
 import { badgeTypes } from "./badge-types";
 

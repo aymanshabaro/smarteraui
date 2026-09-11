@@ -1,9 +1,9 @@
-import { Button } from "@/components/base/buttons/button";
-import { ContentSectionSplitImage03 } from "@/components/marketing/content-rich-text-sections/content-section-split-image-03";
-import { FooterLarge04 } from "@/components/marketing/footers/footer-large-04";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { TestimonialSimpleCentered03 } from "@/components/marketing/testimonial-sections/testimonial-simple-centered-03";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { Button } from "../../base/buttons/button";
+import { ContentSectionSplitImage03 } from "../../marketing/content-rich-text-sections/content-section-split-image-03";
+import { FooterLarge04 } from "../../marketing/footers/footer-large-04";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { TestimonialSimpleCentered03 } from "../../marketing/testimonial-sections/testimonial-simple-centered-03";
 
 const styles = sortCx({
     link: "rounded-xs underline underline-offset-3 outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-2",

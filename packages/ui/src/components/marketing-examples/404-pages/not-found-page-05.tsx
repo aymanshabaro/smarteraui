@@ -1,6 +1,6 @@
-import { NotFoundSimple06 } from "@/components/app-examples/404-sections/not-found-simple-06";
-import { FooterLarge05 } from "@/components/marketing/footers/footer-large-05";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
+import { NotFoundSimple06 } from "../../app-examples/404-sections/not-found-simple-06";
+import { FooterLarge05 } from "../../marketing/footers/footer-large-05";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
 
 /** A marketing 404 page: header navigation, a centered error section with a divided help list, and a newsletter footer. */
 export const NotFoundPage05 = () => (

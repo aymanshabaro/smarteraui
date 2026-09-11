@@ -5,9 +5,9 @@ import { useFilter } from "react-aria";
 import type { Selection as AriaSelection } from "react-aria-components";
 import { Autocomplete as AriaAutocomplete, SearchField as AriaSearchField } from "react-aria-components";
 import { ChevronDown, SearchLg } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { avatar } from "@/utils/demo-assets";
+import { avatar } from "../../../utils/demo-assets";
+import { Button } from "../buttons/button";
+import { Dropdown } from "./dropdown";
 import { DropdownSearchField } from "./dropdown-search-field";
 
 export const DropdownSearchSimple = () => {

@@ -1,10 +1,10 @@
-import { BlogHeaderFeaturedPost02 } from "@/components/marketing/blog-sections/blog-header-featured-post-02";
-import { CtaCardHorizontal } from "@/components/marketing/cta-sections/cta-card-horizontal";
-import { CtaSimpleCentered } from "@/components/marketing/cta-sections/cta-simple-centered";
-import { FooterLarge15 } from "@/components/marketing/footers/footer-large-15";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { SocialProofFullWidthDual } from "@/components/marketing/social-proof-sections/social-proof-full-width-dual";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { BlogHeaderFeaturedPost02 } from "../../marketing/blog-sections/blog-header-featured-post-02";
+import { CtaCardHorizontal } from "../../marketing/cta-sections/cta-card-horizontal";
+import { CtaSimpleCentered } from "../../marketing/cta-sections/cta-simple-centered";
+import { FooterLarge15 } from "../../marketing/footers/footer-large-15";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { SocialProofFullWidthDual } from "../../marketing/social-proof-sections/social-proof-full-width-dual";
 
 const styles = sortCx({
     // The article grid already ends the run of padding, so the trial card only keeps its bottom spacing.

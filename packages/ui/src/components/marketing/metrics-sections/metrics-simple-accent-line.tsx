@@ -1,8 +1,8 @@
 "use client";
 
 import { ArrowRight, ZapFast } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
+import { Button } from "../../base/buttons/button";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 const metrics = [
     { value: "400+", label: "Projects completed", cta: "View projects", href: "/projects" },

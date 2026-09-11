@@ -1,8 +1,8 @@
 // Deterministic demo data for the table examples. Ported from the reference `*.json` fixtures as
 // TypeScript modules so that every avatar/logo can come from `@/utils/demo-assets` instead of a
 // hotlinked image URL.
-import type { BadgeColors } from "@/components/base/badges/badge-types";
-import { AVATARS, LOGOS } from "@/utils/demo-assets";
+import { AVATARS, LOGOS } from "../../../utils/demo-assets";
+import type { BadgeColors } from "../../base/badges/badge-types";
 
 export interface TeamMember {
     name: string;

@@ -2,11 +2,11 @@
 
 import type { FC, ReactNode } from "react";
 import { Bell01, CreditCard01, LogOut01, Plus, SearchLg, Settings01, Share01, Star01, User01, UserPlus01 } from "@properui/icons";
-import { CommandMenu } from "@/components/application/command-menu/command-menu";
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { CursorIcon, FigmaIcon, GitHubIcon, NextjsIcon, ReactIcon, TailwindCSSIcon, ViteIcon } from "@/components/foundations/integration-icons";
-import { AVATARS } from "@/utils/demo-assets";
+import { AVATARS } from "../../../utils/demo-assets";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { CursorIcon, FigmaIcon, GitHubIcon, NextjsIcon, ReactIcon, TailwindCSSIcon, ViteIcon } from "../../foundations/integration-icons";
+import { CommandMenu } from "./command-menu";
 
 /** Keyboard hints shown under the list of every full-size example. */
 const FooterHints = () => (

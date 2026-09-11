@@ -1,6 +1,6 @@
 "use client";
 
-import { LoadingIndicator } from "@/components/application/loading-indicator/loading-indicator";
+import { LoadingIndicator } from "./loading-indicator";
 
 export const LoadingIndicatorExample = () => (
     <div className="flex flex-col items-start gap-8 md:flex-row md:gap-16">

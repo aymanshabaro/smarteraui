@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowLeft, ArrowRight, BookOpen01, CodeSquare02, MessageChatCircle } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
+import { Button } from "../../base/buttons/button";
 
 /** The onward links, shown as filled cards under the headline. */
 const links = [

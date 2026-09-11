@@ -1,14 +1,14 @@
 "use client";
 
-import { SidebarNavigationSectionsSubheadings } from "@/components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings";
-import { SectionFooter } from "@/components/application/section-footers/section-footers";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { PaymentInput } from "@/components/base/input/input-payment";
-import { Select } from "@/components/base/select/select";
-import { countriesOptions } from "@/utils/countries";
+import { countriesOptions } from "../../../utils/countries";
+import { SidebarNavigationSectionsSubheadings } from "../../application/app-navigation/sidebar-navigation/sidebar-sections-subheadings";
+import { SectionFooter } from "../../application/section-footers/section-footers";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { PaymentInput } from "../../base/input/input-payment";
+import { Select } from "../../base/select/select";
 import {
     SettingsBlock,
     SettingsButtonGroupRow,

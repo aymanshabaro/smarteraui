@@ -8,12 +8,12 @@ import {
     Heading as AriaHeading,
 } from "react-aria-components";
 import { MinusCircle, PlusCircle, SearchLg } from "@properui/icons";
-import { Input } from "@/components/base/input/input";
-import { ContentSectionSplitImage02 } from "@/components/marketing/content-rich-text-sections/content-section-split-image-02";
-import { CtaSplitImage03 } from "@/components/marketing/cta-sections/cta-split-image-03";
-import { FooterLarge09 } from "@/components/marketing/footers/footer-large-09";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
+import { Input } from "../../base/input/input";
+import { ContentSectionSplitImage02 } from "../../marketing/content-rich-text-sections/content-section-split-image-02";
+import { CtaSplitImage03 } from "../../marketing/cta-sections/cta-split-image-03";
+import { FooterLarge09 } from "../../marketing/footers/footer-large-09";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
 
 const styles = sortCx({
     item: "rounded-2xl p-5 transition duration-300 ease-in-out md:p-8",

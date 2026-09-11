@@ -1,16 +1,16 @@
 "use client";
 
 import { BookmarkAdd, CurrencyDollar, FilterLines, Home02, List, Map01, MarkerPin02, SearchLg, Wifi, Zap } from "@properui/icons";
-import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
-import { TablePaginationNumbered } from "@/components/application/table/table-pagination";
-import { BadgeWithIcon } from "@/components/base/badges/badges";
-import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
-import { Select } from "@/components/base/select/select";
-import type { SelectItemType } from "@/components/base/select/select-shared";
-import { RatingStars } from "@/components/foundations/rating/rating-stars";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { DateRangePicker } from "../../application/date-picker/date-range-picker";
+import { TablePaginationNumbered } from "../../application/table/table-pagination";
+import { BadgeWithIcon } from "../../base/badges/badges";
+import { ButtonGroup, ButtonGroupItem } from "../../base/button-group/button-group";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
+import { Select } from "../../base/select/select";
+import type { SelectItemType } from "../../base/select/select-shared";
+import { RatingStars } from "../../foundations/rating/rating-stars";
 import { AppHeader, productNavItems } from "./shell.a";
 
 const navItems = [...productNavItems.slice(0, 5), { label: "Bookings", href: "/bookings" }];

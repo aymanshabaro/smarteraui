@@ -1,11 +1,11 @@
 "use client";
 
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "@properui/icons";
-import { Carousel } from "@/components/application/carousel/carousel-base";
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { sortCx } from "@/utils/cx";
-import { IMAGES, avatar } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { IMAGES, avatar } from "../../../utils/demo-assets";
+import { Carousel } from "../../application/carousel/carousel-base";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
 
 const categoryHref = (label: string) => `/blog/categories/${label.toLowerCase().replace(/\s+/g, "-")}`;
 

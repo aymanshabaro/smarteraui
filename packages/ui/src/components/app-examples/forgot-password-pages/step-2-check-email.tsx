@@ -1,9 +1,9 @@
 "use client";
 
 import { ArrowLeft, Mail01 } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { AVATARS } from "@/utils/demo-assets";
+import { AVATARS } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 /** Step 2 of the password reset flow: confirm the reset link was sent. */
 export const Step2CheckEmail = () => (

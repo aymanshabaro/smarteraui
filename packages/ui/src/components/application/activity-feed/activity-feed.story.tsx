@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import * as ActivityFeeds from "@/components/application/activity-feed/activity-feed.demo";
+import * as ActivityFeeds from "./activity-feed.demo";
 
 export default {
     title: "Application components/Activity feeds",

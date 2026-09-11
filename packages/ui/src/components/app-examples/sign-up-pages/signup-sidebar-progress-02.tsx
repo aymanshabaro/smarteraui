@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { PaginationLine } from "@/components/application/pagination/pagination-line";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
-import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { PaginationLine } from "../../application/pagination/pagination-line";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
+import { ProperLogoMinimal } from "../../foundations/logo/proper-logo-minimal";
 import { SupportFooter } from "./base-components/page-parts";
 import { SetPasswordForm } from "./base-components/sign-up-form";
 

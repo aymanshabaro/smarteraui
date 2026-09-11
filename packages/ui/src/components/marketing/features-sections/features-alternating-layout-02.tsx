@@ -1,11 +1,11 @@
 "use client";
 
 import { ChartBreakoutSquare, MessageChatCircle, PlayCircle, Zap } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { BackgroundPattern } from "@/components/shared-assets/background-patterns";
-import { cx } from "@/utils/cx";
-import { IMAGES } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
+import { BackgroundPattern } from "../../shared-assets/background-patterns";
 
 const features = [
     {

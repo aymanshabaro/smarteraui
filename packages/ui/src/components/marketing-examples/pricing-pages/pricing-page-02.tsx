@@ -1,12 +1,12 @@
-import { CtaCardHorizontal } from "@/components/marketing/cta-sections/cta-card-horizontal";
-import { CtaSimpleLeft } from "@/components/marketing/cta-sections/cta-simple-left";
-import { FaqSimple03 } from "@/components/marketing/faq-sections/faq-simple-03";
-import { FeaturesSimpleIcons03 } from "@/components/marketing/features-sections/features-simple-icons-03";
-import { FooterLarge05 } from "@/components/marketing/footers/footer-large-05";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { PricingAbstractAngles } from "@/components/marketing/pricing-sections/pricing-abstract-angles";
-import { SocialProofCard } from "@/components/marketing/social-proof-sections/social-proof-card";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { CtaCardHorizontal } from "../../marketing/cta-sections/cta-card-horizontal";
+import { CtaSimpleLeft } from "../../marketing/cta-sections/cta-simple-left";
+import { FaqSimple03 } from "../../marketing/faq-sections/faq-simple-03";
+import { FeaturesSimpleIcons03 } from "../../marketing/features-sections/features-simple-icons-03";
+import { FooterLarge05 } from "../../marketing/footers/footer-large-05";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { PricingAbstractAngles } from "../../marketing/pricing-sections/pricing-abstract-angles";
+import { SocialProofCard } from "../../marketing/social-proof-sections/social-proof-card";
 
 const styles = sortCx({
     // The angled hero already tints the top of the page, so the header picks up the same wash.

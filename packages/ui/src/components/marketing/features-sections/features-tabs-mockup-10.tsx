@@ -1,10 +1,10 @@
 "use client";
 
 import { ArrowRight } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { CreditCard } from "@/components/shared-assets/credit-card/credit-card";
-import { cx, sortCx } from "@/utils/cx";
-import { AVATARS } from "@/utils/demo-assets";
+import { cx, sortCx } from "../../../utils/cx";
+import { AVATARS } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { CreditCard } from "../../shared-assets/credit-card/credit-card";
 
 const styles = sortCx({
     section: "overflow-hidden bg-primary py-16 lg:py-24",

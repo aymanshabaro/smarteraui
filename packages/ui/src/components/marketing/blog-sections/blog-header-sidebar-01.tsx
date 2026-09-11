@@ -1,11 +1,11 @@
 "use client";
 
 import { ArrowUpRight, SearchLg } from "@properui/icons";
-import { PaginationPageMinimalCenter } from "@/components/application/pagination/pagination";
-import { Tab, TabList, TabPanel, Tabs } from "@/components/application/tabs/tabs";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
-import { IMAGES, avatar } from "@/utils/demo-assets";
+import { IMAGES, avatar } from "../../../utils/demo-assets";
+import { PaginationPageMinimalCenter } from "../../application/pagination/pagination";
+import { Tab, TabList, TabPanel, Tabs } from "../../application/tabs/tabs";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
 
 const slugify = (label: string) => label.toLowerCase().replace(/\s+/g, "-");
 const authorHref = (username: string) => `/blog/authors/${username.replace("@", "")}`;

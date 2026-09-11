@@ -22,7 +22,7 @@ import {
     Twitter,
     X,
     YouTube,
-} from "@/components/foundations/social-icons";
+} from "./";
 
 const icons = [
     { name: "Google", icon: Google },

@@ -1,9 +1,9 @@
 import { Camera01 } from "@properui/icons";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { BadgeGroup } from "@/components/base/badges/badge-groups";
-import { Badge } from "@/components/base/badges/badges";
-import { sortCx } from "@/utils/cx";
-import { AVATARS, IMAGES, LOGOS } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { AVATARS, IMAGES, LOGOS } from "../../../utils/demo-assets";
+import { Avatar } from "../../base/avatar/avatar";
+import { BadgeGroup } from "../../base/badges/badge-groups";
+import { Badge } from "../../base/badges/badges";
 
 const author = AVATARS[7];
 const quoted = AVATARS[0];

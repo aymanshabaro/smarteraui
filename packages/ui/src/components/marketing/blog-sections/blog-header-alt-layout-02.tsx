@@ -1,9 +1,9 @@
 import { ArrowUpRight } from "@properui/icons";
-import { PaginationPageDefault } from "@/components/application/pagination/pagination";
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
-import { IMAGES, avatar } from "@/utils/demo-assets";
+import { IMAGES, avatar } from "../../../utils/demo-assets";
+import { PaginationPageDefault } from "../../application/pagination/pagination";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
 
 const authorHref = (username: string) => `/blog/authors/${username.replace("@", "")}`;
 const categoryHref = (label: string) => `/blog/categories/${label.toLowerCase().replace(/\s+/g, "-")}`;

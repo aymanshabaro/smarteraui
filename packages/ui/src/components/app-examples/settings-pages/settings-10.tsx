@@ -1,14 +1,14 @@
 "use client";
 
 import { DownloadCloud02, Plus } from "@properui/icons";
-import { FeaturedCardOnboardingSteps } from "@/components/application/app-navigation/base-components/featured-cards";
-import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
-import { Table, TableCard } from "@/components/application/table/table";
-import { TablePaginationMinimal } from "@/components/application/table/table-pagination";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Badge, BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { AVATARS } from "@/utils/demo-assets";
+import { AVATARS } from "../../../utils/demo-assets";
+import { FeaturedCardOnboardingSteps } from "../../application/app-navigation/base-components/featured-cards";
+import { SidebarNavigationSimple } from "../../application/app-navigation/sidebar-navigation/sidebar-simple";
+import { Table, TableCard } from "../../application/table/table";
+import { TablePaginationMinimal } from "../../application/table/table-pagination";
+import { Avatar } from "../../base/avatar/avatar";
+import { Badge, BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
 import {
     SettingsMain,
     SettingsPage,

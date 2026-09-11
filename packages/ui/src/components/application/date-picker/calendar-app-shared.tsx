@@ -22,9 +22,9 @@ import {
     SearchLg,
     Trash01,
 } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { cx, sortCx } from "@/utils/cx";
-import { AVATARS } from "@/utils/demo-assets";
+import { cx, sortCx } from "../../../utils/cx";
+import { AVATARS } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
 
 /** The fixed "today" used across every calendar-example demo so screenshots stay deterministic. */
 export const TODAY = new CalendarDate(2026, 9, 9);

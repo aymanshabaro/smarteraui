@@ -2,8 +2,8 @@
 
 import type { FC } from "react";
 import { ChartBreakoutCircle, DownloadCloud01, PlayCircle, Stars02, Zap } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
+import { Button } from "../../base/buttons/button";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 const metrics: { value: string; label: string; icon: FC<{ className?: string }> }[] = [
     { value: "400+", label: "Projects completed", icon: Zap },

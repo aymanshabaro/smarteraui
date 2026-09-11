@@ -1,8 +1,8 @@
-import { Badge } from "@/components/base/badges/badges";
-import { AppStoreButton, GooglePlayButton } from "@/components/base/buttons/app-store-buttons";
-import { Button } from "@/components/base/buttons/button";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { Badge } from "../../base/badges/badges";
+import { AppStoreButton, GooglePlayButton } from "../../base/buttons/app-store-buttons";
+import { Button } from "../../base/buttons/button";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
 
 const styles = sortCx({
     columnTitle: "text-primary text-sm font-semibold",

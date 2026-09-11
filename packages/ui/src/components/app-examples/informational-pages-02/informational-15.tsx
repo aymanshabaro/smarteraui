@@ -1,14 +1,14 @@
 "use client";
 
 import { ArrowLeft, Copy01, HomeLine, SearchLg, Zap } from "@properui/icons";
-import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
-import { CodeSnippet } from "@/components/application/code-snippet/code-snippet";
-import { Table, TableCard } from "@/components/application/table/table";
-import { TablePaginationMinimal } from "@/components/application/table/table-pagination";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { BadgeWithIcon } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
+import { Breadcrumbs } from "../../application/breadcrumbs/breadcrumbs";
+import { CodeSnippet } from "../../application/code-snippet/code-snippet";
+import { Table, TableCard } from "../../application/table/table";
+import { TablePaginationMinimal } from "../../application/table/table-pagination";
+import { Tabs } from "../../application/tabs/tabs";
+import { BadgeWithIcon } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
 import { AppHeader, productNavItems } from "./shell.a";
 
 const navItems = [...productNavItems.slice(0, 5), { label: "Messages", href: "/messages" }];

@@ -1,17 +1,17 @@
 "use client";
 
 import { ArrowLeft, Edit01, Plus, Trash01 } from "@properui/icons";
-import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
-import { Breadcrumbs, type BreadcrumbsMenuItem } from "@/components/application/breadcrumbs/breadcrumbs";
-import { Table } from "@/components/application/table/table";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { Form } from "@/components/base/form/form";
-import { InputBase } from "@/components/base/input/input";
-import { InputGroup } from "@/components/base/input/input-group";
-import { NativeSelect } from "@/components/base/select/select-native";
-import { AVATARS, IMAGES, LOGOS } from "@/utils/demo-assets";
+import { AVATARS, IMAGES, LOGOS } from "../../../utils/demo-assets";
+import { SidebarNavigationSlim } from "../../application/app-navigation/sidebar-navigation/sidebar-slim";
+import { Breadcrumbs, type BreadcrumbsMenuItem } from "../../application/breadcrumbs/breadcrumbs";
+import { Table } from "../../application/table/table";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { Form } from "../../base/form/form";
+import { InputBase } from "../../base/input/input";
+import { InputGroup } from "../../base/input/input-group";
+import { NativeSelect } from "../../base/select/select-native";
 import { SettingsFormRow, SettingsMain, SettingsPage, SettingsRowDivider, navFooterItemsCompact, navItemsFlat } from "./settings-shared.a";
 
 const currentUser = AVATARS[10];

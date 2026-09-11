@@ -2,10 +2,10 @@
 
 import type { FC, SVGProps } from "react";
 import { ArrowRight } from "@properui/icons";
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ClaudeIcon, FigmaIcon, GitHubIcon, NextjsIcon, ReactIcon, TailwindCSSIcon } from "@/components/foundations/integration-icons";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ClaudeIcon, FigmaIcon, GitHubIcon, NextjsIcon, ReactIcon, TailwindCSSIcon } from "../../foundations/integration-icons";
 
 const styles = sortCx({
     section: "bg-primary py-16 md:py-24",

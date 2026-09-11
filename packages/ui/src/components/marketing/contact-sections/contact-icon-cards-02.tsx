@@ -1,5 +1,5 @@
 import { MarkerPin01, MessageChatCircle, Phone } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
+import { Button } from "../../base/buttons/button";
 
 const channels = [
     {

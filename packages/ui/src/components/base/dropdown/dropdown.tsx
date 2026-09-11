@@ -20,7 +20,7 @@ import {
     Separator as AriaSeparator,
 } from "react-aria-components";
 import { Check, ChevronRight, DotsVertical } from "@properui/icons";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
 import { Avatar } from "../avatar/avatar";
 import { CheckboxBase } from "../checkbox/checkbox";
 import { RadioButtonBase } from "../radio-buttons/radio-buttons";

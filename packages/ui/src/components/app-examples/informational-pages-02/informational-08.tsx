@@ -1,10 +1,10 @@
 "use client";
 
 import { SearchLg } from "@properui/icons";
-import { CalendarAppHeader, EventChip, MONTH_EVENTS, MONTH_GRID, WEEKDAYS_SHORT } from "@/components/application/date-picker/calendar-app-shared";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Input } from "@/components/base/input/input";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { CalendarAppHeader, EventChip, MONTH_EVENTS, MONTH_GRID, WEEKDAYS_SHORT } from "../../application/date-picker/calendar-app-shared";
+import { Tabs } from "../../application/tabs/tabs";
+import { Input } from "../../base/input/input";
 import { AppHeader, navItemsWith } from "./shell.a";
 
 const navItems = navItemsWith(3, { label: "Calendar", href: "/calendar" });

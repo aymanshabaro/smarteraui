@@ -1,7 +1,7 @@
 "use client";
 
-import { RatingBadge } from "@/components/foundations/rating/rating-badge";
-import { RatingStars } from "@/components/foundations/rating/rating-stars";
+import { RatingBadge } from "./rating-badge";
+import { RatingStars } from "./rating-stars";
 
 export const RatingBadgeExample = () => {
     return <RatingBadge />;

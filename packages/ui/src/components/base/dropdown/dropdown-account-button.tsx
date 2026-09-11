@@ -4,9 +4,9 @@ import { useState } from "react";
 import type { Selection as AriaSelection } from "react-aria-components";
 import { SubmenuTrigger as AriaSubmenuTrigger } from "react-aria-components";
 import { ChevronDown, HelpCircle, LogOut01, Moon01, Plus, Settings01, User01 } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { avatar } from "@/utils/demo-assets";
+import { avatar } from "../../../utils/demo-assets";
+import { Button } from "../buttons/button";
+import { Dropdown } from "./dropdown";
 
 const primaryAccount = avatar(0);
 const secondaryAccount = avatar(1);

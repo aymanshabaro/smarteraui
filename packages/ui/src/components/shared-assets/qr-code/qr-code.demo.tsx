@@ -1,6 +1,6 @@
 "use client";
 
-import { GradientScan, QRCode } from "@/components/shared-assets/qr-code/qr-code";
+import { GradientScan, QRCode } from "./qr-code";
 
 const QR_VALUE = "https://www.properui.dev";
 

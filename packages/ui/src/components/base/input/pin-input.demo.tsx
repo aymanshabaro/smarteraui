@@ -1,7 +1,7 @@
 "use client";
 
 import { REGEXP_ONLY_DIGITS } from "input-otp";
-import { PinInput } from "@/components/base/input/pin-input";
+import { PinInput } from "./pin-input";
 
 /** Hero example shown at the top of the docs page. */
 export const VerificationCodeInputExample = () => {

@@ -2,7 +2,7 @@
 
 import type { HTMLAttributes } from "react";
 import { AlertCircle } from "@properui/icons";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
 
 interface IllustrationProps extends HTMLAttributes<HTMLDivElement> {
     size?: "sm" | "md" | "lg";

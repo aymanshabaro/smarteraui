@@ -1,7 +1,7 @@
 "use client";
 
 import { Button as AriaButton, SubmenuTrigger as AriaSubmenuTrigger } from "react-aria-components";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
+import { Dropdown } from "./dropdown";
 
 export const DropdownContextMenuSimple = () => (
     <Dropdown.Root trigger="contextMenu">

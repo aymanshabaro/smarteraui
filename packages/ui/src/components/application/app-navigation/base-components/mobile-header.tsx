@@ -9,8 +9,8 @@ import {
     ModalOverlay as AriaModalOverlay,
 } from "react-aria-components";
 import { X as CloseIcon, Menu02 } from "@properui/icons";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../../utils/cx";
+import { ProperLogo } from "../../../foundations/logo/proper-logo";
 
 export const MobileNavigationHeader = ({ children }: PropsWithChildren) => {
     return (

@@ -1,7 +1,7 @@
-import { NotFoundIllustration02 } from "@/components/app-examples/404-sections/not-found-illustration-02";
-import { CtaAbstractImages } from "@/components/marketing/cta-sections/cta-abstract-images";
-import { FooterLarge07 } from "@/components/marketing/footers/footer-large-07";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
+import { NotFoundIllustration02 } from "../../app-examples/404-sections/not-found-illustration-02";
+import { CtaAbstractImages } from "../../marketing/cta-sections/cta-abstract-images";
+import { FooterLarge07 } from "../../marketing/footers/footer-large-07";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
 
 /** A marketing maintenance page: an illustrated error section with site search, a collage CTA and a dark footer. */
 export const NotFoundPage07 = () => (

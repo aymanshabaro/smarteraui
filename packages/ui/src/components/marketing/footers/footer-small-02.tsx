@@ -1,4 +1,4 @@
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
 
 /**
  * The smallest footer: the logo and a copyright line, centred and stacked on mobile,

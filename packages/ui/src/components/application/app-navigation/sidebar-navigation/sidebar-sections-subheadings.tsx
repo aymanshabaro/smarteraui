@@ -2,8 +2,8 @@
 
 import type { CSSProperties } from "react";
 import { SearchLg } from "@properui/icons";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
+import { ButtonUtility } from "../../../base/buttons/button-utility";
+import { ProperLogo } from "../../../foundations/logo/proper-logo";
 import { MobileNavigationHeader } from "../base-components/mobile-header";
 import { NavAccountCard } from "../base-components/nav-account-card";
 import { NavItemBase } from "../base-components/nav-item";

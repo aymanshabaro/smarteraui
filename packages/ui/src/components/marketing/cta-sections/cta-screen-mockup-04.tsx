@@ -1,5 +1,5 @@
-import { Button } from "@/components/base/buttons/button";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
 
 /** A rounded card whose screen mockup is nudged out of the bottom-end corner. */
 export const CtaScreenMockup04 = () => (

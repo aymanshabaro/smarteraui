@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { Key } from "react-aria";
-import { Tabs } from "@/components/application/tabs/tabs";
+import { Tabs } from "./tabs";
 
 const items = [
     { id: "details", label: "My details" },

@@ -3,12 +3,12 @@
 import type { FC } from "react";
 import { Fragment } from "react";
 import { CheckCircle, HelpCircle, LayersThree01, LayersTwo01, Minus, Zap } from "@properui/icons";
-import { Tab, TabList, TabPanel, Tabs } from "@/components/application/tabs/tabs";
-import { Button } from "@/components/base/buttons/button";
-import { Slider } from "@/components/base/slider/slider";
-import { Tooltip, TooltipTrigger } from "@/components/base/tooltip/tooltip";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { Tab, TabList, TabPanel, Tabs } from "../../application/tabs/tabs";
+import { Button } from "../../base/buttons/button";
+import { Slider } from "../../base/slider/slider";
+import { Tooltip, TooltipTrigger } from "../../base/tooltip/tooltip";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 interface Plan {
     icon: FC<{ className?: string }>;

@@ -1,7 +1,7 @@
 "use client";
 
 import { Zap } from "@properui/icons";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 const features = [
     {

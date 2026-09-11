@@ -1,8 +1,8 @@
 "use client";
 
 import { ArrowLeft } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
 
 /** A 404 headline and actions on the left, with a full-height image on the right. */
 export const NotFoundSplitImage02 = () => (

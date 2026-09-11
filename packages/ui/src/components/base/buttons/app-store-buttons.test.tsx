@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { axe } from "vitest-axe";
-import * as Demos from "@/components/base/buttons/app-store-buttons.demo";
+import * as Demos from "./app-store-buttons.demo";
 
 describe("App store buttons", () => {
     for (const [name, Demo] of Object.entries(Demos)) {

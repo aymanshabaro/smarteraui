@@ -1,11 +1,11 @@
-import { BlogSectionSimpleCenterAligned01 } from "@/components/marketing/blog-sections/blog-section-simple-center-aligned-01";
-import { ContentSplitImage03 } from "@/components/marketing/content-rich-text-sections/content-split-image-03";
-import { CtaScreenMockup01 } from "@/components/marketing/cta-sections/cta-screen-mockup-01";
-import { FooterLarge10 } from "@/components/marketing/footers/footer-large-10";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { NewsletterSimpleCentered } from "@/components/marketing/newsletter-cta-sections/newsletter-simple-centered";
-import { SectionDivider } from "@/components/shared-assets/section-divider";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { BlogSectionSimpleCenterAligned01 } from "../../marketing/blog-sections/blog-section-simple-center-aligned-01";
+import { ContentSplitImage03 } from "../../marketing/content-rich-text-sections/content-split-image-03";
+import { CtaScreenMockup01 } from "../../marketing/cta-sections/cta-screen-mockup-01";
+import { FooterLarge10 } from "../../marketing/footers/footer-large-10";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { NewsletterSimpleCentered } from "../../marketing/newsletter-cta-sections/newsletter-simple-centered";
+import { SectionDivider } from "../../shared-assets/section-divider";
 
 const styles = sortCx({
     // Newsletter sign-up alternates surfaces with the screenshot band above it.

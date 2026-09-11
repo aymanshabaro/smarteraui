@@ -1,20 +1,20 @@
 "use client";
 
 import { Mail01 } from "@properui/icons";
-import { FeaturedCardProgressBar } from "@/components/application/app-navigation/base-components/featured-cards";
-import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
-import { FileUpload } from "@/components/application/file-upload/file-upload-base";
-import { SectionFooter } from "@/components/application/section-footers/section-footers";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { Select } from "@/components/base/select/select";
-import { TextArea } from "@/components/base/textarea/textarea";
-import { countriesOptions } from "@/utils/countries";
-import { AVATARS } from "@/utils/demo-assets";
-import { timezonesOptionsWithLongName } from "@/utils/timezones";
+import { countriesOptions } from "../../../utils/countries";
+import { AVATARS } from "../../../utils/demo-assets";
+import { timezonesOptionsWithLongName } from "../../../utils/timezones";
+import { FeaturedCardProgressBar } from "../../application/app-navigation/base-components/featured-cards";
+import { SidebarNavigationSimple } from "../../application/app-navigation/sidebar-navigation/sidebar-simple";
+import { FileUpload } from "../../application/file-upload/file-upload-base";
+import { SectionFooter } from "../../application/section-footers/section-footers";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { Select } from "../../base/select/select";
+import { TextArea } from "../../base/textarea/textarea";
 import {
     SettingsFieldPair,
     SettingsFormRow,

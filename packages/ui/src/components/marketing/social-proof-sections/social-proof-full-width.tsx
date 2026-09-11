@@ -1,4 +1,4 @@
-import { LOGOS } from "@/utils/demo-assets";
+import { LOGOS } from "../../../utils/demo-assets";
 
 /** A centered eyebrow line above a wrapping, full-width row of customer logos. */
 export const SocialProofFullWidth = () => (

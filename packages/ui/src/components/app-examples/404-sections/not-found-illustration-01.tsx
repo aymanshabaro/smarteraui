@@ -1,8 +1,8 @@
 "use client";
 
 import { ArrowLeft, SearchLg } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { Illustration } from "@/components/shared-assets/illustrations";
+import { Button } from "../../base/buttons/button";
+import { Illustration } from "../../shared-assets/illustrations";
 
 /** A 404 paired with the searching-cloud illustration. */
 export const NotFoundIllustration01 = () => (

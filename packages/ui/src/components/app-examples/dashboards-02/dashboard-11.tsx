@@ -1,12 +1,12 @@
 "use client";
 
 import { DownloadCloud01, SearchLg } from "@properui/icons";
-import { ActivityFeed } from "@/components/application/activity-feed/activity-feed";
-import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
-import { MetricChart03 } from "@/components/application/metrics/metrics";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
-import { avatar } from "@/utils/demo-assets";
+import { avatar } from "../../../utils/demo-assets";
+import { ActivityFeed } from "../../application/activity-feed/activity-feed";
+import { DateRangePicker } from "../../application/date-picker/date-range-picker";
+import { MetricChart03 } from "../../application/metrics/metrics";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
 import { StackedBarChart } from "./charts.a";
 import { recentPurchases, sparkDown, sparkUp, stackedSeries } from "./data.a";
 import { DashboardHeader, DashboardMain, DashboardSection } from "./shell.a";

@@ -1,10 +1,10 @@
 "use client";
 
 import { SearchLg } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
 
 /** A conversational 404 with a stacked search form beside a full-height image. */
 export const NotFoundSplitImage03 = () => (

@@ -7,11 +7,11 @@
 // lands, delete this file and import both footers from the pagination component instead (the
 // page-size control below should then become the real `<Select />`).
 import { ArrowLeft, ArrowRight } from "@properui/icons";
-import { Pagination } from "@/components/application/pagination/pagination-base";
-import { Button } from "@/components/base/buttons/button";
-import { DemoNativeSelect } from "@/components/base/input/input-native-select";
-import { useBreakpoint } from "@/hooks/use-breakpoint";
-import { cx } from "@/utils/cx";
+import { useBreakpoint } from "../../../hooks/use-breakpoint";
+import { cx } from "../../../utils/cx";
+import { Button } from "../../base/buttons/button";
+import { DemoNativeSelect } from "../../base/input/input-native-select";
+import { Pagination } from "../pagination/pagination-base";
 
 const PaginationNumber = ({ value, isCurrent }: { value: number; isCurrent: boolean }) => (
     <Pagination.Item

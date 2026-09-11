@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import { Building07, Passcode, Stars02, User01 } from "@properui/icons";
-import { PaginationDot } from "@/components/application/pagination/pagination-dot";
-import type { ProgressStepItem } from "@/components/application/progress-steps/progress-steps";
-import { ProgressSteps } from "@/components/application/progress-steps/progress-steps";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
+import { PaginationDot } from "../../application/pagination/pagination-dot";
+import type { ProgressStepItem } from "../../application/progress-steps/progress-steps";
+import { ProgressSteps } from "../../application/progress-steps/progress-steps";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
 import { SupportFooter } from "./base-components/page-parts";
 import { SetPasswordForm } from "./base-components/sign-up-form";
 

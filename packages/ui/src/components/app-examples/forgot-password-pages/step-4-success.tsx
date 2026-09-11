@@ -1,8 +1,8 @@
 "use client";
 
 import { ArrowLeft, CheckCircle } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
+import { Button } from "../../base/buttons/button";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 /** Step 4 of the password reset flow: the password is changed and the user can log back in. */
 export const Step4Success = () => (

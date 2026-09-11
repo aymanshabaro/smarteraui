@@ -2,8 +2,8 @@
 
 import { SubmenuTrigger as AriaSubmenuTrigger } from "react-aria-components";
 import { ChevronDown } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
+import { Button } from "../buttons/button";
+import { Dropdown } from "./dropdown";
 
 export const DropdownButtonSimple = () => (
     <Dropdown.Root>

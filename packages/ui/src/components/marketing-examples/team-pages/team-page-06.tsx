@@ -1,12 +1,12 @@
-import { CareersCard02 } from "@/components/marketing/careers-sections/careers-card-02";
-import { CtaCardVertical } from "@/components/marketing/cta-sections/cta-card-vertical";
-import { FeaturesSimpleIcons04 } from "@/components/marketing/features-sections/features-simple-icons-04";
-import { FooterLarge11 } from "@/components/marketing/footers/footer-large-11";
-import { HeaderDropdownFeatureCard } from "@/components/marketing/header-navigations/header-dropdown-feature-card";
-import { HeaderCentered } from "@/components/marketing/header-sections/header-centered";
-import { MetricsMinimalCenteredText } from "@/components/marketing/metrics-sections/metrics-minimal-centered-text";
-import { NewsletterSimpleCentered } from "@/components/marketing/newsletter-cta-sections/newsletter-simple-centered";
-import { TeamSectionImageGlass03 } from "@/components/marketing/team-sections/team-section-image-glass-03";
+import { CareersCard02 } from "../../marketing/careers-sections/careers-card-02";
+import { CtaCardVertical } from "../../marketing/cta-sections/cta-card-vertical";
+import { FeaturesSimpleIcons04 } from "../../marketing/features-sections/features-simple-icons-04";
+import { FooterLarge11 } from "../../marketing/footers/footer-large-11";
+import { HeaderDropdownFeatureCard } from "../../marketing/header-navigations/header-dropdown-feature-card";
+import { HeaderCentered } from "../../marketing/header-sections/header-centered";
+import { MetricsMinimalCenteredText } from "../../marketing/metrics-sections/metrics-minimal-centered-text";
+import { NewsletterSimpleCentered } from "../../marketing/newsletter-cta-sections/newsletter-simple-centered";
+import { TeamSectionImageGlass03 } from "../../marketing/team-sections/team-section-image-glass-03";
 
 /**
  * About us page opening on a permanently dark introduction: the leadership grid, the company

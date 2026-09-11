@@ -14,8 +14,8 @@ import {
     useDragAndDrop as AriaUseDragAndDrop,
 } from "react-aria-components";
 import { ChevronDown, DotsGrid } from "@properui/icons";
-import { CheckboxBase } from "@/components/base/checkbox/checkbox";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
+import { CheckboxBase } from "../../base/checkbox/checkbox";
 
 const styles = sortCx({
     common: {

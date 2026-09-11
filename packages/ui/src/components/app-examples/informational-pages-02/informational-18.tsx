@@ -2,11 +2,11 @@
 
 import type { ReactNode } from "react";
 import { ArrowUpRight, Share04 } from "@properui/icons";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { AvatarProfilePhoto } from "@/components/base/avatar/avatar-profile-photo";
-import { Button } from "@/components/base/buttons/button";
-import { Dribbble, Figma, Instagram, LinkedIn, X } from "@/components/foundations/social-icons";
-import { IMAGES, LOGOS, avatar } from "@/utils/demo-assets";
+import { IMAGES, LOGOS, avatar } from "../../../utils/demo-assets";
+import { Avatar } from "../../base/avatar/avatar";
+import { AvatarProfilePhoto } from "../../base/avatar/avatar-profile-photo";
+import { Button } from "../../base/buttons/button";
+import { Dribbble, Figma, Instagram, LinkedIn, X } from "../../foundations/social-icons";
 import { AppHeader, productNavItems } from "./shell.a";
 
 const navItems = [...productNavItems.slice(0, 5), { label: "Designers", href: "/designers" }];

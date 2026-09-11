@@ -1,9 +1,9 @@
 import type { FC, ReactNode } from "react";
 import { ChartBreakoutSquare, CheckCircle, MessageSmileCircle, Zap } from "@properui/icons";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { IPhoneMockup } from "@/components/shared-assets/mockups/iphone-mockup";
-import { cx, sortCx } from "@/utils/cx";
-import { IMAGES } from "@/utils/demo-assets";
+import { cx, sortCx } from "../../../utils/cx";
+import { IMAGES } from "../../../utils/demo-assets";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
+import { IPhoneMockup } from "../../shared-assets/mockups/iphone-mockup";
 
 const styles = sortCx({
     section: "flex flex-col gap-12 overflow-hidden bg-primary py-16 sm:gap-16 md:gap-20 md:py-24 lg:gap-24",

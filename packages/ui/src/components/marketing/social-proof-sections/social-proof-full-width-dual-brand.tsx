@@ -1,5 +1,5 @@
-import { cx } from "@/utils/cx";
-import { LOGOS } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { LOGOS } from "../../../utils/demo-assets";
 
 // The reference row holds ten wordmarks; the placeholder set ships six, so it is cycled to keep the
 // two-row density and the "last two are desktop only" rule intact.

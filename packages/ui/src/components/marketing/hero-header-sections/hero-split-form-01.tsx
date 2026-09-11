@@ -1,13 +1,13 @@
 import type { SVGProps } from "react";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { SocialButton } from "@/components/base/buttons/social-button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
-import { RatingStars } from "@/components/foundations/rating/rating-stars";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { AVATARS } from "@/utils/demo-assets";
+import { AVATARS } from "../../../utils/demo-assets";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
+import { SocialButton } from "../../base/buttons/social-button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { ProperLogoMinimal } from "../../foundations/logo/proper-logo-minimal";
+import { RatingStars } from "../../foundations/rating/rating-stars";
+import { HeaderDropdownSimple } from "../header-navigations/header-dropdown-simple";
 
 const reviewers = AVATARS.slice(0, 5);
 

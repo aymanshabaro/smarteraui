@@ -1,5 +1,5 @@
-import { Button } from "@/components/base/buttons/button";
-import { LOGOS, avatar } from "@/utils/demo-assets";
+import { LOGOS, avatar } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
 
 const team = [
     { photo: avatar(0), role: "Founder & CEO", bio: `Former co-founder of ${LOGOS[0].name}. Early staff at ${LOGOS[1].name} and ${LOGOS[2].name}.` },

@@ -1,5 +1,5 @@
-import { Button } from "@/components/base/buttons/button";
-import { avatar } from "@/utils/demo-assets";
+import { avatar } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
 
 const team = [
     { photo: avatar(0), role: "Founder & CEO" },

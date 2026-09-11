@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import * as ActivityGauges from "@/components/application/charts/activity-gauges.demo";
+import * as ActivityGauges from "./activity-gauges.demo";
 
 export default {
     title: "Application components/Charts",

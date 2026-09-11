@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import * as Charts from "@/components/application/charts/line-bar-charts.demo";
+import * as Charts from "./line-bar-charts.demo";
 
 export default {
     title: "Application components/Charts",

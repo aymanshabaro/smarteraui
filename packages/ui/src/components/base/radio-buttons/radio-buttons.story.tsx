@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import * as Radio from "@/components/base/radio-buttons/radio-buttons.demo";
+import * as Radio from "./radio-buttons.demo";
 
 export default {
     title: "Base components/Radio buttons",

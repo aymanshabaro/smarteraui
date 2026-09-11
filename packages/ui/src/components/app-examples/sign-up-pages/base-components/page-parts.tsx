@@ -1,10 +1,10 @@
 // TODO(orchestrator): candidate for components/internal — every authentication page example
 // repeats these three fragments.
 import { Mail01 } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { RatingStars } from "@/components/foundations/rating/rating-stars";
-import { cx } from "@/utils/cx";
-import { avatar } from "@/utils/demo-assets";
+import { cx } from "../../../../utils/cx";
+import { avatar } from "../../../../utils/demo-assets";
+import { Button } from "../../../base/buttons/button";
+import { RatingStars } from "../../../foundations/rating/rating-stars";
 
 /** The five faces shown in the "from 200+ reviews" social proof row. */
 const proofAvatars = [avatar(0), avatar(1), avatar(2), avatar(3), avatar(4)];

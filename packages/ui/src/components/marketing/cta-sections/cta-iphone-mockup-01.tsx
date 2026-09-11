@@ -1,6 +1,6 @@
-import { AppStoreButton, GooglePlayButton } from "@/components/base/buttons/app-store-buttons";
-import { IPhoneMockup } from "@/components/shared-assets/mockups/iphone-mockup";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { AppStoreButton, GooglePlayButton } from "../../base/buttons/app-store-buttons";
+import { IPhoneMockup } from "../../shared-assets/mockups/iphone-mockup";
 
 /** App-store CTA with a phone mockup floating over a soft decorative ellipse. */
 export const CtaIphoneMockup01 = () => (

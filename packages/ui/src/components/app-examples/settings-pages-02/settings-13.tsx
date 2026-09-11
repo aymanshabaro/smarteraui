@@ -1,14 +1,14 @@
 "use client";
 
 import { ArrowRight, DownloadCloud01, DownloadCloud02, Mail01 } from "@properui/icons";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Table, TableCard } from "@/components/application/table/table";
-import { Badge, BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { DropdownIconSimple } from "@/components/base/dropdown/dropdown-icon-simple";
-import { ProgressBarBase } from "@/components/base/progress-indicators/progress-indicators";
-import { VisaIcon } from "@/components/foundations/payment-icons";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Table, TableCard } from "../../application/table/table";
+import { Badge, BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { DropdownIconSimple } from "../../base/dropdown/dropdown-icon-simple";
+import { ProgressBarBase } from "../../base/progress-indicators/progress-indicators";
+import { VisaIcon } from "../../foundations/payment-icons";
 import { PageContainer, PageTitle, SettingsHeaderNav } from "./settings-shell";
 
 const months = ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];

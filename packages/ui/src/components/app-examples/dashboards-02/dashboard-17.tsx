@@ -1,10 +1,10 @@
 "use client";
 
 import { SearchLg } from "@properui/icons";
-import { MetricChangeIndicator } from "@/components/application/metrics/metrics-base";
-import { TabList, Tabs } from "@/components/application/tabs/tabs";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
+import { MetricChangeIndicator } from "../../application/metrics/metrics-base";
+import { TabList, Tabs } from "../../application/tabs/tabs";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
 import { DonutChart, RadarChart, StackedBarChart, TrendChart } from "./charts.a";
 import { countrySessions, dailySeries, stackedSeries, trafficRadar } from "./data.a";
 import { DashboardHeader, DashboardMain, DashboardSection } from "./shell.a";

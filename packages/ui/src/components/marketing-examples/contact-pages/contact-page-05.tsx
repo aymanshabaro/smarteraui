@@ -1,9 +1,9 @@
-import { ContactFormAndImage02 } from "@/components/marketing/contact-sections/contact-form-and-image-02";
-import { ContactMap02 } from "@/components/marketing/contact-sections/contact-map-02";
-import { ContactSimpleIcons04Brand } from "@/components/marketing/contact-sections/contact-simple-icons-04-brand";
-import { FooterLarge01 } from "@/components/marketing/footers/footer-large-01";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { NewsletterSimpleCentered } from "@/components/marketing/newsletter-cta-sections/newsletter-simple-centered";
+import { ContactFormAndImage02 } from "../../marketing/contact-sections/contact-form-and-image-02";
+import { ContactMap02 } from "../../marketing/contact-sections/contact-map-02";
+import { ContactSimpleIcons04Brand } from "../../marketing/contact-sections/contact-simple-icons-04-brand";
+import { FooterLarge01 } from "../../marketing/footers/footer-large-01";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { NewsletterSimpleCentered } from "../../marketing/newsletter-cta-sections/newsletter-simple-centered";
 
 /**
  * Contact page: worldwide contact channels over a dot map, the branded store list, a services

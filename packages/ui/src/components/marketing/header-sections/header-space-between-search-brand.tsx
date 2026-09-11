@@ -1,7 +1,7 @@
 "use client";
 
 import { SearchLg } from "@properui/icons";
-import { Input } from "@/components/base/input/input";
+import { Input } from "../../base/input/input";
 
 /**
  * The split support-centre page header with its search field, rendered on a solid

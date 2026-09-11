@@ -1,14 +1,14 @@
 "use client";
 
 import { PlayCircle } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import type { MarketingNavItemType } from "@/components/marketing/header-navigations/base-components/header";
-import { MarketingHeader } from "@/components/marketing/header-navigations/base-components/header";
-import { SimpleResourcesMenu } from "@/components/marketing/header-navigations/base-components/menus";
-import { BackgroundPattern } from "@/components/shared-assets/background-patterns";
-import { CreditCard } from "@/components/shared-assets/credit-card/credit-card";
-import { cx, sortCx } from "@/utils/cx";
-import { AVATARS } from "@/utils/demo-assets";
+import { cx, sortCx } from "../../../utils/cx";
+import { AVATARS } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { BackgroundPattern } from "../../shared-assets/background-patterns";
+import { CreditCard } from "../../shared-assets/credit-card/credit-card";
+import type { MarketingNavItemType } from "../header-navigations/base-components/header";
+import { MarketingHeader } from "../header-navigations/base-components/header";
+import { SimpleResourcesMenu } from "../header-navigations/base-components/menus";
 
 const styles = sortCx({
     /** The header sits on the brand section colour, so its nav ink has to flip to the `on-brand` ramp. */

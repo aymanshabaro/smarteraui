@@ -1,16 +1,16 @@
 "use client";
 
 import { Mail01, Plus } from "@properui/icons";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { Input, InputBase } from "@/components/base/input/input";
-import { PaymentInput } from "@/components/base/input/input-payment";
-import { Select } from "@/components/base/select/select";
-import { NativeSelect } from "@/components/base/select/select-native";
-import { countriesOptions } from "@/utils/countries";
-import { avatar } from "@/utils/demo-assets";
+import { countriesOptions } from "../../../utils/countries";
+import { avatar } from "../../../utils/demo-assets";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Tabs } from "../../application/tabs/tabs";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { Input, InputBase } from "../../base/input/input";
+import { PaymentInput } from "../../base/input/input-payment";
+import { Select } from "../../base/select/select";
+import { NativeSelect } from "../../base/select/select-native";
 import { Divider, FieldLabel, PageContainer, SettingsHeaderNav, settingsSectionOptions, settingsSections, styles } from "./settings-shell";
 
 const person = avatar(0);

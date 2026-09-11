@@ -1,12 +1,12 @@
 "use client";
 
 import { ArrowLeft, ArrowRight, ChevronLeft, ChevronLeftDouble, ChevronRight, ChevronRightDouble } from "@properui/icons";
-import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";
-import { Button } from "@/components/base/buttons/button";
-import { InputBase } from "@/components/base/input/input";
-import { Select } from "@/components/base/select/select";
-import { useBreakpoint } from "@/hooks/use-breakpoint";
-import { cx } from "@/utils/cx";
+import { useBreakpoint } from "../../../hooks/use-breakpoint";
+import { cx } from "../../../utils/cx";
+import { ButtonGroup, ButtonGroupItem } from "../../base/button-group/button-group";
+import { Button } from "../../base/buttons/button";
+import { InputBase } from "../../base/input/input";
+import { Select } from "../../base/select/select";
 import type { PaginationRootProps } from "./pagination-base";
 import { Pagination } from "./pagination-base";
 

@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import * as Buttons from "@/components/base/buttons/app-store-buttons.demo";
+import * as Buttons from "./app-store-buttons.demo";
 
 export default {
     title: "Base components/Mobile app store buttons",

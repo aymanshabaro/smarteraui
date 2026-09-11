@@ -3,16 +3,16 @@
 import type { ReactNode } from "react";
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { Command, Edit01, Paperclip } from "@properui/icons";
-import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
-import { ChartTooltipContent } from "@/components/application/charts/charts-base";
-import { MessageComposer } from "@/components/application/messaging/message-composer";
-import { Message, MessageList } from "@/components/application/messaging/messaging";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { cx } from "@/utils/cx";
-import { AVATARS, avatar } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { AVATARS, avatar } from "../../../utils/demo-assets";
+import { SidebarNavigationSlim } from "../../application/app-navigation/sidebar-navigation/sidebar-slim";
+import { ChartTooltipContent } from "../../application/charts/charts-base";
+import { MessageComposer } from "../../application/messaging/message-composer";
+import { Message, MessageList } from "../../application/messaging/messaging";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { Dropdown } from "../../base/dropdown/dropdown";
 import { RangeTabs, currentUser, navFooterItemsWithIcons, navItemsDualTier, styles } from "./dashboards-shared";
 
 /** Daily profile-view counts for July, two overlapping series so the trend reads as "vs last month". */

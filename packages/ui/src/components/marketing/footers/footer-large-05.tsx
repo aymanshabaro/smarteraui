@@ -1,11 +1,11 @@
 import { ChevronRight } from "@properui/icons";
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
-import { sortCx } from "@/utils/cx";
-import { LOGOS } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { LOGOS } from "../../../utils/demo-assets";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
 
 const styles = sortCx({
     companyLogo: "-ms-1 size-6 rounded-full object-cover outline-[0.5px] -outline-offset-[0.5px] outline-black/16 ring-[1.5px] ring-white first:ms-0",

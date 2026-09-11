@@ -1,9 +1,9 @@
 "use client";
 
 import { PlayCircle } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { Button } from "../../base/buttons/button";
+import { ProperLogoMinimal } from "../../foundations/logo/proper-logo-minimal";
 
 const styles = sortCx({
     legalLink:

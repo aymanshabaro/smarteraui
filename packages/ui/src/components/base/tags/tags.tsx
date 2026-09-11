@@ -9,13 +9,13 @@ import {
     type TagProps as AriaTagProps,
 } from "react-aria-components";
 import { User01 } from "@properui/icons";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
 import { TagCheckbox } from "./base-components/tag-checkbox";
 import { TagCloseX } from "./base-components/tag-close-x";
 
 // TODO(orchestrator): candidate for components/foundations/dot-icon — that file does not exist
 // yet in this repo, so the status dot is duplicated locally here. Once foundations/dot-icon.tsx
-// is ported, replace this with `import { Dot } from "@/components/foundations/dot-icon"`.
+// is ported, replace this with `import { Dot } from "../../foundations/dot-icon"`.
 const Dot = ({ size = "md", className }: { size?: "sm" | "md"; className?: string }) => {
     const wh = size === "sm" ? 8 : 10;
     const c = size === "sm" ? 4 : 5;

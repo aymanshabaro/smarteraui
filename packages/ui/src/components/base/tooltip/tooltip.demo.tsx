@@ -2,7 +2,7 @@
 
 import type { Placement as AriaPlacement } from "react-aria-components";
 import { HelpCircle } from "@properui/icons";
-import { Tooltip, TooltipTrigger } from "@/components/base/tooltip/tooltip";
+import { Tooltip, TooltipTrigger } from "./tooltip";
 
 const PLACEMENTS: { label: string; value: AriaPlacement }[] = [
     { label: "Top left", value: "top left" },

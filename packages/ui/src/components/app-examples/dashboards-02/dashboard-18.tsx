@@ -1,13 +1,13 @@
 "use client";
 
-import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
-import { MetricChart01 } from "@/components/application/metrics/metrics";
-import { TabList, Tabs } from "@/components/application/tabs/tabs";
-import { Button } from "@/components/base/buttons/button";
-import { ProgressBarBase } from "@/components/base/progress-indicators/progress-indicators";
-import { BackgroundPattern } from "@/components/shared-assets/background-patterns";
-import { countries } from "@/utils/countries";
-import { avatar } from "@/utils/demo-assets";
+import { countries } from "../../../utils/countries";
+import { avatar } from "../../../utils/demo-assets";
+import { DateRangePicker } from "../../application/date-picker/date-range-picker";
+import { MetricChart01 } from "../../application/metrics/metrics";
+import { TabList, Tabs } from "../../application/tabs/tabs";
+import { Button } from "../../base/buttons/button";
+import { ProgressBarBase } from "../../base/progress-indicators/progress-indicators";
+import { BackgroundPattern } from "../../shared-assets/background-patterns";
 import { DonutChart, StackedBarChart } from "./charts.a";
 import { countrySessions, countryTraffic, sparkDown, sparkUp, stackedSeries } from "./data.a";
 import { DashboardHeader } from "./shell.a";

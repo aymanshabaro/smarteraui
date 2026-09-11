@@ -1,4 +1,4 @@
-import { Button } from "@/components/base/buttons/button";
+import { Button } from "../../base/buttons/button";
 
 /** A rounded card that stacks the copy and the actions in a single centered column. */
 export const CtaCardVertical = () => (

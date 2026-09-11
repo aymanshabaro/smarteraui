@@ -4,11 +4,11 @@ import type { Key, KeyboardEvent, ReactNode } from "react";
 import { useCallback, useId, useRef, useState } from "react";
 import { Group as AriaGroup, Input as AriaInput } from "react-aria-components";
 import { HelpCircle, InfoCircle } from "@properui/icons";
-import { HintText } from "@/components/base/input/hint-text";
-import { Label } from "@/components/base/input/label";
-import { Tag, TagGroup, TagList } from "@/components/base/tags/tags";
-import { Tooltip, TooltipTrigger } from "@/components/base/tooltip/tooltip";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
+import { Tag, TagGroup, TagList } from "../tags/tags";
+import { Tooltip, TooltipTrigger } from "../tooltip/tooltip";
+import { HintText } from "./hint-text";
+import { Label } from "./label";
 
 interface TagEntry {
     id: number;

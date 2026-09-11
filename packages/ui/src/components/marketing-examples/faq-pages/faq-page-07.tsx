@@ -1,8 +1,8 @@
-import { ContentSectionSplitImage01 } from "@/components/marketing/content-rich-text-sections/content-section-split-image-01";
-import { FaqAccordion03 } from "@/components/marketing/faq-sections/faq-accordion-03";
-import { FooterLarge09 } from "@/components/marketing/footers/footer-large-09";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { NewsletterCardHorizontalBrand } from "@/components/marketing/newsletter-cta-sections/newsletter-card-horizontal-brand";
+import { ContentSectionSplitImage01 } from "../../marketing/content-rich-text-sections/content-section-split-image-01";
+import { FaqAccordion03 } from "../../marketing/faq-sections/faq-accordion-03";
+import { FooterLarge09 } from "../../marketing/footers/footer-large-09";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { NewsletterCardHorizontalBrand } from "../../marketing/newsletter-cta-sections/newsletter-card-horizontal-brand";
 
 /** The full-bleed rule the reference page draws between two sections that share a background. */
 const SectionDivider = () => (

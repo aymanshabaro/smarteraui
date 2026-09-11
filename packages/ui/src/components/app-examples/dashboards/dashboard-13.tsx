@@ -1,14 +1,14 @@
 "use client";
 
 import { Calendar as CalendarIcon, CurrencyDollarCircle, FilterLines, Send01 } from "@properui/icons";
-import { FeaturedCardUpgradeCTA } from "@/components/application/app-navigation/base-components/featured-cards";
-import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
-import { Button } from "@/components/base/buttons/button";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { ProgressBarBase } from "@/components/base/progress-indicators/progress-indicators";
-import { ApplePayIcon, PayPalIcon, StripeIcon, VisaIcon } from "@/components/foundations/payment-icons";
-import { CreditCard } from "@/components/shared-assets/credit-card/credit-card";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { FeaturedCardUpgradeCTA } from "../../application/app-navigation/base-components/featured-cards";
+import { SidebarNavigationSimple } from "../../application/app-navigation/sidebar-navigation/sidebar-simple";
+import { Button } from "../../base/buttons/button";
+import { Dropdown } from "../../base/dropdown/dropdown";
+import { ProgressBarBase } from "../../base/progress-indicators/progress-indicators";
+import { ApplePayIcon, PayPalIcon, StripeIcon, VisaIcon } from "../../foundations/payment-icons";
+import { CreditCard } from "../../shared-assets/credit-card/credit-card";
 import { ChartCard, DonutChart, RangeTabs, StackedBarChart, currentUser, navFooterItems, navItemsSimple, styles } from "./dashboards-shared";
 
 const noop = () => {};

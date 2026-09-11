@@ -2,13 +2,13 @@
 
 import type { FC } from "react";
 import { BarChartSquare02, ClockRewind, HomeLine, LayoutAlt01, LinkExternal01, Plus, Rows01, Settings01, Star01, Users01 } from "@properui/icons";
-import type { NavItemType } from "@/components/application/app-navigation/config";
-import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { AvatarProfilePhoto } from "@/components/base/avatar/avatar-profile-photo";
-import { Button } from "@/components/base/buttons/button";
-import { DropdownIconSimple } from "@/components/base/dropdown/dropdown-icon-simple";
-import { IMAGES, LOGOS, avatar } from "@/utils/demo-assets";
+import { IMAGES, LOGOS, avatar } from "../../../utils/demo-assets";
+import type { NavItemType } from "../../application/app-navigation/config";
+import { SidebarNavigationSlim } from "../../application/app-navigation/sidebar-navigation/sidebar-slim";
+import { Avatar } from "../../base/avatar/avatar";
+import { AvatarProfilePhoto } from "../../base/avatar/avatar-profile-photo";
+import { Button } from "../../base/buttons/button";
+import { DropdownIconSimple } from "../../base/dropdown/dropdown-icon-simple";
 
 const navItems: (NavItemType & { icon: FC<{ className?: string }> })[] = [
     { label: "Home", href: "/", icon: HomeLine },

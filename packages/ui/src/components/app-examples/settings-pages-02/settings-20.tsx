@@ -1,14 +1,14 @@
 "use client";
 
 import { File02, LayersThree01, MessageChatCircle, SearchLg, Zap } from "@properui/icons";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
-import { NativeSelect } from "@/components/base/select/select-native";
-import { Toggle } from "@/components/base/toggle/toggle";
-import { FigmaIcon, GitHubIcon } from "@/components/foundations/integration-icons";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Tabs } from "../../application/tabs/tabs";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
+import { NativeSelect } from "../../base/select/select-native";
+import { Toggle } from "../../base/toggle/toggle";
+import { FigmaIcon, GitHubIcon } from "../../foundations/integration-icons";
 import { IntegrationLogo, PageContainer, SettingsHeaderNav, settingsSectionOptions, settingsSections, styles } from "./settings-shell";
 
 const integrations = [

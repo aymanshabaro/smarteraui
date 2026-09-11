@@ -1,14 +1,14 @@
 "use client";
 
 import { DownloadCloud01, LayoutAlt01, Plus, SearchLg, UploadCloud02, Zap } from "@properui/icons";
-import { MetricChangeIndicator } from "@/components/application/metrics/metrics-base";
-import { PaginationCardMinimal } from "@/components/application/pagination/pagination";
-import { TableCard } from "@/components/application/table/table";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
-import { ProgressBarCircle } from "@/components/base/progress-indicators/progress-circles";
-import { LOGOS, avatar } from "@/utils/demo-assets";
+import { LOGOS, avatar } from "../../../utils/demo-assets";
+import { MetricChangeIndicator } from "../../application/metrics/metrics-base";
+import { PaginationCardMinimal } from "../../application/pagination/pagination";
+import { TableCard } from "../../application/table/table";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
+import { ProgressBarCircle } from "../../base/progress-indicators/progress-circles";
 import { TrendChart } from "./charts.a";
 import { trendSeries, vendors } from "./data.a";
 import { DashboardHeader, DashboardMain, DashboardSection } from "./shell.a";

@@ -2,7 +2,7 @@
 
 import { Fragment } from "react";
 import { SearchLg } from "@properui/icons";
-import { Calendar } from "@/components/application/date-picker/calendar";
+import { Calendar } from "../../application/date-picker/calendar";
 import {
     CalendarAppHeader,
     EventDetailPanel,
@@ -11,9 +11,9 @@ import {
     TODAY,
     WeekStripNav,
     formatHourLabel,
-} from "@/components/application/date-picker/calendar-app-shared";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Input } from "@/components/base/input/input";
+} from "../../application/date-picker/calendar-app-shared";
+import { Tabs } from "../../application/tabs/tabs";
+import { Input } from "../../base/input/input";
 import { AppHeader, navItemsWith } from "./shell.a";
 
 const navItems = navItemsWith(3, { label: "Calendar", href: "/calendar" });

@@ -2,11 +2,11 @@
 
 import type { CSSProperties } from "react";
 import { PlayCircle } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { BackgroundPattern } from "@/components/shared-assets/background-patterns";
-import { CreditCard } from "@/components/shared-assets/credit-card/credit-card";
-import { AVATARS } from "@/utils/demo-assets";
+import { AVATARS } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { BackgroundPattern } from "../../shared-assets/background-patterns";
+import { CreditCard } from "../../shared-assets/credit-card/credit-card";
+import { HeaderDropdownSimple } from "../header-navigations/header-dropdown-simple";
 
 /** The five cards of the fan, ordered left to right, each with its own rotation and offset. */
 const cards = [

@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import * as Tooltip from "@/components/base/tooltip/tooltip.demo";
+import * as Tooltip from "./tooltip.demo";
 
 export default {
     title: "Base components/Tooltips",

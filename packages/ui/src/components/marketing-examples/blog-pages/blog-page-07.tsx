@@ -1,10 +1,10 @@
-import { BlogHeaderFeaturedPost04 } from "@/components/marketing/blog-sections/blog-header-featured-post-04";
-import { CtaIphoneMockup02 } from "@/components/marketing/cta-sections/cta-iphone-mockup-02";
-import { FooterLarge16 } from "@/components/marketing/footers/footer-large-16";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { NewsletterSimpleCentered } from "@/components/marketing/newsletter-cta-sections/newsletter-simple-centered";
-import { SectionDivider } from "@/components/shared-assets/section-divider";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { BlogHeaderFeaturedPost04 } from "../../marketing/blog-sections/blog-header-featured-post-04";
+import { CtaIphoneMockup02 } from "../../marketing/cta-sections/cta-iphone-mockup-02";
+import { FooterLarge16 } from "../../marketing/footers/footer-large-16";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { NewsletterSimpleCentered } from "../../marketing/newsletter-cta-sections/newsletter-simple-centered";
+import { SectionDivider } from "../../shared-assets/section-divider";
 
 const styles = sortCx({
     // The brand hero runs under the header, so the navigation adopts the on-brand foreground colours.

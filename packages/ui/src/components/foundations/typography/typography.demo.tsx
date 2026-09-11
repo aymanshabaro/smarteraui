@@ -1,6 +1,6 @@
 import { Camera01 } from "@properui/icons";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { AVATARS, IMAGES } from "@/utils/demo-assets";
+import { AVATARS, IMAGES } from "../../../utils/demo-assets";
+import { Avatar } from "../../base/avatar/avatar";
 
 const author = AVATARS[2];
 

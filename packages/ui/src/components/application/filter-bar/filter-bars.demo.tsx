@@ -3,17 +3,17 @@
 import { type ReactNode, useState } from "react";
 import { parseDate } from "@internationalized/date";
 import { FilterLines, Plus, SearchLg, Trash01 } from "@properui/icons";
-import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
-import { FilterBar } from "@/components/application/filter-bar/filter-bar";
-import { SlideoutMenu } from "@/components/application/slideout-menus/slideout-menu";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Button } from "@/components/base/buttons/button";
-import { CloseButton } from "@/components/base/buttons/close-button";
-import { Checkbox } from "@/components/base/checkbox/checkbox";
-import { Input } from "@/components/base/input/input";
-import { Select } from "@/components/base/select/select";
-import type { SelectItemType } from "@/components/base/select/select-shared";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
+import { Button } from "../../base/buttons/button";
+import { CloseButton } from "../../base/buttons/close-button";
+import { Checkbox } from "../../base/checkbox/checkbox";
+import { Input } from "../../base/input/input";
+import { Select } from "../../base/select/select";
+import type { SelectItemType } from "../../base/select/select-shared";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
+import { DateRangePicker } from "../date-picker/date-range-picker";
+import { SlideoutMenu } from "../slideout-menus/slideout-menu";
+import { Tabs } from "../tabs/tabs";
+import { FilterBar } from "./filter-bar";
 
 /* -------------------------------------------------------------------------------------------------
  * Shared demo data — fixed so every preview and screenshot is deterministic.

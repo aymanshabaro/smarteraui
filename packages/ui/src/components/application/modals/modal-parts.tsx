@@ -1,10 +1,10 @@
 "use client";
 
 import type { FC, ReactNode } from "react";
-import { CloseButton } from "@/components/base/buttons/close-button";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { BackgroundPattern } from "@/components/shared-assets/background-patterns";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
+import { CloseButton } from "../../base/buttons/close-button";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
+import { BackgroundPattern } from "../../shared-assets/background-patterns";
 
 const styles = sortCx({
     panel: {

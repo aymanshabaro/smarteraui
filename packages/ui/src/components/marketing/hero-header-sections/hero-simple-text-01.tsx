@@ -1,10 +1,10 @@
 "use client";
 
 import { PlayCircle } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { BackgroundPattern } from "@/components/shared-assets/background-patterns";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { BackgroundPattern } from "../../shared-assets/background-patterns";
+import { HeaderDropdownSimple } from "../header-navigations/header-dropdown-simple";
 
 /** Left-aligned agency hero: an underlined headline over a wide full-bleed photograph. */
 export const HeroSimpleText01 = () => (

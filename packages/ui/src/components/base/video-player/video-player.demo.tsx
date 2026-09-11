@@ -1,7 +1,7 @@
 "use client";
 
-import { VideoPlayer } from "@/components/base/video-player/video-player";
-import { VIDEO_POSTER, VIDEO_SRC } from "@/utils/demo-assets";
+import { VIDEO_POSTER, VIDEO_SRC } from "../../../utils/demo-assets";
+import { VideoPlayer } from "./video-player";
 
 /**
  * Empty WebVTT track. The placeholder clip carries no dialogue, but shipping a captions

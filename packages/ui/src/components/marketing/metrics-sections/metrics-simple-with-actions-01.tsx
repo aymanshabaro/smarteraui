@@ -1,7 +1,7 @@
 "use client";
 
 import { PlayCircle } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
+import { Button } from "../../base/buttons/button";
 
 const metrics = [
     { value: "400+", label: "Projects completed", description: "We've helped build over 400 amazing projects." },

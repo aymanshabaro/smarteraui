@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { ContentDivider } from "@/components/application/content-divider/content-divider";
-import { Button } from "@/components/base/buttons/button";
-import { SocialButton } from "@/components/base/buttons/social-button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { ContentDivider } from "../../application/content-divider/content-divider";
+import { Button } from "../../base/buttons/button";
+import { SocialButton } from "../../base/buttons/social-button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { ProperLogoMinimal } from "../../foundations/logo/proper-logo-minimal";
 import { LogInPrompt } from "./base-components/page-parts";
 import type { Testimonial } from "./base-components/testimonial-overlay";
 import { TestimonialOverlay } from "./base-components/testimonial-overlay";

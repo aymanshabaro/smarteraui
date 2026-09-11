@@ -2,16 +2,16 @@
 
 import type { ReactNode } from "react";
 import { ArrowUpRight, Copy01, Plus } from "@properui/icons";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { AvatarProfilePhoto } from "@/components/base/avatar/avatar-profile-photo";
-import { Button } from "@/components/base/buttons/button";
-import { DropdownIconSimple } from "@/components/base/dropdown/dropdown-icon-simple";
-import { InputBase } from "@/components/base/input/input";
-import { InputGroup } from "@/components/base/input/input-group";
-import { NativeSelect } from "@/components/base/select/select-native";
-import { IMAGES, LOGOS, avatar } from "@/utils/demo-assets";
+import { IMAGES, LOGOS, avatar } from "../../../utils/demo-assets";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Tabs } from "../../application/tabs/tabs";
+import { Avatar } from "../../base/avatar/avatar";
+import { AvatarProfilePhoto } from "../../base/avatar/avatar-profile-photo";
+import { Button } from "../../base/buttons/button";
+import { DropdownIconSimple } from "../../base/dropdown/dropdown-icon-simple";
+import { InputBase } from "../../base/input/input";
+import { InputGroup } from "../../base/input/input-group";
+import { NativeSelect } from "../../base/select/select-native";
 import { AppHeader, productNavItems } from "./shell.a";
 
 const navItems = [...productNavItems.slice(0, 5), { label: "Designers", href: "/designers" }];

@@ -1,10 +1,10 @@
 "use client";
 
 import { ArrowLeft, Lock01 } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 /** The rules the new password has to satisfy, shown under the fields. */
 const requirements = ["Must be at least 8 characters", "Must contain one special character"];

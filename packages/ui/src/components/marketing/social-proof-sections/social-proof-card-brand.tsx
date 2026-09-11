@@ -1,5 +1,5 @@
-import { cx } from "@/utils/cx";
-import { LOGOS } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { LOGOS } from "../../../utils/demo-assets";
 
 /** The card layout with the logo row sitting on a brand-colored panel. */
 export const SocialProofCardBrand = () => (

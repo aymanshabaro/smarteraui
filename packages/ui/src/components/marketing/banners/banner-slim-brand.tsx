@@ -1,4 +1,4 @@
-import { CloseButton } from "@/components/base/buttons/close-button";
+import { CloseButton } from "../../base/buttons/close-button";
 
 /** A slim announcement banner: a headline and an inline link, centred from the `md` breakpoint up. Brand palette, floating card layout. */
 export const BannerSlimBrand = () => (

@@ -1,9 +1,9 @@
 "use client";
 
 import { ArrowLeft } from "@properui/icons";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
 
 /** A badged 404 stacked above an image that fills the remaining height. */
 export const NotFoundSplitImage04 = () => (

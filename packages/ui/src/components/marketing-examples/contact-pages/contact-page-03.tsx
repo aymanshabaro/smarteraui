@@ -1,9 +1,9 @@
-import { ContactFormAndMap } from "@/components/marketing/contact-sections/contact-form-and-map";
-import { ContactIconCards03 } from "@/components/marketing/contact-sections/contact-icon-cards-03";
-import { ContactSimpleIcons04 } from "@/components/marketing/contact-sections/contact-simple-icons-04";
-import { CtaCardHorizontal } from "@/components/marketing/cta-sections/cta-card-horizontal";
-import { FooterLarge03 } from "@/components/marketing/footers/footer-large-03";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
+import { ContactFormAndMap } from "../../marketing/contact-sections/contact-form-and-map";
+import { ContactIconCards03 } from "../../marketing/contact-sections/contact-icon-cards-03";
+import { ContactSimpleIcons04 } from "../../marketing/contact-sections/contact-simple-icons-04";
+import { CtaCardHorizontal } from "../../marketing/cta-sections/cta-card-horizontal";
+import { FooterLarge03 } from "../../marketing/footers/footer-large-03";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
 
 /**
  * Contact us page: form beside an office map, the store list, contact cards, a trial call to

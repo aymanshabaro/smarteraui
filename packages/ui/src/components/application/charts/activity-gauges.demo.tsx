@@ -1,8 +1,8 @@
 "use client";
 
 import { Legend, PolarAngleAxis, RadialBar, RadialBarChart, ResponsiveContainer, Tooltip } from "recharts";
-import { ChartLegendContent, ChartTooltipContent } from "@/components/application/charts/charts-base";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { ChartLegendContent, ChartTooltipContent } from "./charts-base";
 
 const radialData = [
     {

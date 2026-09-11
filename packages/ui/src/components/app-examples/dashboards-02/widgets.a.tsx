@@ -5,16 +5,16 @@
 // TODO(orchestrator): candidate for components/internal if other page examples repeat them.
 import type { ReactNode } from "react";
 import { Edit01, FilterLines, Trash01 } from "@properui/icons";
-import { MetricChangeIndicator } from "@/components/application/metrics/metrics-base";
-import { Table } from "@/components/application/table/table";
-import { TabList, Tabs } from "@/components/application/tabs/tabs";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Badge, BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { ProgressBar } from "@/components/base/progress-indicators/progress-indicators";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
+import { MetricChangeIndicator } from "../../application/metrics/metrics-base";
+import { Table } from "../../application/table/table";
+import { TabList, Tabs } from "../../application/tabs/tabs";
+import { Avatar } from "../../base/avatar/avatar";
+import { Badge, BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { Dropdown } from "../../base/dropdown/dropdown";
+import { ProgressBar } from "../../base/progress-indicators/progress-indicators";
 import type { VendorRow } from "./data.a";
 
 export const styles = sortCx({

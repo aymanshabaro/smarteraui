@@ -1,6 +1,6 @@
-import { Button } from "@/components/base/buttons/button";
-import { cx } from "@/utils/cx";
-import { LOGOS } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { LOGOS } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
 
 /** A left-aligned CTA paired with a wrapping row of customer logos. */
 export const CtaSimpleLogos02 = () => (

@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import * as ButtonGroup from "@/components/base/button-group/button-group.demo";
+import * as ButtonGroup from "./button-group.demo";
 
 export default {
     title: "Base components/Button groups",

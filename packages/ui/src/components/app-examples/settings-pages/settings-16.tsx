@@ -3,16 +3,16 @@
 import type { FC } from "react";
 import { Radio as AriaRadio, RadioGroup as AriaRadioGroup } from "react-aria-components";
 import { DownloadCloud02, Plus } from "@properui/icons";
-import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Table } from "@/components/application/table/table";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { CheckboxBase } from "@/components/base/checkbox/checkbox";
-import { ApplePayIcon, MastercardIcon, VisaIcon } from "@/components/foundations/payment-icons";
-import { cx } from "@/utils/cx";
-import { AVATARS } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { AVATARS } from "../../../utils/demo-assets";
+import { SidebarNavigationSlim } from "../../application/app-navigation/sidebar-navigation/sidebar-slim";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Table } from "../../application/table/table";
+import { Avatar } from "../../base/avatar/avatar";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { CheckboxBase } from "../../base/checkbox/checkbox";
+import { ApplePayIcon, MastercardIcon, VisaIcon } from "../../foundations/payment-icons";
 import {
     AvatarStack,
     SettingsFormRow,

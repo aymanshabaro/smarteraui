@@ -2,10 +2,10 @@
 
 import type { SVGProps } from "react";
 import { PlayCircle } from "@properui/icons";
-import { BadgeGroup } from "@/components/base/badges/badge-groups";
-import { Button } from "@/components/base/buttons/button";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { BackgroundPattern } from "@/components/shared-assets/background-patterns";
+import { BadgeGroup } from "../../base/badges/badge-groups";
+import { Button } from "../../base/buttons/button";
+import { BackgroundPattern } from "../../shared-assets/background-patterns";
+import { HeaderDropdownSimple } from "../header-navigations/header-dropdown-simple";
 
 /**
  * Decorative composition of brand-tinted geometric shapes that fills the right half of the hero.

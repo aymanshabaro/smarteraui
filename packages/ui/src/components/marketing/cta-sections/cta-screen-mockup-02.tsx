@@ -1,6 +1,6 @@
-import { Button } from "@/components/base/buttons/button";
-import { IPhoneMockup } from "@/components/shared-assets/mockups/iphone-mockup";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { IPhoneMockup } from "../../shared-assets/mockups/iphone-mockup";
 
 /** A left-aligned CTA with a phone mockup overlapping a bordered desktop screenshot. */
 export const CtaScreenMockup02 = () => (

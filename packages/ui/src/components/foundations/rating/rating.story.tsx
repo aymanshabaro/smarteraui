@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import * as Rating from "@/components/foundations/rating/rating.demo";
+import * as Rating from "./rating.demo";
 
 export default {
     title: "Base components/Rating badge and stars",

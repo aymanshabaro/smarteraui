@@ -1,4 +1,4 @@
-import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
+import { ProperLogoMinimal } from "../../foundations/logo/proper-logo-minimal";
 import { LogInPrompt } from "./base-components/page-parts";
 import { SignUpForm } from "./base-components/sign-up-form";
 

@@ -1,6 +1,6 @@
-import { AvatarLabelGroup } from "@/components/base/avatar/avatar-label-group";
-import { VerifiedTick } from "@/components/base/avatar/base-components";
-import { AVATARS, LOGOS } from "@/utils/demo-assets";
+import { AVATARS, LOGOS } from "../../../utils/demo-assets";
+import { AvatarLabelGroup } from "../../base/avatar/avatar-label-group";
+import { VerifiedTick } from "../../base/avatar/base-components";
 
 const reviews = [
     {

@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
 
 /**
  * The native `::-webkit-resizer` grip is unstyleable, so it is replaced with an

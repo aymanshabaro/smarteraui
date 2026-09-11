@@ -1,4 +1,4 @@
-import { Button } from "@/components/base/buttons/button";
+import { Button } from "../../base/buttons/button";
 
 /** The left-aligned CTA on the permanently branded section background. */
 export const CtaSimpleLeftBrand = () => (

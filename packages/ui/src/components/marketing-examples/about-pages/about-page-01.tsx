@@ -1,11 +1,11 @@
-import { CareersCard03 } from "@/components/marketing/careers-sections/careers-card-03";
-import { FeaturesSimpleIcons02 } from "@/components/marketing/features-sections/features-simple-icons-02";
-import { FooterLarge02 } from "@/components/marketing/footers/footer-large-02";
-import { FloatingSimpleWithFooter } from "@/components/marketing/header-navigations/floating-simple-with-footer";
-import { HeaderCentered } from "@/components/marketing/header-sections/header-centered";
-import { MetricsSplitImage02 } from "@/components/marketing/metrics-sections/metrics-split-image-02";
-import { SocialProofFullWidth } from "@/components/marketing/social-proof-sections/social-proof-full-width";
-import { TeamSectionSimple04 } from "@/components/marketing/team-sections/team-section-simple-04";
+import { CareersCard03 } from "../../marketing/careers-sections/careers-card-03";
+import { FeaturesSimpleIcons02 } from "../../marketing/features-sections/features-simple-icons-02";
+import { FooterLarge02 } from "../../marketing/footers/footer-large-02";
+import { FloatingSimpleWithFooter } from "../../marketing/header-navigations/floating-simple-with-footer";
+import { HeaderCentered } from "../../marketing/header-sections/header-centered";
+import { MetricsSplitImage02 } from "../../marketing/metrics-sections/metrics-split-image-02";
+import { SocialProofFullWidth } from "../../marketing/social-proof-sections/social-proof-full-width";
+import { TeamSectionSimple04 } from "../../marketing/team-sections/team-section-simple-04";
 
 /** The full-bleed rule the reference page draws between two sections that share a background. */
 const SectionDivider = () => (

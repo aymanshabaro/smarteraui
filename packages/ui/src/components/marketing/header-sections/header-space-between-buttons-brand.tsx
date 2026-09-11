@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/base/buttons/button";
+import { Button } from "../../base/buttons/button";
 
 /**
  * The split pricing page header with its action pair, rendered on a solid brand

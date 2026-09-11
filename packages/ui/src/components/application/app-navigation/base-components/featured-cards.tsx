@@ -2,18 +2,18 @@
 
 import type { ReactNode } from "react";
 import { AlertCircle, CheckCircle, ChevronRight, Copy01, Link01, MessageChatCircle, Zap } from "@properui/icons";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { AvatarAddButton } from "@/components/base/avatar/base-components/avatar-add-button";
-import { Badge, BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { CloseButton } from "@/components/base/buttons/close-button";
-import { Input } from "@/components/base/input/input";
-import { ProgressBarCircle } from "@/components/base/progress-indicators/progress-circles";
-import { ProgressBar, ProgressBarBase } from "@/components/base/progress-indicators/progress-indicators";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { QRCode } from "@/components/shared-assets/qr-code/qr-code";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../../utils/cx";
+import { Avatar } from "../../../base/avatar/avatar";
+import { AvatarAddButton } from "../../../base/avatar/base-components/avatar-add-button";
+import { Badge, BadgeWithDot } from "../../../base/badges/badges";
+import { Button } from "../../../base/buttons/button";
+import { ButtonUtility } from "../../../base/buttons/button-utility";
+import { CloseButton } from "../../../base/buttons/close-button";
+import { Input } from "../../../base/input/input";
+import { ProgressBarCircle } from "../../../base/progress-indicators/progress-circles";
+import { ProgressBar, ProgressBarBase } from "../../../base/progress-indicators/progress-indicators";
+import { FeaturedIcon } from "../../../foundations/featured-icon/featured-icon";
+import { QRCode } from "../../../shared-assets/qr-code/qr-code";
 
 const styles = {
     /** The filled card used by the progress/image cards. */

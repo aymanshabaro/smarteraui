@@ -1,10 +1,10 @@
 "use client";
 
 import { DownloadCloud01, FilterLines, LayoutAlt01, SearchLg } from "@properui/icons";
-import { PaginationCardMinimal } from "@/components/application/pagination/pagination";
-import { TableCard } from "@/components/application/table/table";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
+import { PaginationCardMinimal } from "../../application/pagination/pagination";
+import { TableCard } from "../../application/table/table";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
 import { RadarChart, StackedBarChart } from "./charts.a";
 import { stackedSeries, vendorRadar, vendors } from "./data.a";
 import { DashboardHeader, DashboardMain, DashboardSection } from "./shell.a";

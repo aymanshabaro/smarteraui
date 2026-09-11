@@ -1,12 +1,12 @@
 "use client";
 
 import { ArrowUpRight, Edit05, UserPlus01 } from "@properui/icons";
-import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
-import { MetricChangeIndicator } from "@/components/application/metrics/metrics-base";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Button } from "@/components/base/buttons/button";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { IMAGES, avatar } from "@/utils/demo-assets";
+import { IMAGES, avatar } from "../../../utils/demo-assets";
+import { DateRangePicker } from "../../application/date-picker/date-range-picker";
+import { MetricChangeIndicator } from "../../application/metrics/metrics-base";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Button } from "../../base/buttons/button";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 import { TrendChart } from "./charts.a";
 import { topMembers, trendSeries } from "./data.a";
 import { DashboardHeader, DashboardMain, DashboardSection, subNavItems } from "./shell.a";

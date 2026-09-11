@@ -1,5 +1,5 @@
-import { RatingStars } from "@/components/foundations/rating/rating-stars";
-import { IMAGES, LOGOS, avatar } from "@/utils/demo-assets";
+import { IMAGES, LOGOS, avatar } from "../../../utils/demo-assets";
+import { RatingStars } from "../../foundations/rating/rating-stars";
 import { SignUpFormColumn } from "./base-components/form-column";
 import { ScreenMockup } from "./base-components/screen-mockup";
 

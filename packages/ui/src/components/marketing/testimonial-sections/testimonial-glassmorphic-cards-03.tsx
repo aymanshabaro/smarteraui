@@ -1,9 +1,9 @@
 "use client";
 
 import { Plus } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { RatingStars } from "@/components/foundations/rating/rating-stars";
-import { AVATARS, IMAGES, LOGOS } from "@/utils/demo-assets";
+import { AVATARS, IMAGES, LOGOS } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { RatingStars } from "../../foundations/rating/rating-stars";
 
 interface GlassReview {
     name: string;

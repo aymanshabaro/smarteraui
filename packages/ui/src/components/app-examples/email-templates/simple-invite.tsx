@@ -1,7 +1,7 @@
-import { Button } from "@/components/base/buttons/button";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
-import { Facebook, Instagram, X } from "@/components/foundations/social-icons";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { Button } from "../../base/buttons/button";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
+import { Facebook, Instagram, X } from "../../foundations/social-icons";
 
 const styles = sortCx({
     shell: "bg-secondary flex w-full justify-center",

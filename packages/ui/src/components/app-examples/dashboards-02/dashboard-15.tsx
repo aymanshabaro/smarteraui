@@ -1,14 +1,14 @@
 "use client";
 
 import { DownloadCloud01, Plus } from "@properui/icons";
-import { ActivityFeed } from "@/components/application/activity-feed/activity-feed";
-import { FileUpload } from "@/components/application/file-upload/file-upload-base";
-import { Table } from "@/components/application/table/table";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { MastercardIcon, VisaIcon } from "@/components/foundations/payment-icons";
-import { CreditCard } from "@/components/shared-assets/credit-card/credit-card";
-import { avatar } from "@/utils/demo-assets";
+import { avatar } from "../../../utils/demo-assets";
+import { ActivityFeed } from "../../application/activity-feed/activity-feed";
+import { FileUpload } from "../../application/file-upload/file-upload-base";
+import { Table } from "../../application/table/table";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { MastercardIcon, VisaIcon } from "../../foundations/payment-icons";
+import { CreditCard } from "../../shared-assets/credit-card/credit-card";
 import { StackedBarChart, TrendChart } from "./charts.a";
 import { stackedSeries, trendSeries } from "./data.a";
 import { DashboardHeader, DashboardMain, DashboardSection, cardsSubNavItems } from "./shell.a";

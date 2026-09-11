@@ -4,10 +4,10 @@ import type { ComponentPropsWithRef, ReactNode } from "react";
 import type { PopoverProps as AriaPopoverProps } from "react-aria-components";
 import { Dialog as AriaDialog, DialogTrigger as AriaDialogTrigger, Popover as AriaPopover } from "react-aria-components";
 import { ChevronDown, FilterLines } from "@properui/icons";
-import { Badge } from "@/components/base/badges/badges";
-import { Button, type ButtonProps } from "@/components/base/buttons/button";
-import { CloseButton } from "@/components/base/buttons/close-button";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
+import { Badge } from "../../base/badges/badges";
+import { Button, type ButtonProps } from "../../base/buttons/button";
+import { CloseButton } from "../../base/buttons/close-button";
 
 export const styles = sortCx({
     common: {

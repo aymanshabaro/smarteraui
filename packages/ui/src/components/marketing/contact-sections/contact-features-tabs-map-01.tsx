@@ -1,8 +1,8 @@
 "use client";
 
 import { Tab as AriaTab, TabList as AriaTabList, TabPanel as AriaTabPanel, Tabs as AriaTabs } from "react-aria-components";
-import { Badge } from "@/components/base/badges/badges";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
+import { Badge } from "../../base/badges/badges";
 
 const stores = [
     { id: "melbourne", city: "Melbourne", address: "100 Flinders Street\nMelbourne VIC 3000 AU" },

@@ -1,10 +1,10 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { ButtonGroup, ButtonGroupItem } from "../../base/button-group/button-group";
+import { Button } from "../../base/buttons/button";
 // Aliased so the demo exports can use the example names from the spec (one of them is `SectionFooter`).
-import { SectionFooter as Footer } from "@/components/application/section-footers/section-footers";
-import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";
-import { Button } from "@/components/base/buttons/button";
+import { SectionFooter as Footer } from "./section-footers";
 
 /** Matches the width the docs preview gives every section footer. Demo-only, not exported. */
 const Wrapper = ({ children }: { children: ReactNode }) => <div className="w-full max-w-3xl">{children}</div>;

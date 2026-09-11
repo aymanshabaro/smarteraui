@@ -42,12 +42,34 @@ The cost lands on everyone: the tarball goes from 0.93 MB to 7.6 MB, unpacked 5.
 in a worker capped near 4 GiB and OOMs on this tree, so the build is split into 47 independent
 invocations that cannot share a chunk graph. A full build takes about five hours.
 
-Two real defects surfaced while measuring, and fixing them is the more promising route:
+Two real defects surfaced while measuring — both are now fixed, independently of the bundled build:
 
-- [`providers/router-provider.tsx`](./packages/ui/src/providers/router-provider.tsx) imports
-  `next/navigation` unconditionally, so the root barrel breaks under Vite even from source.
-- The package's internal `@/*` alias resolves only through this workspace's tsconfig, which is what
-  stops Next.js consuming `src` directly.
+- [`providers/router-provider.tsx`](./packages/ui/src/providers/router-provider.tsx) imported
+  `next/navigation` unconditionally, breaking the root barrel under Vite even from source.
+  `RouterProvider` has since been dropped from the root barrel (`packages/ui/src/index.ts`), so
+  importing from the barrel under Vite no longer pulls in `next/navigation`.
+- The package's internal `@/*` alias resolved only through this workspace's tsconfig, which stopped
+  any external consumer — not just Next.js — from resolving `packages/ui/src`. Every internal
+  specifier under `packages/ui/src` is now a relative import (converted by a one-off script; see the
+  `@properui/ui` changeset for the count), and `packages/registry/src/build.ts` rewrites the
+  relative specifiers that cross from `components/**` into `utils/**`/`hooks/**` back to `@/…` in
+  the registry payload it serves, since that crossing is the one case the CLI's `--path` relocation
+  actually breaks. `packages/ui/tsconfig.json`'s `paths` entry and `apps/docs/tsconfig.json`'s
+  `@/*` entry (pointing at `packages/ui/src`) are gone — neither was still referenced.
+
+    **This does not make `transpilePackages` optional.** Verified with `npm pack` into scratch Vite
+    and Next.js 15 apps: Vite's `vite build` now resolves both a subpath import and the root barrel
+    with no config beyond installing the package. Next.js still needs `transpilePackages` — without
+    it, webpack's default loader can't parse the raw TSX/generics syntax this package ships from
+    `node_modules` at all (`Module parse failed: Unexpected token`), regardless of the alias. What the
+    fix changes is that `transpilePackages` now **works**: before, a Next.js build with
+    `transpilePackages` set failed type-checking on `Cannot find module '@/utils/cx'`; now it compiles
+    and type-checks cleanly. Separately (and unrelated to the alias): the default `create-next-app`
+    tsconfig targets `ES2017`, and one file in this package
+    (`components/application/code-snippet/highlight.ts`) uses ES2018 named capture groups in a regex
+    literal, so Next's type-check step fails at that target — bumping the consumer's `target` to
+    `ES2020`+ (already common) clears it. This is a pre-existing source-compatibility gap, not an
+    alias issue.
 
 ### Full RTL coverage
 

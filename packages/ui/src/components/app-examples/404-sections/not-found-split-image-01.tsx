@@ -1,12 +1,12 @@
 "use client";
 
 import { SearchLg } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { BackgroundPattern } from "@/components/shared-assets/background-patterns";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
+import { BackgroundPattern } from "../../shared-assets/background-patterns";
 
 /** A 404 with a site search on the left and a full-bleed image on the right. */
 export const NotFoundSplitImage01 = () => (

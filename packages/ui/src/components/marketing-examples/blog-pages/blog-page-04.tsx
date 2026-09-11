@@ -1,7 +1,7 @@
-import { BlogHeaderSidebar02 } from "@/components/marketing/blog-sections/blog-header-sidebar-02";
-import { FooterLarge16 } from "@/components/marketing/footers/footer-large-16";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { BlogHeaderSidebar02 } from "../../marketing/blog-sections/blog-header-sidebar-02";
+import { FooterLarge16 } from "../../marketing/footers/footer-large-16";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
 
 const styles = sortCx({
     // The reference closes this layout on the secondary surface to separate it from the article list.

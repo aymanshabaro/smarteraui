@@ -2,8 +2,8 @@
 
 import { useListData as AriaUseListData } from "react-aria-components";
 import { User01 } from "@properui/icons";
-import { Dot } from "@/components/foundations/dot-icon";
-import { AVATARS } from "@/utils/demo-assets";
+import { AVATARS } from "../../../utils/demo-assets";
+import { Dot } from "../../foundations/dot-icon";
 import { Select } from "./select";
 import type { SelectItemType } from "./select-shared";
 import { TagSelect } from "./tag-select";

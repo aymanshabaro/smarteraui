@@ -82,7 +82,7 @@ download the file, independent of the selector-scoping itself.
 - Focus lands inside the dialog on open (`dialog.contains(document.activeElement)` — true).
 - Backdrop click (event target === the `<dialog>` element itself) closes it — true.
 - **Bug found and fixed:** closing a dialog (Escape/backdrop/× button) and then re-clicking the
-  *same* platform's trigger originally did nothing (see spec.md's "decisions" section for why).
+  _same_ platform's trigger originally did nothing (see spec.md's "decisions" section for why).
   Fixed; re-verified for all 4 variants after the fix — each opens, closes, and reopens correctly.
 - JSON-LD block present with exact supplied content; `<link rel="canonical" href="https://properui.dev">`;
   `<link rel="icon" href="/favicon.svg">`; meta description matches the supplied page's.
@@ -91,5 +91,5 @@ download the file, independent of the selector-scoping itself.
 
 Repo-wide grep before deleting: no file outside `apps/docs/components/landing/` and
 `apps/docs/app/page.tsx` imported any of the deleted `landing-*.tsx` files or `content.ts`
-(one stale *comment* in `packages/registry/src/build.ts` named `content.ts`'s path — updated to
+(one stale _comment_ in `packages/registry/src/build.ts` named `content.ts`'s path — updated to
 name `stats.ts` instead, since that comment is now inaccurate otherwise).

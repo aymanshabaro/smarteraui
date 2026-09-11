@@ -16,7 +16,7 @@ import {
     TailwindCSSIcon,
     V0Icon,
     ViteIcon,
-} from "@/components/foundations/integration-icons";
+} from "./";
 
 const icons = [
     { name: "React", icon: ReactIcon },

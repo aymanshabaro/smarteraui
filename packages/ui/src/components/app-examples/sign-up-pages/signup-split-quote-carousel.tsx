@@ -1,13 +1,13 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "@properui/icons";
-import { Carousel, useCarousel } from "@/components/application/carousel/carousel-base";
-import { PaginationDot } from "@/components/application/pagination/pagination-dot";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
-import { RatingStars } from "@/components/foundations/rating/rating-stars";
-import { avatar } from "@/utils/demo-assets";
+import { avatar } from "../../../utils/demo-assets";
+import { Carousel, useCarousel } from "../../application/carousel/carousel-base";
+import { PaginationDot } from "../../application/pagination/pagination-dot";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
+import { RatingStars } from "../../foundations/rating/rating-stars";
 import { SignUpFormColumn } from "./base-components/form-column";
 import { SupportFooter } from "./base-components/page-parts";
 

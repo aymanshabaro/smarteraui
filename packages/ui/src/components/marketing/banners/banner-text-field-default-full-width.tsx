@@ -1,11 +1,11 @@
 "use client";
 
 import { Mail01 } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { CloseButton } from "@/components/base/buttons/close-button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
+import { Button } from "../../base/buttons/button";
+import { CloseButton } from "../../base/buttons/close-button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 /** A newsletter banner with a featured icon, supporting copy and an inline email capture form. Default palette, full-bleed layout. */
 export const BannerTextFieldDefaultFullWidth = () => (

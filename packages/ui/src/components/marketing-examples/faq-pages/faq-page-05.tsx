@@ -1,10 +1,10 @@
-import { Button } from "@/components/base/buttons/button";
-import { FaqAccordion01 } from "@/components/marketing/faq-sections/faq-accordion-01";
-import { FeaturesIntegrationsIcons02 } from "@/components/marketing/features-sections/features-integrations-icons-02";
-import { FooterLarge06 } from "@/components/marketing/footers/footer-large-06";
-import { FloatingSimpleWithFooter } from "@/components/marketing/header-navigations/floating-simple-with-footer";
-import { NewsletterSimpleCentered } from "@/components/marketing/newsletter-cta-sections/newsletter-simple-centered";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { Button } from "../../base/buttons/button";
+import { FaqAccordion01 } from "../../marketing/faq-sections/faq-accordion-01";
+import { FeaturesIntegrationsIcons02 } from "../../marketing/features-sections/features-integrations-icons-02";
+import { FooterLarge06 } from "../../marketing/footers/footer-large-06";
+import { FloatingSimpleWithFooter } from "../../marketing/header-navigations/floating-simple-with-footer";
+import { NewsletterSimpleCentered } from "../../marketing/newsletter-cta-sections/newsletter-simple-centered";
 
 const styles = sortCx({
     // The page alternates surfaces, so these sections sit on the secondary background.

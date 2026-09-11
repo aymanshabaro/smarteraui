@@ -1,9 +1,9 @@
 "use client";
 
 import { Stars02 } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { CloseButton } from "@/components/base/buttons/close-button";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
+import { Button } from "../../base/buttons/button";
+import { CloseButton } from "../../base/buttons/close-button";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 /** An announcement banner with a featured icon, supporting copy and a single call to action. Brand palette, floating card layout. */
 export const BannerSingleActionBrand = () => (

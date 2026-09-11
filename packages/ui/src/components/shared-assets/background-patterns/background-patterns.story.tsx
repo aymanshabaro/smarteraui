@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { BackgroundPattern } from "@/components/shared-assets/background-patterns";
+import { BackgroundPattern } from "./";
 
 const patterns = ["grid", "grid-check", "square", "circle"] as const;
 

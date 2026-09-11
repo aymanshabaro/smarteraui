@@ -4,13 +4,13 @@
 // `dashboards-02` variant (header navigation config + `<main>` container recipe).
 import type { ReactNode } from "react";
 import { Bell01, SearchLg, Settings01, Zap } from "@properui/icons";
-import { NavButton } from "@/components/application/app-navigation/base-components/nav-button";
-import { HeaderNavigationBase } from "@/components/application/app-navigation/header-navigation";
-import { Button } from "@/components/base/buttons/button";
-import { DropdownAccountButton } from "@/components/base/dropdown/dropdown-account-button";
-import { DropdownAccountCardSM } from "@/components/base/dropdown/dropdown-account-card-sm";
-import { DropdownAvatar } from "@/components/base/dropdown/dropdown-avatar";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { NavButton } from "../../application/app-navigation/base-components/nav-button";
+import { HeaderNavigationBase } from "../../application/app-navigation/header-navigation";
+import { Button } from "../../base/buttons/button";
+import { DropdownAccountButton } from "../../base/dropdown/dropdown-account-button";
+import { DropdownAccountCardSM } from "../../base/dropdown/dropdown-account-card-sm";
+import { DropdownAvatar } from "../../base/dropdown/dropdown-avatar";
 
 /** Primary header navigation shared by all 19 variants of this page example. */
 export const navItems = [

@@ -2,18 +2,18 @@
 
 import { Radio as AriaRadio } from "react-aria-components";
 import { DownloadCloud01, DownloadCloud02, Plus } from "@properui/icons";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Table, TableCard } from "@/components/application/table/table";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { CheckboxBase } from "@/components/base/checkbox/checkbox";
-import { RadioGroup } from "@/components/base/radio-buttons/radio-buttons";
-import { MastercardIcon, VisaIcon } from "@/components/foundations/payment-icons";
-import { cx } from "@/utils/cx";
-import { AVATARS } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { AVATARS } from "../../../utils/demo-assets";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Table, TableCard } from "../../application/table/table";
+import { Tabs } from "../../application/tabs/tabs";
+import { Avatar } from "../../base/avatar/avatar";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { CheckboxBase } from "../../base/checkbox/checkbox";
+import { RadioGroup } from "../../base/radio-buttons/radio-buttons";
+import { MastercardIcon, VisaIcon } from "../../foundations/payment-icons";
 import { Divider, FieldLabel, PageContainer, SettingsHeaderNav, settingsSections, styles } from "./settings-shell";
 
 const cards = [

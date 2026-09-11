@@ -3,7 +3,7 @@
 import type { CSSProperties, ComponentPropsWithRef, HTMLAttributes, KeyboardEvent, ReactNode, Ref } from "react";
 import { cloneElement, createContext, isValidElement, useCallback, useContext, useEffect, useState } from "react";
 import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-react";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;

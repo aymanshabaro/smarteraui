@@ -76,6 +76,10 @@ server yet; it is on the [roadmap](./ROADMAP.md), and the CLI covers the same gr
   JSDoc-documented, and `tsc --noEmit` runs in CI.
 - **Tree-shakeable source.** The package publishes `.tsx` with per-component subpath exports, so a bundler only ever
   sees the components you import.
+- **No alias to configure.** Every internal import in the package is a plain relative specifier — installing
+  `@properui/ui` as a normal dependency and importing it in a Vite (or other bundler) project needs no `@/` path alias
+  or `tsconfig` change on your end. Next.js still needs `transpilePackages` (see below) because it does not compile
+  TSX from `node_modules` by default, not because of any alias.
 - **Copy-in CLI.** `npx @properui/cli@latest add button` writes the component's source into your project, resolves its
   registry dependencies, rewrites `@/` imports to your alias and installs missing npm packages.
 

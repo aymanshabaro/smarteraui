@@ -1,8 +1,8 @@
 import type { FC } from "react";
 import { Check, MessageSmileCircle, PresentationChart01, Zap } from "@properui/icons";
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 const benefits: { icon: FC<{ className?: string }>; title: string; description: string }[] = [
     {

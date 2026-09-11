@@ -1,18 +1,18 @@
 "use client";
 
 import { ArrowLeft, HomeLine, Mail01 } from "@properui/icons";
-import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
-import { FileUploadDropZone } from "@/components/application/file-upload/file-upload-base";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { AvatarProfilePhoto } from "@/components/base/avatar/avatar-profile-photo";
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { Select } from "@/components/base/select/select";
-import { TextEditor } from "@/components/base/text-editor/text-editor";
-import { countriesOptions } from "@/utils/countries";
-import { IMAGES, avatar } from "@/utils/demo-assets";
-import { timezonesOptionsWithLongName } from "@/utils/timezones";
+import { countriesOptions } from "../../../utils/countries";
+import { IMAGES, avatar } from "../../../utils/demo-assets";
+import { timezonesOptionsWithLongName } from "../../../utils/timezones";
+import { Breadcrumbs } from "../../application/breadcrumbs/breadcrumbs";
+import { FileUploadDropZone } from "../../application/file-upload/file-upload-base";
+import { Avatar } from "../../base/avatar/avatar";
+import { AvatarProfilePhoto } from "../../base/avatar/avatar-profile-photo";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { Select } from "../../base/select/select";
+import { TextEditor } from "../../base/text-editor/text-editor";
 import { Divider, FieldLabel, FormFooter, PageContainer, SettingsHeaderNav, styles } from "./settings-shell";
 
 const person = avatar(0);

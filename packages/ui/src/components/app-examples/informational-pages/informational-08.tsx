@@ -12,17 +12,17 @@ import {
     SearchLg,
     Users01,
 } from "@properui/icons";
-import type { NavItemType } from "@/components/application/app-navigation/config";
-import { SidebarNavigationSectionsSubheadings } from "@/components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings";
-import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
-import { CalendarAppHeader, EventChip, MONTH_EVENTS, MONTH_GRID, WEEKDAYS_SHORT } from "@/components/application/date-picker/calendar-app-shared";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
-import { cx } from "@/utils/cx";
-import { LOGOS } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { LOGOS } from "../../../utils/demo-assets";
+import type { NavItemType } from "../../application/app-navigation/config";
+import { SidebarNavigationSectionsSubheadings } from "../../application/app-navigation/sidebar-navigation/sidebar-sections-subheadings";
+import { Breadcrumbs } from "../../application/breadcrumbs/breadcrumbs";
+import { CalendarAppHeader, EventChip, MONTH_EVENTS, MONTH_GRID, WEEKDAYS_SHORT } from "../../application/date-picker/calendar-app-shared";
+import { Tabs } from "../../application/tabs/tabs";
+import { Avatar } from "../../base/avatar/avatar";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
 
 const teamBadge = (shortcut: string) => (
     <div className="flex items-center gap-3">

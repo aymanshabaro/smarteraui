@@ -1,5 +1,5 @@
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
-import { AngelList, Dribbble, Facebook, GitHub, Layers, LinkedIn, X } from "@/components/foundations/social-icons";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
+import { AngelList, Dribbble, Facebook, GitHub, Layers, LinkedIn, X } from "../../foundations/social-icons";
 
 const socialLinks = [
     { label: "X", href: "https://x.com/", icon: X },

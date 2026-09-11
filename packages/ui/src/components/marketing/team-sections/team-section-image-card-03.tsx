@@ -1,6 +1,6 @@
-import { Dribbble, LinkedIn, X } from "@/components/foundations/social-icons";
-import { sortCx } from "@/utils/cx";
-import { LOGOS, avatar } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { LOGOS, avatar } from "../../../utils/demo-assets";
+import { Dribbble, LinkedIn, X } from "../../foundations/social-icons";
 
 const styles = sortCx({
     /** The muted social link repeated under every member's bio. */

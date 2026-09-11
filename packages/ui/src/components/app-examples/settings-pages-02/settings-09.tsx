@@ -1,15 +1,15 @@
 "use client";
 
 import { ArrowLeft, Edit01, HomeLine, Plus, Trash01 } from "@properui/icons";
-import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
-import { Table, TableCard } from "@/components/application/table/table";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { NativeSelect } from "@/components/base/select/select-native";
-import type { DemoAvatar } from "@/utils/demo-assets";
-import { AVATARS } from "@/utils/demo-assets";
+import type { DemoAvatar } from "../../../utils/demo-assets";
+import { AVATARS } from "../../../utils/demo-assets";
+import { Breadcrumbs } from "../../application/breadcrumbs/breadcrumbs";
+import { Table, TableCard } from "../../application/table/table";
+import { Avatar } from "../../base/avatar/avatar";
+import { ButtonGroup, ButtonGroupItem } from "../../base/button-group/button-group";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { NativeSelect } from "../../base/select/select-native";
 import { Divider, FieldLabel, PageContainer, PageTitle, SettingsHeaderNav } from "./settings-shell";
 
 const sections = [

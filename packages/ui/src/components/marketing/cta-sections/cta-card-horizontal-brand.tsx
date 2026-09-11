@@ -1,4 +1,4 @@
-import { Button } from "@/components/base/buttons/button";
+import { Button } from "../../base/buttons/button";
 
 /** A centered card on the branded section background. */
 export const CtaCardHorizontalBrand = () => (

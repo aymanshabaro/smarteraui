@@ -1,12 +1,12 @@
 "use client";
 
 import { Edit01, Plus, RefreshCcw01 } from "@properui/icons";
-import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { CreditCard } from "@/components/shared-assets/credit-card/credit-card";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { SidebarNavigationSlim } from "../../application/app-navigation/sidebar-navigation/sidebar-slim";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { Dropdown } from "../../base/dropdown/dropdown";
+import { CreditCard } from "../../shared-assets/credit-card/credit-card";
 import {
     DonutChart,
     RangeTabs,

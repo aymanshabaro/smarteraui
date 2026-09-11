@@ -2,11 +2,11 @@
 
 import { Fragment } from "react";
 import { CheckCircle, HelpCircle, Minus } from "@properui/icons";
-import { Tab, TabList, TabPanel, Tabs } from "@/components/application/tabs/tabs";
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { Tooltip, TooltipTrigger } from "@/components/base/tooltip/tooltip";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { Tab, TabList, TabPanel, Tabs } from "../../application/tabs/tabs";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { Tooltip, TooltipTrigger } from "../../base/tooltip/tooltip";
 
 interface Plan {
     name: string;

@@ -11,13 +11,13 @@ import {
     ListBox as AriaListBox,
 } from "react-aria-components";
 import { SearchLg } from "@properui/icons";
-import { HintText } from "@/components/base/input/hint-text";
-import { Label } from "@/components/base/input/label";
-import { Popover } from "@/components/base/select/popover";
-import { type CommonProps, SelectContext, type SelectItemType, sizes } from "@/components/base/select/select-shared";
-import { useResizeObserver } from "@/hooks/use-resize-observer";
-import { cx } from "@/utils/cx";
-import { isReactComponent } from "@/utils/is-react-component";
+import { useResizeObserver } from "../../../hooks/use-resize-observer";
+import { cx } from "../../../utils/cx";
+import { isReactComponent } from "../../../utils/is-react-component";
+import { HintText } from "../input/hint-text";
+import { Label } from "../input/label";
+import { Popover } from "./popover";
+import { type CommonProps, SelectContext, type SelectItemType, sizes } from "./select-shared";
 
 interface ComboBoxProps extends Omit<AriaComboBoxProps<SelectItemType>, "children" | "items">, RefAttributes<HTMLDivElement>, CommonProps {
     shortcut?: boolean;

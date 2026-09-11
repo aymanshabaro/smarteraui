@@ -1,11 +1,11 @@
 "use client";
 
 import { ArrowNext, ArrowPrevious } from "@properui/icons";
-import { Carousel } from "@/components/application/carousel/carousel-base";
-import { Button } from "@/components/base/buttons/button";
-import { RatingStars } from "@/components/foundations/rating/rating-stars";
-import { sortCx } from "@/utils/cx";
-import { AVATARS, IMAGES, LOGOS } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { AVATARS, IMAGES, LOGOS } from "../../../utils/demo-assets";
+import { Carousel } from "../../application/carousel/carousel-base";
+import { Button } from "../../base/buttons/button";
+import { RatingStars } from "../../foundations/rating/rating-stars";
 
 const styles = sortCx({
     /** The round previous/next controls under the carousel. */

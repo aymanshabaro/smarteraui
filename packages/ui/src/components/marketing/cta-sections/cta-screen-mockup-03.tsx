@@ -1,5 +1,5 @@
-import { Button } from "@/components/base/buttons/button";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
 
 /** A centered CTA above a wide desktop screen mockup that bleeds off the bottom edge. */
 export const CtaScreenMockup03 = () => (

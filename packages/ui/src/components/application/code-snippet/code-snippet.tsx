@@ -5,10 +5,10 @@ import type { Key } from "react-aria";
 import type { TabsProps as AriaTabsProps } from "react-aria-components";
 import { Tab as AriaTab, TabList as AriaTabList, TabPanel as AriaTabPanel, Tabs as AriaTabs } from "react-aria-components";
 import { Check, Copy01 } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { useClipboard } from "@/hooks/use-clipboard";
-import { cx, sortCx } from "@/utils/cx";
+import { useClipboard } from "../../../hooks/use-clipboard";
+import { cx, sortCx } from "../../../utils/cx";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
 import type { CodeLanguage, CodeLine } from "./highlight";
 import { highlight } from "./highlight";
 

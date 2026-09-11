@@ -3,12 +3,12 @@
 import type { ReactNode } from "react";
 import { FileIcon } from "@untitledui/file-icons";
 import { LayersTwo02, Mail01 } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { VisaIcon } from "@/components/foundations/payment-icons";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
+import { VisaIcon } from "../../foundations/payment-icons";
 import { InlineCTA } from "./inline-cta";
 
 /** Matches the width the docs preview gives every inline CTA. Demo-only, not exported. */

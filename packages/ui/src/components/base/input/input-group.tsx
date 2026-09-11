@@ -1,11 +1,11 @@
 "use client";
 
 import { type HTMLAttributes, type ReactNode } from "react";
-import { HintText } from "@/components/base/input/hint-text";
-import type { TextFieldProps } from "@/components/base/input/input";
-import { TextField } from "@/components/base/input/input";
-import { Label } from "@/components/base/input/label";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
+import { HintText } from "./hint-text";
+import type { TextFieldProps } from "./input";
+import { TextField } from "./input";
+import { Label } from "./label";
 
 export interface InputPrefixProps extends HTMLAttributes<HTMLDivElement> {
     /** The position of the prefix. */

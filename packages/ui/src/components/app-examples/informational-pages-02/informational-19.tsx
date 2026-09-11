@@ -3,17 +3,17 @@
 import type { ComponentProps } from "react";
 import { FileIcon } from "@untitledui/file-icons";
 import { ArrowLeft, ArrowRight, BookOpen01, Edit01, Eye, Heart, Link01, MarkerPin02, MessageCircle01, Plus } from "@properui/icons";
-import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
-import { FileUpload } from "@/components/application/file-upload/file-upload-base";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { AvatarProfilePhoto } from "@/components/base/avatar/avatar-profile-photo";
-import { Badge, BadgeIcon } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { DropdownIconSimple } from "@/components/base/dropdown/dropdown-icon-simple";
-import { TextEditor } from "@/components/base/text-editor/text-editor";
-import { cx } from "@/utils/cx";
-import { AVATAR_TRANSPARENT, IMAGES } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { AVATAR_TRANSPARENT, IMAGES } from "../../../utils/demo-assets";
+import { Breadcrumbs } from "../../application/breadcrumbs/breadcrumbs";
+import { FileUpload } from "../../application/file-upload/file-upload-base";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { AvatarProfilePhoto } from "../../base/avatar/avatar-profile-photo";
+import { Badge, BadgeIcon } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { DropdownIconSimple } from "../../base/dropdown/dropdown-icon-simple";
+import { TextEditor } from "../../base/text-editor/text-editor";
 import { AppHeader, navItemsWith } from "./shell.a";
 
 const noop = () => {};

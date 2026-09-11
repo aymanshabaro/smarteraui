@@ -1,7 +1,7 @@
 "use client";
 
 import { SearchLg } from "@properui/icons";
-import { Input } from "@/components/base/input/input";
+import { Input } from "../../base/input/input";
 
 /**
  * Centered support-centre header: eyebrow, headline, paragraph and a search field

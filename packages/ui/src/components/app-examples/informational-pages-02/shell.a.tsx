@@ -2,10 +2,10 @@
 
 import type { ReactNode } from "react";
 import { Bell01, Settings01, Zap } from "@properui/icons";
-import { NavButton } from "@/components/application/app-navigation/base-components/nav-button";
-import { HeaderNavigationBase } from "@/components/application/app-navigation/header-navigation";
-import { Button } from "@/components/base/buttons/button";
-import { DropdownAvatar } from "@/components/base/dropdown/dropdown-avatar";
+import { NavButton } from "../../application/app-navigation/base-components/nav-button";
+import { HeaderNavigationBase } from "../../application/app-navigation/header-navigation";
+import { Button } from "../../base/buttons/button";
+import { DropdownAvatar } from "../../base/dropdown/dropdown-avatar";
 
 /** A single entry of the product header navigation. */
 export interface HeaderNavItem {

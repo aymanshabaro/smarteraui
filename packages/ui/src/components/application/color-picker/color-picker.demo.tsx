@@ -2,19 +2,13 @@
 
 import type { ReactNode } from "react";
 import { useState } from "react";
-import type { ColorPickerSavedColorsProps } from "@/components/application/color-picker/color-picker";
-import { ColorPicker as ColorPickerRoot } from "@/components/application/color-picker/color-picker";
-import {
-    BRAND_SWATCH_COLORS,
-    GRAY_SWATCH_COLORS,
-    NEUTRAL_SAVED_COLORS,
-    SAVED_COLORS,
-    SWATCH_PICKER_COLORS,
-} from "@/components/application/color-picker/color-picker-colors";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Button } from "@/components/base/buttons/button";
-import { CloseButton } from "@/components/base/buttons/close-button";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { Button } from "../../base/buttons/button";
+import { CloseButton } from "../../base/buttons/close-button";
+import { Tabs } from "../tabs/tabs";
+import type { ColorPickerSavedColorsProps } from "./color-picker";
+import { ColorPicker as ColorPickerRoot } from "./color-picker";
+import { BRAND_SWATCH_COLORS, GRAY_SWATCH_COLORS, NEUTRAL_SAVED_COLORS, SAVED_COLORS, SWATCH_PICKER_COLORS } from "./color-picker-colors";
 
 /** Centres a floating card the way the reference previews do. */
 const DemoStage = ({ children }: { children: ReactNode }) => <div className="flex items-center justify-center p-4">{children}</div>;

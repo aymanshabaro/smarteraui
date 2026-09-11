@@ -2,11 +2,11 @@
 
 import type { Key, KeyboardEvent, ReactNode } from "react";
 import { useCallback, useRef, useState } from "react";
-import { HintText } from "@/components/base/input/hint-text";
-import { InputBase } from "@/components/base/input/input";
-import { Label } from "@/components/base/input/label";
-import { Tag, TagGroup, TagList } from "@/components/base/tags/tags";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { Tag, TagGroup, TagList } from "../tags/tags";
+import { HintText } from "./hint-text";
+import { InputBase } from "./input";
+import { Label } from "./label";
 
 interface TagEntry {
     id: string;

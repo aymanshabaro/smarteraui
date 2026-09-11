@@ -1,10 +1,10 @@
-import { CtaCardHorizontal } from "@/components/marketing/cta-sections/cta-card-horizontal";
-import { FaqAccordion01 } from "@/components/marketing/faq-sections/faq-accordion-01";
-import { FooterLarge04 } from "@/components/marketing/footers/footer-large-04";
-import { FloatingSimpleWithFooter } from "@/components/marketing/header-navigations/floating-simple-with-footer";
-import { PricingDualAction } from "@/components/marketing/pricing-sections/pricing-dual-action";
-import { TestimonialSocialCards02 } from "@/components/marketing/testimonial-sections/testimonial-social-cards-02";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { CtaCardHorizontal } from "../../marketing/cta-sections/cta-card-horizontal";
+import { FaqAccordion01 } from "../../marketing/faq-sections/faq-accordion-01";
+import { FooterLarge04 } from "../../marketing/footers/footer-large-04";
+import { FloatingSimpleWithFooter } from "../../marketing/header-navigations/floating-simple-with-footer";
+import { PricingDualAction } from "../../marketing/pricing-sections/pricing-dual-action";
+import { TestimonialSocialCards02 } from "../../marketing/testimonial-sections/testimonial-social-cards-02";
 
 const styles = sortCx({
     // Consecutive sections share one rhythm: only the last one in a run keeps its bottom padding.

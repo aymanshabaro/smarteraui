@@ -1,15 +1,15 @@
 "use client";
 
 import { CreditCard02, File02, Heart, Mail01, SearchLg, SlashCircle01, SwitchHorizontal01 } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { FooterLarge05 } from "@/components/marketing/footers/footer-large-05";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { NewsletterSimpleCentered } from "@/components/marketing/newsletter-cta-sections/newsletter-simple-centered";
-import { TeamSectionImageCollage01 } from "@/components/marketing/team-sections/team-section-image-collage-01";
-import { TestimonialSocialCards02 } from "@/components/marketing/testimonial-sections/testimonial-social-cards-02";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
+import { FooterLarge05 } from "../../marketing/footers/footer-large-05";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { NewsletterSimpleCentered } from "../../marketing/newsletter-cta-sections/newsletter-simple-centered";
+import { TeamSectionImageCollage01 } from "../../marketing/team-sections/team-section-image-collage-01";
+import { TestimonialSocialCards02 } from "../../marketing/testimonial-sections/testimonial-social-cards-02";
 
 const styles = sortCx({
     /** The featured icon steps up a size from `md`, so it is rendered once per breakpoint. */

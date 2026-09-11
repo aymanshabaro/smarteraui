@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import * as RadarCharts from "@/components/application/charts/radar-charts.demo";
+import * as RadarCharts from "./radar-charts.demo";
 
 export default {
     title: "Application components/Charts",

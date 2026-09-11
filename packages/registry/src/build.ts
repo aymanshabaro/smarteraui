@@ -479,10 +479,37 @@ const deriveDependencies = (files: string[], selfName: string, knownEntries: Set
     };
 };
 
+/**
+ * `packages/ui/src` itself uses only relative specifiers for its internal imports (no `@/`) —
+ * but the CLI's `rewriteImports` (packages/cli/src/files.ts) only recognizes the `@/` form, and
+ * `resolveTarget` there relocates `components/**` under `--path <dir>` while `utils/**` and
+ * `hooks/**` stay put at the alias base. A relative specifier that stays inside `components/**`
+ * survives that move — the whole tree relocates together, preserving relative structure — but one
+ * that crosses from `components/**` into `utils/**` or `hooks/**` (or vice versa) does not, so
+ * those must ship in the registry as `@/…`, the only form that resolves correctly regardless of
+ * `--path`. This reuses `resolveInternal` for resolution rather than writing a second resolver.
+ */
+const REWRITE_SPECIFIER = /((?:\bfrom\s+)|(?:\bimport\s+)|(?:\bimport\s*\(\s*)|(?:\brequire\s*\(\s*))(["'])(\.[^"']*)\2/g;
+
+const topSegmentOf = (relative: string) => relative.split("/")[0];
+
+const rewriteInternalSpecifiers = (content: string, fromFile: string): string =>
+    content.replace(REWRITE_SPECIFIER, (match, lead: string, quote: string, specifier: string) => {
+        const resolved = resolveInternal(specifier, fromFile);
+        if (!resolved) return match;
+        if (topSegmentOf(uiRelative(fromFile)) === topSegmentOf(uiRelative(resolved))) return match;
+
+        let target = stripExtension(uiRelative(resolved));
+        if (target.endsWith("/index")) target = target.slice(0, -"/index".length);
+        return `${lead}${quote}@/${target}${quote}`;
+    });
+
 const toRegistryFiles = (files: string[]): RegistryFile[] =>
     files.map((file) => {
         const relative = uiRelative(file);
-        return { path: relative, target: relative, type: fileTypeFor(relative), content: readFileSync(file, "utf8") };
+        const raw = readFileSync(file, "utf8");
+        const content = /\.[jt]sx?$/.test(file) ? rewriteInternalSpecifiers(raw, file) : raw;
+        return { path: relative, target: relative, type: fileTypeFor(relative), content };
     });
 
 /** Every `export const X` in the group's `.demo.tsx` files, kebab-cased into example ids. */
@@ -819,7 +846,7 @@ const build = () => {
 
     // ---- Stats --------------------------------------------------------------
     // Single generated source for every count quoted in the README and the landing page
-    // (see apps/docs/components/landing/content.ts and README.md's `<!-- stats:start -->` block).
+    // (see apps/docs/components/landing/stats.ts and README.md's `<!-- stats:start -->` block).
     // The four terms below are the only vocabulary those consumers are allowed to use.
 
     const groupCountByLayer = Object.fromEntries(

@@ -1,12 +1,12 @@
 "use client";
 
 import { PlayCircle } from "@properui/icons";
-import { BadgeGroup } from "@/components/base/badges/badge-groups";
-import { Button } from "@/components/base/buttons/button";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { BackgroundPattern } from "@/components/shared-assets/background-patterns";
-import { sortCx } from "@/utils/cx";
-import { IMAGES } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { IMAGES } from "../../../utils/demo-assets";
+import { BadgeGroup } from "../../base/badges/badge-groups";
+import { Button } from "../../base/buttons/button";
+import { BackgroundPattern } from "../../shared-assets/background-patterns";
+import { HeaderDropdownSimple } from "../header-navigations/header-dropdown-simple";
 
 const styles = sortCx({
     mockup: {

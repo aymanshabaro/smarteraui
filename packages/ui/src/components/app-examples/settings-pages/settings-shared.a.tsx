@@ -25,18 +25,18 @@ import {
     Star01,
     Users01,
 } from "@properui/icons";
-import type { NavItemDividerType, NavItemType } from "@/components/application/app-navigation/config";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Badge, BadgeWithDot } from "@/components/base/badges/badges";
-import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";
-import { Button } from "@/components/base/buttons/button";
-import { CheckboxBase } from "@/components/base/checkbox/checkbox";
-import { Input } from "@/components/base/input/input";
-import { NativeSelect } from "@/components/base/select/select-native";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { cx, sortCx } from "@/utils/cx";
-import { type DemoAvatar, LOGOS } from "@/utils/demo-assets";
+import { cx, sortCx } from "../../../utils/cx";
+import { type DemoAvatar, LOGOS } from "../../../utils/demo-assets";
+import type { NavItemDividerType, NavItemType } from "../../application/app-navigation/config";
+import { Tabs } from "../../application/tabs/tabs";
+import { Avatar } from "../../base/avatar/avatar";
+import { Badge, BadgeWithDot } from "../../base/badges/badges";
+import { ButtonGroup, ButtonGroupItem } from "../../base/button-group/button-group";
+import { Button } from "../../base/buttons/button";
+import { CheckboxBase } from "../../base/checkbox/checkbox";
+import { Input } from "../../base/input/input";
+import { NativeSelect } from "../../base/select/select-native";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 export const styles = sortCx({
     page: {

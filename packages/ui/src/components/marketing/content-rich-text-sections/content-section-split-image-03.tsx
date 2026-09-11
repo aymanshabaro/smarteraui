@@ -1,5 +1,5 @@
-import { Button } from "@/components/base/buttons/button";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
 
 /** A rich-text column with two calls to action, balanced by a tall image on the end edge. */
 export const ContentSectionSplitImage03 = () => (

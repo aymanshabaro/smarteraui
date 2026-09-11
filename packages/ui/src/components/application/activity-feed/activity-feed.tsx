@@ -4,10 +4,10 @@ import type { ComponentProps, ReactNode } from "react";
 import { createContext, useContext } from "react";
 import { FileIcon } from "@untitledui/file-icons";
 import { Link as AriaLink } from "react-aria-components";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { Dot } from "@/components/foundations/dot-icon";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
+import { Dot } from "../../foundations/dot-icon";
 
 const styles = sortCx({
     // The three treatments only differ in how the entries are separated from one another.

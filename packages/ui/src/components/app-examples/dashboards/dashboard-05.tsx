@@ -2,21 +2,21 @@
 
 import { useState } from "react";
 import { FilterLines, SearchLg, X } from "@properui/icons";
-import { FeaturedCardEventCTA } from "@/components/application/app-navigation/base-components/featured-cards";
-import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
-import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
-import { Table, TableCard } from "@/components/application/table/table";
-import { TablePaginationMinimal } from "@/components/application/table/table-pagination";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { AvatarLabelGroup } from "@/components/base/avatar/avatar-label-group";
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { Input } from "@/components/base/input/input";
-import { Select } from "@/components/base/select/select";
-import { cx } from "@/utils/cx";
-import { AVATARS, avatar } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { AVATARS, avatar } from "../../../utils/demo-assets";
+import { FeaturedCardEventCTA } from "../../application/app-navigation/base-components/featured-cards";
+import { SidebarNavigationSimple } from "../../application/app-navigation/sidebar-navigation/sidebar-simple";
+import { Breadcrumbs } from "../../application/breadcrumbs/breadcrumbs";
+import { Table, TableCard } from "../../application/table/table";
+import { TablePaginationMinimal } from "../../application/table/table-pagination";
+import { Avatar } from "../../base/avatar/avatar";
+import { AvatarLabelGroup } from "../../base/avatar/avatar-label-group";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { Dropdown } from "../../base/dropdown/dropdown";
+import { Input } from "../../base/input/input";
+import { Select } from "../../base/select/select";
 import { RangeTabs, StackedBarChart, navFooterItems, navItemsSimple, styles } from "./dashboards-shared";
 
 const noop = () => {};

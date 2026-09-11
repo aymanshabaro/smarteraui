@@ -1,7 +1,7 @@
 "use client";
 
 import { Legend, Pie, PieChart as RechartsPieChart, ResponsiveContainer, Tooltip } from "recharts";
-import { ChartLegendContent, ChartTooltipContent } from "@/components/application/charts/charts-base";
+import { ChartLegendContent, ChartTooltipContent } from "./charts-base";
 
 const pieChartData = [
     {

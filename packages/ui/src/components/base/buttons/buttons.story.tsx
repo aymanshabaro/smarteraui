@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import * as Buttons from "@/components/base/buttons/buttons.demo";
+import * as Buttons from "./buttons.demo";
 
 export default {
     title: "Base components/Buttons",

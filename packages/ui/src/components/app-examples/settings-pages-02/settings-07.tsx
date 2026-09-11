@@ -1,13 +1,13 @@
 "use client";
 
 import { Mail01, Plus } from "@properui/icons";
-import { Table, TableCard } from "@/components/application/table/table";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { InputBase } from "@/components/base/input/input";
-import { Select } from "@/components/base/select/select";
-import { AVATARS } from "@/utils/demo-assets";
+import { AVATARS } from "../../../utils/demo-assets";
+import { Table, TableCard } from "../../application/table/table";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { InputBase } from "../../base/input/input";
+import { Select } from "../../base/select/select";
 import { Divider, FieldLabel, PageContainer, SettingsHeaderNav, styles } from "./settings-shell";
 
 const accessOptions = [

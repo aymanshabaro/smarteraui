@@ -1,16 +1,16 @@
 "use client";
 
 import { CheckCircle, Download01, FilterLines, RefreshCcw01, SearchLg, XCircle } from "@properui/icons";
-import { Table, TableCard } from "@/components/application/table/table";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { BadgeWithIcon } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { DropdownIconSimple } from "@/components/base/dropdown/dropdown-icon-simple";
-import { Input } from "@/components/base/input/input";
-import { ProgressBar } from "@/components/base/progress-indicators/progress-indicators";
-import type { DemoAvatar } from "@/utils/demo-assets";
-import { avatar } from "@/utils/demo-assets";
+import type { DemoAvatar } from "../../../utils/demo-assets";
+import { avatar } from "../../../utils/demo-assets";
+import { Table, TableCard } from "../../application/table/table";
+import { Tabs } from "../../application/tabs/tabs";
+import { Avatar } from "../../base/avatar/avatar";
+import { BadgeWithIcon } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { DropdownIconSimple } from "../../base/dropdown/dropdown-icon-simple";
+import { Input } from "../../base/input/input";
+import { ProgressBar } from "../../base/progress-indicators/progress-indicators";
 import { AppHeader } from "./shell.a";
 
 const subNavItems = [

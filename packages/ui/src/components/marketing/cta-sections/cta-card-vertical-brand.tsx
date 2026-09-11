@@ -1,4 +1,4 @@
-import { Button } from "@/components/base/buttons/button";
+import { Button } from "../../base/buttons/button";
 
 /** The card CTA on a branded panel: copy on the start edge, actions on the end edge from `lg`. */
 export const CtaCardVerticalBrand = () => (

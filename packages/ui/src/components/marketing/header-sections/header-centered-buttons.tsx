@@ -1,4 +1,4 @@
-import { Button } from "@/components/base/buttons/button";
+import { Button } from "../../base/buttons/button";
 
 /**
  * Centered page header whose eyebrow, headline and paragraph sit above a pair of

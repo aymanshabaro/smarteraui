@@ -1,17 +1,17 @@
 "use client";
 
 import { ArrowUpRight, FilterLines, PlusCircle, UserPlus01 } from "@properui/icons";
-import { FeaturedCardImage } from "@/components/application/app-navigation/base-components/featured-cards";
-import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
-import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { cx } from "@/utils/cx";
-import { AVATARS, IMAGES } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { AVATARS, IMAGES } from "../../../utils/demo-assets";
+import { FeaturedCardImage } from "../../application/app-navigation/base-components/featured-cards";
+import { SidebarNavigationSimple } from "../../application/app-navigation/sidebar-navigation/sidebar-simple";
+import { DateRangePicker } from "../../application/date-picker/date-range-picker";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Avatar } from "../../base/avatar/avatar";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { Dropdown } from "../../base/dropdown/dropdown";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 import { RangeTabs, TrendAreaChart, navFooterItems, navItemsSimple, styles } from "./dashboards-shared";
 
 const noop = () => {};

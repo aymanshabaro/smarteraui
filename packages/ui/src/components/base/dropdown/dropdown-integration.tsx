@@ -1,8 +1,6 @@
 "use client";
 
 import { ChevronDown, Copy01, TerminalSquare } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
 import {
     BoltIcon,
     ChatGPTIcon,
@@ -14,7 +12,9 @@ import {
     LovableIcon,
     PerplexityIcon,
     V0Icon,
-} from "@/components/foundations/integration-icons";
+} from "../../foundations/integration-icons";
+import { Button } from "../buttons/button";
+import { Dropdown } from "./dropdown";
 
 export const DropdownIntegration = () => {
     return (

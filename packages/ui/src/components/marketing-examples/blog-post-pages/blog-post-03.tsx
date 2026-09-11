@@ -1,8 +1,8 @@
-import { BlogSectionSplitLayout02 } from "@/components/marketing/blog-sections/blog-section-split-layout-02";
-import { ContentAlternative03 } from "@/components/marketing/content-rich-text-sections/content-alternative-03";
-import { FooterSmall04 } from "@/components/marketing/footers/footer-small-04";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { BlogSectionSplitLayout02 } from "../../marketing/blog-sections/blog-section-split-layout-02";
+import { ContentAlternative03 } from "../../marketing/content-rich-text-sections/content-alternative-03";
+import { FooterSmall04 } from "../../marketing/footers/footer-small-04";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
 
 const styles = sortCx({
     // The related-posts row sits on the secondary surface to close the editorial layout.

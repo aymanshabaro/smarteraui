@@ -1,4 +1,4 @@
-import { Button } from "@/components/base/buttons/button";
+import { Button } from "../../base/buttons/button";
 import {
     BoltIcon,
     ChatGPTIcon,
@@ -16,7 +16,7 @@ import {
     TailwindCSSIcon,
     V0Icon,
     ViteIcon,
-} from "@/components/foundations/integration-icons";
+} from "../../foundations/integration-icons";
 
 const integrations = [
     { name: "Next.js", icon: NextjsIcon },

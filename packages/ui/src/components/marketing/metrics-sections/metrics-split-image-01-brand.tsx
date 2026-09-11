@@ -1,4 +1,4 @@
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
 
 const metrics = [
     { value: "400+", label: "Projects completed", description: "We've helped build over 400 amazing projects." },

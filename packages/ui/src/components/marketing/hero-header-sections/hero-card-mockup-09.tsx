@@ -1,13 +1,13 @@
 "use client";
 
 import { PlayCircle } from "@properui/icons";
-import { BadgeGroup } from "@/components/base/badges/badge-groups";
-import { Button } from "@/components/base/buttons/button";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { BackgroundPattern } from "@/components/shared-assets/background-patterns";
-import { CreditCard } from "@/components/shared-assets/credit-card/credit-card";
-import { cx } from "@/utils/cx";
-import { AVATARS } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { AVATARS } from "../../../utils/demo-assets";
+import { BadgeGroup } from "../../base/badges/badge-groups";
+import { Button } from "../../base/buttons/button";
+import { BackgroundPattern } from "../../shared-assets/background-patterns";
+import { CreditCard } from "../../shared-assets/credit-card/credit-card";
+import { HeaderDropdownSimple } from "../header-navigations/header-dropdown-simple";
 
 /** Cards of the isometric stack, front to back. */
 const cards = [

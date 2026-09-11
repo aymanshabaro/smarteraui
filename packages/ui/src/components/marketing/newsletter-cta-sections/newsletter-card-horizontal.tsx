@@ -1,6 +1,6 @@
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
 
 /** A rounded card that lays the copy and the email capture out side by side on large screens. */
 export const NewsletterCardHorizontal = () => (

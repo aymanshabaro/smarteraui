@@ -1,10 +1,10 @@
 "use client";
 
 import { Link as AriaLink } from "react-aria-components";
-import { AvatarLabelGroup } from "@/components/base/avatar/avatar-label-group";
-import { VerifiedTick } from "@/components/base/avatar/base-components";
-import { RatingStars } from "@/components/foundations/rating/rating-stars";
-import { AVATARS } from "@/utils/demo-assets";
+import { AVATARS } from "../../../utils/demo-assets";
+import { AvatarLabelGroup } from "../../base/avatar/avatar-label-group";
+import { VerifiedTick } from "../../base/avatar/base-components";
+import { RatingStars } from "../../foundations/rating/rating-stars";
 
 const reviews = [
     { author: AVATARS[6], quote: "We've been using Proper UI to kick start every new project and can't imagine working without it." },

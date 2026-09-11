@@ -1,9 +1,9 @@
-import { CareersSimple03 } from "@/components/marketing/careers-sections/careers-simple-03";
-import { FeaturesSimpleIcons03 } from "@/components/marketing/features-sections/features-simple-icons-03";
-import { FooterLarge09 } from "@/components/marketing/footers/footer-large-09";
-import { Header4ColWithFooter } from "@/components/marketing/header-navigations/header-4-col-with-footer";
-import { HeaderSpaceBetweenBrand } from "@/components/marketing/header-sections/header-space-between-brand";
-import { TeamSectionImageCard04 } from "@/components/marketing/team-sections/team-section-image-card-04";
+import { CareersSimple03 } from "../../marketing/careers-sections/careers-simple-03";
+import { FeaturesSimpleIcons03 } from "../../marketing/features-sections/features-simple-icons-03";
+import { FooterLarge09 } from "../../marketing/footers/footer-large-09";
+import { Header4ColWithFooter } from "../../marketing/header-navigations/header-4-col-with-footer";
+import { HeaderSpaceBetweenBrand } from "../../marketing/header-sections/header-space-between-brand";
+import { TeamSectionImageCard04 } from "../../marketing/team-sections/team-section-image-card-04";
 
 /**
  * Team page led by a brand-coloured introduction: the team in a portrait carousel, the

@@ -1,5 +1,5 @@
-import { Avatar } from "@/components/base/avatar/avatar";
-import { AVATARS, LOGOS } from "@/utils/demo-assets";
+import { AVATARS, LOGOS } from "../../../utils/demo-assets";
+import { Avatar } from "../../base/avatar/avatar";
 
 const review = {
     industry: "Financial Services",

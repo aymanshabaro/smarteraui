@@ -1,5 +1,5 @@
-import { Button } from "@/components/base/buttons/button";
-import { avatar } from "@/utils/demo-assets";
+import { avatar } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
 
 /** The mosaic is laid out on a 12×12 grid; each portrait names its own `grid-area`. */
 const collage = [

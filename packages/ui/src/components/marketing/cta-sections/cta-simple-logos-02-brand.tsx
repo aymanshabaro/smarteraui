@@ -1,6 +1,6 @@
-import { Button } from "@/components/base/buttons/button";
-import { cx } from "@/utils/cx";
-import { LOGOS } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { LOGOS } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
 
 /** The two-column logo CTA on the permanently branded section background. */
 export const CtaSimpleLogos02Brand = () => (

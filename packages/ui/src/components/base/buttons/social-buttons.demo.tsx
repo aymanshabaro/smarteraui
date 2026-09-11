@@ -1,6 +1,6 @@
 "use client";
 
-import { SocialButton } from "@/components/base/buttons/social-button";
+import { SocialButton } from "./social-button";
 
 export const SocialButtonsExample = () => {
     return (

@@ -2,10 +2,10 @@
 
 import type { ReactNode } from "react";
 import { useRef, useState } from "react";
-import { Button } from "@/components/base/buttons/button";
-import { InputBase } from "@/components/base/input/input";
-import { InputGroup } from "@/components/base/input/input-group";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { Button } from "../buttons/button";
+import { InputBase } from "./input";
+import { InputGroup } from "./input-group";
 
 export interface InputFileProps {
     /**

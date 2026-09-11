@@ -2,17 +2,17 @@
 
 import { Radio as AriaRadio } from "react-aria-components";
 import { DownloadCloud01, DownloadCloud02, SearchLg, Zap } from "@properui/icons";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Table, TableCard } from "@/components/application/table/table";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { CheckboxBase } from "@/components/base/checkbox/checkbox";
-import { DropdownIconSimple } from "@/components/base/dropdown/dropdown-icon-simple";
-import { Input } from "@/components/base/input/input";
-import { RadioGroup } from "@/components/base/radio-buttons/radio-buttons";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Table, TableCard } from "../../application/table/table";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { CheckboxBase } from "../../base/checkbox/checkbox";
+import { DropdownIconSimple } from "../../base/dropdown/dropdown-icon-simple";
+import { Input } from "../../base/input/input";
+import { RadioGroup } from "../../base/radio-buttons/radio-buttons";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 import { FieldLabel, PageContainer, SettingsHeaderNav, styles } from "./settings-shell";
 
 const plans = [

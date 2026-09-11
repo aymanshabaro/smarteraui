@@ -20,7 +20,7 @@ import {
     Toolbar as AriaToolbar,
 } from "react-aria-components";
 import { AlignCenter, AlignLeft, AlignRight, Bold01, ChevronDown, Dotpoints01, Image01, Italic01, Link01, Stars02, Type01, Underline01 } from "@properui/icons";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
 import { fontFamilies, fontSizes, textColors } from "./text-editor-commands";
 import type { TextEditorCommand, TrackedTextEditorCommand } from "./text-editor-commands";
 import { useTextEditorContext } from "./text-editor-context";

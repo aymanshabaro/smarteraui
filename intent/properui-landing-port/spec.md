@@ -17,12 +17,12 @@ Source design (read in full before any code was written):
 2. **Reuse the real SVG marks verbatim** (`claude.svg`, `codex.svg`, `cursor.svg`, `lovable.svg`,
    `favicon.svg`) — do not substitute generic icons.
 3. **Script behaviour ported to React:**
-   - every copy control copies to clipboard, shows "Copied" for 1600ms, falls back to
-     "Select & copy" on failure (native `[data-copy]` buttons in the source);
-   - the step-by-step setup dialog (4 variants: claude/codex/cursor/lovable) — native `<dialog>`
-     or an equally accessible dialog, Escape closes it, focus is visible and contained;
-   - Lovable's card stays a URL-to-copy-into-Project-Knowledge, never a CLI command (it cannot
-     read local skill files) — the one hard content distinction the brief calls out by name.
+    - every copy control copies to clipboard, shows "Copied" for 1600ms, falls back to
+      "Select & copy" on failure (native `[data-copy]` buttons in the source);
+    - the step-by-step setup dialog (4 variants: claude/codex/cursor/lovable) — native `<dialog>`
+      or an equally accessible dialog, Escape closes it, focus is visible and contained;
+    - Lovable's card stays a URL-to-copy-into-Project-Knowledge, never a CLI command (it cannot
+      read local skill files) — the one hard content distinction the brief calls out by name.
 4. **One factual fix, and only one:** the install command's `add button` → `add buttons`
    (`button` is not a registry entry; `input` and `select` are). Applied to both the visible
    `<code>` and the copied value. No other copy/product claim in the source was found to be wrong.
@@ -64,7 +64,7 @@ Source design (read in full before any code was written):
   Escape-to-close, all of which a real `<dialog>` gives for free with zero CSS changes.
 - **Bug found and fixed during testing (not in the original script.js's scope, but a correctness
   requirement of "port the behaviour faithfully"):** an initial React implementation keyed the
-  `showModal()` effect on `guideKey` alone, so re-clicking the *same* platform's trigger after
+  `showModal()` effect on `guideKey` alone, so re-clicking the _same_ platform's trigger after
   closing the dialog did nothing (state didn't change value, so the effect didn't re-fire). Fixed
   with an ever-incrementing `openToken` the effect is keyed on instead — see
   `apps/docs/components/landing/setup-dialog.tsx`.

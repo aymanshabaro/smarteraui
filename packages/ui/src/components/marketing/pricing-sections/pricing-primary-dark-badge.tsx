@@ -1,9 +1,9 @@
 "use client";
 
 import { CheckCircle } from "@properui/icons";
-import { Tab, TabList, TabPanel, Tabs } from "@/components/application/tabs/tabs";
-import { BadgeGroup } from "@/components/base/badges/badge-groups";
-import { Button } from "@/components/base/buttons/button";
+import { Tab, TabList, TabPanel, Tabs } from "../../application/tabs/tabs";
+import { BadgeGroup } from "../../base/badges/badge-groups";
+import { Button } from "../../base/buttons/button";
 
 interface Plan {
     name: string;

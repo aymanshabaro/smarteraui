@@ -1,4 +1,4 @@
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
 import { ScreenMockup } from "./mockups.a";
 
 export const FeaturesLargeScreenMockup01 = () => (

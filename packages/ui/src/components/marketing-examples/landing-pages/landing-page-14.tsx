@@ -1,11 +1,11 @@
-import { ContactIconsAndImage } from "@/components/marketing/contact-sections/contact-icons-and-image";
-import { ContentSectionSplitImage03 } from "@/components/marketing/content-rich-text-sections/content-section-split-image-03";
-import { FooterLarge15 } from "@/components/marketing/footers/footer-large-15";
-import { HeroGeometricShapes01 } from "@/components/marketing/hero-header-sections/hero-geometric-shapes-01";
-import { MetricsSplitImage01 } from "@/components/marketing/metrics-sections/metrics-split-image-01";
-import { NewsletterCardVertical } from "@/components/marketing/newsletter-cta-sections/newsletter-card-vertical";
-import { SocialProofFullWidth } from "@/components/marketing/social-proof-sections/social-proof-full-width";
-import { TestimonialAbstractImage } from "@/components/marketing/testimonial-sections/testimonial-abstract-image";
+import { ContactIconsAndImage } from "../../marketing/contact-sections/contact-icons-and-image";
+import { ContentSectionSplitImage03 } from "../../marketing/content-rich-text-sections/content-section-split-image-03";
+import { FooterLarge15 } from "../../marketing/footers/footer-large-15";
+import { HeroGeometricShapes01 } from "../../marketing/hero-header-sections/hero-geometric-shapes-01";
+import { MetricsSplitImage01 } from "../../marketing/metrics-sections/metrics-split-image-01";
+import { NewsletterCardVertical } from "../../marketing/newsletter-cta-sections/newsletter-card-vertical";
+import { SocialProofFullWidth } from "../../marketing/social-proof-sections/social-proof-full-width";
+import { TestimonialAbstractImage } from "../../marketing/testimonial-sections/testimonial-abstract-image";
 
 /** Agency landing page: a geometric-shape hero, client logos, a studio write-up, an image-collage quote, the studio metrics, the contact band and a newsletter card. */
 export const LandingPage14 = () => (

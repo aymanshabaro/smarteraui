@@ -2,20 +2,20 @@
 
 import { Radio as AriaRadio } from "react-aria-components";
 import { DownloadCloud01, DownloadCloud02, Mail01, Plus } from "@properui/icons";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Table, TableCard } from "@/components/application/table/table";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { CheckboxBase } from "@/components/base/checkbox/checkbox";
-import { InputBase } from "@/components/base/input/input";
-import { RadioButton, RadioGroup } from "@/components/base/radio-buttons/radio-buttons";
-import { NativeSelect } from "@/components/base/select/select-native";
-import { MastercardIcon, VisaIcon } from "@/components/foundations/payment-icons";
-import { cx } from "@/utils/cx";
-import { AVATARS, avatar } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { AVATARS, avatar } from "../../../utils/demo-assets";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Table, TableCard } from "../../application/table/table";
+import { Avatar } from "../../base/avatar/avatar";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { ButtonGroup, ButtonGroupItem } from "../../base/button-group/button-group";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { CheckboxBase } from "../../base/checkbox/checkbox";
+import { InputBase } from "../../base/input/input";
+import { RadioButton, RadioGroup } from "../../base/radio-buttons/radio-buttons";
+import { NativeSelect } from "../../base/select/select-native";
+import { MastercardIcon, VisaIcon } from "../../foundations/payment-icons";
 import { Divider, FieldLabel, PageContainer, SettingsHeaderNav, styles } from "./settings-shell";
 
 const person = avatar(0);

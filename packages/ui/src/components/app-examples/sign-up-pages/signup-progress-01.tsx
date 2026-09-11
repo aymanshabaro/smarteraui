@@ -1,7 +1,7 @@
 "use client";
 
-import { ProgressSteps } from "@/components/application/progress-steps/progress-steps";
-import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
+import { ProgressSteps } from "../../application/progress-steps/progress-steps";
+import { ProperLogoMinimal } from "../../foundations/logo/proper-logo-minimal";
 import { SetPasswordForm } from "./base-components/sign-up-form";
 
 /** Set password step whose progress is reduced to a row of connected dots at the page foot. */

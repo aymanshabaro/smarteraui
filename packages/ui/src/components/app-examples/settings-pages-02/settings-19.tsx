@@ -1,11 +1,11 @@
 "use client";
 
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Checkbox } from "@/components/base/checkbox/checkbox";
-import { DropdownIconSimple } from "@/components/base/dropdown/dropdown-icon-simple";
-import { RadioButton, RadioGroup } from "@/components/base/radio-buttons/radio-buttons";
-import { NativeSelect } from "@/components/base/select/select-native";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Tabs } from "../../application/tabs/tabs";
+import { Checkbox } from "../../base/checkbox/checkbox";
+import { DropdownIconSimple } from "../../base/dropdown/dropdown-icon-simple";
+import { RadioButton, RadioGroup } from "../../base/radio-buttons/radio-buttons";
+import { NativeSelect } from "../../base/select/select-native";
 import { Divider, FieldLabel, PageContainer, SettingsHeaderNav, settingsSectionOptions, styles } from "./settings-shell";
 
 const channels = [

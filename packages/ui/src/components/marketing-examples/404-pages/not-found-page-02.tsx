@@ -1,6 +1,6 @@
-import { NotFoundSplitImage03 } from "@/components/app-examples/404-sections/not-found-split-image-03";
-import { FooterLarge02 } from "@/components/marketing/footers/footer-large-02";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
+import { NotFoundSplitImage03 } from "../../app-examples/404-sections/not-found-split-image-03";
+import { FooterLarge02 } from "../../marketing/footers/footer-large-02";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
 
 /** A marketing 404 page: header navigation, a search-first error section beside a full-bleed image, and a rated brand footer. */
 export const NotFoundPage02 = () => (

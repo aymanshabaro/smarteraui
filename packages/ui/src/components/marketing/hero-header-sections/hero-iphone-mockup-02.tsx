@@ -1,8 +1,8 @@
-import { AppStoreButton, GooglePlayButton } from "@/components/base/buttons/app-store-buttons";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { BackgroundPattern } from "@/components/shared-assets/background-patterns";
-import { IPhoneMockup } from "@/components/shared-assets/mockups/iphone-mockup";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { AppStoreButton, GooglePlayButton } from "../../base/buttons/app-store-buttons";
+import { BackgroundPattern } from "../../shared-assets/background-patterns";
+import { IPhoneMockup } from "../../shared-assets/mockups/iphone-mockup";
+import { HeaderDropdownSimple } from "../header-navigations/header-dropdown-simple";
 
 /** Two-column hero with app-store badges and an iPhone frame overlapping a desktop screenshot. */
 export const HeroIphoneMockup02 = () => (

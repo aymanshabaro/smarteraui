@@ -41,36 +41,36 @@ import {
     Users01,
     Zap,
 } from "@properui/icons";
-import { Calendar } from "@/components/application/date-picker/calendar";
-import { FileUpload as FileUploadBase } from "@/components/application/file-upload/file-upload-base";
-import { Dialog } from "@/components/application/modals/modal";
-import { ModalBody, ModalFooter, ModalHeader, ModalPanel } from "@/components/application/modals/modal-parts";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { AvatarLabelGroup } from "@/components/base/avatar/avatar-label-group";
-import { AvatarProfilePhoto } from "@/components/base/avatar/avatar-profile-photo";
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { CloseButton } from "@/components/base/buttons/close-button";
-import { SocialButton } from "@/components/base/buttons/social-button";
-import { Checkbox } from "@/components/base/checkbox/checkbox";
-import { Input, InputBase } from "@/components/base/input/input";
-import { InputGroup } from "@/components/base/input/input-group";
-import { PaymentInput } from "@/components/base/input/input-payment";
-import { InputTags } from "@/components/base/input/input-tags";
-import { PinInput } from "@/components/base/input/pin-input";
-import { RadioButton, RadioGroup } from "@/components/base/radio-buttons/radio-buttons";
-import { Select } from "@/components/base/select/select";
-import { Slider } from "@/components/base/slider/slider";
-import { TextEditor as TextEditorField } from "@/components/base/text-editor/text-editor";
-import { TextArea } from "@/components/base/textarea/textarea";
-import { Toggle } from "@/components/base/toggle/toggle";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { FigmaIcon } from "@/components/foundations/integration-icons";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
-import { MastercardIcon, VisaIcon } from "@/components/foundations/payment-icons";
-import { cx } from "@/utils/cx";
-import { AVATARS, IMAGES, VIDEO_POSTER, avatar } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { AVATARS, IMAGES, VIDEO_POSTER, avatar } from "../../../utils/demo-assets";
+import { Avatar } from "../../base/avatar/avatar";
+import { AvatarLabelGroup } from "../../base/avatar/avatar-label-group";
+import { AvatarProfilePhoto } from "../../base/avatar/avatar-profile-photo";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { CloseButton } from "../../base/buttons/close-button";
+import { SocialButton } from "../../base/buttons/social-button";
+import { Checkbox } from "../../base/checkbox/checkbox";
+import { Input, InputBase } from "../../base/input/input";
+import { InputGroup } from "../../base/input/input-group";
+import { PaymentInput } from "../../base/input/input-payment";
+import { InputTags } from "../../base/input/input-tags";
+import { PinInput } from "../../base/input/pin-input";
+import { RadioButton, RadioGroup } from "../../base/radio-buttons/radio-buttons";
+import { Select } from "../../base/select/select";
+import { Slider } from "../../base/slider/slider";
+import { TextEditor as TextEditorField } from "../../base/text-editor/text-editor";
+import { TextArea } from "../../base/textarea/textarea";
+import { Toggle } from "../../base/toggle/toggle";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
+import { FigmaIcon } from "../../foundations/integration-icons";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
+import { MastercardIcon, VisaIcon } from "../../foundations/payment-icons";
+import { Calendar } from "../date-picker/calendar";
+import { FileUpload as FileUploadBase } from "../file-upload/file-upload-base";
+import { Dialog } from "./modal";
+import { ModalBody, ModalFooter, ModalHeader, ModalPanel } from "./modal-parts";
 
 /* -------------------------------------------------------------------------------------------------
  * Local helpers shared by the examples below.

@@ -1,7 +1,7 @@
 import type { FC, ReactNode, Ref } from "react";
 import { isValidElement } from "react";
-import { cx, sortCx } from "@/utils/cx";
-import { isReactComponent } from "@/utils/is-react-component";
+import { cx, sortCx } from "../../../utils/cx";
+import { isReactComponent } from "../../../utils/is-react-component";
 
 const iconsSizes = {
     sm: "*:data-icon:size-4 *:data-icon:stroke-[2.25px]",

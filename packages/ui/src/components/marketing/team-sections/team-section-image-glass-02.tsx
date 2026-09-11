@@ -1,8 +1,8 @@
 import { ArrowUpRight } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { Dribbble, LinkedIn, X } from "@/components/foundations/social-icons";
-import { sortCx } from "@/utils/cx";
-import { LOGOS, avatar } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { LOGOS, avatar } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { Dribbble, LinkedIn, X } from "../../foundations/social-icons";
 
 const styles = sortCx({
     /** The portrait tile: the photo fills it and the frosted panel is flush with its bottom edge. */

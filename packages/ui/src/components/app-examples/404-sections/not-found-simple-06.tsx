@@ -1,12 +1,12 @@
 "use client";
 
 import { ArrowLeft, ArrowRight, BookOpen01, Cube01, MessageChatCircle, SearchLg } from "@properui/icons";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { BackgroundPattern } from "@/components/shared-assets/background-patterns";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
+import { BackgroundPattern } from "../../shared-assets/background-patterns";
 
 /** The onward links, listed as separated rows below the actions. */
 const links = [

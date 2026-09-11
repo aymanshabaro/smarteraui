@@ -1,7 +1,7 @@
 "use client";
 
-import { ProgressBarCircle, ProgressBarHalfCircle } from "@/components/base/progress-indicators/progress-circles";
-import { ProgressBar } from "@/components/base/progress-indicators/progress-indicators";
+import { ProgressBarCircle, ProgressBarHalfCircle } from "./progress-circles";
+import { ProgressBar } from "./progress-indicators";
 
 export const ProgressIndicatorExample = () => <ProgressBar min={0} max={100} value={40} />;
 

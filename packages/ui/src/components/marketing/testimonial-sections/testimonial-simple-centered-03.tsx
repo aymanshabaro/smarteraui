@@ -3,10 +3,10 @@
 import { useState } from "react";
 import { Tab as AriaTab, TabList as AriaTabList, TabPanel as AriaTabPanel, Tabs as AriaTabs } from "react-aria-components";
 import { ArrowNarrowLeft, ArrowNarrowRight } from "@properui/icons";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { sortCx } from "@/utils/cx";
-import { AVATARS, LOGOS } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { AVATARS, LOGOS } from "../../../utils/demo-assets";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
 
 const styles = sortCx({
     /** Each logo doubles as the tab that selects its review. */

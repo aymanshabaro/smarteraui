@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import * as Toggle from "@/components/base/toggle/toggle.demo";
+import * as Toggle from "./toggle.demo";
 
 export default {
     title: "Base components/Toggles",

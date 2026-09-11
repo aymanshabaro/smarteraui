@@ -1,12 +1,12 @@
-import { Button } from "@/components/base/buttons/button";
-import { SocialButton } from "@/components/base/buttons/social-button";
-import { Checkbox } from "@/components/base/checkbox/checkbox";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
-import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
-import { sortCx } from "@/utils/cx";
-import { IMAGES } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { SocialButton } from "../../base/buttons/social-button";
+import { Checkbox } from "../../base/checkbox/checkbox";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
+import { ProperLogoMinimal } from "../../foundations/logo/proper-logo-minimal";
 
 // TODO(orchestrator): candidate for components/shared-assets/mockups — the bezelled desktop screen
 // frame is duplicated by `login-split-mockup-quote` and by the marketing hero screen mockups.

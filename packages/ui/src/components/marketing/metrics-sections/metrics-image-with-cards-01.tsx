@@ -1,5 +1,5 @@
-import { Badge } from "@/components/base/badges/badges";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Badge } from "../../base/badges/badges";
 
 const metrics = [
     { value: "400+", label: "Projects completed", description: "We've helped build over 400 projects with great companies." },

@@ -1,10 +1,10 @@
-import { CareersSimple03 } from "@/components/marketing/careers-sections/careers-simple-03";
-import { FooterLarge09 } from "@/components/marketing/footers/footer-large-09";
-import { Floating4ColSlimWithFooter } from "@/components/marketing/header-navigations/floating-4-col-slim-with-footer";
-import { HeaderCentered } from "@/components/marketing/header-sections/header-centered";
-import { MetricsMinimalCenteredText } from "@/components/marketing/metrics-sections/metrics-minimal-centered-text";
-import { MetricsSplitImage02 } from "@/components/marketing/metrics-sections/metrics-split-image-02";
-import { TeamSectionSimple04 } from "@/components/marketing/team-sections/team-section-simple-04";
+import { CareersSimple03 } from "../../marketing/careers-sections/careers-simple-03";
+import { FooterLarge09 } from "../../marketing/footers/footer-large-09";
+import { Floating4ColSlimWithFooter } from "../../marketing/header-navigations/floating-4-col-slim-with-footer";
+import { HeaderCentered } from "../../marketing/header-sections/header-centered";
+import { MetricsMinimalCenteredText } from "../../marketing/metrics-sections/metrics-minimal-centered-text";
+import { MetricsSplitImage02 } from "../../marketing/metrics-sections/metrics-split-image-02";
+import { TeamSectionSimple04 } from "../../marketing/team-sections/team-section-simple-04";
 
 /**
  * Agency team page: the studio introduced in the centre, the team on tinted cards, the

@@ -1,4 +1,4 @@
-import { CreditCard } from "@/components/shared-assets/credit-card/credit-card";
+import { CreditCard } from "./credit-card";
 
 export const CreditCardExample = () => (
     <div className="flex items-center justify-center">

@@ -1,14 +1,14 @@
 "use client";
 
 import { ArrowUpRight, Mail01, SearchLg } from "@properui/icons";
-import { PaginationPageDefault } from "@/components/application/pagination/pagination";
-import { Tab, TabList, TabPanel, Tabs } from "@/components/application/tabs/tabs";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
-import { Select } from "@/components/base/select/select";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { IMAGES, avatar } from "@/utils/demo-assets";
+import { IMAGES, avatar } from "../../../utils/demo-assets";
+import { PaginationPageDefault } from "../../application/pagination/pagination";
+import { Tab, TabList, TabPanel, Tabs } from "../../application/tabs/tabs";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
+import { Select } from "../../base/select/select";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
 
 const slugify = (label: string) => label.toLowerCase().replace(/\s+/g, "-");
 const authorHref = (username: string) => `/blog/authors/${username.replace("@", "")}`;

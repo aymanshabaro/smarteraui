@@ -1,8 +1,8 @@
-import { BlogHeaderSimple01 } from "@/components/marketing/blog-sections/blog-header-simple-01";
-import { CtaAbstractImages } from "@/components/marketing/cta-sections/cta-abstract-images";
-import { FooterLarge16 } from "@/components/marketing/footers/footer-large-16";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { BlogHeaderSimple01 } from "../../marketing/blog-sections/blog-header-simple-01";
+import { CtaAbstractImages } from "../../marketing/cta-sections/cta-abstract-images";
+import { FooterLarge16 } from "../../marketing/footers/footer-large-16";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
 
 const styles = sortCx({
     // The article grid already ends the run of padding, so the CTA only keeps its bottom spacing.

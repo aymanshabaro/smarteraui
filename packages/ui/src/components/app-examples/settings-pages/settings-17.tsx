@@ -1,9 +1,9 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
-import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { SidebarNavigationSimple } from "../../application/app-navigation/sidebar-navigation/sidebar-simple";
+import { ButtonGroup, ButtonGroupItem } from "../../base/button-group/button-group";
 import {
     SettingsBlock,
     SettingsMain,

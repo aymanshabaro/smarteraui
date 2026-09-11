@@ -8,7 +8,7 @@ import {
     Heading as AriaHeading,
 } from "react-aria-components";
 import { MinusCircle, PlusCircle } from "@properui/icons";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
 
 const styles = sortCx({
     link: "rounded-xs underline underline-offset-4 outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-2",

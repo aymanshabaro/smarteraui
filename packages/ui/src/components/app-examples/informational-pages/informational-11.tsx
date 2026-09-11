@@ -23,19 +23,19 @@ import {
     Settings01,
     Stars02,
 } from "@properui/icons";
-import { FeaturedCardFreeTrialCTA } from "@/components/application/app-navigation/base-components/featured-cards";
-import type { NavItemType } from "@/components/application/app-navigation/config";
-import { SidebarNavigationSimple } from "@/components/application/app-navigation/sidebar-navigation/sidebar-simple";
-import { MessageComposer } from "@/components/application/messaging/message-composer";
-import { Message, MessageList } from "@/components/application/messaging/messaging";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { AvatarLabelGroup } from "@/components/base/avatar/avatar-label-group";
-import { Badge, BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { DropdownIconSimple } from "@/components/base/dropdown/dropdown-icon-simple";
-import { Input } from "@/components/base/input/input";
-import { cx } from "@/utils/cx";
-import { IMAGES, avatar } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { IMAGES, avatar } from "../../../utils/demo-assets";
+import { FeaturedCardFreeTrialCTA } from "../../application/app-navigation/base-components/featured-cards";
+import type { NavItemType } from "../../application/app-navigation/config";
+import { SidebarNavigationSimple } from "../../application/app-navigation/sidebar-navigation/sidebar-simple";
+import { MessageComposer } from "../../application/messaging/message-composer";
+import { Message, MessageList } from "../../application/messaging/messaging";
+import { Avatar } from "../../base/avatar/avatar";
+import { AvatarLabelGroup } from "../../base/avatar/avatar-label-group";
+import { Badge, BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { DropdownIconSimple } from "../../base/dropdown/dropdown-icon-simple";
+import { Input } from "../../base/input/input";
 
 const noop = () => {};
 

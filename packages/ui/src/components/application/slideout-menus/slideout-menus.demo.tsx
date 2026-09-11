@@ -26,25 +26,25 @@ import {
     UserPlus01,
     VideoRecorder,
 } from "@properui/icons";
-import { FileUpload } from "@/components/application/file-upload/file-upload-base";
-import { Notification } from "@/components/application/notifications/notifications";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { AvatarLabelGroup } from "@/components/base/avatar/avatar-label-group";
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { Checkbox } from "@/components/base/checkbox/checkbox";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { Input } from "@/components/base/input/input";
-import { DemoNativeSelect } from "@/components/base/input/input-native-select";
-import { PaymentInput } from "@/components/base/input/input-payment";
-import { RadioButton, RadioGroup } from "@/components/base/radio-buttons/radio-buttons";
-import { TextArea } from "@/components/base/textarea/textarea";
-import { Toggle } from "@/components/base/toggle/toggle";
-import { Dot } from "@/components/foundations/dot-icon";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { MastercardIcon, VisaIcon } from "@/components/foundations/payment-icons";
-import { AVATARS, IMAGES, LOGOS, avatar } from "@/utils/demo-assets";
+import { AVATARS, IMAGES, LOGOS, avatar } from "../../../utils/demo-assets";
+import { Avatar } from "../../base/avatar/avatar";
+import { AvatarLabelGroup } from "../../base/avatar/avatar-label-group";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { Checkbox } from "../../base/checkbox/checkbox";
+import { Dropdown } from "../../base/dropdown/dropdown";
+import { Input } from "../../base/input/input";
+import { DemoNativeSelect } from "../../base/input/input-native-select";
+import { PaymentInput } from "../../base/input/input-payment";
+import { RadioButton, RadioGroup } from "../../base/radio-buttons/radio-buttons";
+import { TextArea } from "../../base/textarea/textarea";
+import { Toggle } from "../../base/toggle/toggle";
+import { Dot } from "../../foundations/dot-icon";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
+import { MastercardIcon, VisaIcon } from "../../foundations/payment-icons";
+import { FileUpload } from "../file-upload/file-upload-base";
+import { Notification } from "../notifications/notifications";
 import { SlideoutMenu } from "./slideout-menu";
 
 /**

@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
-import { AppStoreButton, GooglePlayButton } from "@/components/base/buttons/app-store-buttons-outline";
-import { Button } from "@/components/base/buttons/button";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { AppStoreButton, GooglePlayButton } from "../../base/buttons/app-store-buttons-outline";
+import { Button } from "../../base/buttons/button";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
 
 const styles = sortCx({
     columnTitle: "text-quaternary_on-brand text-sm font-semibold",

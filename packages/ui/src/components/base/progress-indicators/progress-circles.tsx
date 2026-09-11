@@ -1,6 +1,6 @@
 "use client";
 
-import { cx as clx, sortCx } from "@/utils/cx";
+import { cx as clx, sortCx } from "../../../utils/cx";
 
 export interface ProgressBarProps {
     /** The current value of the progress bar. */

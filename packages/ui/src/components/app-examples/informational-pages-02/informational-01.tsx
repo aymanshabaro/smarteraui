@@ -1,21 +1,21 @@
 "use client";
 
 import { Bell01, Download01, Edit01, FilterLines, Plus, SearchLg, Settings01, Zap } from "@properui/icons";
-import { NavButton } from "@/components/application/app-navigation/base-components/nav-button";
-import { HeaderNavigationBase } from "@/components/application/app-navigation/header-navigation";
-import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
-import { Table, TableCard } from "@/components/application/table/table";
-import { TablePaginationMinimal, TablePaginationNumbered } from "@/components/application/table/table-pagination";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { DropdownAvatar } from "@/components/base/dropdown/dropdown-avatar";
-import { DropdownIconSimple } from "@/components/base/dropdown/dropdown-icon-simple";
-import { Input } from "@/components/base/input/input";
-import type { DemoAvatar } from "@/utils/demo-assets";
-import { avatar } from "@/utils/demo-assets";
+import type { DemoAvatar } from "../../../utils/demo-assets";
+import { avatar } from "../../../utils/demo-assets";
+import { NavButton } from "../../application/app-navigation/base-components/nav-button";
+import { HeaderNavigationBase } from "../../application/app-navigation/header-navigation";
+import { DateRangePicker } from "../../application/date-picker/date-range-picker";
+import { Table, TableCard } from "../../application/table/table";
+import { TablePaginationMinimal, TablePaginationNumbered } from "../../application/table/table-pagination";
+import { Tabs } from "../../application/tabs/tabs";
+import { Avatar } from "../../base/avatar/avatar";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { DropdownAvatar } from "../../base/dropdown/dropdown-avatar";
+import { DropdownIconSimple } from "../../base/dropdown/dropdown-icon-simple";
+import { Input } from "../../base/input/input";
 
 const navItems = [
     { label: "Home", href: "/" },

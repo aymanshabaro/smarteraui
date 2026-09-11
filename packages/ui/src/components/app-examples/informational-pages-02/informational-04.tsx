@@ -1,18 +1,18 @@
 "use client";
 
 import { ArrowLeft, CheckCircle, Download01, HomeLine, RefreshCcw01, SearchLg, XCircle } from "@properui/icons";
-import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
-import { PaginationPageDefault } from "@/components/application/pagination/pagination";
-import { Table, TableCard } from "@/components/application/table/table";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { BadgeWithIcon } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
-import { Select } from "@/components/base/select/select";
-import type { SelectItemType } from "@/components/base/select/select-shared";
-import type { DemoAvatar } from "@/utils/demo-assets";
-import { avatar } from "@/utils/demo-assets";
+import type { DemoAvatar } from "../../../utils/demo-assets";
+import { avatar } from "../../../utils/demo-assets";
+import { Breadcrumbs } from "../../application/breadcrumbs/breadcrumbs";
+import { PaginationPageDefault } from "../../application/pagination/pagination";
+import { Table, TableCard } from "../../application/table/table";
+import { Tabs } from "../../application/tabs/tabs";
+import { Avatar } from "../../base/avatar/avatar";
+import { BadgeWithIcon } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
+import { Select } from "../../base/select/select";
+import type { SelectItemType } from "../../base/select/select-shared";
 import { AppHeader } from "./shell.a";
 
 const sectionTabs = [

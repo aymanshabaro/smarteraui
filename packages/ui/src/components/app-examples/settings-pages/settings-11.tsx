@@ -2,13 +2,13 @@
 
 import { RadioGroup as AriaRadioGroup } from "react-aria-components";
 import { DownloadCloud02, Zap, ZapFast } from "@properui/icons";
-import { FeaturedCardEventCTA } from "@/components/application/app-navigation/base-components/featured-cards";
-import { SidebarNavigationDualTier } from "@/components/application/app-navigation/sidebar-navigation/sidebar-dual-tier";
-import { SectionHeader } from "@/components/application/section-headers/section-headers";
-import { Table } from "@/components/application/table/table";
-import { Badge, BadgeWithDot } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { AVATARS } from "@/utils/demo-assets";
+import { AVATARS } from "../../../utils/demo-assets";
+import { FeaturedCardEventCTA } from "../../application/app-navigation/base-components/featured-cards";
+import { SidebarNavigationDualTier } from "../../application/app-navigation/sidebar-navigation/sidebar-dual-tier";
+import { SectionHeader } from "../../application/section-headers/section-headers";
+import { Table } from "../../application/table/table";
+import { Badge, BadgeWithDot } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
 import {
     PlanCardRadio,
     SettingsBlock,

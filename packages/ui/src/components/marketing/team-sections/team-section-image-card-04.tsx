@@ -1,10 +1,10 @@
 "use client";
 
 import { ArrowNext, ArrowPrevious } from "@properui/icons";
-import { Carousel } from "@/components/application/carousel/carousel-base";
-import { Button } from "@/components/base/buttons/button";
-import { sortCx } from "@/utils/cx";
-import { LOGOS, avatar } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { LOGOS, avatar } from "../../../utils/demo-assets";
+import { Carousel } from "../../application/carousel/carousel-base";
+import { Button } from "../../base/buttons/button";
 
 const styles = sortCx({
     /** The round previous/next controls under the carousel. */

@@ -1,7 +1,7 @@
 "use client";
 
 import { BookOpen01 } from "@properui/icons";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../../utils/cx";
 import {
     blogCategories,
     blogPosts,

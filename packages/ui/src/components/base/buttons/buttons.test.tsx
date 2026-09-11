@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { axe } from "vitest-axe";
-import { Button } from "@/components/base/buttons/button";
-import * as Demos from "@/components/base/buttons/buttons.demo";
+import { Button } from "./button";
+import * as Demos from "./buttons.demo";
 
 describe("Buttons", () => {
     for (const [name, Demo] of Object.entries(Demos)) {

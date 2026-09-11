@@ -7,8 +7,8 @@ import {
     type ToggleButtonGroupProps as AriaToggleButtonGroupProps,
     type ToggleButtonProps as AriaToggleButtonProps,
 } from "react-aria-components";
-import { cx, sortCx } from "@/utils/cx";
-import { isReactComponent } from "@/utils/is-react-component";
+import { cx, sortCx } from "../../../utils/cx";
+import { isReactComponent } from "../../../utils/is-react-component";
 
 export const styles = sortCx({
     common: {

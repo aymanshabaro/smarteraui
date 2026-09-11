@@ -1,11 +1,11 @@
 import { Check } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { SocialButton } from "@/components/base/buttons/social-button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { BackgroundPattern } from "@/components/shared-assets/background-patterns";
+import { Button } from "../../base/buttons/button";
+import { SocialButton } from "../../base/buttons/social-button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { ProperLogoMinimal } from "../../foundations/logo/proper-logo-minimal";
+import { BackgroundPattern } from "../../shared-assets/background-patterns";
+import { HeaderDropdownSimple } from "../header-navigations/header-dropdown-simple";
 
 const benefits = ["Share inboxes with your team", "Deliver instant answers and embed answers", "Solve a problem or close a sale in real-time with chat"];
 

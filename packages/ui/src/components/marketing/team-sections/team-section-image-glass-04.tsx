@@ -1,11 +1,11 @@
 "use client";
 
 import { ArrowNext, ArrowPrevious, ArrowUpRight } from "@properui/icons";
-import { Carousel } from "@/components/application/carousel/carousel-base";
-import { Button } from "@/components/base/buttons/button";
-import { Dribbble, LinkedIn, X } from "@/components/foundations/social-icons";
-import { sortCx } from "@/utils/cx";
-import { LOGOS, avatar } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { LOGOS, avatar } from "../../../utils/demo-assets";
+import { Carousel } from "../../application/carousel/carousel-base";
+import { Button } from "../../base/buttons/button";
+import { Dribbble, LinkedIn, X } from "../../foundations/social-icons";
 
 const styles = sortCx({
     /** The portrait slide: the photo fills it and the frosted panel is flush with its bottom edge. */

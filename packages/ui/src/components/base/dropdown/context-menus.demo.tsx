@@ -1,5 +1,5 @@
-import { DropdownContextMenuAdvanced } from "@/components/base/dropdown/dropdown-context-menu-advanced";
-import { DropdownContextMenuSimple } from "@/components/base/dropdown/dropdown-context-menu-simple";
+import { DropdownContextMenuAdvanced } from "./dropdown-context-menu-advanced";
+import { DropdownContextMenuSimple } from "./dropdown-context-menu-simple";
 
 export const ContextMenuExample = () => <DropdownContextMenuSimple />;
 

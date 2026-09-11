@@ -1,13 +1,13 @@
 "use client";
 
 import { ArrowLeft, Flag05, Key01, Mail01, Passcode, Stars02, User01 } from "@properui/icons";
-import { PaginationDot } from "@/components/application/pagination/pagination-dot";
-import { type ProgressStepItem, ProgressSteps } from "@/components/application/progress-steps/progress-steps";
-import { Button } from "@/components/base/buttons/button";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
+import { PaginationDot } from "../../application/pagination/pagination-dot";
+import { type ProgressStepItem, ProgressSteps } from "../../application/progress-steps/progress-steps";
+import { Button } from "../../base/buttons/button";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { FeaturedIcon } from "../../foundations/featured-icon/featured-icon";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
 
 /** The onboarding checklist shown beside the reset form; the password step is the one in progress. */
 const steps: ProgressStepItem[] = [

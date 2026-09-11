@@ -1,9 +1,9 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "@properui/icons";
-import { Carousel, useCarousel } from "@/components/application/carousel/carousel-base";
-import { PaginationDot } from "@/components/application/pagination/pagination-dot";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import { Carousel, useCarousel } from "../../application/carousel/carousel-base";
+import { PaginationDot } from "../../application/pagination/pagination-dot";
 import { SignUpFormColumn } from "./base-components/form-column";
 import { ScreenMockup } from "./base-components/screen-mockup";
 

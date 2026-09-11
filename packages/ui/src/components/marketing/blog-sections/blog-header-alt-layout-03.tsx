@@ -1,13 +1,13 @@
 "use client";
 
 import { ArrowDown, ArrowUpRight, SearchLg } from "@properui/icons";
-import { Tab, TabList, TabPanel, Tabs } from "@/components/application/tabs/tabs";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { BadgeGroup } from "@/components/base/badges/badge-groups";
-import { Badge } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
-import { IMAGES, avatar } from "@/utils/demo-assets";
+import { IMAGES, avatar } from "../../../utils/demo-assets";
+import { Tab, TabList, TabPanel, Tabs } from "../../application/tabs/tabs";
+import { Avatar } from "../../base/avatar/avatar";
+import { BadgeGroup } from "../../base/badges/badge-groups";
+import { Badge } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
 
 const slugify = (label: string) => label.toLowerCase().replace(/\s+/g, "-");
 const authorHref = (username: string) => `/blog/authors/${username.replace("@", "")}`;

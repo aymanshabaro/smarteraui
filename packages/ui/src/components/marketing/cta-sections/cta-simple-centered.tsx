@@ -1,4 +1,4 @@
-import { Button } from "@/components/base/buttons/button";
+import { Button } from "../../base/buttons/button";
 
 /** A centered headline, supporting copy and a pair of actions on the page background. */
 export const CtaSimpleCentered = () => (

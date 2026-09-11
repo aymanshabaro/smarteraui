@@ -1,6 +1,6 @@
 "use client";
 
-import { ImagePicker as ImagePickerRoot } from "@/components/application/image-picker/image-picker";
+import { ImagePicker as ImagePickerRoot } from "./image-picker";
 
 /** The card shown in both example rows: an empty picker ready to accept an image. */
 const ImagePickerCard = () => (

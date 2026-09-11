@@ -3,12 +3,12 @@
 import type { FC, FormEvent } from "react";
 import { Button as AriaButton } from "react-aria-components";
 import { ChevronDown, Send01 } from "@properui/icons";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { InputBase } from "@/components/base/input/input";
-import { TextAreaBase } from "@/components/base/textarea/textarea";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { InputBase } from "../../base/input/input";
+import { TextAreaBase } from "../../base/textarea/textarea";
 
 /**
  * Shape of the composer:

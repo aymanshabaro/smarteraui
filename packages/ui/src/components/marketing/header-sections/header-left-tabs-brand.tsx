@@ -1,6 +1,6 @@
 "use client";
 
-import { Tab, TabList, TabPanel, Tabs } from "@/components/application/tabs/tabs";
+import { Tab, TabList, TabPanel, Tabs } from "../../application/tabs/tabs";
 
 /**
  * The brand-background twin of `HeaderLeftTabs`. The tab list drops its own surface so

@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import * as PieCharts from "@/components/application/charts/pie-charts.demo";
+import * as PieCharts from "./pie-charts.demo";
 
 export default {
     title: "Application components/Charts",

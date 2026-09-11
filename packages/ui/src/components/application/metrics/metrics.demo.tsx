@@ -2,19 +2,9 @@
 
 import type { ReactNode } from "react";
 import { Settings01 } from "@properui/icons";
-import {
-    MetricChart01,
-    MetricChart02,
-    MetricChart03,
-    MetricChart04,
-    MetricIcon01,
-    MetricIcon02,
-    MetricIcon03,
-    MetricIcon04,
-    MetricSimple,
-} from "@/components/application/metrics/metrics";
-import { Button } from "@/components/base/buttons/button";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
+import { Button } from "../../base/buttons/button";
+import { Dropdown } from "../../base/dropdown/dropdown";
+import { MetricChart01, MetricChart02, MetricChart03, MetricChart04, MetricIcon01, MetricIcon02, MetricIcon03, MetricIcon04, MetricSimple } from "./metrics";
 
 /** Every preview centers a single card in a `max-w-sm` column. */
 const DemoFrame = ({ children }: { children: ReactNode }) => <div className="w-full max-w-sm">{children}</div>;

@@ -1,17 +1,17 @@
-import { DropdownAccountBreadcrumb } from "@/components/base/dropdown/dropdown-account-breadcrumb";
-import { DropdownAccountButton } from "@/components/base/dropdown/dropdown-account-button";
-import { DropdownAccountCardMD } from "@/components/base/dropdown/dropdown-account-card-md";
-import { DropdownAccountCardSM } from "@/components/base/dropdown/dropdown-account-card-sm";
-import { DropdownAccountCardXS } from "@/components/base/dropdown/dropdown-account-card-xs";
-import { DropdownAvatar } from "@/components/base/dropdown/dropdown-avatar";
-import { DropdownButtonAdvanced } from "@/components/base/dropdown/dropdown-button-advanced";
-import { DropdownButtonLink } from "@/components/base/dropdown/dropdown-button-link";
-import { DropdownButtonSimple } from "@/components/base/dropdown/dropdown-button-simple";
-import { DropdownIconAdvanced } from "@/components/base/dropdown/dropdown-icon-advanced";
-import { DropdownIconSimple } from "@/components/base/dropdown/dropdown-icon-simple";
-import { DropdownIntegration } from "@/components/base/dropdown/dropdown-integration";
-import { DropdownSearchAdvanced } from "@/components/base/dropdown/dropdown-search-advanced";
-import { DropdownSearchSimple } from "@/components/base/dropdown/dropdown-search-simple";
+import { DropdownAccountBreadcrumb } from "./dropdown-account-breadcrumb";
+import { DropdownAccountButton } from "./dropdown-account-button";
+import { DropdownAccountCardMD } from "./dropdown-account-card-md";
+import { DropdownAccountCardSM } from "./dropdown-account-card-sm";
+import { DropdownAccountCardXS } from "./dropdown-account-card-xs";
+import { DropdownAvatar } from "./dropdown-avatar";
+import { DropdownButtonAdvanced } from "./dropdown-button-advanced";
+import { DropdownButtonLink } from "./dropdown-button-link";
+import { DropdownButtonSimple } from "./dropdown-button-simple";
+import { DropdownIconAdvanced } from "./dropdown-icon-advanced";
+import { DropdownIconSimple } from "./dropdown-icon-simple";
+import { DropdownIntegration } from "./dropdown-integration";
+import { DropdownSearchAdvanced } from "./dropdown-search-advanced";
+import { DropdownSearchSimple } from "./dropdown-search-simple";
 
 export const DropdownExample = () => <DropdownButtonSimple />;
 

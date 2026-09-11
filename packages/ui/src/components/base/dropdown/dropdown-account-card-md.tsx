@@ -4,10 +4,10 @@ import { useState } from "react";
 import type { Selection as AriaSelection } from "react-aria-components";
 import { Button as AriaButton, SubmenuTrigger as AriaSubmenuTrigger } from "react-aria-components";
 import { ChevronSelectorVertical, HelpCircle, LogOut01, Moon01, Plus, Settings01, User01 } from "@properui/icons";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { cx } from "@/utils/cx";
-import { LOGOS, avatar } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { LOGOS, avatar } from "../../../utils/demo-assets";
 import { AvatarLabelGroup } from "../avatar/avatar-label-group";
+import { Dropdown } from "./dropdown";
 
 const account = avatar(0);
 

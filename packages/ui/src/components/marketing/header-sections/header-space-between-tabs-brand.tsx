@@ -1,6 +1,6 @@
 "use client";
 
-import { Tabs } from "@/components/application/tabs/tabs";
+import { Tabs } from "../../application/tabs/tabs";
 
 const billingPeriods = [
     { id: "monthly", label: "Monthly billing" },

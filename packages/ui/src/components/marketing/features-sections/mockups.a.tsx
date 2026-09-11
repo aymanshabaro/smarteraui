@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../utils/cx";
 
 /**
  * TODO(orchestrator): candidate for `components/shared-assets/mockups/screen-mockup.tsx`.

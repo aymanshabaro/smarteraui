@@ -1,15 +1,15 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "@properui/icons";
-import { Carousel, useCarousel } from "@/components/application/carousel/carousel-base";
-import { PaginationDot } from "@/components/application/pagination/pagination-dot";
-import { Button } from "@/components/base/buttons/button";
-import { SocialButton } from "@/components/base/buttons/social-button";
-import { Checkbox } from "@/components/base/checkbox/checkbox";
-import { Form } from "@/components/base/form/form";
-import { Input } from "@/components/base/input/input";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
-import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
+import { Carousel, useCarousel } from "../../application/carousel/carousel-base";
+import { PaginationDot } from "../../application/pagination/pagination-dot";
+import { Button } from "../../base/buttons/button";
+import { SocialButton } from "../../base/buttons/social-button";
+import { Checkbox } from "../../base/checkbox/checkbox";
+import { Form } from "../../base/form/form";
+import { Input } from "../../base/input/input";
+import { ProperLogo } from "../../foundations/logo/proper-logo";
+import { ProperLogoMinimal } from "../../foundations/logo/proper-logo-minimal";
 
 const months = ["Jan", "Mar", "May", "Jul", "Sep", "Nov", "Dec"];
 

@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { ArrowUpRight, Clock, MarkerPin01 } from "@properui/icons";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { Select } from "@/components/base/select/select";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { Select } from "../../base/select/select";
 
 const styles = sortCx({
     card: "bg-primary ring-secondary outline-focus-ring group flex flex-col rounded-2xl p-6 ring-1 ring-inset focus-visible:outline-2 focus-visible:outline-offset-2 md:pb-7",

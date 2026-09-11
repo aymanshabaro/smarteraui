@@ -1,11 +1,11 @@
-import { CareersSimple03 } from "@/components/marketing/careers-sections/careers-simple-03";
-import { CtaAbstractImages } from "@/components/marketing/cta-sections/cta-abstract-images";
-import { FooterLarge15 } from "@/components/marketing/footers/footer-large-15";
-import { FloatingSimpleWithFooter } from "@/components/marketing/header-navigations/floating-simple-with-footer";
-import { HeaderCentered } from "@/components/marketing/header-sections/header-centered";
-import { NewsletterSimpleCentered } from "@/components/marketing/newsletter-cta-sections/newsletter-simple-centered";
-import { TeamSectionSimple01 } from "@/components/marketing/team-sections/team-section-simple-01";
-import { TeamSectionSimple03 } from "@/components/marketing/team-sections/team-section-simple-03";
+import { CareersSimple03 } from "../../marketing/careers-sections/careers-simple-03";
+import { CtaAbstractImages } from "../../marketing/cta-sections/cta-abstract-images";
+import { FooterLarge15 } from "../../marketing/footers/footer-large-15";
+import { FloatingSimpleWithFooter } from "../../marketing/header-navigations/floating-simple-with-footer";
+import { HeaderCentered } from "../../marketing/header-sections/header-centered";
+import { NewsletterSimpleCentered } from "../../marketing/newsletter-cta-sections/newsletter-simple-centered";
+import { TeamSectionSimple01 } from "../../marketing/team-sections/team-section-simple-01";
+import { TeamSectionSimple03 } from "../../marketing/team-sections/team-section-simple-03";
 
 /**
  * Team directory under a floating header: the leadership grid of circular portraits, a second

@@ -2,15 +2,15 @@
 
 import { useState } from "react";
 import { DownloadCloud02, FilterLines, HomeLine, SearchLg } from "@properui/icons";
-import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
-import { Breadcrumbs } from "@/components/application/breadcrumbs/breadcrumbs";
-import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
-import { MetricChart01 } from "@/components/application/metrics/metrics";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { Input } from "@/components/base/input/input";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { SidebarNavigationSlim } from "../../application/app-navigation/sidebar-navigation/sidebar-slim";
+import { Breadcrumbs } from "../../application/breadcrumbs/breadcrumbs";
+import { DateRangePicker } from "../../application/date-picker/date-range-picker";
+import { MetricChart01 } from "../../application/metrics/metrics";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
+import { Dropdown } from "../../base/dropdown/dropdown";
+import { Input } from "../../base/input/input";
 import {
     RangeTabs,
     TrendAreaChart,

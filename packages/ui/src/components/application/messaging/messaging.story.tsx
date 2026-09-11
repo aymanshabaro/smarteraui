@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import * as Messaging from "@/components/application/messaging/messaging.demo";
+import * as Messaging from "./messaging.demo";
 
 export default {
     title: "Application components/Messaging",

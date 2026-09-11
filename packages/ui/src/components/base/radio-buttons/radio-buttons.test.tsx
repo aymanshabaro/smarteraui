@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { axe } from "vitest-axe";
-import { RadioButton, RadioGroup } from "@/components/base/radio-buttons/radio-buttons";
+import { RadioButton, RadioGroup } from "./radio-buttons";
 import * as Demos from "./radio-buttons.demo";
 
 describe("Radio buttons", () => {

@@ -1,6 +1,6 @@
 "use client";
 
-import { Tab, TabList, TabPanel, Tabs } from "@/components/application/tabs/tabs";
+import { Tab, TabList, TabPanel, Tabs } from "../../application/tabs/tabs";
 
 /**
  * The centered pricing header on a solid brand section, with the on-brand text

@@ -21,11 +21,11 @@ import {
     useTableOptions as AriaUseTableOptions,
 } from "react-aria-components";
 import { ArrowDown, ChevronSelectorVertical, Copy01, Edit01, HelpCircle, Trash01 } from "@properui/icons";
-import { Badge } from "@/components/base/badges/badges";
-import { Checkbox } from "@/components/base/checkbox/checkbox";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { Tooltip, TooltipTrigger } from "@/components/base/tooltip/tooltip";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { Badge } from "../../base/badges/badges";
+import { Checkbox } from "../../base/checkbox/checkbox";
+import { Dropdown } from "../../base/dropdown/dropdown";
+import { Tooltip, TooltipTrigger } from "../../base/tooltip/tooltip";
 
 export const TableRowActionsDropdown = () => (
     <Dropdown.Root>

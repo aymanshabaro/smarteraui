@@ -1,11 +1,11 @@
-import { BannerSlimDefaultFullWidth } from "@/components/marketing/banners/banner-slim-default-full-width";
-import { CtaAbstractImages } from "@/components/marketing/cta-sections/cta-abstract-images";
-import { CtaCardHorizontal } from "@/components/marketing/cta-sections/cta-card-horizontal";
-import { FaqAccordion03 } from "@/components/marketing/faq-sections/faq-accordion-03";
-import { FooterLarge05 } from "@/components/marketing/footers/footer-large-05";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { PricingPrimaryCardSimple } from "@/components/marketing/pricing-sections/pricing-primary-card-simple";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { BannerSlimDefaultFullWidth } from "../../marketing/banners/banner-slim-default-full-width";
+import { CtaAbstractImages } from "../../marketing/cta-sections/cta-abstract-images";
+import { CtaCardHorizontal } from "../../marketing/cta-sections/cta-card-horizontal";
+import { FaqAccordion03 } from "../../marketing/faq-sections/faq-accordion-03";
+import { FooterLarge05 } from "../../marketing/footers/footer-large-05";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { PricingPrimaryCardSimple } from "../../marketing/pricing-sections/pricing-primary-card-simple";
 
 const styles = sortCx({
     // The page alternates surfaces, so this section sits on the secondary background.

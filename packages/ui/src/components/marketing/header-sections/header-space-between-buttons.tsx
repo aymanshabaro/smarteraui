@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/base/buttons/button";
+import { Button } from "../../base/buttons/button";
 
 /**
  * Pricing page header: the eyebrow sits above a headline/paragraph pair that splits

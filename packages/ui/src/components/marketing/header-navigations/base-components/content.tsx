@@ -24,8 +24,8 @@ import {
     Users01,
     Zap,
 } from "@properui/icons";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../../utils/demo-assets";
+import { BadgeWithDot } from "../../../base/badges/badges";
 import type { NavMenuLinkType } from "./nav-menu";
 
 const hiringBadge = (

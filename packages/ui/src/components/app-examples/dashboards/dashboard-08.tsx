@@ -2,17 +2,17 @@
 
 import { useState } from "react";
 import { ArrowDown, ArrowUp, DownloadCloud02, Edit01, FilterLines, SearchLg, Sliders02, Trash01 } from "@properui/icons";
-import { SidebarNavigationSectionDividers } from "@/components/application/app-navigation/sidebar-navigation/sidebar-section-dividers";
-import { Table, TableCard } from "@/components/application/table/table";
-import { TablePaginationMinimal } from "@/components/application/table/table-pagination";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Badge, BadgeWithDot, BadgeWithIcon } from "@/components/base/badges/badges";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { Input } from "@/components/base/input/input";
-import { ProgressBarBase } from "@/components/base/progress-indicators/progress-indicators";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { SidebarNavigationSectionDividers } from "../../application/app-navigation/sidebar-navigation/sidebar-section-dividers";
+import { Table, TableCard } from "../../application/table/table";
+import { TablePaginationMinimal } from "../../application/table/table-pagination";
+import { Avatar } from "../../base/avatar/avatar";
+import { Badge, BadgeWithDot, BadgeWithIcon } from "../../base/badges/badges";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { Dropdown } from "../../base/dropdown/dropdown";
+import { Input } from "../../base/input/input";
+import { ProgressBarBase } from "../../base/progress-indicators/progress-indicators";
 import { ChartCard, DonutChart, StackedBarChart, navItemsWithFolders, styles, vendors } from "./dashboards-shared";
 
 const breakdown = [

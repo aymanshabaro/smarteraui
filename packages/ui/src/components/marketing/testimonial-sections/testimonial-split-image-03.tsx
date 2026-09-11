@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import { ArrowNext, ArrowPrevious } from "@properui/icons";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { RatingStars } from "@/components/foundations/rating/rating-stars";
-import { sortCx } from "@/utils/cx";
-import { AVATARS, IMAGES, LOGOS } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { AVATARS, IMAGES, LOGOS } from "../../../utils/demo-assets";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
+import { RatingStars } from "../../foundations/rating/rating-stars";
 
 const styles = sortCx({
     /** The round previous/next controls under the quote. */

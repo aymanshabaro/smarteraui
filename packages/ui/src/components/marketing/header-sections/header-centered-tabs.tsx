@@ -1,6 +1,6 @@
 "use client";
 
-import { Tab, TabList, TabPanel, Tabs } from "@/components/application/tabs/tabs";
+import { Tab, TabList, TabPanel, Tabs } from "../../application/tabs/tabs";
 
 /**
  * Centered pricing header whose billing-period switch is a bordered React Aria tab

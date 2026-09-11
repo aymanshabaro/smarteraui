@@ -1,5 +1,5 @@
 import { Clock, MarkerPin01 } from "@properui/icons";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
 
 const styles = sortCx({
     // `-mt-px` collapses the row border into the gap so the rules stay 1px apart.

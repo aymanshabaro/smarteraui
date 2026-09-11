@@ -8,10 +8,10 @@ import {
     Heading as AriaHeading,
 } from "react-aria-components";
 import { MinusCircle, PlusCircle } from "@properui/icons";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { sortCx } from "@/utils/cx";
-import { AVATARS } from "@/utils/demo-assets";
+import { sortCx } from "../../../utils/cx";
+import { AVATARS } from "../../../utils/demo-assets";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
 
 const styles = sortCx({
     item: "not-first:-mt-px not-first:border-t not-first:border-secondary not-first:pt-6",

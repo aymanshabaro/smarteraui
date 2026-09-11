@@ -1,10 +1,10 @@
-import { CtaCardVertical } from "@/components/marketing/cta-sections/cta-card-vertical";
-import { FaqAccordion01 } from "@/components/marketing/faq-sections/faq-accordion-01";
-import { FooterLarge01Brand } from "@/components/marketing/footers/footer-large-01-brand";
-import { HeaderDropdownSimple } from "@/components/marketing/header-navigations/header-dropdown-simple";
-import { PricingLargeTable01 } from "@/components/marketing/pricing-sections/pricing-large-table-01";
-import { SocialProofFullWidth } from "@/components/marketing/social-proof-sections/social-proof-full-width";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { CtaCardVertical } from "../../marketing/cta-sections/cta-card-vertical";
+import { FaqAccordion01 } from "../../marketing/faq-sections/faq-accordion-01";
+import { FooterLarge01Brand } from "../../marketing/footers/footer-large-01-brand";
+import { HeaderDropdownSimple } from "../../marketing/header-navigations/header-dropdown-simple";
+import { PricingLargeTable01 } from "../../marketing/pricing-sections/pricing-large-table-01";
+import { SocialProofFullWidth } from "../../marketing/social-proof-sections/social-proof-full-width";
 
 const styles = sortCx({
     // The page alternates surfaces, so this section sits on the secondary background.

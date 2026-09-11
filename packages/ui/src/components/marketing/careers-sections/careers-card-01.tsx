@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { ArrowUpRight, Clock, MarkerPin01 } from "@properui/icons";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { BadgeWithDot } from "@/components/base/badges/badges";
-import { NativeSelect } from "@/components/base/select/select-native";
-import { sortCx } from "@/utils/cx";
+import { sortCx } from "../../../utils/cx";
+import { Tabs } from "../../application/tabs/tabs";
+import { BadgeWithDot } from "../../base/badges/badges";
+import { NativeSelect } from "../../base/select/select-native";
 
 const styles = sortCx({
     card: "bg-primary ring-secondary outline-focus-ring group flex flex-col rounded-2xl p-6 ring-1 ring-inset focus-visible:outline-2 focus-visible:outline-offset-2 md:pb-7",

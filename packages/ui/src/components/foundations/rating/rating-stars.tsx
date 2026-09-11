@@ -2,7 +2,7 @@
 
 import type { HTMLAttributes, SVGProps } from "react";
 import { useId } from "react";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
 
 export const getStarProgress = (starPosition: number, rating: number, maxRating: number = 5) => {
     // Ensure rating is between 0 and 5

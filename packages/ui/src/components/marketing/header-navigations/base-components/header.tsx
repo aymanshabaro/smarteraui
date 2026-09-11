@@ -4,10 +4,10 @@ import type { ReactNode } from "react";
 import { useRef } from "react";
 import { Button as AriaButton, Dialog as AriaDialog, DialogTrigger as AriaDialogTrigger, Popover as AriaPopover } from "react-aria-components";
 import { ChevronDown, X as CloseIcon, Menu02 } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { ProperLogo } from "@/components/foundations/logo/proper-logo";
-import { ProperLogoMinimal } from "@/components/foundations/logo/proper-logo-minimal";
-import { cx, sortCx } from "@/utils/cx";
+import { cx, sortCx } from "../../../../utils/cx";
+import { Button } from "../../../base/buttons/button";
+import { ProperLogo } from "../../../foundations/logo/proper-logo";
+import { ProperLogoMinimal } from "../../../foundations/logo/proper-logo-minimal";
 
 const styles = sortCx({
     trigger:

@@ -1,11 +1,11 @@
 "use client";
 
 import { Edit01, Plus, RefreshCcw01 } from "@properui/icons";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { CreditCard } from "@/components/shared-assets/credit-card/credit-card";
-import { cx } from "@/utils/cx";
-import { avatar } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { avatar } from "../../../utils/demo-assets";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { CreditCard } from "../../shared-assets/credit-card/credit-card";
 import { DonutChart, StackedBarChart, TrendChart } from "./charts.a";
 import { spendCategories, stackedSeries, trendSeries } from "./data.a";
 import { DashboardHeader, DashboardMain, DashboardSection } from "./shell.a";

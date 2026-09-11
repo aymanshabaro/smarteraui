@@ -14,13 +14,13 @@ import {
     RefreshCcw02,
     Stars02,
 } from "@properui/icons";
-import { MessageComposer } from "@/components/application/messaging/message-composer";
-import { Message, MessageList } from "@/components/application/messaging/messaging";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { AvatarProfilePhoto } from "@/components/base/avatar/avatar-profile-photo";
-import { Button } from "@/components/base/buttons/button";
-import { cx } from "@/utils/cx";
-import { IMAGES, LOGOS, avatar } from "@/utils/demo-assets";
+import { cx } from "../../../utils/cx";
+import { IMAGES, LOGOS, avatar } from "../../../utils/demo-assets";
+import { MessageComposer } from "../../application/messaging/message-composer";
+import { Message, MessageList } from "../../application/messaging/messaging";
+import { Avatar } from "../../base/avatar/avatar";
+import { AvatarProfilePhoto } from "../../base/avatar/avatar-profile-photo";
+import { Button } from "../../base/buttons/button";
 import { AppHeader, productNavItems } from "./shell.a";
 
 const navItems = [...productNavItems.slice(0, 5), { label: "Messages", href: "/messages" }];

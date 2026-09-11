@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment } from "react";
-import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";
+import { ButtonGroup, ButtonGroupItem } from "../../base/button-group/button-group";
 import { Divider, FieldLabel, PageContainer, SettingsHeaderNav, styles } from "./settings-shell";
 
 const channels = [

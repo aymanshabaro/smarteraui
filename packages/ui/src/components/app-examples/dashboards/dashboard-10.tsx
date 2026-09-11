@@ -3,15 +3,15 @@
 import { useState } from "react";
 import type { Key } from "react-aria";
 import { DownloadCloud02, FilterLines, Plus, UserPlus01 } from "@properui/icons";
-import { SidebarNavigationDualTier } from "@/components/application/app-navigation/sidebar-navigation/sidebar-dual-tier";
-import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
-import { MetricSimple } from "@/components/application/metrics/metrics";
-import { Tabs } from "@/components/application/tabs/tabs";
-import { Avatar } from "@/components/base/avatar/avatar";
-import { Button } from "@/components/base/buttons/button";
-import { ButtonUtility } from "@/components/base/buttons/button-utility";
-import { Dropdown } from "@/components/base/dropdown/dropdown";
-import { cx } from "@/utils/cx";
+import { cx } from "../../../utils/cx";
+import { SidebarNavigationDualTier } from "../../application/app-navigation/sidebar-navigation/sidebar-dual-tier";
+import { DateRangePicker } from "../../application/date-picker/date-range-picker";
+import { MetricSimple } from "../../application/metrics/metrics";
+import { Tabs } from "../../application/tabs/tabs";
+import { Avatar } from "../../base/avatar/avatar";
+import { Button } from "../../base/buttons/button";
+import { ButtonUtility } from "../../base/buttons/button-utility";
+import { Dropdown } from "../../base/dropdown/dropdown";
 import { ChartCard, RangeTabs, StackedBarChart, TrendAreaChart, navFooterItemsWithIcons, navItemsDualTier, purchases, styles } from "./dashboards-shared";
 
 const views = [

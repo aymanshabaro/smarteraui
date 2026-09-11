@@ -2,18 +2,18 @@
 
 import type { FC } from "react";
 import { BarChartSquare02, Heart, HomeLine, LayoutAlt01, Map01, MarkerPin01, Rows01, SearchLg, Settings01, Stars01, Users01, Wifi } from "@properui/icons";
-import type { NavItemType } from "@/components/application/app-navigation/config";
-import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
-import { DateRangePicker } from "@/components/application/date-picker/date-range-picker";
-import { PaginationPageMinimalCenter } from "@/components/application/pagination/pagination";
-import { BadgeWithIcon } from "@/components/base/badges/badges";
-import { ButtonGroup, ButtonGroupItem } from "@/components/base/button-group/button-group";
-import { Button } from "@/components/base/buttons/button";
-import { Input } from "@/components/base/input/input";
-import { Select } from "@/components/base/select/select";
-import type { SelectItemType } from "@/components/base/select/select-shared";
-import { RatingStars } from "@/components/foundations/rating/rating-stars";
-import { IMAGES } from "@/utils/demo-assets";
+import { IMAGES } from "../../../utils/demo-assets";
+import type { NavItemType } from "../../application/app-navigation/config";
+import { SidebarNavigationSlim } from "../../application/app-navigation/sidebar-navigation/sidebar-slim";
+import { DateRangePicker } from "../../application/date-picker/date-range-picker";
+import { PaginationPageMinimalCenter } from "../../application/pagination/pagination";
+import { BadgeWithIcon } from "../../base/badges/badges";
+import { ButtonGroup, ButtonGroupItem } from "../../base/button-group/button-group";
+import { Button } from "../../base/buttons/button";
+import { Input } from "../../base/input/input";
+import { Select } from "../../base/select/select";
+import type { SelectItemType } from "../../base/select/select-shared";
+import { RatingStars } from "../../foundations/rating/rating-stars";
 
 const navItems: (NavItemType & { icon: FC<{ className?: string }> })[] = [
     { label: "Home", href: "/", icon: HomeLine },
