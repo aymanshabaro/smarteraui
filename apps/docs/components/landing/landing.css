@@ -50,6 +50,24 @@
     scroll-behavior: smooth;
     scroll-padding-top: 82px;
 }
+
+/* UA defaults the supplied page relied on, which the docs app's Tailwind preflight resets to
+ * `inherit`. Declared here, ahead of every scoped rule, so any later rule that sets its own weight
+ * or family still wins — the same cascade the original page had against the browser stylesheet.
+ * Without this every h2/h3 rendered at 400 instead of 700 in the port. */
+.pui-landing h1,
+.pui-landing h2,
+.pui-landing h3,
+.pui-landing h4,
+.pui-landing h5,
+.pui-landing h6 {
+    font-weight: 700;
+}
+.pui-landing code,
+.pui-landing kbd,
+.pui-landing pre {
+    font-family: var(--mono);
+}
 .pui-landing a {
     color: inherit;
     text-decoration: none;
