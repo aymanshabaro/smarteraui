@@ -125,7 +125,8 @@ their own `"use client"` directive, so they can be rendered straight from a serv
 
 ```tsx
 // app/layout.tsx
-import { RouterProvider, ThemeProvider } from "@properui/ui/providers";
+import { ThemeProvider } from "@properui/ui/providers";
+import { RouterProvider } from "@properui/ui/providers/router-provider";
 import "./globals.css";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -176,7 +177,7 @@ export default defineConfig({
 
 **4. Wrap the app in the providers**
 
-`ThemeProvider` is framework-agnostic and works as-is. `RouterProvider` from `@properui/ui/providers` is Next-only —
+`ThemeProvider` is framework-agnostic and works as-is. `RouterProvider` from `@properui/ui/providers/router-provider` is Next-only —
 in Vite, use React Aria's own `RouterProvider` and hand it your router's navigate function:
 
 ```tsx

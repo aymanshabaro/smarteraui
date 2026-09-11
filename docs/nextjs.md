@@ -65,7 +65,8 @@ creating a client boundary of your own:
 
 ```tsx
 // app/layout.tsx
-import { RouterProvider, ThemeProvider } from "@properui/ui/providers";
+import { ThemeProvider } from "@properui/ui/providers";
+import { RouterProvider } from "@properui/ui/providers/router-provider";
 import "./globals.css";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -72,7 +72,7 @@ Match the alias in `tsconfig.json` so your editor and type-checker resolve it to
 
 **4. Wire up the providers**
 
-`@properui/ui/providers` only exports a Next.js-flavored `RouterProvider` (it reads `useRouter` from `next/navigation` internally), so it doesn't work in Vite. Use React Aria's own `RouterProvider` from `react-aria-components` instead, and hand it your router's navigate function — `useNavigate` if you're using `react-router`:
+`@properui/ui/providers` exports only `ThemeProvider`. The Next.js-flavored `RouterProvider` sits on its own subpath — it reads `useRouter` from `next/navigation`, so importing it from Vite fails the build. Use React Aria's own `RouterProvider` from `react-aria-components` instead, and hand it your router's navigate function — `useNavigate` if you're using `react-router`:
 
 ```tsx
 // src/providers.tsx

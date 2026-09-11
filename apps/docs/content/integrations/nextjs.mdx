@@ -77,7 +77,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "sw
 
 ## App router vs pages router
 
-Both routers need the same two providers, but they're not interchangeable. `ThemeProvider` (from `@properui/ui/providers`, wrapping `next-themes`) works identically in both. `RouterProvider` (also from `@properui/ui/providers`) does not take a `navigate` prop — it reads `useRouter` from `next/navigation` internally, which only exists in the App Router. A Pages Router app has to use React Aria's own `RouterProvider` directly, fed from `next/router`.
+Both routers need the same two providers, but they're not interchangeable. `ThemeProvider` (from `@properui/ui/providers`, wrapping `next-themes`) works identically in both. `RouterProvider` (from `@properui/ui/providers/router-provider`, its own subpath so the shared providers barrel stays free of Next imports) does not take a `navigate` prop — it reads `useRouter` from `next/navigation` internally, which only exists in the App Router. A Pages Router app has to use React Aria's own `RouterProvider` directly, fed from `next/router`.
 
 ### App router
 
@@ -85,7 +85,8 @@ Both provider files already carry their own `"use client"` directive, so you can
 
 ```tsx
 // app/layout.tsx
-import { RouterProvider, ThemeProvider } from "@properui/ui/providers";
+import { ThemeProvider } from "@properui/ui/providers";
+import { RouterProvider } from "@properui/ui/providers/router-provider";
 import "./globals.css";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -174,7 +175,7 @@ export const ThemeToggleButton = () => {
         },
         {
             question: "Does Proper UI support both App Router and Pages Router?",
-            answer: "Yes, but the wiring differs. ThemeProvider works the same in both. RouterProvider from @properui/ui/providers only works in the App Router — it reads next/navigation internally and takes no props. In the Pages Router, use RouterProvider from react-aria-components directly and feed it next/router's useRouter().push.",
+            answer: "Yes, but the wiring differs. ThemeProvider works the same in both. RouterProvider from @properui/ui/providers/router-provider only works in the App Router — it reads next/navigation internally and takes no props. In the Pages Router, use RouterProvider from react-aria-components directly and feed it next/router's useRouter().push.",
         },
         {
             question: "Can I use Proper UI with Next.js server components?",
