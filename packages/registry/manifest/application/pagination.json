@@ -6,7 +6,7 @@
         "wrapped in `<nav aria-label=\"Pagination\">`; every page control carries an explicit aria-label (\"Page N\", \"Go to next/previous/first/last page\") and the current page is marked `aria-current=\"page\"`; decorative ellipsis is aria-hidden"
     ],
     "responsive_contract": [
-        "switches between a compact (prev/next only) layout and the full numbered control across the md breakpoint — one variant is hidden and the other shown depending on viewport"
+        "switches between a compact (prev/next only) layout and the full numbered control across the md breakpoint; one variant is hidden and the other shown depending on viewport"
     ],
     "requires_data": ["total item/page count, current page, and a page-change handler"]
 }

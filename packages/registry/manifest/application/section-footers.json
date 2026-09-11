@@ -2,7 +2,7 @@
     "intent": "Close out a page section with secondary links or a final call-to-action row.",
     "avoid_when": ["the content belongs to the whole page rather than one section (use a dedicated page footer)"],
     "composes_with": ["buttons", "content-divider"],
-    "a11y_contract": ["purely presentational layout — link/button text remains the caller's responsibility"],
+    "a11y_contract": ["purely presentational layout; link/button text remains the caller's responsibility"],
     "responsive_contract": ["stacks vertically on narrow screens and becomes a horizontal row from the sm/md breakpoints, depending on variant"],
     "requires_data": ["footer content: links, text, or action buttons"]
 }

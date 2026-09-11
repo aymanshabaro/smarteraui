@@ -3,7 +3,7 @@
     "avoid_when": ["the change should wait for an explicit form submit (use checkbox)", "there are more than two states"],
     "composes_with": ["form", "table", "notifications"],
     "a11y_contract": [
-        "built on React Aria Switch — `role=\"switch\"`, keyboard toggling and checked-state semantics come for free; visible children become the accessible label, so an icon-only toggle still needs an aria-label"
+        "built on React Aria Switch: `role=\"switch\"`, keyboard toggling and checked-state semantics come for free; visible children become the accessible label, so an icon-only toggle still needs an aria-label"
     ],
     "requires_data": ["a visible label describing the setting being toggled"]
 }

@@ -6,7 +6,7 @@
     ],
     "composes_with": ["buttons", "form", "input"],
     "a11y_contract": [
-        "built on React Aria Modal/Dialog/ModalOverlay — focus trapping, focus restoration on close, and Escape-to-close come for free; the Dialog content wrapper always needs an explicit aria-label or aria-labelledby from the caller — it has no default"
+        "built on React Aria Modal/Dialog/ModalOverlay: focus trapping, focus restoration on close, and Escape-to-close come for free; the Dialog content wrapper always needs an explicit aria-label or aria-labelledby from the caller, since it has no default"
     ],
     "responsive_contract": ["edge-to-edge on small screens; becomes a centered, rounded panel with side padding from the sm breakpoint up"],
     "requires_data": ["dialog content; a trigger element to open it"]

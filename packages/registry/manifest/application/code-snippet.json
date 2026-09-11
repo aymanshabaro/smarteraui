@@ -1,5 +1,5 @@
 {
-    "intent": "Display a block of source code — optionally across multiple named files/tabs — with copy-to-clipboard and syntax formatting.",
+    "intent": "Display a block of source code (optionally across multiple named files/tabs) with copy-to-clipboard and syntax formatting.",
     "avoid_when": ["the text isn't code (use a plain text block)"],
     "composes_with": ["buttons"],
     "a11y_contract": [

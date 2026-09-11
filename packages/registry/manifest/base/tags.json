@@ -1,9 +1,9 @@
 {
-    "intent": "Display, and let a user select or remove, short chip-style values — e.g. active filters or multi-value entry.",
+    "intent": "Display, and let a user select or remove, short chip-style values (e.g. active filters or multi-value entry).",
     "avoid_when": ["values are read-only status labels rather than user-manipulable chips (use badges)"],
     "composes_with": ["input", "select", "filter-bar"],
     "a11y_contract": [
-        "built on React Aria TagGroup/Tag — keyboard navigation and selection/removal semantics come for free; the group requires a `label` prop, passed through as its aria-label"
+        "built on React Aria TagGroup/Tag: keyboard navigation and selection/removal semantics come for free; the group requires a `label` prop, passed through as its aria-label"
     ],
     "requires_data": ["a `label` describing the group of tags, and a list of tag values"]
 }

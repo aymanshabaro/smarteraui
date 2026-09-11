@@ -6,7 +6,7 @@
     ],
     "composes_with": ["buttons", "tabs"],
     "a11y_contract": [
-        "built on React Aria ToggleButtonGroup/ToggleButton — roving-tabindex keyboard navigation and aria-pressed/selection state come for free",
+        "built on React Aria ToggleButtonGroup/ToggleButton: roving-tabindex keyboard navigation and aria-pressed/selection state come for free",
         "icon-only items still need an accessible name from the caller (visible text or aria-label)"
     ],
     "requires_data": ["2+ ButtonGroupItem children with distinguishable labels or icons"]

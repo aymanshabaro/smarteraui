@@ -2,6 +2,6 @@
     "intent": "Group form fields into a single submit/validation boundary.",
     "avoid_when": ["laying out read-only key/value content (use a plain list or table)"],
     "composes_with": ["input", "checkbox", "radio-buttons", "select", "textarea", "buttons"],
-    "a11y_contract": ["built on React Aria Form — surfaces native and custom field validation errors and associates them with their fields automatically"],
+    "a11y_contract": ["built on React Aria Form: surfaces native and custom field validation errors and associates them with their fields automatically"],
     "requires_data": ["form field children; the hook-form variant additionally requires a react-hook-form `UseFormReturn` instance"]
 }

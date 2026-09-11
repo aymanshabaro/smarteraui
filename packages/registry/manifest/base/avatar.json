@@ -1,13 +1,13 @@
 {
-    "intent": "Show who or what an item belongs to — a user, team, or company — as a compact image or initials.",
+    "intent": "Show who or what an item belongs to (a user, team, or company) as a compact image or initials.",
     "avoid_when": [
         "identifying more than one person at once (use avatar-label-group or a stacked list)",
         "the only way to identify a user (pair it with a visible name)"
     ],
     "composes_with": ["avatar-label-group", "dropdown", "table", "activity-feed", "messaging"],
     "a11y_contract": [
-        "caller must supply `alt` describing the person/entity — the component does not infer one",
+        "caller must supply `alt` describing the person/entity; the component does not infer one",
         "falls back to initials or an icon when `src` is missing or fails to load, but does not auto-generate accessible text for that fallback"
     ],
-    "requires_data": ["src (image URL) or initials, so the avatar renders a meaningful identity — the placeholder icon alone carries none"]
+    "requires_data": ["src (image URL) or initials, so the avatar renders a meaningful identity; the placeholder icon alone carries none"]
 }

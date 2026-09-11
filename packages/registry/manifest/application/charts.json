@@ -6,7 +6,7 @@
     ],
     "composes_with": ["metrics", "card-headers"],
     "a11y_contract": [
-        "built on Recharts (SVG rendering) with no built-in text alternative — the caller must supply a surrounding heading, legend text, or aria-label so meaning isn't conveyed by color/shape alone"
+        "built on Recharts (SVG rendering) with no built-in text alternative; the caller must supply a surrounding heading, legend text, or aria-label so meaning isn't conveyed by color/shape alone"
     ],
     "requires_data": ["a dataset array shaped for the chosen chart variant (categories/series and numeric values)"]
 }

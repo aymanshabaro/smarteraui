@@ -9,7 +9,7 @@
         "primary and secondary navigation are wrapped in `<nav aria-label=\"Main\">` / `<nav aria-label=\"Secondary\">`; the active nav item gets `aria-current=\"page\"` automatically; the search field ships its own aria-label"
     ],
     "responsive_contract": [
-        "secondary/sidebar navigation collapses below the lg breakpoint, and horizontal padding narrows below md — mobile is expected to move navigation behind a trigger (e.g. slideout-menus)"
+        "secondary/sidebar navigation collapses below the lg breakpoint, and horizontal padding narrows below md; mobile is expected to move navigation behind a trigger (e.g. slideout-menus)"
     ],
     "requires_data": ["a list of nav items with label, href/action, and current-page state"]
 }

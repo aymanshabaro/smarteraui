@@ -16,7 +16,7 @@
     "engines": {
         "node": ">=20"
     },
-    "//engines": "Node 20 builds and tests everything. Deploying the docs site additionally needs Node 22 — wrangler 4 refuses to run on 20 (see apps/docs/DEPLOYMENT.md).",
+    "//engines": "Node 20 builds and tests everything. Deploying the docs site additionally needs Node 22, since wrangler 4 refuses to run on 20 (see apps/docs/DEPLOYMENT.md).",
     "scripts": {
         "dev": "turbo run dev --filter=docs",
         "build": "turbo run build",

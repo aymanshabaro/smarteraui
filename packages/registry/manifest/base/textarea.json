@@ -3,7 +3,7 @@
     "avoid_when": ["a single line of text is expected (use input)", "rich formatting is required (use text-editor)"],
     "composes_with": ["form", "label", "hint-text"],
     "a11y_contract": [
-        "built on React Aria TextField/TextArea — associates the visible label with the field and surfaces `aria-invalid` automatically when validation fails"
+        "built on React Aria TextField/TextArea: associates the visible label with the field and surfaces `aria-invalid` automatically when validation fails"
     ],
     "requires_data": ["a visible label (or aria-label) so the field has an accessible name"]
 }

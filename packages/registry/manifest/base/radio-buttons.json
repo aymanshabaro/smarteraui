@@ -3,7 +3,7 @@
     "avoid_when": ["more than ~6 options, or the list needs to scroll (use select)", "multiple selections are valid (use checkbox)"],
     "composes_with": ["form", "input"],
     "a11y_contract": [
-        "built on React Aria RadioGroup/Radio — roving-tabindex arrow-key navigation and checked-state semantics come for free; the group itself still needs an aria-label or a visible label element since RadioGroup has no default accessible name"
+        "built on React Aria RadioGroup/Radio: roving-tabindex arrow-key navigation and checked-state semantics come for free; the group itself still needs an aria-label or a visible label element since RadioGroup has no default accessible name"
     ],
     "requires_data": ["2+ options with visible text labels; a group-level label or aria-label"]
 }

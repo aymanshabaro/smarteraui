@@ -6,7 +6,7 @@
     ],
     "composes_with": ["badges", "page-headers", "section-headers", "table"],
     "a11y_contract": [
-        "built on React Aria Tabs/TabList/TabPanel — arrow-key navigation between tabs and aria-selected/aria-controls wiring to the associated panel come for free"
+        "built on React Aria Tabs/TabList/TabPanel: arrow-key navigation between tabs and aria-selected/aria-controls wiring to the associated panel come for free"
     ],
     "responsive_contract": ["the underline/track indicator is only rendered from the md breakpoint up"],
     "requires_data": ["an ordered list of tabs with label and associated panel content"]
