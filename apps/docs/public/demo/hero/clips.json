@@ -1,0 +1,55 @@
+{
+  "generatedAt": "2026-09-12T13:43:40.564Z",
+  "mode": "real",
+  "transcriptPath": "/Users/aymanshabaro/properui-demo/claude-demo-transcript.jsonl",
+  "transcriptLineCount": 51,
+  "transcriptWarnings": [],
+  "demoDir": "/Users/aymanshabaro/properui-demo",
+  "segments": [
+    {
+      "name": "title-1",
+      "kind": "title",
+      "durationSec": 1.2
+    },
+    {
+      "name": "terminal-intro",
+      "kind": "clip",
+      "durationSec": 12.32
+    },
+    {
+      "name": "replay",
+      "kind": "clip",
+      "durationSec": 24.04
+    },
+    {
+      "name": "title-2",
+      "kind": "title",
+      "durationSec": 1
+    },
+    {
+      "name": "result",
+      "kind": "clip",
+      "durationSec": 12.36
+    },
+    {
+      "name": "end",
+      "kind": "title",
+      "durationSec": 1.5
+    }
+  ],
+  "result": {
+    "recorded": true,
+    "file": "/var/folders/mw/2kzrclpn1rs1qxgyhv86xsqr0000gn/T/pui-hero-q9LXW7/raw/result.webm",
+    "duration": 12.36,
+    "focal": {
+      "x": 0.5,
+      "y": 0.5
+    }
+  },
+  "hero": {
+    "mp4Bytes": 1487669,
+    "webmBytes": 1399519,
+    "durationSec": 49.933333,
+    "webmSkippedReason": null
+  }
+}

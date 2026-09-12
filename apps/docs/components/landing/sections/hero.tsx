@@ -1,3 +1,4 @@
+import { HeroVideo } from "~/components/landing/hero-video";
 import { ToolSelector } from "~/components/landing/tool-selector";
 
 /**
@@ -20,6 +21,11 @@ export function Hero() {
                 </p>
 
                 <ToolSelector />
+
+                <div className="hero-video">
+                    <p className="hero-video-caption">A real Claude Code session: one prompt, a production billing page, built from Proper UI components.</p>
+                    <HeroVideo />
+                </div>
             </div>
         </section>
     );

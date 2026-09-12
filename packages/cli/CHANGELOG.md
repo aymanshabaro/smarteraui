@@ -1,5 +1,13 @@
 # @properui/cli
 
+## 0.2.2
+
+### Patch Changes
+
+- `agent init` printed a truncated `updat` status label when it appended to an existing
+  `CLAUDE.md` or `AGENTS.md`. The labels are now `write`, `update`, `skip` and `keep`, padded to
+  the same width.
+
 ## 0.2.1
 
 ### Patch Changes

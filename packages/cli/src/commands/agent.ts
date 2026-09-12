@@ -50,10 +50,10 @@ function upsertProjectFile(file: string, id: string, block: string, dryRun: bool
 }
 
 function statusLabel(status: WriteResult["status"]): string {
-    if (status === "created") return kleur.green("write");
-    if (status === "updated") return kleur.yellow("updat");
-    if (status === "skipped") return kleur.dim("skip ");
-    return kleur.dim("keep ");
+    if (status === "created") return kleur.green("write ");
+    if (status === "updated") return kleur.yellow("update");
+    if (status === "skipped") return kleur.dim("skip  ");
+    return kleur.dim("keep  ");
 }
 
 function installClaude(cwd: string, writeOptions: WriteFileOptions): void {
