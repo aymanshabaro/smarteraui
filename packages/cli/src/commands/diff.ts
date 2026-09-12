@@ -35,6 +35,17 @@ export async function runDiff(component: string | undefined, options: DiffOption
     try {
         if (component) {
             entries = [await registry.item(component)];
+        } else if (config.installed && Object.keys(config.installed).length > 0) {
+            // The installed manifest (2.10) already knows what's here — no need to re-derive it
+            // by checking every registry entry's files against the filesystem.
+            entries = [];
+            for (const name of Object.keys(config.installed)) {
+                try {
+                    entries.push(await registry.item(name));
+                } catch {
+                    // entry removed from the registry since it was installed; skip it
+                }
+            }
         } else {
             const index = await registry.index();
             entries = [];

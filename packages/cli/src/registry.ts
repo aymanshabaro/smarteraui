@@ -7,6 +7,7 @@
  *
  * Spec: docs/cli.md
  */
+import { createHash } from "node:crypto";
 import { existsSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
 import { readAuthToken } from "./auth.js";
@@ -24,6 +25,10 @@ export interface RegistryFile {
     target: string;
     type: RegistryFileType;
     content: string;
+    /** npm packages this specific file imports, when the registry publishes per-file attribution. */
+    dependencies?: string[];
+    /** Marks a demo/story file, only written when `add --with-demos` is passed. */
+    kind?: "demo";
 }
 
 /** Fields shared by `index.json` rows and full `<name>.json` entries. */
@@ -34,10 +39,15 @@ export interface RegistryMeta {
     title: string;
     description: string;
     registryDependencies: string[];
+    /** Registry entries that improve this one but are not required; installed by default, skippable with `--no-optional`. */
+    optionalRegistryDependencies?: string[];
     dependencies: string[];
     cssVars: string[];
     examples: string[];
     docs?: string;
+    /** Present once the registry publishes a stable version/hash for the entry; see `entryVersion`. */
+    version?: string;
+    hash?: string;
 }
 
 export interface RegistryIndexEntry extends RegistryMeta {
@@ -53,7 +63,43 @@ export interface RegistryIndex {
     components: RegistryIndexEntry[];
 }
 
+/** One icon package the registry indexes, e.g. `{ package: "@untitledui/icons", alias: "@properui/icons", names: [...] }`. */
+export interface IconSet {
+    package: string;
+    alias: string;
+    names: string[];
+}
+export type IconsIndex = IconSet[];
+
+/**
+ * `dist/exports.json`: entry name -> exported symbol names. The shipped shape is a flat
+ * `string[]` per entry (no per-file breakdown); a nested `{ file: names[] }` shape is also
+ * accepted in case a future registry build adds file-level granularity. Use `exportNames` to
+ * read either shape uniformly.
+ */
+export type ExportsIndex = Record<string, string[] | Record<string, string[]>>;
+
+/** Flattens one entry's `exports.json` row (either shape) to a plain list of export names. */
+export function exportNames(value: string[] | Record<string, string[]> | undefined): string[] {
+    if (!value) return [];
+    return Array.isArray(value) ? value : Object.values(value).flat();
+}
+
 export class RegistryError extends Error {}
+
+/**
+ * Stable-ish version string for an installed-entry manifest row. Prefers a real version or
+ * content hash once the registry publishes one; falls back to a hash of the entry's own file
+ * contents so `diff`/`info` still have something consistent to compare against today.
+ */
+export function entryVersion(entry: RegistryEntry): string {
+    if (entry.version) return entry.version;
+    if (entry.hash) return entry.hash;
+    const digest = createHash("sha1")
+        .update(entry.files.map((file) => `${file.target}:${file.content}`).join("\n"))
+        .digest("hex");
+    return `content-${digest.slice(0, 12)}`;
+}
 
 const isHttp = (source: string) => /^https?:\/\//i.test(source);
 
@@ -132,21 +178,55 @@ export class Registry {
 
     /**
      * Resolves `names` plus every `registryDependencies` edge, depth-first, so that a
-     * dependency always appears before the entry that needs it.
+     * dependency always appears before the entry that needs it. When `includeOptional` is
+     * true (the default — preserves pre-2.10 behaviour), `optionalRegistryDependencies` are
+     * walked too and returned names are reported in `optional` so callers can label them.
+     * `--no-optional` passes `includeOptional: false`, which drops those edges entirely.
      */
-    async resolveTree(names: string[]): Promise<RegistryEntry[]> {
+    async resolveTree(names: string[], includeOptional = true): Promise<{ entries: RegistryEntry[]; optional: Set<string> }> {
         const ordered: RegistryEntry[] = [];
         const seen = new Set<string>();
+        const required = new Set<string>();
 
-        const visit = async (name: string) => {
+        const visitRequired = async (name: string) => {
             if (seen.has(name)) return;
             seen.add(name);
+            required.add(name);
             const entry = await this.item(name);
-            for (const dependency of entry.registryDependencies) await visit(dependency);
+            for (const dependency of entry.registryDependencies) await visitRequired(dependency);
             ordered.push(entry);
         };
+        for (const name of names) await visitRequired(name);
 
-        for (const name of names) await visit(name);
-        return ordered;
+        const optional = new Set<string>();
+        if (includeOptional) {
+            const visitOptional = async (name: string) => {
+                if (seen.has(name)) return; // already required, or already visited as optional
+                seen.add(name);
+                optional.add(name);
+                const entry = await this.item(name);
+                for (const dependency of entry.registryDependencies) await visitOptional(dependency);
+                for (const dependency of entry.optionalRegistryDependencies ?? []) await visitOptional(dependency);
+                ordered.push(entry);
+            };
+            for (const name of required) {
+                const entry = await this.item(name);
+                for (const dependency of entry.optionalRegistryDependencies ?? []) await visitOptional(dependency);
+            }
+        }
+
+        return { entries: ordered, optional };
+    }
+
+    /** `dist/icons.json`, normalised to an array. `null` when the registry does not publish one yet. */
+    async icons(): Promise<IconsIndex | null> {
+        const raw = await this.readJson<IconSet | IconSet[]>("icons.json");
+        if (!raw) return null;
+        return Array.isArray(raw) ? raw : [raw];
+    }
+
+    /** `dist/exports.json`. `null` when the registry does not publish one yet. */
+    async exportsIndex(): Promise<ExportsIndex | null> {
+        return this.readJson<ExportsIndex>("exports.json");
     }
 }

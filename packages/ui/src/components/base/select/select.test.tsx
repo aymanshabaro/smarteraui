@@ -24,4 +24,12 @@ describe("Select", () => {
         render(<Demos.Sizes />);
         expect(screen.getAllByText("Select team member")).toHaveLength(3);
     });
+
+    it("gives the trigger an accessible name equal to just the label, not label + value", () => {
+        render(<Demos.Default />);
+        // `Demos.Default` renders `label="Team member"` and a value of "Select team member" — the
+        // trigger's accessible name must be exactly the label, not React Aria's default
+        // "value, label" (or "label, value") concatenation.
+        expect(screen.getByRole("button", { name: "Team member *" })).toBeInTheDocument();
+    });
 });

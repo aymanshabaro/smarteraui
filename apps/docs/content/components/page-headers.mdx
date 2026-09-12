@@ -28,3 +28,14 @@ demoFile: page-headers
 <Preview id="banner-simple-centered" title="Banner simple centered" height={645} demo="page-headers:BannerSimpleCentered" />
 
 <Preview id="banner-avatar-centered" title="Banner avatar centered" height={658} demo="page-headers:BannerAvatarCentered" />
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            q: "How do I stop PageHeader from adding its own side padding?",
+            a: "Pass gutter={false}. PageHeader applies a px-4 md:px-8 gutter by default; set gutter={false} when the parent layout already supplies side padding, so they don't stack. The banner's own edge-to-edge negative margin is disabled automatically along with it.",
+        },
+    ]}
+/>

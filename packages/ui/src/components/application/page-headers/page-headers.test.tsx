@@ -48,4 +48,30 @@ describe("PageHeader", () => {
         const { container } = render(<Demos.Avatar />);
         expect(container.querySelector("[data-avatar]")?.parentElement?.className).not.toContain("-mt-12");
     });
+
+    it("applies the horizontal gutter by default", () => {
+        const { container } = render(
+            <PageHeader>
+                <PageHeader.Content>
+                    <PageHeader.Heading>
+                        <PageHeader.Title>Title</PageHeader.Title>
+                    </PageHeader.Heading>
+                </PageHeader.Content>
+            </PageHeader>,
+        );
+        expect(container.querySelector("header")?.className).toContain("px-4");
+    });
+
+    it("removes the horizontal gutter when gutter is false", () => {
+        const { container } = render(
+            <PageHeader gutter={false}>
+                <PageHeader.Content>
+                    <PageHeader.Heading>
+                        <PageHeader.Title>Title</PageHeader.Title>
+                    </PageHeader.Heading>
+                </PageHeader.Content>
+            </PageHeader>,
+        );
+        expect(container.querySelector("header")?.className).not.toContain("px-4");
+    });
 });

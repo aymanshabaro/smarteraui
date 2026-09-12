@@ -1,12 +1,13 @@
 "use client";
 
 import type { FC, ReactNode, Ref, RefAttributes } from "react";
-import { isValidElement } from "react";
+import { isValidElement, useId } from "react";
 import type { SelectProps as AriaSelectProps } from "react-aria-components";
 import { Button as AriaButton, ListBox as AriaListBox, Select as AriaSelect, SelectValue as AriaSelectValue } from "react-aria-components";
 import { ChevronDown } from "@properui/icons";
 import { cx } from "../../../utils/cx";
 import { isReactComponent } from "../../../utils/is-react-component";
+import { warnDomProps } from "../../../utils/warn-dom-props";
 import { Avatar } from "../avatar/avatar";
 import { HintText } from "../input/hint-text";
 import { Label } from "../input/label";
@@ -32,12 +33,18 @@ interface SelectValueProps {
     placeholder?: string;
     ref?: Ref<HTMLButtonElement>;
     icon?: FC | ReactNode;
+    /**
+     * Id of the field's `Label`. Passed through as the trigger's sole `aria-labelledby` so the
+     * accessible name is just the label text, not React Aria's default "value, label" concatenation.
+     */
+    labelId?: string;
 }
 
-const SelectValue = ({ isOpen, isFocused, isDisabled, size, placeholder, icon, ref }: SelectValueProps) => {
+const SelectValue = ({ isOpen, isFocused, isDisabled, size, placeholder, icon, ref, labelId }: SelectValueProps) => {
     return (
         <AriaButton
             ref={ref}
+            {...(labelId ? { "aria-labelledby": labelId } : {})}
             className={cx(
                 "bg-primary ring-primary relative flex w-full cursor-pointer items-center rounded-lg shadow-xs ring-1 outline-hidden transition duration-100 ease-linear ring-inset",
                 (isFocused || isOpen) && "ring-brand ring-2",
@@ -94,6 +101,11 @@ const SelectValue = ({ isOpen, isFocused, isDisabled, size, placeholder, icon, r
     );
 };
 
+/**
+ * To open the popover in a jsdom test, see the Testing page (`docs/testing`):
+ * `fireEvent.click(trigger)` or `focus` + `ArrowDown` — `userEvent.click` alone toggles it shut,
+ * because it fires both a focus and a click in the same tick.
+ */
 const Select = ({
     placeholder = "Select",
     icon,
@@ -107,18 +119,22 @@ const Select = ({
     className,
     ...rest
 }: SelectProps) => {
+    warnDomProps("Select", rest as Record<string, unknown>, { disabled: "isDisabled", required: "isRequired" });
+
+    const labelId = useId();
+
     return (
         <SelectContext.Provider value={{ size }}>
             <AriaSelect {...rest} className={(state) => cx("flex flex-col gap-1.5", typeof className === "function" ? className(state) : className)}>
                 {(state) => (
                     <>
                         {label && (
-                            <Label isRequired={hideRequiredIndicator ? false : state.isRequired} tooltip={tooltip}>
+                            <Label id={labelId} isRequired={hideRequiredIndicator ? false : state.isRequired} tooltip={tooltip}>
                                 {label}
                             </Label>
                         )}
 
-                        <SelectValue {...state} {...{ size, placeholder }} icon={icon} />
+                        <SelectValue {...state} {...{ size, placeholder }} icon={icon} labelId={label ? labelId : undefined} />
 
                         <Popover size={size} className={rest.popoverClassName}>
                             <AriaListBox items={items} className="size-full outline-hidden">

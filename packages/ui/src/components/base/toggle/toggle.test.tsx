@@ -2,6 +2,7 @@ import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { axe } from "vitest-axe";
 import "vitest-axe/extend-expect";
+import { Toggle } from "./toggle";
 import * as Demos from "./toggle.demo";
 
 describe("Toggle", () => {
@@ -32,5 +33,17 @@ describe("Toggle", () => {
     it("renders the slim variant", () => {
         const { container } = render(<Demos.Slim />);
         expect(container.querySelector(".ring-1")).not.toBeNull();
+    });
+
+    it("renders the label after the switch by default", () => {
+        const { container } = render(<Toggle label="Remember me" />);
+        const root = container.firstElementChild;
+        expect(root?.className).not.toContain("flex-row-reverse");
+    });
+
+    it("renders the label before the switch when labelPosition is start", () => {
+        const { container } = render(<Toggle label="Remember me" labelPosition="start" />);
+        const root = container.firstElementChild;
+        expect(root?.className).toContain("flex-row-reverse");
     });
 });

@@ -1,8 +1,12 @@
 /**
  * Files `init` writes that the registry does not publish, plus offline fallbacks for the
- * ones it does. The registry has no `providers/*` entry (see report), so the CLI ships the
- * ThemeProvider itself — dependency-free, toggling the `.light-mode` / `.dark-mode` classes
- * every semantic token in styles/theme.css keys off.
+ * ones it does. The registry now ships a `providers` entry (`theme-provider.tsx`, backed by
+ * `next-themes`, and `router-provider.tsx` for Next's App Router) — `init` copies those when
+ * the registry is reachable and only falls back to the templates below when it is not.
+ *
+ * Also mirrors the handful of `packages/ui/src/styles/globals.css` lines a copy-in project
+ * needs so the components it copies actually compile: the Tailwind plugins, `@custom-variant`s
+ * (including `dark`) and `@utility` blocks. Keep `STYLESHEET_*` below in sync with that file.
  *
  * Spec: docs/theming.md, 09-cli-and-distribution.md.
  */
@@ -214,3 +218,87 @@ export const useTheme = () => {
     return context;
 };
 `;
+
+/** Offline fallback for the registry's `providers` entry, `router-provider.tsx`. */
+export const ROUTER_PROVIDER_FALLBACK = `"use client";
+
+import type { ReactNode } from "react";
+import { useRouter } from "next/navigation";
+import { RouterProvider as AriaRouterProvider } from "react-aria-components";
+
+declare module "react-aria-components" {
+    interface RouterConfig {
+        routerOptions: NonNullable<Parameters<ReturnType<typeof useRouter>["push"]>[1]>;
+    }
+}
+
+/**
+ * Wires React Aria's client-side navigation to the Next.js router so every component that
+ * accepts \`href\` performs a client-side transition. The registry was unreachable when this
+ * was written; run \`properui add providers --overwrite\` once it is, to pick up any updates.
+ */
+export const RouterProvider = ({ children }: { children: ReactNode }) => {
+    const router = useRouter();
+    return <AriaRouterProvider navigate={router.push}>{children}</AriaRouterProvider>;
+};
+`;
+
+/** Used only when the registry is unreachable; the real file lives in the registry's `styles` entry. */
+export const TYPOGRAPHY_CSS_PLACEHOLDER = `/*
+ * Proper UI typography — PLACEHOLDER.
+ *
+ * The full stylesheet could not be downloaded (the registry was unreachable). This file is
+ * intentionally near-empty so Tailwind still compiles. Replace it with the real one:
+ *
+ *   npx @properui/cli add styles --overwrite
+ *
+ * Spec: docs/theming.md
+ */
+`;
+
+/**
+ * Global-stylesheet lines \`init\` mirrors from \`packages/ui/src/styles/globals.css\` so a
+ * copy-in project's Tailwind pipeline actually compiles the components it copies: without
+ * these, dark mode never activates, the typography/react-aria plugins are missing and two
+ * \`@utility\` classes used by copied components do not exist. Keep this block in sync with
+ * that file — see docs/theming.md.
+ */
+export const TAILWIND_IMPORT = '@import "tailwindcss";';
+
+export const STYLESHEET_PLUGIN_LINES = {
+    typography: '@plugin "@tailwindcss/typography";',
+    reactAria: '@plugin "tailwindcss-react-aria-components";',
+    animate: '@plugin "tailwindcss-animate";',
+};
+
+/**
+ * Whether `packages/ui/src/styles/globals.css` still declares the `tailwindcss-animate`
+ * plugin. Flip to `false` (and drop `STYLESHEET_PLUGIN_LINES.animate` from what `init`
+ * writes/installs) once animations are self-contained in theme.css and that line is gone.
+ */
+export const STYLESHEET_INCLUDES_ANIMATE_PLUGIN = true;
+
+export const STYLESHEET_CUSTOM_VARIANTS = [
+    "@custom-variant dark (&:where(.dark-mode, .dark-mode *));",
+    "@custom-variant label (& [data-label]);",
+    "@custom-variant focus-input-within (&:has(input:focus));",
+];
+
+export const STYLESHEET_UTILITIES = [
+    `@utility scrollbar-hide {
+    /* For Webkit-based browsers (Chrome, Safari and Opera) */
+    &::-webkit-scrollbar {
+        display: none;
+        -webkit-appearance: none;
+    }
+
+    /* For IE, Edge and Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}`,
+    `@utility transition-inherit-all {
+    transition-property: inherit;
+    transition-duration: inherit;
+    transition-timing-function: inherit;
+}`,
+];

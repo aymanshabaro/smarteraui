@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import { Switch as AriaSwitch, type SwitchProps as AriaSwitchProps } from "react-aria-components";
 import { cx, sortCx } from "../../../utils/cx";
+import { warnDomProps } from "../../../utils/warn-dom-props";
 
 export interface ToggleBaseProps {
     /** The size of the toggle. */
@@ -106,15 +107,24 @@ export interface ToggleProps extends AriaSwitchProps {
     hint?: ReactNode;
     /** Renders a slimmer track without the resting inner shadow. */
     slim?: boolean;
+    /**
+     * Which side of the switch the label (and hint) render on.
+     *
+     * @default "end"
+     */
+    labelPosition?: "start" | "end";
 }
 
-export const Toggle = ({ label, hint, className, size = "sm", slim, ...ariaSwitchProps }: ToggleProps) => {
+export const Toggle = ({ label, hint, className, size = "sm", slim, labelPosition = "end", ...ariaSwitchProps }: ToggleProps) => {
+    warnDomProps("Toggle", ariaSwitchProps as Record<string, unknown>, { checked: "isSelected", disabled: "isDisabled" });
+
     return (
         <AriaSwitch
             {...ariaSwitchProps}
             className={(state) =>
                 cx(
                     "relative flex w-max items-start",
+                    labelPosition === "start" && "flex-row-reverse",
                     state.isDisabled && "cursor-not-allowed",
                     styles[size].root,
                     typeof className === "function" ? className(state) : className,

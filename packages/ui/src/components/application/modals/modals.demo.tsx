@@ -196,6 +196,35 @@ export const DestructiveStackedLeftAligned = () => (
     </ModalPanel>
 );
 
+/**
+ * A confirm dialog composition. This preview shows only the panel content —
+ * wire it up in your app with `<ModalOverlay isDismissable={false} isKeyboardDismissDisabled>`
+ * so the only way out is one of the two footer actions (no outside click, no
+ * Escape). `hasCloseButton={false}` on `ModalHeader` drops the header's own X
+ * for the same reason.
+ */
+export const ConfirmDialog = () => (
+    <ModalPanel>
+        <Dialog aria-label="Delete project">
+            <ModalHeader
+                hasCloseButton={false}
+                icon={Trash01}
+                color="error"
+                title="Delete project"
+                description="This action cannot be undone and every file inside it will be removed."
+            />
+            <ModalFooter>
+                <Button size="lg" color="secondary">
+                    Cancel
+                </Button>
+                <Button size="lg" color="primary-destructive">
+                    Delete
+                </Button>
+            </ModalFooter>
+        </Dialog>
+    </ModalPanel>
+);
+
 export const Horizontal = () => (
     <ModalPanel width="sm">
         <Dialog aria-label="Update available">
@@ -270,7 +299,7 @@ export const Login = () => (
                     <h2 className="text-primary text-md font-semibold sm:text-lg">Log in to your account</h2>
                     <p className="text-tertiary text-sm">Welcome back! Please enter your details.</p>
                 </div>
-                <CloseButton size="sm" slot={null} className="absolute end-3 top-3" />
+                <CloseButton size="sm" className="absolute end-3 top-3" />
             </div>
 
             <ModalBody>
@@ -311,7 +340,7 @@ export const Signup01 = () => (
                     <h2 className="text-primary text-md font-semibold sm:text-lg">Create an account</h2>
                     <p className="text-tertiary text-sm">Start your 30-day free trial. No credit card required.</p>
                 </div>
-                <CloseButton size="sm" slot={null} className="absolute end-3 top-3" />
+                <CloseButton size="sm" className="absolute end-3 top-3" />
             </div>
 
             <ModalBody>
@@ -726,7 +755,7 @@ export const CenteredPhoto = () => (
         <Dialog aria-label="New in Proper UI">
             <div className="relative">
                 <img src={IMAGES.landscape[0].src} alt="" className="h-45 w-full object-cover" />
-                <CloseButton size="sm" theme="dark" slot={null} className="absolute end-3 top-3" />
+                <CloseButton size="sm" theme="dark" className="absolute end-3 top-3" />
             </div>
             <div className="flex flex-col gap-1 px-4 pt-4 text-center sm:px-6 sm:pt-6">
                 <h2 className="text-primary text-md font-semibold sm:text-lg">Boards are here</h2>
@@ -747,7 +776,7 @@ export const CenteredPhotoCarousel = () => (
         <Dialog aria-label="What’s new">
             <div className="relative">
                 <img src={IMAGES.landscape[1].src} alt="" className="h-45 w-full object-cover" />
-                <CloseButton size="sm" theme="dark" slot={null} className="absolute end-3 top-3" />
+                <CloseButton size="sm" theme="dark" className="absolute end-3 top-3" />
             </div>
             <div className="flex flex-col gap-1 px-4 pt-4 text-center sm:px-6 sm:pt-6">
                 <h2 className="text-primary text-md font-semibold sm:text-lg">Faster search</h2>
@@ -773,7 +802,7 @@ export const CenteredVideoCarousel = () => (
         <Dialog aria-label="Take the tour">
             <div className="bg-secondary relative">
                 <img src={VIDEO_POSTER.src} alt="" className="h-60 w-full object-cover" />
-                <CloseButton size="sm" theme="dark" slot={null} className="absolute end-3 top-3" />
+                <CloseButton size="sm" theme="dark" className="absolute end-3 top-3" />
                 <Button
                     aria-label="Play the tour video"
                     color="secondary"
@@ -832,7 +861,7 @@ export const PaymentDetailsWithImage = () => (
         <Dialog aria-label="Confirm your purchase">
             <div className="relative">
                 <img src={IMAGES.landscape[2].src} alt="" className="h-40 w-full object-cover" />
-                <CloseButton size="sm" theme="dark" slot={null} className="absolute end-3 top-3" />
+                <CloseButton size="sm" theme="dark" className="absolute end-3 top-3" />
             </div>
             <div className="flex flex-col gap-1 px-4 pt-4 sm:px-6 sm:pt-6">
                 <h2 className="text-primary text-md font-semibold sm:text-lg">Confirm your purchase</h2>
@@ -1012,7 +1041,7 @@ export const ProfileSettings = () => (
         <Dialog aria-label="Profile settings">
             <div className="relative">
                 <img src={IMAGES.landscape[3].src} alt="" className="h-30 w-full object-cover" />
-                <CloseButton size="sm" theme="dark" slot={null} className="absolute end-3 top-3" />
+                <CloseButton size="sm" theme="dark" className="absolute end-3 top-3" />
             </div>
 
             <div className="-mt-9 flex flex-col gap-4 px-4 sm:px-6">

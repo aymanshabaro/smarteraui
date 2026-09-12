@@ -9,11 +9,12 @@ const styles = sortCx({
     root: {
         // The horizontal padding lives on the root so every slot (breadcrumbs, content,
         // footer) lines up; only the banner breaks out of it again.
-        root: "flex w-full flex-col gap-5 px-4 md:px-8",
+        root: "flex w-full flex-col gap-5",
+        gutter: "px-4 md:px-8",
         align: { start: "", center: "items-center text-center" },
     },
     banner: {
-        root: "-mx-4 h-32 w-auto self-stretch overflow-hidden bg-tertiary md:-mx-8 md:h-40",
+        root: "h-32 w-auto self-stretch overflow-hidden bg-tertiary md:h-40",
         image: "size-full object-cover",
     },
     content: {
@@ -44,7 +45,7 @@ const styles = sortCx({
 /** The horizontal alignment shared by every slot of a page header. */
 export type PageHeaderAlign = keyof typeof styles.root.align;
 
-const PageHeaderContext = createContext<{ align: PageHeaderAlign; hasBanner: boolean }>({ align: "start", hasBanner: false });
+const PageHeaderContext = createContext<{ align: PageHeaderAlign; hasBanner: boolean; gutter: boolean }>({ align: "start", hasBanner: false, gutter: true });
 
 export interface PageHeaderBannerProps extends ComponentPropsWithRef<"div"> {
     /** Source of the cover image. Omit it to render a custom cover through `children`. */
@@ -55,12 +56,18 @@ export interface PageHeaderBannerProps extends ComponentPropsWithRef<"div"> {
     imageClassName?: string;
 }
 
-const Banner = ({ src, alt = "", imageClassName, className, children, ...props }: PageHeaderBannerProps) => (
-    <div {...props} className={cx(styles.banner.root, className)}>
-        {src && <img src={src} alt={alt} className={cx(styles.banner.image, imageClassName)} />}
-        {children}
-    </div>
-);
+const Banner = ({ src, alt = "", imageClassName, className, children, ...props }: PageHeaderBannerProps) => {
+    // The banner breaks out of the root's horizontal gutter with a negative margin — there's
+    // nothing to break out of once `gutter={false}` removes that padding.
+    const { gutter } = useContext(PageHeaderContext);
+
+    return (
+        <div {...props} className={cx(styles.banner.root, gutter && "-mx-4 md:-mx-8", className)}>
+            {src && <img src={src} alt={alt} className={cx(styles.banner.image, imageClassName)} />}
+            {children}
+        </div>
+    );
+};
 
 const Content = ({ className, ...props }: ComponentPropsWithRef<"div">) => {
     const { align } = useContext(PageHeaderContext);
@@ -111,15 +118,22 @@ export interface PageHeaderProps extends ComponentPropsWithRef<"header"> {
      * @default "start"
      */
     align?: PageHeaderAlign;
+    /**
+     * Whether the header applies its own horizontal gutter (`px-4 md:px-8`). Set to `false` when
+     * the parent layout already supplies side padding, so the header doesn't double it up.
+     *
+     * @default true
+     */
+    gutter?: boolean;
 }
 
-const PageHeaderRoot = ({ align = "start", className, children, ...props }: PageHeaderProps) => {
+const PageHeaderRoot = ({ align = "start", gutter = true, className, children, ...props }: PageHeaderProps) => {
     // A banner changes how the avatar is positioned, so the root announces it to the slots.
     const hasBanner = Children.toArray(children).some((child) => isValidElement(child) && child.type === Banner);
 
     return (
-        <PageHeaderContext.Provider value={{ align, hasBanner }}>
-            <header {...props} className={cx(styles.root.root, styles.root.align[align], className)}>
+        <PageHeaderContext.Provider value={{ align, hasBanner, gutter }}>
+            <header {...props} className={cx(styles.root.root, gutter && styles.root.gutter, styles.root.align[align], className)}>
                 {children}
             </header>
         </PageHeaderContext.Provider>

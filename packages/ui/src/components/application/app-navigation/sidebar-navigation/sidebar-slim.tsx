@@ -1,6 +1,6 @@
 "use client";
 
-import type { FC } from "react";
+import type { FC, ReactNode } from "react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Button as AriaButton, DialogTrigger as AriaDialogTrigger, Popover as AriaPopover } from "react-aria-components";
@@ -31,9 +31,24 @@ export interface SidebarNavigationSlimProps {
     hideBorder?: boolean;
     /** Whether to hide the right side border. */
     hideRightBorder?: boolean;
+    /** Logo rendered in the desktop rail. @default <ProperLogoMinimal> */
+    logo?: ReactNode;
+    /** Logo rendered in the mobile header/menu. @default <ProperLogo> */
+    mobileLogo?: ReactNode;
+    /** Accessible label for the desktop `<aside>` landmark. @default "Sidebar" */
+    ariaLabel?: string;
 }
 
-export const SidebarNavigationSlim = ({ activeUrl, items, footerItems = [], hideBorder, hideRightBorder }: SidebarNavigationSlimProps) => {
+export const SidebarNavigationSlim = ({
+    activeUrl,
+    items,
+    footerItems = [],
+    hideBorder,
+    hideRightBorder,
+    logo = <ProperLogoMinimal className="size-6" />,
+    mobileLogo = <ProperLogo className="h-6" />,
+    ariaLabel = "Sidebar",
+}: SidebarNavigationSlimProps) => {
     const activeItem = [...items, ...footerItems].find((item) => item.href === activeUrl || item.items?.some((subItem) => subItem.href === activeUrl));
     const [currentItem, setCurrentItem] = useState(activeItem ?? items[1] ?? items[0]);
     const [isHovering, setIsHovering] = useState(false);
@@ -45,7 +60,7 @@ export const SidebarNavigationSlim = ({ activeUrl, items, footerItems = [], hide
 
     const mainSidebar = (
         <aside
-            aria-label="Sidebar"
+            aria-label={ariaLabel}
             style={{
                 width: MAIN_SIDEBAR_WIDTH,
             }}
@@ -60,9 +75,7 @@ export const SidebarNavigationSlim = ({ activeUrl, items, footerItems = [], hide
                     hideBorder && !isSecondarySidebarVisible && "ring-transparent",
                 )}
             >
-                <div className="flex justify-center px-3">
-                    <ProperLogoMinimal className="size-6" />
-                </div>
+                <div className="flex justify-center px-3">{logo}</div>
 
                 <ul className="mt-5 flex flex-col gap-0.5 px-3.5">
                     {items.map((item) => (
@@ -185,14 +198,12 @@ export const SidebarNavigationSlim = ({ activeUrl, items, footerItems = [], hide
             />
 
             {/* Mobile header navigation */}
-            <MobileNavigationHeader>
+            <MobileNavigationHeader logo={mobileLogo}>
                 <aside
                     aria-label="Mobile sidebar"
                     className="group bg-primary flex h-full max-h-full w-full max-w-full flex-col justify-between overflow-y-auto pt-4"
                 >
-                    <div className="px-4">
-                        <ProperLogo className="h-6" />
-                    </div>
+                    <div className="px-4">{mobileLogo}</div>
 
                     <NavList items={items} />
 

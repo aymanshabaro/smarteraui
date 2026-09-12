@@ -21,6 +21,27 @@ its own.
 Reach for an explicit `dark:` utility only for the rare case a token can't express (swapping an image asset, inverting a logo mark, or a gradient stop
 with no semantic equivalent), and leave a comment explaining why when you do.
 
+### Import-order independence
+
+`.dark-mode`'s overrides win regardless of whether you `@import "theme.css"` before or after `@import "tailwindcss"` in your own stylesheet. This is
+worth knowing because Tailwind v4 changes how it emits a `@theme` block depending on that order: imported _after_ `tailwindcss`, `@theme`'s output is
+wrapped in Tailwind's own `theme` cascade layer as usual; imported _before_ it, the same block is emitted as unlayered `:root, :host` CSS instead —
+and unlayered CSS always wins over anything in a named layer, regardless of selector specificity. A `.dark-mode` override left inside a normal
+`@layer base` block would therefore silently lose to the light-mode defaults the moment a consumer's build put `theme.css` first.
+
+`theme.css` avoids this by declaring its dark-mode block unlayered too, with a boosted selector:
+
+```css
+:root.dark-mode,
+.dark-mode {
+    /* ...every semantic token's dark-mode value... */
+}
+```
+
+Unlayered vs. unlayered is a fair fight on cascade-layer terms, and `:root.dark-mode`'s higher specificity (over the `:root, :host` selector Tailwind's
+own `@theme` output uses) settles it either way `theme.css` is imported. If you copy `.dark-mode` overrides of your own into a project that also
+ships `theme.css`, keep them unlayered and this selector shape too, or an innocuous `@import` reorder later can silently break them.
+
 ## How to switch to dark mode
 
 ### Whole-app toggle
@@ -43,7 +64,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 ```
 
 `ThemeProvider` exposes three states to your users (**Light**, **Dark**, and **System**) and injects a blocking script so there's no flash of the
-wrong theme on first paint. Read or change the current theme anywhere with the re-exported hook:
+wrong theme on first paint. It's a thin wrapper around [`next-themes`](https://github.com/pacocoursey/next-themes) — despite the package name,
+`next-themes` has no Next.js dependency; it reads/writes `localStorage` and toggles a class on `<html>` with plain DOM APIs, so `ThemeProvider` works
+the same way in a Vite, CRA, or any other plain React app (see the [Vite integration guide](/integrations/vite) for a worked example).
+
+Every `next-themes` prop passes through and overrides the defaults below:
+
+| Prop           | Default    | What it does                                                                                                                                                                                                                        |
+| -------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `defaultTheme` | `"system"` | Theme used before the user (or system) has picked one. Pass `"light"` or `"dark"` to start the app on a fixed theme.                                                                                                                |
+| `forcedTheme`  | —          | Pins the app to one theme and disables `setTheme`. Use for a light-only or dark-only product, or a page that must ignore the stored preference.                                                                                     |
+| `enableSystem` | `true`     | Whether `"system"` (follows `prefers-color-scheme`) is an available theme. Pass `false` for a light/dark-only toggle.                                                                                                               |
+| `storageKey`   | `"theme"`  | The `localStorage` key the chosen theme persists under. Change it if your app already uses that key, or two `ThemeProvider`s on the same origin would clobber each other.                                                           |
+| `attribute`    | `"class"`  | Which `<html>` attribute the resolved theme is written to. Stays `"class"` unless you also update the `.dark-mode` selectors in `theme.css` and the `@custom-variant dark` in `globals.css` to match — the three must stay in sync. |
+
+Read or change the current theme anywhere with the re-exported hook:
 
 ```tsx
 import { useTheme } from "@properui/ui/providers";

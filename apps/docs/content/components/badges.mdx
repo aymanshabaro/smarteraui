@@ -93,5 +93,9 @@ demoFile: badges
             q: "How do I make badges interactive with buttons?",
             a: "You can use BadgeWithButton to add interactive elements like close buttons. Use the onButtonClick prop to handle click events and buttonLabel for accessibility. The component automatically includes a close icon.",
         },
+        {
+            q: "Can I pass title, aria-*, or data-* attributes to a badge?",
+            a: "Yes. Every badge component (Badge, BadgeWithDot, BadgeWithIcon, BadgeWithFlag, BadgeWithImage, BadgeWithButton, BadgeIcon) spreads unrecognized props onto its root element, so title, aria-label, data-testid, and similar attributes all pass through.",
+        },
     ]}
 />

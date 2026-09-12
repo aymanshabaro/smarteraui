@@ -66,6 +66,22 @@ interface FileUploadDropZoneProps {
      * the size limit when files are dropped on the drop zone.
      */
     onSizeLimitExceed?: (files: FileList) => void;
+    /**
+     * Label on the click-to-upload button, shown on desktop and as the leading part of the
+     * mobile label.
+     * @default "Click to upload"
+     */
+    uploadLabel?: string;
+    /**
+     * Trailing part of the button label shown only on mobile, appended to `uploadLabel`.
+     * @default "and attach files"
+     */
+    uploadLabelMobileSuffix?: string;
+    /**
+     * Text shown beside the upload button on desktop.
+     * @default "or drag and drop"
+     */
+    dragAndDropLabel?: string;
 }
 
 export const FileUploadDropZone = ({
@@ -78,6 +94,9 @@ export const FileUploadDropZone = ({
     onDropFiles,
     onDropUnacceptedFiles,
     onSizeLimitExceed,
+    uploadLabel = "Click to upload",
+    uploadLabelMobileSuffix = "and attach files",
+    dragAndDropLabel = "or drag and drop",
 }: FileUploadDropZoneProps) => {
     const id = useId();
     const inputRef = useRef<HTMLInputElement>(null);
@@ -223,10 +242,10 @@ export const FileUploadDropZone = ({
                     />
                     <label htmlFor={id} className="flex cursor-pointer">
                         <Button color="link-color" size="md" isDisabled={isDisabled} onClick={() => inputRef.current?.click()}>
-                            Click to upload <span className="md:hidden">and attach files</span>
+                            {uploadLabel} <span className="md:hidden">{uploadLabelMobileSuffix}</span>
                         </Button>
                     </label>
-                    <span className="text-sm max-md:hidden">or drag and drop</span>
+                    <span className="text-sm max-md:hidden">{dragAndDropLabel}</span>
                 </div>
                 <p className={cx("text-xs transition duration-100 ease-linear", isInvalid && "text-error-primary")}>
                     {hint || "SVG, PNG, JPG or GIF (max. 800x400px)"}

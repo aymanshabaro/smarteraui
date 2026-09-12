@@ -35,9 +35,9 @@ import { ButtonUtility } from "../../base/buttons/button-utility";
 import { Checkbox } from "../../base/checkbox/checkbox";
 import { Dropdown } from "../../base/dropdown/dropdown";
 import { Input } from "../../base/input/input";
-import { DemoNativeSelect } from "../../base/input/input-native-select";
 import { PaymentInput } from "../../base/input/input-payment";
 import { RadioButton, RadioGroup } from "../../base/radio-buttons/radio-buttons";
+import { NativeSelect } from "../../base/select/select-native";
 import { TextArea } from "../../base/textarea/textarea";
 import { Toggle } from "../../base/toggle/toggle";
 import { Dot } from "../../foundations/dot-icon";
@@ -628,14 +628,14 @@ export const FiltersAdvancedActiveMenu = () => (
 
                     <div className="flex w-full flex-col gap-3">
                         <div className="flex items-center gap-2">
-                            <DemoNativeSelect aria-label="Field" options={fieldOptions} defaultValue="status" size="sm" className="flex-1" />
-                            <DemoNativeSelect aria-label="Operator" options={operatorOptions} defaultValue="is" size="sm" className="w-28" />
+                            <NativeSelect aria-label="Field" options={fieldOptions} defaultValue="status" size="sm" className="flex-1" />
+                            <NativeSelect aria-label="Operator" options={operatorOptions} defaultValue="is" size="sm" className="w-28" />
                             <Input aria-label="Value" placeholder="In progress" size="sm" wrapperClassName="flex-1" />
                             <ButtonUtility tooltip="Remove filter" size="sm" color="tertiary" icon={Trash01} />
                         </div>
                         <div className="flex items-center gap-2">
-                            <DemoNativeSelect aria-label="Field" options={fieldOptions} defaultValue="assignee" size="sm" className="flex-1" />
-                            <DemoNativeSelect aria-label="Operator" options={operatorOptions} defaultValue="is" size="sm" className="w-28" />
+                            <NativeSelect aria-label="Field" options={fieldOptions} defaultValue="assignee" size="sm" className="flex-1" />
+                            <NativeSelect aria-label="Operator" options={operatorOptions} defaultValue="is" size="sm" className="w-28" />
                             <Input aria-label="Value" placeholder="Olivia Rhye" size="sm" wrapperClassName="flex-1" />
                             <ButtonUtility tooltip="Remove filter" size="sm" color="tertiary" icon={Trash01} />
                         </div>
@@ -779,7 +779,7 @@ export const ProjectDetailsMenu = () => (
                 <SlideoutMenu.Content>
                     <Input label="Project name" defaultValue="Website redesign" size="md" />
                     <TextArea label="Description" defaultValue="Redesign the marketing site to reflect the new brand guidelines." rows={3} />
-                    <DemoNativeSelect label="Status" options={statusOptions} defaultValue="in-progress" size="md" />
+                    <NativeSelect label="Status" options={statusOptions} defaultValue="in-progress" size="md" />
 
                     <div className="flex w-full items-center justify-between">
                         <div>
@@ -1232,7 +1232,7 @@ export const ShareProjectMenu = () => (
                 <SlideoutMenu.Content>
                     <div className="flex w-full items-center gap-2">
                         <Input aria-label="Add people by email" placeholder="Add people by email" icon={Mail01} size="md" wrapperClassName="flex-1" />
-                        <DemoNativeSelect aria-label="Permission" options={roleOptions} defaultValue="view" size="md" className="w-32" />
+                        <NativeSelect aria-label="Permission" options={roleOptions} defaultValue="view" size="md" className="w-32" />
                         <Button size="md">Invite</Button>
                     </div>
 

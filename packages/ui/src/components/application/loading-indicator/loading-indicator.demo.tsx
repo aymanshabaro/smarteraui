@@ -24,9 +24,17 @@ export const DotCircleWithLabel = () => <LoadingIndicator type="dot-circle" size
 
 export const Sizes = () => (
     <div className="flex flex-col items-start gap-8 md:flex-row">
+        <LoadingIndicator type="line-simple" size="xs" label="Loading..." inline />
         <LoadingIndicator type="line-simple" size="sm" label="Loading..." />
         <LoadingIndicator type="line-simple" size="md" label="Loading..." />
         <LoadingIndicator type="line-simple" size="lg" label="Loading..." />
         <LoadingIndicator type="line-simple" size="xl" label="Loading..." />
+    </div>
+);
+
+/** A 16px spinner with its label beside it, meant to sit inline with surrounding text. */
+export const InlineXs = () => (
+    <div className="text-secondary flex items-center gap-2 text-sm">
+        <LoadingIndicator type="line-simple" size="xs" label="Syncing changes..." inline />
     </div>
 );

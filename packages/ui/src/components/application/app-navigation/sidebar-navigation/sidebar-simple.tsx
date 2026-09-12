@@ -28,6 +28,17 @@ export interface SidebarNavigationProps {
     className?: string;
     /** Whether to round the account card avatar. */
     avatarRounded?: boolean;
+    /** Logo rendered above the search inputs. @default <ProperLogo> */
+    logo?: ReactNode;
+    /**
+     * The search field(s). `true` (default) renders the built-in mobile/desktop `Input` pair,
+     * `false` hides search entirely, and a `ReactNode` replaces it with custom content.
+     */
+    search?: boolean | ReactNode;
+    /** Accessible label for the `<aside>` landmark. @default "Sidebar" */
+    ariaLabel?: string;
+    /** Accessible label for the search input(s), when `search` is left as its default. @default "Search" */
+    searchLabel?: string;
 }
 
 export const SidebarNavigationSimple = ({
@@ -39,12 +50,16 @@ export const SidebarNavigationSimple = ({
     hideBorder = false,
     className,
     avatarRounded,
+    logo = <ProperLogo className="h-6" />,
+    search = true,
+    ariaLabel = "Sidebar",
+    searchLabel = "Search",
 }: SidebarNavigationProps) => {
     const MAIN_SIDEBAR_WIDTH = 280;
 
     const content = (
         <aside
-            aria-label="Sidebar"
+            aria-label={ariaLabel}
             style={
                 {
                     "--width": `${MAIN_SIDEBAR_WIDTH}px`,
@@ -57,13 +72,19 @@ export const SidebarNavigationSimple = ({
             )}
         >
             <div className="flex flex-col gap-5 px-4 lg:px-5">
-                <ProperLogo className="h-6" />
+                {logo}
 
-                {/* Mobile search input */}
-                <Input size="md" aria-label="Search" placeholder="Search" icon={SearchLg} className="md:hidden" />
+                {search === true ? (
+                    <>
+                        {/* Mobile search input */}
+                        <Input size="md" aria-label={searchLabel} placeholder={searchLabel} icon={SearchLg} className="md:hidden" />
 
-                {/* Desktop search input */}
-                <Input shortcut size="sm" aria-label="Search" placeholder="Search" icon={SearchLg} className="max-md:hidden" />
+                        {/* Desktop search input */}
+                        <Input shortcut size="sm" aria-label={searchLabel} placeholder={searchLabel} icon={SearchLg} className="max-md:hidden" />
+                    </>
+                ) : (
+                    search
+                )}
             </div>
 
             <NavList activeUrl={activeUrl} items={items} />

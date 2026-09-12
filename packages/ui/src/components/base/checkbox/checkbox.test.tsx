@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { axe } from "vitest-axe";
 import "vitest-axe/extend-expect";
@@ -28,5 +28,20 @@ describe("Checkbox", () => {
     it("marks the checkbox as disabled", () => {
         const { getByRole } = render(<Demos.Disabled />);
         expect((getByRole("checkbox") as HTMLInputElement).disabled).toBe(true);
+    });
+
+    it("gives a checkbox with a hint an accessible name equal to just the label", () => {
+        render(<Demos.WithLabelAndHint />);
+        // The hint used to sit inside React Aria's generated `<label>`, so it joined the checkbox's
+        // accessible name (e.g. "Remember me Save my login details..."). It must not anymore.
+        expect(screen.getByRole("checkbox", { name: "Remember me" })).toBeInTheDocument();
+    });
+
+    it("still describes the checkbox with its hint via aria-describedby", () => {
+        render(<Demos.WithLabelAndHint />);
+        const checkbox = screen.getByRole("checkbox", { name: "Remember me" });
+        const describedbyId = checkbox.getAttribute("aria-describedby");
+        expect(describedbyId).toBeTruthy();
+        expect(document.getElementById(describedbyId!)).toHaveTextContent("Save my login details for next time.");
     });
 });

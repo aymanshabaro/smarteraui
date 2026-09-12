@@ -16,7 +16,7 @@ The fastest path is the CLI. Run it from the root of your Next.js project:
 npx @properui/cli@latest init --nextjs
 ```
 
-It detects App Router vs Pages Router and whether you use a `src/` directory automatically: `--nextjs` only overrides framework detection, it doesn't scaffold a new project. The CLI writes `app/globals.css` (or `styles/globals.css` for a Pages Router project), adds the Tailwind `@source` line so the package's classes get scanned, sets `transpilePackages` in `next.config.ts`, and wires up `ThemeProvider` in your root layout: it does not add `RouterProvider` for you, since that depends on which router you're using (see below). You're ready to add components once it's done.
+It detects App Router vs Pages Router and whether you use a `src/` directory automatically: `--nextjs` only overrides framework detection, it doesn't scaffold a new project. The CLI writes `app/globals.css` (or `styles/globals.css` for a Pages Router project) with the full stylesheet block inserted after your existing `@import "tailwindcss"` line (theme import, plugins, custom variants and utilities, not just a bare `@source` line), sets `transpilePackages` in `next.config.ts`, and, unless you pass `--no-providers`, wires up both providers in your root layout: `ThemeProvider` (the registry's `next-themes`-based one, with `forcedTheme`/`enableSystem` props available) on every router, and on the App Router, `RouterProvider` from `providers/router-provider.tsx` as well, since that file reads `next/navigation` and works out of the box there. A Pages Router project still needs `RouterProvider` set up by hand (see below): that provider reads `next/router` instead, so `init` can't wire it automatically. `init` doesn't install any npm packages on its own: it prints the install command last unless you pass `--install`, and `--no-tooling-ignores` skips the ESLint/Prettier ignore entries it otherwise adds for the vendored component directories. You're ready to add components once it's done.
 
 ## Manual installation
 
@@ -142,6 +142,14 @@ export default function Page() {
 ```
 
 Most base components already carry their own `"use client"` directive because they're built on React Aria hooks, so you can import them directly into a server component's JSX without adding the directive yourself: the boundary is drawn inside the component, not at the call site. You only need `"use client"` on your own file when _you_ add interactivity (a click handler, `useState`, a form) around the components you're composing.
+
+**Icon props, from a server component specifically.** The usual form passes the icon component itself, `<Button iconLeading={ArrowRight}>`, and the component applies its own sizing and `data-icon` attribute. That form doesn't survive being rendered straight from a true server component (a file with no `"use client"` of its own that renders `Button` directly): a bare component reference can't cross the server/client boundary, and the build fails, sometimes with an error pointing at an unrelated page. Pass an element instead, and set `data-icon` yourself since the wrapper never runs:
+
+```tsx
+<Button iconTrailing={<ArrowRight data-icon="trailing" />}>Continue</Button>
+```
+
+Use `data-icon="leading"` for `iconLeading`. This only matters inside a real server component; once you're inside a `"use client"` file, the plain component-reference form works as documented everywhere else.
 
 ## Dark mode
 

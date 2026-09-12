@@ -21,11 +21,15 @@ npx @properui/cli@latest info --json
 
 This reports whether the project is already set up (framework, Tailwind version, `components.json`
 aliases, theme CSS path, which registry entries are already installed, and the installed
-`@properui/ui` / `properui` versions). Read it before deciding anything else:
+`@properui/ui` / `properui` versions). `info` always probes the registry, whether or not
+`components.json` exists yet, so `registryReachable` reflects a live network check rather than a
+side effect of the project being unconfigured. Read the output before deciding anything else:
 
-- No `components.json` → run `npx @properui/cli@latest init -y` first. Do not hand-write
-  `components.json`, `utils/cx.ts`, the theme token file, or the `ThemeProvider` wiring. `init`
-  generates all of it correctly for the detected framework.
+- No `components.json` → `info --json` still reports the detected framework, the Tailwind version,
+  and a real `registryReachable`, just with no aliases and nothing installed. That is the expected
+  shape of a fresh project, not a broken one. Run `npx @properui/cli@latest init -y` next. Do not
+  hand-write `components.json`, `utils/cx.ts`, the theme token file, or the `ThemeProvider` wiring.
+  `init` generates all of it correctly for the detected framework.
 - `components.json` exists → note the `aliases.components` value (often `@/components`, sometimes a
   project-specific prefix) and use it for every import you write by hand.
 - Tailwind is not v4 → `init` will refuse and print an upgrade path. Do not attempt to work around
@@ -42,30 +46,40 @@ npx @properui/cli@latest list --layer base             # browse by layer: base, 
 npx @properui/cli@latest list --type example            # full-page examples specifically
 ```
 
-Only write custom markup when the search genuinely comes up empty. If it does, still build the
-custom piece out of already-installed primitives and the same semantic tokens (below) rather than
-one-off styling.
-
-## 3. Prefer whole examples for whole screens
-
-- Building a recognizable whole screen (a settings page, a pricing page, an onboarding flow, a
-  dashboard, an auth page)? Search `list --type example` / `search` for a matching full-page
-  example first and install it with `add example <name>`. Adapt copy and data to the request; don't
-  rebuild the layout from primitives when an example already covers it.
-- Building or fixing one isolated piece of behavior (a button variant, a single form field, a
-  tooltip)? Install the specific primitive(s) with `add <name>` instead of pulling in a whole
-  example.
+`search` prints "no match" plainly when nothing scores, but it's still a local fuzzy match over
+names and titles, not the registry itself: a component that exists under a different word can still
+come up empty. Treat "no match" as a lead, not a verdict, and confirm against the registry directly
+before concluding a component doesn't exist:
 
 ```bash
-npx @properui/cli@latest add example settings-01
-npx @properui/cli@latest add button input select
+curl <registry>/index.json     # e.g. https://properui.dev/r/index.json, the authoritative check
+```
+
+Only write custom markup once both come up empty. If it does, still build the custom piece out of
+already-installed primitives and the same semantic tokens (below) rather than one-off styling.
+
+## 3. Brownfield vs greenfield: examples are not always the install target
+
+- **For a screen that already exists**, read the example and install the primitives. Search
+  `list --type example` / `search` for the closest full-page example, but treat it as reference, not
+  a file to drop in: it's a complete, opinionated page with its own shell, its own copy and its own
+  layout chrome, while the real screen already has routing, data wiring and non-placeholder content
+  you'd otherwise delete most of the file to recover. Pull the primitives it composes
+  (`add <name>` for each) and follow the layout pattern it demonstrates, then rebuild the screen's
+  markup around the project's existing wiring using those pieces and the same semantic tokens.
+- **`add example` is for a screen created from nothing**: a new route, a fresh prototype, an empty
+  file with no existing layout to preserve. Install it and adapt copy and data to the request; don't
+  rebuild the layout from primitives when an example already covers it.
+
+```bash
+npx @properui/cli@latest add example settings-01     # greenfield: install and adapt
+npx @properui/cli@latest add button input select     # brownfield: primitives only, read the example
 ```
 
 `add` resolves `registryDependencies` recursively (installing a component's own component
-dependencies), rewrites the library's internal `@/` imports to the project's configured alias, and
-reports missing npm packages to install. It does not silently run installs for you. A second `add`
-of the same name is a no-op unless you pass `--overwrite`; never pass `--overwrite` on top of a file
-a human has since edited without checking `diff` first:
+dependencies) and rewrites the library's internal `@/` imports to the project's configured alias. A
+second `add` of the same name is a no-op unless you pass `--overwrite`; never pass `--overwrite` on
+top of a file a human has since edited without checking `diff` first:
 
 ```bash
 npx @properui/cli@latest diff <name>     # see local modifications before overwriting
@@ -84,8 +98,9 @@ Every file `add` copies in already follows these rules. Any markup you write by 
 page shell, a piece the registry doesn't have) must follow them too:
 
 - **React Aria props, not DOM props.** `onPress` not `onClick`, `isDisabled` not `disabled`,
-  `isSelected` not `checked`. These components wrap React Aria Components; a DOM prop is silently
-  ignored.
+  `isSelected` not `checked`, `isReadOnly` not `readOnly`, `isRequired` not `required`. These
+  components wrap React Aria Components; a DOM prop is silently ignored. One exception:
+  `NativeSelect` is a real `<select>` under the hood, so it honours a caller's `id` directly.
 - **Semantic tokens only, never a literal.** `bg-primary`, `text-tertiary`, `border-secondary`,
   `bg-brand-solid`. Never a raw palette class (`bg-purple-600`) and never an arbitrary value
   (`bg-[#7f56d9]`, `p-[13px]`). Typography is tokenised the same way: `text-display-lg`, `text-md`,
@@ -97,9 +112,14 @@ page shell, a piece the registry doesn't have) must follow them too:
 - **Logical properties for anything directional**, so `dir="rtl"` keeps working: `ms-*`/`me-*` not
   `ml-*`/`mr-*`, `ps-*`/`pe-*` not `pl-*`/`pr-*`, `start-*`/`end-*` not `left-*`/`right-*`,
   `text-start` not `text-left`.
-- **Icons as component references.** `<Button iconLeading={ArrowRight}>`, not
-  `<Button iconLeading={<ArrowRight />}>`. The component applies its own sizing and the `data-icon`
-  attribute its styles target.
+- **Icons as component references, except inside React Server Components.**
+  `<Button iconLeading={ArrowRight}>`, not `<Button iconLeading={<ArrowRight />}>`, is the default:
+  the component applies its own sizing and the `data-icon` attribute its styles target. Inside a true
+  server component (a file with no `"use client"` that renders `Button` directly, not through a
+  client wrapper), a bare component reference can't cross the server/client boundary and the build
+  fails, sometimes with an error that names an unrelated page. Use the element form there instead,
+  and set `data-icon` yourself since the wrapper never runs: `<Button iconTrailing={<ArrowRight
+data-icon="trailing" />}>` (`data-icon="leading"` for `iconLeading`).
 - **Import from the component's subpath**, e.g. `@properui/ui/components/base/buttons/button`, so
   bundlers keep only what's used, never a barrel import of the whole library for one component.
 - **Preserve what's already there.** Keyboard interaction, focus order, ARIA attributes, and
@@ -115,11 +135,18 @@ CI runs):
 
 1. Type-check (`tsc --noEmit` or the project's `type-check`/`typecheck` script).
 2. Build (`next build`, `vite build`, or the project's `build` script), which catches broken imports
-   from alias rewriting.
+   from alias rewriting and the server-component icon issue above.
 3. Targeted tests for anything touched, if the project has a test runner configured.
+4. `npx @properui/cli@latest check`, the token guard: flags raw palette classes and arbitrary
+   values that slipped past the semantic-token convention in step 5.
 
 If a check fails because of something `add` did (a missing dependency it reported but that wasn't
 installed, for example), fix that before moving on. Don't report success with a broken build.
+
+If you're working in a checkout shared with other running processes (another agent's dev server
+against the same `.next`/`node_modules`, for instance), run the build check last, not mid-task: a
+`next build` (or `vite build`) in a shared checkout takes down every sibling `dev` server pointed at
+the same directory.
 
 ## 7. Report what happened
 

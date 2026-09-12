@@ -11,6 +11,14 @@ const styles = sortCx({
     rootSelected: "bg-secondary hover:bg-secondary_hover",
 });
 
+/** Override for the nav item's root and selected-state classes, e.g. to re-brand the accent. */
+export interface NavItemBaseClassNames {
+    /** Replaces the base root classes (background, hover, focus ring, transition). */
+    root?: string;
+    /** Replaces the classes applied when `current` is true. */
+    rootSelected?: string;
+}
+
 export interface NavItemBaseProps {
     /** Whether the nav item shows only an icon. */
     iconOnly?: boolean;
@@ -32,9 +40,15 @@ export interface NavItemBaseProps {
     onClick?: MouseEventHandler;
     /** Content to display. */
     children?: ReactNode;
+    /** Extra classes merged onto the item's root element, after every other class. */
+    className?: string;
+    /** Overrides for the root/selected-state styling, e.g. to re-brand the accent. */
+    classNames?: NavItemBaseClassNames;
 }
 
-export const NavItemBase = ({ current, type, badge, href, icon: Icon, children, truncate = true, onClick }: NavItemBaseProps) => {
+export const NavItemBase = ({ current, type, badge, href, icon: Icon, children, truncate = true, onClick, className, classNames }: NavItemBaseProps) => {
+    const rootClassName = classNames?.root ?? styles.root;
+    const rootSelectedClassName = classNames?.rootSelected ?? styles.rootSelected;
     const iconElement = Icon && (
         <Icon
             aria-hidden="true"
@@ -71,7 +85,7 @@ export const NavItemBase = ({ current, type, badge, href, icon: Icon, children, 
 
     if (type === "collapsible") {
         return (
-            <summary className={cx("p-2", styles.root, current && styles.rootSelected)} onClick={onClick}>
+            <summary className={cx("p-2", rootClassName, current && rootSelectedClassName, className)} onClick={onClick}>
                 {iconElement}
 
                 {labelElement}
@@ -89,7 +103,7 @@ export const NavItemBase = ({ current, type, badge, href, icon: Icon, children, 
                 href={href!}
                 target={isExternal ? "_blank" : "_self"}
                 rel="noopener noreferrer"
-                className={cx("py-2 ps-10 pe-3", styles.root, current && styles.rootSelected)}
+                className={cx("py-2 ps-10 pe-3", rootClassName, current && rootSelectedClassName, className)}
                 onClick={onClick}
                 aria-current={current ? "page" : undefined}
             >
@@ -105,7 +119,7 @@ export const NavItemBase = ({ current, type, badge, href, icon: Icon, children, 
             href={href!}
             target={isExternal ? "_blank" : "_self"}
             rel="noopener noreferrer"
-            className={cx("group/item p-2", styles.root, current && styles.rootSelected)}
+            className={cx("group/item p-2", rootClassName, current && rootSelectedClassName, className)}
             onClick={onClick}
             aria-current={current ? "page" : undefined}
         >

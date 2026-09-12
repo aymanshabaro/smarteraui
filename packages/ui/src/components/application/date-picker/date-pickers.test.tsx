@@ -2,7 +2,9 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { axe } from "vitest-axe";
 import "vitest-axe/extend-expect";
+import { DatePicker } from "./date-picker";
 import * as Demos from "./date-pickers.demo";
+import { DateRangePicker } from "./date-range-picker";
 
 // `Calendar` and `RangeCalendar` render the ported `Calendar` / `RangeCalendar` widgets bare (no
 // surrounding `Dialog`). Their React Aria root intentionally carries `role="application"` (needed for
@@ -42,5 +44,34 @@ describe("Date pickers", () => {
     it("renders today (9) as the highlighted date in the calendar example", () => {
         render(<Demos.Calendar />);
         expect(screen.getAllByText("9").length).toBeGreaterThan(0);
+    });
+});
+
+describe("DatePicker label/hint/tooltip", () => {
+    it("renders the label above the trigger", () => {
+        render(<DatePicker label="Start date" isRequired={false} />);
+        expect(screen.getByText("Start date")).toBeInTheDocument();
+    });
+
+    it("renders the hint below the trigger", () => {
+        render(<DatePicker label="Start date" hint="Cannot be in the past" isRequired={false} />);
+        expect(screen.getByText("Cannot be in the past")).toBeInTheDocument();
+    });
+
+    it("marks the field as required via the label's indicator", () => {
+        render(<DatePicker label="Start date" isRequired />);
+        expect(screen.getByText("*")).toBeInTheDocument();
+    });
+});
+
+describe("DateRangePicker label/hint/tooltip", () => {
+    it("renders the label above the trigger", () => {
+        render(<DateRangePicker label="Trip dates" isRequired={false} />);
+        expect(screen.getByText("Trip dates")).toBeInTheDocument();
+    });
+
+    it("renders the hint below the trigger", () => {
+        render(<DateRangePicker label="Trip dates" hint="Up to 14 days" isRequired={false} />);
+        expect(screen.getByText("Up to 14 days")).toBeInTheDocument();
     });
 });

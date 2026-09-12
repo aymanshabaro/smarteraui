@@ -330,6 +330,26 @@ export const Simple = () => (
     />
 );
 
+/**
+ * A custom brand built entirely from override props, without forking `SidebarNavigationSimple`:
+ * a brand logo/name in place of `ProperLogo`, and the search field dropped entirely by passing
+ * `search={false}`.
+ */
+export const CustomBrand = () => (
+    <SidebarNavigationSimple
+        items={navItemsSimple}
+        footerItems={footerItemsSimple}
+        showAccountCard={false}
+        logo={
+            <div className="flex items-center gap-2">
+                <img src={LOGOS[1]?.src} alt={LOGOS[1]?.alt} className="size-6" />
+                <span className="text-primary text-md font-semibold">Sisyphus</span>
+            </div>
+        }
+        search={false}
+    />
+);
+
 export const DualTier = () => (
     <SidebarNavigationDualTier
         items={navItemsDualTier}

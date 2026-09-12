@@ -1,11 +1,12 @@
 "use client";
 
-import type { FC, ReactElement, ReactNode } from "react";
+import type { ComponentType, ReactElement, ReactNode } from "react";
 import { isValidElement } from "react";
 import type { ButtonProps as AriaButtonProps, LinkProps as AriaLinkProps } from "react-aria-components";
 import { Button as AriaButton, Link as AriaLink } from "react-aria-components";
 import { cx, sortCx } from "../../../utils/cx";
 import { isReactComponent } from "../../../utils/is-react-component";
+import { warnDomProps } from "../../../utils/warn-dom-props";
 
 export const styles = sortCx({
     common: {
@@ -142,14 +143,28 @@ export interface CommonProps {
     size?: keyof typeof styles.sizes;
     /** The color variant of the button */
     color?: keyof typeof styles.colors;
-    /** Icon component or element to show before the text */
-    iconLeading?: FC<{ className?: string }> | ReactNode;
-    /** Icon component or element to show after the text */
-    iconTrailing?: FC<{ className?: string }> | ReactNode;
+    /**
+     * Icon component or element to show before the text.
+     *
+     * In a React Server Component pass an element carrying `data-icon`, e.g.
+     * `iconLeading={<ArrowRight data-icon="leading" />}` — a component reference cannot cross the
+     * server/client boundary and `next build` fails at prerender.
+     */
+    iconLeading?: ComponentType<{ className?: string }> | ReactNode;
+    /**
+     * Icon component or element to show after the text.
+     *
+     * In a React Server Component pass an element carrying `data-icon`, e.g.
+     * `iconTrailing={<ArrowRight data-icon="trailing" />}` — a component reference cannot cross the
+     * server/client boundary and `next build` fails at prerender.
+     */
+    iconTrailing?: ComponentType<{ className?: string }> | ReactNode;
     /** Removes horizontal padding from the text content */
     noTextPadding?: boolean;
     /** When true, keeps the text visible during loading state */
     showTextWhileLoading?: boolean;
+    /** Native `title` attribute, rendered on the underlying `<button>` or `<a>`. */
+    title?: string;
 
     children?: ReactNode;
     className?: string;
@@ -162,13 +177,21 @@ export interface ButtonProps extends CommonProps, Omit<AriaButtonProps, "childre
 /**
  * Props for the link variant (anchor tag)
  */
-interface LinkProps extends CommonProps, Omit<AriaLinkProps, "children" | "className"> {
+export interface LinkProps extends CommonProps, Omit<AriaLinkProps, "children" | "className"> {
     href: NonNullable<AriaLinkProps["href"]>;
 }
 
 /** Union type of button and link props */
 export type Props = ButtonProps | LinkProps;
 
+// `href` is already a natural discriminant between the two branches: it's absent from `ButtonProps`
+// (there is no `href` key on `AriaButtonProps` at all) and required on `LinkProps`. Explicitly
+// adding `href?: never` to `ButtonProps` was tried to make that more visible to the type checker,
+// but it broke unrelated inference on `AriaButtonProps`'s own `render` prop when spread into
+// `AriaLink`/`AriaButton` below — so the two call signatures below stay the simplest working shape.
+// A caller who gets this wrong will still see the specific missing/excess prop named, because the
+// two signatures are structurally distinct enough (`href` required vs. absent) for TS to report
+// against the closer one rather than only ever saying "no overload matches this call".
 export const Button: {
     (props: LinkProps): ReactElement<LinkProps>;
     (props: ButtonProps): ReactElement<ButtonProps>;
@@ -183,8 +206,21 @@ export const Button: {
     isDisabled: disabled,
     isLoading: loading,
     showTextWhileLoading,
+    title,
     ...props
 }) => {
+    warnDomProps("Button", props as Record<string, unknown>, { onClick: "onPress", disabled: "isDisabled" });
+
+    // React Aria's `Button`/`Link` run every incoming prop through an internal allowlist
+    // (`filterDOMProps`) before spreading it onto the real element, and that allowlist does not
+    // include `title` — a perfectly normal HTML attribute — so it is silently dropped if passed
+    // straight through. Apply it ourselves via a ref instead.
+    const setTitle = (node: HTMLButtonElement | HTMLAnchorElement | null) => {
+        if (!node) return;
+        if (title) node.setAttribute("title", title);
+        else node.removeAttribute("title");
+    };
+
     const href = "href" in props ? props.href : undefined;
 
     const isIcon = (IconLeading || IconTrailing) && !children;
@@ -252,8 +288,8 @@ export const Button: {
     };
 
     if ("href" in commonProps) {
-        return <AriaLink {...commonProps} href={disabled ? undefined : href} />;
+        return <AriaLink {...commonProps} ref={setTitle} href={disabled ? undefined : href} />;
     }
 
-    return <AriaButton {...commonProps} type={commonProps.type || "button"} isPending={loading} />;
+    return <AriaButton {...commonProps} ref={setTitle} type={commonProps.type || "button"} isPending={loading} />;
 };

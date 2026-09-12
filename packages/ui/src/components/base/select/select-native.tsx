@@ -11,7 +11,10 @@ interface NativeSelectProps extends Omit<SelectHTMLAttributes<HTMLSelectElement>
     hint?: string;
     selectClassName?: string;
     size?: "sm" | "md" | "lg";
-    options: { label: string; value: string; disabled?: boolean }[];
+    /** The options rendered inside the native `<select>`. Accepts a `readonly` array (e.g. from `as const` data), not just a mutable one. */
+    options: readonly { label: string; value: string; disabled?: boolean }[];
+    /** Rendered as a disabled, unselectable first option when no value is selected yet. */
+    placeholder?: string;
 }
 
 const styles = {
@@ -29,15 +32,19 @@ const styles = {
     },
 };
 
-export const NativeSelect = ({ label, hint, options, className, selectClassName, size = "md", ...props }: NativeSelectProps) => {
-    const id = useId();
-    const selectId = `select-native-${id}`;
-    const hintId = `select-native-hint-${id}`;
+export const NativeSelect = ({ label, hint, options, className, selectClassName, size = "md", id, placeholder, ...props }: NativeSelectProps) => {
+    const generatedId = useId();
+    // Honour a caller-supplied `id` so the select can be targeted/labelled from outside; fall back
+    // to a generated one otherwise. `labelId`/`hintId` are always derived, distinct ids — the label
+    // and the select must never share an `id` (that was a duplicate-id bug in this component).
+    const selectId = id ?? `select-native-${generatedId}`;
+    const labelId = `${selectId}-label`;
+    const hintId = `${selectId}-hint`;
 
     return (
         <div className={cx("w-full in-data-input-wrapper:w-max", className)}>
             {label && (
-                <Label htmlFor={selectId} id={selectId} className="mb-1.5">
+                <Label htmlFor={selectId} id={labelId} isRequired={!!props.required} className="mb-1.5">
                     {label}
                 </Label>
             )}
@@ -46,8 +53,8 @@ export const NativeSelect = ({ label, hint, options, className, selectClassName,
                 <select
                     {...props}
                     id={selectId}
-                    aria-describedby={hintId}
-                    aria-labelledby={selectId}
+                    aria-describedby={hint ? hintId : undefined}
+                    aria-labelledby={label ? labelId : undefined}
                     className={cx(
                         "bg-primary text-primary ring-primary placeholder:text-fg-quaternary focus-visible:ring-brand appearance-none rounded-lg font-medium shadow-xs ring-1 outline-hidden transition duration-100 ease-linear ring-inset focus-visible:ring-2 disabled:cursor-not-allowed disabled:opacity-50",
 
@@ -66,8 +73,13 @@ export const NativeSelect = ({ label, hint, options, className, selectClassName,
                         selectClassName,
                     )}
                 >
+                    {placeholder && (
+                        <option value="" disabled>
+                            {placeholder}
+                        </option>
+                    )}
                     {options.map((opt) => (
-                        <option key={opt.value} value={opt.value}>
+                        <option key={opt.value} value={opt.value} disabled={opt.disabled}>
                             {opt.label}
                         </option>
                     ))}

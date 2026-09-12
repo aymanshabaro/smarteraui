@@ -9,6 +9,19 @@ import { detectAlias, parseJsonc } from "./detect.js";
 export const CONFIG_FILE = "components.json";
 export const CONFIG_SCHEMA_URL = "https://properui.dev/schema.json";
 
+/** One row of the `installed` manifest `add` writes and `diff`/`info`/`remove`/`why` read. */
+export interface InstalledEntryRecord {
+    /** Registry version/hash for this entry at the time it was added; see `entryVersion`. */
+    version: string;
+    /** Paths relative to the project root, e.g. `src/components/base/badges/badges.tsx`. */
+    files: string[];
+    /** ISO timestamp of the `add` run that wrote this entry. */
+    installedAt: string;
+}
+
+/** name -> installed record, recorded by `add` (2.10). Absent on projects from before this existed. */
+export type InstalledManifest = Record<string, InstalledEntryRecord>;
+
 export interface ComponentsConfig {
     $schema: string;
     style: string;
@@ -27,6 +40,7 @@ export interface ComponentsConfig {
         hooks: string;
     };
     registry: string;
+    installed?: InstalledManifest;
 }
 
 export function configPath(cwd: string): string {

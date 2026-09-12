@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { useMemo, useState } from "react";
 import { endOfMonth, endOfWeek, getLocalTimeZone, startOfMonth, startOfWeek, today } from "@internationalized/date";
 import { useControlledState } from "@react-stately/utils";
@@ -15,7 +16,9 @@ import {
 import { Calendar as CalendarIcon } from "@properui/icons";
 import { cx } from "../../../utils/cx";
 import { Button, type ButtonProps } from "../../base/buttons/button";
+import { HintText } from "../../base/input/hint-text";
 import { InputDateBase } from "../../base/input/input-date";
+import { Label } from "../../base/input/label";
 import { RangeCalendar, RangePresetButton } from "./range-calendar";
 
 const now = today(getLocalTimeZone());
@@ -28,9 +31,39 @@ export interface DateRangePickerProps extends AriaDateRangePickerProps<AriaDateV
     onApply?: () => void;
     /** The function to call when the cancel button is clicked. */
     onCancel?: () => void;
+    /** Field label rendered above the trigger, matching `Input`/`Select`. */
+    label?: string;
+    /**
+     * Helper text rendered below the field. Switches to the error slot automatically when
+     * `isInvalid` is set.
+     */
+    hint?: ReactNode;
+    /** Tooltip text for the help icon next to the label. */
+    tooltip?: string;
 }
 
-export const DateRangePicker = ({ value: valueProp, defaultValue, onChange, onApply, onCancel, size = "sm", ...props }: DateRangePickerProps) => {
+/**
+ * Clearing every segment of both the start and end dates calls `onChange` with `null`, not
+ * `undefined` — check for that explicitly when wiring this up to a form library.
+ *
+ * Segment order (month/day/year vs. day/month/year, etc.) comes from the ambient locale, which
+ * React Aria reads from an `I18nProvider` ancestor (or the browser locale otherwise) — it is not
+ * a prop on `DateRangePicker` itself.
+ */
+export const DateRangePicker = ({
+    value: valueProp,
+    defaultValue,
+    onChange,
+    onApply,
+    onCancel,
+    size = "sm",
+    label,
+    hint,
+    tooltip,
+    isRequired,
+    isInvalid,
+    ...props
+}: DateRangePickerProps) => {
     const { locale } = AriaUseLocale();
     const formatter = useDateFormatter({
         month: "short",
@@ -83,87 +116,110 @@ export const DateRangePicker = ({ value: valueProp, defaultValue, onChange, onAp
     );
 
     return (
-        <AriaDateRangePicker aria-label="Date range picker" shouldCloseOnSelect={false} {...props} value={value} onChange={setValue}>
-            <AriaGroup>
-                <Button size={size} color="secondary" iconLeading={CalendarIcon}>
-                    {!value ? <span className="text-placeholder">Select dates</span> : `${formattedStartDate} - ${formattedEndDate}`}
-                </Button>
-            </AriaGroup>
-            <AriaPopover
-                placement="bottom right"
-                offset={8}
-                className={({ isEntering, isExiting }) =>
-                    cx(
-                        "origin-(--trigger-anchor-point) will-change-transform",
-                        isEntering &&
-                            "animate-in fade-in placement-right:slide-in-from-left-0.5 placement-top:slide-in-from-bottom-0.5 placement-bottom:slide-in-from-top-0.5 duration-150 ease-out",
-                        isExiting &&
-                            "animate-out fade-out placement-right:slide-out-to-left-0.5 placement-top:slide-out-to-bottom-0.5 placement-bottom:slide-out-to-top-0.5 duration-100 ease-in",
-                    )
-                }
+        <div className="flex flex-col gap-1.5">
+            {label && (
+                <Label isRequired={isRequired} isInvalid={isInvalid} tooltip={tooltip}>
+                    {label}
+                </Label>
+            )}
+
+            <AriaDateRangePicker
+                aria-label={label ?? "Date range picker"}
+                shouldCloseOnSelect={false}
+                isRequired={isRequired}
+                isInvalid={isInvalid}
+                {...props}
+                value={value}
+                onChange={setValue}
             >
-                <AriaDialog aria-label="Date range picker" className="bg-primary ring-secondary_alt flex rounded-2xl shadow-xl ring focus:outline-hidden">
-                    {({ close }) => (
-                        <>
-                            <div className="border-secondary hidden w-38 flex-col gap-0.5 border-e border-solid p-3 lg:flex">
-                                {Object.values(presets).map((preset) => (
-                                    <RangePresetButton
-                                        key={preset.label}
-                                        value={preset.value}
-                                        onClick={() => {
-                                            setValue(preset.value);
-                                            setFocusedValue(preset.value.start);
+                <AriaGroup>
+                    <Button
+                        size={size}
+                        color="secondary"
+                        iconLeading={CalendarIcon}
+                        aria-label={label ? `${label}, ${value ? `${formattedStartDate} - ${formattedEndDate}` : "Select dates"}` : undefined}
+                    >
+                        {!value ? <span className="text-placeholder">Select dates</span> : `${formattedStartDate} - ${formattedEndDate}`}
+                    </Button>
+                </AriaGroup>
+                <AriaPopover
+                    placement="bottom right"
+                    offset={8}
+                    className={({ isEntering, isExiting }) =>
+                        cx(
+                            "origin-(--trigger-anchor-point) will-change-transform",
+                            isEntering &&
+                                "animate-in fade-in placement-right:slide-in-from-left-0.5 placement-top:slide-in-from-bottom-0.5 placement-bottom:slide-in-from-top-0.5 duration-150 ease-out",
+                            isExiting &&
+                                "animate-out fade-out placement-right:slide-out-to-left-0.5 placement-top:slide-out-to-bottom-0.5 placement-bottom:slide-out-to-top-0.5 duration-100 ease-in",
+                        )
+                    }
+                >
+                    <AriaDialog aria-label="Date range picker" className="bg-primary ring-secondary_alt flex rounded-2xl shadow-xl ring focus:outline-hidden">
+                        {({ close }) => (
+                            <>
+                                <div className="border-secondary hidden w-38 flex-col gap-0.5 border-e border-solid p-3 lg:flex">
+                                    {Object.values(presets).map((preset) => (
+                                        <RangePresetButton
+                                            key={preset.label}
+                                            value={preset.value}
+                                            onClick={() => {
+                                                setValue(preset.value);
+                                                setFocusedValue(preset.value.start);
+                                            }}
+                                        >
+                                            {preset.label}
+                                        </RangePresetButton>
+                                    ))}
+                                </div>
+                                <div className="flex flex-col">
+                                    <RangeCalendar
+                                        focusedValue={focusedValue}
+                                        onFocusChange={setFocusedValue}
+                                        highlightedDates={highlightedDates}
+                                        presets={{
+                                            lastWeek: presets.lastWeek,
+                                            lastMonth: presets.lastMonth,
+                                            lastYear: presets.lastYear,
                                         }}
-                                    >
-                                        {preset.label}
-                                    </RangePresetButton>
-                                ))}
-                            </div>
-                            <div className="flex flex-col">
-                                <RangeCalendar
-                                    focusedValue={focusedValue}
-                                    onFocusChange={setFocusedValue}
-                                    highlightedDates={highlightedDates}
-                                    presets={{
-                                        lastWeek: presets.lastWeek,
-                                        lastMonth: presets.lastMonth,
-                                        lastYear: presets.lastYear,
-                                    }}
-                                />
-                                <div className="border-secondary flex justify-between gap-3 border-t p-4">
-                                    <div className="hidden items-center gap-2 md:flex">
-                                        <InputDateBase slot="start" size="sm" />
-                                        <div className="text-md text-quaternary">–</div>
-                                        <InputDateBase slot="end" size="sm" />
-                                    </div>
-                                    <div className="grid w-full grid-cols-2 gap-3 md:flex md:w-auto">
-                                        <Button
-                                            size="sm"
-                                            color="secondary"
-                                            onClick={() => {
-                                                onCancel?.();
-                                                close();
-                                            }}
-                                        >
-                                            Cancel
-                                        </Button>
-                                        <Button
-                                            size="sm"
-                                            color="primary"
-                                            onClick={() => {
-                                                onApply?.();
-                                                close();
-                                            }}
-                                        >
-                                            Apply
-                                        </Button>
+                                    />
+                                    <div className="border-secondary flex justify-between gap-3 border-t p-4">
+                                        <div className="hidden items-center gap-2 md:flex">
+                                            <InputDateBase slot="start" size="sm" />
+                                            <div className="text-md text-quaternary">–</div>
+                                            <InputDateBase slot="end" size="sm" />
+                                        </div>
+                                        <div className="grid w-full grid-cols-2 gap-3 md:flex md:w-auto">
+                                            <Button
+                                                size="sm"
+                                                color="secondary"
+                                                onClick={() => {
+                                                    onCancel?.();
+                                                    close();
+                                                }}
+                                            >
+                                                Cancel
+                                            </Button>
+                                            <Button
+                                                size="sm"
+                                                color="primary"
+                                                onClick={() => {
+                                                    onApply?.();
+                                                    close();
+                                                }}
+                                            >
+                                                Apply
+                                            </Button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </>
-                    )}
-                </AriaDialog>
-            </AriaPopover>
-        </AriaDateRangePicker>
+                            </>
+                        )}
+                    </AriaDialog>
+                </AriaPopover>
+            </AriaDateRangePicker>
+
+            {hint && <HintText isInvalid={isInvalid}>{hint}</HintText>}
+        </div>
     );
 };

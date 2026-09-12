@@ -6,12 +6,16 @@
 import { Command } from "commander";
 import { runAdd } from "./commands/add.js";
 import { runAgentInit } from "./commands/agent.js";
+import { runCheck } from "./commands/check.js";
 import { runDiff } from "./commands/diff.js";
+import { runIcons } from "./commands/icons.js";
 import { runInfo } from "./commands/info.js";
 import { runInit } from "./commands/init.js";
 import { runList } from "./commands/list.js";
 import { runLogin } from "./commands/login.js";
+import { runRemove } from "./commands/remove.js";
 import { runSearch } from "./commands/search.js";
+import { runWhy } from "./commands/why.js";
 import { CancelledError } from "./prompt.js";
 import { DEFAULT_REGISTRY_URL, RegistryError } from "./registry.js";
 import { log } from "./ui.js";
@@ -51,6 +55,9 @@ program
     .option("--vite", "treat this project as Vite instead of auto-detecting")
     .option("--manual", "write the files but do not edit the app entry point")
     .option("--overwrite", "replace components.json and any files that already exist")
+    .option("--no-providers", "skip copying/wiring ThemeProvider and RouterProvider entirely")
+    .option("--install", "run the install command instead of only printing it")
+    .option("--no-tooling-ignores", "skip appending ESLint/Prettier ignore entries for vendored directories")
     .option("--registry <source>", REGISTRY_HELP)
     .option("-y, --yes", "accept every default; never prompt")
     .action(guard(async (options) => runInit({ ...options, cwd: program.opts().cwd })));
@@ -63,9 +70,46 @@ program
     .option("--overwrite", "replace files that already exist")
     .option("--path <dir>", "put component files in this directory instead of the components alias")
     .option("--dry-run", "print what would change without writing anything")
+    .option("--no-optional", "skip optionalRegistryDependencies instead of installing them")
+    .option("--with-demos", 'also write demo files (kind: "demo") for the added entries, when the registry has them')
     .option("--registry <source>", REGISTRY_HELP)
     .option("-y, --yes", "accept every default; never prompt")
     .action(guard(async (components: string[], options) => runAdd(components, { ...options, cwd: program.opts().cwd })));
+
+program
+    .command("remove")
+    .description("Remove an installed entry's files (only those not shared with another installed entry)")
+    .argument("<entries...>", "entry names to remove, e.g. `properui remove badges`")
+    .option("--dry-run", "print what would be removed without deleting anything")
+    .option("--registry <source>", REGISTRY_HELP)
+    .action(guard(async (entries: string[], options) => runRemove(entries, { ...options, cwd: program.opts().cwd })));
+
+program
+    .command("why")
+    .description("Show the dependency chain that brought an installed file or entry into this project")
+    .argument("<target>", "an installed entry name or one of its file paths")
+    .option("--registry <source>", REGISTRY_HELP)
+    .action(guard(async (target: string, options) => runWhy(target, { ...options, cwd: program.opts().cwd })));
+
+program
+    .command("check")
+    .description(
+        "Scan .ts/.tsx/.jsx files for raw Tailwind palette classes, hardcoded dark: variants and arbitrary colour values " +
+            "(palette: /\\b(?:bg|text|border|ring|outline|fill|stroke)-(?:slate|gray|zinc|neutral|stone|red|orange|amber|" +
+            "yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-\\d{2,3}\\b/g; " +
+            "dark: /\\bdark:[^\\s\"'`)]+/g; arbitrary: /-\\[(?:#[0-9a-fA-F]{3,8}|rgba?\\(|hsla?\\()/g). " +
+            "Tokens containing -utility- are excluded. Exits non-zero on any hit; no --fix.",
+    )
+    .argument("[dir]", "directory to scan, relative to --cwd (default: the whole project)")
+    .action(guard(async (dir: string | undefined, options) => runCheck(dir, { ...options, cwd: program.opts().cwd })));
+
+program
+    .command("icons")
+    .description("Fuzzy search the registry's icon export index and print the import line for each match")
+    .argument("<query>")
+    .option("--limit <n>", "maximum results", "20")
+    .option("--registry <source>", REGISTRY_HELP)
+    .action(guard(async (query: string, options) => runIcons(query, { ...options, cwd: program.opts().cwd })));
 
 program
     .command("list")
@@ -79,9 +123,10 @@ program
 
 program
     .command("search")
-    .description("Fuzzy search over component names, descriptions and example names")
+    .description("Fuzzy search over component names, titles, descriptions, exported symbol names and example names")
     .argument("<query>")
     .option("--limit <n>", "maximum results", "20")
+    .option("--icons", "search the icon export index instead (same as `properui icons <query>`)")
     .option("--registry <source>", REGISTRY_HELP)
     .option("-y, --yes", "accept every default; never prompt")
     .action(guard(async (query: string, options) => runSearch(query, { ...options, cwd: program.opts().cwd })));

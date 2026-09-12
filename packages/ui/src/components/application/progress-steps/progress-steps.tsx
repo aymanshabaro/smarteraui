@@ -60,8 +60,11 @@ const styles = sortCx({
     },
 });
 
-/** How far along a single step is. */
-export type ProgressStepStatus = "complete" | "current" | "incomplete";
+/** How far along a single step is. `locked` is a step the user cannot jump to yet (e.g. a later step in a wizard that depends on earlier ones); it looks like `incomplete` and, when `onStepPress` is set, cannot be pressed. */
+export type ProgressStepStatus = "complete" | "current" | "incomplete" | "locked";
+
+/** The indicator/connector style maps only define looks for complete/current/incomplete — `locked` reuses `incomplete`'s. */
+const asStyleStatus = (status: ProgressStepStatus): "complete" | "current" | "incomplete" => (status === "locked" ? "incomplete" : status);
 
 /** The visual treatment of the step indicator. */
 export type ProgressStepsType = keyof typeof styles.indicators;
@@ -96,6 +99,8 @@ export interface ProgressStepItem {
      * @default "incomplete"
      */
     status?: ProgressStepStatus;
+    /** Extra content rendered under the step's description. */
+    children?: ReactNode;
 }
 
 const CheckIcon = ({ className }: { className?: string }) => (
@@ -139,7 +144,7 @@ const Connector = ({ type, connector, orientation, status, isDimmed }: Connector
             className={cx(
                 "rounded-xs",
                 orientation === "horizontal" ? "absolute start-[53%] top-1/2 z-0 w-full flex-1 -translate-y-1/2 border-t-2" : "my-1 flex-1 border-s-2",
-                styles.connectors[type][status],
+                styles.connectors[type][asStyleStatus(status)],
                 isDimmed && "opacity-60",
             )}
         />
@@ -166,7 +171,7 @@ const Indicator = ({ type, status, orientation, position, icon }: IndicatorProps
                 className={cx(
                     "z-10",
                     // Vertical steps dim the whole item, so recolouring the icon there would dim it twice.
-                    orientation === "horizontal" && styles.indicators["featured-icon"][status],
+                    orientation === "horizontal" && styles.indicators["featured-icon"][asStyleStatus(status)],
                 )}
             />
         );
@@ -174,20 +179,45 @@ const Indicator = ({ type, status, orientation, position, icon }: IndicatorProps
 
     if (type === "number") {
         return (
-            <span className={cx(styles.common.indicator, styles.indicators.number[status])}>
+            <span className={cx(styles.common.indicator, styles.indicators.number[asStyleStatus(status)])}>
                 {status === "complete" ? <CheckIcon /> : <span className="text-xs font-semibold">{position}</span>}
             </span>
         );
     }
 
     return (
-        <span className={cx(styles.common.indicator, styles.indicators.dot[status])}>
+        <span className={cx(styles.common.indicator, styles.indicators.dot[asStyleStatus(status)])}>
             {status === "complete" ? (
                 <CheckIcon className="text-fg-white" />
             ) : (
                 <span className={cx("size-2 rounded-full", status === "current" ? "bg-fg-white" : "bg-fg-quaternary")} />
             )}
         </span>
+    );
+};
+
+/**
+ * Renders a step's row as a plain `div` by default, or as a `<button>` when `onPress` is
+ * given — locked steps stay non-interactive either way. Keeps the exact layout classes the
+ * static `div` used, so turning a `ProgressSteps` interactive changes nothing visually.
+ */
+const StepRow = ({ onPress, isLocked, className, children }: { onPress?: () => void; isLocked?: boolean; className: string; children: ReactNode }) => {
+    if (!onPress) {
+        return <div className={className}>{children}</div>;
+    }
+
+    return (
+        <button
+            type="button"
+            onClick={onPress}
+            disabled={isLocked}
+            className={cx(
+                className,
+                "outline-focus-ring cursor-pointer text-left focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed",
+            )}
+        >
+            {children}
+        </button>
     );
 };
 
@@ -220,6 +250,12 @@ export interface ProgressStepsProps {
     "aria-label"?: string;
     /** The class name applied to the step list. */
     className?: string;
+    /**
+     * Called with a step's `id` when it is pressed. When provided, every step (other than
+     * `locked` ones) renders as a `<button>` instead of static markup, so steps can be used
+     * to jump around a wizard. Omit to keep the default, non-interactive rendering.
+     */
+    onStepPress?: (id: string) => void;
 }
 
 const ProgressStepsRoot = ({
@@ -229,6 +265,7 @@ const ProgressStepsRoot = ({
     connector = "solid",
     "aria-label": ariaLabel = "Progress",
     className,
+    onStepPress,
 }: ProgressStepsProps) => {
     const isHorizontal = orientation === "horizontal";
     const dimsIncomplete = dimmingTypes.includes(type);
@@ -251,9 +288,11 @@ const ProgressStepsRoot = ({
             >
                 {items.map((item, index) => {
                     const status = item.status ?? "incomplete";
+                    const isLocked = status === "locked";
                     const isLast = index === items.length - 1;
-                    const isDimmed = dimsIncomplete && status === "incomplete";
-                    const isConnectorDimmed = !isHorizontal && dimsIncomplete && !isDimmed && items[index + 1]?.status === "incomplete";
+                    const isDimmed = dimsIncomplete && (status === "incomplete" || isLocked);
+                    const nextStatus = items[index + 1]?.status;
+                    const isConnectorDimmed = !isHorizontal && dimsIncomplete && !isDimmed && (nextStatus === "incomplete" || nextStatus === "locked");
 
                     const title = (
                         <p
@@ -281,16 +320,19 @@ const ProgressStepsRoot = ({
 
                     if (type === "line") {
                         return (
-                            <li
-                                key={item.id}
-                                aria-current={status === "current" ? "step" : undefined}
-                                className="relative flex w-full flex-col items-center justify-center pt-3"
-                            >
-                                <span aria-hidden="true" className={cx("absolute inset-x-0 top-0 h-1", styles.indicators.line[status])} />
-                                <div className="flex w-full flex-col items-start self-stretch">
-                                    {title}
-                                    {description}
-                                </div>
+                            <li key={item.id} aria-current={status === "current" ? "step" : undefined}>
+                                <StepRow
+                                    onPress={onStepPress && (() => onStepPress(item.id))}
+                                    isLocked={isLocked}
+                                    className="relative flex w-full flex-col items-center justify-center pt-3"
+                                >
+                                    <span aria-hidden="true" className={cx("absolute inset-x-0 top-0 h-1", styles.indicators.line[asStyleStatus(status)])} />
+                                    <div className="flex w-full flex-col items-start self-stretch">
+                                        {title}
+                                        {description}
+                                        {item.children}
+                                    </div>
+                                </StepRow>
                             </li>
                         );
                     }
@@ -302,43 +344,49 @@ const ProgressStepsRoot = ({
 
                     if (isHorizontal) {
                         return (
-                            <li
-                                key={item.id}
-                                aria-current={status === "current" ? "step" : undefined}
-                                className="flex w-full flex-col items-center justify-center gap-3"
-                            >
-                                <div className="relative flex w-full flex-col items-center self-stretch">
-                                    {indicator}
-                                    {line}
-                                </div>
-                                <div className={cx("flex w-full flex-col items-start self-stretch", isDimmed && "opacity-60")}>
-                                    {title}
-                                    {description}
-                                </div>
+                            <li key={item.id} aria-current={status === "current" ? "step" : undefined}>
+                                <StepRow
+                                    onPress={onStepPress && (() => onStepPress(item.id))}
+                                    isLocked={isLocked}
+                                    className="flex w-full flex-col items-center justify-center gap-3"
+                                >
+                                    <div className="relative flex w-full flex-col items-center self-stretch">
+                                        {indicator}
+                                        {line}
+                                    </div>
+                                    <div className={cx("flex w-full flex-col items-start self-stretch", isDimmed && "opacity-60")}>
+                                        {title}
+                                        {description}
+                                        {item.children}
+                                    </div>
+                                </StepRow>
                             </li>
                         );
                     }
 
                     return (
-                        <li
-                            key={item.id}
-                            aria-current={status === "current" ? "step" : undefined}
-                            className={cx("flex flex-row items-start justify-start gap-3", type !== "featured-icon" && "h-max", isDimmed && "opacity-60")}
-                        >
-                            <div className="flex flex-col items-center self-stretch">
-                                {indicator}
-                                {line}
-                            </div>
-                            <div
-                                className={cx(
-                                    "flex flex-col items-start",
-                                    type !== "featured-icon" && "pt-0.5",
-                                    !isLast && (type === "featured-icon" ? "pb-8" : "pb-6"),
-                                )}
+                        <li key={item.id} aria-current={status === "current" ? "step" : undefined}>
+                            <StepRow
+                                onPress={onStepPress && (() => onStepPress(item.id))}
+                                isLocked={isLocked}
+                                className={cx("flex flex-row items-start justify-start gap-3", type !== "featured-icon" && "h-max", isDimmed && "opacity-60")}
                             >
-                                {title}
-                                {description}
-                            </div>
+                                <div className="flex flex-col items-center self-stretch">
+                                    {indicator}
+                                    {line}
+                                </div>
+                                <div
+                                    className={cx(
+                                        "flex flex-col items-start",
+                                        type !== "featured-icon" && "pt-0.5",
+                                        !isLast && (type === "featured-icon" ? "pb-8" : "pb-6"),
+                                    )}
+                                >
+                                    {title}
+                                    {description}
+                                    {item.children}
+                                </div>
+                            </StepRow>
                         </li>
                     );
                 })}
@@ -351,6 +399,7 @@ const statusLabels: Record<ProgressStepStatus, string> = {
     complete: "completed",
     current: "current",
     incomplete: "not started",
+    locked: "locked",
 };
 
 export interface ProgressStepsMinimalProps {
@@ -386,7 +435,7 @@ const ProgressStepsMinimal = ({ items, label, connector = "none", "aria-label": 
                     <Indicator type="dot" status={status} orientation="horizontal" position={index + 1} />
 
                     {connector === "solid" && index < items.length - 1 && (
-                        <span aria-hidden="true" className={cx("w-20 flex-1 border-t-2", styles.connectors.dot[status])} />
+                        <span aria-hidden="true" className={cx("w-20 flex-1 border-t-2", styles.connectors.dot[asStyleStatus(status)])} />
                     )}
                 </li>
             ))}

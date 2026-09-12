@@ -1,0 +1,72 @@
+---
+title: Testing
+section: docs
+description: "How to actually drive Proper UI components in jsdom: the six missing browser APIs, the working recipe for opening each interactive component in a test, and where jsdom's model diverges from a real browser."
+metaTitle: Testing | Proper UI
+metaDescription: "The jsdom recipe for every Proper UI popover, dialog, and menu: six missing browser APIs, per-component open recipes, and where jsdom diverges from a real browser."
+---
+
+## Why this page exists
+
+Proper UI's interactive components are built on [React Aria Components](https://react-aria.adobe.com/), and React Aria's interaction model assumes a real browser: real pointer capture, real focus events, a real layout engine. [jsdom](https://github.com/jsdom/jsdom) (what [Vitest](https://vitest.dev/)'s `environment: "jsdom"` and Jest's `jsdom` environment both use) doesn't implement several of the APIs that model depends on, and it doesn't implement layout at all. None of the gaps below throw. A `Select` that never opens just leaves `aria-expanded="false"`; a `ComboBox` with zero matching options just renders an empty listbox. Every recipe on this page exists because a real migration lost real time to one of these silent failures, sometimes independently, more than once, in the same codebase.
+
+## The six jsdom shims
+
+jsdom 25 is missing six browser APIs that React Aria's interaction, collection, and overlay hooks call unconditionally: `matchMedia`, `ResizeObserver`, `IntersectionObserver`, `Element.prototype.scrollIntoView`, the three `*PointerCapture` methods, and `HTMLElement.prototype.inert`. Add the shim file with the CLI:
+
+```bash
+npx @properui/cli@latest add jsdom-setup
+```
+
+That copies `src/utils/jsdom-setup.ts` into your project. Import it once, as a side effect, from your test setup file, before any test that renders an interactive component:
+
+```ts
+// vitest.setup.ts (or your jest setup file)
+import "@/utils/jsdom-setup";
+```
+
+Every shim inside is guarded (`if (!("x" in ...))`), so importing it never overwrites a real implementation if you later move to a real-browser test runner (Playwright, for example). The file's own top comment maps each shim to the specific hook that needs it, if you want to know why a particular one is there.
+
+## Opening each component in a test
+
+The single most common way an agent or a new contributor loses time against this kit is trying to open a popover, menu, or dialog with the wrong event. `userEvent.click()` is the standard [Testing Library](https://testing-library.com/) recipe, and it does not reliably open a `Select` trigger in jsdom: `aria-expanded` stays `"false"`, with no error. The table below is the working recipe for each component, verified against this repository's own vitest config.
+
+| Component                                   | Working recipe                                                                                                                                          | Notes                                                                                                                                                                                                                                |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`Select`](/components/select)              | `fireEvent.click(trigger)`, or `trigger.focus()` + `fireEvent.keyDown(trigger, { key: "ArrowDown" })`                                                   | Inside this kit's `Table` (a `role="grid"`), `ArrowDown` is swallowed by the grid's roving cell focus before the `Select` ever sees it. `Enter` still opens it.                                                                      |
+| [`Select.ComboBox`](/components/select)     | `input.focus()` (wrapped in `act(...)`), or a real click                                                                                                | `fireEvent.focus(input)` dispatches a non-bubbling event that never moves `document.activeElement`, so it does not open the menu. The component hardcodes `menuTrigger="focus"`, which is exactly why a real focus event is the fix. |
+| [`Dropdown`](/components/dropdowns) / menus | `fireEvent.click(trigger)`                                                                                                                              | Same `MenuTrigger`/press-based mechanism as `Select`; the same recipe applies.                                                                                                                                                       |
+| [`DatePicker`](/components/date-pickers)    | `fireEvent.click(trigger)` to open the calendar popover; inside a bare date field, target segments with `getByRole("spinbutton")`, not `getByLabelText` | See the date-field note below for why `getByLabelText` alone is the wrong tool here.                                                                                                                                                 |
+| [`Modal`](/components/modals)               | `fireEvent.click(trigger)` on the element wrapped in `DialogTrigger`, then `getByRole("dialog")`                                                        | The dialog renders through a portal; see the Playwright note below if you're driving this in a real browser.                                                                                                                         |
+| [`Tabs`](/components/tabs)                  | `fireEvent.click(tab)`, or focus a tab and send `ArrowRight`/`ArrowLeft`                                                                                | Tabs use React Aria's roving tabindex, so both a click and arrow-key navigation move the selection.                                                                                                                                  |
+| [`Table`](/components/tables) as a grid     | `getByRole("grid")`, `getByRole("gridcell")`, `getByRole("rowheader")`                                                                                  | See the accessible-role note directly below; this is not a plain HTML `<table>`.                                                                                                                                                     |
+
+Every recipe above is exercised as a real, passing test in this repository: see `select-popover.test.tsx` and `combobox-popover.test.tsx` in `packages/ui/src/components/base/select`, and `date-picker-interaction.test.tsx` in `packages/ui/src/components/application/date-picker`.
+
+`@testing-library/user-event`'s fake-timers recipe (`userEvent.setup({ advanceTimers: vi.advanceTimersByTime })` then `await user.click(...)`) does not resolve against a `usePress`-based component (any button, `Select`, or `ComboBox` trigger) under `vi.useFakeTimers()`. It's a silent timeout, not an error, so it looks like a hung component rather than a bad recipe. The recipe that works under fake timers is `fireEvent.click(...)` followed by `act(() => vi.advanceTimersByTime(...))`.
+
+## Table renders an ARIA grid, not a plain table
+
+[`Table`](/components/tables) renders `role="grid"` (React Aria's `useTable`), with rows, `role="gridcell"` data cells, and a `role="rowheader"` for whichever column is marked `isRowHeader`. That's the correct choice for an interactive, keyboard-navigable table (sorting, selection, row actions), and it's why `ArrowDown` inside a `Table` cell is captured for roving cell focus rather than reaching a `Select` underneath it. Query it with `getByRole("grid")`, not `getByRole("table")`.
+
+If you want a plain, non-interactive `<table>` instead, that's a valid and simpler choice for read-only data. The registry's own pricing tables (`pricing-large-table-01`, `pricing-large-table-02`, in `packages/ui/src/components/marketing/pricing-sections`) take exactly that route: plain HTML table elements, no `useTable`, no grid semantics.
+
+## `isLoading` sets `aria-disabled`, not `disabled`
+
+A [`Button`](/components/buttons) with `isLoading` sets `aria-disabled="true"` and leaves the native `disabled` attribute unset, so `expect(button).toBeDisabled()` will not match it: `toBeDisabled()` checks the native attribute, and this button is deliberately still focusable so assistive technology can reach it. `isDisabled`, by contrast, does set the native `disabled` attribute. Check for the loading state with `toHaveAttribute("aria-disabled", "true")` instead.
+
+## Accessible names can differ from the visible label
+
+A required [`Label`](/components/inputs) may render a visual `*` alongside the label text, and the accessible name computation for [`Select`](/components/select) and [`Checkbox`](/components/checkboxes) is a composition of more than one child element (a selected value, a supporting text, a hint). Rather than asserting on the exact rendered text of a label or option, check the accessible name the way a screen reader would: `getByRole("button", { name: /.../  })`, `getByRole("checkbox", { name: /.../  })`. That query passes as these components' internals evolve, as long as the accessible name itself stays correct.
+
+## `onDropFiles` and jsdom's missing `DataTransfer`
+
+File-drop components (`FileUpload`, `ImagePicker`) call back with a `FileList` (`onDropFiles: (files: FileList) => void`), built internally from a `DataTransfer`. jsdom does not implement `DataTransfer` at all, so a test that tries to build one to simulate a drop (`new DataTransfer()`, then `dataTransfer.items.add(file)`) throws a `ReferenceError`, right out of your own test setup code rather than from anything in this kit. That error can surface a few assertions later, inside React's event handling, which makes it look unrelated to the drop simulation that actually caused it. If you only need to verify the callback fires with the right files, mock the file-picker path (an `<input type="file">` accepts a real `FileList` fine in jsdom) rather than constructing a synthetic drop event.
+
+## Playwright and a real browser
+
+Every recipe on this page is about jsdom specifically. Under a real browser (Playwright, Cypress in browser mode), the six shims aren't needed and the interaction pitfalls above may not apply the same way: real pointer capture, real focus events, and real layout are all present. What still matters in Playwright is that these components render their popovers, menus, and dialogs through a portal at the end of `<body>`, not inline where the trigger lives. A selector scoped to the trigger's container (`page.locator(".my-select").getByRole("option")`) will not find the popover content; query it from the page root instead.
+
+## A shared checkout runs one Next.js build at a time
+
+If more than one process is working out of the same checkout of `apps/docs` (or any Next.js app in this repo), running `next build` while a sibling `next dev` server is running against the same `.next` directory will corrupt that dev server's build cache and can bring it down. Give each concurrent build or dev server its own checkout (a git worktree, or a full clone), or coordinate so only one Next.js process touches a given `.next` directory at a time.

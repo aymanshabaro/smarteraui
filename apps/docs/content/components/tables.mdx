@@ -19,6 +19,37 @@ demoFile: table
 
 <Preview id="table-small-size-example" title="Table small size example" height={718} demo="table:TableSmallSizeExample" />
 
+## Usage notes
+
+`Table` renders React Aria's `Table`, which implements the ARIA **`grid`** pattern rather than a
+plain HTML `<table>`'s implicit roles: the root is `role="grid"` (not `role="table"`), cells render
+`role="gridcell"`, and the row-header column renders `role="rowheader"`. In tests,
+`screen.getByRole('table')` will **not** match — query with `getByRole('grid')` instead.
+
+`Table.Header`/`Table.Row` can take literal `<Table.Head>`/`<Table.Cell>` children instead of the
+`items` + render-prop form used above. In that "static" mode:
+
+- Give `Table` an explicit `aria-label` (or `aria-labelledby`) — with static children there is no
+  column data to derive an accessible name from.
+- Give every `Table.Row` its own `id`.
+- Omit `selectionMode` unless you actually want a selection checkbox column — passing it renders
+  one even over otherwise-static rows.
+
+<Preview id="static-usage" title="Static usage" height={260} demo="table:StaticUsage" />
+
+A column with no visible text of its own — a trailing "Actions" column that holds only icon
+buttons, say — still needs an accessible name. Give `Table.Head` a visually-hidden label
+(`<span className="sr-only">`) instead of a visible one:
+
+<Preview id="visually-hidden-column-label" title="Visually hidden column label" height={220} demo="table:VisuallyHiddenColumnLabel" />
+
+`Table.Row` accepts `href` directly (and the rest of React Aria's link props — `target`, `rel`,
+`download`, ...), so a click/Enter/Space on the row navigates. This does not render a real `<a>`;
+the row stays `role="row"` and navigates through React Aria's router integration — a full browser
+navigation by default, or through this kit's `RouterProvider` for client-side routing without a
+full reload. Either way the row is not a "link" to assistive tech or crawlers, so for an
+actually-crawlable link, nest a real `<a>` (or this kit's `Button` with `href`) in a cell instead.
+
 ## Table examples
 
 <Preview id="divider-line-01" title="Divider line 01" height={894} demo="table:DividerLine01" />

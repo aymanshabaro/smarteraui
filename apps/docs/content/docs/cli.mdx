@@ -6,7 +6,7 @@ metaTitle: CLI tool | Proper UI
 metaDescription: Quickly configure a project and add components with the Proper UI CLI. Init detects your framework and Tailwind setup, add resolves dependencies automatically.
 ---
 
-The `properui` CLI copies component source into an existing project, shadcn-style: you get the `.tsx` files, not a runtime dependency. It detects your framework, TypeScript setup, and Tailwind version automatically, then writes files and installs dependencies for you. This guide covers every command: `init`, `add`, `list`, `search`, `diff`, and `login`.
+The `properui` CLI copies component source into an existing project, shadcn-style: you get the `.tsx` files, not a runtime dependency. It detects your framework, TypeScript setup, and Tailwind version automatically, then writes files and reports the npm packages an install needs. This guide covers every command: `init`, `add`, `remove`, `why`, `check`, `icons`, `list`, `search`, `diff`, and `login`.
 
 ## Installation
 
@@ -22,7 +22,21 @@ Requires Node 20+.
 
 ## Init command
 
-`init` configures an **existing** project: it does not scaffold a new one, so run it from the directory that already holds your `package.json`. It reads your `tsconfig.json` for an existing path alias, detects Next.js App Router vs Pages Router vs Vite vs Remix vs plain React, checks your Tailwind version (v3 projects are stopped with upgrade instructions; Proper UI requires Tailwind v4), and confirms your package manager from the lockfile. It then writes `components.json`, copies the theme token file (from the registry when reachable, a placeholder otherwise), creates `utils/cx.ts`, adds the Tailwind `@source` scan line and theme import to your global stylesheet, and wraps your app entry point (`app/layout.tsx`, `pages/_app.tsx`, or `main.tsx`) in `ThemeProvider`. For Vite specifically, it also writes the `@` alias into both halves Vite needs: a `paths` entry in `tsconfig.app.json`/`tsconfig.json` and a matching `resolve.alias` in `vite.config`, since Vite has no built-in tsconfig-paths support and `vite build`/`tsc -b` fail on `@/...` imports without both. It does not install any npm packages itself: `add` is what installs a component's dependencies.
+`init` configures an **existing** project: it does not scaffold a new one, so run it from the directory that already holds your `package.json`. It reads your `tsconfig.json` for an existing path alias, detects Next.js App Router vs Pages Router vs Vite vs Remix vs plain React, checks your Tailwind version (v3 projects are stopped with upgrade instructions; Proper UI requires Tailwind v4), and confirms your package manager from the lockfile. It then writes `components.json`, copies the theme token file (from the registry when reachable, a placeholder otherwise), creates `utils/cx.ts`, and writes the full stylesheet block into your global stylesheet: not just an `@source` scan line, but the theme import, plugin registrations, custom variants, and utility layer the components need, inserted right after your existing `@import "tailwindcss"` line. Unless you pass `--no-providers`, it also copies the registry's `ThemeProvider` (`next-themes`-based, with `forcedTheme`/`enableSystem` props available) and wraps your app entry point (`app/layout.tsx`, `pages/_app.tsx`, or `main.tsx`) in it; on a Next.js App Router project it wires up `RouterProvider` there too, since that provider needs no framework-specific setup beyond what `init` already knows. Unless you pass `--no-tooling-ignores`, it adds ESLint and Prettier ignore entries for the vendored component directories, so a strict consumer's lint/format config doesn't fail on copied-in source it doesn't own the style of. For Vite specifically, it also writes the `@` alias into both halves Vite needs: a `paths` entry in `tsconfig.app.json`/`tsconfig.json` and a matching `resolve.alias` in `vite.config`, since Vite has no built-in tsconfig-paths support and `vite build`/`tsc -b` fail on `@/...` imports without both.
+
+`init` does not install any npm packages itself unless you pass `--install`. Either way, the install command is the last thing it prints, after every file it wrote, not buried above a wall of file paths, so the final lines of a run look like:
+
+```
+✔ Wrote components.json
+✔ Wrote src/styles/theme.css
+✔ Wrote src/utils/cx.ts
+✔ Wired ThemeProvider into src/main.tsx
+
+Next steps:
+  npx @properui/cli@latest add buttons badges
+```
+
+That suggested next command names real registry entries (`buttons`, `badges`), not placeholders, so it's safe to copy and run as-is.
 
 ```bash
 npx @properui/cli@latest init
@@ -30,19 +44,31 @@ npx @properui/cli@latest init
 
 ### Command options
 
-| Option                | Description                                                                                                    |
-| --------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `--nextjs`            | Treat the project as Next.js instead of auto-detecting.                                                        |
-| `--vite`              | Treat the project as Vite instead of auto-detecting.                                                           |
-| `--manual`            | Write the files but leave the app entry point (and, for Vite, the `@` alias) alone. Print the snippet instead. |
-| `--overwrite`         | Replace `components.json` and any files that already exist.                                                    |
-| `--registry <source>` | Registry directory or base URL for this run (see below).                                                       |
-| `-y, --yes`           | Accept every default; never prompt.                                                                            |
-| `--cwd <path>`        | Run against a directory other than the current one.                                                            |
+| Option                 | Description                                                                                                    |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `--nextjs`             | Treat the project as Next.js instead of auto-detecting.                                                        |
+| `--vite`               | Treat the project as Vite instead of auto-detecting.                                                           |
+| `--manual`             | Write the files but leave the app entry point (and, for Vite, the `@` alias) alone. Print the snippet instead. |
+| `--install`            | Run the install for you instead of just printing the command.                                                  |
+| `--no-providers`       | Skip copying and wiring `ThemeProvider` (and, on Next App Router, `RouterProvider`) entirely.                  |
+| `--no-tooling-ignores` | Skip adding the ESLint/Prettier ignore entries for vendored component directories.                             |
+| `--overwrite`          | Replace `components.json` and any files that already exist.                                                    |
+| `--registry <source>`  | Registry directory or base URL for this run (see below).                                                       |
+| `-y, --yes`            | Accept every default; never prompt.                                                                            |
+| `--cwd <path>`         | Run against a directory other than the current one.                                                            |
 
 ## Add command
 
-`add` resolves a component and its `registryDependencies` recursively, copies the source files into your project, rewrites `@/` imports to your configured alias, and installs any missing npm packages.
+`add` resolves a component and its `registryDependencies` recursively, copies the source files into your project, rewrites `@/` imports to your configured alias, and records what it installed in the `installed` manifest inside `components.json`. It does not run the install for you unless you pass `--install`: either way, the install block prints last, after every file it wrote, with per-file attribution so you can see which package a given `.tsx` file actually needs:
+
+```
+✔ Wrote src/components/ui/button.tsx
+✔ Wrote src/components/ui/input.tsx
+
+Install:
+  npm install react-aria-components   # button.tsx, input.tsx
+  npm install tailwind-variants        # button.tsx
+```
 
 ```bash
 npx @properui/cli@latest add button
@@ -78,20 +104,105 @@ Typing a name that doesn't exist gets a suggestion rather than a bare failure: t
 
 ### Command options
 
-| Option                | Description                                                                             |
-| --------------------- | --------------------------------------------------------------------------------------- |
-| `--all`               | Add every component in the registry.                                                    |
-| `--overwrite`         | Replace files that already exist instead of skipping them: how you pull upstream fixes. |
-| `--path <dir>`        | Put component files in this directory instead of the configured alias.                  |
-| `--dry-run`           | Print what would change without writing anything.                                       |
-| `--registry <source>` | Registry directory or base URL for this run (see below).                                |
-| `-y, --yes`           | Skip the "install these dependencies?" confirmation.                                    |
+| Option                | Description                                                                                                |
+| --------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `--all`               | Add every component in the registry.                                                                       |
+| `--install`           | Run the install for you instead of just printing the command.                                              |
+| `--no-optional`       | Skip an entry's `optionalRegistryDependencies`, the pieces it works better with but doesn't strictly need. |
+| `--with-demos`        | Also copy the entry's demo file(s), for reference or as a starting point.                                  |
+| `--overwrite`         | Replace files that already exist instead of skipping them: how you pull upstream fixes.                    |
+| `--path <dir>`        | Put component files in this directory instead of the configured alias.                                     |
+| `--dry-run`           | Print what would change without writing anything.                                                          |
+| `--registry <source>` | Registry directory or base URL for this run (see below).                                                   |
+| `-y, --yes`           | Skip the "install these dependencies?" confirmation.                                                       |
 
 `--dry-run` before `--all` is a good habit:
 
 ```bash
 npx @properui/cli@latest add --all --dry-run
 ```
+
+Every `add` (and `init`) records what it installed in an `installed` manifest inside `components.json`, keyed by
+entry name, so `remove` and `why` (below) have something to consult, and re-running `add` on an entry that's already
+listed there is the no-op described above.
+
+## Remove command
+
+`remove` deletes an installed entry's files from your project and drops it from the `installed` manifest. If another
+installed entry still lists it as a `registryDependency`, `remove` warns you instead of leaving a broken import
+behind:
+
+```bash
+npx @properui/cli@latest remove badges
+```
+
+```
+✖ badges is still a dependency of badge-groups (installed). Remove badge-groups first, or pass --force.
+```
+
+### Command options
+
+| Option         | Description                                                            |
+| -------------- | ---------------------------------------------------------------------- |
+| `--force`      | Remove the entry even if something else installed still depends on it. |
+| `--cwd <path>` | Run against a directory other than the current one.                    |
+
+## Why command
+
+`why` answers "what pulled this in" for anything in the `installed` manifest, whether you added it directly or it
+arrived as someone else's `registryDependency`:
+
+```bash
+npx @properui/cli@latest why dot-icon
+```
+
+```
+dot-icon
+  └─ badges (registryDependency)
+       └─ badge-groups (you ran: add badge-groups)
+```
+
+Reach for it before deleting a file you don't remember installing yourself, and before deciding an entry is unused.
+
+## Check command
+
+`check` is the token guard: it scans your installed component directories (or a path you give it) for raw palette
+classes and arbitrary values that should have been semantic tokens (`bg-purple-600` instead of `bg-brand-solid`,
+`p-[13px]` instead of a spacing token), the convention described in [Theming](/docs/theming), which nothing in
+Tailwind itself enforces.
+
+```bash
+npx @properui/cli@latest check
+npx @properui/cli@latest check src/components/ui
+```
+
+Run it as part of your normal verification pass, alongside type-check and build; see the [AI agents guide](/docs/agents)
+for why an agent should run it before reporting UI work as done.
+
+### Command options
+
+| Option         | Description                                           |
+| -------------- | ----------------------------------------------------- |
+| `--path <dir>` | Check this directory instead of the configured alias. |
+| `--cwd <path>` | Run against a directory other than the current one.   |
+
+## Icons command
+
+`icons` lists and installs icon components the same way `add` handles the rest of the registry, useful because the
+main `search`/`list` index is built for components and examples, not for browsing an icon set:
+
+```bash
+npx @properui/cli@latest icons                    # list available icons
+npx @properui/cli@latest icons arrow-right check   # install specific icons
+```
+
+### Command options
+
+| Option                | Description                                                       |
+| --------------------- | ----------------------------------------------------------------- |
+| `--path <dir>`        | Put icon files in this directory instead of the configured alias. |
+| `--overwrite`         | Replace icon files that already exist.                            |
+| `--registry <source>` | Registry directory or base URL for this run (see below).          |
 
 ## List command
 
@@ -121,7 +232,7 @@ npx @properui/cli@latest search "pricing"
 npx @properui/cli@latest search "empty state" --limit 5
 ```
 
-Each line of output shows the matched name, its layer, its title, and how many examples reference it, sorted by score.
+Each line of output shows the matched name, its layer, its title, and how many docs pages have a worked example using it, sorted by score. The match runs over export names as well as entry names and titles, so searching for a named export (`ComboBox`, say) finds the entry it lives in even when the entry itself is named something else. When nothing scores, it prints `No match` plainly rather than a low-confidence guess; treat that as a reason to check the registry index directly, not as proof the component doesn't exist (see the [AI agents guide](/docs/agents)).
 
 ### Command options
 
@@ -161,7 +272,7 @@ Not sure of the exact name? List them first:
 npx @properui/cli@latest list --type example
 ```
 
-`add example` accepts the same options as `add` (`--overwrite`, `--path`, `--dry-run`, `--registry`, `-y/--yes`); there's no separate flag to skip an example's dependencies.
+`add example` accepts the same options as `add` (`--install`, `--overwrite`, `--path`, `--dry-run`, `--no-optional`, `--with-demos`, `--registry`, `-y/--yes`).
 
 ## Login command
 
@@ -263,7 +374,7 @@ npx @properui/cli@latest add example hero-split-image-01 --overwrite
         },
         {
             question: "Do examples include their dependencies?",
-            answer: "Yes, when you add an example, the CLI automatically installs all required dependencies and components. The example will be fully functional immediately after installation.",
+            answer: "Yes, when you add an example, the CLI copies every component file the example depends on and resolves the full registryDependency chain automatically. It reports the npm packages that install needs rather than running the install itself, unless you pass --install; the install command is the last thing it prints.",
         },
         {
             question: "What frameworks are supported?",
@@ -284,6 +395,14 @@ npx @properui/cli@latest add example hero-split-image-01 --overwrite
         {
             question: "How do I update components to the latest version?",
             answer: "You can re-run the add command with the --overwrite flag to update components to their latest versions: npx @properui/cli@latest add button --overwrite.",
+        },
+        {
+            question: "How do I remove a component I no longer use, or find out why one is installed?",
+            answer: "npx @properui/cli@latest remove <name> deletes its files and drops it from the installed manifest in components.json, warning first if another installed entry still depends on it. npx @properui/cli@latest why <name> prints what pulled it in, whether you added it directly or it arrived as someone else's dependency.",
+        },
+        {
+            question: "Does the CLI enforce the semantic token convention?",
+            answer: "npx @properui/cli@latest check scans for raw palette classes and arbitrary values that should have been semantic tokens and flags them. Nothing in Tailwind itself enforces this, so run check alongside your type-check and build.",
         },
     ]}
 />

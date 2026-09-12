@@ -32,6 +32,12 @@ describe("Metrics", () => {
         expect(getNegative("12%").className).toContain("*:text-fg-error-secondary");
     });
 
+    it("renders no change indicator when `change` is omitted", () => {
+        const { getByText, container } = render(<Demos.SimpleNoChange />);
+        expect(getByText("128")).toBeInTheDocument();
+        expect(container.querySelector("svg")).toBeNull();
+    });
+
     it("only renders a footer when actions are passed", () => {
         const { queryByRole } = render(<Demos.Simple />);
         expect(queryByRole("link", { name: "View report" })).toBeNull();

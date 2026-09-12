@@ -66,12 +66,25 @@ export interface ModalHeaderProps {
     color?: "brand" | "gray" | "success" | "warning" | "error";
     /** Stacks the icon above the text, or places it beside it. @default "stacked" */
     layout?: "stacked" | "horizontal";
-    /** Renders the decorative circles behind the featured icon. @default true */
+    /**
+     * Renders the decorative circles behind the featured icon/media.
+     * @default true when `icon` is given, false otherwise (a bare `media` node
+     * rarely wants the circles, so opt in explicitly if you do).
+     */
     hasBackgroundPattern?: boolean;
     /** Renders a close button in the top corner. @default true */
     hasCloseButton?: boolean;
     /** Content rendered instead of the featured icon (an avatar, a logo, …). */
     media?: ReactNode;
+    /**
+     * Called when the close button is pressed. The button also carries React
+     * Aria's `slot="close"`, so when this header sits inside a `Dialog` the
+     * button closes it automatically even without this prop — pass it only
+     * for extra side effects, or when the header is used outside a `Dialog`.
+     */
+    onClose?: () => void;
+    /** Accessible label for the close button. @default "Close" */
+    closeLabel?: string;
     className?: string;
 }
 
@@ -85,18 +98,21 @@ export const ModalHeader = ({
     icon,
     color = "brand",
     layout = "stacked",
-    hasBackgroundPattern = true,
+    hasBackgroundPattern,
     hasCloseButton = true,
     media,
+    onClose,
+    closeLabel = "Close",
     className,
 }: ModalHeaderProps) => {
     const visual = media ?? (icon ? <FeaturedIcon icon={icon} color={color} theme="modern" size="lg" /> : null);
+    const showBackgroundPattern = hasBackgroundPattern ?? Boolean(icon);
 
     return (
         <div className={cx(layout === "stacked" ? styles.header.stacked : styles.header.horizontal, className)}>
             {visual && (
                 <div className="relative w-max">
-                    {hasBackgroundPattern && (
+                    {showBackgroundPattern && (
                         <BackgroundPattern
                             pattern="circle"
                             size="sm"
@@ -112,7 +128,7 @@ export const ModalHeader = ({
                 {description && <p className={styles.header.description}>{description}</p>}
             </div>
 
-            {hasCloseButton && <CloseButton size="sm" slot={null} className={styles.header.close} />}
+            {hasCloseButton && <CloseButton size="sm" label={closeLabel} onPress={onClose} className={styles.header.close} />}
         </div>
     );
 };

@@ -84,5 +84,17 @@ demoFile: buttons
             question: "How do I make a button take the full width of its container?",
             answer: "You can make a button take the full width by adding the w-full Tailwind class to the className prop. The button component accepts standard HTML attributes and Tailwind classes.",
         },
+        {
+            question: "Does Button accept a native title attribute?",
+            answer: "Yes, pass title and it renders on the underlying button or anchor element, giving it a native tooltip.",
+        },
+        {
+            question: "Is the link variant's props type exported?",
+            answer: "Yes. Both ButtonProps (the button variant) and LinkProps (the href variant, rendered as an anchor) are exported from @properui/ui.",
+        },
+        {
+            question: "How do I pass an icon to Button from a React Server Component?",
+            answer: 'A component reference (e.g. iconLeading={ArrowRight}) cannot cross the server/client boundary and fails next build at prerender. From a server component, pass an element carrying data-icon instead, e.g. iconLeading={<ArrowRight data-icon="leading" />}.',
+        },
     ]}
 />

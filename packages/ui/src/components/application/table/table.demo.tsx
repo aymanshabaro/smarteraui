@@ -385,6 +385,76 @@ export const DividerLine04 = () => <FilesTable />;
 
 export const AlternatingFills04 = () => <FilesTable alternating />;
 
+/**
+ * Static usage: literal `<Table.Head>`/`<Table.Cell>` children instead of `items` +
+ * render-prop. `Table` needs its own `aria-label` here (there is no column data to derive one
+ * from), each `Table.Row` needs an `id`, and `selectionMode` is left unset so no checkbox
+ * column appears.
+ */
+export const StaticUsage = () => (
+    <TableCard.Root>
+        <Table aria-label="Team members">
+            <Table.Header>
+                <Table.Head label="Name" isRowHeader />
+                <Table.Head label="Email" />
+                <Table.Head label="Role" />
+            </Table.Header>
+            <Table.Body>
+                <Table.Row id="olivia">
+                    <Table.Cell>Olivia Rhye</Table.Cell>
+                    <Table.Cell>olivia@untitledui.com</Table.Cell>
+                    <Table.Cell>Product Designer</Table.Cell>
+                </Table.Row>
+                <Table.Row id="phoenix">
+                    <Table.Cell>Phoenix Baker</Table.Cell>
+                    <Table.Cell>phoenix@untitledui.com</Table.Cell>
+                    <Table.Cell>Product Manager</Table.Cell>
+                </Table.Row>
+                <Table.Row id="lana">
+                    <Table.Cell>Lana Steiner</Table.Cell>
+                    <Table.Cell>lana@untitledui.com</Table.Cell>
+                    <Table.Cell>Frontend Developer</Table.Cell>
+                </Table.Row>
+            </Table.Body>
+        </Table>
+    </TableCard.Root>
+);
+
+/**
+ * A trailing "actions" column whose header has no visible text — only icon buttons live in its
+ * cells — still needs an accessible name. `Table.Head`'s `children` carries a visually-hidden
+ * label instead of a visible one.
+ */
+export const VisuallyHiddenColumnLabel = () => (
+    <TableCard.Root>
+        <Table aria-label="Team members">
+            <Table.Header>
+                <Table.Head label="Name" isRowHeader />
+                <Table.Head label="Email" />
+                <Table.Head>
+                    <span className="sr-only">Actions</span>
+                </Table.Head>
+            </Table.Header>
+            <Table.Body>
+                <Table.Row id="olivia">
+                    <Table.Cell>Olivia Rhye</Table.Cell>
+                    <Table.Cell>olivia@untitledui.com</Table.Cell>
+                    <Table.Cell>
+                        <ButtonUtility size="sm" color="tertiary" icon={Edit01} tooltip="Edit Olivia Rhye" />
+                    </Table.Cell>
+                </Table.Row>
+                <Table.Row id="phoenix">
+                    <Table.Cell>Phoenix Baker</Table.Cell>
+                    <Table.Cell>phoenix@untitledui.com</Table.Cell>
+                    <Table.Cell>
+                        <ButtonUtility size="sm" color="tertiary" icon={Edit01} tooltip="Edit Phoenix Baker" />
+                    </Table.Cell>
+                </Table.Row>
+            </Table.Body>
+        </Table>
+    </TableCard.Root>
+);
+
 const viewTabs = [
     { id: "all", label: "View all" },
     { id: "active", label: "Active" },

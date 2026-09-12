@@ -34,4 +34,18 @@ describe("Button", () => {
         render(<Button isDisabled>Click me</Button>);
         expect(screen.getByRole("button", { name: "Click me" })).toBeDisabled();
     });
+
+    it("accepts a native title attribute", () => {
+        render(<Button title="Save changes">Save</Button>);
+        expect(screen.getByRole("button", { name: "Save" })).toHaveAttribute("title", "Save changes");
+    });
+
+    it("accepts a native title attribute on the link variant", () => {
+        render(
+            <Button href="/somewhere" title="Go there">
+                Go
+            </Button>,
+        );
+        expect(screen.getByRole("link", { name: "Go" })).toHaveAttribute("title", "Go there");
+    });
 });

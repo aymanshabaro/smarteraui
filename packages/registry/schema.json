@@ -11,6 +11,7 @@
         "title",
         "files",
         "registryDependencies",
+        "optionalRegistryDependencies",
         "dependencies",
         "cssVars",
         "examples"
@@ -63,7 +64,8 @@
                     "path",
                     "target",
                     "type",
-                    "content"
+                    "content",
+                    "dependencies"
                 ],
                 "additionalProperties": false,
                 "properties": {
@@ -84,11 +86,29 @@
                     },
                     "content": {
                         "type": "string"
+                    },
+                    "dependencies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "kind": {
+                        "type": "string",
+                        "enum": [
+                            "demo"
+                        ]
                     }
                 }
             }
         },
         "registryDependencies": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "optionalRegistryDependencies": {
             "type": "array",
             "items": {
                 "type": "string"

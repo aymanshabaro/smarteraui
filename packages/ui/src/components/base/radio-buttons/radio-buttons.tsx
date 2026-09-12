@@ -8,6 +8,7 @@ import {
     type RadioProps as AriaRadioProps,
 } from "react-aria-components";
 import { cx } from "../../../utils/cx";
+import { warnDomProps } from "../../../utils/warn-dom-props";
 
 export interface RadioGroupContextType {
     size?: "sm" | "md";
@@ -113,6 +114,8 @@ interface RadioGroupProps extends RadioGroupContextType, AriaRadioGroupProps {
 }
 
 export const RadioGroup = ({ children, className, size = "sm", ...props }: RadioGroupProps) => {
+    warnDomProps("RadioGroup", props as Record<string, unknown>, { disabled: "isDisabled", required: "isRequired", readOnly: "isReadOnly" });
+
     return (
         <RadioGroupContext.Provider value={{ size }}>
             <AriaRadioGroup {...props} className={cx("flex flex-col gap-4", className)}>

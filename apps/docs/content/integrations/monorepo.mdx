@@ -101,6 +101,65 @@ If you want to jump straight to the package's source while developing (skipping 
 
 This is a development convenience only: published consumers outside the monorepo always resolve `@properui/ui/*` through the package's own `exports` map, so keep the mapping scoped to apps that live inside this workspace.
 
+## Copying source into a shared package
+
+The section above covers `@properui/ui` as a workspace dependency. If you'd rather copy source with the CLI and own it
+outright (see [the CLI guide](/docs/cli)), you can still share the result across multiple apps by copying into a
+shared package once instead of into each app.
+
+**1. Point `add` at the shared package, not an app.** Run it with `--cwd` set to the shared package's directory (or
+run it from inside that directory) so the `components.json` it reads, and the alias it rewrites copied imports to, are
+the shared package's own:
+
+```bash
+npx @properui/cli@latest init --cwd packages/ui-kit
+npx @properui/cli@latest add button input select --cwd packages/ui-kit
+```
+
+**2. Every consuming app needs its own `@source` line reaching into the shared package.** Tailwind only scans what
+the stylesheet being built can reach through `@source`; it isn't transitive across packages, so each app repeats the
+line even though only one package holds the source:
+
+```css
+/* apps/web/app/globals.css */
+@import "tailwindcss";
+@import "../../../packages/ui-kit/src/styles/theme.css";
+
+@source "../../../packages/ui-kit/src/**/*.{ts,tsx}";
+```
+
+```css
+/* apps/admin/app/globals.css */
+@import "tailwindcss";
+@import "../../../packages/ui-kit/src/styles/theme.css";
+
+@source "../../../packages/ui-kit/src/**/*.{ts,tsx}";
+```
+
+**3. Give each app a second alias for the shared package, instead of overloading its own `@/`.** The shared
+package's internal `@/` (rewritten there by `add`, same as described above for `@properui/ui` itself) resolves against
+its own `src/` and never leaves that package. An app keeps `@/*` pointed at its own `src/` and adds an explicit,
+differently-named path for the shared package:
+
+```json
+// apps/web/tsconfig.json
+{
+    "compilerOptions": {
+        "paths": {
+            "@/*": ["./src/*"],
+            "@ui-kit/*": ["../../packages/ui-kit/src/*"]
+        }
+    }
+}
+```
+
+```tsx
+import { Button } from "@ui-kit/components/base/buttons/button";
+```
+
+Repeat the alias entry in every app's `tsconfig.json` that imports from the shared package; each app resolves it
+independently, the same way each app needs its own `@source` line.
+
 ## FAQs
 
 <FAQs

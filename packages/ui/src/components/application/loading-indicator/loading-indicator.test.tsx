@@ -27,6 +27,15 @@ describe("LoadingIndicator", () => {
         const { container: sm } = render(<Demos.LineSimple />);
         const { container: xl } = render(<Demos.Sizes />);
         expect(sm.querySelector("svg")?.getAttribute("class")).toContain("size-12");
-        expect(xl.querySelectorAll("svg")[3]?.getAttribute("class")).toContain("size-16");
+        // Sizes demo renders, in order: xs, sm, md, lg, xl.
+        expect(xl.querySelectorAll("svg")[0]?.getAttribute("class")).toContain("size-4");
+        expect(xl.querySelectorAll("svg")[4]?.getAttribute("class")).toContain("size-16");
+    });
+
+    it("lays the spinner and label out inline when `inline` is set", () => {
+        const { getByRole } = render(<Demos.InlineXs />);
+        const root = getByRole("status");
+        expect(root.className).toContain("flex-row");
+        expect(root.querySelector("svg")?.getAttribute("class")).toContain("size-4");
     });
 });

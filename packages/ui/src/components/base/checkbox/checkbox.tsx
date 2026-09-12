@@ -1,8 +1,10 @@
 "use client";
 
 import type { ReactNode, Ref } from "react";
+import { useId } from "react";
 import { Checkbox as AriaCheckbox, type CheckboxProps as AriaCheckboxProps } from "react-aria-components";
 import { cx, sortCx } from "../../../utils/cx";
+import { warnDomProps } from "../../../utils/warn-dom-props";
 
 export interface CheckboxBaseProps {
     /** The size of the checkbox. */
@@ -89,41 +91,58 @@ export interface CheckboxProps extends AriaCheckboxProps {
 }
 
 export const Checkbox = ({ label, hint, size = "sm", className, ...ariaCheckboxProps }: CheckboxProps) => {
+    warnDomProps("Checkbox", ariaCheckboxProps as Record<string, unknown>, { checked: "isSelected", disabled: "isDisabled", required: "isRequired" });
+
+    const generatedId = useId();
+    // A hint rendered *inside* the `<label>` React Aria's `Checkbox` produces becomes part of the
+    // input's accessible name (e.g. "Remember me Save my login details…"). Rendering it as a
+    // sibling and wiring it up with `aria-describedby` instead keeps the accessible name equal to
+    // just the label, while the hint is still announced as a description.
+    const hintId = hint ? `checkbox-hint-${generatedId}` : undefined;
+
     return (
-        <AriaCheckbox
-            {...ariaCheckboxProps}
-            className={(state) =>
-                cx(
-                    "relative flex items-start",
-                    state.isDisabled && "cursor-not-allowed",
-                    styles[size].root,
-                    typeof className === "function" ? className(state) : className,
-                )
-            }
-        >
-            {({ isSelected, isIndeterminate, isDisabled, isFocusVisible }) => (
-                <>
-                    <CheckboxBase
-                        size={size}
-                        isSelected={isSelected}
-                        isIndeterminate={isIndeterminate}
-                        isDisabled={isDisabled}
-                        isFocusVisible={isFocusVisible}
-                        className={label || hint ? "mt-0.5" : ""}
-                    />
-                    {(label || hint) && (
-                        <div className={cx("inline-flex flex-col", styles[size].textWrapper)}>
-                            {label && <p className={cx("text-secondary select-none", styles[size].label)}>{label}</p>}
-                            {hint && (
-                                <span role="presentation" className={cx("text-tertiary", styles[size].hint)} onClick={(event) => event.stopPropagation()}>
-                                    {hint}
-                                </span>
-                            )}
-                        </div>
-                    )}
-                </>
+        <div className="flex flex-col">
+            <AriaCheckbox
+                // With a label, the hint describes; without one (a consent checkbox whose only
+                // text is the hint), the hint must still name the control or it has no
+                // accessible name at all, which is what the contact-form demos exercise.
+                aria-describedby={label ? hintId : undefined}
+                aria-labelledby={!label && hint ? hintId : undefined}
+                {...ariaCheckboxProps}
+                className={(state) =>
+                    cx(
+                        "relative flex items-start",
+                        state.isDisabled && "cursor-not-allowed",
+                        styles[size].root,
+                        typeof className === "function" ? className(state) : className,
+                    )
+                }
+            >
+                {({ isSelected, isIndeterminate, isDisabled, isFocusVisible }) => (
+                    <>
+                        <CheckboxBase
+                            size={size}
+                            isSelected={isSelected}
+                            isIndeterminate={isIndeterminate}
+                            isDisabled={isDisabled}
+                            isFocusVisible={isFocusVisible}
+                            className={label ? "mt-0.5" : ""}
+                        />
+                        {label && (
+                            <div className={cx("inline-flex flex-col", styles[size].textWrapper)}>
+                                <p className={cx("text-secondary select-none", styles[size].label)}>{label}</p>
+                            </div>
+                        )}
+                    </>
+                )}
+            </AriaCheckbox>
+
+            {hint && (
+                <span id={hintId} className={cx("text-tertiary", styles[size].hint, size === "sm" ? "ms-6" : "ms-8")}>
+                    {hint}
+                </span>
             )}
-        </AriaCheckbox>
+        </div>
     );
 };
 Checkbox.displayName = "Checkbox";

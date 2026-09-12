@@ -55,5 +55,9 @@ demoFile: checkbox
             question: "How do I make checkboxes accessible?",
             answer: "The checkbox component is built with accessibility in mind using React Aria. It supports keyboard navigation (Space key to toggle), proper ARIA attributes, focus management, and screen reader compatibility. The component automatically handles focus indicators.",
         },
+        {
+            question: "Does the hint text join the checkbox's accessible name?",
+            answer: "No. The hint renders outside the label and is linked to the checkbox with aria-describedby, so the accessible name equals just the label text. Screen readers still announce the hint as a description.",
+        },
     ]}
 />

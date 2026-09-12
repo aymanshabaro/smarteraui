@@ -13,21 +13,30 @@ Do not write a Proper UI component from memory. Fetch it.
 curl https://properui.dev/llms.txt          # index of every docs page, as plain markdown
 curl https://properui.dev/r/index.json      # every registry entry: name, layer, type, dependencies
 curl https://properui.dev/r/buttons.json    # one entry, including its real source
-npx @properui/cli@latest add buttons date-picker # write the files into the project
+npx @properui/cli@latest add buttons date-picker # write the files, report what to install
 npx @properui/cli@latest info --json             # this project's setup: framework, aliases, installed entries
 npx @properui/cli@latest agent init              # install the Proper UI Skill for Claude, Codex, Cursor and Lovable
 ```
 
-`add` resolves `registryDependencies`, rewrites `@/` imports to the alias in `components.json` and installs missing npm
-packages. Prefer it over hand-copying source out of a registry payload. `info --json` is what to run before deciding
-anything. It reports whether `components.json` exists yet and what's already installed. `agent init` writes the
-portable Skill (`skills/properui/SKILL.md`) into `.claude/skills/`, `.agents/skills/`, or `.cursor/rules/`, so every
-session after the first one gets this guidance automatically instead of relying on this file alone.
+`add` resolves `registryDependencies`, rewrites `@/` imports to the alias in `components.json`, and reports the missing
+npm packages an install needs; pass `--install` to have it run that install itself instead of just printing the
+command. `init` behaves the same way: it never installs on its own unless you pass `--install`, and either way prints
+the install command last, after every file it wrote. Prefer `add` over hand-copying source out of a registry payload.
+`info --json` is what to run before deciding anything: it always probes the registry, so `registryReachable` reflects
+a live check, and it reports whether `components.json` exists yet and what's already installed. `remove` and `why`
+cover the other direction: `remove <name>` deletes an installed entry (and warns if something else still depends on
+it), `why <name>` prints what pulled it in. `check` is a token guard: it flags raw palette classes and arbitrary
+values that should have been semantic tokens. `agent init` writes the portable Skill (`skills/properui/SKILL.md`)
+into `.claude/skills/`, `.agents/skills/`, or `.cursor/rules/`, so every session after the first one gets this
+guidance automatically instead of relying on this file alone.
 
 ## Writing component code
 
 - **React Aria props, not DOM props.** `onPress` not `onClick`, `isDisabled` not `disabled`, `isSelected` not
-  `checked`. Interactive components wrap React Aria Components; the DOM prop is silently ignored.
+  `checked`, `isReadOnly` not `readOnly`, `isRequired` not `required`. Interactive components wrap React Aria
+  Components; the DOM prop is silently ignored, except `id` on `NativeSelect`, which is a real `<select>` and honours
+  it directly. Dev-mode warnings cover the common aliases, but they warn, they don't fail the build; only a
+  DOM-vs-Aria prop mismatch that TypeScript can see (a prop name that doesn't exist on the type) is a compile error.
 - **Semantic tokens only.** `bg-primary`, `text-tertiary`, `border-secondary`, `bg-brand-solid`. Never a raw palette
   class (`bg-purple-600`), never an arbitrary value (`bg-[#7f56d9]`, `p-[13px]`). The full set is in
   `packages/ui/src/styles/theme.css`.
@@ -36,8 +45,12 @@ session after the first one gets this guidance automatically instead of relying 
 - **Logical properties for anything directional.** `ms-*`/`me-*` not `ml-*`/`mr-*`, `ps-*`/`pe-*` not `pl-*`/`pr-*`,
   `start-*`/`end-*` not `left-*`/`right-*`, `text-start` not `text-left`. This is what makes `dir="rtl"` work.
 - **Typography is tokenised too.** `text-display-lg`, `text-md`, not `text-4xl`.
-- **Icons as component references.** `<Button iconLeading={ArrowRight}>`, not `<Button iconLeading={<ArrowRight />}>`.
-  The component applies sizing and the `data-icon` attribute that its own styles target.
+- **Icons as component references, except inside React Server Components.**
+  `<Button iconLeading={ArrowRight}>`, not `<Button iconLeading={<ArrowRight />}>`, is the default: the component
+  applies sizing and the `data-icon` attribute that its own styles target. A bare component reference can't cross the
+  server/client boundary, so a true server component (no `"use client"`) rendering `Button` directly must use the
+  element form instead, setting `data-icon` itself since the wrapper never runs:
+  `<Button iconTrailing={<ArrowRight data-icon="trailing" />}>`.
 - **Import from the subpath** so bundlers keep only what is used:
   `@properui/ui/components/base/buttons/button`.
 
@@ -71,8 +84,8 @@ pnpm build
 
 Do not document or generate code against these, because they do not exist:
 
-- `properui upgrade` / `properui migrate`. The commands are `init`, `add`, `list`, `search`, `diff`, `login`,
-  `info` and `agent init`.
+- `properui upgrade` / `properui migrate`. The commands are `init`, `add`, `remove`, `why`, `check`, `icons`, `list`,
+  `search`, `diff`, `login`, `info` and `agent init`.
 - A browser OAuth flow for `login`. It takes `--token`, or prompts you to paste one.
 - An MCP server. It is on the [roadmap](./ROADMAP.md); the Skill and the CLI cover the same ground today.
 - A paid or PRO tier. Everything in this repository is MIT licensed.

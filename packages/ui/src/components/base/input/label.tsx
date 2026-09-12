@@ -29,18 +29,27 @@ export const Label = ({ isInvalid, isRequired, tooltip, tooltipDescription, clas
         >
             {props.children}
 
-            <span
-                className={cx(
-                    "text-brand-tertiary hidden",
-                    isRequired && "block",
-                    typeof isRequired === "undefined" && "group-required:block",
+            {/*
+             * Only rendered when required (or when `isRequired` is left unset, so the ancestor
+             * `group-required:` CSS variant can still show it). When a caller explicitly passes
+             * `isRequired={false}`, the element is omitted entirely — not just visually hidden —
+             * so it never joins the label's accessible name (e.g. `getByLabelText("Email")` stays
+             * an exact match instead of matching "Email *").
+             */}
+            {(isRequired || typeof isRequired === "undefined") && (
+                <span
+                    className={cx(
+                        "text-brand-tertiary hidden",
+                        isRequired && "block",
+                        typeof isRequired === "undefined" && "group-required:block",
 
-                    isInvalid && "text-error-primary",
-                    typeof isInvalid === "undefined" && "group-invalid:text-error-primary",
-                )}
-            >
-                *
-            </span>
+                        isInvalid && "text-error-primary",
+                        typeof isInvalid === "undefined" && "group-invalid:text-error-primary",
+                    )}
+                >
+                    *
+                </span>
+            )}
 
             {tooltip && (
                 <Tooltip title={tooltip} description={tooltipDescription} placement="top">
@@ -49,6 +58,11 @@ export const Label = ({ isInvalid, isRequired, tooltip, tooltipDescription, clas
                         // but we don't that. We want the tooltip be enabled even if the parent
                         // field is disabled.
                         isDisabled={false}
+                        // Opt this button out of the ambient `ButtonContext` that `Select`/`ComboBox`
+                        // provide to any unslotted `Button` in their subtree — without this, the help
+                        // icon silently becomes a second copy of the field's own trigger (duplicate id,
+                        // `aria-haspopup`, `aria-expanded`) and corrupts the trigger's accessible name.
+                        slot={null}
                         aria-label="More information"
                         className="text-fg-quaternary hover:text-fg-quaternary_hover focus:text-fg-quaternary_hover cursor-pointer transition duration-200"
                     >

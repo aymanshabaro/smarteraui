@@ -105,8 +105,8 @@ export interface MetricCardBaseProps {
     title: string;
     /** The formatted metric value, e.g. `"2,000"`. */
     value: string;
-    /** The formatted change shown next to the value, e.g. `"100%"`. */
-    change: string;
+    /** The formatted change shown next to the value, e.g. `"100%"`. Omit for a plain metric with no change indicator. */
+    change?: string;
     /** Direction of the change. Drives the arrow direction and the accent color. */
     trend?: MetricTrend;
     /** Content for the top-right corner — typically a `Dropdown.Root` wrapping a `Dropdown.DotsButton`. */

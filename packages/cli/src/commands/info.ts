@@ -4,8 +4,13 @@
  * `components.json` aliases, the theme CSS path, which registry entries are already
  * installed, and the installed package versions.
  *
- * "Installed registry entries" are computed the same way `diff` finds them: for every
- * non-example entry in the registry index, check whether any of its target files already
+ * The registry reachability probe (2.7) runs unconditionally — even with no `components.json`,
+ * which is exactly when the Skill tells an agent to run `info` first — so `registryReachable`
+ * reflects the network, not whether `init` has run yet.
+ *
+ * "Installed" entries come from components.json's `installed` manifest (2.10) when present.
+ * Projects from before that manifest existed fall back to the old file-existence probe: for
+ * every non-example entry in the registry index, check whether any of its target files already
  * exist in the project.
  *
  * Spec: docs/cli.md, docs/spec/strategy/2026-09-plan.md §3 P1.3.
@@ -15,7 +20,7 @@ import path from "node:path";
 import { type ComponentsConfig, aliasBaseDir, configPath, readConfig } from "../config.js";
 import { allDependencies, detectProject, readPackageJson } from "../detect.js";
 import { prepareFile } from "../files.js";
-import { Registry, RegistryError, resolveRegistrySource } from "../registry.js";
+import { Registry, RegistryError, type RegistryIndexEntry, resolveRegistrySource } from "../registry.js";
 import { kleur, log } from "../ui.js";
 
 export interface InfoOptions {
@@ -31,10 +36,13 @@ interface PackageVersions {
     declared: string | null;
 }
 
-interface InstalledEntry {
-    name: string;
-    layer: string;
-    type: string;
+/** Mirrors components.json's `installed` manifest row, annotated with index metadata when known. */
+interface InstalledSnapshotEntry {
+    version: string;
+    files: string[];
+    installedAt: string;
+    layer?: string;
+    type?: string;
 }
 
 export interface ProjectSnapshot {
@@ -57,7 +65,7 @@ export interface ProjectSnapshot {
     };
     registrySource: string;
     registryReachable: boolean;
-    installed: InstalledEntry[];
+    installed: Record<string, InstalledSnapshotEntry>;
 }
 
 /** Reads a package's declared version from package.json and its actually-installed version from node_modules. */
@@ -83,25 +91,46 @@ export async function collectSnapshot(options: InfoOptions): Promise<ProjectSnap
     const registrySource = resolveRegistrySource(options.registry, config?.registry);
     const registry = new Registry(registrySource);
 
-    const installed: InstalledEntry[] = [];
+    // Probe the registry regardless of whether components.json exists yet (2.7) — a fresh
+    // project with network access must report `registryReachable: true`.
     let registryReachable = true;
+    let index: RegistryIndexEntry[] = [];
+    try {
+        index = await registry.index();
+    } catch {
+        registryReachable = false;
+    }
 
+    const installed: Record<string, InstalledSnapshotEntry> = {};
     if (config) {
-        const aliasBase = aliasBaseDir(cwd, config);
-        const resolveOptions = { cwd, aliasBase };
-        try {
-            const index = await registry.index();
+        const manifest = config.installed ?? {};
+        if (Object.keys(manifest).length > 0) {
+            for (const [name, record] of Object.entries(manifest)) {
+                const meta = index.find((entry) => entry.name === name);
+                installed[name] = { ...record, layer: meta?.layer, type: meta?.type };
+            }
+        } else if (registryReachable) {
+            const aliasBase = aliasBaseDir(cwd, config);
+            const resolveOptions = { cwd, aliasBase };
             for (const meta of index) {
                 if (meta.type === "example") continue;
-                const entry = await registry.item(meta.name);
-                const present = entry.files.some((file) => existsSync(prepareFile(file, config, resolveOptions).target));
-                if (present) installed.push({ name: meta.name, layer: meta.layer, type: meta.type });
+                try {
+                    const entry = await registry.item(meta.name);
+                    const presentFiles = entry.files.filter((file) => existsSync(prepareFile(file, config, resolveOptions).target));
+                    if (presentFiles.length > 0) {
+                        installed[meta.name] = {
+                            version: "unknown",
+                            files: presentFiles.map((file) => path.relative(cwd, prepareFile(file, config, resolveOptions).target)),
+                            installedAt: "unknown",
+                            layer: meta.layer,
+                            type: meta.type,
+                        };
+                    }
+                } catch {
+                    // one bad item shouldn't sink the whole report
+                }
             }
-        } catch {
-            registryReachable = false;
         }
-    } else {
-        registryReachable = false;
     }
 
     return {
@@ -124,7 +153,7 @@ export async function collectSnapshot(options: InfoOptions): Promise<ProjectSnap
         },
         registrySource,
         registryReachable,
-        installed: installed.sort((a, b) => a.name.localeCompare(b.name)),
+        installed,
     };
 }
 
@@ -142,6 +171,8 @@ function printHuman(snapshot: ProjectSnapshot): void {
     log.step(`Package manager     ${snapshot.packageManager}`);
     log.step(`@properui/ui      ${formatVersions(snapshot.packages["@properui/ui"])}`);
     log.step(`properui (CLI)    ${formatVersions(snapshot.packages.properui)}`);
+    log.step(`Registry            ${snapshot.registrySource}`);
+    log.step(`Registry reachable  ${snapshot.registryReachable ? "yes" : "no"}`);
     log.plain();
 
     if (!snapshot.config.present) {
@@ -156,22 +187,25 @@ function printHuman(snapshot: ProjectSnapshot): void {
     log.step(`Hooks alias         ${snapshot.config.aliases?.hooks}`);
     log.step(`Theme CSS           ${snapshot.config.theme}`);
     log.step(`Global CSS          ${snapshot.config.css}`);
-    log.step(`Registry            ${snapshot.registrySource}`);
     log.plain();
 
     if (!snapshot.registryReachable) {
         log.warn(`Could not reach the registry. Installed entries below may be incomplete.`);
     }
 
-    if (snapshot.installed.length === 0) {
+    const names = Object.keys(snapshot.installed).sort();
+    if (names.length === 0) {
         log.info("No registry entries installed yet.");
         return;
     }
 
-    log.title(`${snapshot.installed.length} installed entr${snapshot.installed.length === 1 ? "y" : "ies"}`);
-    const width = Math.max(...snapshot.installed.map((entry) => entry.name.length));
-    for (const entry of snapshot.installed) {
-        log.plain(`  ${kleur.bold(entry.name.padEnd(width))}  ${kleur.dim(entry.layer)}`);
+    log.title(`${names.length} installed entr${names.length === 1 ? "y" : "ies"}`);
+    const width = Math.max(...names.map((name) => name.length));
+    for (const name of names) {
+        const record = snapshot.installed[name];
+        if (!record) continue;
+        const detail = [record.layer, record.version !== "unknown" ? `v${record.version}` : null].filter(Boolean).join(" · ");
+        log.plain(`  ${kleur.bold(name.padEnd(width))}  ${kleur.dim(detail)}`);
     }
 }
 

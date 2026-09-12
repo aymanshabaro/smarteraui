@@ -4,6 +4,11 @@ import { cx, sortCx } from "../../../utils/cx";
 
 export const styles = sortCx({
     sizes: {
+        xs: {
+            root: "gap-2",
+            label: "text-sm font-medium",
+            spinner: "size-4",
+        },
         sm: {
             root: "gap-4",
             label: "text-sm font-medium",
@@ -34,17 +39,30 @@ export interface LoadingIndicatorProps {
      */
     type?: "line-simple" | "line-spinner" | "dot-circle";
     /**
-     * The size of the loading indicator.
+     * The size of the loading indicator. `xs` is a 16px spinner meant to sit inline with text
+     * (see `inline`) rather than stand alone as a page/section loading state.
+     *
+     * To show a spinner inside a `Button`, use the button's own `isLoading` prop instead of
+     * this component — it replaces the button's content with a correctly sized, correctly
+     * coloured spinner and manages `aria-disabled` for you.
+     *
      * @default 'sm'
      */
     size?: keyof typeof styles.sizes;
     /**
-     * Optional text label displayed below the indicator.
+     * Optional text label. Sits below the indicator by default; pass `inline` to place it
+     * beside the indicator instead.
      */
     label?: string;
+    /**
+     * Lays the spinner and label out side by side (row) instead of stacked (column). Pairs
+     * naturally with `size="xs"` for a loading state inline with surrounding text.
+     * @default false
+     */
+    inline?: boolean;
 }
 
-export const LoadingIndicator = ({ type = "line-simple", size = "sm", label }: LoadingIndicatorProps) => {
+export const LoadingIndicator = ({ type = "line-simple", size = "sm", label, inline = false }: LoadingIndicatorProps) => {
     const renderSpinner = () => {
         if (type === "line-spinner") {
             return (
@@ -121,7 +139,7 @@ export const LoadingIndicator = ({ type = "line-simple", size = "sm", label }: L
             role="status"
             aria-live="polite"
             aria-label={label ?? "Loading"}
-            className={cx("flex flex-col items-center justify-center", styles.sizes[size].root)}
+            className={cx("flex items-center justify-center", inline ? "flex-row" : "flex-col", styles.sizes[size].root)}
         >
             {renderSpinner()}
             {label && <span className={cx("text-secondary", styles.sizes[size].label)}>{label}</span>}

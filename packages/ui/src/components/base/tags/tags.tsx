@@ -153,6 +153,11 @@ export const Tag = ({
     className,
     children,
     onClose,
+    // `TagProps`'s `RefAttributes<object>` types `ref` too loosely to forward on to `AriaTag`
+    // (which expects a ref to its actual row element); left unforwarded, as it always was before
+    // `...rest` started forwarding everything else.
+    ref: _ref,
+    ...rest
 }: PropsWithChildren<TagProps>) => {
     const context = useContext(TagGroupContext);
 
@@ -164,6 +169,7 @@ export const Tag = ({
 
     return (
         <AriaTag
+            {...rest}
             id={id}
             isDisabled={isDisabled}
             textValue={typeof children === "string" ? children : undefined}

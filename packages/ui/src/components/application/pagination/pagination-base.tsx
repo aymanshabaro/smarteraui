@@ -46,9 +46,11 @@ export interface PaginationRootProps {
     className?: string;
     /** Callback function that's called when the page changes with the new page number. */
     onPageChange?: (page: number) => void;
+    /** Accessible label for the `<nav>` landmark. @default "Pagination Navigation" */
+    "aria-label"?: string;
 }
 
-const PaginationRoot = ({ total, siblingCount = 1, page, onPageChange, children, style, className }: PaginationRootProps) => {
+const PaginationRoot = ({ total, siblingCount = 1, page, onPageChange, children, style, className, "aria-label": ariaLabel }: PaginationRootProps) => {
     const createPaginationItems = useCallback((): PaginationItemType[] => {
         const items: PaginationItemType[] = [];
         // Calculate the maximum number of pagination elements (pages, potential ellipsis, first and last) to show
@@ -165,7 +167,7 @@ const PaginationRoot = ({ total, siblingCount = 1, page, onPageChange, children,
 
     return (
         <PaginationContext.Provider value={paginationContextValue}>
-            <nav aria-label="Pagination Navigation" style={style} className={className}>
+            <nav aria-label={ariaLabel || "Pagination Navigation"} style={style} className={className}>
                 {children}
             </nav>
         </PaginationContext.Provider>
@@ -232,13 +234,20 @@ const Trigger: FC<TriggerProps> = ({ children, style, className, asChild = false
 
     // If the children is a valid element, we need to clone it and pass the isDisabled and onClick to the cloned element.
     if (asChild && isValidElement(children)) {
+        const childProps = children.props as HTMLAttributes<HTMLElement> & { "aria-label"?: string };
+        // Don't force an English aria-label over a child that already names itself,
+        // either through its own `aria-label` or visible text content (e.g. "Previous").
+        // An explicit `ariaLabel` passed to the trigger always wins.
+        const hasOwnName = Boolean(childProps["aria-label"]) || Boolean(childProps.children);
+        const resolvedAriaLabel = ariaLabel || (hasOwnName ? undefined : defaultAriaLabel);
+
         return cloneElement(children, {
             onClick: handleClick,
             disabled: isDisabled,
             isDisabled,
-            "aria-label": ariaLabel || defaultAriaLabel,
-            style: { ...(children.props as HTMLAttributes<HTMLElement>).style, ...style },
-            className: [computedClassName, (children.props as HTMLAttributes<HTMLElement>).className].filter(Boolean).join(" ") || undefined,
+            ...(resolvedAriaLabel && { "aria-label": resolvedAriaLabel }),
+            style: { ...childProps.style, ...style },
+            className: [computedClassName, childProps.className].filter(Boolean).join(" ") || undefined,
         } as HTMLAttributes<HTMLElement>);
     }
 

@@ -108,6 +108,38 @@ interface TableRootProps extends AriaTableProps, Omit<ComponentPropsWithRef<"tab
     size?: "sm" | "md";
 }
 
+/**
+ * The scrollable table wrapper. Renders React Aria's `Table`, which implements the ARIA
+ * **`grid`** pattern rather than a plain `<table>`'s implicit roles: cells render
+ * `role="gridcell"`, the row-label column renders `role="rowheader"`, and the root itself is
+ * `role="grid"`, not `role="table"`. In tests, `screen.getByRole('table')` will **not** match —
+ * query with `getByRole('grid')` instead (see `apps/docs/content/docs/testing.mdx` for the rest
+ * of the React Aria testing gotchas this kit runs into).
+ *
+ * ### Static children
+ * `Table.Header`/`Table.Row` accept literal `<Table.Head>`/`<Table.Cell>` children instead of
+ * the `items` + render-prop form (see the "Static usage" demo). In that mode:
+ * - Give `Table` an explicit `aria-label` (or `aria-labelledby`) — with static children there is
+ *   no column data to derive an accessible name from.
+ * - Give every `Table.Row` its own `id`.
+ * - Omit `selectionMode` on `Table.Header`/`Table.Row` unless you actually want a selection
+ *   checkbox column — passing it renders one even over otherwise-static rows.
+ *
+ * ### Row links
+ * `Table.Row` accepts `href` directly (and the rest of React Aria's `LinkDOMProps` — `target`,
+ * `rel`, `download`, ...), so a click/Enter/Space on the row navigates — no "stretched link"
+ * (`<a className="absolute inset-0">`) recipe needed. This does **not** render a real `<a>`;
+ * the row stays `role="row"` (with the URL on `data-href`) and navigates via React Aria's
+ * router integration — a full browser navigation by default, or through this kit's
+ * `RouterProvider` (`@properui/ui/providers/router-provider`) for client-side routing without a
+ * full reload. Either way the row is not a "link" to assistive tech or crawlers; for an
+ * actually-crawlable link, nest a real `<a>` (or this kit's `Button` with `href`) in a cell.
+ *
+ * ### Hiding a column's text label
+ * A column with only icon buttons (e.g. a trailing "Actions" column) still needs an accessible
+ * name. Give `Table.Head` a visually-hidden label instead of a visible one — see the "Visually
+ * hidden column label" demo.
+ */
 const TableRoot = ({ className, size = "md", ...props }: TableRootProps) => {
     const context = useContext(TableContext);
 
@@ -168,7 +200,12 @@ const TableHeader = <T extends object>({ columns, children, bordered = true, cla
 TableHeader.displayName = "TableHeader";
 
 interface TableHeadProps extends AriaColumnProps, Omit<ThHTMLAttributes<HTMLTableCellElement>, "children" | "className" | "style" | "id"> {
-    /** The label of the column. */
+    /**
+     * The visible label of the column. For a column with no visible text of its own (e.g. a
+     * trailing icon-buttons-only "Actions" column), pass an `aria-label` instead and leave this
+     * unset, or render a visually-hidden label as `children` (`<span className="sr-only">`) — the
+     * column still needs an accessible name either way.
+     */
     label?: string;
     /** The tooltip displayed next to the label. */
     tooltip?: string;
@@ -226,6 +263,11 @@ interface TableRowProps<T extends object>
     highlightSelectedRow?: boolean;
     /** The size of the row. Defaults to the size of the enclosing table. */
     size?: "sm" | "md";
+    /**
+     * Makes the whole row a link — inherited from React Aria's `Row` (`LinkDOMProps`). No
+     * "stretched link" wrapper needed; `target`, `rel`, and `download` are supported too.
+     */
+    href?: AriaRowProps<T>["href"];
 }
 
 const TableRow = <T extends object>({ columns, children, className, highlightSelectedRow = true, size: sizeProp, ...props }: TableRowProps<T>) => {

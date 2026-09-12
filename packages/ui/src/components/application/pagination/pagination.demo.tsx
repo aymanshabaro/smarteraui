@@ -106,6 +106,21 @@ export const PaginationDot = () => {
     );
 };
 
+/** Cursor pagination: no known total, so there is no "Page X of Y" — only whether each direction has more. */
+export const Cursor = () => {
+    const [page, setPage] = useState(0);
+    const lastPage = 2;
+
+    return (
+        <Paginations.PaginationCursor
+            hasPrevious={page > 0}
+            hasNext={page < lastPage}
+            onPrevious={() => setPage((current) => Math.max(0, current - 1))}
+            onNext={() => setPage((current) => Math.min(lastPage, current + 1))}
+        />
+    );
+};
+
 export const PaginationLine = () => {
     const [currentPage, setCurrentPage] = useState(1);
 

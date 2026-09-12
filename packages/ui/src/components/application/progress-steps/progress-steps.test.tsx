@@ -1,5 +1,5 @@
-import { render } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { fireEvent, render } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
 import { axe } from "vitest-axe";
 import "vitest-axe/extend-expect";
 import { type ProgressStepItem, ProgressSteps } from "./progress-steps";
@@ -30,7 +30,8 @@ describe("ProgressSteps", () => {
     it("renders one connector fewer than it has steps", () => {
         const { container } = render(<ProgressSteps items={items} />);
 
-        expect(container.querySelectorAll("li > div > span.border-t-2")).toHaveLength(items.length - 1);
+        // li > div (the step's row) > div (indicator + connector) > span.border-t-2
+        expect(container.querySelectorAll("li > div > div > span.border-t-2")).toHaveLength(items.length - 1);
     });
 
     it("omits connectors when connector is none", () => {
@@ -59,5 +60,32 @@ describe("ProgressSteps", () => {
 
         expect(getByText("Step 1, completed")).toBeTruthy();
         expect(container.querySelectorAll('[aria-current="step"]')).toHaveLength(1);
+    });
+
+    it("renders static markup (no buttons) by default", () => {
+        const { container } = render(<ProgressSteps items={items} />);
+        expect(container.querySelectorAll("li button")).toHaveLength(0);
+    });
+
+    it("renders steps as buttons and calls onStepPress with the step id, except for locked steps", () => {
+        const onStepPress = vi.fn();
+        const stepsWithLocked: ProgressStepItem[] = [
+            { id: "one", title: "One", status: "complete" },
+            { id: "two", title: "Two", status: "current" },
+            { id: "three", title: "Three", status: "locked" },
+        ];
+        const { getByRole } = render(<ProgressSteps items={stepsWithLocked} onStepPress={onStepPress} />);
+
+        const lockedButton = getByRole("button", { name: /Three/ });
+        expect(lockedButton).toBeDisabled();
+
+        fireEvent.click(getByRole("button", { name: /One/ }));
+        expect(onStepPress).toHaveBeenCalledWith("one");
+    });
+
+    it("renders a step's `children` slot", () => {
+        const stepsWithChildren: ProgressStepItem[] = [{ id: "one", title: "One", status: "current", children: <span>Extra content</span> }];
+        const { getByText } = render(<ProgressSteps items={stepsWithChildren} />);
+        expect(getByText("Extra content")).toBeInTheDocument();
     });
 });

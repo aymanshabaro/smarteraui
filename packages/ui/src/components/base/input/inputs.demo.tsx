@@ -5,12 +5,12 @@ import { AlertCircle, Calendar, Check, CheckCircle, Copy01, Lock03, Mail01 } fro
 import { useClipboard } from "../../../hooks/use-clipboard";
 import { cx } from "../../../utils/cx";
 import { Button } from "../buttons/button";
+import { NativeSelect } from "../select/select-native";
 import { HintText } from "./hint-text";
 import { Input, InputBase, TextField } from "./input";
 import { InputDate } from "./input-date";
 import { InputFile } from "./input-file";
 import { InputGroup } from "./input-group";
-import { DemoNativeSelect } from "./input-native-select";
 import { InputNumber } from "./input-number";
 import { PaymentInput as PaymentInputField } from "./input-payment";
 import { InputTags } from "./input-tags";
@@ -96,7 +96,7 @@ export const LeadingDropdown = () => {
             label="Phone number"
             hint="This is a hint text to help user."
             leadingAddon={
-                <DemoNativeSelect
+                <NativeSelect
                     aria-label="Country"
                     options={[
                         { value: "US", label: "US" },
@@ -119,7 +119,7 @@ export const TrailingDropdown = () => {
             label="Sale amount"
             hint="This is a hint text to help user."
             trailingAddon={
-                <DemoNativeSelect
+                <NativeSelect
                     aria-label="Currency"
                     options={[
                         { value: "USD", label: "USD" },

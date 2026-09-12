@@ -14,7 +14,16 @@ export const DialogTrigger = AriaDialogTrigger;
  * Backdrop and positioning layer. Renders in a portal, fades in/out, and owns the
  * vertical padding (`--modal-pt` / `--modal-pb`) that caps the modal's height.
  *
- * Set `isDismissable={false}` to stop outside clicks and the Escape key from closing it.
+ * Dismissal is split across two independent props, both inherited from React Aria's
+ * `ModalOverlay`:
+ * - `isDismissable={false}` (default `false`) stops **pointer** dismissal only —
+ *   clicking the backdrop outside the modal. It does not affect Escape.
+ * - `isKeyboardDismissDisabled={true}` stops the **Escape** key from closing it.
+ *   It does not affect outside clicks.
+ *
+ * A modal that must not be dismissed by the user needs both set, plus a `ModalHeader`
+ * with `hasCloseButton={false}` (or an explicit confirm/cancel footer) — see the
+ * "confirm dialog" demo.
  */
 export const ModalOverlay = (props: AriaModalOverlayProps) => {
     return (

@@ -27,6 +27,21 @@ interface ComboBoxProps extends Omit<AriaComboBoxProps<SelectItemType>, "childre
     /** Leading icon component displayed before the input. */
     icon?: FC | ReactNode;
     children: AriaListBoxProps<SelectItemType>["children"];
+    /**
+     * What interaction opens the popover.
+     *
+     * - `"focus"` (default here) opens it as soon as the input is focused.
+     * - `"input"` opens it only once the user starts typing.
+     * - `"manual"` never opens it automatically — useful paired with a controlled `isOpen`.
+     *
+     * @default "focus"
+     */
+    menuTrigger?: "focus" | "input" | "manual";
+    /**
+     * Whether the popover stays open (showing an empty state) when no items match instead of
+     * closing itself.
+     */
+    allowsEmptyCollection?: boolean;
 }
 
 interface ComboBoxValueProps extends AriaGroupProps {
@@ -111,6 +126,17 @@ const ComboBoxValue = ({ size, shortcut, placeholder, shortcutClassName, icon: I
     );
 };
 
+/**
+ * `ComboBox` still filters its items with React Aria's own `contains` matcher, even though this
+ * component narrows `items` for you — passing an already-filtered (e.g. app-side, diacritics- or
+ * fuzzy-matched) list does *not* opt out of it, and the built-in filter can filter that list down
+ * to zero results. Pass `defaultFilter={() => true}` to disable RAC's filtering and rely entirely
+ * on the `items`/`inputValue` you control.
+ *
+ * To open the popover in a jsdom test, see the Testing page (`docs/testing`):
+ * `fireEvent.click(trigger)` or `focus` + `ArrowDown` — `userEvent.click` alone toggles it shut,
+ * because it fires both a focus and a click in the same tick.
+ */
 export const ComboBox = ({
     placeholder = "Search",
     shortcut = true,
@@ -120,6 +146,7 @@ export const ComboBox = ({
     shortcutClassName,
     icon,
     hideRequiredIndicator,
+    menuTrigger = "focus",
     ...otherProps
 }: ComboBoxProps) => {
     const placeholderRef = useRef<HTMLDivElement>(null);
@@ -142,7 +169,7 @@ export const ComboBox = ({
 
     return (
         <SelectContext.Provider value={{ size }}>
-            <AriaComboBox menuTrigger="focus" {...otherProps}>
+            <AriaComboBox menuTrigger={menuTrigger} {...otherProps}>
                 {(state) => (
                     <div className="flex flex-col gap-1.5">
                         {otherProps.label && (

@@ -57,5 +57,9 @@ demoFile: tags
             question: "Can I disable individual tags?",
             answer: "Yes, you can disable individual tags by setting the isDisabled prop to true on the Tag component. Disabled tags will have a different visual appearance and won't respond to user interactions.",
         },
+        {
+            question: "Can I pass data-* or aria-* attributes to a Tag?",
+            answer: "Yes, Tag spreads unrecognized props onto its root element, so data-testid and aria-* attributes pass through. Note that React Aria's own Tag hook filters out a few native attributes it doesn't recognize (title among them) regardless of how they're passed.",
+        },
     ]}
 />

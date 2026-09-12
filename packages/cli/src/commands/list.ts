@@ -32,6 +32,8 @@ export async function runList(options: ListOptions): Promise<void> {
 
     if (options.layer) entries = entries.filter((entry) => entry.layer === options.layer);
     if (options.type) entries = entries.filter((entry) => entry.type === options.type);
+    // A 0-file entry (a docs-only stub like `typography`) has nothing `add` could install.
+    entries = entries.filter((entry) => entry.fileCount > 0);
 
     if (options.json) {
         log.plain(JSON.stringify(entries, null, 2));
@@ -46,7 +48,8 @@ export async function runList(options: ListOptions): Promise<void> {
     const width = Math.max(...entries.map((entry) => entry.name.length));
     log.title(`${entries.length} item${entries.length === 1 ? "" : "s"} · ${registry.describe()}`);
     for (const entry of entries) {
-        log.plain(`  ${kleur.bold(entry.name.padEnd(width))}  ${kleur.dim(entry.layer.padEnd(18))}  ${truncate(entry.description, 72)}`);
+        const files = kleur.dim(`${entry.fileCount} file${entry.fileCount === 1 ? "" : "s"}`);
+        log.plain(`  ${kleur.bold(entry.name.padEnd(width))}  ${kleur.dim(entry.layer.padEnd(18))}  ${truncate(entry.description, 60).padEnd(60)}  ${files}`);
     }
     log.plain();
     log.info("Add one with: npx @properui/cli add <name>");

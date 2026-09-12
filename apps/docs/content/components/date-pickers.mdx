@@ -30,3 +30,22 @@ demoFile: date-pickers
 <Preview id="range-calendar" title="Range calendar" height={600} demo="date-pickers:RangeCalendar" />
 
 <Preview id="range-calendar-card" title="Range calendar card" height={669} demo="date-pickers:RangeCalendarCard" />
+
+## FAQs
+
+<FAQs
+    items={[
+        {
+            q: "Can DatePicker and DateRangePicker have a label, hint, and tooltip like the other field components?",
+            a: "Yes. Both accept label, hint, and tooltip props, plus isRequired, matching Input and Select.",
+        },
+        {
+            q: "What does onChange receive when every segment is cleared?",
+            a: "null, not undefined — check for that explicitly if you wire this up to a form library.",
+        },
+        {
+            q: "What controls the order of the date segments (month/day/year vs. day/month/year)?",
+            a: "The ambient locale, which React Aria reads from an I18nProvider ancestor (or the browser locale otherwise). It is not a prop on DatePicker or DateRangePicker themselves.",
+        },
+    ]}
+/>

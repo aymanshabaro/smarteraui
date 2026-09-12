@@ -71,6 +71,13 @@ export const Simple = () => (
     </DemoFrame>
 );
 
+/** A plain metric with no `change`, so no change indicator renders. */
+export const SimpleNoChange = () => (
+    <DemoFrame>
+        <MetricSimple title="Delisted leads" value="128" />
+    </DemoFrame>
+);
+
 export const SimpleActions = () => (
     <DemoFrame>
         <MetricSimple title="Views 24 hours" value="2,000" change="100%" menu={<MetricMenu />} footer={ReportLink} />

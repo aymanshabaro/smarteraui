@@ -108,6 +108,44 @@ export const MinimalIcons = () => <ProgressSteps.Minimal aria-label="Setup steps
 
 export const MinimalIconsConnected = () => <ProgressSteps.Minimal aria-label="Setup steps" connector="solid" items={defaultStatuses} />;
 
+/** Steps become buttons when `onStepPress` is provided; the third step is `locked` and cannot be pressed. */
+const interactiveStatuses: ProgressStepStatus[] = ["complete", "current", "locked", "locked"];
+
+export const Interactive = () => (
+    <div className="w-full max-w-xs">
+        <ProgressSteps
+            aria-label="Setup steps"
+            type="number"
+            orientation="vertical"
+            items={buildSteps({ descriptions: shortDescriptions, statuses: interactiveStatuses })}
+            onStepPress={() => {}}
+        />
+    </div>
+);
+
+/** Each step can carry extra content of its own — here, a "Continue" button on the current step. */
+export const WithStepContent = () => (
+    <div className="w-full max-w-xs">
+        <ProgressSteps
+            aria-label="Setup steps"
+            type="number"
+            orientation="vertical"
+            items={wideSteps.map((step, index) =>
+                index === 1
+                    ? {
+                          ...step,
+                          children: (
+                              <button type="button" className="text-brand-secondary mt-2 text-sm font-semibold">
+                                  Continue
+                              </button>
+                          ),
+                      }
+                    : step,
+            )}
+        />
+    </div>
+);
+
 export const TextWithLine = () => (
     <div className="w-full">
         <div className="max-md:hidden">

@@ -36,20 +36,39 @@ No CLI, no problem: see [Manual installation](#manual-installation) below for th
 
 ## Installation via CLI
 
-The CLI creates `theme.css`, updates `globals.css` with the required imports and custom variants, and adds the `cx` utility. For Vite it also wires the `@`
+The CLI creates `theme.css`, and updates `globals.css` with the full stylesheet block, not just an `@source` line: the theme import, plugin registrations,
+custom variants, and utility layer, inserted right after your existing `@import "tailwindcss"` line. It adds the `cx` utility, and, unless you pass
+`--no-providers`, copies the registry's `ThemeProvider` and wires it into your app entry point (plus `RouterProvider` on a Next.js App Router project). Unless
+you pass `--no-tooling-ignores`, it also adds ESLint and Prettier ignore entries for the vendored component directories. For Vite it also wires the `@`
 import alias for you: a `paths` entry in `tsconfig.app.json`/`tsconfig.json` and the matching `resolve.alias` in `vite.config`, since Vite needs both to
 resolve `@/...` imports and has no built-in tsconfig-paths support. For every other framework it reads your existing `tsconfig.json` path alias rather than
-writing one: if none is declared, it warns you and tells you what to add. Once your project is initialized, add components one at a time:
+writing one: if none is declared, it warns you and tells you what to add.
+
+`init` doesn't install any npm packages itself unless you pass `--install`; either way, it prints the install command last, after every file it wrote, ending
+with a "Next steps" hint that names real registry entries you can copy and run as-is:
+
+```
+Next steps:
+  npx @properui/cli@latest add buttons badges
+```
+
+Once your project is initialized, add components one at a time:
 
 ```bash
 npx @properui/cli@latest add badges
 ```
 
-Add as many components as you need; each command copies that component's source (and its dependencies) straight into your project:
+Add as many components as you need; each command copies that component's source (and its dependencies) straight into your project and reports the npm
+packages the install needs, with per-file attribution, as the last thing it prints:
 
 ```bash
 npx @properui/cli@latest add button-group avatar table
 ```
+
+`add`, `remove`, and `why` all read and write an `installed` manifest kept inside `components.json`: `add` records what it wrote, `remove <name>` deletes an
+entry's files (warning if something else installed still depends on it), and `why <name>` prints what pulled an entry in. Run `npx @properui/cli@latest check`
+alongside your usual type-check and build to catch raw palette classes or arbitrary values that should have been semantic tokens; see the [CLI guide](/docs/cli)
+for the full command reference, including `icons` for installing icon components.
 
 ## Manual installation
 
@@ -140,7 +159,7 @@ With the setup files in place, copy any component's source directly from its pag
         },
         {
             question: "Are there any dependencies I need to install myself?",
-            answer: "Core components need React 19, TypeScript v5.9, and Tailwind CSS v4.3. Interactive components also use React Aria Components: the CLI installs any required dependency automatically when you add a component.",
+            answer: "Core components need React 19, TypeScript v5.9, and Tailwind CSS v4.3. Interactive components also use React Aria Components: the CLI reports every dependency a component needs when you add it, with the exact install command, last in its output. Pass --install to have it run that install for you instead.",
         },
         {
             question: "Can I customize the components after installation?",

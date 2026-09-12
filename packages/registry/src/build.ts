@@ -9,8 +9,10 @@
  * Fails if a component imports a package not in the allow-list.
  */
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from "node:fs";
+import { createRequire } from "node:module";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import ts from "typescript";
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..", "..");
 const UI_SRC = path.join(REPO, "packages", "ui", "src");
@@ -45,6 +47,14 @@ type RegistryFile = {
     target: string;
     type: FileType;
     content: string;
+    /** npm packages this specific file imports (type-only imports included; see `fileExternalDependencies`). */
+    dependencies: string[];
+    /**
+     * Set on fixture/placeholder-data files (`table-data.ts`, `utils/demo-assets.ts`, the
+     * `data(.<letter>)?.ts` sibling files a few page examples use) so the CLI can tell a real
+     * component file from one that only exists to carry demo content (feedback 2.10).
+     */
+    kind?: "demo";
 };
 
 /**
@@ -71,6 +81,8 @@ type RegistryEntry = SemanticManifest & {
     description: string;
     files: RegistryFile[];
     registryDependencies: string[];
+    /** Decorative/demo-only crossings split out of `registryDependencies` — see `OPTIONAL_DEPS`. */
+    optionalRegistryDependencies: string[];
     dependencies: string[];
     cssVars: string[];
     examples: string[];
@@ -461,8 +473,15 @@ const deriveDependencies = (files: string[], selfName: string, knownEntries: Set
             }
 
             const root = packageRootOf(source);
-            // Type-only imports erase at compile time, so they never become runtime deps.
-            if (typeOnly) continue;
+            // Type-only imports (including type-position `import("pkg")`) erase at compile
+            // time, so they never reach the runtime bundle — but the CLI still wants to tell a
+            // consumer they need the package for full type support, so these are recorded
+            // without the runtime allow-list gate (fixes the @react-types/shared miss in
+            // hooks/use-resize-observer.ts, feedback 2.13).
+            if (typeOnly) {
+                dependencies.add(root);
+                continue;
+            }
             if (!ALLOWED.has(root)) {
                 disallowed.push({ file: uiRelative(file), specifier: source });
                 continue;
@@ -478,6 +497,55 @@ const deriveDependencies = (files: string[], selfName: string, knownEntries: Set
         unresolved,
     };
 };
+
+/**
+ * The same external-dependency rule as `deriveDependencies` above, scoped to one file, so the
+ * CLI can print "need recharts (metrics-chart.tsx)" instead of only an entry-level union.
+ * Silently drops a disallowed root rather than re-reporting it — `deriveDependencies` already
+ * fails the build for that case before this list is ever written out.
+ */
+const fileExternalDependencies = (rawCode: string): string[] => {
+    const found = new Set<string>();
+    for (const { source, typeOnly } of parseImports(rawCode)) {
+        if (source.startsWith("@/") || source.startsWith(".")) continue;
+        const root = packageRootOf(source);
+        if (typeOnly || ALLOWED.has(root)) found.add(root);
+    }
+    return [...found].sort();
+};
+
+/**
+ * Fixture/placeholder-data files that exist only to carry demo content, never real component
+ * logic: `utils/demo-assets.ts` itself, `table-data.ts`, and the `data(.<letter>)?.ts` sibling
+ * files a few page examples use (e.g. `dashboards-02/data.a.ts`). Flagged per-file as
+ * `kind: "demo"` (feedback 2.10) rather than guessed from directory location, since fixture
+ * files live right alongside the real component files they feed.
+ */
+const isDemoFixtureFile = (relativePath: string): boolean => {
+    const base = path.basename(relativePath);
+    return base === "demo-assets.ts" || /^(?:[a-z0-9]+-)*data(?:\.[a-z0-9]+)?\.ts$/.test(base);
+};
+
+/**
+ * Strips lint-directive comments from emitted `content` so a copied file doesn't hard-error in a
+ * consumer's ESLint 9 flat config over a plugin/rule it doesn't have installed (feedback 2.5).
+ * Three shapes, in order:
+ *   1. Any eslint-disable or eslint-enable block comment, single- or multi-line, however it's
+ *      wrapped (a bare statement comment, or a JSX comment-expression container). Matched
+ *      non-greedy up to the first block-comment close, which is always that comment's own end.
+ *   2. An eslint-disable or eslint-enable line comment (any suffix) that is the entire line.
+ *   3. A trailing eslint-disable-line / eslint-disable-next-line comment appended after real
+ *      code on the same line.
+ * `@ts-expect-error` is untouched — it's load-bearing, not a lint directive — and every other
+ * comment survives.
+ */
+const stripLintDirectives = (content: string): string =>
+    content
+        .replace(/\/\*\s*eslint-(?:disable|enable)\b[\s\S]*?\*\//g, "")
+        .split("\n")
+        .filter((line) => !/^\/\/\s*eslint-(?:disable|enable)\b.*$/.test(line.trim()))
+        .map((line) => line.replace(/\s*\/\/\s*eslint-disable-(?:next-)?line\b.*$/, ""))
+        .join("\n");
 
 /**
  * `packages/ui/src` itself uses only relative specifiers for its internal imports (no `@/`) —
@@ -508,8 +576,11 @@ const toRegistryFiles = (files: string[]): RegistryFile[] =>
     files.map((file) => {
         const relative = uiRelative(file);
         const raw = readFileSync(file, "utf8");
-        const content = /\.[jt]sx?$/.test(file) ? rewriteInternalSpecifiers(raw, file) : raw;
-        return { path: relative, target: relative, type: fileTypeFor(relative), content };
+        const isCode = /\.[jt]sx?$/.test(file);
+        const content = isCode ? stripLintDirectives(rewriteInternalSpecifiers(raw, file)) : raw;
+        const dependencies = isCode ? fileExternalDependencies(raw) : [];
+        const kind = isDemoFixtureFile(relative) ? ("demo" as const) : undefined;
+        return { path: relative, target: relative, type: fileTypeFor(relative), content, dependencies, ...(kind ? { kind } : {}) };
     });
 
 /** Every `export const X` in the group's `.demo.tsx` files, kebab-cased into example ids. */
@@ -519,6 +590,171 @@ const exampleIdsFor = (group: Group): string[] =>
             [...readFileSync(file, "utf8").matchAll(/^export\s+const\s+([A-Za-z0-9_]+)/gm)].flatMap((match) => (match[1] ? [kebab(match[1])] : [])),
         ),
     );
+
+// ---------------------------------------------------------------------------
+// Optional (decorative/demo-only) registryDependencies — dist/exports.json + dist/icons.json
+// ---------------------------------------------------------------------------
+
+type EntryRef = { name: string; layer: string; type: EntryType };
+
+/**
+ * Decorative or demo-only registryDependencies, split out into `optionalRegistryDependencies` so
+ * the CLI can install a component without them and say so (feedback map 2.10). Two mechanisms
+ * feed this classification:
+ *   1. Automatic — an import reachable only through a `*.demo.tsx`/`.story.tsx`/`.test.tsx` file
+ *      never becomes a registryDependency in the first place: `discoverGroups` already excludes
+ *      those files from `group.files` before `deriveDependencies` ever sees them.
+ *   2. Hand-maintained — the crossings below come from real component files but are still known,
+ *      by inspection, to be decorative: a swappable brand asset, placeholder fixture data, or
+ *      page chrome rendered "alongside" the thing an entry actually teaches. Every rule below
+ *      carries the reason it's here.
+ */
+const OPTIONAL_DEPS: { dependency: string; reason: string; isOptionalFor: (entry: EntryRef) => boolean }[] = [
+    {
+        dependency: "payment-icons",
+        reason: "Only the input-payment variant inside the `input` group renders card-brand icons; every other input in the group compiles and renders without the set.",
+        isOptionalFor: (entry) => entry.name === "input",
+    },
+    {
+        dependency: "logo",
+        reason: "The wordmark is a swappable brand placeholder in every nav, footer, page template and email that pulls it — never required for the surrounding layout to compile or render.",
+        isOptionalFor: () => true,
+    },
+    {
+        dependency: "integration-icons",
+        reason: "Decorative row of third-party logos used as nav/section dressing (e.g. app-navigation). Left required only for the features-integrations-icons-* examples, whose entire point is the icon set itself.",
+        isOptionalFor: (entry) => !entry.name.startsWith("features-integrations-icons-"),
+    },
+    {
+        dependency: "demo-assets",
+        reason: "Placeholder fixture data everywhere it is pulled, except `app-navigation`: its nav-account-card renders real account data with it, so that one crossing stays required (feedback 2.10 exception).",
+        isOptionalFor: (entry) => entry.name !== "app-navigation",
+    },
+    {
+        dependency: "header-navigations",
+        reason: "Every current consumer (hero/cta sections, marketing page templates) renders a full nav bar alongside its own content — the nav is page chrome, not the thing being taught.",
+        isOptionalFor: () => true,
+    },
+    {
+        dependency: "tags",
+        reason: "Decorative only when pulled purely for a badges demo composition; the Badge primitive itself never needs the Tag component.",
+        isOptionalFor: (entry) => entry.name === "badges",
+    },
+    {
+        dependency: "avatar",
+        reason: "Same reasoning as `tags` above: decorative only when badges pulls it for a demo, never for the primitive itself.",
+        isOptionalFor: (entry) => entry.name === "badges",
+    },
+];
+
+/**
+ * `registryDependencies` pointing at the `shared-assets` layer (background-patterns, credit-card,
+ * illustrations, mockups, qr-code) are visual dressing by construction — every one of those groups
+ * exists to decorate a page example, never to make one compile — so they're always optional
+ * regardless of which entry pulls them in. Unlike `OPTIONAL_DEPS`, this is a layer-wide rule
+ * rather than a per-dependency one, so it lives directly in `splitOptionalDependencies` below.
+ */
+
+/**
+ * Registry entries imported by this entry's required (non-demo) files, resolved the same way
+ * `deriveDependencies` resolves them. Used to veto the optional split above.
+ */
+const registryImportsOfRequiredFiles = (entry: { name: string; files: { path: string; kind?: string }[] }): Set<string> => {
+    const names = new Set<string>();
+    for (const file of entry.files) {
+        if (file.kind === "demo") continue;
+        const abs = path.isAbsolute(file.path) ? file.path : path.join(UI_SRC, file.path);
+        if (!/\.[jt]sx?$/.test(abs) || !existsSync(abs)) continue;
+        for (const { source } of parseImports(readFileSync(abs, "utf8"))) {
+            if (!(source.startsWith("@/") || source.startsWith("."))) continue;
+            const resolved = resolveInternal(source, abs);
+            const name = resolved ? entryNameForFile(resolved) : undefined;
+            if (name && name !== entry.name) names.add(name);
+        }
+    }
+    return names;
+};
+
+/** Splits `registryDependencies` into required-vs-optional using `OPTIONAL_DEPS` + the shared-assets rule above. */
+const splitOptionalDependencies = (
+    entry: EntryRef,
+    registryDependencies: string[],
+    layerOf: (name: string) => string | undefined,
+    importedByRequiredFiles: Set<string>,
+): { registryDependencies: string[]; optionalRegistryDependencies: string[] } => {
+    const optional = new Set<string>();
+    const required: string[] = [];
+    for (const dependency of registryDependencies) {
+        const rule = OPTIONAL_DEPS.find((candidate) => candidate.dependency === dependency);
+        // A dependency can only be optional if no required file of this entry imports it.
+        // 88 marketing sections import `header-navigations/base-components/header` for real, and
+        // `sidebar-simple.tsx` imports `logo`; skipping those with `--no-optional` would write a
+        // file whose import cannot resolve. The rule tables express intent; this guard keeps
+        // every install compilable regardless of what the tables say.
+        const decorative = layerOf(dependency) === "shared-assets" || rule?.isOptionalFor(entry);
+        if (decorative && !importedByRequiredFiles.has(dependency)) optional.add(dependency);
+        else required.push(dependency);
+    }
+    return { registryDependencies: required, optionalRegistryDependencies: [...optional].sort() };
+};
+
+// ---------------------------------------------------------------------------
+// dist/exports.json — named exports per entry, parsed with the TS compiler API so `search`
+// can index export names (e.g. `ComboBox`) rather than only entry names.
+// ---------------------------------------------------------------------------
+
+/** Every top-level named export in one file's already-emitted `content` (default exports excluded — not name-searchable). */
+const namedExportsOf = (fileName: string, content: string): string[] => {
+    const names = new Set<string>();
+    const source = ts.createSourceFile(fileName, content, ts.ScriptTarget.Latest, true, fileName.endsWith(".tsx") ? ts.ScriptKind.TSX : ts.ScriptKind.TS);
+
+    const isExported = (node: ts.Node) =>
+        ts.canHaveModifiers(node) && (ts.getModifiers(node) ?? []).some((modifier) => modifier.kind === ts.SyntaxKind.ExportKeyword);
+
+    for (const statement of source.statements) {
+        if (ts.isExportDeclaration(statement) && statement.exportClause && ts.isNamedExports(statement.exportClause)) {
+            for (const element of statement.exportClause.elements) names.add(element.name.text);
+            continue;
+        }
+        if (!isExported(statement)) continue;
+        if (ts.isVariableStatement(statement)) {
+            for (const declaration of statement.declarationList.declarations) if (ts.isIdentifier(declaration.name)) names.add(declaration.name.text);
+        } else if (
+            (ts.isFunctionDeclaration(statement) ||
+                ts.isClassDeclaration(statement) ||
+                ts.isInterfaceDeclaration(statement) ||
+                ts.isTypeAliasDeclaration(statement) ||
+                ts.isEnumDeclaration(statement)) &&
+            statement.name
+        ) {
+            names.add(statement.name.text);
+        }
+    }
+    return [...names];
+};
+
+/** Named exports across every component-type file of an entry, unioned and sorted. */
+const namedExportsForEntry = (entry: RegistryEntry): string[] =>
+    unique(entry.files.filter((file) => file.type === "component" && /\.[jt]sx?$/.test(file.path)).flatMap((file) => namedExportsOf(file.path, file.content)));
+
+// ---------------------------------------------------------------------------
+// dist/icons.json — the icon package's export names, for the CLI's icon search.
+// ---------------------------------------------------------------------------
+
+/** `@properui/icons` is an npm alias (`"npm:@untitledui/icons@^0.0.22"`) — resolve the real package name from it rather than hard-coding. */
+const iconsPackageNameFrom = (spec: string | undefined): string => /^npm:(@[^/]+\/[^@]+|[^@]+)@/.exec(spec ?? "")?.[1] ?? "@untitledui/icons";
+
+/** Reads the installed icon package's own `.d.ts` barrel (`export { Name } from "./Name.js"` per line) — never guessed, always the exact installed set. */
+const readIconNames = (): { package: string; alias: string; names: string[] } => {
+    const alias = "@properui/icons";
+    const packageName = iconsPackageNameFrom(uiPackageJson.dependencies?.[alias]);
+    const requireFromUi = createRequire(path.join(REPO, "packages", "ui", "package.json"));
+    const entryFile = requireFromUi.resolve(alias);
+    const dtsFile = path.join(path.dirname(entryFile), "index.d.ts");
+    const dts = existsSync(dtsFile) ? readFileSync(dtsFile, "utf8") : "";
+    const names = unique([...dts.matchAll(/^export\s*\{\s*([A-Za-z0-9_]+)\s*\}\s*from/gm)].flatMap((match) => (match[1] ? [match[1]] : [])));
+    return { package: packageName, alias, names };
+};
 
 // ---------------------------------------------------------------------------
 // JSON schema + minimal validator (no new dependencies)
@@ -540,7 +776,7 @@ const SCHEMA: Schema & { $schema: string; $id: string; title: string; descriptio
     title: "Proper UI registry entry",
     description: "One component, example, util, hook or stylesheet as served from /r/<name>.json.",
     type: "object",
-    required: ["name", "layer", "type", "title", "files", "registryDependencies", "dependencies", "cssVars", "examples"],
+    required: ["name", "layer", "type", "title", "files", "registryDependencies", "optionalRegistryDependencies", "dependencies", "cssVars", "examples"],
     additionalProperties: false,
     properties: {
         name: { type: "string", pattern: "^[a-z0-9][a-z0-9-]*$" },
@@ -553,17 +789,20 @@ const SCHEMA: Schema & { $schema: string; $id: string; title: string; descriptio
             type: "array",
             items: {
                 type: "object",
-                required: ["path", "target", "type", "content"],
+                required: ["path", "target", "type", "content", "dependencies"],
                 additionalProperties: false,
                 properties: {
                     path: { type: "string" },
                     target: { type: "string" },
                     type: { type: "string", enum: ["component", "util", "hook", "style"] },
                     content: { type: "string" },
+                    dependencies: { type: "array", items: { type: "string" } },
+                    kind: { type: "string", enum: ["demo"] },
                 },
             },
         },
         registryDependencies: { type: "array", items: { type: "string" } },
+        optionalRegistryDependencies: { type: "array", items: { type: "string" } },
         dependencies: { type: "array", items: { type: "string" } },
         cssVars: { type: "array", items: { type: "string" } },
         examples: { type: "array", items: { type: "string" } },
@@ -643,6 +882,11 @@ const build = () => {
         for (const slug of variantSlugsFor(group)) knownEntries.add(slug);
     }
 
+    // Which layer a registryDependency's target entry lives in — used by `splitOptionalDependencies`
+    // to spot the shared-assets layer (pure visual dressing) regardless of which entry pulls it in.
+    const nameToLayer = new Map<string, string>();
+    for (const group of groups) nameToLayer.set(group.name, group.layer);
+
     const entries: RegistryEntry[] = [];
     const disallowed: Disallowed[] = [];
     const unresolved: string[] = [];
@@ -657,7 +901,7 @@ const build = () => {
     // of their own for `registryDependencies` to resolve.
     for (const directory of ["utils", "hooks"] as const) {
         for (const file of listDir(path.join(UI_SRC, directory))) {
-            if (!/\.[jt]sx?$/.test(file)) continue;
+            if (!/\.[jt]sx?$/.test(file) || isDemoOrTest(file)) continue;
             const absolute = path.join(UI_SRC, directory, file);
             const name = stripExtension(file);
             const derived = deriveDependencies([absolute], name, knownEntries);
@@ -670,6 +914,7 @@ const build = () => {
                     description: `Shared ${directory === "utils" ? "utility" : "hook"} used by Proper UI components.`,
                     files: toRegistryFiles([absolute]),
                     registryDependencies: derived.registryDependencies,
+                    optionalRegistryDependencies: [],
                     dependencies: derived.dependencies,
                     cssVars: [],
                     examples: [],
@@ -692,6 +937,7 @@ const build = () => {
             description: "Theme tokens, globals and typography for Proper UI.",
             files: toRegistryFiles(styleFiles),
             registryDependencies: [],
+            optionalRegistryDependencies: [],
             dependencies: [],
             cssVars: [],
             examples: [],
@@ -712,14 +958,23 @@ const build = () => {
             description: "ThemeProvider and RouterProvider — the two providers a Proper UI app wraps its root in.",
             files: toRegistryFiles(providerFiles),
             registryDependencies: derivedProviders.registryDependencies,
+            optionalRegistryDependencies: [],
             dependencies: derivedProviders.dependencies,
             cssVars: [],
             examples: [],
         });
     }
 
-    // One entry per group folder.
+    // One entry per group folder. A group with no installable file (only a `.demo.tsx`, e.g.
+    // `foundations/typography` — its CSS already ships inside the `styles` entry) is skipped
+    // entirely rather than emitted as an empty entry, so `search`/`list` never show a 0-file
+    // result (feedback 2.13).
+    const emptyGroups: string[] = [];
     for (const group of groups) {
+        if (group.files.length === 0) {
+            emptyGroups.push(`${group.layer}/${group.name}`);
+            continue;
+        }
         const derived = deriveDependencies(group.files, group.name, knownEntries);
         const page = docsPages.get(group.name);
         push(
@@ -731,6 +986,7 @@ const build = () => {
                 description: page?.description ?? "",
                 files: toRegistryFiles(group.files),
                 registryDependencies: derived.registryDependencies,
+                optionalRegistryDependencies: [],
                 dependencies: derived.dependencies,
                 cssVars: [],
                 examples: exampleIdsFor(group),
@@ -788,6 +1044,7 @@ const build = () => {
                 description: page ? `${page.title} — ${titleize(slug)} variant.` : "",
                 files: toRegistryFiles(files),
                 registryDependencies: derived.registryDependencies.filter((dependency) => dependency !== group.name),
+                optionalRegistryDependencies: [],
                 dependencies: derived.dependencies,
                 cssVars: [],
                 examples: [],
@@ -807,6 +1064,56 @@ const build = () => {
     const withMetadata = entries.map((entry) => withSemantics(entry, manifests, tokenNamespaces));
     entries.length = 0;
     entries.push(...withMetadata);
+
+    // ---- Optional (decorative/demo-only) registryDependencies --------------
+    // Runs after the semantic merge above so `composes_with`'s derived fallback still sees the
+    // full original registryDependencies (a decorative crossing like `app-navigation` → `logo`
+    // is still a real "composes with" hint, even once `logo` itself is optional to install).
+
+    const requiredImports = new Map(entries.map((entry) => [entry.name, registryImportsOfRequiredFiles(entry)] as const));
+    const withOptionalDeps = entries.map((entry) => {
+        const split = splitOptionalDependencies(
+            entry,
+            entry.registryDependencies,
+            (name) => nameToLayer.get(name),
+            requiredImports.get(entry.name) ?? new Set(),
+        );
+        return { ...entry, ...split };
+    });
+    entries.length = 0;
+    entries.push(...withOptionalDeps);
+
+    // ---- Demo-kind veto ----------------------------------------------------
+    // `kind: "demo"` tells the CLI it may skip a file. That is only safe when nothing required
+    // imports it. `utils/demo-assets.ts` is imported by nav-account-card, sidebar-slim and the
+    // social-proof sections for real, and a data file next to a component may be imported by
+    // that component; skipping either leaves a dangling import. Clear the tag in both cases.
+    // File-level and cross-entry: dashboards-06/07 and four informational pages import
+    // `application/table/table-data.ts` from another entry, so an entry-level check misses them.
+    // Collect every file path any required file anywhere imports, then untag those files.
+    const filesImportedByRequired = new Set<string>();
+    for (const entry of entries) {
+        for (const file of entry.files) {
+            if (file.kind === "demo") continue;
+            const abs = path.join(UI_SRC, file.path);
+            if (!/\.[jt]sx?$/.test(abs) || !existsSync(abs)) continue;
+            for (const { source } of parseImports(readFileSync(abs, "utf8"))) {
+                if (!(source.startsWith("@/") || source.startsWith("."))) continue;
+                const resolved = resolveInternal(source, abs);
+                if (resolved) filesImportedByRequired.add(path.relative(UI_SRC, resolved));
+            }
+        }
+    }
+    let untagged = 0;
+    for (const entry of entries) {
+        for (const file of entry.files) {
+            if (file.kind === "demo" && filesImportedByRequired.has(file.path)) {
+                delete file.kind;
+                untagged += 1;
+            }
+        }
+    }
+    if (untagged > 0) console.log(`registry:build — ${untagged} fixture file(s) kept required because a component imports them`);
 
     // ---- Validation -------------------------------------------------------
 
@@ -843,6 +1150,15 @@ const build = () => {
         components: entries.map(({ files, ...rest }) => ({ ...rest, fileCount: files.length })),
     };
     writeFileSync(path.join(OUT, "index.json"), `${JSON.stringify(index, null, 2)}\n`);
+
+    // ---- dist/icons.json — installed @properui/icons export names, for the CLI's icon search.
+    writeFileSync(path.join(OUT, "icons.json"), `${JSON.stringify(readIconNames(), null, 2)}\n`);
+
+    // ---- dist/exports.json — named exports per entry, so `search` can index export names too.
+    const exportsByEntry = Object.fromEntries(
+        entries.map((entry): [string, string[]] => [entry.name, namedExportsForEntry(entry)]).filter(([, names]) => names.length > 0),
+    );
+    writeFileSync(path.join(OUT, "exports.json"), `${JSON.stringify(exportsByEntry, null, 2)}\n`);
 
     // ---- Stats --------------------------------------------------------------
     // Single generated source for every count quoted in the README and the landing page
@@ -892,6 +1208,11 @@ const build = () => {
         },
         testSuites: testSuiteFiles.length,
         axeSuites: axeSuiteCount,
+        // Every entry has at least one file except a component group that resolves to nothing
+        // installable (see `emptyGroups` below) — which is now skipped entirely, so today this
+        // equals `entries`. Kept as its own field so a future empty group shows up as a gap here
+        // instead of silently changing what `entries` means.
+        entriesWithFiles: entries.filter((entry) => entry.files.length > 0).length,
     };
     writeFileSync(path.join(OUT, "stats.json"), `${JSON.stringify(stats, null, 4)}\n`);
 
@@ -910,6 +1231,11 @@ const build = () => {
     if (shadowed.length > 0) {
         console.warn(`registry:build — ${shadowed.length} duplicate variant slug(s) across sibling groups; kept one entry each:`);
         for (const item of unique(shadowed)) console.warn(`  ${item}`);
+    }
+
+    if (emptyGroups.length > 0) {
+        console.warn(`registry:build — ${emptyGroups.length} group(s) with no installable file skipped (docs-only or covered by another entry):`);
+        for (const item of unique(emptyGroups)) console.warn(`  ${item}`);
     }
 
     const out = path.relative(REPO, OUT).split(path.sep).join("/");

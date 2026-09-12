@@ -10,7 +10,7 @@ import { ArrowLeft, ArrowRight } from "@properui/icons";
 import { useBreakpoint } from "../../../hooks/use-breakpoint";
 import { cx } from "../../../utils/cx";
 import { Button } from "../../base/buttons/button";
-import { DemoNativeSelect } from "../../base/input/input-native-select";
+import { NativeSelect } from "../../base/select/select-native";
 import { Pagination } from "../pagination/pagination-base";
 
 const PaginationNumber = ({ value, isCurrent }: { value: number; isCurrent: boolean }) => (
@@ -141,7 +141,7 @@ export const TablePaginationMinimal = ({ page = 1, total = 10, pageSize = 10, al
                     <span className="text-fg-secondary text-sm font-medium">
                         Page {page} of {total}
                     </span>
-                    <DemoNativeSelect
+                    <NativeSelect
                         aria-label="Page size"
                         size="sm"
                         className="w-max"

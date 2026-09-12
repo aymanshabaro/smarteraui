@@ -14,43 +14,91 @@ component files.
 
 The token system has three layers, each built on the one before it:
 
-1. **Base palette**: the raw `--color-brand-50` through `--color-brand-950` scale, plus Tailwind's built-in neutral/red/yellow/green/blue, and other scales. This is
-   the **only** layer you touch for a re-brand.
+1. **Base palette**: the raw `--color-brand-50` through `--color-brand-950` scale (eleven steps), plus `--color-neutral-*`, `--color-red-*`,
+   `--color-green-*` and `--color-yellow-*` — Tailwind's own default values for those four, but declared explicitly in `theme.css` rather than left
+   implicit. This is the **only** layer you touch for a re-brand.
 2. **Utility colors**: `--color-utility-{brand,gray,blue,indigo,purple,pink,orange,...}-{50...900}`, used by badges, tags, and charts that need a wider
    palette than the semantic layer exposes.
 3. **Semantic tokens**: role-based variables like `--color-bg-primary`, `--color-text-secondary`, `--color-fg-brand-primary`, and
    `--color-border-tertiary`, consumed directly by components as `bg-primary`, `text-secondary`, `text-fg-brand-primary`, `border-tertiary`. Semantic
    tokens reference the base and utility layers via `var()`, so changing the brand palette cascades automatically, including into dark mode.
 
-| Prefix     | Role                 | Example utility                    |
-| ---------- | -------------------- | ---------------------------------- |
-| `text-*`   | Typography color     | `text-primary`, `text-tertiary`    |
-| `fg-*`     | Icon / graphic color | `text-fg-quaternary`               |
-| `bg-*`     | Surface color        | `bg-primary`, `bg-brand-solid`     |
-| `border-*` | Stroke color         | `border-secondary`, `ring-primary` |
+| Prefix         | Role                      | Example utility                               |
+| -------------- | ------------------------- | --------------------------------------------- |
+| `text-*`       | Typography color          | `text-primary`, `text-tertiary`               |
+| `fg-*`         | Icon / graphic color      | `text-fg-quaternary`                          |
+| `bg-*`         | Surface color             | `bg-primary`, `bg-brand-solid`                |
+| `border-*`     | Stroke color              | `border-secondary`, `border-success`          |
+| `ring-*`       | Focus ring / outline ring | `ring-brand`, `ring-warning_subtle`           |
+| `outline-*`    | Native `outline` color    | `outline-error`, `outline-success`            |
+| `decoration-*` | `text-decoration-color`   | `decoration-brand`, `decoration-error_subtle` |
+
+Every one of those namespaces has a matching `success` and `warning` pair alongside the pre-existing `error` one (`border-success`,
+`border-success_subtle`, `ring-warning`, `outline-warning_subtle`, and so on) — see [Status token families](#status-token-families) below.
 
 Never reach for a raw palette utility (`bg-neutral-100`, `text-purple-600`) inside a component: pick a semantic token by the role you need, not by the
 color it happens to render as today.
 
+## Status token families
+
+`border-*`, `ring-*`, `outline-*` and `decoration-*` each expose four states — `error`, `error_subtle`, `success`, `success_subtle`, `warning`,
+`warning_subtle` — plus `brand` and `brand_alt`, all defined in both light and dark mode. Earlier versions of `theme.css` only had the `error` half of
+this set, so a success or warning panel had no matching border color and fell back to an unrelated neutral. If you add a fourth status color of your
+own, mirror this same shape (`{status}`, `{status}_subtle`) across all four property namespaces so it's usable everywhere `error` is.
+
+`decoration-*` is a separate case worth calling out: Tailwind's `decoration-*` utility resolves against a `--text-decoration-color-*` theme namespace
+before falling back to the raw palette, the same way `bg-*` resolves against `--background-color-*` and `border-*` against `--border-color-*`.
+`theme.css` declares that namespace mirroring the text and border remaps, so `decoration-brand`, `decoration-error`, `decoration-success`, and
+`decoration-warning` all resolve to a real color instead of silently inheriting `currentColor`.
+
 ## Editing the tokens
 
 The CLI doesn't generate a brand scale for you; `init` writes `theme.css` with the default palette (or fetches it from the registry), and re-theming
-is a matter of editing that file directly:
+is a matter of editing that file directly. **The full re-brand is replacing these eleven `--color-brand-*` lines**:
 
 ```css
 /* theme.css */
 @theme {
-    --color-brand-25: #fcfaff;
-    --color-brand-50: #f9f5ff;
-    --color-brand-100: #f4ebff;
-    /* ... 200 through 900 ... */
-    --color-brand-950: #1a0966;
+    --color-brand-50: rgb(249 245 255);
+    --color-brand-100: rgb(244 235 255);
+    /* ... 200 through 800 ... */
+    --color-brand-900: rgb(66 48 125);
+    --color-brand-950: rgb(44 28 95);
 }
 ```
 
 Keep the contrast relationships that the semantic layer expects: `600` is the primary interactive color on a light background, `700` is its hover
 state, `50`/`100` are tints for subtle surfaces, and `300` supplies the default focus-ring tone. Do not edit the semantic mappings themselves (`bg-*`,
 `text-*`, `fg-*`, `border-*`): they're already wired to cascade correctly.
+
+### "One file" only covers what that file declares
+
+Every color the semantic layer resolves to has to live somewhere in `theme.css`, or the "edit one file" claim above breaks down the moment your
+neutrals or status colors aren't Tailwind's stock ones. Concretely: `--color-text-primary` resolves to `var(--color-neutral-900)`, and
+`--color-fg-success-primary` resolves to `var(--color-green-600)` — if this product's ink, page background, hairlines, or "success" green are not
+Tailwind's default `neutral`/`green` scales, editing only the eleven brand lines above and shipping will leave every card, border and status color on
+the wrong palette, and **nothing will error**: CSS custom properties have no compiler, so a mismatched neutral or status ramp only shows up by eye (or
+by reading `getComputedStyle` in a live browser) — the exact way this gap was originally found.
+
+`theme.css` declares `--color-neutral-50` through `950`, plus the `red`, `green` and `yellow` steps the semantic layer consumes, immediately after the
+brand ramp, each with a comment explaining why they're there. Re-grepping the file for every `--color-*` it depends on now finds a complete list. If
+your product's neutrals or status colors are not Tailwind's stock ramps, shadow those four scales in this same file (in addition to the eleven brand
+lines) and the "one file" claim holds for real.
+
+### Where the font stack lives
+
+`--font-body` and `--font-display` in `theme.css` are the sanctioned place to set this product's font stack — not a second CSS file, not an
+app-level override. Both default to an Inter-first fallback chain; change these two lines to swap typefaces everywhere the kit renders text:
+
+```css
+@theme {
+    --font-body: "Your Font", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --font-display: "Your Font", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+```
+
+If you introduce a second font-stack variable elsewhere in your app (a marketing-site-only override, for example), document which one wins where —
+otherwise the brand ends up living in two files that don't reference each other.
 
 ### Scoping a theme to part of your app
 
@@ -75,13 +123,20 @@ element instead of forking components:
 Everything inside `.theme-productb` (buttons, badges, focus rings, links) resolves to the overridden scale, while the rest of the page keeps the
 default brand. This is the same mechanism dark mode uses (see [Dark mode](/docs/dark-mode)), just scoped to a class you choose instead of `.dark-mode`.
 
+### Import order doesn't matter
+
+`theme.css` works whether you `@import` it before or after `@import "tailwindcss"`. This matters because Tailwind v4 only wraps a `@theme` block's
+output in its own cascade layer when that block comes _after_ the `tailwindcss` import; imported first, the same block becomes unlayered CSS instead.
+`theme.css`'s dark-mode overrides are written to win either way — see [Dark mode: import-order independence](/docs/dark-mode#import-order-independence)
+for the mechanism and a worked example.
+
 ## FAQs
 
 <FAQs
     items={[
         {
             question: "Can I use custom colors instead of the predefined palettes?",
-            answer: "Yes: define your own brand scale by editing the CSS variables in theme.css. Make sure to provide every shade from 25 through 950 so components that rely on lighter or darker steps still look correct.",
+            answer: "Yes: define your own brand scale by editing the eleven --color-brand-* variables (50 through 950) in theme.css. If your neutrals or status colors (success/error/warning) also aren't Tailwind's stock ramps, shadow --color-neutral-*, --color-red-*, --color-green-* and --color-yellow-* in the same file — see \"One file only covers what that file declares\" above.",
         },
         {
             question: "How do I change the brand color after initial setup?",

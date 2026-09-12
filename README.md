@@ -26,7 +26,7 @@ generated screen lands on the system rather than near it.
 
 <!-- stats:start -->
 
-The registry currently holds **797 entries**: **69 published component groups** (**106** counting foundations, shared assets and example-page groups) across seven layers (19 base, 32 application, 18 marketing sections, 12 application page examples, 10 marketing page examples, 9 foundations, 6 shared assets), **446 section variants** and **233 full-page examples** (**679** composable variants total), and the shared hooks, utils and styles they depend on.
+The registry currently holds **804 entries**: **75 published component groups** (**111** counting foundations, shared assets and example-page groups) across seven layers (22 base, 35 application, 18 marketing sections, 12 application page examples, 10 marketing page examples, 8 foundations, 6 shared assets), **446 section variants** and **233 full-page examples** (**679** composable variants total), and the shared hooks, utils and styles they depend on.
 <!-- stats:end -->
 
 ## Built for AI code generators
@@ -34,19 +34,27 @@ The registry currently holds **797 entries**: **69 published component groups** 
 Nothing here is specific to one assistant. The three surfaces below are plain HTTP and a shell command, so Claude Code,
 Codex, Cursor, v0, Bolt and Lovable can all drive them.
 
-| Surface             | URL                                                                    | What an assistant does with it                                                                                                                  |
-| ------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| Markdown docs index | [`/llms.txt`](https://properui.dev/llms.txt)                           | Finds the plain-markdown twin of every page, so it reads the same reference you do without parsing rendered HTML.                               |
-| Component registry  | [`/r/index.json`](https://properui.dev/r/index.json), `/r/<name>.json` | Fetches a component's real source, props, npm dependencies and registry dependencies: 797 entries.                                              |
-| Config schema       | [`/schema.json`](https://properui.dev/schema.json)                     | Validates and autocompletes the `components.json` that `init` writes.                                                                           |
-| CLI                 | `npx @properui/cli@latest add <component>`                             | Writes the `.tsx` into the project, resolves the dependency chain, rewrites `@/` imports to the configured alias and installs missing packages. |
+| Surface             | URL                                                                    | What an assistant does with it                                                                                                                                          |
+| ------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Markdown docs index | [`/llms.txt`](https://properui.dev/llms.txt)                           | Finds the plain-markdown twin of every page, so it reads the same reference you do without parsing rendered HTML.                                                       |
+| Component registry  | [`/r/index.json`](https://properui.dev/r/index.json), `/r/<name>.json` | Fetches a component's real source, props, npm dependencies and registry dependencies: 797 entries.                                                                      |
+| Config schema       | [`/schema.json`](https://properui.dev/schema.json)                     | Validates and autocompletes the `components.json` that `init` writes.                                                                                                   |
+| CLI: `add`          | `npx @properui/cli@latest add <component>`                             | Writes the `.tsx` into the project, resolves the dependency chain, rewrites `@/` imports to the configured alias, and reports (or, with `--install`, runs) the install. |
+| CLI: `remove`       | `npx @properui/cli@latest remove <component>`                          | Deletes an installed entry from the project and warns if something else installed still depends on it.                                                                  |
+| CLI: `why`          | `npx @properui/cli@latest why <component>`                             | Prints what pulled a given entry in, for auditing an install you didn't expect.                                                                                         |
+| CLI: `check`        | `npx @properui/cli@latest check`                                       | The token guard: flags raw palette classes and arbitrary values in place of semantic tokens.                                                                            |
+| CLI: `icons`        | `npx @properui/cli@latest icons`                                       | Lists and installs icon components the same way `add` handles the rest of the registry.                                                                                 |
 
 Why generated code comes out better against this library specifically:
 
 - **A closed vocabulary.** Components only ever name semantic tokens (`bg-primary`, `text-tertiary`, `bg-brand-solid`),
   so a model has a small named set to choose from instead of the open set of arbitrary Tailwind values.
-- **A wrong prop fails the build.** `strict` and `noUncheckedIndexedAccess` across the monorepo mean a hallucinated prop
-  is a compile error the agent can read and fix, not a silent runtime shrug.
+- **A wrong prop fails the build, most of the time.** `strict` and `noUncheckedIndexedAccess` across the monorepo mean
+  a DOM prop where an Aria prop belongs (`disabled` instead of `isDisabled`, a name that doesn't exist on the type) is
+  a compile error the agent can read and fix. That covers names, not behaviour: a prop that exists on both DOM and
+  Aria vocabularies but means something subtly different will typecheck and still be wrong, which is why dev-mode
+  warnings cover the common aliases (`readOnly`/`isReadOnly`, `required`/`isRequired`, `checked`/`isSelected`) instead
+  of relying on the type system alone.
 - **Accessibility it never had to know about.** React Aria supplies focus management, keyboard navigation and ARIA, so
   generated markup inherits them whether or not the prompt mentioned accessibility.
 - **Dark mode and RTL by construction.** One `.dark-mode` class repoints every token and spacing uses logical properties,
@@ -255,7 +263,10 @@ Every colour, radius, shadow and type step is a CSS variable in
 wider `--color-utility-*` set for charts and badges, and semantic tokens (`--color-bg-primary`, `--color-text-secondary`,
 `--color-border-tertiary`) that components consume as `bg-primary`, `text-secondary`, `border-tertiary`.
 
-A re-brand is one edit: replace the eleven `--color-brand-*` values.
+A re-brand starts with one edit: replace the eleven `--color-brand-*` values. If your neutrals or status colours
+(`success`, `warning`, and so on) are not Tailwind's stock ramps either, shadow those in the same `theme.css` file,
+which now declares the neutral and status ramps, and their `ring`/`border` families, that the semantic layer consumes,
+so there is one file to grep for every colour a re-brand depends on, not a ramp that is used but never declared.
 
 ```css
 @theme {

@@ -87,6 +87,17 @@ export interface AlertProps extends Omit<HTMLAttributes<HTMLDivElement>, "title"
 /**
  * An inline message that draws attention to a change of state — a released update, a failed
  * payment, a nearly-full plan. Composed from `FeaturedIcon` and `CloseButton`.
+ *
+ * This is an **inline banner**, not an alert dialog: it renders in the page's normal flow with
+ * `role="alert"` (a live region, announced to assistive tech when it appears — see
+ * [MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role)), not
+ * a modal that traps focus or blocks the page. For a "are you sure?" confirmation that must be
+ * acknowledged before the user can continue, compose `Modal`/`ModalHeader`/`ModalFooter` instead
+ * (see the modals docs' "confirm dialog" demo) — `Alert` has no dismiss-blocking or focus-trapping
+ * behavior to build one from.
+ *
+ * `role` is a plain HTML attribute here (via `AlertProps` extending `HTMLAttributes`) and can be
+ * overridden, e.g. `role="status"` for a less urgent, non-interrupting announcement.
  */
 export const Alert = ({
     title,

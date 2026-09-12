@@ -35,7 +35,7 @@ export const MetricSimple = ({ title, value, change, trend, menu, footer, footer
 
             <div className="flex items-end gap-4">
                 <p className={styles.common.value}>{value}</p>
-                <MetricChangeIndicator trend={trend}>{change}</MetricChangeIndicator>
+                {change && <MetricChangeIndicator trend={trend}>{change}</MetricChangeIndicator>}
             </div>
 
             {menu && <MetricCardMenu>{menu}</MetricCardMenu>}
@@ -69,7 +69,7 @@ export const MetricIcon01 = ({
 
                 <div className="flex items-end gap-4">
                     <p className={styles.common.value}>{value}</p>
-                    <MetricChangeIndicator trend={trend}>{change}</MetricChangeIndicator>
+                    {change && <MetricChangeIndicator trend={trend}>{change}</MetricChangeIndicator>}
                 </div>
             </div>
 
@@ -108,9 +108,11 @@ export const MetricIcon02 = ({
                 <p className={styles.common.value}>{value}</p>
 
                 <div className="flex gap-2">
-                    <MetricChangeIndicator type="simple" icon="arrow" trend={trend}>
-                        {change}
-                    </MetricChangeIndicator>
+                    {change && (
+                        <MetricChangeIndicator type="simple" icon="arrow" trend={trend}>
+                            {change}
+                        </MetricChangeIndicator>
+                    )}
                     {changeDescription && <span className={styles.common.description}>{changeDescription}</span>}
                 </div>
             </div>
@@ -150,9 +152,11 @@ export const MetricIcon03 = ({
                     <p className={styles.common.value}>{value}</p>
 
                     <div className="flex gap-2">
-                        <MetricChangeIndicator type="simple" trend={trend}>
-                            {change}
-                        </MetricChangeIndicator>
+                        {change && (
+                            <MetricChangeIndicator type="simple" trend={trend}>
+                                {change}
+                            </MetricChangeIndicator>
+                        )}
                         {changeDescription && <span className={styles.common.description}>{changeDescription}</span>}
                     </div>
                 </div>
@@ -190,7 +194,7 @@ export const MetricIcon04 = ({
 
                 <div className="flex w-full flex-wrap items-center justify-between gap-4">
                     <p className={styles.common.value}>{value}</p>
-                    <MetricChangeIndicator trend={trend}>{change}</MetricChangeIndicator>
+                    {change && <MetricChangeIndicator trend={trend}>{change}</MetricChangeIndicator>}
                 </div>
             </div>
 
@@ -238,9 +242,11 @@ export const MetricChart01 = ({
                     <p className={styles.common.value}>{value}</p>
 
                     <div className="flex gap-2">
-                        <MetricChangeIndicator type="simple" icon="arrow" trend={trend}>
-                            {change}
-                        </MetricChangeIndicator>
+                        {change && (
+                            <MetricChangeIndicator type="simple" icon="arrow" trend={trend}>
+                                {change}
+                            </MetricChangeIndicator>
+                        )}
                         {changeDescription && <span className={styles.common.description}>{changeDescription}</span>}
                     </div>
                 </div>
@@ -287,9 +293,11 @@ export const MetricChart02 = ({
             <div className="flex items-end justify-between gap-4">
                 <div className="flex items-start gap-2">
                     <p className={cx(styles.common.value, "lg:text-display-md")}>{value}</p>
-                    <MetricChangeIndicator type="simple" trend={trend}>
-                        {change}
-                    </MetricChangeIndicator>
+                    {change && (
+                        <MetricChangeIndicator type="simple" trend={trend}>
+                            {change}
+                        </MetricChangeIndicator>
+                    )}
                 </div>
 
                 <MetricComparisonSparkline data={chartData} trend={trend} className="w-32 shrink-0" />
@@ -315,9 +323,11 @@ export const MetricChart03 = ({ title, value, change, trend, changeDescription, 
                     <p className={styles.common.value}>{value}</p>
 
                     <div className="flex gap-2">
-                        <MetricChangeIndicator type="simple" trend={trend}>
-                            {change}
-                        </MetricChangeIndicator>
+                        {change && (
+                            <MetricChangeIndicator type="simple" trend={trend}>
+                                {change}
+                            </MetricChangeIndicator>
+                        )}
                         {changeDescription && <span className={styles.common.description}>{changeDescription}</span>}
                     </div>
                 </div>
@@ -359,9 +369,11 @@ export const MetricChart04 = ({
                     <p className="text-display-sm text-primary font-semibold">{value}</p>
 
                     <div className="flex gap-2">
-                        <MetricChangeIndicator type="simple" trend={trend}>
-                            {change}
-                        </MetricChangeIndicator>
+                        {change && (
+                            <MetricChangeIndicator type="simple" trend={trend}>
+                                {change}
+                            </MetricChangeIndicator>
+                        )}
                         {changeDescription && <span className={styles.common.description}>{changeDescription}</span>}
                     </div>
                 </div>

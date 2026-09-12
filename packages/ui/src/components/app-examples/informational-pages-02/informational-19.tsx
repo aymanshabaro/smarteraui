@@ -219,7 +219,7 @@ export const Informational19 = () => (
                                     <Badge size="sm" type="modern">
                                         Non-fiction
                                     </Badge>
-                                    <BadgeIcon size="sm" type="modern" icon={Plus} aria-label="Add a tag" />
+                                    <BadgeIcon size="sm" type="modern" icon={Plus} aria-hidden="true" />
                                 </div>
                             </div>
 

@@ -83,5 +83,21 @@ demoFile: inputs
             question: "How do I add keyboard shortcuts to inputs?",
             answer: 'You can add keyboard shortcuts using the shortcut prop. Pass a string to display custom shortcut text, or pass true to show the default "⌘K" shortcut. The shortcut appears as a badge on the right side of the input.',
         },
+        {
+            question: "Does Input pass through min, max, and step?",
+            answer: 'Yes, along with the rest of React Aria\'s TextInputDOMProps (autoComplete, pattern, minLength, maxLength, inputMode) — useful for type="number" or type="range" usage of the plain Input.',
+        },
+        {
+            question: "How do I add a fixed prefix or suffix, like a currency symbol or domain?",
+            answer: 'Use the prefix and suffix props, e.g. <Input prefix="$" /> or <Input suffix=".com" />. Both render inline inside the input\'s border.',
+        },
+        {
+            question: 'How do I keep role="alert" on a standalone error hint?',
+            answer: 'Pass hintProps={{ role: "alert" }} alongside hint. hintProps forwards any extra props (role, id, etc.) to the hint/error Text element.',
+        },
+        {
+            question: "What does onChange receive?",
+            answer: "A plain string value, not a native DOM change event — this is React Aria's useTextField value callback. Reach for onInput or a ref if you need the underlying Event.",
+        },
     ]}
 />

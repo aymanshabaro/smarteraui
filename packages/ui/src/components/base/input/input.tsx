@@ -1,15 +1,16 @@
 "use client";
 
-import { type ComponentType, type HTMLAttributes, type ReactNode, type Ref, createContext, useContext, useState } from "react";
+import { type ComponentPropsWithoutRef, type ComponentType, type HTMLAttributes, type ReactNode, type Ref, createContext, useContext, useState } from "react";
 import type { InputProps as AriaInputProps, TextFieldProps as AriaTextFieldProps } from "react-aria-components";
 import { Button as AriaButton, Group as AriaGroup, Input as AriaInput, TextField as AriaTextField } from "react-aria-components";
 import { Eye, EyeOff, HelpCircle, InfoCircle } from "@properui/icons";
 import { cx, sortCx } from "../../../utils/cx";
+import { warnDomProps } from "../../../utils/warn-dom-props";
 import { Tooltip, TooltipTrigger } from "../tooltip/tooltip";
 import { HintText } from "./hint-text";
 import { Label } from "./label";
 
-export interface InputBaseProps extends Omit<AriaInputProps, "size"> {
+export interface InputBaseProps extends Omit<AriaInputProps, "size" | "prefix"> {
     /** Tooltip message on hover. */
     tooltip?: string;
     /** Whether the input is invalid. */
@@ -39,6 +40,10 @@ export interface InputBaseProps extends Omit<AriaInputProps, "size"> {
     groupRef?: Ref<HTMLDivElement>;
     /** Icon component to display on the left side of the input. */
     icon?: ComponentType<HTMLAttributes<HTMLOrSVGElement>>;
+    /** Content (text or element) rendered inline before the input value, inside the input's border. */
+    prefix?: ReactNode;
+    /** Content (text or element) rendered inline after the input value, inside the input's border. */
+    suffix?: ReactNode;
 }
 
 export const InputBase = ({
@@ -57,6 +62,8 @@ export const InputBase = ({
     inputClassName,
     iconClassName,
     type = "text",
+    prefix,
+    suffix,
     ...inputProps
 }: InputBaseProps) => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -123,6 +130,9 @@ export const InputBase = ({
                 <Icon className={cx("text-fg-quaternary pointer-events-none absolute", sizes[inputSize].iconLeading, context?.iconClassName, iconClassName)} />
             )}
 
+            {/* Prefix slot, e.g. `prefix="$"` or `prefix="https://"` */}
+            {prefix && <span className="text-tertiary flex shrink-0 items-center ps-3 select-none">{prefix}</span>}
+
             {/* Input field */}
             <AriaInput
                 {...(inputProps as AriaInputProps)}
@@ -133,10 +143,15 @@ export const InputBase = ({
                 className={cx(
                     "text-primary placeholder:text-placeholder autofill:text-primary m-0 w-full bg-transparent ring-0 outline-hidden autofill:rounded-lg disabled:cursor-not-allowed",
                     sizes[inputSize].root,
+                    prefix && "ps-1",
+                    suffix && "pe-1",
                     context?.inputClassName,
                     inputClassName,
                 )}
             />
+
+            {/* Suffix slot, e.g. `suffix=".com"` */}
+            {suffix && <span className="text-tertiary flex shrink-0 items-center pe-3 select-none">{suffix}</span>}
 
             {/* Tooltip and help icon */}
             {tooltip && type !== "password" && (
@@ -242,13 +257,34 @@ export interface InputProps
             | "inputClassName"
             | "iconClassName"
             | "tooltipClassName"
+            | "prefix"
+            | "suffix"
+            // `TextInputDOMProps` (what `AriaTextFieldProps` extends) covers `autoComplete`,
+            // `maxLength`/`minLength`, `pattern`, and `inputMode` already — but not `min`/`max`/
+            // `step`, even though the underlying `<input>` (via `InputBase`) accepts them, e.g. for
+            // `type="number"`/`type="range"` usage of the plain `Input`.
+            | "min"
+            | "max"
+            | "step"
         > {
     /** Label text for the input */
     label?: string;
     /** Helper text displayed below the input */
     hint?: ReactNode;
+    /**
+     * Extra props (e.g. `role="alert"`, `id`) applied to the hint/error `<Text>` element. Useful
+     * for a standalone error hint that needs to announce itself immediately instead of relying on
+     * the field's own `isInvalid` wiring — e.g. `hintProps={{ role: "alert" }}`.
+     */
+    hintProps?: Omit<ComponentPropsWithoutRef<typeof HintText>, "children" | "isInvalid">;
     /** Whether to hide required indicator from label */
     hideRequiredIndicator?: boolean;
+    /**
+     * Called with the field's new value as a plain string — this is React Aria's `useTextField`
+     * value callback, not a native DOM change event. Reach for `onInput`/a `ref` if you need the
+     * underlying `Event`.
+     */
+    onChange?: (value: string) => void;
 }
 
 export const Input = ({
@@ -257,6 +293,7 @@ export const Input = ({
     icon: Icon,
     label,
     hint,
+    hintProps,
     shortcut,
     hideRequiredIndicator,
     className,
@@ -268,8 +305,20 @@ export const Input = ({
     wrapperClassName,
     tooltipClassName,
     type = "text",
+    prefix,
+    suffix,
+    min,
+    max,
+    step,
+    minLength,
+    maxLength,
+    pattern,
+    autoComplete,
+    inputMode,
     ...props
 }: InputProps) => {
+    warnDomProps("Input", props as Record<string, unknown>, { disabled: "isDisabled", readOnly: "isReadOnly", required: "isRequired" });
+
     return (
         <TextField aria-label={!label ? placeholder : undefined} {...props} size={size} className={className}>
             {({ isRequired, isInvalid }) => (
@@ -294,10 +343,24 @@ export const Input = ({
                             tooltipClassName,
                             tooltip,
                             type,
+                            prefix,
+                            suffix,
+                            min,
+                            max,
+                            step,
+                            minLength,
+                            maxLength,
+                            pattern,
+                            autoComplete,
+                            inputMode,
                         }}
                     />
 
-                    {hint && <HintText isInvalid={isInvalid}>{hint}</HintText>}
+                    {hint && (
+                        <HintText isInvalid={isInvalid} {...hintProps}>
+                            {hint}
+                        </HintText>
+                    )}
                 </>
             )}
         </TextField>

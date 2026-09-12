@@ -15,6 +15,17 @@ demoFile: alerts
 
 <Install slug="alerts" />
 
+## Usage notes
+
+`Alert` is an **inline banner**, not an alert dialog. It renders in the page's normal flow with
+`role="alert"` — a live region announced to assistive tech when it appears — rather than a modal
+that traps focus or blocks the rest of the page. For a "are you sure?" confirmation the user must
+acknowledge before continuing, compose [`Modal`](/components/modals) instead (see its "confirm
+dialog" demo); `Alert` has no dismiss-blocking or focus-trapping behavior to build one from.
+
+`role` is a plain HTML attribute and can be overridden, e.g. `role="status"` for a less urgent,
+non-interrupting announcement.
+
 ## Alert examples
 
 <Preview id="floating-default" title="Floating default" height={280} demo="alerts:FloatingDefault" />

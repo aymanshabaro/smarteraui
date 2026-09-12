@@ -1,0 +1,117 @@
+---
+title: Adopting Proper UI into an existing Tailwind app
+section: docs
+description: What happens when Proper UI's theme.css is imported into an app that already has a Tailwind theme, and how to adopt it or remove the old system safely.
+metaTitle: Adopting Proper UI into an existing Tailwind app | Proper UI
+metaDescription: The utility names that collide with an existing Tailwind theme, which side wins, the data-properui migration shim, and a checklist for safely uninstalling the outgoing design system.
+---
+
+Every other install guide on this site assumes a fresh Tailwind setup or an app with no competing theme. This page is
+for the other case: a project that already has its own `@theme` block, its own `bg-primary`/`text-primary` utilities,
+and its own opinions, and now needs Proper UI's `theme.css` imported alongside it. Two Tailwind themes in one build
+don't fail loudly. They resolve silently, one winner per utility name, and the losing side keeps compiling, keeps
+passing type-checks, and renders wrong.
+
+## The ten names that collide
+
+Proper UI declares five semantic colour namespaces, each with a `primary` and a `secondary` step:
+`bg-*`, `text-*`, `border-*`, `ring-*`, and `outline-*`. Almost every hand-rolled Tailwind theme also names `primary`
+and `secondary` something, so these ten utilities are the ones to check before importing Proper UI into an existing
+app:
+
+```
+bg-primary       text-primary       border-primary       ring-primary       outline-primary
+bg-secondary     text-secondary     border-secondary     ring-secondary     outline-secondary
+```
+
+**Proper UI wins all ten, regardless of import order.** Tailwind resolves each of these against a more specific
+custom property namespace (`--background-color-*`, `--text-color-*`, and so on) before it falls back to the generic
+`--color-*` namespace an incumbent theme is more likely to use. The more specific namespace wins even when the
+incumbent's stylesheet is imported _after_ Proper UI's. Import order will not save you here, and it will not warn
+you either.
+
+**Same-namespace collisions go the other way.** For a utility name both themes declare in the exact same custom
+property namespace (a font stack on `--font-*`, a step of the `--text-*` size scale), Tailwind takes whichever
+`@theme` block was imported last, ordinary CSS cascade rules. So the two collision types resolve in opposite
+directions, and nothing about a class name tells you which kind it is. Check both before assuming either.
+
+Before importing Proper UI, get a before/after read on any utility name you suspect might collide. Compute the style
+in a running browser rather than trusting the source, since a Tailwind theme with no compiler will not tell you a
+value moved:
+
+| Utility          | Before                       | After              |
+| ---------------- | ---------------------------- | ------------------ |
+| `bg-primary`     | `rgb(99 66 230)` (old brand) | `rgb(255 255 255)` |
+| `text-primary`   | `rgb(99 66 230)`             | `oklch(0.205 0 0)` |
+| `border-primary` | `rgb(99 66 230)`             | `oklch(0.87 0 0)`  |
+| `bg-secondary`   | `rgb(243 244 247)`           | `oklch(0.985 0 0)` |
+
+A team that ran exactly this check found their incumbent primary button, `border-primary bg-primary
+text-primary-foreground`, went from a filled brand-colour button to **white text on a white button**, because
+`bg-primary` flipped to white while `text-primary-foreground` (a name Proper UI doesn't declare, so it kept its old
+value) was already white. Nothing failed to compile. It shipped a real button that couldn't be read.
+
+## There is no partial import
+
+Tailwind emits exactly one rule per utility class name, globally, for the whole build. There is no way to scope
+`bg-primary` to "Proper UI's meaning inside this subtree, the old meaning everywhere else" through CSS alone; the
+cascade doesn't have a mechanism for two colliding utility classes to coexist. That leaves two real options.
+
+**Option 1: rename the incumbent's tokens.** If the incumbent theme's `primary`/`secondary` names are only used
+through Tailwind utilities (no bare `var(--color-primary)` anywhere, see the uninstall checklist below for how to
+be sure), a rename is a mechanical, if wide, find-and-replace: `bg-primary` becomes `bg-brand`, or whatever name
+doesn't collide with Proper UI's five namespaces above.
+
+**Option 2: a temporary indirection shim.** When a full rename isn't feasible on the timeline you have (a shared
+package, a large blast radius, a migration still being scoped), re-point the incumbent's custom properties at their
+old values on `:root`, and opt Proper UI screens in explicitly with a wrapper attribute instead of relying on global
+resolution:
+
+```css
+/* shim.css: DELETE ME once the incumbent theme is fully migrated or removed */
+:root {
+    --background-color-primary: var(--old-color-primary);
+    --text-color-primary: var(--old-color-primary-foreground);
+    --border-color-primary: var(--old-color-primary);
+    /* ...repeat for every colliding name your app actually uses */
+}
+
+[data-properui] {
+    --background-color-primary: initial;
+    --text-color-primary: initial;
+    --border-color-primary: initial;
+    /* restores Proper UI's own values inside any subtree marked data-properui */
+}
+```
+
+```tsx
+// Wrap new or migrated screens explicitly; everything outside keeps the old theme
+<div data-properui>
+    <Button color="primary">New screen, Proper UI colours</Button>
+</div>
+```
+
+This is a migration tool, not an architecture. It adds a mechanism a teardown has to remember to remove, and the
+`DELETE ME` comment is there for exactly that reason: search for it, and for every `data-properui` attribute, as one
+of the last steps of the migration, not an afterthought.
+
+## Uninstalling the outgoing system
+
+Removing an old theme is riskier than adding a new one, because the failure mode is invisible: it is not a class
+name Tailwind's own tooling can grep for, and dropping an import can pass every type-check, lint rule, and test suite
+while silently regressing something no test happened to cover, like site-wide keyboard focus visibility. Work through
+both of these before deleting the outgoing stylesheet, not after:
+
+1. **Enumerate every custom property the outgoing stylesheet declares**, then grep each one as a `var(--name)`
+   reference across the whole app, not just inside other CSS files. A property consumed only through a Tailwind
+   utility class is safe to retire once the utility is gone; a property referenced directly, `border-width:
+var(--old-ring-width)` inside a raw CSS rule for global focus rings, control radius, or base-layer `body` /
+   `h1`–`h3` / `::selection` / autofill styling, for example, has no utility-class trail at all, and neither a
+   `bg-*`/`text-*` grep nor an import graph will find it.
+2. **Enumerate every class selector the outgoing stylesheet defines**, then grep each one as a literal string inside
+   `className=` across the app. A bare class name typed into a template literal or a conditional class list doesn't
+   show up in an import graph either, and it compiles clean right up until the class it depended on no longer exists.
+
+Neither check is optional, and neither is covered by the other: one finds bare `var()` references, the other finds
+bare class-name strings. A migration that only reruns the test suite after deleting the old stylesheet is not proof
+the removal was safe: it's proof the tests didn't happen to touch what broke.

@@ -57,5 +57,25 @@ demoFile: select
             q: "Is the select accessible?",
             a: "Yes. The select is built on React Aria Components, which provides full keyboard navigation, screen reader support, and ARIA attributes out of the box.",
         },
+        {
+            q: "What is the trigger's accessible name when a label is set?",
+            a: "Exactly the label text — not the label plus the current value. If you need the current value announced too, add it to your own aria-label or read it from the visible trigger content.",
+        },
+        {
+            q: "Does Select.Item's textValue include supportingText?",
+            a: 'Yes, by default the accessible textValue used for typeahead is `label + " " + supportingText` when supportingText is set. Pass your own `textValue` on Select.Item to override this.',
+        },
+        {
+            q: "How do I open the select's popover in a jsdom test?",
+            a: "userEvent.click alone toggles it open then shut in the same interaction. Use fireEvent.click(trigger), or focus the trigger and press ArrowDown. See the Testing page for the full recipe.",
+        },
+        {
+            q: "How do I control when ComboBox's menu opens, or use my own filtering?",
+            a: 'Pass menuTrigger ("focus" by default, or "input" / "manual") to control when the popover opens. ComboBox still applies React Aria\'s own `contains` filter on top of whatever items you pass in — pass defaultFilter={() => true} to disable it and rely entirely on app-side filtering. allowsEmptyCollection keeps the popover open (showing an empty state) instead of closing it when nothing matches.',
+        },
+        {
+            q: "Is there a plain native <select> option?",
+            a: "Yes, NativeSelect renders a real <select> element (styled to match) instead of a listbox popover. It honours a caller-supplied id (falling back to a generated one), accepts a readonly options array, and renders an optional placeholder as a disabled first option.",
+        },
     ]}
 />

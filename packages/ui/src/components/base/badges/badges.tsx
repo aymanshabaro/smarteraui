@@ -130,7 +130,7 @@ const withBadgeTypes = {
 
 export type BadgeColor<T extends BadgeTypes> = BadgeTypeToColorMap<typeof withPillTypes>[T];
 
-interface BadgeProps<T extends BadgeTypes> {
+interface BadgeProps<T extends BadgeTypes> extends Omit<HTMLAttributes<HTMLSpanElement>, "color" | "children" | "className"> {
     /** Visual style of the badge. */
     type?: T;
     /** Size of the badge. */
@@ -144,7 +144,7 @@ interface BadgeProps<T extends BadgeTypes> {
 }
 
 export const Badge = <T extends BadgeTypes>(props: BadgeProps<T>) => {
-    const { type = "pill-color", size = "md", color = "gray", children } = props;
+    const { type = "pill-color", size = "md", color = "gray", children, className, ...rest } = props;
     const colors = withPillTypes[type];
 
     const pillSizes = {
@@ -164,10 +164,14 @@ export const Badge = <T extends BadgeTypes>(props: BadgeProps<T>) => {
         [badgeTypes.badgeModern]: badgeSizes,
     };
 
-    return <span className={cx(colors.common, sizes[type][size], colors.styles[color].root, props.className)}>{children}</span>;
+    return (
+        <span {...rest} className={cx(colors.common, sizes[type][size], colors.styles[color].root, className)}>
+            {children}
+        </span>
+    );
 };
 
-interface BadgeWithDotProps<T extends BadgeTypes> {
+interface BadgeWithDotProps<T extends BadgeTypes> extends Omit<HTMLAttributes<HTMLSpanElement>, "color" | "children" | "className"> {
     /** Visual style of the badge. */
     type?: T;
     /** Size of the badge. */
@@ -181,7 +185,7 @@ interface BadgeWithDotProps<T extends BadgeTypes> {
 }
 
 export const BadgeWithDot = <T extends BadgeTypes>(props: BadgeWithDotProps<T>) => {
-    const { size = "md", color = "gray", type = "pill-color", className, children } = props;
+    const { size = "md", color = "gray", type = "pill-color", className, children, ...rest } = props;
 
     const colors = withBadgeTypes[type];
 
@@ -204,14 +208,14 @@ export const BadgeWithDot = <T extends BadgeTypes>(props: BadgeWithDotProps<T>) 
     };
 
     return (
-        <span className={cx(colors.common, sizes[type][size], colors.styles[color].root, className)}>
+        <span {...rest} className={cx(colors.common, sizes[type][size], colors.styles[color].root, className)}>
             <Dot className={colors.styles[color].addon} size="sm" aria-hidden="true" />
             {children}
         </span>
     );
 };
 
-interface BadgeWithIconProps<T extends BadgeTypes> {
+interface BadgeWithIconProps<T extends BadgeTypes> extends Omit<HTMLAttributes<HTMLSpanElement>, "color" | "children" | "className"> {
     /** Visual style of the badge. */
     type?: T;
     /** Size of the badge. */
@@ -229,7 +233,7 @@ interface BadgeWithIconProps<T extends BadgeTypes> {
 }
 
 export const BadgeWithIcon = <T extends BadgeTypes>(props: BadgeWithIconProps<T>) => {
-    const { size = "md", color = "gray", type = "pill-color", iconLeading: IconLeading, iconTrailing: IconTrailing, children, className } = props;
+    const { size = "md", color = "gray", type = "pill-color", iconLeading: IconLeading, iconTrailing: IconTrailing, children, className, ...rest } = props;
 
     const colors = withBadgeTypes[type];
 
@@ -271,7 +275,7 @@ export const BadgeWithIcon = <T extends BadgeTypes>(props: BadgeWithIconProps<T>
     };
 
     return (
-        <span className={cx(colors.common, sizes[type][size][icon], colors.styles[color].root, className)}>
+        <span {...rest} className={cx(colors.common, sizes[type][size][icon], colors.styles[color].root, className)}>
             {IconLeading && <IconLeading aria-hidden="true" className={cx(colors.styles[color].addon, "size-3 stroke-3")} />}
             {children}
             {IconTrailing && <IconTrailing aria-hidden="true" className={cx(colors.styles[color].addon, "size-3 stroke-3")} />}
@@ -279,7 +283,7 @@ export const BadgeWithIcon = <T extends BadgeTypes>(props: BadgeWithIconProps<T>
     );
 };
 
-interface BadgeWithFlagProps<T extends BadgeTypes> {
+interface BadgeWithFlagProps<T extends BadgeTypes> extends Omit<HTMLAttributes<HTMLSpanElement>, "color" | "children" | "className"> {
     /** Visual style of the badge. */
     type?: T;
     /** Size of the badge. */
@@ -290,10 +294,12 @@ interface BadgeWithFlagProps<T extends BadgeTypes> {
     color?: BadgeTypeToColorMap<typeof withPillTypes>[T];
     /** Badge label content. */
     children: ReactNode;
+    /** Additional classes merged onto the root element. */
+    className?: string;
 }
 
 export const BadgeWithFlag = <T extends BadgeTypes>(props: BadgeWithFlagProps<T>) => {
-    const { size = "md", color = "gray", flag = "AU", type = "pill-color", children } = props;
+    const { size = "md", color = "gray", flag = "AU", type = "pill-color", children, className, ...rest } = props;
 
     const colors = withPillTypes[type];
 
@@ -315,14 +321,14 @@ export const BadgeWithFlag = <T extends BadgeTypes>(props: BadgeWithFlagProps<T>
     };
 
     return (
-        <span className={cx(colors.common, sizes[type][size], colors.styles[color].root)}>
+        <span {...rest} className={cx(colors.common, sizes[type][size], colors.styles[color].root, className)}>
             <img src={`/flags/${flag}.svg`} className="size-4 max-w-none rounded-full" alt={`${flag} flag`} />
             {children}
         </span>
     );
 };
 
-interface BadgeWithImageProps<T extends BadgeTypes> {
+interface BadgeWithImageProps<T extends BadgeTypes> extends Omit<HTMLAttributes<HTMLSpanElement>, "color" | "children" | "className"> {
     /** Visual style of the badge. */
     type?: T;
     /** Size of the badge. */
@@ -333,10 +339,12 @@ interface BadgeWithImageProps<T extends BadgeTypes> {
     color?: BadgeTypeToColorMap<typeof withPillTypes>[T];
     /** Badge label content. */
     children: ReactNode;
+    /** Additional classes merged onto the root element. */
+    className?: string;
 }
 
 export const BadgeWithImage = <T extends BadgeTypes>(props: BadgeWithImageProps<T>) => {
-    const { size = "md", color = "gray", type = "pill-color", imgSrc, children } = props;
+    const { size = "md", color = "gray", type = "pill-color", imgSrc, children, className, ...rest } = props;
 
     const colors = withPillTypes[type];
 
@@ -358,14 +366,14 @@ export const BadgeWithImage = <T extends BadgeTypes>(props: BadgeWithImageProps<
     };
 
     return (
-        <span className={cx(colors.common, sizes[type][size], colors.styles[color].root)}>
+        <span {...rest} className={cx(colors.common, sizes[type][size], colors.styles[color].root, className)}>
             <img src={imgSrc} className="size-4 max-w-none rounded-full" alt="" />
             {children}
         </span>
     );
 };
 
-interface BadgeWithButtonProps<T extends BadgeTypes> {
+interface BadgeWithButtonProps<T extends BadgeTypes> extends Omit<HTMLAttributes<HTMLSpanElement>, "color" | "children" | "className"> {
     /** Visual style of the badge. */
     type?: T;
     /** Size of the badge. */
@@ -376,6 +384,8 @@ interface BadgeWithButtonProps<T extends BadgeTypes> {
     color?: BadgeTypeToColorMap<typeof withPillTypes>[T];
     /** Badge label content. */
     children: ReactNode;
+    /** Additional classes merged onto the root element. */
+    className?: string;
     /**
      * The label for the button.
      */
@@ -387,7 +397,7 @@ interface BadgeWithButtonProps<T extends BadgeTypes> {
 }
 
 export const BadgeWithButton = <T extends BadgeTypes>(props: BadgeWithButtonProps<T>) => {
-    const { size = "md", color = "gray", type = "pill-color", icon: Icon = CloseX, buttonLabel, children } = props;
+    const { size = "md", color = "gray", type = "pill-color", icon: Icon = CloseX, buttonLabel, onButtonClick, children, className, ...rest } = props;
 
     const colors = withPillTypes[type];
 
@@ -409,12 +419,12 @@ export const BadgeWithButton = <T extends BadgeTypes>(props: BadgeWithButtonProp
     };
 
     return (
-        <span className={cx(colors.common, sizes[type][size], colors.styles[color].root)}>
+        <span {...rest} className={cx(colors.common, sizes[type][size], colors.styles[color].root, className)}>
             {children}
             <button
                 type="button"
                 aria-label={buttonLabel}
-                onClick={props.onButtonClick}
+                onClick={onButtonClick}
                 className={cx(
                     "outline-focus-ring flex cursor-pointer items-center justify-center p-0.5 transition duration-100 ease-linear focus-visible:outline-2",
                     colors.styles[color].addonButton,
@@ -427,7 +437,7 @@ export const BadgeWithButton = <T extends BadgeTypes>(props: BadgeWithButtonProp
     );
 };
 
-interface BadgeIconProps<T extends BadgeTypes> {
+interface BadgeIconProps<T extends BadgeTypes> extends Omit<HTMLAttributes<HTMLSpanElement>, "color" | "children" | "className"> {
     /** Visual style of the badge. */
     type?: T;
     /** Size of the badge. */
@@ -438,10 +448,12 @@ interface BadgeIconProps<T extends BadgeTypes> {
     color?: BadgeTypeToColorMap<typeof withPillTypes>[T];
     /** Not used for icon-only badges; kept for API parity. */
     children?: ReactNode;
+    /** Additional classes merged onto the root element. */
+    className?: string;
 }
 
 export const BadgeIcon = <T extends BadgeTypes>(props: BadgeIconProps<T>) => {
-    const { size = "md", color = "gray", type = "pill-color", icon: Icon } = props;
+    const { size = "md", color = "gray", type = "pill-color", icon: Icon, className, ...rest } = props;
 
     const colors = withPillTypes[type];
 
@@ -464,7 +476,7 @@ export const BadgeIcon = <T extends BadgeTypes>(props: BadgeIconProps<T>) => {
     };
 
     return (
-        <span className={cx(colors.common, sizes[type][size], colors.styles[color].root)}>
+        <span {...rest} className={cx(colors.common, sizes[type][size], colors.styles[color].root, className)}>
             <Icon aria-hidden="true" className={cx("size-3 stroke-[3px]", colors.styles[color].addon)} />
         </span>
     );
