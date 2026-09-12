@@ -1,93 +1,65 @@
 /**
- * Step-by-step setup guide content for the four agent platform cards, ported verbatim from the
- * supplied `script.js`'s `setupGuides` object. Copy is intentionally unchanged.
+ * Narrative step text for the per-tool "View step-by-step setup" dialog. This file owns only
+ * prose: every command, path, note and prompt a step needs is pulled live from `ToolSetup`
+ * (see `tool-setup.ts`) through the `description` function below, so nothing here can drift
+ * out of sync with the verified data.
  */
+import type { ToolKey, ToolSetup } from "./tool-setup";
 
-export type GuideKey = "claude" | "codex" | "cursor" | "lovable";
-
-export type SetupGuide = {
-    name: string;
-    logo: string;
+export type DialogStep = {
     title: string;
-    intro: string;
-    copyLabel: string;
-    copyValue: string;
-    steps: Array<{ title: string; description: string }>;
+    /** Rendered with the tool's own `ToolSetup` so paths and commands are never re-typed here. */
+    description: (tool: ToolSetup) => string;
 };
 
-export const SETUP_GUIDES: Record<GuideKey, SetupGuide> = {
-    claude: {
-        name: "Claude Code",
-        logo: "/claude.svg",
-        title: "Teach Claude Code to use Proper UI",
-        intro: "Run this once from the root of your project. Claude then loads the Proper UI skill automatically whenever UI work comes up.",
-        copyLabel: "Run in your project terminal",
-        copyValue: "npx @properui/cli@latest agent init --client claude",
-        steps: [
-            { title: "Open the project terminal", description: "Go to the root of the React, Next.js or Vite project Claude Code will edit." },
-            {
-                title: "Install the project skill",
-                description:
-                    "The CLI writes .claude/skills/properui/SKILL.md and adds a small pointer to CLAUDE.md without replacing your existing instructions.",
-            },
-            {
-                title: "Describe the screen",
-                description: "Claude inspects the project, searches Proper UI, installs matching components and verifies the result.",
-            },
-        ],
-    },
-    codex: {
-        name: "Codex",
-        logo: "/codex.svg",
-        title: "Teach Codex to use Proper UI",
-        intro: "Run this once from the root of your project. Codex receives both the portable skill and repository-level rules.",
-        copyLabel: "Run in your project terminal",
-        copyValue: "npx @properui/cli@latest agent init --client codex",
-        steps: [
-            { title: "Open the project terminal", description: "Go to the repository Codex will work inside." },
-            {
-                title: "Install the skill and rules",
-                description: "The CLI writes .agents/skills/properui/SKILL.md and appends a marked Proper UI block to AGENTS.md without overwriting it.",
-            },
-            {
-                title: "Ask Codex for the page",
-                description: "Codex runs info --json, searches for the best primitive or full-page example, adds it and checks the build.",
-            },
-        ],
-    },
-    cursor: {
-        name: "Cursor",
-        logo: "/cursor.svg",
-        title: "Teach Cursor Agent to use Proper UI",
-        intro: "Run this once from the project root. Cursor gets an always-on rule in the exact format its Agent mode reads.",
-        copyLabel: "Run in your project terminal",
-        copyValue: "npx @properui/cli@latest agent init --client cursor",
-        steps: [
-            { title: "Open Cursor's terminal", description: "Open the repository where you want to use Proper UI." },
-            { title: "Create the Cursor rule", description: "The CLI writes .cursor/rules/properui.mdc with alwaysApply enabled." },
-            {
-                title: "Prompt in Agent mode",
-                description: "Cursor searches the registry before writing markup and composes the chosen Proper UI components.",
-            },
-        ],
-    },
-    lovable: {
-        name: "Lovable",
-        logo: "/lovable.svg",
-        title: "Add Proper UI to Lovable Knowledge",
-        intro: "Lovable runs in the browser, so it cannot read a local skill file. Give it the public Proper UI skill through project Knowledge instead.",
-        copyLabel: "Copy this Skill URL",
-        copyValue: "https://github.com/properui/properui/blob/main/skills/properui/SKILL.md",
-        steps: [
-            { title: "Open project settings", description: "In Lovable, open your project's Knowledge or Custom instructions panel." },
-            { title: "Paste the Proper UI Skill", description: "Paste the public GitHub URL below so Lovable can read the complete workflow." },
-            {
-                title: "Prompt with Proper UI",
-                description:
-                    "Describe the page and mention Proper UI. Lovable installs the npm package in its Vite project and uses the registry instead of generic markup.",
-            },
-        ],
-    },
-};
+const creates = (tool: ToolSetup) => tool.creates.map((entry) => entry.path).join(" and ");
 
-export const EXAMPLE_PROMPT = "Build a polished pricing page using Proper UI. Search the registry and use an existing full-page example if one fits.";
+export const DIALOG_STEPS: Record<ToolKey, DialogStep[]> = {
+    claude: [
+        { title: "Open your project terminal", description: (tool) => `Go to the root of the project ${tool.name} will edit.` },
+        {
+            title: "Run the setup command",
+            description: (tool) => `Run the command below. The CLI writes ${creates(tool)}, so Claude Code loads the skill on its own.`,
+        },
+        {
+            title: "Prompt normally",
+            description: () =>
+                "Describe the screen you want. Claude Code searches the Proper UI registry and installs real components instead of guessing at one.",
+        },
+    ],
+    codex: [
+        { title: "Open your project terminal", description: (tool) => `Go to the root of the repository ${tool.name} will work inside.` },
+        {
+            title: "Run the setup command",
+            description: (tool) => `Run the command below. The CLI writes ${creates(tool)}, so Codex reads both before it edits UI code.`,
+        },
+        {
+            title: "Prompt normally",
+            description: () => "Describe the interface. Codex searches the registry before writing markup and installs the components it finds.",
+        },
+    ],
+    cursor: [
+        { title: "Open your project terminal", description: () => "Go to the repository where you want to use Proper UI." },
+        {
+            title: "Run the setup command",
+            description: (tool) => `Run the command below. The CLI writes ${creates(tool)}, an always-applied rule; Cursor does not read SKILL.md.`,
+        },
+        {
+            title: "Prompt in Agent mode",
+            description: () => "Describe the interface. Cursor searches the registry before composing the components it writes.",
+        },
+    ],
+    lovable: [
+        { title: "Open project settings", description: (tool) => `In Lovable, open ${tool.valueLabel.replace("Paste into ", "")}.` },
+        {
+            title: "Paste the Skill URL",
+            description: () =>
+                "Paste the URL below. Lovable runs in the browser and cannot read local project files, so this is how it learns the Proper UI workflow for this project.",
+        },
+        {
+            title: "Prompt normally",
+            description: () =>
+                "Describe the interface and mention Proper UI. Lovable installs the package and uses the registry instead of a generic composition.",
+        },
+    ],
+};

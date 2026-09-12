@@ -61,9 +61,9 @@ const run = async () => {
 
     for (const r of ROUTES) {
         for (const [viewportName, viewport] of Object.entries(VIEWPORTS) as [ViewportName, { width: number; height: number }][]) {
-            const ctx = await browser.newContext({ viewport, deviceScaleFactor: 1 });
+            const ctx = await browser.newContext({ viewport, deviceScaleFactor: 1, reducedMotion: "reduce" });
             const page = await ctx.newPage();
-            const response = await page.goto(BASE + r.route, { waitUntil: "networkidle" });
+            const response = await page.goto(BASE + r.route, { waitUntil: "networkidle", timeout: 90_000 });
             await assertRealPage(page, response, r.slug, r.route);
 
             for (const pass of passesFor(r.rtl)) {

@@ -1,0 +1,418 @@
+/*
+ * Styles for the three landing "motion" components: HeroVideo (`hv-`), WorkflowAnimation
+ * (`wa-`) and SetupAnimation (`sa-`). Every selector is scoped under `.pui-landing` (see
+ * `landing.css`'s header for why) and uses that file's custom properties — nothing here
+ * redeclares tokens.
+ *
+ * Every animated selector has a matching rule in the single `prefers-reduced-motion: reduce`
+ * block at the bottom that removes its transition/animation outright. This is a deliberate
+ * belt-and-braces on top of each component's own JS check (which renders the finished frame
+ * and never starts the timers that would apply these classes): a CSS user override, a
+ * moment before a `useLayoutEffect` commits, or a future edit that forgets the JS check should
+ * still never produce motion for a visitor who asked not to see it.
+ */
+
+/* ----------------------------------------------------------------------------------------- */
+/* HeroVideo                                                                                  */
+/* ----------------------------------------------------------------------------------------- */
+
+.pui-landing .hv-figure {
+    position: relative;
+    margin: 0;
+    border: 1px solid var(--line-2);
+    border-radius: 20px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 30px 60px -28px rgb(44 28 95 / 0.35);
+    line-height: 0;
+}
+
+.pui-landing .hv-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: var(--hv-aspect, 1280 / 800);
+    background: var(--soft);
+}
+
+.pui-landing .hv-toggle {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(255 255 255 / 0.25);
+    border-radius: 50%;
+    color: #fff;
+    background: rgb(12 14 18 / 0.55);
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+    transition:
+        background 0.14s ease,
+        transform 0.14s ease;
+}
+
+.pui-landing .hv-toggle:hover {
+    background: rgb(12 14 18 / 0.75);
+    transform: translateY(-1px);
+}
+
+.pui-landing .hv-toggle:focus-visible {
+    outline: 2px solid var(--violet-400);
+    outline-offset: 3px;
+}
+
+.pui-landing .hv-icon {
+    width: 15px;
+    height: 15px;
+    fill: currentColor;
+}
+
+/* ----------------------------------------------------------------------------------------- */
+/* WorkflowAnimation — a browser-window-styled card                                          */
+/* ----------------------------------------------------------------------------------------- */
+
+.pui-landing .wa-card {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    margin: 40px auto;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 22px 46px -28px rgb(44 28 95 / 0.28);
+}
+
+.pui-landing .wa-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--line);
+    background: var(--soft);
+}
+
+.pui-landing .wa-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--line-2);
+}
+
+.pui-landing .wa-body {
+    display: flex;
+    min-height: 230px;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 22px 24px;
+}
+
+.pui-landing .wa-prompt-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.pui-landing .wa-prompt-label {
+    flex: 0 0 auto;
+    color: var(--muted);
+    font: 750 11px/1 var(--body);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.pui-landing .wa-prompt-text {
+    display: inline-block;
+    overflow: hidden;
+    color: var(--ink);
+    font: 14px/1.5 var(--mono);
+    white-space: nowrap;
+    vertical-align: bottom;
+    border-right: 2px solid var(--violet-600);
+}
+
+.pui-landing .wa-card[data-step="idle"] .wa-typed,
+.pui-landing .wa-card[data-step="fade"] .wa-typed {
+    width: 0;
+}
+
+.pui-landing .wa-card[data-step="typing"] .wa-typed {
+    width: 0;
+    animation: wa-type 1.6s linear forwards;
+}
+
+.pui-landing .wa-card[data-step="searching"] .wa-typed,
+.pui-landing .wa-card[data-step="adding"] .wa-typed,
+.pui-landing .wa-card[data-step="screen"] .wa-typed,
+.pui-landing .wa-card[data-step="hold"] .wa-typed {
+    width: var(--wa-chars);
+    border-right-color: transparent;
+}
+
+@keyframes wa-type {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--wa-chars);
+    }
+}
+
+.pui-landing .wa-label {
+    margin: 0 0 8px;
+    color: var(--muted);
+    font: 750 11px/1 var(--body);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.pui-landing .wa-results,
+.pui-landing .wa-add {
+    opacity: 0;
+    transform: translateY(6px);
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
+
+.pui-landing .wa-results[data-visible="true"],
+.pui-landing .wa-add[data-visible="true"] {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pui-landing .wa-results ul {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    gap: 4px;
+    list-style: none;
+    color: var(--ink-2);
+    font: 13px/1.5 var(--mono);
+}
+
+.pui-landing .wa-results li {
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: var(--soft);
+}
+
+.pui-landing .wa-results li.wa-match {
+    color: var(--violet-800);
+    font-weight: 650;
+    background: var(--violet-100);
+}
+
+.pui-landing .wa-add {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ink-2);
+    font: 13px/1.5 var(--mono);
+}
+
+.pui-landing .wa-add code {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pui-landing .wa-check {
+    display: inline-flex;
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--good);
+    background: var(--good-bg);
+    font-size: 10px;
+}
+
+.pui-landing .wa-screen {
+    overflow: hidden;
+    max-height: 300px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    opacity: 0;
+    transform: scale(0.96);
+    transition:
+        opacity 0.45s ease,
+        transform 0.45s ease;
+}
+
+.pui-landing .wa-screen[data-visible="true"] {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.pui-landing .wa-screen img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ----------------------------------------------------------------------------------------- */
+/* SetupAnimation — a terminal card                                                           */
+/* ----------------------------------------------------------------------------------------- */
+
+.pui-landing .sa-card {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--dark);
+    box-shadow: 0 22px 46px -28px rgb(12 14 18 / 0.45);
+}
+
+.pui-landing .sa-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: rgb(255 255 255 / 0.04);
+}
+
+.pui-landing .sa-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.pui-landing .sa-dot:nth-child(1) {
+    background: #ff5f57;
+}
+
+.pui-landing .sa-dot:nth-child(2) {
+    background: #febc2e;
+}
+
+.pui-landing .sa-dot:nth-child(3) {
+    background: #28c840;
+}
+
+.pui-landing .sa-body {
+    min-height: 160px;
+    padding: 20px 20px 26px;
+    color: #e7e7ea;
+    font: 13px/1.7 var(--mono);
+}
+
+.pui-landing .sa-command-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    color: #fff;
+}
+
+.pui-landing .sa-prefix {
+    flex: 0 0 auto;
+    color: #8fd0ff;
+}
+
+.pui-landing .sa-command-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid var(--violet-400);
+}
+
+.pui-landing .sa-card[data-step="idle"] .sa-typed,
+.pui-landing .sa-card[data-step="fade"] .sa-typed {
+    width: 0;
+}
+
+.pui-landing .sa-card[data-step="typing"] .sa-typed {
+    width: 0;
+    animation: sa-type linear forwards;
+    animation-duration: var(--sa-typing-ms);
+}
+
+.pui-landing .sa-card[data-step="lines"] .sa-typed,
+.pui-landing .sa-card[data-step="hold"] .sa-typed {
+    width: var(--sa-chars);
+    border-right-color: transparent;
+}
+
+@keyframes sa-type {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--sa-chars);
+    }
+}
+
+.pui-landing .sa-lines {
+    display: grid;
+    margin: 14px 0 0;
+    padding: 0;
+    gap: 6px;
+    list-style: none;
+}
+
+.pui-landing .sa-lines li {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    opacity: 0;
+    transform: translateY(4px);
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+    transition-delay: var(--sa-line-delay, 0ms);
+}
+
+.pui-landing .sa-lines[data-visible="true"] li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pui-landing .sa-lines code {
+    overflow: hidden;
+    color: #e7e7ea;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pui-landing .sa-check {
+    display: inline-flex;
+    flex: 0 0 auto;
+    width: 15px;
+    height: 15px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #052e18;
+    background: #3ddc84;
+    font-size: 10px;
+}
+
+/* ----------------------------------------------------------------------------------------- */
+/* Reduced motion: stop every transition/animation declared above                            */
+/* ----------------------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .pui-landing .hv-toggle {
+        transition: none;
+    }
+
+    .pui-landing .wa-typed,
+    .pui-landing .wa-results,
+    .pui-landing .wa-add,
+    .pui-landing .wa-screen,
+    .pui-landing .sa-typed,
+    .pui-landing .sa-lines li {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    .pui-landing .wa-card[data-step="typing"] .wa-typed,
+    .pui-landing .sa-card[data-step="typing"] .sa-typed {
+        width: var(--wa-chars, var(--sa-chars));
+    }
+}

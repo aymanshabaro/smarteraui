@@ -77,6 +77,13 @@ du -sh tests/visual/baseline
 
 Commit the regenerated `tests/visual/baseline/` alongside the change that motivated it.
 
+## Motion and embedded frames
+
+Both scripts open every route with `reducedMotion: "reduce"`, so the landing page's looping
+walkthrough animations render their final frame and the capture is deterministic. They also wait
+for `networkidle` with a 90 second budget, because the landing page embeds several live example
+frames whose own assets must finish loading before the screenshot means anything.
+
 ## Error-page guard
 
 Both `scripts/visual-baseline.ts` and `scripts/visual-check.ts` check the HTTP response status of
