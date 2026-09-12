@@ -1,6 +1,6 @@
 # Roadmap
 
-Proper UI is at `0.1.0`. The component library, the documentation site, the registry and the CLI
+Proper UI is at `0.2.0`. The component library, the documentation site, the registry and the CLI
 all work today. This page lists what is **not** built yet, so nothing in the docs promises something
 the code does not do.
 
@@ -70,6 +70,22 @@ Two real defects surfaced while measuring, both are now fixed, independently of 
     literal, so Next's type-check step fails at that target: bumping the consumer's `target` to
     `ES2020`+ (already common) clears it. This is a pre-existing source-compatibility gap, not an
     alias issue.
+
+### Registry entries that over-fetch
+
+`properui add input` still copies `payment-icons` (60 files) because `input-payment.tsx` imports
+them and lives inside the `input` entry. Splitting it into its own `input-payment` entry, with
+`input` listing it as an optional dependency, is the fix. Likewise the hero sections render a
+header, so every hero pulls all header-navigation variants; a header slot on those sections would
+end that. The registry build already refuses to mark a dependency optional or a file demo-only while
+a required file imports it, so neither can be fixed by a flag alone. It would live in
+[`packages/registry/src/build.ts`](./packages/registry/src/build.ts) and the affected components.
+
+### A lint rule for raw palette colours
+
+`bg-purple-600 dark:bg-black` lints clean today. A small ESLint rule (or a vitest guard consumers
+can copy in) that flags Tailwind palette classes outside `theme.css` would keep AI-written code on
+tokens. It would live at `packages/eslint-plugin`.
 
 ### Full RTL coverage
 

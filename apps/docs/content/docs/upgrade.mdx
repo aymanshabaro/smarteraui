@@ -6,7 +6,33 @@ metaTitle: Upgrade guide | Proper UI
 metaDescription: Understand semantic versioning for @properui/ui, update the npm package, and pull component updates with the properui CLI's diff and add commands.
 ---
 
-Proper UI is at `v0.1.0` and has not had a public release yet, so there is no migration history to document. This page explains how versioning works today and how you'll update once releases start shipping.
+Proper UI is at `v0.2.0`. This page explains how versioning works, how to update, and what changed in each release that can affect existing code.
+
+## v0.2.0
+
+The first release after two teams migrated real products onto 0.1.0 and reported what they hit. Everything is additive except the items below.
+
+**`RouterProvider` moved to its own subpath.** It imports `next/navigation`, and re-exporting it from `@properui/ui/providers` broke Vite builds that never installed Next. Next.js projects update one import:
+
+```diff
+-import { RouterProvider, ThemeProvider } from "@properui/ui/providers";
++import { ThemeProvider } from "@properui/ui/providers";
++import { RouterProvider } from "@properui/ui/providers/router-provider";
+```
+
+Vite projects need no change; they use React Aria's own `RouterProvider`.
+
+**`ModalHeader`'s background pattern is off unless you pass an `icon`.** It used to default on. Pass `hasBackgroundPattern` explicitly if you relied on it with a bare `media` slot.
+
+**`Label` renders no `*` when the field is not required.** It was hidden with CSS before, so a test that matched the accessible name "Email \*" now matches "Email".
+
+**`Select`'s accessible name is its label alone**, not React Aria's "value, label" concatenation, and **`Checkbox`'s hint sits outside the `<label>`**, linked with `aria-describedby`. Queries written against the old names need the shorter string.
+
+**`DemoNativeSelect` is gone.** It was an internal placeholder; use `NativeSelect` from `base/select/select-native`.
+
+**Copied components: `properui add` now exits non-zero when npm dependencies are missing** and neither `--yes` nor a terminal is available, printing the install command last. CI scripts that relied on exit 0 in that state should pass `--yes` or install first. `init` no longer writes a hand-rolled `ThemeProvider`; it copies the registry's `next-themes` one. Run `diff` to see the change if you customised the old file.
+
+The full lists live in the [`@properui/ui` changelog](https://github.com/properui/properui/blob/main/packages/ui/CHANGELOG.md) and the [`@properui/cli` changelog](https://github.com/properui/properui/blob/main/packages/cli/CHANGELOG.md).
 
 ## Versioning
 
@@ -55,7 +81,7 @@ There's no `upgrade` or `migrate` command today, and this page won't describe on
     items={[
         {
             question: "Will an upgrade break my styles?",
-            answer: "There's nothing to upgrade yet: v0.1.0 hasn't had a public release. Once breaking changes start shipping, each one will be documented in a version section on this page with exactly what changed.",
+            answer: "Not in 0.2.0: every token and class from 0.1.0 still exists, and the theme.css changes are additive. The one import that moved is RouterProvider; see the v0.2.0 section above.",
         },
         {
             question: "How do I roll back if something goes wrong?",

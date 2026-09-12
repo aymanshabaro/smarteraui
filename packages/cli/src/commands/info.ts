@@ -61,7 +61,7 @@ export interface ProjectSnapshot {
     };
     packages: {
         "@properui/ui": PackageVersions;
-        properui: PackageVersions;
+        "@properui/cli": PackageVersions;
     };
     registrySource: string;
     registryReachable: boolean;
@@ -149,7 +149,7 @@ export async function collectSnapshot(options: InfoOptions): Promise<ProjectSnap
         },
         packages: {
             "@properui/ui": packageVersions(cwd, "@properui/ui", deps),
-            properui: packageVersions(cwd, "properui", deps),
+            "@properui/cli": packageVersions(cwd, "@properui/cli", deps),
         },
         registrySource,
         registryReachable,
@@ -170,7 +170,7 @@ function printHuman(snapshot: ProjectSnapshot): void {
     log.step(`Tailwind            ${snapshot.tailwindVersion ? `v${snapshot.tailwindVersion}` : "not installed"}`);
     log.step(`Package manager     ${snapshot.packageManager}`);
     log.step(`@properui/ui      ${formatVersions(snapshot.packages["@properui/ui"])}`);
-    log.step(`properui (CLI)    ${formatVersions(snapshot.packages.properui)}`);
+    log.step(`@properui/cli     ${formatVersions(snapshot.packages["@properui/cli"])}`);
     log.step(`Registry            ${snapshot.registrySource}`);
     log.step(`Registry reachable  ${snapshot.registryReachable ? "yes" : "no"}`);
     log.plain();

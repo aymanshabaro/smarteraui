@@ -71,7 +71,7 @@ server yet; it is on the [roadmap](./ROADMAP.md), and the CLI covers the same gr
 
 - **Accessible by default.** Every interactive primitive (menus, dialogs, comboboxes, tables, sliders, date pickers)
   delegates to React Aria Components. Focus management, keyboard navigation and ARIA wiring are inherited, not
-  re-implemented. Each component ships an `axe` smoke test that runs in CI: zero _detected_ violations across 118 automated suites; see
+  re-implemented. Each component ships an `axe` smoke test that runs in CI: zero _detected_ violations across 125 automated suites; see
   [the accessibility page](https://properui.dev/docs/accessibility) for what that does and does not cover.
 - **Tailwind CSS v4 tokens, no config file.** All design decisions live in `@theme` blocks in
   [`packages/ui/src/styles/theme.css`](./packages/ui/src/styles/theme.css). There is no `tailwind.config.js`.
