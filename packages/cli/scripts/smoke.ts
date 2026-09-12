@@ -591,6 +591,9 @@ function main(): void {
     const checkHelp = run(checkDir, ["check", "--help"]);
     check("check --help documents the regexes it uses", checkHelp.includes("bg|text|border") && checkHelp.includes("dark:") && checkHelp.includes("utility-"));
 
+    const pkgVersion = (JSON.parse(readFileSync(path.join(CLI_DIR, "package.json"), "utf8")) as { version: string }).version;
+    check(`--version prints the package.json version (${pkgVersion})`, run(checkDir, ["--version"]).trim() === pkgVersion);
+
     // -------------------------------------------------------------- scenario 4
     section("Scenario 4 — ThemeProvider wiring without --manual");
     const wired = path.join(SCRATCH, "vite-app-wired");

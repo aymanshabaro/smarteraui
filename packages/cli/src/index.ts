@@ -4,6 +4,7 @@
  * Spec: docs/cli.md (commands, components.json, auto-detection).
  */
 import { Command } from "commander";
+import { createRequire } from "node:module";
 import { runAdd } from "./commands/add.js";
 import { runAgentInit } from "./commands/agent.js";
 import { runCheck } from "./commands/check.js";
@@ -40,12 +41,15 @@ function guard<A extends unknown[]>(action: (...args: A) => Promise<void>): (...
     };
 }
 
+// Read at runtime from the published package.json so `--version` can never drift from the release.
+const { version } = createRequire(import.meta.url)("../package.json") as { version: string };
+
 const program = new Command();
 
 program
     .name("properui")
     .description("Add Proper UI components to your project")
-    .version("0.1.0")
+    .version(version)
     .option("--cwd <dir>", "run against another directory", process.cwd());
 
 program

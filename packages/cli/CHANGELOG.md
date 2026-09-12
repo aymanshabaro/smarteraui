@@ -1,5 +1,13 @@
 # @properui/cli
 
+## 0.2.1
+
+### Patch Changes
+
+- `properui --version` reads the version from the package's own `package.json` instead of a
+  string in the source, which had stayed at `0.1.0` in the 0.2.0 release. The smoke test now
+  asserts the two match.
+
 ## 0.2.0
 
 ### Minor Changes
